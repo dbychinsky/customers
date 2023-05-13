@@ -3,10 +3,17 @@ import CustomerList from "../component/customerList/CustomerList";
 import {Button} from "../component/button/Button";
 import {useNavigate} from "react-router";
 import {RouterPathList} from "../router/RouterPathList";
+import {observer} from "mobx-react";
 
-const CustomerListPage = () => {
+/**
+ * Страница со списком заказчиков
+ */
+const CustomerListPage = observer(() => {
     const navigate = useNavigate();
 
+    /**
+     * Добавит заказчика
+     */
     const addCustomer = () => {
         navigate(RouterPathList.CUSTOMER_EDIT_PAGE)
     }
@@ -18,6 +25,6 @@ const CustomerListPage = () => {
             <CustomerList/>
         </div>
     );
-};
+});
 
 export default CustomerListPage;

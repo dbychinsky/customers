@@ -4,6 +4,8 @@ import {Conversation} from "../../../utility/Conversation";
 import {observer} from "mobx-react";
 import "./Customer.scss";
 import {Button} from "../../button/Button";
+import {confirmAlert} from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 /**
  * Заказчик
@@ -11,9 +13,21 @@ import {Button} from "../../button/Button";
 const Customer = observer(() => {
     const customerStore = useContext(StoreContext).customerStore;
 
-    const remove = (idCustomer: number) => {
-        customerStore.remove(idCustomer);
-    }
+    const remove = (id: number, organization: String) => {
+        confirmAlert({
+            title: `Удалить ${organization}?`,
+            message: 'Подтвердите действие',
+            buttons: [
+                {
+                    label: 'Да',
+                    onClick: () => customerStore.remove(id)
+                },
+                {
+                    label: 'Нет'
+                }
+            ]
+        });
+    };
 
     return (
         <>
@@ -35,12 +49,11 @@ const Customer = observer(() => {
                         <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
                         <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
                         <div className="actionBar">
-                            <Button onClick={remove} text="Удалить"/>
+                            <Button onClick={() => remove(id, organization)} text="Удалить"/>
                         </div>
                     </div>
 
                 ))}
-
         </>
     );
 });

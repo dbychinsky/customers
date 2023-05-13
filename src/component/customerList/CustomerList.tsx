@@ -2,7 +2,6 @@ import React, {useContext, useEffect} from 'react';
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
 import Customer from "./customer/Customer";
-import {useNavigate} from "react-router";
 import {Button} from "../button/Button";
 
 /**
