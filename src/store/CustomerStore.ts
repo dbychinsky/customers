@@ -24,7 +24,7 @@ export class CustomerStore {
      * Список активных уведомлений, содержит
      * id заказчика
      */
-    public notificationList: number[] = [];
+    public customerListNotificationActive: Customer[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -105,7 +105,7 @@ export class CustomerStore {
 
                         PushNotification.pushNotify(customer.organization);
                         runInAction(() => {
-                            this.notificationList.push(customer.id);
+                            this.customerListNotificationActive.push(customer);
                         })
                     }
 
@@ -126,10 +126,9 @@ export class CustomerStore {
 
                     PushNotification.pushNotify(customer.organization);
                     runInAction(() => {
-                        this.notificationList.push(customer.id);
+                        this.customerListNotificationActive.push(customer);
                     })
                 }
-
 
             }
         })
@@ -142,7 +141,8 @@ export class CustomerStore {
      */
     private isHasIdCustomer(customerId: number): boolean {
         let result: boolean = true;
-        const id: number | undefined = this.notificationList.find(id => id === customerId);
+        const id: Customer | undefined =
+            this.customerListNotificationActive.find(customer => customer.id === customerId);
         if (id === undefined) result = false
         return result;
     }

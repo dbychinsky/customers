@@ -52,7 +52,6 @@ const Customer = observer(() => {
                             <Button onClick={() => remove(id, organization)} text="Удалить"/>
                         </div>
                     </div>
-
                 ))}
         </>
     );
