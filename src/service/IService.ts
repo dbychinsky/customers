@@ -1,11 +1,19 @@
-import {Posts} from "../model/Posts";
+import {Customer} from "../model/Customer";
 
 export interface IService {
 
     /**
      * Получение списка заказчиков
      */
-    getCustomerList(): Promise<[]>;
+    getCustomers(): Promise<Customer[]>;
 
-    pushCustomerList(posts: Posts): Promise<void>;
+    /**
+     * Сохранение заказчика
+     */
+    saveCustomer(customer: Customer): Promise<void>;
+
+    /**
+     * Удаление заказчика
+     */
+    deleteCustomer(id: number): Promise<void>;
 }

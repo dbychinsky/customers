@@ -6,7 +6,7 @@ export class Customer {
     /**
      * id
      */
-    id: string;
+    id: number;
 
     /**
      * Организация
@@ -28,11 +28,23 @@ export class Customer {
      */
     description: string;
 
+    /**
+     * Флаг напоминания
+     */
+    reminder: boolean;
+
+    /**
+     * Дата и время напоминания
+     */
+    reminderDate: Date;
+
     constructor() {
-        this.id = '';
+        this.id = 0;
         this.organization = '';
         this.contactFace = '';
         this.phone = '';
         this.description = '';
+        this.reminder = false;
+        this.reminderDate = new Date();
     }
 }
