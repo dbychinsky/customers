@@ -4,7 +4,6 @@ import {Conversation} from "../../../utility/Conversation";
 import {observer} from "mobx-react";
 import "./Customer.scss";
 import {Button} from "../../button/Button";
-import 'react-notifications/lib/notifications.css';
 
 /**
  * Заказчик
