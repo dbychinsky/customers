@@ -1,12 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import InputTextField from "../component/inputField/InputField";
 import InputCheckboxField from "../component/checkboxField/CheckboxField";
 import DateField from "../component/dateField/DateField";
 import {StoreContext} from "../App";
-import {useNavigate} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import {observer} from "mobx-react";
 import FormRow from "../component/formRow/FormRow";
-import {Form} from "react-router-dom";
+import TextAreaField from "../component/textAreaField/TextAreaField";
 
 
 /**
@@ -17,6 +17,19 @@ const CustomerEditPage = observer(() => {
     const customerStore = useContext(StoreContext).customerStore;
     const [startDate, setStartDate] = useState(new Date());
     const navigate = useNavigate();
+    const {id} = useParams();
+
+    /**
+     * Получение значения Места для редактирования и установка в state
+     */
+    useEffect(() => {
+            if (id !== undefined) {
+                customerStore.setEditPlace(Number(id));
+            } else {
+                customerStore.setEditPlace();
+            }
+        },
+        []);
 
     /**
      * Сохраняем нового заказчика
@@ -58,11 +71,18 @@ const CustomerEditPage = observer(() => {
                                     type="text"/>
                 </FormRow>
 
-                <FormRow label="Описание">
-                    <InputTextField value={customerStore.newCustomer.description}
+                <FormRow label="Email">
+                    <InputTextField value={customerStore.newCustomer.email}
                                     changeHandler={customerStore.handleChange}
-                                    name="description"
+                                    name="email"
                                     type="text"/>
+                </FormRow>
+
+                <FormRow label="Описание">
+                    <TextAreaField value={customerStore.newCustomer.description}
+                                   changeHandler={customerStore.handleChange}
+                                   name="description"
+                                   type="text"/>
                 </FormRow>
 
                 <FormRow label="Напоминание">

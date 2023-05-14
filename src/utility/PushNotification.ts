@@ -5,7 +5,7 @@ export class PushNotification {
 
     static createNotification(title: string) {
         let notification = new Notification(title, {
-            icon: 'https://phppot.com/badge.png',
+            icon: '',
             body: 'New article published!',
             requireInteraction: true,
 

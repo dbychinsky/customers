@@ -15,29 +15,16 @@ export const RoutersProject = () => {
             <Route path={RouterPathList.CUSTOMER_LIST_PAGE}>
                 <Route index element={<CustomerListPage/>}/>
                 <Route path={RouterPathList.CUSTOMER_EDIT_PAGE} element={<CustomerEditPage/>}/>
+                <Route path={RouterPathList.CUSTOMER_EDIT_ID_PAGE} element={<CustomerEditPage/>}/>
             </Route>
 
         </Routes>
     );
 };
 
-// <Routes>
-//     <Route path={RouterPathList.ROOT_PATH} element={<LoginPage/>}/>
-//     <Route path={RouterPathList.ROOM_LIST_PAGE}>
-//         <Route index element={<RoomViewPage/>}/>
-//         <Route path={RouterPathList.ROOM_LIST_PAGE} element={<RoomViewPage/>}/>
-//
-//         <Route path={RouterPathList.ROOM_506}>
-//             <Route index element={<Room506Page/>}/>
-//             <Route path={RouterPathList.PLACE_EDIT_PAGE} element={<PlaceEdit/>}/>
-//             <Route path={RouterPathList.PLACE_EDIT_ID_PAGE} element={<PlaceEdit/>}/>
-//         </Route>
-//
-//         <Route path={RouterPathList.ROOM_607}>
-//             <Route index element={<Room607Page/>}/>
-//             <Route path={RouterPathList.PLACE_EDIT_PAGE} element={<PlaceEdit/>}/>
-//             <Route path={RouterPathList.PLACE_EDIT_ID_PAGE} element={<PlaceEdit/>}/>
-//             <Route path={RouterPathList.SHELF_607} element={<Shelf607/>}/>
-//         </Route>
-//     </Route>
-// </Routes>
+// <Route path={ROOT_PATH} element={<MainPage/>}/>
+// <Route path={PROJECT_PAGE_PATH}>
+//     <Route index element={<ProjectList/>}/>
+//     <Route path={PROJECT_FORM_PATH} element={<ProjectEdit/>}/>
+//     <Route path={PROJECT_ID_PATH} element={<ProjectEdit/>}/>
+// </Route>

@@ -8,8 +8,12 @@ export enum RouterPathList {
      */
     ROOT_PATH = "/",
 
-    CUSTOMER_LIST_PAGE = "CustomerListPage/",
+    CUSTOMER_LIST_PAGE = "customerListPage/",
 
-    CUSTOMER_EDIT_PAGE = "CustomerEditPage/"
+    CUSTOMER_EDIT_PAGE = "customerEditPage/",
 
+    /**
+     * Страница редактирования/добавления
+     */
+    CUSTOMER_EDIT_ID_PAGE = ':id/'
 }

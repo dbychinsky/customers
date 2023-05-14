@@ -4,6 +4,7 @@ import {observer} from "mobx-react";
 import Customer from "./customer/Customer";
 import {Button} from "../button/Button";
 
+
 /**
  * Список заказчиков
  */

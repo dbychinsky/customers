@@ -8,7 +8,7 @@ import "./InputField.scss";
 /**
  * Интерфейс
  */
-type IInputTextFieldProps = {
+interface IInputTextFieldProps {
 
     /**
      * Значение в поле ввода

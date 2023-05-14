@@ -36,7 +36,7 @@ export class CustomerStore {
      * Добавление нового заказчика
      * @param e
      */
-    public handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    public handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         runInAction(() => {
             this.newCustomer = {
                 ...this.newCustomer, [e.target.name]: e.target.value
@@ -112,7 +112,7 @@ export class CustomerStore {
 
                 }
             })
-        }, 5000)
+        }, 7000)
     }
 
     public startTemp() {
@@ -147,12 +147,30 @@ export class CustomerStore {
         return result;
     }
 
-
     /**
      * Удаление элемента
      */
     public remove(idCustomer: number) {
         server.deleteCustomer(idCustomer)
             .then(() => this.get());
+    }
+
+    /**
+     * Устанавливаем данные в поля для редактирования
+     */
+    public setEditPlace(id?: number) {
+        if (id !== undefined) {
+            const customerEdit = this.customerList.find(customer => customer.id === id);
+            if (customerEdit !== undefined) {
+                runInAction(() => {
+                    this.newCustomer = customerEdit;
+                })
+
+            }
+        } else {
+            runInAction(() => {
+                this.newCustomer = new Customer();
+            })
+        }
     }
 }

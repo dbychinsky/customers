@@ -24,6 +24,11 @@ export class Customer {
     phone: string;
 
     /**
+     * Номер телефона
+     */
+    email: string;
+
+    /**
      * Описание
      */
     description: string;
@@ -43,6 +48,7 @@ export class Customer {
         this.organization = '';
         this.contactFace = '';
         this.phone = '';
+        this.email = '';
         this.description = '';
         this.reminder = false;
         this.reminderDate = new Date();
