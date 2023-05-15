@@ -15,6 +15,11 @@ const Customer = observer(() => {
     const customerStore = useContext(StoreContext).customerStore;
     const navigate = useNavigate();
 
+    /**
+     * Удаление записи
+     * @param id
+     * @param organization
+     */
     const remove = (id: number, organization: String) => {
         confirmAlert({
             title: `Удалить ${organization}?`,
@@ -31,10 +36,13 @@ const Customer = observer(() => {
         });
     };
 
+    /**
+     * Обновление записи
+     * @param id
+     */
     const update = (id: number) => {
-        navigate(id);
+        navigate((id).toString());
     }
-
 
     return (
         <>

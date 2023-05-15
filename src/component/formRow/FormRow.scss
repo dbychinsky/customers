@@ -1,0 +1,9 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.formRow {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}

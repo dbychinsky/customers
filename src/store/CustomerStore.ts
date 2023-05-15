@@ -82,7 +82,18 @@ export class CustomerStore {
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
-        server.saveCustomer(this.newCustomer)
+        server.addCustomer(this.newCustomer)
+            .then(() => this.get());
+    }
+
+    /**
+     * Обновление данных
+     */
+    public update(id: string, data: any, date: Date) {
+        runInAction(() => {
+            this.newCustomer.reminderDate = date;
+        });
+        server.updateCustomer(id, data)
             .then(() => this.get());
     }
 
@@ -171,6 +182,19 @@ export class CustomerStore {
             runInAction(() => {
                 this.newCustomer = new Customer();
             })
+        }
+    }
+
+    /**
+     * Получение даты для установления в локальный стейт при редактировании
+     * данных
+     */
+    public getDateForState(id: number): any {
+        const customerEdit = this.customerList.find(customer => customer.id === id)?.reminderDate
+        if (customerEdit !== undefined) {
+            return customerEdit;
+        } else {
+            return new Date();
         }
     }
 }

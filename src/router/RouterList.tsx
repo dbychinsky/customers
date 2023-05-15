@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router";
 import {RouterPathList} from "./RouterPathList";
 import CustomerListPage from "../pages/CustomerListPage";
 import CustomerEditPage from "../pages/CustomerEditPage";
-import LoginPage from "../pages/LoginPage";
+import LoginPage from "../pages/loginPage/LoginPage";
 
 /**
  * Роутинг приложения

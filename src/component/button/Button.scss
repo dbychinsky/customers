@@ -1,0 +1,25 @@
+@import "src/parameters";
+@import "src/mixins";
+@import "src/font";
+
+.button {
+    border-radius: $border-radius-main;
+    border: 1px solid $color-green;
+    background: $color-white;
+    color: $color-green;
+    font-size: $font-size-normal;
+
+    padding: 12px 10px 12px;
+
+    &:hover {
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.31),
+        0 3px 4px -2px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+
+    &.mainAction {
+        border: 1px solid $color-green;
+        background: $color-green;
+        color: $color-white;
+    }
+}

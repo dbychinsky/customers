@@ -21,13 +21,24 @@ export class Server implements IService {
             .then(response => response.data)
     }
 
-    async saveCustomer(customer: Customer): Promise<void> {
+    /**
+     * Добавление
+     * @param customer
+     */
+    async addCustomer(customer: Customer): Promise<void> {
         await axios.post(`${this.MAIN_URL_FAKE}/${backendServerUrl.CUSTOMER}`, customer)
             .then((response) => response.data.id)
     }
 
     /**
-     * Удаление данных
+     * Обновление
+     */
+    async updateCustomer(id: string, data: any): Promise<void> {
+        await axios.put(`${this.MAIN_URL_FAKE}/${backendServerUrl.CUSTOMER}/${id}`, data)
+    };
+
+    /**
+     * Удаление
      */
     async deleteCustomer(idCustomer: number): Promise<void> {
         await axios.delete(`${this.MAIN_URL_FAKE}/${backendServerUrl.CUSTOMER}/${idCustomer}`);

@@ -7,7 +7,7 @@ import {useNavigate, useParams} from "react-router";
 import {observer} from "mobx-react";
 import FormRow from "../component/formRow/FormRow";
 import TextAreaField from "../component/textAreaField/TextAreaField";
-
+import {Conversation} from "../utility/Conversation";
 
 /**
  * Страница редактирования/добавления заказчика
@@ -23,19 +23,23 @@ const CustomerEditPage = observer(() => {
      * Получение значения Места для редактирования и установка в state
      */
     useEffect(() => {
-            if (id !== undefined) {
-                customerStore.setEditPlace(Number(id));
-            } else {
-                customerStore.setEditPlace();
-            }
-        },
-        []);
+        if (id !== undefined) {
+            customerStore.setEditPlace(Number(id));
+            setStartDate(Conversation.dateToDateUTC(customerStore.getDateForState(Number(id))));
+        } else {
+            customerStore.setEditPlace();
+        }
+    }, []);
 
     /**
      * Сохраняем нового заказчика
      */
     const save = () => {
-        customerStore.save(startDate);
+        if (!id) {
+            customerStore.save(startDate);
+        } else {
+            customerStore.update(id, customerStore.newCustomer, startDate);
+        }
         exit();
     }
 

@@ -1,0 +1,26 @@
+@import "parameters";
+@import "mixins";
+@import "font";
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    font-size: 16px;
+}
+
+#root {
+    height: 100%;
+}
+
+.application {
+    height: 100%;
+    @include interRegular();
+
+    color: $color-black;
+}

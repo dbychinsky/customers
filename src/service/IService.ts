@@ -10,7 +10,12 @@ export interface IService {
     /**
      * Сохранение заказчика
      */
-    saveCustomer(customer: Customer): Promise<void>;
+    addCustomer(customer: Customer): Promise<void>;
+
+    /**
+     * Обновление заказчика
+     */
+    updateCustomer(id: string, data: any): Promise<void>
 
     /**
      * Удаление заказчика
