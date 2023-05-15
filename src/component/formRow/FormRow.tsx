@@ -1,6 +1,9 @@
-import React, {FC, ReactElement} from 'react';
+import React, {FC, ReactElement, useContext} from 'react';
 import Label from "../label/Label";
+import {StoreContext} from "../../App";
+import {observer} from "mobx-react";
 import "./FormRow.scss";
+import FeedbackMessage from "../feedbackMessage/FeedbackMessage";
 
 /**
  * Интерфейс
@@ -8,9 +11,9 @@ import "./FormRow.scss";
 interface IFormRow {
 
     /**
-     * Имя доп класса
+     * Наименование
      */
-    className?: string,
+    name: string,
 
     /**
      * Лейбл
@@ -20,16 +23,26 @@ interface IFormRow {
     /**
      * Поле
      */
-    children: ReactElement
+    field: ReactElement
 }
 
-const FormRow: FC<IFormRow> = ({className = '', label, children}) => {
+const FormRow: FC<IFormRow> = observer((
+    {
+        name,
+        label,
+        field
+    }) => {
+
+    const authStore = useContext(StoreContext).authStore;
+    const message = authStore.errorList.find(elem => elem.field === field.props.name)?.message;
+
     return (
-        <div className={`formRow ${className}`}>
-            <Label text={label}/>
-            {children}
+        <div className={`formRow ${name} ${message ? 'error' : ''}`}>
+            <Label text={label} htmlFor={name}/>
+            {field}
+            <FeedbackMessage message={message}/>
         </div>
     );
-};
+});
 
 export default FormRow;

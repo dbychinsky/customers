@@ -5,9 +5,9 @@ import DateField from "../component/dateField/DateField";
 import {StoreContext} from "../App";
 import {useNavigate, useParams} from "react-router";
 import {observer} from "mobx-react";
-import FormRow from "../component/formRow/FormRow";
 import TextAreaField from "../component/textAreaField/TextAreaField";
 import {Conversation} from "../utility/Conversation";
+import Form, {ActionListType, Field} from "../component/form/Form";
 
 /**
  * Страница редактирования/добавления заказчика
@@ -50,61 +50,92 @@ const CustomerEditPage = observer(() => {
         navigate(-1);
     }
 
+    /**
+     * Список полей
+     */
+    const fieldList: Field[] = [
+        {
+            name: "organization",
+            label: "Организация",
+            field: <InputTextField value={customerStore.newCustomer.organization}
+                                   changeHandler={customerStore.handleChange}
+                                   name="organization"
+                                   type="text"/>
+            // validationList: [validator.emptyValidator]
+        },
+        {
+            name: "contactFace",
+            label: "Контактное лицо",
+            field: <InputTextField
+                value={customerStore.newCustomer.contactFace}
+                changeHandler={customerStore.handleChange}
+                name="contactFace"
+                type="text"/>
+        },
+        {
+            name: "phone",
+            label: "Номер телефона",
+            field: <InputTextField
+                value={customerStore.newCustomer.phone}
+                changeHandler={customerStore.handleChange}
+                name="phone"
+                type="text"/>
+        },
+        {
+            name: "Email",
+            label: "Номер телефона",
+            field: <InputTextField
+                value={customerStore.newCustomer.email}
+                changeHandler={customerStore.handleChange}
+                name="Email"
+                type="text"/>
+        },
+        {
+            name: "description",
+            label: "Описание",
+            field: <TextAreaField
+                value={customerStore.newCustomer.description}
+                changeHandler={customerStore.handleChange}
+                name="description"
+                type="text"/>
+        },
+        {
+            name: "reminder",
+            label: "Напоминание",
+            field: <InputCheckboxField
+                value={customerStore.newCustomer.reminder}
+                changeHandler={customerStore.handleChangeCheckbox}
+                name="reminder"/>
+        },
+        {
+            name: "reminderDate",
+            label: "Дата напоминания",
+            field: <DateField
+                startDate={startDate}
+                setStartDate={setStartDate}/>
+        }
+    ];
+
+    /**
+     * Список кнопок
+     */
+    const actionList: ActionListType[] = [
+        {
+            name: "submit",
+            action: <button onClick={save}>save</button>
+        },
+        {
+            name: "cancel",
+            action: <button onClick={() => exit()}>Back</button>
+        }
+    ];
+
+
     return (
         <div className="customerEditPage">
             <h1>Редактирование/Добавление заказчика</h1>
-            <div className="form">
-                <FormRow label="Организация">
-                    <InputTextField value={customerStore.newCustomer.organization}
-                                    changeHandler={customerStore.handleChange}
-                                    name="organization"
-                                    type="text"/>
-                </FormRow>
-
-                <FormRow label="Контактное лицо">
-                    <InputTextField value={customerStore.newCustomer.contactFace}
-                                    changeHandler={customerStore.handleChange}
-                                    name="contactFace"
-                                    type="text"/>
-                </FormRow>
-
-                <FormRow label="Номер телефона">
-                    <InputTextField value={customerStore.newCustomer.phone}
-                                    changeHandler={customerStore.handleChange}
-                                    name="phone"
-                                    type="text"/>
-                </FormRow>
-
-                <FormRow label="Email">
-                    <InputTextField value={customerStore.newCustomer.email}
-                                    changeHandler={customerStore.handleChange}
-                                    name="email"
-                                    type="text"/>
-                </FormRow>
-
-                <FormRow label="Описание">
-                    <TextAreaField value={customerStore.newCustomer.description}
-                                   changeHandler={customerStore.handleChange}
-                                   name="description"
-                                   type="text"/>
-                </FormRow>
-
-                <FormRow label="Напоминание">
-                    <InputCheckboxField value={customerStore.newCustomer.reminder}
-                                        changeHandler={customerStore.handleChangeCheckbox}
-                                        name="reminder"/>
-                </FormRow>
-
-                <FormRow label="Дата напоминания">
-                    <DateField startDate={startDate}
-                               setStartDate={setStartDate}/>
-                </FormRow>
-
-                <div className="actionBar">
-                    <button onClick={save}>save</button>
-                    <button onClick={() => exit()}>Back</button>
-                </div>
-            </div>
+            <Form fieldList={fieldList}
+                  actionList={actionList}/>
 
         </div>
     );

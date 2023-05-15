@@ -1,0 +1,15 @@
+@import "src/parameters";
+@import "src/mixins";
+@import "src/font";
+
+.feedbackMessage {
+    position: absolute;
+    bottom: -24px;
+
+    @include interLight();
+    font-size: $font-size-small;
+
+    .errorMessage {
+        color: $color-red;
+    }
+}

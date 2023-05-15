@@ -1,0 +1,16 @@
+@import "../../parameters";
+@import "../../font";
+@import "../../mixins";
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    .actionBar {
+        margin-top: 25px;
+
+        .button {
+            width: 100%;
+        }
+    }
+}

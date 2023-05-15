@@ -4,20 +4,27 @@ import "./Label.scss";
 /**
  * Компонент Label
  */
-type ILabelProps = {
+interface ILabel {
 
     /**
      * Текст
      */
-    text: string
+    text: string,
+
+    /**
+     * Привязка к полю
+     */
+    htmlFor?: string
 }
 
-const Label: FC<ILabelProps> = (
+const Label: FC<ILabel> = (
     {
-        text
+        text,
+        htmlFor
     }) => {
+
     return (
-        <label className="label">
+        <label className="label" htmlFor={htmlFor}>
             {text}
         </label>
     )

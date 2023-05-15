@@ -2,6 +2,22 @@ import {makeAutoObservable, runInAction} from "mobx";
 import React from "react";
 
 /**
+ * Тип ошибки к полю
+ */
+export type FieldError = {
+
+    /**
+     * Имя поля
+     */
+    field: string,
+
+    /**
+     * Текстовое сообщение
+     */
+    message: string
+}
+
+/**
  * Store для работы с Auth
  */
 export class AuthStore {
@@ -9,6 +25,7 @@ export class AuthStore {
     public password: string = '';
     private loginApp: string = '1';
     private passwordApp: string = '1';
+    public errorList: FieldError[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -24,8 +41,7 @@ export class AuthStore {
         runInAction(() => {
             this.login = e.target.value
         })
-        console.log(this.login)
-    }
+    };
 
     /**
      * Метод установки пароля
@@ -35,24 +51,25 @@ export class AuthStore {
         runInAction(() => {
             this.password = e.target.value
         })
-        console.log(this.password)
-    }
+    };
 
     /**
      * Метод аутентификации
-     * return boolean
      */
-    public auth(): boolean {
-        let result: boolean = false;
-        if (this.login === this.loginApp) {
-            if (this.password === this.passwordApp) {
-                result = true
-            } else {
-                console.log('pasw')
-            }
+    public auth() {
+        runInAction(() => {
+            this.errorList = [];
+        })
+        if (this.login !== this.loginApp) {
+            runInAction(() => {
+                this.errorList.push({field: 'login', message: 'Неверный логин'})
+            })
         } else {
-            console.log('login')
+            if (this.password !== this.passwordApp) {
+                runInAction(() => {
+                    this.errorList.push({field: 'password', message: 'Неверный пароль'})
+                })
+            }
         }
-        return result
     }
 }
