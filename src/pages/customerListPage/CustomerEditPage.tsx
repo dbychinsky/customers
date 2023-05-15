@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
-import InputTextField from "../component/inputField/InputField";
-import InputCheckboxField from "../component/checkboxField/CheckboxField";
-import DateField from "../component/dateField/DateField";
-import {StoreContext} from "../App";
+import InputTextField from "../../component/inputField/InputField";
+import InputCheckboxField from "../../component/checkboxField/CheckboxField";
+import DateField from "../../component/dateField/DateField";
+import {StoreContext} from "../../App";
 import {useNavigate, useParams} from "react-router";
 import {observer} from "mobx-react";
-import TextAreaField from "../component/textAreaField/TextAreaField";
-import {Conversation} from "../utility/Conversation";
-import Form, {ActionListType, Field} from "../component/form/Form";
+import TextAreaField from "../../component/textAreaField/TextAreaField";
+import {Conversation} from "../../utility/Conversation";
+import Form, {ActionListType, Field} from "../../component/form/Form";
 
 /**
  * Страница редактирования/добавления заказчика
@@ -29,6 +29,7 @@ const CustomerEditPage = observer(() => {
         } else {
             customerStore.setEditPlace();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     /**

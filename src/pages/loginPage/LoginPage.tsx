@@ -1,5 +1,4 @@
-import React, {useContext, useState} from 'react';
-import FormRow from "../../component/formRow/FormRow";
+import React, {useContext} from 'react';
 import InputTextField from "../../component/inputField/InputField";
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";

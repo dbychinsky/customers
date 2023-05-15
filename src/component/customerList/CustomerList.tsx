@@ -3,6 +3,7 @@ import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
 import Customer from "./customer/Customer";
 import {Button} from "../button/Button";
+import "./CustomerList.scss";
 
 
 /**
@@ -17,6 +18,7 @@ const CustomerList = observer(() => {
      */
     useEffect(() => {
         customerStore.get();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {

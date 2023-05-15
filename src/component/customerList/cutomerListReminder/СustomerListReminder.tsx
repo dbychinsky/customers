@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {StoreContext} from "../../../App";
 import {Conversation} from "../../../utility/Conversation";
 import {observer} from "mobx-react";
+import "./CustomerListReminder.scss";
 
 const CustomerListReminder = observer(() => {
 
