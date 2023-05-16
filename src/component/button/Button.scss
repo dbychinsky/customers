@@ -2,6 +2,16 @@
 @import "src/mixins";
 @import "src/font";
 
+@mixin imgBtn($img) {
+    box-sizing: border-box;
+    padding: 20px;
+    background: none;
+    background: $img center center no-repeat;
+
+    border: none;
+    font-size: 0;
+}
+
 .button {
     border-radius: $border-radius-main;
     border: 1px solid $color-green;
@@ -21,5 +31,19 @@
         border: 1px solid $color-green;
         background: $color-green;
         color: $color-white;
+    }
+
+    &.imgBtn {
+        &.edit {
+            @include imgBtn(url("../../../public/img/icons/iconEdit.svg"));
+        }
+
+        &.delete {
+            @include imgBtn(url("../../../public/img/icons/iconDelete.svg"));
+        }
+
+        &:hover {
+            box-shadow: none;
+        }
     }
 }

@@ -84,11 +84,11 @@ const CustomerEditPage = observer(() => {
         },
         {
             name: "Email",
-            label: "Номер телефона",
+            label: "Email",
             field: <InputTextField
                 value={customerStore.newCustomer.email}
                 changeHandler={customerStore.handleChange}
-                name="Email"
+                name="email"
                 type="text"/>
         },
         {

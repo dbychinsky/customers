@@ -1,40 +1,82 @@
 @import "src/parameters";
+@import "src/font";
 
 .customer {
     display: flex;
     flex-direction: row;
+    align-items: baseline;
 
     width: 100%;
 
-    .organization {
-        width: 15%;
+    .companyName {
+        width: 20%;
+        font-size: $font-size-smaller;
+
+        padding-right: 10px;
+
+        .organization {
+            width: 100%;
+            @include interSemiBold();
+            margin-bottom: 5px;
+
+            max-height: 34px;
+            overflow: hidden;
+        }
+
+        .contactFace {
+            width: 100%;
+            max-height: 34px;
+            overflow: hidden;
+        }
     }
 
-    .organization {
-        width: 15%;
+    .contact {
+        width: 17%;
+        font-size: $font-size-smaller;
+        padding-right: 10px;
+
+        .phone {
+            width: 100%;
+            @include interSemiBold();
+            margin-bottom: 5px;
+
+            max-height: 34px;
+            overflow: hidden;
+        }
+
+        .email {
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
 
-    .organization {
-        width: 15%;
+    .description {
+        width: 30%;
+        white-space: break-spaces;
+        margin: 0;
+        padding-right: 10px;
+        max-height: 76px;
+        overflow: hidden;
+
+        font-size: $font-size-smaller;
+        @include interRegular();
     }
 
-    .organization {
-        width: 15%;
+    .rem {
+        width: 20%;
+        padding-right: 10px;
+        .reminder {
+            width: 15%;
+        }
+
+        .reminderDate {
+            width: 15%;
+        }
     }
 
-    .organization {
-        width: 15%;
-    }
-
-    .organization {
-        width: 15%;
-    }
-
-    .organization {
-        width: 15%;
-    }
-
-    .organization {
-        width: 15%;
+    .actionBar {
+        width: 13%;
     }
 }

@@ -58,15 +58,23 @@ const Customer = observer(() => {
                      reminderDate
                  }) => (
                     <div key={id} className="customer">
-                        <div className="organization">{organization}</div>
-                        <div className="contactFace">{contactFace}</div>
-                        <div className="phone">{phone}</div>
-                        <div className="email">{email}</div>
+                        <div className="companyName">
+                            <div className="organization">{organization}</div>
+                            <div className="contactFace">{contactFace}</div>
+                        </div>
+                        <div className="contact">
+                            <div className="phone">{phone}</div>
+                            <div className="email">{email}</div>
+                        </div>
                         <pre className="description">{description}</pre>
-                        <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
-                        <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
+                        <div className="rem">
+                            <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
+                            <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
+                        </div>
                         <div className="actionBar">
-                            <Button onClick={() => remove(id, organization)} text="Удалить"/>
+                            <Button onClick={() => remove(id, organization)}
+                                    text="Удалить"
+                                    classname="imgBtn delete"/>
                             <Button onClick={() => update(id)}
                                     text="Редактировать"
                                     classname={'imgBtn edit'}

@@ -2,13 +2,14 @@
   "customerList": [
     {
       "id": 1,
-      "organization": "1",
-      "contactFace": "1",
-      "phone": "1",
-      "email": "1",
-      "description": "1",
-      "reminder": true,
-      "reminderDate": "2023-05-15T07:02:03.184Z"
+      "organization": "ОАО \"Минский автомобильный завод\" ОАО \"Минский автомобильный завод\"",
+      "contactFace": "ИВАНКОВИЧ ВАЛЕРИЙ ВАЛЕРЬЕВИЧ ИВАНКОВИЧ ВАЛЕРИЙ ВАЛЕРЬЕВИЧ",
+      "phone": "+375 (17) 217 96 00, +375 (17) 217 96 00, +375 (17) 217 96 00",
+      "email": "codsdsdasdasdasmdir@maz.by",
+      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - коммерческий директор\n1) 1\n2) 2 das asdas d asd asdasdasdasdsdasd3333333333333333333333333333333333333",
+      "reminder": false,
+      "reminderDate": "2024-05-15T07:00:00.000Z",
+      "Email": "comdir@maz.by"
     },
     {
       "id": 2,
