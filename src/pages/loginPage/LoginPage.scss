@@ -1,13 +1,16 @@
 @import "src/parameters";
+@import "src/mixins";
 
 .loginPage {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
 
+    height: 100vh;
+    width: 100%;
+    background: $color-white-light url("../../../public/bg-body.png") left top no-repeat;
+    background-size: cover;
 
     .titleLoginPage {
         width: 70%;
@@ -16,9 +19,6 @@
 
         display: flex;
         align-items: center;
-
-
-        background: $color-white-light;
 
         h1 {
             font-size: $font-size-title;
@@ -31,10 +31,27 @@
             span {
                 color: $color-green;
 
-                &:nth-child(1), &:nth-child(3) {
+                &:nth-child(1) {
                     font-size: calc($font-size-title / 12);
                     color: $color-black;
                 }
+                &:nth-child(2) {
+                    margin: -7px 0 -14px;
+                    span {
+                        font-size: calc($font-size-title / 20);
+                        color: $color-black;
+                    }
+                }
+                //&:nth-child(1) {
+                //    font-size: calc($font-size-title / 12);
+                //    color: $color-black;
+                //}
+                //
+                //&:nth-child(3) {
+                //
+                //    font-size: calc($font-size-title / 12);
+                //    color: $color-black;
+                //}
             }
         }
     }
@@ -43,7 +60,7 @@
         box-sizing: border-box;
         padding: 0 10px;
         width: 30%;
-
+        background: $color-white;
 
         display: flex;
         align-items: center;

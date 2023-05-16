@@ -83,7 +83,7 @@ const CustomerEditPage = observer(() => {
                 type="text"/>
         },
         {
-            name: "Email",
+            name: "email",
             label: "Email",
             field: <InputTextField
                 value={customerStore.newCustomer.email}

@@ -3,6 +3,7 @@ import {RouterPathList} from "./RouterPathList";
 import CustomerListPage from "../pages/customerListPage/CustomerListPage";
 import CustomerEditPage from "../pages/customerListPage/CustomerEditPage";
 import LoginPage from "../pages/loginPage/LoginPage";
+import CustomerListReminderPage from "../pages/customerListReminderPage/CustomerListReminderPage";
 
 /**
  * Роутинг приложения
@@ -17,6 +18,8 @@ export const RoutersProject = () => {
                 <Route path={RouterPathList.CUSTOMER_EDIT_PAGE} element={<CustomerEditPage/>}/>
                 <Route path={RouterPathList.CUSTOMER_EDIT_ID_PAGE} element={<CustomerEditPage/>}/>
             </Route>
+
+            <Route path={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE} element={<CustomerListReminderPage/>}/>
 
         </Routes>
     );

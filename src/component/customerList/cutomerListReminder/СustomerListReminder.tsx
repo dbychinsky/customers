@@ -4,8 +4,7 @@ import {Conversation} from "../../../utility/Conversation";
 import {observer} from "mobx-react";
 import "./CustomerListReminder.scss";
 import {useNavigate} from "react-router";
-import {Link} from "react-router-dom";
-import {RouterPathList} from "../../../router/RouterPathList";
+import H2 from "../../header/H2";
 
 const CustomerListReminder = observer(() => {
 
@@ -22,7 +21,7 @@ const CustomerListReminder = observer(() => {
 
     return (
         <div className="customerListReminder">
-            <h2>Список элементов нотификации</h2>
+            <H2 text="Список элементов нотификации"/>
             {customerStore.customerListNotificationActive.map(
                 ({
                      id,
@@ -33,8 +32,6 @@ const CustomerListReminder = observer(() => {
                      reminder,
                      reminderDate
                  }) => (
-
-
                     <div key={id} className="customer" onClick={() => update(id)}>
                         <div className="organization">{organization}</div>
                         <div className="contactFace">{contactFace}</div>

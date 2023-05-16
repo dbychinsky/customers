@@ -1,3 +1,10 @@
 @import "parameters";
 @import "font";
 
+@mixin setPage() {
+    height: 100%;
+    max-width: $max-width-page;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 30px 10px 0;
+}

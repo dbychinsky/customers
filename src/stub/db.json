@@ -2,24 +2,141 @@
   "customerList": [
     {
       "id": 1,
-      "organization": "ОАО \"Минский автомобильный завод\" ОАО \"Минский автомобильный завод\"",
-      "contactFace": "ИВАНКОВИЧ ВАЛЕРИЙ ВАЛЕРЬЕВИЧ ИВАНКОВИЧ ВАЛЕРИЙ ВАЛЕРЬЕВИЧ",
-      "phone": "+375 (17) 217 96 00, +375 (17) 217 96 00, +375 (17) 217 96 00",
-      "email": "codsdsdasdasdasmdir@maz.by",
-      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - коммерческий директор\n1) 1\n2) 2 das asdas d asd asdasdasdasdsdasd3333333333333333333333333333333333333",
-      "reminder": false,
-      "reminderDate": "2024-05-15T07:00:00.000Z",
-      "Email": "comdir@maz.by"
+      "organization": "1",
+      "contactFace": "1",
+      "phone": "1",
+      "email": "1",
+      "description": "1",
+      "reminder": true,
+      "reminderDate": "2023-05-21T06:36:02.000Z",
+      "activeReminder": false
     },
     {
       "id": 2,
+      "organization": "2",
+      "contactFace": "2",
+      "phone": "2",
+      "email": "2",
+      "description": "",
+      "reminder": true,
+      "reminderDate": "2023-05-21T06:36:16.000Z",
+      "activeReminder": false
+    },
+    {
+      "id": 3,
       "organization": "3",
       "contactFace": "3",
       "phone": "3",
       "email": "3",
       "description": "3",
       "reminder": false,
-      "reminderDate": "2023-05-02T04:15:00.000Z"
+      "reminderDate": "2023-05-16T06:00:00.866Z",
+      "activeReminder": true
+    },
+    {
+      "id": 4,
+      "organization": "4",
+      "contactFace": "4",
+      "phone": "4",
+      "email": "4",
+      "description": "4",
+      "reminder": true,
+      "reminderDate": "2023-05-16T05:45:00.305Z",
+      "activeReminder": false
+    },
+    {
+      "id": 5,
+      "organization": "5",
+      "contactFace": "5",
+      "phone": "5",
+      "email": "5",
+      "description": "5",
+      "reminder": true,
+      "reminderDate": "2023-05-17T09:15:00.000Z",
+      "activeReminder": false
+    },
+    {
+      "id": 6,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
+    }
+  ,
+    {
+      "id": 7,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
+    }
+  ,
+    {
+      "id": 8,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
+    }
+  ,
+    {
+      "id": 9,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
+    }
+  ,
+    {
+      "id": 10,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
+    }
+  ,
+    {
+      "id": 11,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
+    }
+  ,
+    {
+      "id": 12,
+      "organization": "not",
+      "contactFace": "6",
+      "phone": "6",
+      "email": "6",
+      "description": "6",
+      "reminder": false,
+      "reminderDate": "2023-05-16T06:37:07.738Z",
+      "activeReminder": false
     }
   ]
 }

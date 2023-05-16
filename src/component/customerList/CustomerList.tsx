@@ -4,6 +4,9 @@ import {observer} from "mobx-react";
 import Customer from "./customer/Customer";
 import {Button} from "../button/Button";
 import "./CustomerList.scss";
+import H2 from "../header/H2";
+import {useNavigate} from "react-router";
+import {RouterPathList} from "../../router/RouterPathList";
 
 
 /**
@@ -12,6 +15,7 @@ import "./CustomerList.scss";
 const CustomerList = observer(() => {
 
     const customerStore = useContext(StoreContext).customerStore;
+    const navigate = useNavigate();
 
     /**
      * Получаем список заказчиков
@@ -23,11 +27,22 @@ const CustomerList = observer(() => {
 
     useEffect(() => {
         // customerStore.start();
-    }, [])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+
+    /**
+     * Добавить заказчика
+     */
+    const addCustomer = () => {
+        navigate(RouterPathList.CUSTOMER_EDIT_PAGE)
+    }
 
     return (
         <div className="customerList">
-            <h2>Список заказчиков</h2>
+            <H2 text="Список заказчиков"/>
+            <Button onClick={addCustomer} text="add"/>
+            <div className="search"></div>
             <Customer/>
             <Button onClick={() => customerStore.startTemp()} text="start temp"/>
         </div>

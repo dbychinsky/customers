@@ -1,0 +1,39 @@
+@import "src/parameters";
+@import "src/mixins";
+@import "src/font";
+
+.authPlace {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        font-size: $font-size-small;
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+
+            border-radius: 50%;
+            background: url("./../../../public/img/avatar.jpg") no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    a {
+        margin-left: 4px;
+        display: block;
+        width: 44px;
+        height: 31px;
+
+        font-size: 0;
+        background: url("./../../../public/img/icons/exit.svg") no-repeat;
+        background-size: 33px;
+    }
+}

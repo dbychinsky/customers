@@ -3,12 +3,5 @@
 @import "src/font";
 
 .customerListPage {
-    width: 100%;
-
-    .customerListWrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: stretch;
-    }
+    @include setPage();
 }

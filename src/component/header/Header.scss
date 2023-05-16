@@ -1,0 +1,46 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    background-color: $color-white-light;
+    transition: all ease 200ms;
+
+    .logOut & {
+        display: none;
+    }
+
+    .scroll & {
+        box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
+        border-radius: 0 0 $border-radius-main $border-radius-main;
+
+    }
+
+    .logotype {
+        box-sizing: border-box;
+        padding: 18px 30px 18px 0;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        span {
+            font-size: $font-size-small;
+
+            &:first-child {
+
+            }
+
+            &:last-child {
+                @include interSemiBold();
+                color: $color-green;
+            }
+        }
+    }
+}

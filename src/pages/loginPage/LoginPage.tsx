@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import InputTextField from "../../component/inputField/InputField";
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
@@ -23,6 +23,10 @@ const LoginPage = observer(() => {
             console.log('Ошибка авторизации')
         }
     };
+
+    useEffect(() => {
+        authStore.clearFields();
+    }, [authStore.isAuth])
 
     /**
      * Список полей
@@ -67,11 +71,18 @@ const LoginPage = observer(() => {
             <div className="titleLoginPage">
                 <h1>
                     <span>Customer</span>
+                    <span>care  <span>&</span></span>
                     <span>Service</span>
-                    <span>Customer</span>
-                    <span>care</span>
                 </h1>
             </div>
+            {/*<div className="titleLoginPage">*/}
+            {/*    <h1>*/}
+            {/*        <span>Customer</span>*/}
+            {/*        <span>Service</span>*/}
+            {/*        <span>Customer</span>*/}
+            {/*        <span>Care</span>*/}
+            {/*    </h1>*/}
+            {/*</div>*/}
             <div className="contentLoginPage">
                 <Form fieldList={fieldList}
                       actionList={actionList}/>

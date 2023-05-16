@@ -98,54 +98,6 @@ export class CustomerStore {
     }
 
     /**
-     * Нотификация.
-     * Проверяем каждый элемент списка на наличие флага "reminder". Если флаг true
-     * проверяем дату: если текущая дата больше даты из записи - проверяем есть ли
-     * этот элемент в списке (notificationList) активных нотификаций - если нет показываем
-     * нотификацию.
-     */
-    public start() {
-        setInterval(() => {
-            const timeNow = new Date();
-            this.customerList.forEach((customer: Customer) => {
-                let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
-
-                if (customer.reminder && elemDate < timeNow) {
-
-                    if (!this.isHasIdCustomer(customer.id)) {
-
-                        PushNotification.pushNotify(customer.organization);
-                        runInAction(() => {
-                            this.customerListNotificationActive.push(customer);
-                        })
-                    }
-
-
-                }
-            })
-        }, 7000)
-    }
-
-    public startTemp() {
-        const timeNow = new Date();
-        this.customerList.forEach((customer: Customer) => {
-            let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
-
-            if (customer.reminder && elemDate < timeNow) {
-
-                if (!this.isHasIdCustomer(customer.id)) {
-
-                    PushNotification.pushNotify(customer.organization);
-                    runInAction(() => {
-                        this.customerListNotificationActive.push(customer);
-                    })
-                }
-
-            }
-        })
-    }
-
-    /**
      * Проверка на наличие id элемента в списке нотификаций
      * @param customerId
      * @private
@@ -196,5 +148,62 @@ export class CustomerStore {
         } else {
             return new Date();
         }
+    }
+
+
+    /**
+     * Нотификация.
+     * Проверяем каждый элемент списка на наличие флага "reminder". Если флаг true
+     * проверяем дату: если текущая дата больше даты из записи - проверяем есть ли
+     * этот элемент в списке (notificationList) активных нотификаций - если нет показываем
+     * нотификацию.
+     */
+    public start() {
+        setInterval(() => {
+            const timeNow = new Date();
+            this.customerList.forEach((customer: Customer) => {
+                let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
+
+                if (customer.reminder && elemDate < timeNow) {
+
+                    if (!this.isHasIdCustomer(customer.id)) {
+
+                        PushNotification.pushNotify(customer.organization);
+                        runInAction(() => {
+                            this.customerListNotificationActive.push(customer);
+                        })
+                    }
+
+
+                }
+            })
+        }, 7000)
+    }
+
+    public startTemp() {
+        const timeNow = new Date();
+        this.customerList.forEach((customer: Customer) => {
+            let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
+            if (customer.reminder && elemDate < timeNow) {
+                if (!this.isHasIdCustomer(customer.id)) {
+                    PushNotification.pushNotify(customer.organization);
+                    runInAction(() => {
+                        customer.activeReminder = true;
+                    });
+                    runInAction(() => {
+                        this.customerListNotificationActive.push(customer);
+                    })
+
+
+                }
+
+            }
+        })
+        runInAction(() => {
+                this.customerList = this.customerList.sort((elem1: any, elem2: any) =>
+                    elem2.activeReminder - elem1.activeReminder);
+
+            }
+        )
     }
 }

@@ -55,9 +55,10 @@ const Customer = observer(() => {
                      email,
                      description,
                      reminder,
-                     reminderDate
+                     reminderDate,
+                     activeReminder
                  }) => (
-                    <div key={id} className="customer">
+                    <div key={id} className={`customer ${activeReminder ? 'activeReminder' : ''}`}>
                         <div className="companyName">
                             <div className="organization">{organization}</div>
                             <div className="contactFace">{contactFace}</div>

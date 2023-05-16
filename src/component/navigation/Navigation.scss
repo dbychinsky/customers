@@ -1,0 +1,30 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0 100px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+    li {
+        a {
+            display: block;
+            box-sizing: border-box;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: $color-grey;
+
+            @include interLight;
+
+            &.active {
+                color: $color-green;
+                @include interSemiBold();
+            }
+        }
+    }
+
+}

@@ -43,6 +43,11 @@ export class Customer {
      */
     reminderDate: Date;
 
+    /**
+     * Дата и время напоминания
+     */
+    activeReminder: boolean;
+
     constructor() {
         this.id = 0;
         this.organization = '';
@@ -52,5 +57,6 @@ export class Customer {
         this.description = '';
         this.reminder = false;
         this.reminderDate = new Date();
+        this.activeReminder = false;
     }
 }

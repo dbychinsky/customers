@@ -1,5 +1,24 @@
+@import "src/parameters";
+@import "src/mixins";
+@import "src/font";
+
 .customerList {
-    width: 50%;
-    box-sizing: border-box;
-    padding: 0 10px;
+    box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background: $color-white;
+
+    .search {
+        width: 100%;
+        max-width: $max-width-page;
+        height: 50px;
+        background: $color-white;
+        z-index: 1;
+        .scroll & {
+            position: fixed;
+            top: 69px;
+            box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
+            border-radius: 0 0 $border-radius-main $border-radius-main;
+        }
+    }
 }
