@@ -1,0 +1,26 @@
+@import "../../parameters";
+@import "../../mixins";
+@import "../../font";
+
+.dashboard {
+    @include pageParameters();
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .customerList {
+        width: 90%;
+    }
+
+    //.currency {
+    //    width: 18%;
+    //    margin-left: 20px;
+    //
+    //    .scroll & {
+    //        position: sticky;
+    //        top: 103px;
+    //    }
+    //}
+
+}

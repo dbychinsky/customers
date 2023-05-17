@@ -63,6 +63,13 @@ export class CustomerStore {
         runInAction(() => {
             this.customerList = customers;
         });
+
+        runInAction(() => {
+                this.customerList = this.customerList.sort((elem1: any, elem2: any) =>
+                    elem2.activeReminder - elem1.activeReminder);
+
+            }
+        )
     }
 
     /**

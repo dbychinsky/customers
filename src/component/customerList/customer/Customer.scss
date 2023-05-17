@@ -1,82 +1,66 @@
 @import "src/parameters";
+@import "src/mixins";
 @import "src/font";
 
 .customer {
+    @include customerListTable();
+
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: flex-start;
+    position: relative;
 
     width: 100%;
 
-    .companyName {
-        width: 20%;
+    box-sizing: border-box;
+    padding: 10px 0 10px 10px;
+
+    border-right: 20px solid transparent;
+    border-bottom: 1px $color-grey-light dashed;
+
+    > div, > pre {
+        box-sizing: border-box;
+        padding: 0 10px;
         font-size: $font-size-smaller;
-
-        padding-right: 10px;
-
-        .organization {
-            width: 100%;
-            @include interSemiBold();
-            margin-bottom: 5px;
-
-            max-height: 34px;
-            overflow: hidden;
-        }
-
-        .contactFace {
-            width: 100%;
-            max-height: 34px;
-            overflow: hidden;
-        }
     }
 
-    .contact {
-        width: 17%;
-        font-size: $font-size-smaller;
-        padding-right: 10px;
+    .organization {
 
-        .phone {
-            width: 100%;
-            @include interSemiBold();
-            margin-bottom: 5px;
+    }
 
-            max-height: 34px;
-            overflow: hidden;
-        }
+    .contactFace {
 
-        .email {
-            width: 100%;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
+    }
+
+    .phone {
+
+    }
+
+    .email {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     .description {
-        width: 30%;
         white-space: break-spaces;
-        margin: 0;
-        padding-right: 10px;
-        max-height: 76px;
-        overflow: hidden;
-
-        font-size: $font-size-smaller;
-        @include interRegular();
     }
 
-    .rem {
-        width: 20%;
-        padding-right: 10px;
-        .reminder {
-            width: 15%;
-        }
+    .reminder {
 
-        .reminderDate {
-            width: 15%;
-        }
     }
 
-    .actionBar {
-        width: 13%;
+    .reminderDate {
+
+    }
+
+
+    .feedbackMessage {
+        position: initial;
+        margin: 20px;
+    }
+
+    &.activeReminder {
+        border-right: 20px solid $color-red;
     }
 }

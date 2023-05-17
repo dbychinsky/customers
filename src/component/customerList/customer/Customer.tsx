@@ -7,6 +7,7 @@ import {Button} from "../../button/Button";
 import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {useNavigate} from "react-router";
+import FeedbackMessage from "../../feedbackMessage/FeedbackMessage";
 
 /**
  * Заказчик
@@ -59,28 +60,27 @@ const Customer = observer(() => {
                      activeReminder
                  }) => (
                     <div key={id} className={`customer ${activeReminder ? 'activeReminder' : ''}`}>
-                        <div className="companyName">
-                            <div className="organization">{organization}</div>
-                            <div className="contactFace">{contactFace}</div>
-                        </div>
-                        <div className="contact">
-                            <div className="phone">{phone}</div>
-                            <div className="email">{email}</div>
-                        </div>
-                        <pre className="description">{description}</pre>
-                        <div className="rem">
-                            <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
-                            <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
-                        </div>
-                        <div className="actionBar">
-                            <Button onClick={() => remove(id, organization)}
-                                    text="Удалить"
-                                    classname="imgBtn delete"/>
-                            <Button onClick={() => update(id)}
-                                    text="Редактировать"
-                                    classname={'imgBtn edit'}
-                                    title="Редактировать"/>
-                        </div>
+                        {id
+                            ? <>
+                                <div className="organization">{organization}</div>
+                                <div className="contactFace">{contactFace}</div>
+                                <div className="phone">{phone}</div>
+                                <div className="email">{email}</div>
+                                <pre className="description">{description}</pre>
+                                <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
+                                <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
+
+                                <div className="actionBar">
+                                    <Button onClick={() => remove(id, organization)}
+                                            text="Удалить"
+                                            classname="imgBtn delete"/>
+                                    <Button onClick={() => update(id)}
+                                            text="Редактировать"
+                                            classname={'imgBtn edit'}
+                                            title="Редактировать"/>
+                                </div>
+                            </>
+                            : <FeedbackMessage message="Отсутствуют данные либо подключение к серверу"/>}
                     </div>
                 ))}
         </>

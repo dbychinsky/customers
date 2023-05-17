@@ -8,7 +8,7 @@ interface Ih2 {
 
 const H2 = ({text, className}: Ih2) => {
     return (
-        <h2 className={`h2 ${className ? className : ''}`}>
+        <h2 className={`header2 ${className ? className : ''}`}>
             {text}
         </h2>
     );

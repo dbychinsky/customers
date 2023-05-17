@@ -20,32 +20,9 @@ body {
 .application {
     @include interRegular();
     color: $color-black;
-    background: $color-white-light;
 
     .appWrapperAuth {
         display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-
-        .header {
-            height: $header-height;
-            max-width: ($max-width-page + 20px);
-            padding: 0 10px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .content {
-            box-sizing: border-box;
-            flex-grow: 1;
-            max-width: $max-width-page;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .footer {
-            height: $footer-height;
-            flex-shrink: 0;
-        }
+        flex-direction: row;
     }
 }

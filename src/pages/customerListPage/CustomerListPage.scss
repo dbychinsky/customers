@@ -1,7 +1,0 @@
-@import "src/parameters";
-@import "src/mixins";
-@import "src/font";
-
-.customerListPage {
-    @include setPage();
-}

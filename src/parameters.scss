@@ -1,18 +1,22 @@
 //Цвета
-$color-white-dark: #DFE5EF;
-$color-white-light: #f3f4f6;
 $color-white: #ffffff;
+$color-white-light: #f3f4f6;
 $color-black: #2A3547;
 $color-grey: #6d7080;
-$color-green: #4BAF47;
+$color-grey-light: #e5eaef;
+$color-green: #00af32;
+$color-green-light: #00fa47;
+$color-blue: #1131fa;
+$color-blue-light: #0095fb;
+$color-blue-light2: #e6f2ff;
 $color-red: #ef4444;
 $color-red-light: #ffcccc;
 //Тень
 
 //Размер шрифта
 
-$font-size-the-smallest: 1em;
-$font-size-smallest: 1em;
+$font-size-the-smallest: 0.625em;
+$font-size-smallest: 0.6875em;
 $font-size-smaller: 0.812em;
 $font-size-small: 0.875em;
 $font-size-normal: 1em;
@@ -23,8 +27,9 @@ $font-size-title: 6em;
 
 //Граница
 $border-radius-main: 7px;
+$border-radius-main-small: 3px;
 
 //Размеры
-$header-height: 70px;
-$footer-height: 100px;
-$max-width-page: 1600px;
+$width-menu: 240px;
+
+//1560px

@@ -1,0 +1,9 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.currency {
+    @include tileParameters();
+
+
+}

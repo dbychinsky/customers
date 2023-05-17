@@ -3,28 +3,101 @@
 @import "src/mixins";
 
 .navigation {
-    list-style: none;
-    padding: 0;
-    margin: 0 100px 0 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
+    border-right: 1px solid $color-grey-light;
 
-    li {
-        a {
-            display: block;
-            box-sizing: border-box;
-            padding: 25px 20px;
-            text-decoration: none;
-            color: $color-grey;
+    width: $width-menu;
 
-            @include interLight;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 
-            &.active {
-                color: $color-green;
+    .logOut & {
+        display: none;
+    }
+
+    .logotype {
+        box-sizing: border-box;
+        padding: 20px 0 70px 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        span {
+
+
+            &:first-child {
+
+            }
+
+            &:last-child {
                 @include interSemiBold();
+                color: $color-green;
             }
         }
     }
 
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+
+
+        li {
+            box-sizing: border-box;
+            padding: 0 20px;
+            margin-bottom: 2px;
+
+            @mixin action($img, $imgHover) {
+
+                display: block;
+                box-sizing: border-box;
+                padding: 12px 46px;
+                text-decoration: none;
+                color: $color-grey;
+                border-radius: $border-radius-main;
+                position: relative;
+                @include interLight;
+
+                &:before {
+                    content: $img;
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                }
+
+                &.active, &:hover {
+                    color: $color-white;
+                    //@include interSemiBold();
+                    background-color: $color-blue-light;
+
+                    &:before {
+                        content: $imgHover;
+                    }
+                }
+            }
+
+            .actionCustomerListPage {
+                @include action(url("./../../../public/img/icons/user.svg"),
+                    url("./../../../public/img/icons/userHover.svg"));
+
+            }
+
+            .actionCustomerListReminderPage {
+                @include action(url("./../../../public/img/icons/notification.svg"),
+                    url("./../../../public/img/icons/notifiactionHover.svg"));
+                &::before{
+                    width: 24px;
+                }
+            }
+
+            .settingPage {
+                @include action(url("./../../../public/img/icons/setting.svg"),
+                    url("./../../../public/img/icons/settingHover.svg"));
+            }
+        }
+    }
 }

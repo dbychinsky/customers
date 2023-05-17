@@ -5,29 +5,35 @@ import "./Navigation.scss";
 
 const Navigation = () => {
     return (
-        <ul className="navigation">
-            <li>
-                <NavLink to={RouterPathList.CUSTOMER_LIST_PAGE}
-                         className="actionCustomerListPage"
-                         title="CUSTOMER_LIST_PAGE">
-                    Заказчики
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE}
-                         className="actionCustomerListReminderPage"
-                         title="CUSTOMER_LIST_REMINDER_PAGE">
-                    Нотификации
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE}
-                         className="actionCustomerListReminderPage"
-                         title="CUSTOMER_LIST_REMINDER_PAGE">
-                    Настройки
-                </NavLink>
-            </li>
-        </ul>
+        <div className="navigation">
+            <div className="logotype">
+                <span>Customer</span>
+                <span>Care & Service</span>
+            </div>
+            <ul>
+                <li>
+                    <NavLink to={RouterPathList.CUSTOMER_LIST_PAGE}
+                             className="actionCustomerListPage"
+                             title="CUSTOMER_LIST_PAGE">
+                        Заказчики
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE}
+                             className="actionCustomerListReminderPage"
+                             title="CUSTOMER_LIST_REMINDER_PAGE">
+                        Нотификации
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to={RouterPathList.CUSTOMER_EDIT_PAGE}
+                             className="settingPage"
+                             title="CUSTOMER_LIST_REMINDER_PAGE">
+                        Настройки
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
     );
 };
 

@@ -1,9 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react";
 import {StoreContext} from "../../App";
-import Header from "../header/Header";
 import {RoutersProject} from "../../router/RouterList";
-import Footer from "../footer/Footer";
 import Navigation from "../navigation/Navigation";
 
 const AppWrapperAuth = observer(() => {
@@ -36,11 +34,8 @@ const AppWrapperAuth = observer(() => {
 
     return (
         <div className={`appWrapperAuth ${authStore.isAuth ? 'logIn' : 'logOut'} ${isScrolling ? 'scroll' : ''}`}>
-            <Header/>
-            <div className="content">
-                <RoutersProject/>
-            </div>
-            <Footer/>
+            <Navigation/>
+            <RoutersProject/>
         </div>
     );
 });

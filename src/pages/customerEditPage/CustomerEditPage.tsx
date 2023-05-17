@@ -8,6 +8,7 @@ import {observer} from "mobx-react";
 import TextAreaField from "../../component/textAreaField/TextAreaField";
 import {Conversation} from "../../utility/Conversation";
 import Form, {ActionListType, Field} from "../../component/form/Form";
+import "./CustomerEditPage.scss";
 
 /**
  * Страница редактирования/добавления заказчика

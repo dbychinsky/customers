@@ -3,22 +3,65 @@
 @import "src/font";
 
 .customerList {
-    box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
-    background: $color-white;
+    @include tileParameters();
+
+    position: relative;
+
+
+    .headerList {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        padding: 10px;
+        border-bottom: 1px $color-grey-light dashed;
+
+        .header3 {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .addCustomer {
+            padding: 10px 20px;
+            font-size: $font-size-smaller;
+        }
+    }
+
 
     .search {
-        width: 100%;
-        max-width: $max-width-page;
-        height: 50px;
+        box-sizing: border-box;
+        padding: 10px;
         background: $color-white;
-        z-index: 1;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
         .scroll & {
-            position: fixed;
-            top: 69px;
-            box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
-            border-radius: 0 0 $border-radius-main $border-radius-main;
+            position: sticky;
+            top: 0;
+        }
+
+        @include customerListTable();
+    }
+
+    .formRow {
+        flex-direction: column-reverse;
+
+        .label {
+            text-transform: uppercase;
+            font-size: $font-size-smallest;
+            background-color: $color-white-light;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .inputTextField {
+            width: 100%;
+            padding: 6px 10px;
+            margin-bottom: 10px;
+            border-radius: $border-radius-main-small;
         }
     }
 }

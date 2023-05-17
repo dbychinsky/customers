@@ -1,10 +1,71 @@
 @import "parameters";
 @import "font";
 
-@mixin setPage() {
-    height: 100%;
-    max-width: $max-width-page;
+@mixin pageParameters() {
+    width: 100%;
     box-sizing: border-box;
-    margin: 0 auto;
-    padding: 30px 10px 0;
+    padding: 0 20px;
+    margin-left: $width-menu;
+}
+
+@mixin tileParameters() {
+    box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background: $color-white;
+}
+
+@mixin customerListTable {
+    .organization {
+        width: 16%;
+        margin: 0;
+    }
+
+    .contactFace {
+        width: 16%;
+        margin: 0;
+    }
+
+    .phone {
+        width: 16%;
+        margin: 0;
+    }
+
+    .email {
+        width: 12%;
+        margin: 0;
+    }
+
+    .description {
+        width: 30%;
+        margin: 0;
+
+        .inputTextField {
+            display: none;
+        }
+    }
+
+    .reminder {
+        width: 10%;
+        margin: 0;
+
+        .inputTextField {
+            display: none;
+        }
+    }
+
+    .reminderDate {
+        width: 10%;
+        margin: 0;
+
+        .inputTextField {
+            display: none;
+        }
+    }
+
+    .actionBar {
+        width: 10%;
+        margin: 0;
+        min-width: 104px;
+    }
 }

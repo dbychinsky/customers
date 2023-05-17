@@ -8,9 +8,9 @@ interface Ih3 {
 
 const H3 = ({text, className}: Ih3) => {
     return (
-        <h1 className={`h3 ${className ? className : ''}`}>
+        <h3 className={`header3 ${className ? className : ''}`}>
             {text}
-        </h1>
+        </h3>
     );
 };
 

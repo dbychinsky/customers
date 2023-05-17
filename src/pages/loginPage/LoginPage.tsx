@@ -26,7 +26,8 @@ const LoginPage = observer(() => {
 
     useEffect(() => {
         authStore.clearFields();
-    }, [authStore.isAuth])
+        authStore.clearSessionStorage();
+    }, [])
 
     /**
      * Список полей
