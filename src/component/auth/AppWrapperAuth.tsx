@@ -26,10 +26,12 @@ const AppWrapperAuth = observer(() => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
         authStore.checkAuth();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
