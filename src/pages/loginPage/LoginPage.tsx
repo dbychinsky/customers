@@ -27,6 +27,7 @@ const LoginPage = observer(() => {
     useEffect(() => {
         authStore.clearFields();
         authStore.clearSessionStorage();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     /**

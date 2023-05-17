@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "./Footer.scss";
 import {GetDate} from "../../utility/GetDate";
 
