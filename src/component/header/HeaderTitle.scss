@@ -3,16 +3,29 @@
 @import "src/mixins";
 
 .header1 {
+    box-sizing: border-box;
+    padding: 30px 20px;
+    font-size: $font-size-the-biggest;
+    background: $color-blue-light2 url("../../../public/bg-header.png") top right no-repeat;
+    background-size: 8%;
+
+    width: 100%;
+    margin: 0 0 40px 0;
+    border-radius: $border-radius-main;
+    @include interLight();
+}
+
+.header2 {
     margin: 0 0 20px 0;
     font-size: $font-size-biggest;
     @include interSemiBold();
 }
 
-.header2 {
+.header3 {
     margin: 0 0 20px 0;
 }
 
-.header3 {
+.header4 {
     margin: 0 0 20px 0;
     font-size: $font-size-normal;
     @include interSemiBold();

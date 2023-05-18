@@ -1,12 +1,12 @@
 import React from 'react';
 import "./HeaderTitle.scss";
 
-interface Ih1 {
+interface IH1 {
     text: string;
     className?: string;
 }
 
-const H1 = ({text, className}: Ih1) => {
+const H2 = ({text, className}: IH1) => {
     return (
         <h1 className={`header1 ${className ? className : ''}`}>
             {text}
@@ -14,4 +14,4 @@ const H1 = ({text, className}: Ih1) => {
     );
 };
 
-export default H1;
+export default H2;

@@ -1,12 +1,12 @@
 import React from 'react';
 import "./HeaderTitle.scss";
 
-interface Ih3 {
+interface IH3 {
     text: string;
     className?: string;
 }
 
-const H3 = ({text, className}: Ih3) => {
+const H3 = ({text, className}: IH3) => {
     return (
         <h3 className={`header3 ${className ? className : ''}`}>
             {text}

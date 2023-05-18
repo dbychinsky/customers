@@ -8,7 +8,7 @@ import {useNavigate} from "react-router";
 import {RouterPathList} from "../../router/RouterPathList";
 import InputTextField from "../inputField/InputField";
 import FormRow from "../formRow/FormRow";
-import H3 from "../header/H3";
+import H4 from "../header/H4";
 
 
 /**
@@ -43,7 +43,7 @@ const CustomerList = observer(() => {
     return (
         <div className="customerList">
             <div className="headerList">
-                <H3 text="Список заказчиков"/>
+                <H4 text="Список заказчиков"/>
                 <Button onClick={addCustomer}
                         classname="addCustomer mainAction"
                         text="Добавить"/>

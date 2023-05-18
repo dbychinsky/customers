@@ -1,19 +1,15 @@
-import React, {useContext, useEffect} from 'react';
 import {observer} from "mobx-react";
 import CustomerListReminder from "../../component/customerListReminder/СustomerListReminder";
-import H2 from "../../component/header/H2";
 import "./CustomerListReminderPage.scss";
-import {StoreContext} from "../../App";
+import Header from "../../component/header/Header";
+import H1 from "../../component/header/H1";
 
 const CustomerListReminderPage = observer(() => {
-    const customerStore = useContext(StoreContext).customerStore;
-    useEffect(() => {
-
-    }, [])
 
     return (
         <div className="customerListReminderPage">
-            <H2 text="Список элементов нотификации"/>
+            <Header title="Нотификация"/>
+            <H1 text="Нотификация"/>
             <CustomerListReminder/>
         </div>
     );

@@ -11,6 +11,7 @@ import {ActionListType, Field} from "../../component/form/Form";
 import "./CustomerEditPage.scss";
 import Header from "../../component/header/Header";
 import FormEditCustomer from "../../component/formEditCustomer/FormEditCustomer";
+import H2 from "../../component/header/H2";
 import H1 from "../../component/header/H1";
 
 /**

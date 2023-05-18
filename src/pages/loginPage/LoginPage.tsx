@@ -71,19 +71,19 @@ const LoginPage = observer(() => {
     return (
         <div className="loginPage">
             <div className="titleLoginPage">
-                <h1>
+                <h2>
                     <span>Customer</span>
                     <span>care  <span>&</span></span>
                     <span>Service</span>
-                </h1>
+                </h2>
             </div>
             {/*<div className="titleLoginPage">*/}
-            {/*    <h1>*/}
+            {/*    <H2>*/}
             {/*        <span>Customer</span>*/}
             {/*        <span>Service</span>*/}
             {/*        <span>Customer</span>*/}
             {/*        <span>Care</span>*/}
-            {/*    </h1>*/}
+            {/*    </H2>*/}
             {/*</div>*/}
             <div className="contentLoginPage">
                 <Form fieldList={fieldList}

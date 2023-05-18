@@ -26,9 +26,9 @@ const Navigation = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={RouterPathList.CUSTOMER_EDIT_PAGE}
-                             className="settingPage"
-                             title="CUSTOMER_LIST_REMINDER_PAGE">
+                    <NavLink to={RouterPathList.SETTING_PAGE}
+                             className="actionSettingPage"
+                             title="SETTING_PAGE">
                         Настройки
                     </NavLink>
                 </li>

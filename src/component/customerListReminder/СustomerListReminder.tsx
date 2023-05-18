@@ -4,7 +4,7 @@ import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
 import "./CustomerListReminder.scss";
 import {useNavigate} from "react-router";
-import H2 from "../header/H2";
+import H3 from "../header/H3";
 
 const CustomerListReminder = observer(() => {
 

@@ -16,25 +16,13 @@
     }
 
     .logotype {
-        text-align: center;
-        box-sizing: border-box;
-        padding: 30px 10px 70px 10px;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+        font-size: 0;
+        background: url("../../../public/img/logotype.png") left center no-repeat;
+        background-size: cover;
 
-        span {
-
-
-            &:first-child {
-
-            }
-
-            &:last-child {
-                @include interSemiBold();
-                color: $color-green;
-            }
-        }
+        width: 150px;
+        height: 100px;
+        margin: 37px 20px;
     }
 
     ul {
@@ -95,7 +83,7 @@
                 }
             }
 
-            .settingPage {
+            .actionSettingPage {
                 @include action(url("./../../../public/img/icons/setting.svg"),
                     url("./../../../public/img/icons/settingHover.svg"));
             }

@@ -26,6 +26,11 @@ export enum RouterPathList {
     /**
      * Страница со списком нотификаций
      */
-    CUSTOMER_LIST_REMINDER_PAGE = "customerListReminderPage/"
+    CUSTOMER_LIST_REMINDER_PAGE = "customerListReminderPage/",
+
+    /**
+     * Страница со списком нотификаций
+     */
+    SETTING_PAGE = "SettingPage/"
 
 }

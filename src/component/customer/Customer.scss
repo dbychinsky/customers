@@ -14,7 +14,7 @@
     overflow: hidden;
 
     box-sizing: border-box;
-    padding: 10px 0 10px 10px;
+    padding: 6px 0 6px 10px;
     border-bottom: 1px $color-grey-light dashed;
 
     > div, > pre {
@@ -43,6 +43,7 @@
 
     .description {
         white-space: break-spaces;
+        @include interRegular();
     }
 
     .reminder {
@@ -59,7 +60,7 @@
 
         &.on {
             background: url("../../../public/img/icons/notificationGreen.svg") left no-repeat;
-            background-size: 24px;
+            background-size: 20px;
 
             .reminderDate {
                 color: $color-green;
