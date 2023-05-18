@@ -2,7 +2,7 @@
 @import "../../mixins";
 @import "../../font";
 
-.dashboard {
+.customerListPage {
     @include pageParameters();
     display: flex;
     flex-direction: row;

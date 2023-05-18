@@ -16,8 +16,9 @@
     }
 
     .logotype {
+        text-align: center;
         box-sizing: border-box;
-        padding: 20px 0 70px 20px;
+        padding: 30px 10px 70px 10px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
@@ -46,16 +47,16 @@
 
         li {
             box-sizing: border-box;
-            padding: 0 20px;
+            padding: 0 20px 0 10px;
             margin-bottom: 2px;
 
             @mixin action($img, $imgHover) {
 
                 display: block;
                 box-sizing: border-box;
-                padding: 12px 46px;
+                padding: 9px 0 9px 38px;
                 text-decoration: none;
-                color: $color-grey;
+                color: $color-black;
                 border-radius: $border-radius-main;
                 position: relative;
                 @include interLight;
@@ -65,13 +66,12 @@
                     width: 24px;
                     height: 24px;
                     position: absolute;
-                    top: 10px;
+                    top: 7px;
                     left: 10px;
                 }
 
                 &.active, &:hover {
                     color: $color-white;
-                    //@include interSemiBold();
                     background-color: $color-blue-light;
 
                     &:before {
@@ -89,7 +89,8 @@
             .actionCustomerListReminderPage {
                 @include action(url("./../../../public/img/icons/notification.svg"),
                     url("./../../../public/img/icons/notifiactionHover.svg"));
-                &::before{
+
+                &::before {
                     width: 24px;
                 }
             }

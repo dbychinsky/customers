@@ -1,4 +1,5 @@
 import React from 'react';
+import "./TextAreaField.scss";
 
 /**
  * Интерфейс
@@ -36,7 +37,7 @@ interface ITextAreaField {
 const TextAreaField = ({value, type, name, changeHandler}: ITextAreaField) => {
     return (
         <>
-            <textarea className="textArea"
+            <textarea className="textAreaField"
                       value={value}
                       onChange={changeHandler}
                       name={name}></textarea>

@@ -9,7 +9,7 @@ export class Customer {
     id: number;
 
     /**
-     * Организация
+     * Продукция
      */
     products: string;
 
@@ -17,6 +17,11 @@ export class Customer {
      * ФИО, контактное лицо
      */
     contactFace: string;
+
+    /**
+     * Организация
+     */
+    organization: string;
 
     /**
      * Номер телефона
@@ -47,6 +52,7 @@ export class Customer {
         this.id = 0;
         this.products = '';
         this.contactFace = '';
+        this.organization = '';
         this.phone = '';
         this.email = '';
         this.description = '';

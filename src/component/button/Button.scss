@@ -4,7 +4,7 @@
 
 @mixin imgBtn($img) {
     box-sizing: border-box;
-    padding: 20px;
+    padding: 14px 16px;
     background: none;
     background: $img center center no-repeat;
 
@@ -38,10 +38,17 @@
     &.imgBtn {
         &.edit {
             @include imgBtn(url("../../../public/img/icons/iconEdit.svg"));
+            background-size: 20px;
         }
 
         &.delete {
             @include imgBtn(url("../../../public/img/icons/iconDelete.svg"));
+            background-size: 20px;
+        }
+
+        &.eye {
+            @include imgBtn(url("../../../public/img/icons/iconEye.svg"));
+            background-size: 24px;
         }
 
         &:hover {

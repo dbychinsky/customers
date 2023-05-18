@@ -7,20 +7,19 @@
 
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
 
     width: 100%;
+    overflow: hidden;
 
     box-sizing: border-box;
     padding: 10px 0 10px 10px;
-
-    border-right: 20px solid transparent;
     border-bottom: 1px $color-grey-light dashed;
 
     > div, > pre {
         box-sizing: border-box;
-        padding: 0 10px;
+        padding: 0 6px;
         font-size: $font-size-smaller;
     }
 
@@ -48,19 +47,42 @@
 
     .reminder {
 
+        display: flex;
+        flex-direction: row;
+
+        .icon {
+            display: block;
+            font-size: 0;
+            width: 30px;
+            height: 30px;
+        }
+
+        &.on {
+            background: url("../../../public/img/icons/notificationGreen.svg") left no-repeat;
+            background-size: 24px;
+
+            .reminderDate {
+                color: $color-green;
+            }
+        }
+
+        &.off {
+            background: url("../../../public/img/icons/notification.svg") left no-repeat;
+            background-size: 20px;
+        }
+
+
     }
-
-    .reminderDate {
-
-    }
-
 
     .feedbackMessage {
         position: initial;
         margin: 20px;
     }
 
-    &.activeReminder {
-        border-right: 20px solid $color-red;
+    .actionBar {
+        background: none;
+        display: flex;
+        flex-direction: row;
+
     }
 }

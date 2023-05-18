@@ -1,0 +1,62 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.formEditCustomer {
+    @mixin area() {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+
+        margin-bottom: 40px;
+
+        p {
+            margin: 0;
+            width: 30%;
+
+            @include interSemiBold();
+            font-size: $font-size-bigger;
+
+            span {
+                display: block;
+
+                @include interLight();
+                font-size: $font-size-the-smallest;
+                color: $color-grey;
+
+            }
+        }
+        > div {
+            box-sizing: border-box;
+            padding: 20px;
+            width: 70%;
+            @include tileParameters();
+
+            input {
+                width: 50%;
+                min-width: 200px;
+            }
+        }
+    }
+
+    .productsArea {
+        @include area();
+    }
+
+    .customerArea {
+        @include area();
+    }
+
+    .contactsArea {
+        @include area();
+    }
+
+    .descriptionArea {
+        @include area();
+    }
+
+    .reminderArea {
+        @include area();
+    }
+}

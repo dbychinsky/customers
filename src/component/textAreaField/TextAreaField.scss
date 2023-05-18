@@ -2,7 +2,7 @@
 @import "src/font";
 @import "src/mixins";
 
-.inputTextField {
+.textAreaField {
     @include interLight();
 
     box-sizing: border-box;
@@ -13,6 +13,9 @@
     box-shadow: $box-shadow-border;
     border-radius: $border-radius-main;
 
+    min-height: 200px;
+    max-width: 100%;
+
     &:focus {
         outline: 0;
         box-shadow: $box-shadow-border;
@@ -21,4 +24,5 @@
     .error & {
         box-shadow: $box-shadow-border;
     }
+
 }

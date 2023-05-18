@@ -7,10 +7,11 @@ import {useNavigate, useParams} from "react-router";
 import {observer} from "mobx-react";
 import TextAreaField from "../../component/textAreaField/TextAreaField";
 import {Conversation} from "../../utility/Conversation";
-import Form, {ActionListType, Field} from "../../component/form/Form";
+import {ActionListType, Field} from "../../component/form/Form";
 import "./CustomerEditPage.scss";
 import Header from "../../component/header/Header";
-import CustomFormEditCustomer from "../../component/customFormEditCustomer/CustomFormEditCustomer";
+import FormEditCustomer from "../../component/formEditCustomer/FormEditCustomer";
+import H1 from "../../component/header/H1";
 
 /**
  * Страница редактирования/добавления заказчика
@@ -58,34 +59,44 @@ const CustomerEditPage = observer(() => {
     /**
      * Список полей
      */
-    const fieldList: Field[] = [
+
+    const fieldListProducts: Field[] = [
         {
             name: "products",
-            label: "Организация",
+            label: "Продукция",
             field: <InputTextField value={customerStore.newCustomer.products}
                                    changeHandler={customerStore.handleChange}
                                    name="products"
                                    type="text"/>
-            // validationList: [validator.emptyValidator]
-        },
+        }
+    ];
+    const fieldListCustomer: Field[] = [{
+        name: "contactFace",
+        label: "ФИО",
+        field: <InputTextField
+            value={customerStore.newCustomer.contactFace}
+            changeHandler={customerStore.handleChange}
+            name="contactFace"
+            type="text"/>
+    },
         {
-            name: "contactFace",
-            label: "Контактное лицо",
+            name: "organization",
+            label: "Организация",
             field: <InputTextField
-                value={customerStore.newCustomer.contactFace}
+                value={customerStore.newCustomer.organization}
                 changeHandler={customerStore.handleChange}
-                name="contactFace"
+                name="organization"
                 type="text"/>
-        },
-        {
-            name: "phone",
-            label: "Номер телефона",
-            field: <InputTextField
-                value={customerStore.newCustomer.phone}
-                changeHandler={customerStore.handleChange}
-                name="phone"
-                type="text"/>
-        },
+        }];
+    const fieldListContacts: Field[] = [{
+        name: "phone",
+        label: "Номер телефона",
+        field: <InputTextField
+            value={customerStore.newCustomer.phone}
+            changeHandler={customerStore.handleChange}
+            name="phone"
+            type="text"/>
+    },
         {
             name: "email",
             label: "Email",
@@ -94,16 +105,17 @@ const CustomerEditPage = observer(() => {
                 changeHandler={customerStore.handleChange}
                 name="email"
                 type="text"/>
-        },
-        {
-            name: "description",
-            label: "Описание",
-            field: <TextAreaField
-                value={customerStore.newCustomer.description}
-                changeHandler={customerStore.handleChange}
-                name="description"
-                type="text"/>
-        },
+        }];
+    const fieldListDescription: Field[] = [{
+        name: "description",
+        label: "Описание",
+        field: <TextAreaField
+            value={customerStore.newCustomer.description}
+            changeHandler={customerStore.handleChange}
+            name="description"
+            type="text"/>
+    }];
+    const fieldListReminder: Field[] = [
         {
             name: "reminder",
             label: "Напоминание",
@@ -119,7 +131,8 @@ const CustomerEditPage = observer(() => {
                 startDate={startDate}
                 setStartDate={setStartDate}/>
         }
-    ];
+    ]
+
 
     /**
      * Список кнопок
@@ -137,10 +150,14 @@ const CustomerEditPage = observer(() => {
 
     return (
         <div className="customerEditPage">
-            <Header/>
-            <h1>Редактирование/Добавление заказчика</h1>
-            <CustomFormEditCustomer fieldList={fieldList}
-                                    actionList={actionList}/>
+            <Header title="Редактирование/Добавление"/>
+            <H1 text="Редактирование/Добавление"/>
+            <FormEditCustomer fieldListProducts={fieldListProducts}
+                              fieldListCustomer={fieldListCustomer}
+                              fieldListContacts={fieldListContacts}
+                              fieldListDescription={fieldListDescription}
+                              fieldListReminder={fieldListReminder}
+                              actionList={actionList}/>
         </div>
     );
 });

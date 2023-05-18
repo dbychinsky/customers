@@ -14,6 +14,8 @@ $color-red-light: #fa896b;
 $color-red-light: #ffcccc;
 //Тень
 $box-shadow-main: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
+$box-shadow-main-inset: inset rgba(60, 72, 88, 0.25) 0px 0px 3px 0px;
+$box-shadow-border: 0px 0px 0px 1px rgba(223, 229, 239, 1);
 
 //Размер шрифта
 
@@ -22,8 +24,8 @@ $font-size-smallest: 0.6875em;
 $font-size-smaller: 0.812em;
 $font-size-small: 0.875em;
 $font-size-normal: 1em;
-$font-size-bigger: 1em;
-$font-size-biggest: 2em;
+$font-size-bigger: 1.375em;
+$font-size-biggest: 1.625em;
 $font-size-the-biggest: 2em;
 $font-size-title: 6em;
 
@@ -32,6 +34,6 @@ $border-radius-main: 6px;
 $border-radius-main-small: 3px;
 
 //Размеры
-$width-menu: 240px;
+$width-menu: 190px;
 
 //1560px

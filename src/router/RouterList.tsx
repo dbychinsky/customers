@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router";
 import {RouterPathList} from "./RouterPathList";
-import DashboardPage from "../pages/dashboardPage/DashboardPage";
+import CustomerListPage from "../pages/customerListPage/CustomerListPage";
 import CustomerEditPage from "../pages/customerEditPage/CustomerEditPage";
 import LoginPage from "../pages/loginPage/LoginPage";
 import CustomerListReminderPage from "../pages/customerListReminderPage/CustomerListReminderPage";
@@ -14,7 +14,7 @@ export const RoutersProject = () => {
             <Route path={RouterPathList.ROOT_PATH} element={<LoginPage/>}/>
 
             <Route path={RouterPathList.CUSTOMER_LIST_PAGE}>
-                <Route index element={<DashboardPage/>}/>
+                <Route index element={<CustomerListPage/>}/>
                 <Route path={RouterPathList.CUSTOMER_EDIT_PAGE} element={<CustomerEditPage/>}/>
                 <Route path={RouterPathList.CUSTOMER_EDIT_ID_PAGE} element={<CustomerEditPage/>}/>
             </Route>

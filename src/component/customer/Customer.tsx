@@ -6,6 +6,7 @@ import "./Customer.scss";
 import {Button} from "../button/Button";
 import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import "../reactConfirmAlert/ReactConfirmAlert.scss";
 import {useNavigate} from "react-router";
 import FeedbackMessage from "../feedbackMessage/FeedbackMessage";
 
@@ -21,10 +22,11 @@ const Customer = observer(() => {
      * @param id
      * @param products
      */
-    const remove = (id: number, products: String) => {
+    const remove = (id: number, organization: string, contactFace: string, products: String) => {
+
         confirmAlert({
-            title: `Удалить ${products}?`,
-            message: 'Подтвердите действие',
+            title: `Удалить ${organization}?`,
+            message: `${contactFace}, ${products}`,
             buttons: [
                 {
                     label: 'Да',
@@ -52,6 +54,7 @@ const Customer = observer(() => {
                      id,
                      products,
                      contactFace,
+                     organization,
                      phone,
                      email,
                      description,
@@ -63,20 +66,34 @@ const Customer = observer(() => {
                             ? <>
                                 <div className="products">{products}</div>
                                 <div className="contactFace">{contactFace}</div>
-                                <div className="phone">{phone}</div>
-                                <div className="email">{email}</div>
+                                <div className="organization">{organization}</div>
+                                <div className="contacts">
+                                    <div className="phone">{phone}</div>
+                                    <div className="email">{email}</div>
+                                </div>
                                 <pre className="description">{description}</pre>
-                                <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
-                                <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
+
+
+                                <div className={`reminder ${Conversation.checkboxBoolToString(reminder)}`}>
+                                    <div className="icon">
+                                        <span>{Conversation.checkboxBoolToString(reminder)}</span>
+                                    </div>
+                                    <div className="reminderDate">
+                                        {Conversation.dateToStrUTC(reminderDate)}</div>
+                                </div>
 
                                 <div className="actionBar">
-                                    <Button onClick={() => remove(id, products)}
-                                            text="Удалить"
-                                            classname="imgBtn delete"/>
+                                    <Button onClick={() => update(id)}
+                                            text="Подробнее"
+                                            classname={'imgBtn eye'}
+                                            title="Подробнее"/>
                                     <Button onClick={() => update(id)}
                                             text="Редактировать"
                                             classname={'imgBtn edit'}
                                             title="Редактировать"/>
+                                    <Button onClick={() => remove(id, organization, contactFace, products)}
+                                            text="Удалить"
+                                            classname="imgBtn delete"/>
                                 </div>
                             </>
                             : <FeedbackMessage message="Отсутствуют данные либо подключение к серверу"/>}

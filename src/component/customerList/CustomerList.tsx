@@ -56,22 +56,22 @@ const CustomerList = observer(() => {
                                     name="products" type="text"/>
                 }/>
 
-                <FormRow name="contactFace" label="Контактное лицо" field={
+                <FormRow name="contactFace" label="ФИО" field={
                     <InputTextField value={customerStore.newCustomer.contactFace}
                                     changeHandler={customerStore.handleChange}
                                     name="contactFace" type="text"/>
                 }/>
 
-                <FormRow name="phone" label="Телефон" field={
-                    <InputTextField value={customerStore.newCustomer.phone}
+                <FormRow name="organization" label="Организация" field={
+                    <InputTextField value={customerStore.newCustomer.organization}
                                     changeHandler={customerStore.handleChange}
-                                    name="phone" type="text"/>
+                                    name="organization" type="text"/>
                 }/>
 
-                <FormRow name="email" label="Email" field={
-                    <InputTextField value={customerStore.newCustomer.email}
+                <FormRow name="contacts" label="Контакты" field={
+                    <InputTextField value={customerStore.newCustomer.phone}
                                     changeHandler={customerStore.handleChange}
-                                    name="email" type="text"/>
+                                    name="contact" type="text"/>
                 }/>
 
                 <FormRow name="description" label="Описание" field={
@@ -80,13 +80,7 @@ const CustomerList = observer(() => {
                                     name="description" type="text"/>
                 }/>
 
-                <FormRow name="reminder" label="Напомнить" field={
-                    <InputTextField value={customerStore.newCustomer.email}
-                                    changeHandler={customerStore.handleChange}
-                                    name="description" type="text"/>
-                }/>
-
-                <FormRow name="reminderDate" label="Дата" field={
+                <FormRow name="reminder" label="Дата" field={
                     <InputTextField value={customerStore.newCustomer.email}
                                     changeHandler={customerStore.handleChange}
                                     name="reminderDate" type="text"/>

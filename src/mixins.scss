@@ -22,22 +22,22 @@
     }
 
     .contactFace {
-        width: 16%;
+        width: 13%;
+        margin: 0;
+    }
+    .organization {
+        width: 15%;
         margin: 0;
     }
 
-    .phone {
-        width: 16%;
+    .contacts {
+        width: 13%;
         margin: 0;
     }
 
-    .email {
-        width: 12%;
-        margin: 0;
-    }
 
     .description {
-        width: 30%;
+        width: 23%;
         margin: 0;
 
         .inputTextField {
@@ -54,18 +54,11 @@
         }
     }
 
-    .reminderDate {
-        width: 10%;
-        margin: 0;
-
-        .inputTextField {
-            display: none;
-        }
-    }
-
     .actionBar {
         width: 10%;
+        background-color: $color-white-light;
+
         margin: 0;
-        min-width: 104px;
+        height: 34px;
     }
 }

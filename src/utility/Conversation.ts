@@ -14,9 +14,9 @@ export class Conversation {
 
     static checkboxBoolToString(value: boolean): string {
         if (value) {
-            return 'Включено'
+            return 'on'
         } else {
-            return 'Отключено'
+            return 'off'
         }
     }
 }

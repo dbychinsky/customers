@@ -1,15 +1,50 @@
 @import "../../parameters";
+@import "../../font";
 
 .react-confirm-alert {
-    .react-confirm-alert-overlay {
-        .react-confirm-alert {
-            .react-confirm-alert-body{
-                .react-confirm-alert-button-group{
-                    button{
 
-                    }
-                }
+    .react-confirm-alert {
+        .react-confirm-alert-button-group {
+            button {
+
             }
         }
+
+    }
+}
+
+.react-confirm-alert-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.react-confirm-alert-body > h1 {
+    font-size: $font-size-bigger;
+    color: $color-black;
+    margin-bottom: 40px;
+}
+
+.react-confirm-alert-button-group > button {
+    margin-top: 40px;
+    border-radius: $border-radius-main;
+    border: 1px solid $color-green;
+    background: $color-white;
+    color: $color-green;
+    font-size: $font-size-normal;
+
+    padding: 10px 50px;
+
+    &:hover {
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.31),
+        0 3px 4px -2px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+
+    &:first-child {
+        border: 1px solid $color-green;
+        background: $color-green;
+        color: $color-white;
+    }
+
+    &:last-child {
     }
 }
