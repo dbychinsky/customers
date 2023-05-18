@@ -9,6 +9,8 @@ import TextAreaField from "../../component/textAreaField/TextAreaField";
 import {Conversation} from "../../utility/Conversation";
 import Form, {ActionListType, Field} from "../../component/form/Form";
 import "./CustomerEditPage.scss";
+import Header from "../../component/header/Header";
+import CustomFormEditCustomer from "../../component/customFormEditCustomer/CustomFormEditCustomer";
 
 /**
  * Страница редактирования/добавления заказчика
@@ -42,6 +44,7 @@ const CustomerEditPage = observer(() => {
         } else {
             customerStore.update(id, customerStore.newCustomer, startDate);
         }
+        customerStore.deleteRecordListNotification(id);
         exit();
     }
 
@@ -57,11 +60,11 @@ const CustomerEditPage = observer(() => {
      */
     const fieldList: Field[] = [
         {
-            name: "organization",
+            name: "products",
             label: "Организация",
-            field: <InputTextField value={customerStore.newCustomer.organization}
+            field: <InputTextField value={customerStore.newCustomer.products}
                                    changeHandler={customerStore.handleChange}
-                                   name="organization"
+                                   name="products"
                                    type="text"/>
             // validationList: [validator.emptyValidator]
         },
@@ -132,13 +135,12 @@ const CustomerEditPage = observer(() => {
         }
     ];
 
-
     return (
         <div className="customerEditPage">
+            <Header/>
             <h1>Редактирование/Добавление заказчика</h1>
-            <Form fieldList={fieldList}
-                  actionList={actionList}/>
-
+            <CustomFormEditCustomer fieldList={fieldList}
+                                    actionList={actionList}/>
         </div>
     );
 });

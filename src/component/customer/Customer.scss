@@ -1,6 +1,6 @@
-@import "src/parameters";
-@import "src/mixins";
-@import "src/font";
+@import "../../parameters";
+@import "../../mixins";
+@import "../../font";
 
 .customer {
     @include customerListTable();
@@ -24,7 +24,7 @@
         font-size: $font-size-smaller;
     }
 
-    .organization {
+    .products {
 
     }
 

@@ -1,0 +1,39 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.customerListReminderWidget {
+    width: 12%;
+    margin-left: 20px;
+
+    .scroll & {
+        position: sticky;
+        top: 103px;
+    }
+
+    .customer {
+        @include tileParameters($color-red-light,$color-red-light);
+        flex-direction: column;
+        margin-bottom: 20px;
+
+
+        .products {
+            @include interSemiBold();
+            width: 100%;
+            font-size: $font-size-small;
+            padding: 0 0 5px 0;
+        }
+
+        .contactFace {
+            width: 100%;
+            font-size: $font-size-the-smallest;
+            padding: 0 0 5px 0;
+        }
+
+        .phone {
+            width: 100%;
+            font-size: $font-size-the-smallest;
+            padding: 0 0 5px 0;
+        }
+    }
+}

@@ -3,15 +3,17 @@ $color-white: #ffffff;
 $color-white-light: #f3f4f6;
 $color-black: #2A3547;
 $color-grey: #6d7080;
-$color-grey-light: #e5eaef;
+$color-grey-light: #e5e7eb;
 $color-green: #00af32;
 $color-green-light: #00fa47;
 $color-blue: #1131fa;
 $color-blue-light: #0095fb;
 $color-blue-light2: #e6f2ff;
 $color-red: #ef4444;
+$color-red-light: #fa896b;
 $color-red-light: #ffcccc;
 //Тень
+$box-shadow-main: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
 
 //Размер шрифта
 
@@ -26,7 +28,7 @@ $font-size-the-biggest: 2em;
 $font-size-title: 6em;
 
 //Граница
-$border-radius-main: 7px;
+$border-radius-main: 6px;
 $border-radius-main-small: 3px;
 
 //Размеры

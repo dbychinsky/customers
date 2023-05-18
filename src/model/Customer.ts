@@ -11,7 +11,7 @@ export class Customer {
     /**
      * Организация
      */
-    organization: string;
+    products: string;
 
     /**
      * ФИО, контактное лицо
@@ -43,20 +43,14 @@ export class Customer {
      */
     reminderDate: Date;
 
-    /**
-     * Дата и время напоминания
-     */
-    activeReminder: boolean;
-
     constructor() {
         this.id = 0;
-        this.organization = '';
+        this.products = '';
         this.contactFace = '';
         this.phone = '';
         this.email = '';
         this.description = '';
         this.reminder = false;
         this.reminderDate = new Date();
-        this.activeReminder = false;
     }
 }

@@ -19,8 +19,12 @@ export const RoutersProject = () => {
                 <Route path={RouterPathList.CUSTOMER_EDIT_ID_PAGE} element={<CustomerEditPage/>}/>
             </Route>
 
-            <Route path={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE} element={<CustomerListReminderPage/>}/>
+            {/*<Route path={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE} element={<CustomerListReminderPage/>}/>*/}
 
+            <Route path={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE}>
+                <Route index element={<CustomerListReminderPage/>}/>
+                <Route path={RouterPathList.CUSTOMER_EDIT_ID_PAGE} element={<CustomerEditPage/>}/>
+            </Route>
         </Routes>
     );
 };

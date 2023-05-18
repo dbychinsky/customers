@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
-import Customer from "./customer/Customer";
+import Customer from "../customer/Customer";
 import {Button} from "../button/Button";
 import "./CustomerList.scss";
 import {useNavigate} from "react-router";
@@ -50,10 +50,10 @@ const CustomerList = observer(() => {
             </div>
             <div className="search">
 
-                <FormRow name="organization" label="Организация" field={
-                    <InputTextField value={customerStore.newCustomer.organization}
+                <FormRow name="products" label="Продукция" field={
+                    <InputTextField value={customerStore.newCustomer.products}
                                     changeHandler={customerStore.handleChange}
-                                    name="organization" type="text"/>
+                                    name="products" type="text"/>
                 }/>
 
                 <FormRow name="contactFace" label="Контактное лицо" field={
@@ -93,9 +93,8 @@ const CustomerList = observer(() => {
                 }/>
 
                 <div className="actionBar"></div>
-
-
             </div>
+
             <Customer/>
             <Button onClick={() => customerStore.startTemp()} text="start temp"/>
         </div>

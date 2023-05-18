@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
-import {StoreContext} from "../../../App";
-import {Conversation} from "../../../utility/Conversation";
+import {StoreContext} from "../../App";
+import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
 import "./Customer.scss";
-import {Button} from "../../button/Button";
+import {Button} from "../button/Button";
 import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {useNavigate} from "react-router";
-import FeedbackMessage from "../../feedbackMessage/FeedbackMessage";
+import FeedbackMessage from "../feedbackMessage/FeedbackMessage";
 
 /**
  * Заказчик
@@ -19,11 +19,11 @@ const Customer = observer(() => {
     /**
      * Удаление записи
      * @param id
-     * @param organization
+     * @param products
      */
-    const remove = (id: number, organization: String) => {
+    const remove = (id: number, products: String) => {
         confirmAlert({
-            title: `Удалить ${organization}?`,
+            title: `Удалить ${products}?`,
             message: 'Подтвердите действие',
             buttons: [
                 {
@@ -50,19 +50,18 @@ const Customer = observer(() => {
             {customerStore.customerList.map(
                 ({
                      id,
-                     organization,
+                     products,
                      contactFace,
                      phone,
                      email,
                      description,
                      reminder,
-                     reminderDate,
-                     activeReminder
+                     reminderDate
                  }) => (
-                    <div key={id} className={`customer ${activeReminder ? 'activeReminder' : ''}`}>
+                    <div key={id} className="customer">
                         {id
                             ? <>
-                                <div className="organization">{organization}</div>
+                                <div className="products">{products}</div>
                                 <div className="contactFace">{contactFace}</div>
                                 <div className="phone">{phone}</div>
                                 <div className="email">{email}</div>
@@ -71,7 +70,7 @@ const Customer = observer(() => {
                                 <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
 
                                 <div className="actionBar">
-                                    <Button onClick={() => remove(id, organization)}
+                                    <Button onClick={() => remove(id, products)}
                                             text="Удалить"
                                             classname="imgBtn delete"/>
                                     <Button onClick={() => update(id)}

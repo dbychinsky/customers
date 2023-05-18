@@ -125,6 +125,16 @@ export class CustomerStore {
             .then(() => this.get());
     }
 
+
+    /**
+     * Удаление записи из списка активных нотификаций
+     */
+    public deleteRecordListNotification(id: string = '') {
+        runInAction(() => {
+            this.customerListNotificationActive = this.customerListNotificationActive.filter((customer: Customer) => customer.id !== Number(id))
+        })
+    }
+
     /**
      * Устанавливаем данные в поля для редактирования
      */
@@ -175,7 +185,7 @@ export class CustomerStore {
 
                     if (!this.isHasIdCustomer(customer.id)) {
 
-                        PushNotification.pushNotify(customer.organization);
+                        PushNotification.pushNotify(customer.products);
                         runInAction(() => {
                             this.customerListNotificationActive.push(customer);
                         })
@@ -193,10 +203,7 @@ export class CustomerStore {
             let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
             if (customer.reminder && elemDate < timeNow) {
                 if (!this.isHasIdCustomer(customer.id)) {
-                    PushNotification.pushNotify(customer.organization);
-                    runInAction(() => {
-                        customer.activeReminder = true;
-                    });
+                    PushNotification.pushNotify(customer.products);
                     runInAction(() => {
                         this.customerListNotificationActive.push(customer);
                     })
@@ -213,4 +220,5 @@ export class CustomerStore {
             }
         )
     }
+
 }

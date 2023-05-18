@@ -8,15 +8,15 @@
     margin-left: $width-menu;
 }
 
-@mixin tileParameters() {
-    box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
-    background: $color-white;
+@mixin tileParameters($border-color:$color-grey-light,$background:$color-white) {
+    box-shadow: $box-shadow-main;
+    border-radius: $border-radius-main;
+    border: 1px solid $border-color;
+    background: $background;
 }
 
 @mixin customerListTable {
-    .organization {
+    .products {
         width: 16%;
         margin: 0;
     }
