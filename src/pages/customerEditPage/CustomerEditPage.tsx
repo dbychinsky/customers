@@ -13,6 +13,7 @@ import Header from "../../component/header/Header";
 import FormEditCustomer from "../../component/formEditCustomer/FormEditCustomer";
 import H2 from "../../component/header/H2";
 import H1 from "../../component/header/H1";
+import {Button} from "../../component/button/Button";
 
 /**
  * Страница редактирования/добавления заказчика
@@ -65,8 +66,8 @@ const CustomerEditPage = observer(() => {
         {
             name: "products",
             label: "Продукция",
-            field: <InputTextField value={customerStore.newCustomer.products}
-                                   changeHandler={customerStore.handleChange}
+            field: <InputTextField value={customerStore.product}
+                                   changeHandler={customerStore.handleChangeProducts}
                                    name="products"
                                    type="text"/>
         }

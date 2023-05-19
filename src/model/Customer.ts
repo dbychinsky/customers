@@ -1,6 +1,8 @@
 /**
  * Заказчик
  */
+import {ProductList} from "./ProductList";
+
 export class Customer {
 
     /**
@@ -11,7 +13,7 @@ export class Customer {
     /**
      * Продукция
      */
-    products: string;
+    products: ProductList[];
 
     /**
      * ФИО, контактное лицо
@@ -50,7 +52,7 @@ export class Customer {
 
     constructor() {
         this.id = 0;
-        this.products = '';
+        this.products = [];
         this.contactFace = '';
         this.organization = '';
         this.phone = '';

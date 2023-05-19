@@ -2,92 +2,27 @@
   "customerList": [
     {
       "id": 1,
-      "products": "Журнал МАЗ",
-      "contactFace": "Иванкович Валерий Валерьевич",
-      "phone": "+375 (17) 217 96 00",
+      "products": [
+        {
+          "id": "",
+          "name": ""
+        },
+        {
+          "id": "1",
+          "name": "1"
+        },
+        {
+          "id": "2",
+          "name": "2"
+        }
+      ],
+      "contactFace": "",
+      "organization": "",
+      "phone": "",
       "email": "",
-      "description": "Генеральный директор ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ",
-      "reminder": true,
-      "reminderDate": "2023-06-03T12:30:00.000Z",
-      "activeReminder": false,
-      "organization": "Maz"
-    },
-    {
-      "id": 2,
-      "products": "Не печатается",
-      "contactFace": "Шуляк Сергей Александрович",
-      "phone": "+375 (17) 217 28 88, +375 (17) 217 38 88",
-      "email": "comdir@maz.by",
-      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - коммерческий директор",
-      "reminder": true,
-      "reminderDate": "2023-05-17T12:38:33.040Z",
-      "activeReminder": false
-    },
-    {
-      "id": 3,
-      "products": "Советская Белоруссия",
-      "contactFace": "Кравченко Александр Александрович",
-      "phone": "+375 (17) 217 96 02",
-      "email": "",
-      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - технический директор",
+      "description": "",
       "reminder": false,
-      "reminderDate": "2023-05-17T12:39:15.191Z",
-      "activeReminder": false
-    },
-    {
-      "id": 4,
-      "products": "Счастье",
-      "contactFace": "Хатеева Елена Олеговна",
-      "phone": "+375 (17) 217 90 99",
-      "email": "xateeva@maz.by",
-      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - директор по финансам",
-      "reminder": false,
-      "reminderDate": "2023-05-17T12:39:47.055Z",
-      "activeReminder": false
-    },
-    {
-      "id": 5,
-      "products": "Добро, Позитив3",
-      "contactFace": "Игнатюк Александр Сергеевич",
-      "phone": "Факс: +375 (17) 217 22 10",
-      "email": "",
-      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - директор по экономике",
-      "reminder": false,
-      "reminderDate": "2023-05-17T12:40:19.599Z",
-      "activeReminder": false
-    },
-    {
-      "id": 6,
-      "products": "MAZ2",
-      "contactFace": "Евтуховский Сергей Алексеевич",
-      "phone": "+375 (17) 217 96 02",
-      "email": "",
-      "description": "Заместитель генерального директора ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\" - директор по производству",
-      "reminder": true,
-      "reminderDate": "2023-06-02T12:40:49.000Z",
-      "activeReminder": false
-    },
-    {
-      "id": 10,
-      "products": "Не печатается",
-      "contactFace": "2",
-      "organization": "2",
-      "phone": "3",
-      "email": "3",
-      "description": "3",
-      "reminder": false,
-      "reminderDate": "2023-05-19T09:16:55.048Z"
-    },
-    {
-      "id": 11,
-      "products": "Не печатается",
-      "contactFace": "5",
-      "organization": "5",
-      "phone": "345",
-      "email": "4",
-      "description": "53453",
-      "reminder": false,
-      "reminderDate": "2023-05-19T09:17:29.685Z"
+      "reminderDate": "2023-05-19T12:03:18.649Z"
     }
   ]
 }

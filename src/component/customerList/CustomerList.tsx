@@ -51,7 +51,7 @@ const CustomerList = observer(() => {
             <div className="search">
 
                 <FormRow name="products" label="Продукция" field={
-                    <InputTextField value={customerStore.newCustomer.products}
+                    <InputTextField value={customerStore.product}
                                     changeHandler={customerStore.handleChange}
                                     name="products" type="text"/>
                 }/>

@@ -4,6 +4,7 @@ import {ActionListType, Field} from "../form/Form";
 import {observer} from "mobx-react";
 import "./FormEditCustomer.scss";
 import {StoreContext} from "../../App";
+import {Button} from "../button/Button";
 
 /**
  * Интерфейс формы
@@ -18,6 +19,9 @@ interface ICustomFormEditCustomer {
 }
 
 
+/**
+ * Кастомная форма редактирования
+ */
 const FormEditCustomer = observer(({
                                        fieldListProducts,
                                        fieldListCustomer,
@@ -29,18 +33,32 @@ const FormEditCustomer = observer(({
 
     const customerStore = useContext(StoreContext).customerStore;
 
+
     return (
         <form className="formEditCustomer" onSubmit={(event) => event.preventDefault()}>
             <div className="productsArea">
                 <p>Продукция для печати: <span>журналы, книги, календари, бланки...</span></p>
                 <div>
-                    {fieldListProducts.map(({name, label, field}) =>
-                        <FormRow name={name}
-                                 label={label}
-                                 field={field}
-                                 key={name}
-                        />
-                    )}
+                    <div>
+                        {fieldListProducts.map(({name, label, field}) =>
+                            <FormRow name={name}
+                                     label={label}
+                                     field={field}
+                                     key={name}
+                            />
+                        )}
+                    </div>
+                    <div>
+                        {customerStore.productLists.map(({id, name}) => (
+                            <div key={id}>
+                                <div>
+                                    <span>{name}</span>
+                                    {name? <Button onClick={() => customerStore.deleteRecordProductList(id)} text="del"/>:''}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <Button onClick={customerStore.addProjectInList} text="Добавить"/>
                 </div>
             </div>
             <div className="customerArea">

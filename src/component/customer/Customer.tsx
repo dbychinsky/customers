@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {StoreContext} from "../../App";
 import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
@@ -22,11 +22,11 @@ const Customer = observer(() => {
      * @param id
      * @param products
      */
-    const remove = (id: number, organization: string, contactFace: string, products: String) => {
+    const remove = (id: number, organization: string, contactFace: string) => {
 
         confirmAlert({
             title: `Удалить ${organization}?`,
-            message: `${contactFace}, ${products}`,
+            message: `${contactFace}`,
             buttons: [
                 {
                     label: 'Да',
@@ -39,6 +39,15 @@ const Customer = observer(() => {
         });
     };
 
+    /**
+     *
+     */
+    const moreViewInformation = (id: string) => {
+        const element = document.getElementById(id);
+        if (element !== null) {
+            element.classList.toggle('more');
+        }
+    }
     /**
      * Обновление записи
      * @param id
@@ -61,10 +70,17 @@ const Customer = observer(() => {
                      reminder,
                      reminderDate
                  }) => (
-                    <div key={id} className="customer">
+                    <div key={id} id={id.toString()} className="customer">
                         {id
                             ? <>
-                                <div className="products">{products}</div>
+                                <div className="products">
+                                    {products.map((
+                                            {id, name}
+                                        ) => (<div key={id}>
+                                            <div>{name}</div>
+                                        </div>)
+                                    )}
+                                </div>
                                 <div className="contactFace">{contactFace}</div>
                                 <div className="organization">{organization}</div>
                                 <div className="contacts">
@@ -83,7 +99,8 @@ const Customer = observer(() => {
                                 </div>
 
                                 <div className="actionBar">
-                                    <Button onClick={() => update(id)}
+
+                                    <Button onClick={() => moreViewInformation(id.toString())}
                                             text="Подробнее"
                                             classname={'imgBtn eye'}
                                             title="Подробнее"/>
@@ -91,7 +108,7 @@ const Customer = observer(() => {
                                             text="Редактировать"
                                             classname={'imgBtn edit'}
                                             title="Редактировать"/>
-                                    <Button onClick={() => remove(id, organization, contactFace, products)}
+                                    <Button onClick={() => remove(id, organization, contactFace)}
                                             text="Удалить"
                                             classname="imgBtn delete"/>
                                 </div>

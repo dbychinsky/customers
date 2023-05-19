@@ -33,7 +33,14 @@ const CustomerListReminder = observer(() => {
                      reminderDate
                  }) => (
                     <div key={id} className="customer" onClick={() => update(id)}>
-                        <div className="products">{products}</div>
+                        <div className="products">
+                            {products.map((
+                                    {id, name}
+                                ) => (<div key={id}>
+                                    <div>{name}</div>
+                                </div>)
+                            )}
+                        </div>
                         <div className="contactFace">{contactFace}</div>
                         <div className="phone">{phone}</div>
                         <div className="email">{phone}</div>

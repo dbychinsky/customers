@@ -4,6 +4,7 @@ import {Customer} from "../model/Customer";
 import {server} from "../App";
 import {PushNotification} from "../utility/PushNotification";
 import {Conversation} from "../utility/Conversation";
+import {ProductList} from "../model/ProductList";
 
 /**
  * Store для работы с LoanStore
@@ -14,6 +15,16 @@ export class CustomerStore {
      * Новый заказчик
      */
     public newCustomer: Customer = new Customer();
+
+    /**
+     * Новый проект, принадлежащий заказчику
+     */
+    public product: string = '';
+
+    /**
+     * Новый проект, принадлежащий заказчику
+     */
+    public productLists: ProductList[] = [];
 
     /**
      * Список заказчиков
@@ -30,6 +41,8 @@ export class CustomerStore {
         makeAutoObservable(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeCheckbox = this.handleChangeCheckbox.bind(this);
+        this.handleChangeProducts = this.handleChangeProducts.bind(this);
+        this.addProjectInList = this.addProjectInList.bind(this);
     }
 
     /**
@@ -43,6 +56,35 @@ export class CustomerStore {
             }
         });
     };
+
+    /**
+     * Добавление нового проекта
+     * @param e
+     */
+    public handleChangeProducts(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.product = e.target.value;
+        });
+    };
+
+    /**
+     * Удаление проекта
+     * @param e
+     */
+    public deleteRecordProductList(id: string) {
+        runInAction(() => {
+            this.productLists = this.productLists.filter(product => product.id !== id);
+        });
+    };
+
+    /**
+     * добавить проект
+     */
+    public addProjectInList() {
+        runInAction(() => {
+            this.productLists.push({id: this.createId(this.productLists), name: this.product})
+        });
+    }
 
     /**
      * Слушатель для чекбокса
@@ -86,16 +128,19 @@ export class CustomerStore {
      * Сохранение данных
      */
     public save(date: Date) {
-        const products = this.newCustomer.products;
+        // const products = this.newCustomer.products;
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
+        runInAction(() => {
+            this.newCustomer.products = this.productLists;
+        });
 
-        if (products === '') {
-            runInAction(() => {
-                this.newCustomer.products = 'Не печатается'
-            })
-        }
+        // if (products === '') {
+        //     runInAction(() => {
+        //         this.newCustomer.products = 'Не печатается'
+        //     })
+        // }
 
         server.addCustomer(this.newCustomer)
             .then(() => this.get());
@@ -105,16 +150,20 @@ export class CustomerStore {
      * Обновление данных
      */
     public update(id: string, data: any, date: Date) {
-        const products = this.newCustomer.products;
+        // const products = this.newCustomer.products;
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
 
-        if (products === '') {
-            runInAction(() => {
-                this.newCustomer.products = 'Не печатается'
-            })
-        }
+        runInAction(() => {
+            this.newCustomer.products = this.productLists;
+        });
+
+        // if (products === '') {
+        //     runInAction(() => {
+        //         this.newCustomer.products = 'Не печатается'
+        //     })
+        // }
 
         server.updateCustomer(id, data)
             .then(() => this.get());
@@ -160,12 +209,15 @@ export class CustomerStore {
             if (customerEdit !== undefined) {
                 runInAction(() => {
                     this.newCustomer = customerEdit;
+                    this.productLists = customerEdit.products;
                 })
 
             }
         } else {
             runInAction(() => {
                 this.newCustomer = new Customer();
+                this.productLists = [new ProductList()];
+                this.product = '';
             })
         }
     }
@@ -201,7 +253,7 @@ export class CustomerStore {
 
                     if (!this.isHasIdCustomer(customer.id)) {
 
-                        PushNotification.pushNotify(customer.products);
+                        // PushNotification.pushNotify(customer.products);
                         runInAction(() => {
                             this.customerListNotificationActive.push(customer);
                         })
@@ -219,7 +271,7 @@ export class CustomerStore {
             let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
             if (customer.reminder && elemDate < timeNow) {
                 if (!this.isHasIdCustomer(customer.id)) {
-                    PushNotification.pushNotify(customer.products);
+                    // PushNotification.pushNotify(customer.products);
                     runInAction(() => {
                         this.customerListNotificationActive.push(customer);
                     })
@@ -235,6 +287,17 @@ export class CustomerStore {
 
             }
         )
+    }
+
+    /**
+     * Метод получения id
+     */
+    public createId<T extends { id: string }>(list: T[]): string {
+        if (list.length) {
+            return (Number(list[list.length - 1].id) + 1).toString()
+        } else {
+            return '0'
+        }
     }
 
 }
