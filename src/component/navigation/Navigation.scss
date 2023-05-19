@@ -35,18 +35,18 @@
 
         li {
             box-sizing: border-box;
-            padding: 0 20px 0 10px;
-            margin-bottom: 2px;
+            padding: 0 20px 0 0;
+            margin-bottom: 5px;
 
             @mixin action($img, $imgHover) {
 
                 display: block;
                 box-sizing: border-box;
-                padding: 9px 0 9px 38px;
+                padding: 9px 0 9px 54px;
                 text-decoration: none;
                 color: $color-black;
-                border-radius: $border-radius-main;
                 position: relative;
+
                 @include interLight;
 
                 &:before {
@@ -55,16 +55,26 @@
                     height: 24px;
                     position: absolute;
                     top: 7px;
-                    left: 10px;
+                    left: 23px;
                 }
 
-                &.active, &:hover {
+                &.active {
                     color: $color-white;
-                    background-color: $color-blue-light;
+                    background: $color-blue-light;
+                    border-radius: 0 $border-radius-main $border-radius-main 0;
 
                     &:before {
                         content: $imgHover;
                     }
+                }
+
+                &:hover {
+                    &:not(&.active) {
+                        color: $color-blue-light;
+                        background: $color-blue-light2;
+                        border-radius: 0 $border-radius-main $border-radius-main 0;
+                    }
+
                 }
             }
 

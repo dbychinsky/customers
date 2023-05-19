@@ -1,6 +1,12 @@
 import React, {FC} from 'react';
+import "./CheckBox.scss";
 
 interface ICheckboxField {
+
+    /**
+     * Идентификатор
+     */
+    id: string,
 
     /**
      * Значение в поле ввода
@@ -23,17 +29,22 @@ interface ICheckboxField {
 
 const CheckboxField: FC<ICheckboxField> = (
     {
+        id,
         value,
         changeHandler,
         name
     }) => {
 
     return (
-        <input type="checkbox"
-               checked={value}
-               onChange={changeHandler}
-               name={name}
-        />
+   <div className="checkboxWrapper">
+       <input type="checkbox"
+              checked={value}
+              name={name}
+              className="checkbox"
+              onChange={changeHandler}
+              id={id}/>
+       <label htmlFor={id}></label>
+   </div>
     );
 };
 

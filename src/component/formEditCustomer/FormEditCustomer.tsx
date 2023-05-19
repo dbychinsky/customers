@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import FormRow from "../formRow/FormRow";
 import {ActionListType, Field} from "../form/Form";
 import {observer} from "mobx-react";
 import "./FormEditCustomer.scss";
+import {StoreContext} from "../../App";
 
 /**
  * Интерфейс формы
@@ -25,6 +26,9 @@ const FormEditCustomer = observer(({
                                        fieldListReminder,
                                        actionList
                                    }: ICustomFormEditCustomer) => {
+
+    const customerStore = useContext(StoreContext).customerStore;
+
     return (
         <form className="formEditCustomer" onSubmit={(event) => event.preventDefault()}>
             <div className="productsArea">
@@ -75,7 +79,7 @@ const FormEditCustomer = observer(({
                     )}
                 </div>
             </div>
-            <div className="reminderArea">
+            <div className={`reminderArea ${customerStore.newCustomer.reminder ? "activated" : "deactivated"}`}>
                 <p>Напоминание: <span>включение напоминания, дата/время</span></p>
                 <div>
                     {fieldListReminder.map(({name, label, field}) =>

@@ -4,12 +4,13 @@
 
 @mixin imgBtn($img) {
     box-sizing: border-box;
-    padding: 14px 16px;
+    padding: 10px 20px;
     background: none;
     background: $img center center no-repeat;
 
     border: none;
     font-size: 0;
+    min-width: initial;
 }
 
 .button {
@@ -17,9 +18,12 @@
     border: 1px solid $color-green;
     background: $color-white;
     color: $color-green;
-    font-size: $font-size-normal;
+    font-size: $font-size-small;
 
-    padding: 12px 10px 12px;
+    padding: 10px 20px;
+    min-width: 150px;
+
+    text-transform: uppercase;
 
     @include interRegular();
 

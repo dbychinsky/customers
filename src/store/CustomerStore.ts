@@ -86,9 +86,17 @@ export class CustomerStore {
      * Сохранение данных
      */
     public save(date: Date) {
+        const products = this.newCustomer.products;
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
+
+        if (products === '') {
+            runInAction(() => {
+                this.newCustomer.products = 'Не печатается'
+            })
+        }
+
         server.addCustomer(this.newCustomer)
             .then(() => this.get());
     }
@@ -97,9 +105,17 @@ export class CustomerStore {
      * Обновление данных
      */
     public update(id: string, data: any, date: Date) {
+        const products = this.newCustomer.products;
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
+
+        if (products === '') {
+            runInAction(() => {
+                this.newCustomer.products = 'Не печатается'
+            })
+        }
+
         server.updateCustomer(id, data)
             .then(() => this.get());
     }

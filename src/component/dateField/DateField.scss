@@ -1,0 +1,30 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.dateField {
+    .react-datepicker-wrapper {
+        .react-datepicker__input-container {
+            input {
+                @include interLight();
+
+                box-sizing: border-box;
+                padding: 12px 10px 12px;
+
+                font-size: $font-size-small;
+                border: none;
+                box-shadow: $box-shadow-border;
+                border-radius: $border-radius-main;
+
+                &:focus {
+                    outline: 0;
+                    box-shadow: $box-shadow-border;
+                }
+
+                .error & {
+                    box-shadow: $box-shadow-border;
+                }
+            }
+        }
+    }
+}

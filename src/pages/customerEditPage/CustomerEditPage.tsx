@@ -121,6 +121,7 @@ const CustomerEditPage = observer(() => {
             name: "reminder",
             label: "Напоминание",
             field: <InputCheckboxField
+                id="reminder"
                 value={customerStore.newCustomer.reminder}
                 changeHandler={customerStore.handleChangeCheckbox}
                 name="reminder"/>
@@ -141,11 +142,11 @@ const CustomerEditPage = observer(() => {
     const actionList: ActionListType[] = [
         {
             name: "submit",
-            action: <button onClick={save}>save</button>
+            action: <button className="button mainAction" onClick={save}>Сохранить</button>
         },
         {
             name: "cancel",
-            action: <button onClick={() => exit()}>Back</button>
+            action: <button className="button" onClick={() => exit()}>выйти</button>
         }
     ];
 

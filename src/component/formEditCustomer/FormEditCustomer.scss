@@ -58,5 +58,34 @@
 
     .reminderArea {
         @include area();
+
+        .reminder {
+            margin-bottom: 40px;
+        }
+
+        &.deactivated {
+            .dateField {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 26px;
+                    right: 2px;
+                    bottom: -2px;
+                    left: -2px;
+                    background: rgba(255, 255, 255, 0.7);
+                    z-index: 2;
+                }
+
+            }
+        }
+    }
+
+    .actionBar {
+        margin: 20px 0 100px;
+
+        .button {
+            margin-right: 20px;
+        }
+
     }
 }
