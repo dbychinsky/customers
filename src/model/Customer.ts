@@ -16,6 +16,11 @@ export class Customer {
     products: ProductList[];
 
     /**
+     * Продукция для архива
+     */
+    productsArchive: ProductList[];
+
+    /**
      * ФИО, контактное лицо
      */
     contactFace: string;
@@ -53,6 +58,7 @@ export class Customer {
     constructor() {
         this.id = 0;
         this.products = [];
+        this.productsArchive = [];
         this.contactFace = '';
         this.organization = '';
         this.phone = '';

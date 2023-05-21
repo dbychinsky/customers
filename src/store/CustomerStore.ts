@@ -22,9 +22,20 @@ export class CustomerStore {
     public product: string = '';
 
     /**
-     * Новый проект, принадлежащий заказчику
+     * Список проектов, принадлежащие заказчику
      */
     public productLists: ProductList[] = [];
+
+
+    /**
+     * Проект для добавления в архив, принадлежащий заказчику
+     */
+    public productArchive: string = '';
+
+    /**
+     * Список проектов в архиве, принадлежащие заказчику
+     */
+    public productListsArchive: ProductList[] = [];
 
     /**
      * Список заказчиков
@@ -42,7 +53,9 @@ export class CustomerStore {
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeCheckbox = this.handleChangeCheckbox.bind(this);
         this.handleChangeProducts = this.handleChangeProducts.bind(this);
+        this.handleChangeProductsArchive = this.handleChangeProductsArchive.bind(this);
         this.addProjectInList = this.addProjectInList.bind(this);
+        this.addProjectInListArchive = this.addProjectInListArchive.bind(this);
     }
 
     /**
@@ -78,11 +91,40 @@ export class CustomerStore {
     };
 
     /**
-     * добавить проект
+     * Добавить проект в список
      */
     public addProjectInList() {
         runInAction(() => {
             this.productLists.push({id: this.createId(this.productLists), name: this.product})
+        });
+    }
+
+    /**
+     * Добавление проекта в архив
+     * @param e
+     */
+    public handleChangeProductsArchive(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.productArchive = e.target.value;
+        });
+    };
+
+    /**
+     * Удаление проекта из архива
+     * @param e
+     */
+    public deleteRecordProductListArchive(id: string) {
+        runInAction(() => {
+            this.productListsArchive = this.productListsArchive.filter(product => product.id !== id);
+        });
+    };
+
+    /**
+     * Добавить проект в список архивных
+     */
+    public addProjectInListArchive() {
+        runInAction(() => {
+            this.productListsArchive.push({id: this.createId(this.productListsArchive), name: this.productArchive})
         });
     }
 
@@ -210,14 +252,17 @@ export class CustomerStore {
                 runInAction(() => {
                     this.newCustomer = customerEdit;
                     this.productLists = customerEdit.products;
+                    this.productListsArchive = customerEdit.productsArchive;
                 })
 
             }
         } else {
             runInAction(() => {
                 this.newCustomer = new Customer();
-                this.productLists = [new ProductList()];
+                this.productLists = [];
+                this.productListsArchive = [];
                 this.product = '';
+                this.productArchive = '';
             })
         }
     }

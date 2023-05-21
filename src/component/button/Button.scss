@@ -50,6 +50,11 @@
             background-size: 20px;
         }
 
+        &.deleteProduct {
+            @include imgBtn(url("../../../public/img/icons/iconDeleteProduct.svg"));
+            background-size: 20px;
+        }
+
         &.eye {
             @include imgBtn(url("../../../public/img/icons/iconEye.svg"));
             background-size: 24px;

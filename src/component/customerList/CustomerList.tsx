@@ -49,11 +49,10 @@ const CustomerList = observer(() => {
                         text="Добавить"/>
             </div>
             <div className="search">
-
-                <FormRow name="products" label="Продукция" field={
-                    <InputTextField value={customerStore.product}
+                <FormRow name="organization" label="Организация" field={
+                    <InputTextField value={customerStore.newCustomer.organization}
                                     changeHandler={customerStore.handleChange}
-                                    name="products" type="text"/>
+                                    name="organization" type="text"/>
                 }/>
 
                 <FormRow name="contactFace" label="ФИО" field={
@@ -62,10 +61,10 @@ const CustomerList = observer(() => {
                                     name="contactFace" type="text"/>
                 }/>
 
-                <FormRow name="organization" label="Организация" field={
-                    <InputTextField value={customerStore.newCustomer.organization}
+                <FormRow name="products" label="Продукция" field={
+                    <InputTextField value={customerStore.product}
                                     changeHandler={customerStore.handleChange}
-                                    name="organization" type="text"/>
+                                    name="products" type="text"/>
                 }/>
 
                 <FormRow name="contacts" label="Контакты" field={

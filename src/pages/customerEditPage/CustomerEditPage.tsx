@@ -61,7 +61,6 @@ const CustomerEditPage = observer(() => {
     /**
      * Список полей
      */
-
     const fieldListProducts: Field[] = [
         {
             name: "products",
@@ -72,15 +71,17 @@ const CustomerEditPage = observer(() => {
                                    type="text"/>
         }
     ];
-    const fieldListCustomer: Field[] = [{
-        name: "contactFace",
-        label: "ФИО",
-        field: <InputTextField
-            value={customerStore.newCustomer.contactFace}
-            changeHandler={customerStore.handleChange}
-            name="contactFace"
-            type="text"/>
-    },
+    const fieldListProductsArchive: Field[] = [
+        {
+            name: "productsArchive",
+            label: "Продукция в архиве",
+            field: <InputTextField value={customerStore.productArchive}
+                                   changeHandler={customerStore.handleChangeProductsArchive}
+                                   name="productsArchive"
+                                   type="text"/>
+        }
+    ];
+    const fieldListCustomer: Field[] = [
         {
             name: "organization",
             label: "Организация",
@@ -88,6 +89,15 @@ const CustomerEditPage = observer(() => {
                 value={customerStore.newCustomer.organization}
                 changeHandler={customerStore.handleChange}
                 name="organization"
+                type="text"/>
+        },
+        {
+            name: "contactFace",
+            label: "ФИО",
+            field: <InputTextField
+                value={customerStore.newCustomer.contactFace}
+                changeHandler={customerStore.handleChange}
+                name="contactFace"
                 type="text"/>
         }];
     const fieldListContacts: Field[] = [{
@@ -156,6 +166,7 @@ const CustomerEditPage = observer(() => {
             <Header title="Редактирование/Добавление"/>
             <H1 text="Редактирование/Добавление"/>
             <FormEditCustomer fieldListProducts={fieldListProducts}
+                              fieldListProductsArchive={fieldListProductsArchive}
                               fieldListCustomer={fieldListCustomer}
                               fieldListContacts={fieldListContacts}
                               fieldListDescription={fieldListDescription}

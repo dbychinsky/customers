@@ -11,6 +11,7 @@ import {Button} from "../button/Button";
  */
 interface ICustomFormEditCustomer {
     fieldListProducts: Field[],
+    fieldListProductsArchive: Field[],
     fieldListCustomer: Field[],
     fieldListContacts: Field[],
     fieldListDescription: Field[],
@@ -24,6 +25,7 @@ interface ICustomFormEditCustomer {
  */
 const FormEditCustomer = observer(({
                                        fieldListProducts,
+                                       fieldListProductsArchive,
                                        fieldListCustomer,
                                        fieldListContacts,
                                        fieldListDescription,
@@ -36,31 +38,6 @@ const FormEditCustomer = observer(({
 
     return (
         <form className="formEditCustomer" onSubmit={(event) => event.preventDefault()}>
-            <div className="productsArea">
-                <p>Продукция для печати: <span>журналы, книги, календари, бланки...</span></p>
-                <div>
-                    <div>
-                        {fieldListProducts.map(({name, label, field}) =>
-                            <FormRow name={name}
-                                     label={label}
-                                     field={field}
-                                     key={name}
-                            />
-                        )}
-                    </div>
-                    <div>
-                        {customerStore.productLists.map(({id, name}) => (
-                            <div key={id}>
-                                <div>
-                                    <span>{name}</span>
-                                    {name? <Button onClick={() => customerStore.deleteRecordProductList(id)} text="del"/>:''}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <Button onClick={customerStore.addProjectInList} text="Добавить"/>
-                </div>
-            </div>
             <div className="customerArea">
                 <p>Данные заказчика: <span>название организации, контактное лицо</span></p>
                 <div>
@@ -71,6 +48,53 @@ const FormEditCustomer = observer(({
                                  key={name}
                         />
                     )}
+                </div>
+            </div>
+            <div className="productsArea">
+                <p>Продукция для печати: <span>журналы, книги, календари, бланки...</span></p>
+                <div>
+                    <div className="actualProductList">
+                        <div>
+                            {fieldListProducts.map(({name, label, field}) =>
+                                <FormRow name={name}
+                                         label={label}
+                                         field={field}
+                                         key={name}
+                                />
+                            )}
+                        </div>
+                        <div className="additionalProductList">
+                            {customerStore.productLists.map(({id, name}) => (
+                                <div key={id} className="additionalProduct">
+                                    <p className="productName">{name}</p>
+                                    {name ? <Button onClick={() => customerStore.deleteRecordProductList(id)}
+                                                    classname="deleteProduct imgBtn" text="del"/> : ''}
+                                </div>
+                            ))}
+                        </div>
+                        <Button onClick={customerStore.addProjectInList} text="Добавить"/>
+                    </div>
+                    <div className="archiveProductList">
+                        <div>
+                            {fieldListProductsArchive.map(({name, label, field}) =>
+                                <FormRow name={name}
+                                         label={label}
+                                         field={field}
+                                         key={name}
+                                />
+                            )}
+                        </div>
+                        <div className="additionalProductList">
+                            {customerStore.productListsArchive.map(({id, name}) => (
+                                <div key={id} className="additionalProduct">
+                                    <p className="productName">{name}</p>
+                                    {name ? <Button onClick={() => customerStore.deleteRecordProductListArchive(id)}
+                                                    classname="deleteProduct imgBtn" text="del"/> : ''}
+                                </div>
+                            ))}
+                        </div>
+                        <Button onClick={customerStore.addProjectInListArchive} text="Добавить"/>
+                    </div>
                 </div>
             </div>
             <div className="contactsArea">

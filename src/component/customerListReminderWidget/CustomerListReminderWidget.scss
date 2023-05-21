@@ -15,6 +15,13 @@
         @include tileParameters($color-red-light,$color-red-light);
         flex-direction: column;
         margin-bottom: 20px;
+        max-height: inherit;
+
+        cursor: pointer;
+
+        &::after{
+            display: none;
+        }
 
 
         .products {
@@ -22,6 +29,8 @@
             width: 100%;
             font-size: $font-size-small;
             padding: 0 0 5px 0;
+
+            display: none;
         }
 
         .contactFace {

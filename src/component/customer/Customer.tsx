@@ -62,6 +62,7 @@ const Customer = observer(() => {
                 ({
                      id,
                      products,
+                     productsArchive,
                      contactFace,
                      organization,
                      phone,
@@ -73,6 +74,8 @@ const Customer = observer(() => {
                     <div key={id} id={id.toString()} className="customer">
                         {id
                             ? <>
+                                <div className="organization">{organization}</div>
+                                <div className="contactFace">{contactFace}</div>
                                 <div className="products">
                                     {products.map((
                                             {id, name}
@@ -81,8 +84,6 @@ const Customer = observer(() => {
                                         </div>)
                                     )}
                                 </div>
-                                <div className="contactFace">{contactFace}</div>
-                                <div className="organization">{organization}</div>
                                 <div className="contacts">
                                     <div className="phone">{phone}</div>
                                     <div className="email">{email}</div>
@@ -111,6 +112,14 @@ const Customer = observer(() => {
                                     <Button onClick={() => remove(id, organization, contactFace)}
                                             text="Удалить"
                                             classname="imgBtn delete"/>
+                                </div>
+
+                                <div className="archiveProductList">
+                                    {productsArchive.map((
+                                            {id, name}
+                                        ) => (
+                                            <div key={id}>{name}</div>)
+                                    )}
                                 </div>
                             </>
                             : <FeedbackMessage message="Отсутствуют данные либо подключение к серверу"/>}

@@ -11,7 +11,7 @@
 
         margin-bottom: 40px;
 
-        p {
+        > p {
             margin: 0;
             width: 30%;
 
@@ -42,6 +42,23 @@
 
     .productsArea {
         @include area();
+
+        .additionalProductList {
+            display: flex;;
+            flex-direction: column;
+
+            .additionalProduct {
+                display: flex;
+                flex-direction: row;
+
+                .productName {
+
+                }
+
+                .button {
+                }
+            }
+        }
     }
 
     .customerArea {
