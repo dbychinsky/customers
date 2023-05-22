@@ -170,20 +170,13 @@ export class CustomerStore {
      * Сохранение данных
      */
     public save(date: Date) {
-        // const products = this.newCustomer.products;
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
         runInAction(() => {
             this.newCustomer.products = this.productLists;
+            this.newCustomer.productsArchive = this.productListsArchive;
         });
-
-        // if (products === '') {
-        //     runInAction(() => {
-        //         this.newCustomer.products = 'Не печатается'
-        //     })
-        // }
-
         server.addCustomer(this.newCustomer)
             .then(() => this.get());
     }
@@ -199,14 +192,8 @@ export class CustomerStore {
 
         runInAction(() => {
             this.newCustomer.products = this.productLists;
+            this.newCustomer.productsArchive = this.productListsArchive;
         });
-
-        // if (products === '') {
-        //     runInAction(() => {
-        //         this.newCustomer.products = 'Не печатается'
-        //     })
-        // }
-
         server.updateCustomer(id, data)
             .then(() => this.get());
     }
@@ -316,7 +303,7 @@ export class CustomerStore {
             let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
             if (customer.reminder && elemDate < timeNow) {
                 if (!this.isHasIdCustomer(customer.id)) {
-                    // PushNotification.pushNotify(customer.products);
+                    PushNotification.pushNotify(customer.organization, customer.contactFace);
                     runInAction(() => {
                         this.customerListNotificationActive.push(customer);
                     })

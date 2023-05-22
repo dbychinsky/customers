@@ -24,18 +24,28 @@
     min-width: 150px;
 
     text-transform: uppercase;
+    transition: $transition-main-box-shadow;
 
     @include interRegular();
 
     &:hover {
-        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.31),
-        0 3px 4px -2px rgba(0, 0, 0, 0.25);
+        box-shadow: $box-shadow-hover;
         cursor: pointer;
+    }
+
+    &:focus-visible {
+        outline: none;
     }
 
     &.mainAction {
         border: 1px solid $color-green;
         background: $color-green;
+        color: $color-white;
+    }
+
+    &.deleteAction {
+        border: 1px solid $color-red;
+        background: $color-red;
         color: $color-white;
     }
 

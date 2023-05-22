@@ -12,34 +12,31 @@
     }
 
     .customer {
-        @include tileParameters($color-red-light,$color-red-light);
+        @include tileParameters($color-red-light, $color-red-light);
         flex-direction: column;
         margin-bottom: 20px;
         max-height: inherit;
 
         cursor: pointer;
+        transition: $transition-main-box-shadow;
 
-        &::after{
+        &::after {
             display: none;
         }
 
+        &:hover {
+            box-shadow: $box-shadow-hover;
+        }
 
-        .products {
+
+        .organization {
             @include interSemiBold();
             width: 100%;
             font-size: $font-size-small;
             padding: 0 0 5px 0;
-
-            display: none;
         }
 
         .contactFace {
-            width: 100%;
-            font-size: $font-size-the-smallest;
-            padding: 0 0 5px 0;
-        }
-
-        .phone {
             width: 100%;
             font-size: $font-size-the-smallest;
             padding: 0 0 5px 0;

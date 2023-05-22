@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {useNavigate} from "react-router";
 import "./CustomerListReminderWidget.scss";
@@ -20,21 +20,12 @@ const CustomerListReminderWidget = observer(() => {
             {customerStore.customerListNotificationActive.map(
                 ({
                      id,
-                     products,
                      contactFace,
-                     phone
+                    organization
                  }) => (
                     <div key={id} className="customer" onClick={() => update(id)}>
-                        <div className="products">
-                            {products.map((
-                                    {id, name}
-                                ) => (<div key={id}>
-                                    <div>{name}</div>
-                                </div>)
-                            )}
-                        </div>
+                        <div className="organization">{organization}</div>
                         <div className="contactFace">{contactFace}</div>
-                        <div className="phone">{phone}</div>
                     </div>
 
 

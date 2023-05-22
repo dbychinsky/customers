@@ -4,65 +4,82 @@
       "id": 1,
       "products": [
         {
-          "id": "",
-          "name": ""
+          "id": "0",
+          "name": "Журнал МАЗ"
         },
         {
           "id": "1",
-          "name": "1"
+          "name": "Журнал МАЗ-Вперед"
         }
       ],
       "productsArchive": [],
-      "contactFace": "1",
-      "organization": "1",
-      "phone": "2",
-      "email": "2",
-      "description": "2",
+      "contactFace": "Иванкович Валерий Валерьевич",
+      "organization": "ООО МАЗ",
+      "phone": "+375 (17) 217 96 00",
+      "email": "",
+      "description": "",
       "reminder": true,
-      "reminderDate": "2023-05-21T11:44:52.410Z"
+      "reminderDate": "2023-05-22T06:59:27.352Z"
     },
     {
       "id": 2,
-      "products": [
-        {
-          "id": "",
-          "name": ""
-        },
-        {
-          "id": "1",
-          "name": "1"
-        }
-      ],
+      "products": [],
       "productsArchive": [
         {
           "id": "0",
-          "name": "4444"
+          "name": "архив-мархив2"
         }
       ],
-      "contactFace": "2",
-      "organization": "1",
-      "phone": "",
-      "email": "",
-      "description": "",
+      "contactFace": "Шуляк Сергей Александрович",
+      "organization": "Краз-Авто",
+      "phone": "+375 (17) 217 28 88, +375 (17) 217 38 88",
+      "email": "comdir@maz.by",
+      "description": "Заместитель генерального директора ОАО\n1) Заместитель\n2) Наместитель",
       "reminder": false,
-      "reminderDate": "2023-05-21T11:48:23.144Z"
+      "reminderDate": "2023-05-22T07:00:53.464Z"
     },
     {
       "id": 3,
       "products": [
         {
           "id": "0",
-          "name": "2"
+          "name": "Советская Белоруссия"
         }
       ],
-      "productsArchive": [],
-      "contactFace": "1",
-      "organization": "1",
+      "productsArchive": [
+        {
+          "id": "0",
+          "name": "Советская Белоруссия-архив"
+        }
+      ],
+      "contactFace": "Кравченко Александр Александрович",
+      "organization": "БелМедПрепаратыКлаустрофобы",
       "phone": "",
       "email": "",
       "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-21T11:48:55.123Z"
+      "reminder": true,
+      "reminderDate": "2023-05-22T07:02:41.393Z"
+    },
+    {
+      "id": 4,
+      "products": [],
+      "productsArchive": [
+        {
+          "id": "0",
+          "name": "Продукция в архиве"
+        },
+        {
+          "id": "1",
+          "name": "Продукция в архиве2"
+        }
+      ],
+      "contactFace": " Организация Организация ФИО",
+      "organization": "Организация",
+      "phone": "ыф",
+      "email": "йц",
+      "description": "йц",
+      "reminder": true,
+      "reminderDate": "2023-05-22T07:07:32.960Z"
     }
   ]
 }

@@ -5,7 +5,7 @@
 .header1 {
     box-sizing: border-box;
     padding: 30px 20px;
-    font-size: $font-size-the-biggest;
+    font-size: $font-size-biggest;
     background: $color-blue-light2 url("../../../public/bg-header.png") top right no-repeat;
     background-size: 8%;
 
@@ -17,7 +17,7 @@
 
 .header2 {
     margin: 0 0 20px 0;
-    font-size: $font-size-biggest;
+    font-size: $font-size-bigger;
     @include interSemiBold();
 }
 

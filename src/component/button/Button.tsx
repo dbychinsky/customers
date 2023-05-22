@@ -34,7 +34,12 @@ interface IButton {
     /**
      * Title
      */
-    title?: string
+    title?: string,
+
+    /**
+     * Автофокус
+     */
+    autoFocus?: boolean
 }
 
 export const Button: FC<IButton> = (
@@ -44,7 +49,8 @@ export const Button: FC<IButton> = (
         disabled,
         type,
         classname,
-        title
+        title,
+        autoFocus
     }) => {
 
     return (
@@ -52,7 +58,8 @@ export const Button: FC<IButton> = (
                 disabled={disabled}
                 onClick={onClick}
                 type={type}
-                title={title}>{text}
+                title={title}
+                autoFocus={autoFocus}>{text}
         </button>
     )
 };

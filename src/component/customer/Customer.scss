@@ -17,7 +17,7 @@
     box-sizing: border-box;
     padding: 6px 10px 5px 10px;
 
-    max-height: 50px;
+    max-height: 53px;
 
     &::after {
         content: '';
@@ -41,27 +41,36 @@
         font-size: $font-size-smaller;
     }
 
-    .products {
-
+    .organization {
+        word-wrap: break-word;
+        padding-bottom: 10px;
     }
 
     .contactFace {
+        word-wrap: break-word;
+        padding-bottom: 10px;
+    }
 
+    .products {
+        word-wrap: break-word;
+        padding-bottom: 10px;
     }
 
     .phone {
-
+        padding-bottom: 10px;
     }
 
     .email {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        padding-bottom: 10px;
     }
 
     .description {
         white-space: break-spaces;
         @include interRegular();
+        padding-bottom: 10px;
     }
 
     .reminder {
@@ -105,10 +114,15 @@
     }
 
     .archiveProductList {
+        font-size: $font-size-smallest;
         flex-grow: 1;
-        padding: 10px 6px;
-        margin-top: 6px;
+        display: flex;
+        flex-direction: row;
 
         background-color: $color-blue-light2;
+        border-radius: 0 0 $border-radius-main $border-radius-main;
+        div {
+            padding: 10px 6px;
+        }
     }
 }

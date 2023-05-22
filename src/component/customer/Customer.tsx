@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
@@ -20,22 +20,33 @@ const Customer = observer(() => {
     /**
      * Удаление записи
      * @param id
-     * @param products
+     * @param organization
+     * @param contactFace
      */
     const remove = (id: number, organization: string, contactFace: string) => {
-
         confirmAlert({
-            title: `Удалить ${organization}?`,
-            message: `${contactFace}`,
-            buttons: [
-                {
-                    label: 'Да',
-                    onClick: () => customerStore.remove(id)
-                },
-                {
-                    label: 'Нет'
-                }
-            ]
+            customUI: ({onClose}) => {
+                return (
+                    <div className='custom-ui'>
+                        <h1 className="head">Удалить контакт?</h1>
+                        <div className="body">
+                            <div className="bodyHead">Вы собираетесь удалить:</div>
+                            <div className="bodyContent">организация - <span>{organization}</span></div>
+                            <div className="bodyContent">фио - <span>{contactFace}</span></div>
+                        </div>
+                        <div className="foot">
+
+                            <Button onClick={onClose} text="Отмена"/>
+                            <Button onClick={() => {
+                                customerStore.remove(id);
+                                onClose();
+                            }} autoFocus={true}
+                                    text="Удалить"
+                                    classname="deleteAction"/>
+                        </div>
+                    </div>
+                );
+            }
         });
     };
 
@@ -96,6 +107,7 @@ const Customer = observer(() => {
                                         <span>{Conversation.checkboxBoolToString(reminder)}</span>
                                     </div>
                                     <div className="reminderDate">
+                                        {/*{Conversation.dateToStrUTC(reminderDate)}</div>*/}
                                         {Conversation.dateToStrUTC(reminderDate)}</div>
                                 </div>
 
