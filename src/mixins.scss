@@ -17,7 +17,7 @@
 
 @mixin customerListTable {
     .products {
-        width: 16%;
+        width: 15%;
         margin: 0;
     }
 
@@ -31,8 +31,9 @@
     }
 
     .contacts {
-        width: 13%;
+        width: 14%;
         margin: 0;
+        max-width: 146px;
     }
 
 

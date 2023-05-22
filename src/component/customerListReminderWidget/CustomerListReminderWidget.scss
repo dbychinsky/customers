@@ -21,6 +21,8 @@
         transition: $transition-main-box-shadow;
         overflow: visible;
 
+        box-shadow: none;
+
         &::after {
             display: none;
         }

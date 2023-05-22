@@ -6,9 +6,8 @@ import {Button} from "../button/Button";
 import "./CustomerList.scss";
 import {useNavigate} from "react-router";
 import {RouterPathList} from "../../router/RouterPathList";
-import InputTextField from "../inputField/InputField";
-import FormRow from "../formRow/FormRow";
 import H4 from "../header/H4";
+import Search from "../search/Search";
 
 
 /**
@@ -24,6 +23,7 @@ const CustomerList = observer(() => {
      */
     useEffect(() => {
         customerStore.get();
+        customerStore.clearSearchField();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -48,46 +48,8 @@ const CustomerList = observer(() => {
                         classname="addCustomer mainAction"
                         text="Добавить"/>
             </div>
-            <div className="search">
-                <FormRow name="organization" label="Организация" field={
-                    <InputTextField value={customerStore.newCustomer.organization}
-                                    changeHandler={customerStore.handleChange}
-                                    name="organization" type="text"/>
-                }/>
 
-                <FormRow name="contactFace" label="ФИО" field={
-                    <InputTextField value={customerStore.newCustomer.contactFace}
-                                    changeHandler={customerStore.handleChange}
-                                    name="contactFace" type="text"/>
-                }/>
-
-                <FormRow name="products" label="Продукция" field={
-                    <InputTextField value={customerStore.product}
-                                    changeHandler={customerStore.handleChange}
-                                    name="products" type="text"/>
-                }/>
-
-                <FormRow name="contacts" label="Контакты" field={
-                    <InputTextField value={customerStore.newCustomer.phone}
-                                    changeHandler={customerStore.handleChange}
-                                    name="contact" type="text"/>
-                }/>
-
-                <FormRow name="description" label="Описание" field={
-                    <InputTextField value={customerStore.newCustomer.email}
-                                    changeHandler={customerStore.handleChange}
-                                    name="description" type="text"/>
-                }/>
-
-                <FormRow name="reminder" label="Дата" field={
-                    <InputTextField value={customerStore.newCustomer.email}
-                                    changeHandler={customerStore.handleChange}
-                                    name="reminderDate" type="text"/>
-                }/>
-
-                <div className="actionBar"></div>
-            </div>
-
+            <Search/>
             <Customer/>
             <Button onClick={() => customerStore.startTemp()} text="start temp"/>
         </div>

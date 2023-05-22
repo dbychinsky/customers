@@ -19,7 +19,12 @@
     },
     {
       "id": 2,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [
         {
           "id": "0",
@@ -87,7 +92,12 @@
     },
     {
       "id": 5,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Игнатюк Александр Сергеевич",
       "organization": "Частное лицо",
@@ -120,7 +130,12 @@
     },
     {
       "id": 7,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Отдел продаж",
       "organization": "Камаз",
@@ -132,7 +147,12 @@
     },
     {
       "id": 8,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Отдел сервисного обслуживания:",
       "organization": "Камаз",
@@ -144,7 +164,12 @@
     },
     {
       "id": 9,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Хрусталев Егор Вячеславович, руководитель пресс-службы",
       "organization": "Общество с ограниченной ответственностью «ЕВРОТОРГ»",
@@ -173,7 +198,12 @@
     },
     {
       "id": 11,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [
         {
           "id": "0",
@@ -207,7 +237,12 @@
     },
     {
       "id": 13,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [
         {
           "id": "0",
@@ -271,7 +306,12 @@
     },
     {
       "id": 16,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Игнатюк Александр Сергеевич",
       "organization": "Частное лицо",
@@ -304,7 +344,12 @@
     },
     {
       "id": 18,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Отдел продаж",
       "organization": "Камаз",
@@ -316,7 +361,12 @@
     },
     {
       "id": 19,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Отдел сервисного обслуживания:",
       "organization": "Камаз",
@@ -328,7 +378,12 @@
     },
     {
       "id": 20,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [],
       "contactFace": "Хрусталев Егор Вячеславович, руководитель пресс-службы",
       "organization": "Общество с ограниченной ответственностью «ЕВРОТОРГ»",
@@ -357,7 +412,12 @@
     },
     {
       "id": 22,
-      "products": [],
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
       "productsArchive": [
         {
           "id": "0",
@@ -371,6 +431,23 @@
       "description": "Вот вам яркий пример современных тенденций — сложившаяся структура организации, а также свежий взгляд на привычные вещи — безусловно открывает новые горизонты для стандартных подходов.",
       "reminder": false,
       "reminderDate": "2023-05-22T10:39:26.693Z"
+    },
+    {
+      "id": 23,
+      "products": [
+        {
+          "id": "1",
+          "name": "Не печатается"
+        }
+      ],
+      "productsArchive": [],
+      "contactFace": "1",
+      "organization": "1",
+      "phone": "1",
+      "email": "1",
+      "description": "1",
+      "reminder": false,
+      "reminderDate": "2023-05-22T13:07:13.238Z"
     }
   ]
 }

@@ -30,7 +30,12 @@ interface IInputTextFieldProps {
     /**
      * Тип поля
      */
-    type: string
+    type: string,
+
+    /**
+     * placeHolder
+     */
+    placeHolder?: string
 
 }
 
@@ -40,6 +45,7 @@ const InputTextField: FC<IInputTextFieldProps> = (
         value,
         changeHandler,
         name,
+        placeHolder
     }) => {
     return (
         <input
@@ -48,6 +54,7 @@ const InputTextField: FC<IInputTextFieldProps> = (
             value={value}
             onInput={changeHandler}
             name={name}
+            placeholder={placeHolder}
         />
     )
 }

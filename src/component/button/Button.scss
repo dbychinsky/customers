@@ -63,7 +63,7 @@
         &.deleteProduct {
             @include imgBtn(url("../../../public/img/icons/iconDeleteProductRed.svg"));
             background-size: 20px;
-            padding: 10px 12px;
+            padding: 12px 12px;
         }
 
         &.eye {

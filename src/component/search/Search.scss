@@ -1,0 +1,52 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+
+.search {
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+    background: $color-white;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .scroll & {
+        position: sticky;
+        top: 0;
+    }
+
+    @include customerListTable();
+
+    .headerColumn {
+
+        display: flex;
+        flex-direction: column;
+
+        &.description, &.reminder, &.products, &.contacts {
+            margin-top: 39px;
+        }
+
+        .inputTextField {
+            width: 100%;
+            padding: 6px 10px;
+            margin-bottom: 10px;
+            border-radius: $border-radius-main-small;
+        }
+
+        .label {
+            text-transform: uppercase;
+            font-size: $font-size-smallest;
+            background-color: $color-white-light;
+            padding: 10px 5px;
+            margin: 0;
+        }
+    }
+
+    .actionBar {
+        align-self: flex-end;
+    }
+
+}

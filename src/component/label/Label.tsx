@@ -14,17 +14,25 @@ interface ILabel {
     /**
      * Привязка к полю
      */
-    htmlFor?: string
+    htmlFor?: string,
+
+    /**
+     * Привязка к полю
+     */
+    onClick?: (value: any) => void
 }
 
 const Label: FC<ILabel> = (
     {
         text,
-        htmlFor
+        htmlFor,
+        onClick
     }) => {
 
     return (
-        <label className="label" htmlFor={htmlFor}>
+        <label className="label"
+               htmlFor={htmlFor}
+               onClick={onClick}>
             {text}
         </label>
     )

@@ -14,6 +14,7 @@
 
     width: 100%;
     overflow: hidden;
+    box-shadow: $box-shadow-customer-tile-inset;
 
     box-sizing: border-box;
     padding: 10px;
@@ -39,7 +40,7 @@
 
     > div, > pre {
         box-sizing: border-box;
-        padding: 0 6px;
+        padding: 0 5px;
         font-size: $font-size-smaller;
     }
 

@@ -2,7 +2,6 @@ import React from "react";
 import {makeAutoObservable, runInAction} from "mobx";
 import {Customer} from "../model/Customer";
 import {server} from "../App";
-import {PushNotification} from "../utility/PushNotification";
 import {Conversation} from "../utility/Conversation";
 import {ProductList} from "../model/ProductList";
 
@@ -43,10 +42,27 @@ export class CustomerStore {
     public customerList: Customer[] = [new Customer()];
 
     /**
+     * Список заказчиков для поиска. Сделан чтобы снизить
+     * количество запросов к серверу из-за ограниченного
+     * количества
+     */
+    public customerListTemp: Customer[] = [new Customer()];
+
+    /**
      * Список активных уведомлений, содержит
      * id заказчика
      */
     public customerListNotificationActive: Customer[] = [];
+
+    /**
+     * Поле, принимает данные для поиска по продуктам
+     */
+    public searchOrganization: string = '';
+
+    /**
+     * Поле, принимает данные для поиска по ФИО
+     */
+    public searchContactFace: string = '';
 
     constructor() {
         makeAutoObservable(this);
@@ -56,6 +72,8 @@ export class CustomerStore {
         this.handleChangeProductsArchive = this.handleChangeProductsArchive.bind(this);
         this.addProjectInList = this.addProjectInList.bind(this);
         this.addProjectInListArchive = this.addProjectInListArchive.bind(this);
+        this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
+        this.handleChangeSearchContactFace = this.handleChangeSearchContactFace.bind(this);
     }
 
     /**
@@ -81,8 +99,72 @@ export class CustomerStore {
     };
 
     /**
-     * Удаление проекта
+     * Слушатель для поля поиска по проекту
      * @param e
+     */
+    public handleChangeSearchOrganization(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.searchOrganization = e.target.value;
+        });
+    };
+
+    /**
+     * Слушатель для поля поиска по проекту
+     * @param e
+     */
+    public handleChangeSearchContactFace(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.searchContactFace = e.target.value;
+        });
+    };
+
+    /**
+     * Поиск по организации
+     */
+    public searchOrgField() {
+        if (this.searchOrganization !== '') {
+            runInAction(() => {
+                this.customerList = this.customerList.filter(elem => {
+                    return elem.organization.toUpperCase().includes(this.searchOrganization.toUpperCase())
+                })
+            })
+        } else {
+            runInAction(() => {
+                this.customerList = this.customerListTemp;
+            })
+        }
+    }
+
+    /**
+     * Поиск по ФИО
+     */
+    public searchContactFaceField() {
+        if (this.searchContactFace !== '') {
+            runInAction(() => {
+                this.customerList = this.customerList.filter(elem => {
+                    return elem.contactFace.toUpperCase().includes(this.searchContactFace.toUpperCase())
+                })
+            })
+        } else {
+            runInAction(() => {
+                this.customerList = this.customerListTemp;
+            })
+        }
+    }
+
+    /**
+     * Очистка полей поиска
+     */
+    public clearSearchField() {
+        runInAction(() => {
+            this.searchOrganization = '';
+        })
+    }
+
+
+    /**
+     * Удаление проекта
+     * @param id
      */
     public deleteRecordProductList(id: string) {
         runInAction(() => {
@@ -96,6 +178,9 @@ export class CustomerStore {
     public addProjectInList() {
         runInAction(() => {
             this.productLists.push({id: this.createId(this.productLists), name: this.product})
+        });
+        runInAction(() => {
+            this.product = '';
         });
     }
 
@@ -111,7 +196,7 @@ export class CustomerStore {
 
     /**
      * Удаление проекта из архива
-     * @param e
+     * @param id
      */
     public deleteRecordProductListArchive(id: string) {
         runInAction(() => {
@@ -125,6 +210,9 @@ export class CustomerStore {
     public addProjectInListArchive() {
         runInAction(() => {
             this.productListsArchive.push({id: this.createId(this.productListsArchive), name: this.productArchive})
+        });
+        runInAction(() => {
+            this.productArchive = '';
         });
     }
 
@@ -147,13 +235,6 @@ export class CustomerStore {
         runInAction(() => {
             this.customerList = customers;
         });
-
-        runInAction(() => {
-                this.customerList = this.customerList.sort((elem1: any, elem2: any) =>
-                    elem2.activeReminder - elem1.activeReminder);
-
-            }
-        )
     }
 
     /**
@@ -163,8 +244,12 @@ export class CustomerStore {
         server.getCustomers()
             .then(response => {
                 this.setCustomerList(response);
-            });
-    }
+            })
+            .then(() =>
+                runInAction(() => {
+                    this.customerListTemp = this.customerList;
+                }))
+    };
 
     /**
      * Сохранение данных
@@ -173,11 +258,21 @@ export class CustomerStore {
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
+
         runInAction(() => {
             this.newCustomer.products = this.productLists;
             this.newCustomer.productsArchive = this.productListsArchive;
         });
+
         server.addCustomer(this.newCustomer)
+            .then(() => this.get());
+    }
+
+    /**
+     * Удаление элемента
+     */
+    public remove(idCustomer: number) {
+        server.deleteCustomer(idCustomer)
             .then(() => this.get());
     }
 
@@ -185,7 +280,6 @@ export class CustomerStore {
      * Обновление данных
      */
     public update(id: string, data: any, date: Date) {
-        // const products = this.newCustomer.products;
         runInAction(() => {
             this.newCustomer.reminderDate = date;
         });
@@ -194,6 +288,7 @@ export class CustomerStore {
             this.newCustomer.products = this.productLists;
             this.newCustomer.productsArchive = this.productListsArchive;
         });
+
         server.updateCustomer(id, data)
             .then(() => this.get());
     }
@@ -210,15 +305,6 @@ export class CustomerStore {
         if (id === undefined) result = false
         return result;
     }
-
-    /**
-     * Удаление элемента
-     */
-    public remove(idCustomer: number) {
-        server.deleteCustomer(idCustomer)
-            .then(() => this.get());
-    }
-
 
     /**
      * Удаление записи из списка активных нотификаций
@@ -312,13 +398,7 @@ export class CustomerStore {
                 }
 
             }
-        })
-        runInAction(() => {
-                this.customerList = this.customerList.sort((elem1: any, elem2: any) =>
-                    elem2.activeReminder - elem1.activeReminder);
-
-            }
-        )
+        });
     }
 
     /**
@@ -332,4 +412,21 @@ export class CustomerStore {
         }
     }
 
+    /**
+     * Сортировка по названию
+     */
+    public sortCustomerListName = (fieldName: string) => {
+        runInAction(() => {
+            this.customerList = this.customerList.sort(function (a: any, b: any) {
+                let organizationA = a[fieldName].toLowerCase(), organizationB = b[fieldName].toLowerCase()
+                if (organizationA < organizationB) //сортируем строки по возрастанию
+                    return -1
+                if (organizationA > organizationB)
+                    return 1
+                return 0 // Никакой сортировки
+            });
+        })
+    };
+
 }
+
