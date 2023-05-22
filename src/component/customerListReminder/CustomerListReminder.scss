@@ -13,39 +13,33 @@
         > div {
             box-sizing: border-box;
             padding: 10px 5px;
+            word-break: break-word;
         }
 
         .organization {
-            width: 15%;
+            width: 17%;
         }
 
         .contactFace {
-            width: 15%;
+            width: 17%;
         }
 
         .products {
-            width: 10%;
+            width: 17%;
         }
 
         .productsArchive {
-            width: 10%;
+            width: 17%;
         }
 
         .phone {
             width: 11%;
         }
 
-        .email {
-            width: 10%;
-        }
-
         .description {
-            width: 22%;
+            width: 21%;
         }
 
-        .reminderDate {
-            width: 7%;
-        }
     }
 
     .head {

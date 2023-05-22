@@ -43,6 +43,38 @@
     .productsArea {
         @include area();
 
+        > div {
+            display: flex;
+            flex-direction: row;
+            gap: 10%;
+        }
+
+        .button {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .inputTextField {
+            width: 100%;
+        }
+
+        .actualProductList {
+            flex-grow: 1;
+
+            .formRow {
+                margin-bottom: 10px;
+
+            }
+        }
+
+        .archiveProductList {
+            flex-grow: 1;
+
+            .formRow {
+                margin-bottom: 10px;
+            }
+        }
+
         .additionalProductList {
             display: flex;;
             flex-direction: column;
@@ -52,7 +84,13 @@
                 flex-direction: row;
 
                 .productName {
+                    margin: 0 0 10px 0;
+                    @include interLight();
 
+                    max-width: 300px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
 
                 .button {

@@ -28,9 +28,7 @@ const CustomerListReminder = observer(() => {
                 <div className="products">ПРОДУКЦИЯ</div>
                 <div className="productsArchive">архив</div>
                 <div className="phone">телефон</div>
-                <div className="email">email</div>
                 <div className="description">ОПИСАНИЕ</div>
-                <div className="reminderDate">ДАТА</div>
             </div>
             <div className="body">
                 {customerStore.customerListNotificationActive.map(
@@ -42,9 +40,7 @@ const CustomerListReminder = observer(() => {
                          productsArchive,
                          phone,
                          email,
-                         description,
-                         reminder,
-                         reminderDate
+                         description
                      }) => (
                         <div key={id} className="customer" onClick={() => update(id)}>
                             <div className="organization">{organization}</div>
@@ -66,9 +62,7 @@ const CustomerListReminder = observer(() => {
                                 )}
                             </div>
                             <div className="phone">{phone}</div>
-                            <div className="email">{email}</div>
                             <div className="description">{description}</div>
-                            <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
                         </div>
 
 

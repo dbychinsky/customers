@@ -64,15 +64,16 @@ const FormEditCustomer = observer(({
                             )}
                         </div>
                         <div className="additionalProductList">
+                            <Button onClick={customerStore.addProjectInList} text="Добавить"/>
                             {customerStore.productLists.map(({id, name}) => (
                                 <div key={id} className="additionalProduct">
-                                    <p className="productName">{name}</p>
                                     {name ? <Button onClick={() => customerStore.deleteRecordProductList(id)}
-                                                    classname="deleteProduct imgBtn" text="del"/> : ''}
+                                                    classname="deleteProduct imgBtn"
+                                                    text="del"/> : ''}
+                                    <p className="productName">{name}</p>
                                 </div>
                             ))}
                         </div>
-                        <Button onClick={customerStore.addProjectInList} text="Добавить"/>
                     </div>
                     <div className="archiveProductList">
                         <div>
@@ -85,15 +86,16 @@ const FormEditCustomer = observer(({
                             )}
                         </div>
                         <div className="additionalProductList">
+                            <Button onClick={customerStore.addProjectInListArchive} text="Добавить"/>
                             {customerStore.productListsArchive.map(({id, name}) => (
                                 <div key={id} className="additionalProduct">
-                                    <p className="productName">{name}</p>
                                     {name ? <Button onClick={() => customerStore.deleteRecordProductListArchive(id)}
-                                                    classname="deleteProduct imgBtn" text="del"/> : ''}
+                                                    classname="deleteProduct imgBtn"
+                                                    text="del"/> : ''}
+                                    <p className="productName">{name}</p>
                                 </div>
                             ))}
                         </div>
-                        <Button onClick={customerStore.addProjectInListArchive} text="Добавить"/>
                     </div>
                 </div>
             </div>
