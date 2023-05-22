@@ -3,6 +3,7 @@
 @import "../../font";
 
 .customer {
+    $paddingBottom: 10px;
     @include customerListTable();
 
     display: flex;
@@ -15,20 +16,21 @@
     overflow: hidden;
 
     box-sizing: border-box;
-    padding: 6px 10px 5px 10px;
+    padding: 10px;
 
-    max-height: 53px;
+    max-height: 50px;
 
-    &::after {
-        content: '';
-        display: block;
-        height: 4px;
-        position: absolute;
-        left: 10px;
-        bottom: 0;
-        right: 10px;
-        border-bottom: 1px $color-grey-light dashed;
-        background-color: $color-white;
+    &:nth-child(2n) {
+        background-color: $color-blue-light3;
+    }
+
+    &:hover {
+        background: $color-blue-light2;
+
+        &::after {
+            border-bottom: 1px $color-grey-light dashed;
+            background-color: $color-blue-light2;
+        }
     }
 
     &.more {
@@ -43,38 +45,38 @@
 
     .organization {
         word-wrap: break-word;
-        padding-bottom: 10px;
+        padding-bottom: $paddingBottom;
+        @include interSemiBold();
     }
 
     .contactFace {
         word-wrap: break-word;
-        padding-bottom: 10px;
+        padding-bottom: $paddingBottom;
     }
 
     .products {
         word-wrap: break-word;
-        padding-bottom: 10px;
+        padding-bottom: $paddingBottom;
     }
 
     .phone {
-        padding-bottom: 10px;
+        padding-bottom: $paddingBottom;
     }
 
     .email {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        padding-bottom: 10px;
+        padding-bottom: $paddingBottom;
     }
 
     .description {
         white-space: break-spaces;
         @include interRegular();
-        padding-bottom: 10px;
+        padding-bottom: $paddingBottom;
     }
 
     .reminder {
-
         display: flex;
         flex-direction: row;
 
@@ -114,15 +116,22 @@
     }
 
     .archiveProductList {
-        font-size: $font-size-smallest;
+        width: 100%;
+
         flex-grow: 1;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
 
-        background-color: $color-blue-light2;
-        border-radius: 0 0 $border-radius-main $border-radius-main;
+        font-size: $font-size-smallest;
+        box-shadow: $box-shadow-box-inset;
+        background-color: $color-white;
+
+        padding: 0;
+        margin: 0 -10px;
+
         div {
-            padding: 10px 6px;
+            padding: 5px 0 5px 15px;
         }
     }
 }

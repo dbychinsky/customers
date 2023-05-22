@@ -303,7 +303,7 @@ export class CustomerStore {
             let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
             if (customer.reminder && elemDate < timeNow) {
                 if (!this.isHasIdCustomer(customer.id)) {
-                    PushNotification.pushNotify(customer.organization, customer.contactFace);
+                    // PushNotification.pushNotify(customer.organization, customer.contactFace);
                     runInAction(() => {
                         this.customerListNotificationActive.push(customer);
                     })

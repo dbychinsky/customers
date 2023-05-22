@@ -8,8 +8,8 @@ const CustomerListReminderPage = observer(() => {
 
     return (
         <div className="customerListReminderPage">
-            <Header title="Нотификация"/>
-            <H1 text="Нотификация"/>
+            <Header title="Нотификации"/>
+            <H1 text="Нотификации"/>
             <CustomerListReminder/>
         </div>
     );

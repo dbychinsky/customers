@@ -19,6 +19,7 @@
 
         cursor: pointer;
         transition: $transition-main-box-shadow;
+        overflow: visible;
 
         &::after {
             display: none;
@@ -26,6 +27,22 @@
 
         &:hover {
             box-shadow: $box-shadow-hover;
+        }
+
+        &:before {
+            box-sizing: border-box;
+            padding: 4px;
+            content: url("../../../public/img/icons/notificationGreen.svg");
+            position: absolute;
+            top: -14px;
+            left: -14px;
+
+            background-color: $color-white;
+            border-radius: 50%;
+
+            display: block;
+            height: 26px;
+            width: 26px;
         }
 
 

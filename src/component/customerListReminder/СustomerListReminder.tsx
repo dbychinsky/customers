@@ -21,36 +21,59 @@ const CustomerListReminder = observer(() => {
 
     return (
         <div className="customerListReminder">
-            {customerStore.customerListNotificationActive.map(
-                ({
-                     id,
-                     products,
-                     contactFace,
-                     phone,
-                     email,
-                     description,
-                     reminder,
-                     reminderDate
-                 }) => (
-                    <div key={id} className="customer" onClick={() => update(id)}>
-                        <div className="products">
-                            {products.map((
-                                    {id, name}
-                                ) => (<div key={id}>
-                                    <div>{name}</div>
-                                </div>)
-                            )}
+
+            <div className="head">
+                <div className="organization">ОРГАНИЗАЦИЯ</div>
+                <div className="contactFace">ФИО</div>
+                <div className="products">ПРОДУКЦИЯ</div>
+                <div className="productsArchive">архив</div>
+                <div className="phone">телефон</div>
+                <div className="email">email</div>
+                <div className="description">ОПИСАНИЕ</div>
+                <div className="reminderDate">ДАТА</div>
+            </div>
+            <div className="body">
+                {customerStore.customerListNotificationActive.map(
+                    ({
+                         id,
+                         organization,
+                         contactFace,
+                         products,
+                         productsArchive,
+                         phone,
+                         email,
+                         description,
+                         reminder,
+                         reminderDate
+                     }) => (
+                        <div key={id} className="customer" onClick={() => update(id)}>
+                            <div className="organization">{organization}</div>
+                            <div className="contactFace">{contactFace}</div>
+                            <div className="products">
+                                {products.map((
+                                        {id, name}
+                                    ) => (<div key={id}>
+                                        <div>{name}</div>
+                                    </div>)
+                                )}
+                            </div>
+                            <div className="productsArchive">
+                                {productsArchive.map((
+                                        {id, name}
+                                    ) => (<div key={id}>
+                                        <div>{name}</div>
+                                    </div>)
+                                )}
+                            </div>
+                            <div className="phone">{phone}</div>
+                            <div className="email">{email}</div>
+                            <div className="description">{description}</div>
+                            <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
                         </div>
-                        <div className="contactFace">{contactFace}</div>
-                        <div className="phone">{phone}</div>
-                        <div className="email">{phone}</div>
-                        <div className="description">{description}</div>
-                        <div className="reminder">{Conversation.checkboxBoolToString(reminder)}</div>
-                        <div className="reminderDate">{Conversation.dateToStrUTC(reminderDate)}</div>
-                    </div>
 
 
-                ))}
+                    ))}
+            </div>
         </div>
     );
 });

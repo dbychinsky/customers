@@ -1,3 +1,68 @@
-.customerListReminder {
+@import "src/parameters";
+@import "src/mixins";
+@import "src/font";
 
+.customerListReminder {
+    .customer, .head {
+        display: flex;
+        flex-direction: row;
+        max-height: inherit;
+        padding: 0;
+        cursor: pointer;
+
+        > div {
+            box-sizing: border-box;
+            padding: 10px 5px;
+        }
+
+        .organization {
+            width: 15%;
+        }
+
+        .contactFace {
+            width: 15%;
+        }
+
+        .products {
+            width: 10%;
+        }
+
+        .productsArchive {
+            width: 10%;
+        }
+
+        .phone {
+            width: 11%;
+        }
+
+        .email {
+            width: 10%;
+        }
+
+        .description {
+            width: 22%;
+        }
+
+        .reminderDate {
+            width: 7%;
+        }
+    }
+
+    .head {
+        box-sizing: border-box;
+        background: $color-white;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+
+        > div {
+            text-transform: uppercase;
+            font-size: $font-size-smallest;
+            background-color: $color-white-light;
+            margin: 0;
+            cursor: default;
+        }
+    }
 }
