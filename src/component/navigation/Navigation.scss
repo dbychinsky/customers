@@ -79,14 +79,14 @@
             }
 
             .actionCustomerListPage {
-                @include action(url("./../../../public/img/icons/user.svg"),
-                    url("./../../../public/img/icons/userHover.svg"));
+                @include action(url("./../../../public/img/icons/iconUser.svg"),
+                    url("./../../../public/img/icons/iconUserHover.svg"));
 
             }
 
             .actionCustomerListReminderPage {
-                @include action(url("./../../../public/img/icons/notification.svg"),
-                    url("./../../../public/img/icons/notifiactionHover.svg"));
+                @include action(url("./../../../public/img/icons/iconNotification.svg"),
+                    url("./../../../public/img/icons/iconNotifiactionHover.svg"));
 
                 &::before {
                     width: 24px;
@@ -94,8 +94,8 @@
             }
 
             .actionSettingPage {
-                @include action(url("./../../../public/img/icons/setting.svg"),
-                    url("./../../../public/img/icons/settingHover.svg"));
+                @include action(url("./../../../public/img/icons/iconSetting.svg"),
+                    url("./../../../public/img/icons/iconSettingHover.svg"));
             }
         }
     }

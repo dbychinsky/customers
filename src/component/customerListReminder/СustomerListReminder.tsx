@@ -25,9 +25,9 @@ const CustomerListReminder = observer(() => {
             <div className="head">
                 <div className="organization">ОРГАНИЗАЦИЯ</div>
                 <div className="contactFace">ФИО</div>
+                <div className="phone">телефон</div>
                 <div className="products">ПРОДУКЦИЯ</div>
                 <div className="productsArchive">архив</div>
-                <div className="phone">телефон</div>
                 <div className="description">ОПИСАНИЕ</div>
             </div>
             <div className="body">
@@ -45,6 +45,7 @@ const CustomerListReminder = observer(() => {
                         <div key={id} className="customer" onClick={() => update(id)}>
                             <div className="organization">{organization}</div>
                             <div className="contactFace">{contactFace}</div>
+                            <div className="phone">{phone}</div>
                             <div className="products">
                                 {products.map((
                                         {id, name}
@@ -61,7 +62,6 @@ const CustomerListReminder = observer(() => {
                                     </div>)
                                 )}
                             </div>
-                            <div className="phone">{phone}</div>
                             <div className="description">{description}</div>
                         </div>
 

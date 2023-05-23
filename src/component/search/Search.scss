@@ -26,22 +26,33 @@
         flex-direction: column;
 
         &.description, &.reminder, &.products, &.contacts {
-            margin-top: 39px;
+            margin-top: 43px;
+        }
+
+        &.organization, &.contactFace {
+            .label {
+                background: $color-white-light url("../../../public/img/icons/iconSortByName.svg") top 11px right 10px no-repeat;
+                background-size: 15px;
+                cursor: pointer;
+            }
         }
 
         .inputTextField {
             width: 100%;
-            padding: 6px 10px;
+            padding: 6px 25px 10px 6px;
             margin-bottom: 10px;
             border-radius: $border-radius-main-small;
+            background: $color-white url("../../../public/img/icons/iconSearch.svg") center right 7px no-repeat;
+            background-size: 18px;
         }
 
         .label {
             text-transform: uppercase;
             font-size: $font-size-smallest;
-            background-color: $color-white-light;
             padding: 10px 5px;
             margin: 0;
+
+            background: $color-white-light;
         }
     }
 

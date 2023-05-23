@@ -89,7 +89,7 @@
         }
 
         &.on {
-            background: url("../../../public/img/icons/notificationGreen.svg") left no-repeat;
+            background: url("../../../public/img/icons/iconNotificationGreen.svg") left no-repeat;
             background-size: 20px;
 
             .reminderDate {
@@ -98,7 +98,7 @@
         }
 
         &.off {
-            background: url("../../../public/img/icons/notification.svg") left no-repeat;
+            background: url("../../../public/img/icons/iconNotification.svg") left no-repeat;
             background-size: 20px;
         }
 

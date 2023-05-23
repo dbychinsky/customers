@@ -28,7 +28,7 @@
         height: 30px;
         border-radius: $border-radius-main;
         background: $color-red-light
-        url("../../../public/img/icons/notifiactionHover.svg") center right no-repeat;
+        url("../../../public/img/icons/iconNotifiactionHover.svg") center right no-repeat;
         background-size: 26px;
         box-shadow: inset 0 2px 3px rgba(0, 0, 0, .4);
         transition: .2s;
@@ -49,7 +49,7 @@
 
     .checkbox:checked + label:before {
         background: $color-green
-        url("../../../public/img/icons/notifiactionHover.svg") center left no-repeat;
+        url("../../../public/img/icons/iconNotifiactionHover.svg") center left no-repeat;
         background-size: 26px;
     }
 

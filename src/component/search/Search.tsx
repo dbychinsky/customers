@@ -44,14 +44,14 @@ const Search = observer(() => {
                        onClick={() => sortListName('contactFace')}/>
             </div>
 
-            <div className="headerColumn products">
-
-                <Label text="Продукция"/>
-            </div>
-
             <div className="headerColumn contacts">
 
                 <Label text="Контакты"/>
+            </div>
+
+            <div className="headerColumn products">
+
+                <Label text="Продукция"/>
             </div>
 
             <div className="headerColumn description">

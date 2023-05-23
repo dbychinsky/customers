@@ -87,6 +87,10 @@ const Customer = observer(() => {
                             ? <>
                                 <div className="organization">{organization}</div>
                                 <div className="contactFace">{contactFace}</div>
+                                <div className="contacts">
+                                    <div className="phone">{phone}</div>
+                                    <div className="email">{email}</div>
+                                </div>
                                 <div className="products">
                                     {products.map((
                                             {id, name}
@@ -94,10 +98,6 @@ const Customer = observer(() => {
                                             <div>{name}</div>
                                         </div>)
                                     )}
-                                </div>
-                                <div className="contacts">
-                                    <div className="phone">{phone}</div>
-                                    <div className="email">{email}</div>
                                 </div>
                                 <pre className="description">{description}</pre>
 
