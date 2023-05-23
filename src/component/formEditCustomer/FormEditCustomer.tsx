@@ -65,13 +65,11 @@ const FormEditCustomer = observer(({
                         </div>
                         <div className="additionalProductList">
                             <Button onClick={customerStore.addProjectInList} text="Добавить"/>
-                            {customerStore.productLists.map(({id, name}) => (
-                                <div key={id} className="additionalProduct">
-                                    {name ? <Button onClick={() => customerStore.deleteRecordProductList(id)}
-                                                    classname="deleteProduct imgBtn"
-                                                    text="del"/> : ''}
-                                    <p className="productName">{name}</p>
+                            {customerStore.productList.map((product) => (
+                                <div key={product}>{product}
+                                    <Button onClick={() => customerStore.deleteRecordProductList(product)}/>
                                 </div>
+
                             ))}
                         </div>
                     </div>
@@ -87,14 +85,14 @@ const FormEditCustomer = observer(({
                         </div>
                         <div className="additionalProductList">
                             <Button onClick={customerStore.addProjectInListArchive} text="Добавить"/>
-                            {customerStore.productListsArchive.map(({id, name}) => (
-                                <div key={id} className="additionalProduct">
-                                    {name ? <Button onClick={() => customerStore.deleteRecordProductListArchive(id)}
-                                                    classname="deleteProduct imgBtn"
-                                                    text="del"/> : ''}
-                                    <p className="productName">{name}</p>
+
+                            {customerStore.productListsArchive.map((product) => (
+                                <div key={product}>{product}
+                                    <Button onClick={() => customerStore.deleteRecordProductListArchive(product)}/>
                                 </div>
+
                             ))}
+
                         </div>
                     </div>
                 </div>

@@ -47,18 +47,16 @@ const CustomerListReminder = observer(() => {
                             <div className="contactFace">{contactFace}</div>
                             <div className="phone">{phone}</div>
                             <div className="products">
-                                {products.map((
-                                        {id, name}
-                                    ) => (<div key={id}>
-                                        <div>{name}</div>
+                                {products.map((elem
+                                    ) => (<div key={elem}>
+                                        <div>{elem}</div>
                                     </div>)
                                 )}
                             </div>
                             <div className="productsArchive">
-                                {productsArchive.map((
-                                        {id, name}
-                                    ) => (<div key={id}>
-                                        <div>{name}</div>
+                                {productsArchive.map((elem
+                                    ) => (<div key={elem}>
+                                        <div>{elem}</div>
                                     </div>)
                                 )}
                             </div>

@@ -1,8 +1,6 @@
 /**
  * Заказчик
  */
-import {ProductList} from "./ProductList";
-
 export class Customer {
 
     /**
@@ -13,12 +11,12 @@ export class Customer {
     /**
      * Продукция
      */
-    products: ProductList[];
+    products: string[];
 
     /**
      * Продукция для архива
      */
-    productsArchive: ProductList[];
+    productsArchive: string[];
 
     /**
      * ФИО, контактное лицо

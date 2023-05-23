@@ -3,7 +3,6 @@ import {makeAutoObservable, runInAction} from "mobx";
 import {Customer} from "../model/Customer";
 import {server} from "../App";
 import {Conversation} from "../utility/Conversation";
-import {ProductList} from "../model/ProductList";
 
 /**
  * Store для работы с LoanStore
@@ -23,7 +22,7 @@ export class CustomerStore {
     /**
      * Список проектов, принадлежащие заказчику
      */
-    public productLists: ProductList[] = [];
+    public productList: string[] = [];
 
 
     /**
@@ -34,7 +33,7 @@ export class CustomerStore {
     /**
      * Список проектов в архиве, принадлежащие заказчику
      */
-    public productListsArchive: ProductList[] = [];
+    public productListsArchive: string[] = [];
 
     /**
      * Список заказчиков
@@ -64,6 +63,11 @@ export class CustomerStore {
      */
     public searchContactFace: string = '';
 
+    /**
+     * Поле, принимает данные для поиска по продуктам
+     */
+    public searchProduct: string = '';
+
     constructor() {
         makeAutoObservable(this);
         this.handleChange = this.handleChange.bind(this);
@@ -74,6 +78,7 @@ export class CustomerStore {
         this.addProjectInListArchive = this.addProjectInListArchive.bind(this);
         this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
         this.handleChangeSearchContactFace = this.handleChangeSearchContactFace.bind(this);
+        this.handleChangeSearchProduct = this.handleChangeSearchProduct.bind(this);
     }
 
     /**
@@ -119,6 +124,16 @@ export class CustomerStore {
     };
 
     /**
+     * Слушатель для поля поиска по продукту
+     * @param e
+     */
+    public handleChangeSearchProduct(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.searchProduct = e.target.value;
+        });
+    };
+
+    /**
      * Поиск по организации
      */
     public searchOrgField() {
@@ -153,6 +168,23 @@ export class CustomerStore {
     }
 
     /**
+     * Поиск по ФИО
+     */
+    public searchProductField() {
+        if (this.searchProduct !== '') {
+            runInAction(() => {
+                this.customerList = this.customerList.filter((customer) => {
+                    return customer.products.find((elem) => elem.toUpperCase().includes(this.searchProduct.toUpperCase()))
+                })
+            })
+        } else {
+            runInAction(() => {
+                this.customerList = this.customerListTemp;
+            })
+        }
+    }
+
+    /**
      * Очистка полей поиска
      */
     public clearSearchField() {
@@ -161,14 +193,13 @@ export class CustomerStore {
         })
     }
 
-
     /**
      * Удаление проекта
      * @param id
      */
-    public deleteRecordProductList(id: string) {
+    public deleteRecordProductList(name: string) {
         runInAction(() => {
-            this.productLists = this.productLists.filter(product => product.id !== id);
+            this.productList = this.productList.filter(productName => productName !== name);
         });
     };
 
@@ -177,7 +208,7 @@ export class CustomerStore {
      */
     public addProjectInList() {
         runInAction(() => {
-            this.productLists.push({id: this.createId(this.productLists), name: this.product})
+            this.productList.push(this.product)
         });
         runInAction(() => {
             this.product = '';
@@ -198,9 +229,9 @@ export class CustomerStore {
      * Удаление проекта из архива
      * @param id
      */
-    public deleteRecordProductListArchive(id: string) {
+    public deleteRecordProductListArchive(name: string) {
         runInAction(() => {
-            this.productListsArchive = this.productListsArchive.filter(product => product.id !== id);
+            this.productListsArchive = this.productListsArchive.filter(productName => productName !== name);
         });
     };
 
@@ -209,7 +240,7 @@ export class CustomerStore {
      */
     public addProjectInListArchive() {
         runInAction(() => {
-            this.productListsArchive.push({id: this.createId(this.productListsArchive), name: this.productArchive})
+            this.productListsArchive.push(this.productArchive)
         });
         runInAction(() => {
             this.productArchive = '';
@@ -260,7 +291,7 @@ export class CustomerStore {
         });
 
         runInAction(() => {
-            this.newCustomer.products = this.productLists;
+            this.newCustomer.products = this.productList;
             this.newCustomer.productsArchive = this.productListsArchive;
         });
 
@@ -285,7 +316,7 @@ export class CustomerStore {
         });
 
         runInAction(() => {
-            this.newCustomer.products = this.productLists;
+            this.newCustomer.products = this.productList;
             this.newCustomer.productsArchive = this.productListsArchive;
         });
 
@@ -324,7 +355,7 @@ export class CustomerStore {
             if (customerEdit !== undefined) {
                 runInAction(() => {
                     this.newCustomer = customerEdit;
-                    this.productLists = customerEdit.products;
+                    this.productList = customerEdit.products;
                     this.productListsArchive = customerEdit.productsArchive;
                 })
 
@@ -332,7 +363,7 @@ export class CustomerStore {
         } else {
             runInAction(() => {
                 this.newCustomer = new Customer();
-                this.productLists = [];
+                this.productList = [];
                 this.productListsArchive = [];
                 this.product = '';
                 this.productArchive = '';

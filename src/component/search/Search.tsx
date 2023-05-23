@@ -20,6 +20,10 @@ const Search = observer(() => {
         customerStore.searchContactFaceField();
     }, [customerStore.searchContactFace])
 
+    useEffect(() => {
+        customerStore.searchProductField();
+    }, [customerStore.searchProduct])
+
     return (
         <div className="search">
 
@@ -50,7 +54,11 @@ const Search = observer(() => {
             </div>
 
             <div className="headerColumn products">
-
+                <InputTextField value={customerStore.searchProduct}
+                                changeHandler={customerStore.handleChangeSearchProduct}
+                                name="products"
+                                type="text"
+                                placeHolder="..."/>
                 <Label text="Продукция"/>
             </div>
 

@@ -92,10 +92,9 @@ const Customer = observer(() => {
                                     <div className="email">{email}</div>
                                 </div>
                                 <div className="products">
-                                    {products.map((
-                                            {id, name}
-                                        ) => (<div key={id}>
-                                            <div>{name}</div>
+                                    {products.map((elem
+                                        ) => (<div key={elem}>
+                                            <div>{elem}</div>
                                         </div>)
                                     )}
                                 </div>
@@ -127,10 +126,10 @@ const Customer = observer(() => {
                                 </div>
 
                                 <div className="archiveProductList">
-                                    {productsArchive.map((
-                                            {id, name}
-                                        ) => (
-                                            <div key={id}>{name}</div>)
+                                    {productsArchive.map((elem
+                                        ) => (<div key={elem}>
+                                            <div>{elem}</div>
+                                        </div>)
                                     )}
                                 </div>
                             </>
