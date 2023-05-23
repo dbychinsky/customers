@@ -100,15 +100,20 @@ const CustomerEditPage = observer(() => {
                 name="contactFace"
                 type="text"/>
         }];
-    const fieldListContacts: Field[] = [{
-        name: "phone",
-        label: "Номер телефона",
-        field: <InputTextField
-            value={customerStore.newCustomer.phone}
-            changeHandler={customerStore.handleChange}
-            name="phone"
-            type="text"/>
-    },
+
+    const fieldListPhoneList: Field[] = [
+        {
+            name: "phoneList",
+            label: "Номер телефона",
+            field: <InputTextField
+                value={customerStore.phone}
+                changeHandler={customerStore.handleChangePhone}
+                name="phone"
+                type="text"/>
+        }
+    ]
+
+    const fieldListEmail: Field[] = [
         {
             name: "email",
             label: "Email",
@@ -168,7 +173,8 @@ const CustomerEditPage = observer(() => {
             <FormEditCustomer fieldListProducts={fieldListProducts}
                               fieldListProductsArchive={fieldListProductsArchive}
                               fieldListCustomer={fieldListCustomer}
-                              fieldListContacts={fieldListContacts}
+                              fieldListPhoneList={fieldListPhoneList}
+                              fieldListEmail={fieldListEmail}
                               fieldListDescription={fieldListDescription}
                               fieldListReminder={fieldListReminder}
                               actionList={actionList}/>

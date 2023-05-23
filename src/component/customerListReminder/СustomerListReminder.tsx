@@ -38,14 +38,20 @@ const CustomerListReminder = observer(() => {
                          contactFace,
                          products,
                          productsArchive,
-                         phone,
+                         phoneList,
                          email,
                          description
                      }) => (
                         <div key={id} className="customer" onClick={() => update(id)}>
                             <div className="organization">{organization}</div>
                             <div className="contactFace">{contactFace}</div>
-                            <div className="phone">{phone}</div>
+                            <div className="phone">
+                                {phoneList.map((elem
+                                    ) => (<div key={elem}>
+                                        <div>{elem}</div>
+                                    </div>)
+                                )}
+                            </div>
                             <div className="products">
                                 {products.map((elem
                                     ) => (<div key={elem}>

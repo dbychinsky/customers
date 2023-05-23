@@ -13,7 +13,8 @@ interface ICustomFormEditCustomer {
     fieldListProducts: Field[],
     fieldListProductsArchive: Field[],
     fieldListCustomer: Field[],
-    fieldListContacts: Field[],
+    fieldListPhoneList: Field[],
+    fieldListEmail: Field[],
     fieldListDescription: Field[],
     fieldListReminder: Field[],
     actionList: ActionListType[]
@@ -27,7 +28,8 @@ const FormEditCustomer = observer(({
                                        fieldListProducts,
                                        fieldListProductsArchive,
                                        fieldListCustomer,
-                                       fieldListContacts,
+                                       fieldListPhoneList,
+                                       fieldListEmail,
                                        fieldListDescription,
                                        fieldListReminder,
                                        actionList
@@ -85,14 +87,11 @@ const FormEditCustomer = observer(({
                         </div>
                         <div className="additionalProductList">
                             <Button onClick={customerStore.addProjectInListArchive} text="Добавить"/>
-
                             {customerStore.productListsArchive.map((product) => (
                                 <div key={product}>{product}
                                     <Button onClick={() => customerStore.deleteRecordProductListArchive(product)}/>
                                 </div>
-
                             ))}
-
                         </div>
                     </div>
                 </div>
@@ -100,7 +99,22 @@ const FormEditCustomer = observer(({
             <div className="contactsArea">
                 <p>Контактные данные: <span>телефоны, адрес электронной почты </span></p>
                 <div>
-                    {fieldListContacts.map(({name, label, field}) =>
+                    {fieldListPhoneList.map(({name, label, field}) =>
+                        <FormRow name={name}
+                                 label={label}
+                                 field={field}
+                                 key={name}
+                        />
+                    )}
+                    <Button onClick={customerStore.addPhoneInList} text="Добавить"/>
+
+                    {customerStore.phonetList.map((phone) => (
+                        <div key={phone}>{phone}
+                            <Button onClick={() => customerStore.deleteRecordPhoneList(phone)}/>
+                        </div>
+                    ))}
+
+                    {fieldListEmail.map(({name, label, field}) =>
                         <FormRow name={name}
                                  label={label}
                                  field={field}

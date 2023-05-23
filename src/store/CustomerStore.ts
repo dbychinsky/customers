@@ -19,11 +19,22 @@ export class CustomerStore {
      */
     public product: string = '';
 
+
     /**
      * Список проектов, принадлежащие заказчику
      */
     public productList: string[] = [];
 
+
+    /**
+     * Телефон телефонов, принадлежащий заказчику
+     */
+    public phone: string = '';
+
+    /**
+     * Список телефонов, принадлежащие заказчику
+     */
+    public phonetList: string[] = [];
 
     /**
      * Проект для добавления в архив, принадлежащий заказчику
@@ -73,9 +84,11 @@ export class CustomerStore {
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeCheckbox = this.handleChangeCheckbox.bind(this);
         this.handleChangeProducts = this.handleChangeProducts.bind(this);
+        this.handleChangePhone = this.handleChangePhone.bind(this);
         this.handleChangeProductsArchive = this.handleChangeProductsArchive.bind(this);
         this.addProjectInList = this.addProjectInList.bind(this);
         this.addProjectInListArchive = this.addProjectInListArchive.bind(this);
+        this.addPhoneInList = this.addPhoneInList.bind(this);
         this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
         this.handleChangeSearchContactFace = this.handleChangeSearchContactFace.bind(this);
         this.handleChangeSearchProduct = this.handleChangeSearchProduct.bind(this);
@@ -100,6 +113,16 @@ export class CustomerStore {
     public handleChangeProducts(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
             this.product = e.target.value;
+        });
+    };
+
+    /**
+     * Добавление нового номера телефона
+     * @param e
+     */
+    public handleChangePhone(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.phone = e.target.value;
         });
     };
 
@@ -229,9 +252,9 @@ export class CustomerStore {
      * Удаление проекта из архива
      * @param id
      */
-    public deleteRecordProductListArchive(name: string) {
+    public deleteRecordPhoneList(name: string) {
         runInAction(() => {
-            this.productListsArchive = this.productListsArchive.filter(productName => productName !== name);
+            this.phonetList = this.phonetList.filter(phone => phone !== name);
         });
     };
 
@@ -246,6 +269,28 @@ export class CustomerStore {
             this.productArchive = '';
         });
     }
+
+    /**
+     * Добавить телефон в список
+     */
+    public addPhoneInList() {
+        runInAction(() => {
+            this.phonetList.push(this.phone)
+        });
+        runInAction(() => {
+            this.phone = '';
+        });
+    }
+
+    /**
+     * Удаление телефона из списка
+     * @param id
+     */
+    public deleteRecordProductListArchive(name: string) {
+        runInAction(() => {
+            this.productListsArchive = this.productListsArchive.filter(productName => productName !== name);
+        });
+    };
 
     /**
      * Слушатель для чекбокса
@@ -293,6 +338,7 @@ export class CustomerStore {
         runInAction(() => {
             this.newCustomer.products = this.productList;
             this.newCustomer.productsArchive = this.productListsArchive;
+            this.newCustomer.phoneList = this.phonetList;
         });
 
         server.addCustomer(this.newCustomer)
@@ -318,6 +364,7 @@ export class CustomerStore {
         runInAction(() => {
             this.newCustomer.products = this.productList;
             this.newCustomer.productsArchive = this.productListsArchive;
+            this.newCustomer.phoneList = this.phonetList;
         });
 
         server.updateCustomer(id, data)

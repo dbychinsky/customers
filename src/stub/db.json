@@ -3,98 +3,23 @@
     {
       "id": 1,
       "products": [
-        "32323"
+        "123",
+        "321"
       ],
-      "productsArchive": [],
-      "contactFace": "2",
+      "productsArchive": [
+        "123",
+        "321"
+      ],
+      "contactFace": "1",
       "organization": "1",
-      "phone": "",
+      "phoneList": [
+        "11111",
+        "ццц"
+      ],
       "email": "",
       "description": "",
       "reminder": false,
-      "reminderDate": "2023-05-23T06:28:20.702Z"
-    },
-    {
-      "id": 2,
-      "products": [
-        "111",
-        "222"
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "ввв",
-      "phone": "",
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-23T06:35:14.822Z"
-    },
-    {
-      "id": 3,
-      "products": [
-        "вывы",
-        "укукук",
-        "ВыВы"
-      ],
-      "productsArchive": [],
-      "contactFace": "3",
-      "organization": "3",
-      "phone": "",
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-23T07:03:13.626Z"
-    },
-    {
-      "id": 4,
-      "products": [
-        "Прррр"
-      ],
-      "productsArchive": [],
-      "contactFace": "444",
-      "organization": "44",
-      "phone": "",
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-23T07:04:27.874Z"
-    },
-    {
-      "id": 5,
-      "products": [
-        "123"
-      ],
-      "productsArchive": [
-        "2312",
-        "33333"
-      ],
-      "contactFace": "",
-      "organization": "1111",
-      "phone": "",
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-23T07:29:12.646Z"
-    },
-    {
-      "id": 6,
-      "products": [
-        "11",
-        "222",
-        "33"
-      ],
-      "productsArchive": [
-        "111",
-        "222",
-        "444"
-      ],
-      "contactFace": "",
-      "organization": "",
-      "phone": "",
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-23T07:34:16.352Z"
+      "reminderDate": "2023-05-23T08:22:26.013Z"
     }
   ]
 }

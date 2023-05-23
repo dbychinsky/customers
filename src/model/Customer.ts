@@ -28,10 +28,7 @@ export class Customer {
      */
     organization: string;
 
-    /**
-     * Номер телефона
-     */
-    phone: string;
+    phoneList: string[];
 
     /**
      * Номер телефона
@@ -59,7 +56,7 @@ export class Customer {
         this.productsArchive = [];
         this.contactFace = '';
         this.organization = '';
-        this.phone = '';
+        this.phoneList = [];
         this.email = '';
         this.description = '';
         this.reminder = false;

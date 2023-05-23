@@ -76,7 +76,7 @@ const Customer = observer(() => {
                      productsArchive,
                      contactFace,
                      organization,
-                     phone,
+                     phoneList,
                      email,
                      description,
                      reminder,
@@ -88,9 +88,16 @@ const Customer = observer(() => {
                                 <div className="organization">{organization}</div>
                                 <div className="contactFace">{contactFace}</div>
                                 <div className="contacts">
-                                    <div className="phone">{phone}</div>
+                                    <div className="phone">
+                                        {phoneList.map((elem
+                                            ) => (<div key={elem}>
+                                                <div>{elem}</div>
+                                            </div>)
+                                        )}
+                                    </div>
                                     <div className="email">{email}</div>
                                 </div>
+
                                 <div className="products">
                                     {products.map((elem
                                         ) => (<div key={elem}>
@@ -98,6 +105,7 @@ const Customer = observer(() => {
                                         </div>)
                                     )}
                                 </div>
+
                                 <pre className="description">{description}</pre>
 
 
@@ -106,7 +114,6 @@ const Customer = observer(() => {
                                         <span>{Conversation.checkboxBoolToString(reminder)}</span>
                                     </div>
                                     <div className="reminderDate">
-                                        {/*{Conversation.dateToStrUTC(reminderDate)}</div>*/}
                                         {Conversation.dateToStrUTC(reminderDate)}</div>
                                 </div>
 
