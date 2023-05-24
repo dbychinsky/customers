@@ -57,7 +57,7 @@ const CustomerList = observer(() => {
     return (
         <div className="customerList">
             <div className="headerList">
-                <H4 text="Список заказчиков"/>
+                <H4 text="Список контактов"/>
                 <Button onClick={updateHandData}
                         classname="updateData imgBtn"
                         text="Обновить данные"/>

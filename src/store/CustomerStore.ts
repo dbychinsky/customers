@@ -6,6 +6,8 @@ import {Conversation} from "../utility/Conversation";
 
 /**
  * Store для работы с LoanStore
+ * Customer - заказчики
+ * Client - потенциальные заказчики, но не клиеты
  */
 export class CustomerStore {
 
@@ -84,6 +86,11 @@ export class CustomerStore {
      */
     public searchPhone: string = '';
 
+    /**
+     * Поле, клиенты
+     */
+    public clientList: string = '';
+
     constructor() {
         makeAutoObservable(this);
         this.handleChange = this.handleChange.bind(this);
@@ -94,10 +101,12 @@ export class CustomerStore {
         this.addProjectInList = this.addProjectInList.bind(this);
         this.addProjectInListArchive = this.addProjectInListArchive.bind(this);
         this.addPhoneInList = this.addPhoneInList.bind(this);
+        this.viewCustomer = this.viewCustomer.bind(this);
         this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
         this.handleChangeSearchContactFace = this.handleChangeSearchContactFace.bind(this);
         this.handleChangeSearchProduct = this.handleChangeSearchProduct.bind(this);
         this.handleChangeSearchPhone = this.handleChangeSearchPhone.bind(this);
+        this.handleChangeCheckboxFilter = this.handleChangeCheckboxFilter.bind(this);
     }
 
     /**
@@ -525,6 +534,36 @@ export class CustomerStore {
                 return 0 // Никакой сортировки
             });
         })
+    };
+
+    /**
+     * Фильтр. Показать только заказчиков
+     */
+    public viewCustomer() {
+        runInAction(() => {
+            this.customerList = this.customerList.filter((customer) =>
+                customer.products.length !== 0
+            )
+        })
+    }
+
+    /**
+     * Фильтр. Показать все контакты
+     */
+    public viewAllContacts() {
+       runInAction(()=>{
+           this.customerList = this.customerListTemp
+       })
+    }
+
+    /**
+     * Слушатель для чекбокса
+     * @param e
+     */
+    public handleChangeCheckboxFilter(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+
+        });
     };
 
 }
