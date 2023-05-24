@@ -2,7 +2,7 @@
 @import "src/font";
 @import "src/mixins";
 
-.customerListReminderWidget {
+.contactListReminderWidget {
     width: 12%;
     margin-left: 20px;
 
@@ -11,8 +11,13 @@
         top: 103px;
     }
 
-    .customer {
-        @include tileParameters($color-red-light, $color-red-light);
+    .contact {
+        @include tileParameters($color-red-light,
+            $color-red-light url("../../../public/bg-header.png"));
+        background-repeat: no-repeat;
+        background-position: top right -20px;
+        background-size: 30%;
+
         flex-direction: column;
         margin-bottom: 20px;
         max-height: inherit;
@@ -41,6 +46,7 @@
             width: 26px;
 
             background-color: $color-white;
+            border: 1px solid $color-red-light;
             border-radius: 50%;
 
             .ring {
@@ -61,13 +67,13 @@
             @include interSemiBold();
             width: 100%;
             font-size: $font-size-small;
-            padding: 0 0 5px 0;
+            padding: 0 0 5px 10px;
         }
 
         .contactFace {
             width: 100%;
             font-size: $font-size-the-smallest;
-            padding: 0 0 5px 0;
+            padding: 0 0 5px 10px;
         }
     }
 

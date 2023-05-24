@@ -1,5 +1,5 @@
 /**
- * Заказчик
+ * Контакт
  */
 export class Setting {
 

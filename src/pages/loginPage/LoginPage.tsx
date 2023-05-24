@@ -13,12 +13,18 @@ import Form, {ActionListType, Field} from "../../component/form/Form";
  */
 const LoginPage = observer(() => {
     const authStore = useContext(StoreContext).authStore;
+    const settingStore = useContext(StoreContext).settingStore;
+
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        settingStore.get();
+    })
 
     const auth = () => {
         authStore.auth();
         if (authStore.errorList.length === 0) {
-            navigate(RouterPathList.CUSTOMER_LIST_PAGE);
+            navigate(RouterPathList.CONTACT_LIST_PAGE);
         } else {
             console.log('Ошибка авторизации')
         }
@@ -72,16 +78,16 @@ const LoginPage = observer(() => {
         <div className="loginPage">
             <div className="titleLoginPage">
                 <h2>
-                    <span>Customer</span>
+                    <span>Contact</span>
                     <span>care  <span>&</span></span>
                     <span>Service</span>
                 </h2>
             </div>
             {/*<div className="titleLoginPage">*/}
             {/*    <H2>*/}
-            {/*        <span>Customer</span>*/}
+            {/*        <span>Contact</span>*/}
             {/*        <span>Service</span>*/}
-            {/*        <span>Customer</span>*/}
+            {/*        <span>Contact</span>*/}
             {/*        <span>Care</span>*/}
             {/*    </H2>*/}
             {/*</div>*/}

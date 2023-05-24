@@ -1,27 +1,27 @@
-import {Customer} from "../model/Customer";
+import {Contact} from "../model/Contact";
 import {Setting} from "../model/Setting";
 
 export interface IService {
 
     /**
-     * Получение списка заказчиков
+     * Получение списка контактов
      */
-    getCustomers(): Promise<Customer[]>;
+    getContacts(): Promise<Contact[]>;
 
     /**
-     * Сохранение заказчика
+     * Сохранение контакта
      */
-    addCustomer(customer: Customer): Promise<void>;
+    addContact(contact: Contact): Promise<void>;
 
     /**
-     * Обновление заказчика
+     * Обновление контакта
      */
-    updateCustomer(id: string, data: any): Promise<void>
+    updateContact(id: string, data: any): Promise<void>
 
     /**
-     * Удаление заказчика
+     * Удаление контакта
      */
-    deleteCustomer(id: number): Promise<void>;
+    deleteContact(id: number): Promise<void>;
 
     /**
      * Получение списка опций

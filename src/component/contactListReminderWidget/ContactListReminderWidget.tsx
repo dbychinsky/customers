@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {useNavigate} from "react-router";
-import "./CustomerListReminderWidget.scss";
+import "./ContactListReminderWidget.scss";
 import {observer} from "mobx-react";
 
-const CustomerListReminderWidget = observer(() => {
-    const customerStore = useContext(StoreContext).customerStore;
+const ContactListReminderWidget = observer(() => {
+    const contactStore = useContext(StoreContext).contactStore;
     const navigate = useNavigate();
 
     /**
@@ -16,14 +16,14 @@ const CustomerListReminderWidget = observer(() => {
         navigate((id).toString());
     }
     return (
-        <div className="customerListReminderWidget">
-            {customerStore.customerListNotificationActive.map(
+        <div className="contactListReminderWidget">
+            {contactStore.contactListNotificationActive.map(
                 ({
                      id,
                      contactFace,
                      organization
                  }) => (
-                    <div key={id} className="customer" onClick={() => update(id)}>
+                    <div key={id} className="contact" onClick={() => update(id)}>
                         <span className="bell"><div className="ring"></div></span>
                         <div className="organization">{organization}</div>
                         <div className="contactFace">{contactFace}</div>
@@ -35,4 +35,4 @@ const CustomerListReminderWidget = observer(() => {
     );
 });
 
-export default CustomerListReminderWidget;
+export default ContactListReminderWidget;

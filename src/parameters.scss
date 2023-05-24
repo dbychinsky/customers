@@ -5,13 +5,12 @@ $color-black: #2A3547;
 $color-grey: #6d7080;
 $color-grey-light: #e5e7eb;
 $color-green: #00af32;
-$color-green-light: #00fa47;
+$color-green-light: #dcfde1;
 $color-blue: #1131fa;
 $color-blue-light: #0095fb;
 $color-blue-light2: #e6f2ff;
 $color-blue-light3: #f6faff;
 $color-red: #ef4444;
-$color-red-light: #fa896b;
 $color-red-light: #ffcccc;
 //Тень
 $box-shadow-main: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
@@ -20,7 +19,8 @@ $box-shadow-border: 0px 0px 0px 1px rgba(223, 229, 239, 1);
 $box-shadow-hover: 0 0 1px 0 rgba(0, 0, 0, 0.31),
 0 3px 4px -2px rgba(0, 0, 0, 0.25);
 $box-shadow-box-inset: 0px 1px 3px 0px rgba(34, 60, 80, 0.2) inset;
-$box-shadow-customer-tile-inset: 0px -5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+$box-shadow-contact-tile-inset: 0px -5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+
 
 //Размер шрифта
 
@@ -40,6 +40,7 @@ $border-radius-main-small: 3px;
 
 //Размеры
 $width-menu: 190px;
+$max-width-tile: 1430px;
 //1560px
 
 //Transition

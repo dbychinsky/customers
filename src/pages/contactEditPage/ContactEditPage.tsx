@@ -8,17 +8,17 @@ import {observer} from "mobx-react";
 import TextAreaField from "../../component/textAreaField/TextAreaField";
 import {Conversation} from "../../utility/Conversation";
 import {ActionListType, Field} from "../../component/form/Form";
-import "./CustomerEditPage.scss";
+import "./ContactEditPage.scss";
 import Header from "../../component/header/Header";
-import FormEditCustomer from "../../component/formEditCustomer/FormEditCustomer";
+import FormEditContact from "../../component/formEditContact/FormEditContact";
 import H1 from "../../component/header/H1";
 
 /**
- * Страница редактирования/добавления заказчика
+ * Страница редактирования/добавления контакта
  */
-const CustomerEditPage = observer(() => {
+const ContactEditPage = observer(() => {
 
-    const customerStore = useContext(StoreContext).customerStore;
+    const contactStore = useContext(StoreContext).contactStore;
     const [startDate, setStartDate] = useState(new Date());
     const navigate = useNavigate();
     const {id} = useParams();
@@ -28,24 +28,24 @@ const CustomerEditPage = observer(() => {
      */
     useEffect(() => {
         if (id !== undefined) {
-            customerStore.setEditPlace(Number(id));
-            setStartDate(Conversation.dateToDateUTC(customerStore.getDateForState(Number(id))));
+            contactStore.setEditPlace(Number(id));
+            setStartDate(Conversation.dateToDateUTC(contactStore.getDateForState(Number(id))));
         } else {
-            customerStore.setEditPlace();
+            contactStore.setEditPlace();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     /**
-     * Сохраняем нового заказчика
+     * Сохраняем новый контакт
      */
     const save = () => {
         if (!id) {
-            customerStore.save(startDate);
+            contactStore.save(startDate);
         } else {
-            customerStore.update(id, customerStore.newCustomer, startDate);
+            contactStore.update(id, contactStore.newContact, startDate);
         }
-        customerStore.deleteRecordListNotification(id);
+        contactStore.deleteRecordListNotification(id);
         exit();
     }
 
@@ -63,8 +63,8 @@ const CustomerEditPage = observer(() => {
         {
             name: "products",
             label: "Продукция",
-            field: <InputTextField value={customerStore.product}
-                                   changeHandler={customerStore.handleChangeProducts}
+            field: <InputTextField value={contactStore.product}
+                                   changeHandler={contactStore.handleChangeProducts}
                                    name="products"
                                    type="text"/>
         }
@@ -73,19 +73,19 @@ const CustomerEditPage = observer(() => {
         {
             name: "productsArchive",
             label: "Продукция в архиве",
-            field: <InputTextField value={customerStore.productArchive}
-                                   changeHandler={customerStore.handleChangeProductsArchive}
+            field: <InputTextField value={contactStore.productArchive}
+                                   changeHandler={contactStore.handleChangeProductsArchive}
                                    name="productsArchive"
                                    type="text"/>
         }
     ];
-    const fieldListCustomer: Field[] = [
+    const fieldListContact: Field[] = [
         {
             name: "organization",
             label: "Организация",
             field: <InputTextField
-                value={customerStore.newCustomer.organization}
-                changeHandler={customerStore.handleChange}
+                value={contactStore.newContact.organization}
+                changeHandler={contactStore.handleChange}
                 name="organization"
                 type="text"/>
         },
@@ -93,8 +93,8 @@ const CustomerEditPage = observer(() => {
             name: "contactFace",
             label: "ФИО",
             field: <InputTextField
-                value={customerStore.newCustomer.contactFace}
-                changeHandler={customerStore.handleChange}
+                value={contactStore.newContact.contactFace}
+                changeHandler={contactStore.handleChange}
                 name="contactFace"
                 type="text"/>
         }];
@@ -104,8 +104,8 @@ const CustomerEditPage = observer(() => {
             name: "phoneList",
             label: "Номер телефона",
             field: <InputTextField
-                value={customerStore.phone}
-                changeHandler={customerStore.handleChangePhone}
+                value={contactStore.phone}
+                changeHandler={contactStore.handleChangePhone}
                 name="phone"
                 type="text"/>
         }
@@ -116,8 +116,8 @@ const CustomerEditPage = observer(() => {
             name: "email",
             label: "Email",
             field: <InputTextField
-                value={customerStore.newCustomer.email}
-                changeHandler={customerStore.handleChange}
+                value={contactStore.newContact.email}
+                changeHandler={contactStore.handleChange}
                 name="email"
                 type="text"/>
         }];
@@ -125,8 +125,8 @@ const CustomerEditPage = observer(() => {
         name: "description",
         label: "Описание",
         field: <TextAreaField
-            value={customerStore.newCustomer.description}
-            changeHandler={customerStore.handleChange}
+            value={contactStore.newContact.description}
+            changeHandler={contactStore.handleChange}
             name="description"
             type="text"/>
     }];
@@ -136,8 +136,8 @@ const CustomerEditPage = observer(() => {
             label: "Напоминание",
             field: <InputCheckboxField
                 id="reminder"
-                value={customerStore.newCustomer.reminder}
-                changeHandler={customerStore.handleChangeCheckbox}
+                value={contactStore.newContact.reminder}
+                changeHandler={contactStore.handleChangeCheckbox}
                 name="reminder"/>
         },
         {
@@ -165,19 +165,19 @@ const CustomerEditPage = observer(() => {
     ];
 
     return (
-        <div className="customerEditPage">
+        <div className="contactEditPage">
             <Header title="Редактирование/Добавление"/>
             <H1 text="Редактирование/Добавление"/>
-            <FormEditCustomer fieldListProducts={fieldListProducts}
-                              fieldListProductsArchive={fieldListProductsArchive}
-                              fieldListCustomer={fieldListCustomer}
-                              fieldListPhoneList={fieldListPhoneList}
-                              fieldListEmail={fieldListEmail}
-                              fieldListDescription={fieldListDescription}
-                              fieldListReminder={fieldListReminder}
-                              actionList={actionList}/>
+            <FormEditContact fieldListProducts={fieldListProducts}
+                             fieldListProductsArchive={fieldListProductsArchive}
+                             fieldListContact={fieldListContact}
+                             fieldListPhoneList={fieldListPhoneList}
+                             fieldListEmail={fieldListEmail}
+                             fieldListDescription={fieldListDescription}
+                             fieldListReminder={fieldListReminder}
+                             actionList={actionList}/>
         </div>
     );
 });
 
-export default CustomerEditPage;
+export default ContactEditPage;

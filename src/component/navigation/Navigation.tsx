@@ -7,21 +7,21 @@ const Navigation = () => {
     return (
         <div className="navigation">
             <div className="logotype">
-                <span>Customer</span>
+                <span>Contact</span>
                 <span>Care & Service</span>
             </div>
             <ul>
                 <li>
-                    <NavLink to={RouterPathList.CUSTOMER_LIST_PAGE}
-                             className="actionCustomerListPage"
-                             title="CUSTOMER_LIST_PAGE">
-                        Заказчики
+                    <NavLink to={RouterPathList.CONTACT_LIST_PAGE}
+                             className="actionContactListPage"
+                             title="CONTACT_LIST_PAGE">
+                        Контакты
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={RouterPathList.CUSTOMER_LIST_REMINDER_PAGE}
-                             className="actionCustomerListReminderPage"
-                             title="CUSTOMER_LIST_REMINDER_PAGE">
+                    <NavLink to={RouterPathList.CONTACT_LIST_REMINDER_PAGE}
+                             className="actionContactListReminderPage"
+                             title="CONTACT_LIST_REMINDER_PAGE">
                         Нотификации
                     </NavLink>
                 </li>

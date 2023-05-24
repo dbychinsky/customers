@@ -46,7 +46,7 @@ export class SettingStore {
         server.updateSetting(this.settingList)
             .then(() => {
                     runInAction(() => {
-                        this.settingMessages = 'СОхранено';
+                        this.settingMessages = 'Данные сохранены';
                     })
                 }
             );

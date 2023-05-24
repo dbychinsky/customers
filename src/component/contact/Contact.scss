@@ -2,9 +2,9 @@
 @import "../../mixins";
 @import "../../font";
 
-.customer {
+.contact {
     $paddingBottom: 10px;
-    @include customerListTable();
+    @include contactListTable();
 
     display: flex;
     flex-direction: row;
@@ -14,15 +14,20 @@
 
     width: 100%;
     overflow: hidden;
-    box-shadow: $box-shadow-customer-tile-inset;
+    box-shadow: $box-shadow-contact-tile-inset;
 
     box-sizing: border-box;
-    padding: 10px;
+    padding: 10px 0;
 
     max-height: 50px;
+    min-height: 50px;
 
     &:nth-child(2n) {
         background-color: $color-blue-light3;
+    }
+
+    &:last-child {
+        box-shadow: none;
     }
 
     &:hover {
@@ -40,7 +45,7 @@
 
     > div, > pre {
         box-sizing: border-box;
-        padding: 0 5px;
+        padding: 0 10px;
         font-size: $font-size-smaller;
     }
 
@@ -106,8 +111,15 @@
     }
 
     .feedbackMessage {
-        position: initial;
-        margin: 20px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+        background: $color-white;
+        font-size: $font-size-big;
+        line-height: 72px;
     }
 
     .actionBar {

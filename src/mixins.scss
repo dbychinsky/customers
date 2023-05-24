@@ -15,37 +15,33 @@
     background: $background;
 }
 
-@mixin customerListTable {
-    .products {
-        width: 15%;
-        margin: 0;
-    }
-
-    .contactFace {
-        width: 14%;
-        margin: 0;
-    }
+@mixin contactListTable {
     .organization {
         width: 15%;
         margin: 0;
     }
-
+    .contactFace {
+        width: 15%;
+        margin: 0;
+    }
     .contacts {
-        width: 14%;
+        width: 15%;
         margin: 0;
         max-width: 146px;
+        flex-grow: 1;
     }
-
-
+    .products {
+        width: 15%;
+        margin: 0;
+    }
     .description {
-        width: 21%;
+        width: 20%;
         margin: 0;
 
         .inputTextField {
             display: none;
         }
     }
-
     .reminder {
         width: 10%;
         margin: 0;
@@ -54,9 +50,8 @@
             display: none;
         }
     }
-
     .actionBar {
-        width: 11%;
+        width: 10%;
         background-color: $color-white-light;
 
         margin: 0;

@@ -1,70 +1,71 @@
 import React from "react";
 import {makeAutoObservable, runInAction} from "mobx";
-import {Customer} from "../model/Customer";
+import {Contact} from "../model/Contact";
 import {server} from "../App";
 import {Conversation} from "../utility/Conversation";
+import {PushNotification} from "../utility/PushNotification";
 
 /**
  * Store для работы с LoanStore
  * Customer - заказчики
- * Client - потенциальные заказчики, но не клиеты
+ * Client - потенциальные заказчики
  */
-export class CustomerStore {
+export class ContactStore {
 
     /**
-     * Новый заказчик
+     * Новый контакт
      */
-    public newCustomer: Customer = new Customer();
+    public newContact: Contact = new Contact();
 
     /**
-     * Новый проект, принадлежащий заказчику
+     * Новый проект, принадлежащий контакту
      */
     public product: string = '';
 
 
     /**
-     * Список проектов, принадлежащие заказчику
+     * Список проектов, принадлежащие контакту
      */
     public productList: string[] = [];
 
 
     /**
-     * Телефон телефонов, принадлежащий заказчику
+     * Телефон телефонов, принадлежащий контакту
      */
     public phone: string = '';
 
     /**
-     * Список телефонов, принадлежащие заказчику
+     * Список телефонов, принадлежащие контакту
      */
     public phoneList: string[] = [];
 
     /**
-     * Проект для добавления в архив, принадлежащий заказчику
+     * Проект для добавления в архив, принадлежащий контакту
      */
     public productArchive: string = '';
 
     /**
-     * Список проектов в архиве, принадлежащие заказчику
+     * Список проектов в архиве, принадлежащие контакту
      */
     public productListsArchive: string[] = [];
 
     /**
-     * Список заказчиков
+     * Список контактов
      */
-    public customerList: Customer[] = [new Customer()];
+    public contactList: Contact[] = [new Contact()];
 
     /**
-     * Список заказчиков для поиска. Сделан чтобы снизить
+     * Список контактов для поиска. Сделан чтобы снизить
      * количество запросов к серверу из-за ограниченного
      * количества
      */
-    public customerListTemp: Customer[] = [new Customer()];
+    public contactListTemp: Contact[] = [new Contact()];
 
     /**
      * Список активных уведомлений, содержит
-     * id заказчика
+     * id контакта
      */
-    public customerListNotificationActive: Customer[] = [];
+    public contactListNotificationActive: Contact[] = [];
 
     /**
      * Поле, принимает данные для поиска по продуктам
@@ -87,9 +88,14 @@ export class CustomerStore {
     public searchPhone: string = '';
 
     /**
+     * Поле, заказчики
+     */
+    public customer: boolean = true;
+
+    /**
      * Поле, клиенты
      */
-    public clientList: string = '';
+    public client: boolean = true;
 
     constructor() {
         makeAutoObservable(this);
@@ -106,17 +112,18 @@ export class CustomerStore {
         this.handleChangeSearchContactFace = this.handleChangeSearchContactFace.bind(this);
         this.handleChangeSearchProduct = this.handleChangeSearchProduct.bind(this);
         this.handleChangeSearchPhone = this.handleChangeSearchPhone.bind(this);
-        this.handleChangeCheckboxFilter = this.handleChangeCheckboxFilter.bind(this);
+        this.handleChangeCheckboxFilterCustomer = this.handleChangeCheckboxFilterCustomer.bind(this);
+        this.handleChangeCheckboxFilterClient = this.handleChangeCheckboxFilterClient.bind(this);
     }
 
     /**
-     * Добавление нового заказчика
+     * Добавление нового контакта
      * @param e
      */
     public handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         runInAction(() => {
-            this.newCustomer = {
-                ...this.newCustomer, [e.target.name]: e.target.value
+            this.newContact = {
+                ...this.newContact, [e.target.name]: e.target.value
             }
         });
     };
@@ -187,13 +194,13 @@ export class CustomerStore {
     public searchOrgField() {
         if (this.searchOrganization !== '') {
             runInAction(() => {
-                this.customerList = this.customerList.filter(elem => {
+                this.contactList = this.contactList.filter(elem => {
                     return elem.organization.toUpperCase().includes(this.searchOrganization.toUpperCase())
                 })
             })
         } else {
             runInAction(() => {
-                this.customerList = this.customerListTemp;
+                this.contactList = this.contactListTemp;
             })
         }
     }
@@ -204,13 +211,13 @@ export class CustomerStore {
     public searchContactFaceField() {
         if (this.searchContactFace !== '') {
             runInAction(() => {
-                this.customerList = this.customerList.filter(elem => {
+                this.contactList = this.contactList.filter(elem => {
                     return elem.contactFace.toUpperCase().includes(this.searchContactFace.toUpperCase())
                 })
             })
         } else {
             runInAction(() => {
-                this.customerList = this.customerListTemp;
+                this.contactList = this.contactListTemp;
             })
         }
     }
@@ -221,13 +228,13 @@ export class CustomerStore {
     public searchProductField() {
         if (this.searchProduct !== '') {
             runInAction(() => {
-                this.customerList = this.customerList.filter((customer) => {
-                    return customer.products.find((elem) => elem.toUpperCase().includes(this.searchProduct.toUpperCase()))
+                this.contactList = this.contactList.filter((contact) => {
+                    return contact.products.find((elem) => elem.toUpperCase().includes(this.searchProduct.toUpperCase()))
                 })
             })
         } else {
             runInAction(() => {
-                this.customerList = this.customerListTemp;
+                this.contactList = this.contactListTemp;
             })
         }
     }
@@ -238,13 +245,13 @@ export class CustomerStore {
     public searchPhoneField() {
         if (this.searchPhone !== '') {
             runInAction(() => {
-                this.customerList = this.customerList.filter((customer) => {
-                    return customer.phoneList.find((elem) => elem.toUpperCase().includes(this.searchPhone.toUpperCase()))
+                this.contactList = this.contactList.filter((contact) => {
+                    return contact.phoneList.find((elem) => elem.toUpperCase().includes(this.searchPhone.toUpperCase()))
                 })
             })
         } else {
             runInAction(() => {
-                this.customerList = this.customerListTemp;
+                this.contactList = this.contactListTemp;
             })
         }
     }
@@ -343,18 +350,18 @@ export class CustomerStore {
      */
     public handleChangeCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
-            this.newCustomer = {
-                ...this.newCustomer, [e.target.name]: e.target.checked
+            this.newContact = {
+                ...this.newContact, [e.target.name]: e.target.checked
             }
         });
     };
 
     /**
-     * Установка списка заказчиков
+     * Установка списка контактов
      */
-    private setCustomerList(customers: Customer[]) {
+    private setContactList(contacts: Contact[]) {
         runInAction(() => {
-            this.customerList = customers;
+            this.contactList = contacts;
         });
     }
 
@@ -362,14 +369,30 @@ export class CustomerStore {
      * Получение данных
      */
     public get() {
-        server.getCustomers()
+        server.getContacts()
             .then(response => {
-                this.setCustomerList(response);
+                this.setContactList(response);
             })
             .then(() =>
                 runInAction(() => {
-                    this.customerListTemp = this.customerList;
+                    this.contactListTemp = this.contactList;
                 }))
+            .then(() => {
+                runInAction(() => {
+                    this.customer = true
+                    this.client = true
+                })
+            })
+            .catch(err => {
+                if (err.response) {
+                    console.log("client received an error response (5xx, 4xx)")
+                } else if (err.request) {
+                    console.log("client never received a response, or request never left")
+
+                } else {
+                    console.log("anything else")
+                }
+            })
     };
 
     /**
@@ -377,24 +400,24 @@ export class CustomerStore {
      */
     public save(date: Date) {
         runInAction(() => {
-            this.newCustomer.reminderDate = date;
+            this.newContact.reminderDate = date;
         });
 
         runInAction(() => {
-            this.newCustomer.products = this.productList;
-            this.newCustomer.productsArchive = this.productListsArchive;
-            this.newCustomer.phoneList = this.phoneList;
+            this.newContact.products = this.productList;
+            this.newContact.productsArchive = this.productListsArchive;
+            this.newContact.phoneList = this.phoneList;
         });
 
-        server.addCustomer(this.newCustomer)
+        server.addContact(this.newContact)
             .then(() => this.get());
     }
 
     /**
      * Удаление элемента
      */
-    public remove(idCustomer: number) {
-        server.deleteCustomer(idCustomer)
+    public remove(idContact: number) {
+        server.deleteContact(idContact)
             .then(() => this.get());
     }
 
@@ -403,28 +426,28 @@ export class CustomerStore {
      */
     public update(id: string, data: any, date: Date) {
         runInAction(() => {
-            this.newCustomer.reminderDate = date;
+            this.newContact.reminderDate = date;
         });
 
         runInAction(() => {
-            this.newCustomer.products = this.productList;
-            this.newCustomer.productsArchive = this.productListsArchive;
-            this.newCustomer.phoneList = this.phoneList;
+            this.newContact.products = this.productList;
+            this.newContact.productsArchive = this.productListsArchive;
+            this.newContact.phoneList = this.phoneList;
         });
 
-        server.updateCustomer(id, data)
+        server.updateContact(id, data)
             .then(() => this.get());
     }
 
     /**
      * Проверка на наличие id элемента в списке нотификаций
-     * @param customerId
+     * @param contactId
      * @private
      */
-    private isHasIdCustomer(customerId: number): boolean {
+    private isHasIdContact(contactId: number): boolean {
         let result: boolean = true;
-        const id: Customer | undefined =
-            this.customerListNotificationActive.find(customer => customer.id === customerId);
+        const id: Contact | undefined =
+            this.contactListNotificationActive.find(contact => contact.id === contactId);
         if (id === undefined) result = false
         return result;
     }
@@ -434,7 +457,7 @@ export class CustomerStore {
      */
     public deleteRecordListNotification(id: string = '') {
         runInAction(() => {
-            this.customerListNotificationActive = this.customerListNotificationActive.filter((customer: Customer) => customer.id !== Number(id))
+            this.contactListNotificationActive = this.contactListNotificationActive.filter((contact: Contact) => contact.id !== Number(id))
         })
     }
 
@@ -443,19 +466,19 @@ export class CustomerStore {
      */
     public setEditPlace(id?: number) {
         if (id !== undefined) {
-            const customerEdit = this.customerList.find(customer => customer.id === id);
-            if (customerEdit !== undefined) {
+            const contactEdit = this.contactList.find(contact => contact.id === id);
+            if (contactEdit !== undefined) {
                 runInAction(() => {
-                    this.newCustomer = customerEdit;
-                    this.productList = customerEdit.products;
-                    this.productListsArchive = customerEdit.productsArchive;
-                    this.phoneList = customerEdit.phoneList
+                    this.newContact = contactEdit;
+                    this.productList = contactEdit.products;
+                    this.productListsArchive = contactEdit.productsArchive;
+                    this.phoneList = contactEdit.phoneList
                 })
 
             }
         } else {
             runInAction(() => {
-                this.newCustomer = new Customer();
+                this.newContact = new Contact();
                 this.productList = [];
                 this.productListsArchive = [];
                 this.product = '';
@@ -471,9 +494,9 @@ export class CustomerStore {
      * данных
      */
     public getDateForState(id: number): any {
-        const customerEdit = this.customerList.find(customer => customer.id === id)?.reminderDate
-        if (customerEdit !== undefined) {
-            return customerEdit;
+        const contactEdit = this.contactList.find(contact => contact.id === id)?.reminderDate
+        if (contactEdit !== undefined) {
+            return contactEdit;
         } else {
             return new Date();
         }
@@ -482,10 +505,11 @@ export class CustomerStore {
     /**
      * Нотификация по таймеру
      */
-    public checkNotifyOnTimer() {
+    public checkNotifyOnTimer(timer: number) {
+        console.log(timer)
         setInterval(() => {
             this.checkNotify();
-        }, 7000)
+        }, timer)
     }
 
     /**
@@ -504,13 +528,13 @@ export class CustomerStore {
      */
     private checkNotify() {
         const timeNow = new Date();
-        this.customerList.forEach((customer: Customer) => {
-            let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
-            if (customer.reminder && elemDate < timeNow) {
-                if (!this.isHasIdCustomer(customer.id)) {
-                    // PushNotification.pushNotify(customer.organization, customer.contactFace);
+        this.contactList.forEach((contact: Contact) => {
+            let elemDate = Conversation.dateToDateUTC(contact.reminderDate);
+            if (contact.reminder && elemDate < timeNow) {
+                if (!this.isHasIdContact(contact.id)) {
+                    PushNotification.pushNotify(contact.organization, contact.contactFace);
                     runInAction(() => {
-                        this.customerListNotificationActive.push(customer);
+                        this.contactListNotificationActive.push(contact);
                     })
 
 
@@ -523,9 +547,9 @@ export class CustomerStore {
     /**
      * Сортировка по названию
      */
-    public sortCustomerListName = (fieldName: string) => {
+    public sortContactListName = (fieldName: string) => {
         runInAction(() => {
-            this.customerList = this.customerList.sort(function (a: any, b: any) {
+            this.contactList = this.contactList.sort(function (a: any, b: any) {
                 let organizationA = a[fieldName].toLowerCase(), organizationB = b[fieldName].toLowerCase()
                 if (organizationA < organizationB) //сортируем строки по возрастанию
                     return -1
@@ -538,11 +562,23 @@ export class CustomerStore {
 
     /**
      * Фильтр. Показать только заказчиков
+     * если заказчик = true, показываем
      */
-    public viewCustomer() {
+    private viewCustomer() {
         runInAction(() => {
-            this.customerList = this.customerList.filter((customer) =>
-                customer.products.length !== 0
+            this.contactList = this.contactListTemp.filter((contact) =>
+                contact.products.length !== 0
+            )
+        })
+    }
+
+    /**
+     * Фильтр. Показать только клиентов
+     */
+    private viewClient() {
+        runInAction(() => {
+            this.contactList = this.contactListTemp.filter((contact) =>
+                contact.products.length === 0
             )
         })
     }
@@ -550,21 +586,55 @@ export class CustomerStore {
     /**
      * Фильтр. Показать все контакты
      */
-    public viewAllContacts() {
-       runInAction(()=>{
-           this.customerList = this.customerListTemp
-       })
+    private viewAllContacts() {
+        runInAction(() => {
+            this.contactList = this.contactListTemp
+        })
     }
 
     /**
-     * Слушатель для чекбокса
+     * Слушатель для чекбокса Заказчик
      * @param e
      */
-    public handleChangeCheckboxFilter(e: React.ChangeEvent<HTMLInputElement>) {
+    public handleChangeCheckboxFilterCustomer(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
-
+            this.customer = e.target.checked;
         });
+        if (this.customer) {
+            if (this.client) {
+                this.viewAllContacts();
+            } else {
+                this.viewCustomer()
+            }
+        } else {
+            if (this.client) {
+                this.viewClient();
+            } else {
+                this.contactList = []
+            }
+        }
     };
 
+    /**
+     * Слушатель для чекбокса Клиент
+     * @param e
+     */
+    public handleChangeCheckboxFilterClient(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.client = e.target.checked;
+        });
+        if (this.client) {
+            if (this.customer) {
+                this.viewAllContacts();
+            } else {
+                this.viewClient()
+            }
+        } else {
+            if (this.customer) {
+                this.viewCustomer();
+            } else {
+                this.contactList = []
+            }
+        }
+    };
 }
-

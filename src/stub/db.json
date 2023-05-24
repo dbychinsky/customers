@@ -1,5 +1,5 @@
 {
-  "customerList": [
+  "contactList": [
     {
       "id": 1,
       "products": [
@@ -15,7 +15,7 @@
       ],
       "email": "",
       "description": "Генеральный директор ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\"",
-      "reminder": true,
+      "reminder": false,
       "reminderDate": "2023-05-23T08:40:28.964Z"
     },
     {
@@ -52,7 +52,7 @@
       ],
       "email": "medic@belmedpreparaty.com",
       "description": "\nГенеральный директор",
-      "reminder": true,
+      "reminder": false,
       "reminderDate": "2023-05-23T10:19:41.315Z"
     },
     {
@@ -68,7 +68,7 @@
       ],
       "email": "",
       "description": "1)Главный бухгалтер - начальник управления бухгалтерского учета и финансов\n2)Заместитель генерального директора по техническим вопросам и строительству - главный инженер\n3)Управление продаж и маркетинга\nОтдел продаж в Республике Беларусь",
-      "reminder": true,
+      "reminder": false,
       "reminderDate": "2023-05-23T10:20:29.556Z"
     },
     {
@@ -82,21 +82,24 @@
       ],
       "email": " pharmacia@pharma.by",
       "description": "220005, г. Минск, ул. В.Хоружей, 11",
-      "reminder": true,
+      "reminder": false,
       "reminderDate": "2023-05-23T10:21:54.571Z"
     },
     {
       "id": 6,
       "products": [
-        "Календарь \"Qulix 2023\""
+        "Календарь \"Qulix 2023\"",
+        "1"
       ],
-      "productsArchive": [],
+      "productsArchive": [
+        "3"
+      ],
       "contactFace": "Qulix Systems",
       "organization": "Qulix",
       "phoneList": [],
       "email": "request@qulix.com",
       "description": "Oakwood, Dunstan Lane, Burton, Neston, Cheshire,\nWebsite: http://www.qulix.ru/",
-      "reminder": false,
+      "reminder": true,
       "reminderDate": "2023-05-23T10:22:44.979Z"
     },
     {
@@ -115,7 +118,7 @@
       ],
       "email": "help@buslik.by",
       "description": "223049, Минская обл.,\nРеспублика Беларусь, Минская обл., Минский р-н, Щомыслицкий с/с, 32/4.\nКоординаты: 53.850697, 27.435759\n\nРеквизиты:\nСеть супермаркетов для детей \"Буслик\", УНП 190732637. Свидетельство о гос регистрации выдано Минским облисполкомом 02.01.2019 года\nИнтернет-магазин зарегистрирован в торговом реестре 5 февраля 2015 г",
-      "reminder": true,
+      "reminder": false,
       "reminderDate": "2023-05-23T10:24:52.131Z"
     },
     {
@@ -158,13 +161,13 @@
         "+37517 280 48 70,"
       ],
       "email": "",
-      "description": "220012, МИНСК, Чорного 12",
+      "description": "220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n",
       "reminder": false,
       "reminderDate": "2023-05-23T10:27:27.370Z"
     }
   ],
   "setting": {
-    "timerNotification": "43",
+    "timerNotification": "10000",
     "userName": "Sofiko"
   }
 }

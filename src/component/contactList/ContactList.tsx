@@ -1,61 +1,63 @@
 import React, {useContext, useEffect} from 'react';
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
-import Customer from "../customer/Customer";
+import Contact from "../contact/Contact";
 import {Button} from "../button/Button";
-import "./CustomerList.scss";
+import "./ContactList.scss";
 import {useNavigate} from "react-router";
 import {RouterPathList} from "../../router/RouterPathList";
 import H4 from "../header/H4";
 import Search from "../search/Search";
+import TextMessage from "../textMessage/TextMessage";
 
 
 /**
- * Список заказчиков
+ * Список контактов
  */
-const CustomerList = observer(() => {
-
-    const customerStore = useContext(StoreContext).customerStore;
+const ContactList = observer(() => {
+    const contactStore = useContext(StoreContext).contactStore;
+    const settingStore = useContext(StoreContext).settingStore;
     const navigate = useNavigate();
 
     /**
-     * Получаем список заказчиков
+     * Получаем список контактов
      */
     useEffect(() => {
-        customerStore.get();
-        customerStore.clearSearchField();
+        contactStore.get();
+        contactStore.clearSearchField();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
-        // customerStore.start();
+        settingStore.get();
+        contactStore.checkNotifyOnTimer(settingStore.settingList.timerNotification);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
     /**
-     * Добавить заказчика
+     * Добавить контакта
      */
-    const addCustomer = () => {
-        navigate(RouterPathList.CUSTOMER_EDIT_PAGE)
+    const addContact = () => {
+        navigate(RouterPathList.CONTACT_EDIT_PAGE)
     }
 
     /**
      * Проверить нотификацию
      */
     const checkNotify = () => {
-        customerStore.checkNotifyOnHand();
+        contactStore.checkNotifyOnHand();
     }
 
     /**
      * Обновить данные
      */
     const updateHandData = () => {
-        customerStore.get();
+        contactStore.get();
     }
 
     return (
-        <div className="customerList">
+        <div className="contactList">
             <div className="headerList">
                 <H4 text="Список контактов"/>
                 <Button onClick={updateHandData}
@@ -64,14 +66,18 @@ const CustomerList = observer(() => {
                 <Button onClick={checkNotify}
                         classname="checkNotify imgBtn"
                         text="Нотифицировать"/>
-                <Button onClick={addCustomer}
-                        classname="addCustomer mainAction"
+                <Button onClick={addContact}
+                        classname="addContact mainAction"
                         text="Добавить"/>
             </div>
             <Search/>
-            <Customer/>
+            {contactStore.contactList.length
+                ? <Contact/>
+                : <TextMessage message="Нет данных для отображения. Проверьте фильтры."
+                               className="big"/>}
+
         </div>
     );
 });
 
-export default CustomerList;
+export default ContactList;

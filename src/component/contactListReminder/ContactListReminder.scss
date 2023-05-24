@@ -2,8 +2,8 @@
 @import "src/mixins";
 @import "src/font";
 
-.customerListReminder {
-    .customer, .head {
+.contactListReminder {
+    .contact, .head {
         display: flex;
         flex-direction: row;
         max-height: inherit;

@@ -2,13 +2,13 @@ import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
-import "./CustomerListReminder.scss";
+import "./ContactListReminder.scss";
 import {useNavigate} from "react-router";
 import H3 from "../header/H3";
 
-const CustomerListReminder = observer(() => {
+const ContactListReminder = observer(() => {
 
-    const customerStore = useContext(StoreContext).customerStore;
+    const contactStore = useContext(StoreContext).contactStore;
     const navigate = useNavigate();
 
     /**
@@ -20,7 +20,7 @@ const CustomerListReminder = observer(() => {
     }
 
     return (
-        <div className="customerListReminder">
+        <div className="contactListReminder">
 
             <div className="head">
                 <div className="organization">ОРГАНИЗАЦИЯ</div>
@@ -31,7 +31,7 @@ const CustomerListReminder = observer(() => {
                 <div className="description">ОПИСАНИЕ</div>
             </div>
             <div className="body">
-                {customerStore.customerListNotificationActive.map(
+                {contactStore.contactListNotificationActive.map(
                     ({
                          id,
                          organization,
@@ -42,7 +42,7 @@ const CustomerListReminder = observer(() => {
                          email,
                          description
                      }) => (
-                        <div key={id} className="customer" onClick={() => update(id)}>
+                        <div key={id} className="contact" onClick={() => update(id)}>
                             <div className="organization">{organization}</div>
                             <div className="contactFace">{contactFace}</div>
                             <div className="phone">
@@ -76,4 +76,4 @@ const CustomerListReminder = observer(() => {
     );
 });
 
-export default CustomerListReminder;
+export default ContactListReminder;

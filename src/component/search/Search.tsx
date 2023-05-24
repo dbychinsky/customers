@@ -8,34 +8,34 @@ import {Button} from "../button/Button";
 import CheckboxField from "../checkboxField/CheckboxField";
 
 const Search = observer(() => {
-    const customerStore = useContext(StoreContext).customerStore;
+    const contactStore = useContext(StoreContext).contactStore;
 
     const sortListName = (fieldName: string) => {
-        customerStore.sortCustomerListName(fieldName);
+        contactStore.sortContactListName(fieldName);
     }
 
     useEffect(() => {
-        customerStore.searchOrgField();
-    }, [customerStore.searchOrganization])
+        contactStore.searchOrgField();
+    }, [contactStore.searchOrganization])
 
     useEffect(() => {
-        customerStore.searchContactFaceField();
-    }, [customerStore.searchContactFace])
+        contactStore.searchContactFaceField();
+    }, [contactStore.searchContactFace])
 
     useEffect(() => {
-        customerStore.searchProductField();
-    }, [customerStore.searchProduct])
+        contactStore.searchProductField();
+    }, [contactStore.searchProduct])
 
     useEffect(() => {
-        customerStore.searchPhoneField();
-    }, [customerStore.searchPhone])
+        contactStore.searchPhoneField();
+    }, [contactStore.searchPhone])
 
     return (
         <div className="search">
 
             <div className="headerColumn organization">
-                <InputTextField value={customerStore.searchOrganization}
-                                changeHandler={customerStore.handleChangeSearchOrganization}
+                <InputTextField value={contactStore.searchOrganization}
+                                changeHandler={contactStore.handleChangeSearchOrganization}
                                 name="organization"
                                 type="text"
                                 placeHolder="..."
@@ -45,8 +45,8 @@ const Search = observer(() => {
             </div>
 
             <div className="headerColumn contactFace">
-                <InputTextField value={customerStore.searchContactFace}
-                                changeHandler={customerStore.handleChangeSearchContactFace}
+                <InputTextField value={contactStore.searchContactFace}
+                                changeHandler={contactStore.handleChangeSearchContactFace}
                                 name="contactFace"
                                 type="text"
                                 placeHolder="..."/>
@@ -55,8 +55,8 @@ const Search = observer(() => {
             </div>
 
             <div className="headerColumn contacts">
-                <InputTextField value={customerStore.searchPhone}
-                                changeHandler={customerStore.handleChangeSearchPhone}
+                <InputTextField value={contactStore.searchPhone}
+                                changeHandler={contactStore.handleChangeSearchPhone}
                                 name="phone"
                                 type="text"
                                 placeHolder="..."/>
@@ -64,8 +64,8 @@ const Search = observer(() => {
             </div>
 
             <div className="headerColumn products">
-                <InputTextField value={customerStore.searchProduct}
-                                changeHandler={customerStore.handleChangeSearchProduct}
+                <InputTextField value={contactStore.searchProduct}
+                                changeHandler={contactStore.handleChangeSearchProduct}
                                 name="products"
                                 type="text"
                                 placeHolder="..."/>
@@ -83,15 +83,19 @@ const Search = observer(() => {
             <div className="actionBar"></div>
 
             <div className="viewSortData">
-                <div className="">
+                <CheckboxField id="viewCustomer"
+                               name="viewCustomer"
+                               value={contactStore.customer}
+                               changeHandler={contactStore.handleChangeCheckboxFilterCustomer}
+                               text="Заказчики"
+                               className="viewCustomer"/>
 
-                    {/*<CheckboxField id="viewCustomer"*/}
-                    {/*               name="viewCustomer"*/}
-                    {/*               value={}*/}
-                    {/*               changeHandler={customerStore.handleChangeCheckboxFilter}/>*/}
-
-                    <Button onClick={customerStore.viewCustomer} text="click"/>
-                </div>
+                <CheckboxField id="viewClient"
+                               name="viewClient"
+                               value={contactStore.client}
+                               changeHandler={contactStore.handleChangeCheckboxFilterClient}
+                               text="Потенциальные заказчики"
+                               className="viewClient"/>
             </div>
         </div>
     );

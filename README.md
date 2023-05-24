@@ -1,5 +1,5 @@
-# customers
-Customer accounting application
+# Contacts
+Contact accounting application
 
 
 npm run server

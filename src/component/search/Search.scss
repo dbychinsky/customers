@@ -5,12 +5,15 @@
 
 .search {
     box-sizing: border-box;
-    padding: 10px 10px 0 10px;
+    padding: 10px 0 0;
     background: $color-white;
     z-index: 2;
+    position: relative;
 
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
+    justify-content: stretch;
     width: 100%;
 
     .scroll & {
@@ -18,21 +21,16 @@
         top: 0;
     }
 
-    @include customerListTable();
+    @include contactListTable();
 
     .headerColumn {
 
         display: flex;
         flex-direction: column;
 
-        &.description, &.reminder {
-            margin-top: 43px;
-        }
-
         &.organization, &.contactFace {
             .label {
-                background: $color-white-light
-                url("../../../public/img/icons/iconSortByName.svg") center right 10px no-repeat;
+                background: $color-white-light url("../../../public/img/icons/iconSortByName.svg") center right 10px no-repeat;
                 background-size: 20px;
                 cursor: pointer;
             }
@@ -50,6 +48,9 @@
         &.organization {
             .inputTextField {
                 border-radius: $border-radius-main-small 0 0 $border-radius-main-small;
+                background-position: center right 17px;
+                margin-left: 10px;
+                padding-right: 36px;
             }
         }
 
@@ -77,7 +78,7 @@
         .label {
             text-transform: uppercase;
             font-size: $font-size-smallest;
-            padding: 10px 5px;
+            padding: 10px 10px;
             margin: 0;
 
             background: $color-white-light;
@@ -86,14 +87,16 @@
 
     .actionBar {
         align-self: flex-end;
+        flex-grow: 1;
     }
 
     .viewSortData {
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 13px;
+        top: 17px;
 
-        background-color: #6d7080;
+        display: flex;
+        flex-direction: row;
     }
 
 }

@@ -1,7 +1,7 @@
 /**
- * Заказчик
+ * Контакт
  */
-export class Customer {
+export class Contact {
 
     /**
      * id

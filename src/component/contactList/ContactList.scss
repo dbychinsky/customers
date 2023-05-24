@@ -2,11 +2,11 @@
 @import "src/mixins";
 @import "src/font";
 
-.customerList {
+.contactList {
     @include tileParameters();
 
     position: relative;
-
+    margin-bottom: 40px;
 
     .headerList {
         display: flex;
@@ -29,7 +29,7 @@
             margin: 0 5px 0 0;
         }
 
-        .addCustomer {
+        .addContact {
             padding: 10px 20px 10px 25px;
             font-size: $font-size-smaller;
 

@@ -2,14 +2,15 @@
 @import "../../mixins";
 @import "../../font";
 
-.customerListPage {
+.contactListPage {
     @include pageParameters();
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
 
-    .customerList {
+    .contactList {
         width: 86%;
+        max-width: $max-width-tile;
     }
 }

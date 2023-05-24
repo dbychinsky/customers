@@ -1,20 +1,42 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import "./FeedbackMessage.scss";
 
 interface IFeedbackMessage {
     /**
      * Поле
      */
-    message: string | undefined
+    message: string | undefined,
+
+    /**
+     * Тип
+     */
+    typeMessage: FeedbackMessageList
 }
 
-const FeedbackMessage = ({message}: IFeedbackMessage) => {
+export enum FeedbackMessageList {
+    error = "ошибка",
+    inform = "информация"
+}
 
-    const messageContent = <div className="errorMessage">{message}</div>
+const FeedbackMessage = ({message, typeMessage}: IFeedbackMessage) => {
+    let result: ReactNode = <div>empty</div>;
+
+    const layoutMessage = (): ReactNode => {
+        switch (typeMessage) {
+            case FeedbackMessageList.error:
+                result = <div className="errorMessage">{message}</div>
+                break;
+            case FeedbackMessageList.inform:
+                result = <div className="informMessage">{message}</div>
+                break;
+        }
+        return result
+    }
 
     return (
         <div className="feedbackMessage">
-            {message ? messageContent : undefined}
+
+            {message ? layoutMessage() : undefined}
         </div>
     );
 };

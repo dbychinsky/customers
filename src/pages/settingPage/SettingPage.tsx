@@ -7,6 +7,8 @@ import FormRow from "../../component/formRow/FormRow";
 import InputTextField from "../../component/inputField/InputField";
 import {observer} from "mobx-react";
 import {Button} from "../../component/button/Button";
+import TextMessage from "../../component/textMessage/TextMessage";
+import FeedbackMessage, {FeedbackMessageList} from "../../component/feedbackMessage/FeedbackMessage";
 
 const SettingPage = observer(() => {
     const settingStore = useContext(StoreContext).settingStore;
@@ -19,13 +21,16 @@ const SettingPage = observer(() => {
         <div className="settingPage">
             <Header title="Настройки"/>
             <H1 text="Настройки"/>
-            <p>{settingStore.settingMessages}</p>
+
+            <FeedbackMessage message={settingStore.settingMessages}
+                             typeMessage={FeedbackMessageList.inform}/>
 
             <div className="area">
-                <p>Настройки приложения: <span>Таймер, указывает частоту проверки нотификаций</span></p>
+                <p>Настройки приложения: <span>Таймер, указывает частоту проверки нотификаций в милсекундах,
+                1 минута = 60000, 30 мин = 1800000</span></p>
                 <div>
                     <FormRow name="timerNotification"
-                             label="Таймер (мин.)"
+                             label="Таймер"
                              field={<InputTextField value={settingStore.settingList.timerNotification}
                                                     changeHandler={settingStore.handleChange}
                                                     name="timerNotification"

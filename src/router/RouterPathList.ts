@@ -9,24 +9,24 @@ export enum RouterPathList {
     ROOT_PATH = "/",
 
     /**
-     * Страница со списком заказчиков
+     * Страница со списком контактов
      */
-    CUSTOMER_LIST_PAGE = "customerListPage/",
+    CONTACT_LIST_PAGE = "contactListPage/",
 
     /**
-     * Страница реадктирования/добавления заказчика
+     * Страница реадктирования/добавления контакта
      */
-    CUSTOMER_EDIT_PAGE = "customerEditPage/",
+    CONTACT_EDIT_PAGE = "contactEditPage/",
 
     /**
      * Страница редактирования/добавления
      */
-    CUSTOMER_EDIT_ID_PAGE = ":id/",
+    CONTACT_EDIT_ID_PAGE = ":id/",
 
     /**
      * Страница со списком нотификаций
      */
-    CUSTOMER_LIST_REMINDER_PAGE = "customerListReminderPage/",
+    CONTACT_LIST_REMINDER_PAGE = "ContactListReminderPage/",
 
     /**
      * Страница со списком нотификаций

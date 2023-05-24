@@ -2,19 +2,19 @@ import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
-import "./Customer.scss";
+import "./Contact.scss";
 import {Button} from "../button/Button";
 import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import "../reactConfirmAlert/ReactConfirmAlert.scss";
 import {useNavigate} from "react-router";
-import FeedbackMessage from "../feedbackMessage/FeedbackMessage";
+import FeedbackMessage, {FeedbackMessageList} from "../feedbackMessage/FeedbackMessage";
 
 /**
- * Заказчик
+ * контакт
  */
-const Customer = observer(() => {
-    const customerStore = useContext(StoreContext).customerStore;
+const Contact = observer(() => {
+    const contactStore = useContext(StoreContext).contactStore;
     const navigate = useNavigate();
 
     /**
@@ -38,7 +38,7 @@ const Customer = observer(() => {
 
                             <Button onClick={onClose} text="Отмена"/>
                             <Button onClick={() => {
-                                customerStore.remove(id);
+                                contactStore.remove(id);
                                 onClose();
                             }} autoFocus={true}
                                     text="Удалить"
@@ -69,7 +69,7 @@ const Customer = observer(() => {
 
     return (
         <>
-            {customerStore.customerList.map(
+            {contactStore.contactList.map(
                 ({
                      id,
                      products,
@@ -82,14 +82,14 @@ const Customer = observer(() => {
                      reminder,
                      reminderDate
                  }) => (
-                    <div key={id} id={id.toString()} className="customer">
+                    <div key={id} id={id.toString()} className="contact">
                         {id
                             ? <>
                                 <div className="organization">{organization}</div>
                                 <div className="contactFace">{contactFace}</div>
                                 <div className="contacts">
                                     <div className="phone">
-                                        {phoneList.map((elem,index
+                                        {phoneList.map((elem, index
                                             ) => (<div key={index}>
                                                 <div>{elem}</div>
                                             </div>)
@@ -99,7 +99,7 @@ const Customer = observer(() => {
                                 </div>
 
                                 <div className="products">
-                                    {products.map((elem,index
+                                    {products.map((elem, index
                                         ) => (<div key={index}>
                                             <div>{elem}</div>
                                         </div>)
@@ -133,18 +133,19 @@ const Customer = observer(() => {
                                 </div>
 
                                 <div className="archiveProductList">
-                                    {productsArchive.map((elem,index
+                                    {productsArchive.map((elem, index
                                         ) => (<div key={index}>
                                             <div>{elem}</div>
                                         </div>)
                                     )}
                                 </div>
                             </>
-                            : <FeedbackMessage message="Отсутствуют данные либо подключение к серверу"/>}
+                            : <FeedbackMessage message="Отсутствуют данные либо подключение к серверу"
+                                               typeMessage={FeedbackMessageList.error}/>}
                     </div>
                 ))}
         </>
     );
 });
 
-export default Customer;
+export default Contact;

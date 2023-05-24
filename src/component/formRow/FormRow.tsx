@@ -3,7 +3,7 @@ import Label from "../label/Label";
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
 import "./FormRow.scss";
-import FeedbackMessage from "../feedbackMessage/FeedbackMessage";
+import FeedbackMessage, {FeedbackMessageList} from "../feedbackMessage/FeedbackMessage";
 
 /**
  * Интерфейс
@@ -40,7 +40,7 @@ const FormRow: FC<IFormRow> = observer((
         <div className={`formRow ${name} ${message ? 'error' : ''}`}>
             <Label text={label} htmlFor={name}/>
             {field}
-            <FeedbackMessage message={message}/>
+            <FeedbackMessage message={message} typeMessage={FeedbackMessageList.error}/>
         </div>
     );
 });

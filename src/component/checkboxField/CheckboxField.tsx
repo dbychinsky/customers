@@ -25,6 +25,16 @@ interface ICheckboxField {
      */
     name: string
 
+    /**
+     * label text
+     */
+    text?: string
+
+    /**
+     * class
+     */
+    className?: string
+
 }
 
 const CheckboxField: FC<ICheckboxField> = (
@@ -32,19 +42,21 @@ const CheckboxField: FC<ICheckboxField> = (
         id,
         value,
         changeHandler,
-        name
+        name,
+        text,
+        className
     }) => {
 
     return (
-   <div className="checkboxWrapper">
-       <input type="checkbox"
-              checked={value}
-              name={name}
-              className="checkbox"
-              onChange={changeHandler}
-              id={id}/>
-       <label htmlFor={id}></label>
-   </div>
+        <div className={`checkboxWrapper ${className ? className : ''}`}>
+            <input type="checkbox"
+                   checked={value}
+                   name={name}
+                   className="checkbox"
+                   onChange={changeHandler}
+                   id={id}/>
+            <label htmlFor={id}>{text}</label>
+        </div>
     );
 };
 

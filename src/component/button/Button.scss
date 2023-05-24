@@ -53,11 +53,29 @@
         &.edit {
             @include imgBtn(url("../../../public/img/icons/iconEdit.svg"));
             background-size: 20px;
+            &:hover{
+                @include imgBtn(url("../../../public/img/icons/iconEditHover.svg"));
+                background-size: 20px;
+            }
         }
 
         &.delete {
             @include imgBtn(url("../../../public/img/icons/iconDelete.svg"));
             background-size: 20px;
+            &:hover{
+                @include imgBtn(url("../../../public/img/icons/iconDeleteHover.svg"));
+                background-size: 20px;
+            }
+        }
+
+
+        &.eye {
+            @include imgBtn(url("../../../public/img/icons/iconEye.svg"));
+            background-size: 24px;
+            &:hover{
+                @include imgBtn(url("../../../public/img/icons/iconEyeHover.svg"));
+                background-size: 24px;
+            }
         }
 
         &.deleteRecordList {
@@ -80,10 +98,6 @@
             }
         }
 
-        &.eye {
-            @include imgBtn(url("../../../public/img/icons/iconEye.svg"));
-            background-size: 24px;
-        }
 
         &:hover {
             box-shadow: none;

@@ -3,13 +3,23 @@
 @import "src/font";
 
 .feedbackMessage {
-    position: absolute;
-    bottom: -24px;
+    .formRow & {
+        position: absolute;
+        bottom: -24px;
 
-    @include interLight();
-    font-size: $font-size-small;
+        @include interLight();
+        font-size: $font-size-small;
+    }
 
     .errorMessage {
         color: $color-red;
+    }
+    .informMessage{
+        background-color: $color-green-light;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: $border-radius-main;
+        text-transform: uppercase;
+        font-size: $font-size-small;
     }
 }

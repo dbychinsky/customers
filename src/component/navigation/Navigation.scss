@@ -78,13 +78,13 @@
                 }
             }
 
-            .actionCustomerListPage {
+            .actionContactListPage {
                 @include action(url("./../../../public/img/icons/iconUser.svg"),
                     url("./../../../public/img/icons/iconUserHover.svg"));
 
             }
 
-            .actionCustomerListReminderPage {
+            .actionContactListReminderPage {
                 @include action(url("./../../../public/img/icons/iconNotification.svg"),
                     url("./../../../public/img/icons/iconNotifiactionHover.svg"));
 

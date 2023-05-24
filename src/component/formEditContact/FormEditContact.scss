@@ -2,7 +2,7 @@
 @import "src/font";
 @import "src/mixins";
 
-.formEditCustomer {
+.formEditContact {
 
     .productsArea {
         @include area();
@@ -47,7 +47,7 @@
         }
     }
 
-    .customerArea {
+    .contactArea {
         @include area();
     }
 

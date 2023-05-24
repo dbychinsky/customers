@@ -1,4 +1,4 @@
-import {CustomerStore} from "./CustomerStore";
+import {ContactStore} from "./ContactStore";
 import {AuthStore} from "./AuthStore";
 import {ModalStore} from "./ModalStore";
 import {SettingStore} from "./SettingStore";
@@ -7,13 +7,13 @@ import {SettingStore} from "./SettingStore";
  * Объеденение всех Store в RootStore
  */
 export class RootStore {
-    customerStore;
+    contactStore;
     authStore;
     modalStore;
     settingStore;
 
     constructor() {
-        this.customerStore = new CustomerStore();
+        this.contactStore = new ContactStore();
         this.authStore = new AuthStore();
         this.modalStore = new ModalStore();
         this.settingStore = new SettingStore();
