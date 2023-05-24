@@ -1,4 +1,5 @@
 import {Customer} from "../model/Customer";
+import {Setting} from "../model/Setting";
 
 export interface IService {
 
@@ -21,4 +22,14 @@ export interface IService {
      * Удаление заказчика
      */
     deleteCustomer(id: number): Promise<void>;
+
+    /**
+     * Получение списка опций
+     */
+    getSetting(): Promise<Setting>;
+
+    /**
+     * Обновление опций
+     */
+    updateSetting(setting: Setting): Promise<void>;
 }

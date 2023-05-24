@@ -40,18 +40,36 @@ const CustomerList = observer(() => {
         navigate(RouterPathList.CUSTOMER_EDIT_PAGE)
     }
 
+    /**
+     * Проверить нотификацию
+     */
+    const checkNotify = () => {
+        customerStore.checkNotifyOnHand();
+    }
+
+    /**
+     * Обновить данные
+     */
+    const updateHandData = () => {
+        customerStore.get();
+    }
+
     return (
         <div className="customerList">
             <div className="headerList">
                 <H4 text="Список заказчиков"/>
+                <Button onClick={updateHandData}
+                        classname="updateData imgBtn"
+                        text="Обновить данные"/>
+                <Button onClick={checkNotify}
+                        classname="checkNotify imgBtn"
+                        text="Нотифицировать"/>
                 <Button onClick={addCustomer}
                         classname="addCustomer mainAction"
                         text="Добавить"/>
             </div>
-
             <Search/>
             <Customer/>
-            <Button onClick={() => customerStore.startTemp()} text="start temp"/>
         </div>
     );
 });

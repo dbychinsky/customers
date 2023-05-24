@@ -89,8 +89,8 @@ const Customer = observer(() => {
                                 <div className="contactFace">{contactFace}</div>
                                 <div className="contacts">
                                     <div className="phone">
-                                        {phoneList.map((elem
-                                            ) => (<div key={elem}>
+                                        {phoneList.map((elem,index
+                                            ) => (<div key={index}>
                                                 <div>{elem}</div>
                                             </div>)
                                         )}
@@ -99,8 +99,8 @@ const Customer = observer(() => {
                                 </div>
 
                                 <div className="products">
-                                    {products.map((elem
-                                        ) => (<div key={elem}>
+                                    {products.map((elem,index
+                                        ) => (<div key={index}>
                                             <div>{elem}</div>
                                         </div>)
                                     )}
@@ -133,8 +133,8 @@ const Customer = observer(() => {
                                 </div>
 
                                 <div className="archiveProductList">
-                                    {productsArchive.map((elem
-                                        ) => (<div key={elem}>
+                                    {productsArchive.map((elem,index
+                                        ) => (<div key={index}>
                                             <div>{elem}</div>
                                         </div>)
                                     )}

@@ -25,14 +25,15 @@
         display: flex;
         flex-direction: column;
 
-        &.description, &.reminder, &.contacts {
+        &.description, &.reminder {
             margin-top: 43px;
         }
 
         &.organization, &.contactFace {
             .label {
-                background: $color-white-light url("../../../public/img/icons/iconSortByName.svg") top 11px right 10px no-repeat;
-                background-size: 15px;
+                background: $color-white-light
+                url("../../../public/img/icons/iconSortByName.svg") center right 10px no-repeat;
+                background-size: 20px;
                 cursor: pointer;
             }
         }
@@ -45,6 +46,33 @@
             background: $color-white url("../../../public/img/icons/iconSearch.svg") center right 7px no-repeat;
             background-size: 18px;
         }
+
+        &.organization {
+            .inputTextField {
+                border-radius: $border-radius-main-small 0 0 $border-radius-main-small;
+            }
+        }
+
+        &.contactFace {
+            .inputTextField {
+                border-radius: 0;
+            }
+        }
+
+        &.contacts {
+            .inputTextField {
+                border-radius: 0;
+            }
+
+        }
+
+        &.products {
+            .inputTextField {
+                border-radius: 0 $border-radius-main-small $border-radius-main-small 0;
+            }
+
+        }
+
 
         .label {
             text-transform: uppercase;

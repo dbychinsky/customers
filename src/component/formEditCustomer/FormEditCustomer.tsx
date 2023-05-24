@@ -56,40 +56,40 @@ const FormEditCustomer = observer(({
                 <p>Продукция для печати: <span>журналы, книги, календари, бланки...</span></p>
                 <div>
                     <div className="actualProductList">
-                        <div>
-                            {fieldListProducts.map(({name, label, field}) =>
-                                <FormRow name={name}
-                                         label={label}
-                                         field={field}
-                                         key={name}
-                                />
-                            )}
-                        </div>
+                        {fieldListProducts.map(({name, label, field}) =>
+                            <FormRow name={name}
+                                     label={label}
+                                     field={field}
+                                     key={name}
+                            />
+                        )}
                         <div className="additionalProductList">
                             <Button onClick={customerStore.addProjectInList} text="Добавить"/>
                             {customerStore.productList.map((product) => (
-                                <div key={product}>{product}
-                                    <Button onClick={() => customerStore.deleteRecordProductList(product)}/>
+                                <div key={product} className="productFromList">
+                                    <Button onClick={() => customerStore.deleteRecordProductList(product)}
+                                            classname="deleteRecordList imgBtn"/>
+                                    {product}
                                 </div>
 
                             ))}
                         </div>
                     </div>
                     <div className="archiveProductList">
-                        <div>
-                            {fieldListProductsArchive.map(({name, label, field}) =>
-                                <FormRow name={name}
-                                         label={label}
-                                         field={field}
-                                         key={name}
-                                />
-                            )}
-                        </div>
+                        {fieldListProductsArchive.map(({name, label, field}) =>
+                            <FormRow name={name}
+                                     label={label}
+                                     field={field}
+                                     key={name}
+                            />
+                        )}
                         <div className="additionalProductList">
                             <Button onClick={customerStore.addProjectInListArchive} text="Добавить"/>
                             {customerStore.productListsArchive.map((product) => (
-                                <div key={product}>{product}
-                                    <Button onClick={() => customerStore.deleteRecordProductListArchive(product)}/>
+                                <div key={product} className="productFromList">
+                                    <Button onClick={() => customerStore.deleteRecordProductListArchive(product)}
+                                            classname="deleteRecordList imgBtn"/>
+                                    {product}
                                 </div>
                             ))}
                         </div>
@@ -99,20 +99,25 @@ const FormEditCustomer = observer(({
             <div className="contactsArea">
                 <p>Контактные данные: <span>телефоны, адрес электронной почты </span></p>
                 <div>
-                    {fieldListPhoneList.map(({name, label, field}) =>
-                        <FormRow name={name}
-                                 label={label}
-                                 field={field}
-                                 key={name}
-                        />
-                    )}
-                    <Button onClick={customerStore.addPhoneInList} text="Добавить"/>
+                    <div className="phone">
+                        {fieldListPhoneList.map(({name, label, field}) =>
+                            <FormRow name={name}
+                                     label={label}
+                                     field={field}
+                                     key={name}
+                            />
+                        )}
 
-                    {customerStore.phonetList.map((phone) => (
-                        <div key={phone}>{phone}
-                            <Button onClick={() => customerStore.deleteRecordPhoneList(phone)}/>
-                        </div>
-                    ))}
+                        <Button onClick={customerStore.addPhoneInList} text="Добавить"/>
+
+                        {customerStore.phoneList.map((phone) => (
+                            <div key={phone} className="phoneFromList">
+                                <Button onClick={() => customerStore.deleteRecordPhoneList(phone)}
+                                        classname="deleteRecordList imgBtn"/>
+                                {phone}
+                            </div>
+                        ))}
+                    </div>
 
                     {fieldListEmail.map(({name, label, field}) =>
                         <FormRow name={name}

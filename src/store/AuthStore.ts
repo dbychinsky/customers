@@ -25,6 +25,7 @@ export class AuthStore {
     public password: string = '';
     private loginApp: string = '1';
     private passwordApp: string = '1';
+    // private passwordApp: string = 'sf1807';
     public errorList: FieldError[] = [];
     public isAuth: boolean = false;
 

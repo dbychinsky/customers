@@ -4,4 +4,8 @@
 
 .settingPage {
     @include pageParameters();
+
+    .area {
+        @include area();
+    }
 }

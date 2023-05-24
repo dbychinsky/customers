@@ -63,3 +63,42 @@
         height: 34px;
     }
 }
+
+@mixin area() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    margin-bottom: 40px;
+
+    > p {
+        margin: 0;
+        width: 30%;
+
+        @include interSemiBold();
+        font-size: $font-size-big;
+
+        span {
+            display: block;
+
+            @include interLight();
+            font-size: $font-size-the-smallest;
+            color: $color-grey;
+
+        }
+    }
+    > div {
+        box-sizing: border-box;
+        padding: 20px;
+        width: 70%;
+        @include tileParameters();
+
+        background: $color-white url("../public/bg-body-tile.png") center right no-repeat;
+        background-size: 12%;
+
+        input {
+            width: 50%;
+            min-width: 200px;
+        }
+    }
+}

@@ -24,6 +24,7 @@ const CustomerListReminderWidget = observer(() => {
                      organization
                  }) => (
                     <div key={id} className="customer" onClick={() => update(id)}>
+                        <span className="bell"><div className="ring"></div></span>
                         <div className="organization">{organization}</div>
                         <div className="contactFace">{contactFace}</div>
                     </div>

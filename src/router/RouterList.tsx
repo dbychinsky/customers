@@ -4,7 +4,7 @@ import CustomerListPage from "../pages/customerListPage/CustomerListPage";
 import CustomerEditPage from "../pages/customerEditPage/CustomerEditPage";
 import LoginPage from "../pages/loginPage/LoginPage";
 import CustomerListReminderPage from "../pages/customerListReminderPage/CustomerListReminderPage";
-import SettingPage from "../pages/setting/SettingPage";
+import SettingPage from "../pages/settingPage/SettingPage";
 
 /**
  * Роутинг приложения

@@ -3,42 +3,6 @@
 @import "src/mixins";
 
 .formEditCustomer {
-    @mixin area() {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-
-
-        margin-bottom: 40px;
-
-        > p {
-            margin: 0;
-            width: 30%;
-
-            @include interSemiBold();
-            font-size: $font-size-big;
-
-            span {
-                display: block;
-
-                @include interLight();
-                font-size: $font-size-the-smallest;
-                color: $color-grey;
-
-            }
-        }
-        > div {
-            box-sizing: border-box;
-            padding: 20px;
-            width: 70%;
-            @include tileParameters();
-
-            input {
-                width: 50%;
-                min-width: 200px;
-            }
-        }
-    }
 
     .productsArea {
         @include area();
@@ -49,54 +13,37 @@
             gap: 10%;
         }
 
-        .button {
-            max-width: 100px;
-            margin-bottom: 10px;
+        .actualProductList {
+            width: 45%;
+        }
+
+        .archiveProductList {
+            width: 45%;
+        }
+
+        .additionalProductList {
+            > .button {
+                margin-bottom: 10px;
+            }
+        }
+
+        .productFromList {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 10px 12px 0;
+
+            .button {
+                margin-right: 10px;
+            }
         }
 
         .inputTextField {
             width: 100%;
         }
 
-        .actualProductList {
-            flex-grow: 1;
-
-            .formRow {
-                margin-bottom: 10px;
-
-            }
-        }
-
-        .archiveProductList {
-            flex-grow: 1;
-
-            .formRow {
-                margin-bottom: 10px;
-            }
-        }
-
-        .additionalProductList {
-            display: flex;;
-            flex-direction: column;
-
-            .additionalProduct {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-
-                .productName {
-                    margin: 0 0 10px 0;
-                    @include interLight();
-
-                    max-width: 300px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                }
-
-                .button {
-                }
-            }
+        .formRow {
+            margin-bottom: 10px;
         }
     }
 
@@ -106,6 +53,25 @@
 
     .contactsArea {
         @include area();
+
+        .phone {
+            margin-bottom: 30px;
+
+            .formRow {
+                margin-bottom: 10px;
+            }
+
+            > .button {
+                margin-bottom: 10px;
+            }
+
+            .phoneFromList {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 0 10px 12px 0;
+            }
+        }
     }
 
     .descriptionArea {

@@ -34,7 +34,7 @@ export class CustomerStore {
     /**
      * Список телефонов, принадлежащие заказчику
      */
-    public phonetList: string[] = [];
+    public phoneList: string[] = [];
 
     /**
      * Проект для добавления в архив, принадлежащий заказчику
@@ -79,6 +79,11 @@ export class CustomerStore {
      */
     public searchProduct: string = '';
 
+    /**
+     * Поле, принимает данные для поиска по продуктам
+     */
+    public searchPhone: string = '';
+
     constructor() {
         makeAutoObservable(this);
         this.handleChange = this.handleChange.bind(this);
@@ -92,6 +97,7 @@ export class CustomerStore {
         this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
         this.handleChangeSearchContactFace = this.handleChangeSearchContactFace.bind(this);
         this.handleChangeSearchProduct = this.handleChangeSearchProduct.bind(this);
+        this.handleChangeSearchPhone = this.handleChangeSearchPhone.bind(this);
     }
 
     /**
@@ -157,6 +163,16 @@ export class CustomerStore {
     };
 
     /**
+     * Слушатель для поля поиска по телефону
+     * @param e
+     */
+    public handleChangeSearchPhone(e: React.ChangeEvent<HTMLInputElement>) {
+        runInAction(() => {
+            this.searchPhone = e.target.value;
+        });
+    };
+
+    /**
      * Поиск по организации
      */
     public searchOrgField() {
@@ -191,7 +207,7 @@ export class CustomerStore {
     }
 
     /**
-     * Поиск по ФИО
+     * Поиск по продукту
      */
     public searchProductField() {
         if (this.searchProduct !== '') {
@@ -208,11 +224,31 @@ export class CustomerStore {
     }
 
     /**
+     * Поиск по телефону
+     */
+    public searchPhoneField() {
+        if (this.searchPhone !== '') {
+            runInAction(() => {
+                this.customerList = this.customerList.filter((customer) => {
+                    return customer.phoneList.find((elem) => elem.toUpperCase().includes(this.searchPhone.toUpperCase()))
+                })
+            })
+        } else {
+            runInAction(() => {
+                this.customerList = this.customerListTemp;
+            })
+        }
+    }
+
+    /**
      * Очистка полей поиска
      */
     public clearSearchField() {
         runInAction(() => {
             this.searchOrganization = '';
+            this.searchPhone = '';
+            this.searchProduct = '';
+            this.searchContactFace = '';
         })
     }
 
@@ -254,7 +290,7 @@ export class CustomerStore {
      */
     public deleteRecordPhoneList(name: string) {
         runInAction(() => {
-            this.phonetList = this.phonetList.filter(phone => phone !== name);
+            this.phoneList = this.phoneList.filter(phone => phone !== name);
         });
     };
 
@@ -275,7 +311,7 @@ export class CustomerStore {
      */
     public addPhoneInList() {
         runInAction(() => {
-            this.phonetList.push(this.phone)
+            this.phoneList.push(this.phone)
         });
         runInAction(() => {
             this.phone = '';
@@ -338,7 +374,7 @@ export class CustomerStore {
         runInAction(() => {
             this.newCustomer.products = this.productList;
             this.newCustomer.productsArchive = this.productListsArchive;
-            this.newCustomer.phoneList = this.phonetList;
+            this.newCustomer.phoneList = this.phoneList;
         });
 
         server.addCustomer(this.newCustomer)
@@ -364,7 +400,7 @@ export class CustomerStore {
         runInAction(() => {
             this.newCustomer.products = this.productList;
             this.newCustomer.productsArchive = this.productListsArchive;
-            this.newCustomer.phoneList = this.phonetList;
+            this.newCustomer.phoneList = this.phoneList;
         });
 
         server.updateCustomer(id, data)
@@ -404,6 +440,7 @@ export class CustomerStore {
                     this.newCustomer = customerEdit;
                     this.productList = customerEdit.products;
                     this.productListsArchive = customerEdit.productsArchive;
+                    this.phoneList = customerEdit.phoneList
                 })
 
             }
@@ -414,6 +451,8 @@ export class CustomerStore {
                 this.productListsArchive = [];
                 this.product = '';
                 this.productArchive = '';
+                this.phoneList = []
+                this.phone = '';
             })
         }
     }
@@ -431,6 +470,21 @@ export class CustomerStore {
         }
     }
 
+    /**
+     * Нотификация по таймеру
+     */
+    public checkNotifyOnTimer() {
+        setInterval(() => {
+            this.checkNotify();
+        }, 7000)
+    }
+
+    /**
+     * Нотификация, вызваная вручную
+     */
+    public checkNotifyOnHand() {
+        this.checkNotify();
+    }
 
     /**
      * Нотификация.
@@ -439,29 +493,7 @@ export class CustomerStore {
      * этот элемент в списке (notificationList) активных нотификаций - если нет показываем
      * нотификацию.
      */
-    public start() {
-        setInterval(() => {
-            const timeNow = new Date();
-            this.customerList.forEach((customer: Customer) => {
-                let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
-
-                if (customer.reminder && elemDate < timeNow) {
-
-                    if (!this.isHasIdCustomer(customer.id)) {
-
-                        // PushNotification.pushNotify(customer.products);
-                        runInAction(() => {
-                            this.customerListNotificationActive.push(customer);
-                        })
-                    }
-
-
-                }
-            })
-        }, 7000)
-    }
-
-    public startTemp() {
+    private checkNotify() {
         const timeNow = new Date();
         this.customerList.forEach((customer: Customer) => {
             let elemDate = Conversation.dateToDateUTC(customer.reminderDate);
@@ -477,17 +509,6 @@ export class CustomerStore {
 
             }
         });
-    }
-
-    /**
-     * Метод получения id
-     */
-    public createId<T extends { id: string }>(list: T[]): string {
-        if (list.length) {
-            return (Number(list[list.length - 1].id) + 1).toString()
-        } else {
-            return '0'
-        }
     }
 
     /**

@@ -60,10 +60,24 @@
             background-size: 20px;
         }
 
-        &.deleteProduct {
+        &.deleteRecordList {
             @include imgBtn(url("../../../public/img/icons/iconDeleteProductRed.svg"));
             background-size: 20px;
             padding: 12px 12px;
+        }
+
+        &.checkNotify {
+            @include imgBtn(url("../../../public/img/icons/iconNotification.svg"));
+            &:hover{
+                @include imgBtn(url("../../../public/img/icons/iconNotificationGreen.svg"));
+            }
+        }
+
+        &.updateData {
+            @include imgBtn(url("../../../public/img/icons/iconUpdateData.svg"));
+            &:hover{
+                @include imgBtn(url("../../../public/img/icons/iconUpdateDataHover.svg"));
+            }
         }
 
         &.eye {
