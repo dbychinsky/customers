@@ -100,7 +100,7 @@ export class ContactStore {
     /**
      * Таймер проверки нотификаций
      */
-    private timer:number = Number(process.env.REACT_APP_TIMER_NOTIFICATION);
+    private timer: number = Number(process.env.REACT_APP_TIMER_NOTIFICATION);
 
     constructor() {
         makeAutoObservable(this);

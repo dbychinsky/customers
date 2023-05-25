@@ -1,5 +1,2 @@
 # Contacts
-Contact accounting application
-
-
-npm run server
+version 1.0
