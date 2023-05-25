@@ -1,13 +1,10 @@
 import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
-import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
 import "./ContactListReminder.scss";
 import {useNavigate} from "react-router";
-import H3 from "../header/H3";
 
 const ContactListReminder = observer(() => {
-
     const contactStore = useContext(StoreContext).contactStore;
     const navigate = useNavigate();
 

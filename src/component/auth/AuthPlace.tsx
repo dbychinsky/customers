@@ -1,17 +1,8 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import "./AuthPlace.scss";
-import {Link} from "react-router-dom";
-import {RouterPathList} from "../../router/RouterPathList";
-import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
 
 const AuthPlace = observer(() => {
-
-    const authStore = useContext(StoreContext).authStore;
-
-    const exit = () => {
-        authStore.clearSessionStorage();
-    }
 
     return (
         <div className="authPlace">
@@ -19,9 +10,6 @@ const AuthPlace = observer(() => {
                 <div>Sofi</div>
                 <div className="avatar"></div>
             </div>
-            <Link to={RouterPathList.ROOT_PATH}
-                  title="exit"
-                  onClick={exit}>exit</Link>
         </div>
     );
 });

@@ -4,7 +4,6 @@ import {StoreContext} from "../../App";
 import "./Search.scss";
 import Label from "../label/Label";
 import {observer} from "mobx-react";
-import {Button} from "../button/Button";
 import CheckboxField from "../checkboxField/CheckboxField";
 
 const Search = observer(() => {

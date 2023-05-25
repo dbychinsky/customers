@@ -29,6 +29,7 @@ const ContactList = observer(() => {
 
     useEffect(() => {
         contactStore.checkNotifyOnTimer();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     /**

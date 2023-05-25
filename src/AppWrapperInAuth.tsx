@@ -3,6 +3,8 @@ import {observer} from "mobx-react";
 import {StoreContext} from "./App";
 import {RoutersProject} from "./router/RouterList";
 import Navigation from "./component/navigation/Navigation";
+import {useNavigate} from "react-router";
+import {RouterPathList} from "./router/RouterPathList";
 
 const AppWrapperInAuth = observer(() => {
     const authStore = useContext(StoreContext).authStore;
@@ -29,10 +31,7 @@ const AppWrapperInAuth = observer(() => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    useEffect(() => {
-        authStore.checkAuth();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+
 
     return (
         <div className={`appWrapperAuth ${authStore.isAuth ? 'logIn' : 'logOut'} ${isScrolling ? 'scroll' : ''}`}>

@@ -24,6 +24,7 @@ export class AuthStore {
     public login: string = '';
     public password: string = '';
     private loginApp: string = '1';
+    // private loginApp: string = 'Sofi';
     private passwordApp: string = '1';
     // private passwordApp: string = 'sf1807';
     public errorList: FieldError[] = [];
@@ -121,8 +122,11 @@ export class AuthStore {
     /**
      * Проверка наличия токена в LS
      */
-    public checkAuth() {
+    public checkAuth(): boolean {
         this.loadUserToken();
+        if (this.isAuth) {
+            return true
+        } else return false
     }
 
 
