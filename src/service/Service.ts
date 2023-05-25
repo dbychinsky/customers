@@ -19,7 +19,7 @@ export class Server implements IService {
      * Получение списка контактов
      */
     async getContacts(): Promise<Contact[]> {
-        return await axios.get(`${this.MAIN_URL_FAKE}/${backendServerUrl.CONTACT}`)
+        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`)
             .then(response => response.data)
     }
 
@@ -28,7 +28,7 @@ export class Server implements IService {
      * @param contact
      */
     async addContact(contact: Contact): Promise<void> {
-        await axios.post(`${this.MAIN_URL_FAKE}/${backendServerUrl.CONTACT}`, contact)
+        await axios.post(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`, contact)
             .then((response) => response.data.id)
     }
 
@@ -36,21 +36,21 @@ export class Server implements IService {
      * Обновление
      */
     async updateContact(id: string, data: any): Promise<void> {
-        await axios.put(`${this.MAIN_URL_FAKE}/${backendServerUrl.CONTACT}/${id}`, data)
+        await axios.put(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${id}`, data)
     };
 
     /**
      * Удаление
      */
     async deleteContact(idContact: number): Promise<void> {
-        await axios.delete(`${this.MAIN_URL_FAKE}/${backendServerUrl.CONTACT}/${idContact}`);
+        await axios.delete(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${idContact}`);
     };
 
     /**
      * Получение настроек приложения
      */
     async getSetting(): Promise<Setting> {
-        return await axios.get(`${this.MAIN_URL_FAKE}/${backendServerUrl.SETTING}`)
+        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.SETTING}`)
             .then(response => response.data)
     }
 
@@ -58,7 +58,7 @@ export class Server implements IService {
      * Сохранение настроек приложения
      */
     async updateSetting(setting: Setting): Promise<void> {
-        await axios.put(`${this.MAIN_URL_FAKE}/${backendServerUrl.SETTING}`, setting)
+        await axios.put(`${this.MAIN_URL}/${backendServerUrl.SETTING}`, setting)
     }
 
 }
