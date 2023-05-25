@@ -28,11 +28,11 @@ const Contact = observer(() => {
             customUI: ({onClose}) => {
                 return (
                     <div className='custom-ui'>
+                        <div className="headerBack"></div>
                         <h1 className="head">Удалить контакт?</h1>
                         <div className="body">
-                            <div className="bodyHead">Вы собираетесь удалить:</div>
-                            <div className="bodyContent">организация - <span>{organization}</span></div>
-                            <div className="bodyContent">фио - <span>{contactFace}</span></div>
+                            <div className="bodyContentOrganization">{organization}</div>
+                            <div className="bodyContentContactFace">{contactFace}</div>
                         </div>
                         <div className="foot">
 

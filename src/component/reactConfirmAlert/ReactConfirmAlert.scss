@@ -3,7 +3,6 @@
 
 #react-confirm-alert {
 
-
     .react-confirm-alert-overlay {
         background: rgba(0, 0, 0, 0.7);
     }
@@ -11,45 +10,54 @@
     .react-confirm-alert {
         background: $color-white;
         border-radius: $border-radius-main;
-        width: 500px;
+        width: 400px;
+        overflow: hidden;
 
         .custom-ui {
             padding: 20px;
+
+            .headerBack {
+                height: 160px;
+                background: $color-red-light url("../../../public/img/icons/iconQuestion.svg") center no-repeat;
+                background-size: 30%;
+                margin: -20px -20px 20px -20px;
+            }
 
             .head {
                 @include interSemiBold();
                 margin: 0 0 20px;
                 font-size: $font-size-big;
-
+                text-align: center;
             }
 
             .body {
                 @include interRegular();
-                background-color: $color-blue-light2;
                 margin: 0 -20px;
                 padding: 20px 40px;
 
-                .bodyHead {
-                }
-
-                .bodyContent {
-                    font-size: $font-size-small;
-                    margin-top: 10px;
-
+                .bodyContentOrganization {
+                    margin-bottom: 10px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
 
-                    span {
-                        font-size: $font-size-big;
-                    }
+                    font-size: $font-size-normal;
+                    @include interSemiBold();
+                }
+
+                .bodyContentContactFace {
+                    color: $color-grey;
+
                 }
             }
 
             .foot {
                 @include interRegular();
                 padding-top: 20px;
-                text-align: right;
+
+                text-align: center;
+                border-top: 1px solid $color-grey-light;
+                margin: 30px -20px 0;
 
                 .button {
                     &:first-child {

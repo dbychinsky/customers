@@ -106,8 +106,6 @@
             background: url("../../../public/img/icons/iconNotification.svg") left no-repeat;
             background-size: 20px;
         }
-
-
     }
 
     .feedbackMessage {
@@ -126,6 +124,7 @@
         background: none;
         display: flex;
         flex-direction: row;
+        padding: 0;
     }
 
     .archiveProductList {
@@ -150,6 +149,71 @@
             &:not(:first-child) {
                 border-left: 1px solid $color-grey-light;
             }
+        }
+    }
+}
+
+//ADAPTATION SECTION
+@media screen and ($LandscapeSmallScreen) {
+    .contact {
+        .contactFace {
+            font-size: $font-size-smallest;
+        }
+
+        .contacts {
+            font-size: $font-size-smallest;
+        }
+
+        .products {
+            font-size: $font-size-smallest;
+        }
+
+        .description {
+            font-size: $font-size-smallest;
+        }
+
+        .reminder {
+            width: 5%;
+
+            &.on, &.off {
+                background-position: center center;
+            }
+
+            .reminderDate {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and ($LaptopScreen) {
+    .contact {
+        .products {
+            display: none;
+        }
+
+        .description {
+            display: none;
+        }
+
+        .organization {
+            width: 24%;
+        }
+
+        .contactFace {
+            width: 25%;
+        }
+
+        .contacts {
+            width: 25%;
+        }
+
+        .reminder {
+            width: 5%;
+        }
+
+        .actionBar {
+            width: 21%;
         }
     }
 }

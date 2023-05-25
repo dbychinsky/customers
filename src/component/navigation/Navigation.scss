@@ -35,67 +35,74 @@
 
         li {
             box-sizing: border-box;
-            padding: 0 20px 0 0;
             margin-bottom: 5px;
 
-            @mixin action($img, $imgHover) {
-
-                display: block;
+            @mixin action($img, $imgHover, $bgSize) {
                 box-sizing: border-box;
-                padding: 9px 0 9px 54px;
+                padding: 10px 20px 10px 40px;
+                display: block;
+                width: 90%;
+
                 text-decoration: none;
+                border-radius: 0 $border-radius-main $border-radius-main 0;
+                background: $img left 8px center no-repeat;
                 color: $color-black;
-                position: relative;
-
-                @include interLight;
-
-                &:before {
-                    content: $img;
-                    width: 24px;
-                    height: 24px;
-                    position: absolute;
-                    top: 7px;
-                    left: 23px;
-                }
+                transition: background 200ms ease;
 
                 &.active {
+                    background: $color-blue-light $imgHover left 8px center no-repeat;
+                    background-size: $bgSize;
                     color: $color-white;
-                    background: $color-blue-light;
-                    border-radius: 0 $border-radius-main $border-radius-main 0;
-
-                    &:before {
-                        content: $imgHover;
-                    }
                 }
 
                 &:hover {
-                    &:not(&.active) {
-                        color: $color-blue-light;
-                        background: $color-blue-light2;
-                        border-radius: 0 $border-radius-main $border-radius-main 0;
-                    }
-
+                    background: $color-blue-light4 $imgHover left 8px center no-repeat;
+                    background-size: $bgSize;
+                    color: $color-white;
                 }
             }
 
             .actionContactListPage {
                 @include action(url("./../../../public/img/icons/iconUser.svg"),
-                    url("./../../../public/img/icons/iconUserHover.svg"));
+                    url("./../../../public/img/icons/iconUserHover.svg"), 29px);
 
+                background-size: 29px;
             }
 
             .actionContactListReminderPage {
                 @include action(url("./../../../public/img/icons/iconNotification.svg"),
-                    url("./../../../public/img/icons/iconNotifiactionHover.svg"));
-
-                &::before {
-                    width: 24px;
-                }
+                    url("./../../../public/img/icons/iconNotifiactionHover.svg"), 26px);
+                background-size: 26px;
             }
+        }
 
-            .actionSettingPage {
-                @include action(url("./../../../public/img/icons/iconSetting.svg"),
-                    url("./../../../public/img/icons/iconSettingHover.svg"));
+    }
+}
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .navigation {
+        width: 80px;
+
+        .logotype {
+            width: 69px;
+            height: 70px;
+            margin: 5px;
+        }
+
+        ul li {
+            .actionContactListPage, .actionContactListReminderPage {
+                font-size: 0;
+                padding: 20px 10px;
+                background-position: center;
+
+                &.active {
+                    background-position: center;
+                }
+
+                &:hover {
+                    background-position: center;
+                }
             }
         }
     }

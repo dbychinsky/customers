@@ -7,7 +7,7 @@ const AuthPlace = observer(() => {
     return (
         <div className="authPlace">
             <div className="info">
-                <div>Sofi</div>
+                <div className="userName">Sofi</div>
                 <div className="avatar"></div>
             </div>
         </div>

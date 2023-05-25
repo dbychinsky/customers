@@ -5,3 +5,10 @@
 .contactListReminderPage {
     @include pageParameters();
 }
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .contactListReminderPage {
+        margin-left: 80px;
+    }
+}

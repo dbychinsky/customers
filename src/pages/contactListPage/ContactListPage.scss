@@ -14,3 +14,10 @@
         max-width: $max-width-tile;
     }
 }
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .contactListPage{
+        margin-left: 80px;
+    }
+}

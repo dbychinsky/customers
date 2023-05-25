@@ -100,3 +100,51 @@
     }
 
 }
+
+//ADAPTATION SECTION
+@media screen and ($LandscapeSmallScreen) {
+    .search {
+        .headerColumn {
+        }
+    }
+}
+
+@media screen and ($LaptopScreen) {
+    .search {
+        .products {
+            display: none;
+        }
+
+        .description {
+            display: none;
+        }
+
+        .organization {
+            width: 24%;
+        }
+
+        .contactFace {
+            width: 25%;
+        }
+
+        .contacts {
+            width: 25%;
+
+            .inputTextField {
+                display: none;
+            }
+        }
+
+        .reminder {
+            display: none;
+        }
+
+        .actionBar {
+            width: 26%;
+        }
+
+        .viewSortData {
+            display: none;
+        }
+    }
+}

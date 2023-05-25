@@ -15,18 +15,22 @@ const Search = observer(() => {
 
     useEffect(() => {
         contactStore.searchOrgField();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contactStore.searchOrganization])
 
     useEffect(() => {
         contactStore.searchContactFaceField();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contactStore.searchContactFace])
 
     useEffect(() => {
         contactStore.searchProductField();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contactStore.searchProduct])
 
     useEffect(() => {
         contactStore.searchPhoneField();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contactStore.searchPhone])
 
     return (

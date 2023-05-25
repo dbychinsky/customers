@@ -32,6 +32,11 @@
             flex-direction: row;
             align-items: center;
             margin: 0 10px 12px 0;
+            transition: color ease 200ms;
+
+            &:hover{
+                color: $color-red;
+            }
 
             .button {
                 margin-right: 10px;
@@ -70,6 +75,12 @@
                 flex-direction: row;
                 align-items: center;
                 margin: 0 10px 12px 0;
+
+                transition: color ease 200ms;
+
+                &:hover{
+                    color: $color-red;
+                }
             }
         }
     }
@@ -103,11 +114,43 @@
     }
 
     .actionBar {
-        margin: 20px 0 100px;
+        margin: 20px 0 50px;
 
         .button {
             margin-right: 20px;
         }
 
+    }
+}
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .formEditContact {
+        .contactArea, .productsArea, .contactsArea, .descriptionArea, .reminderArea {
+            > p {
+                width: 40%;
+            }
+
+            > div {
+                width: 60%;
+                input{
+                    width: 100%;
+                }
+            }
+        }
+
+        .productsArea {
+            > div {
+                flex-direction: column;
+            }
+
+            .actualProductList {
+                width: 100%;
+            }
+
+            .archiveProductList {
+                width: 100%;
+            }
+        }
     }
 }

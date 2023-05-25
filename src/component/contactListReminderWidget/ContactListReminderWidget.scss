@@ -4,7 +4,7 @@
 
 .contactListReminderWidget {
     width: 12%;
-    margin-left: 20px;
+    margin-left: 1.7%;
 
     .scroll & {
         position: sticky;
@@ -23,7 +23,7 @@
         max-height: inherit;
 
         cursor: pointer;
-        transition: $transition-main-box-shadow;
+        transition: $transition-main-button;
         overflow: visible;
 
         box-shadow: none;
@@ -302,6 +302,33 @@
         }
         100% {
             transform: rotate(0);
+        }
+    }
+}
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .contactListReminderWidget {
+        width: 70px;
+
+        .contact {
+            width: 70px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .bell {
+              position: initial;
+            }
+
+            .organization {
+                display: none;
+            }
+
+            .contactFace {
+                display: none;
+            }
         }
     }
 }

@@ -6,12 +6,15 @@ $color-grey: #6d7080;
 $color-grey-light: #e5e7eb;
 $color-green: #00af32;
 $color-green-light: #dcfde1;
+$color-green-light2: #02c138;
 $color-blue: #1131fa;
 $color-blue-light: #0095fb;
 $color-blue-light2: #e6f2ff;
 $color-blue-light3: #f6faff;
-$color-red: #ef4444;
+$color-blue-light4: #43b1fd;
+$color-red: #f85656;
 $color-red-light: #ffcccc;
+$color-red-light2: #ff7a7a;
 //Тень
 $box-shadow-main: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
 $box-shadow-main-inset: inset rgba(60, 72, 88, 0.25) 0px 0px 3px 0px;
@@ -32,6 +35,7 @@ $font-size-normal: 1em;
 $font-size-big: 1.375em;
 $font-size-bigger: 1.625em;
 $font-size-biggest: 2em;
+$font-size-the-biggest: 2.5em;
 $font-size-title: 6em;
 
 //Граница
@@ -44,4 +48,12 @@ $max-width-tile: 1430px;
 //1560px
 
 //Transition
-$transition-main-box-shadow: box-shadow ease 100ms;
+$transition-main-button: box-shadow ease 300ms, background ease 300ms, border ease 300ms;
+
+//Адаптация. Основное разрешение 1560px+
+//Resolution 1280- 1559
+$LandscapeSmallScreen: '(max-width:1559px)';
+//Resolution 480-767 Medium
+$LaptopScreen: '(max-width:1279px)';
+//Resolution 320-479 Small
+//@mobileScreen: ~'(max-width:479px)';

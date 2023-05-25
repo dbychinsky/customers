@@ -36,3 +36,11 @@
         background-size: 33px;
     }
 }
+
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .authPlace .info .userName {
+        display: none;
+    }
+}
