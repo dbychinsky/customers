@@ -16,7 +16,7 @@
       "email": "",
       "description": "Генеральный директор ОАО \"МАЗ\" - управляющая компания холдинга \"БЕЛАВТОМАЗ\"",
       "reminder": false,
-      "reminderDate": "2023-05-23T08:40:28.964Z"
+      "reminderDate": "2023-05-25T06:00:00.000Z"
     },
     {
       "id": 2,
@@ -99,7 +99,7 @@
       "phoneList": [],
       "email": "request@qulix.com",
       "description": "Oakwood, Dunstan Lane, Burton, Neston, Cheshire,\nWebsite: http://www.qulix.ru/",
-      "reminder": true,
+      "reminder": false,
       "reminderDate": "2023-05-23T10:22:44.979Z"
     },
     {
@@ -165,9 +165,5 @@
       "reminder": false,
       "reminderDate": "2023-05-23T10:27:27.370Z"
     }
-  ],
-  "setting": {
-    "timerNotification": "10000",
-    "userName": "Sofiko"
-  }
+  ]
 }

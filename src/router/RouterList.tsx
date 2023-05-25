@@ -3,7 +3,6 @@ import {RouterPathList} from "./RouterPathList";
 import ContactEditPage from "../pages/contactEditPage/ContactEditPage";
 import LoginPage from "../pages/loginPage/LoginPage";
 import ContactListReminderPage from "../pages/contactListReminderPage/ContactListReminderPage";
-import SettingPage from "../pages/settingPage/SettingPage";
 import ContactListPage from "../pages/contactListPage/ContactListPage";
 
 /**
@@ -24,9 +23,6 @@ export const RoutersProject = () => {
                 <Route index element={<ContactListReminderPage/>}/>
                 <Route path={RouterPathList.CONTACT_EDIT_ID_PAGE} element={<ContactEditPage/>}/>
             </Route>
-
-            <Route path={RouterPathList.SETTING_PAGE} element={<SettingPage/>}/>
-
         </Routes>
     );
 };

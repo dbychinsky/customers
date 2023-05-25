@@ -75,6 +75,8 @@
 
         span {
             display: block;
+            box-sizing: border-box;
+            padding: 10px 30px 0 10px;
 
             @include interLight();
             font-size: $font-size-the-smallest;

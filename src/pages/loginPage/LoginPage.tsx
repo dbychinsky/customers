@@ -13,13 +13,8 @@ import Form, {ActionListType, Field} from "../../component/form/Form";
  */
 const LoginPage = observer(() => {
     const authStore = useContext(StoreContext).authStore;
-    const settingStore = useContext(StoreContext).settingStore;
 
     const navigate = useNavigate();
-
-    useEffect(()=>{
-        settingStore.get();
-    })
 
     const auth = () => {
         authStore.auth();

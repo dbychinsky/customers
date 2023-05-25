@@ -8,7 +8,6 @@ import {observer} from "mobx-react";
 const AuthPlace = observer(() => {
 
     const authStore = useContext(StoreContext).authStore;
-    const settingStore = useContext(StoreContext).settingStore;
 
     const exit = () => {
         authStore.clearSessionStorage();
@@ -17,7 +16,7 @@ const AuthPlace = observer(() => {
     return (
         <div className="authPlace">
             <div className="info">
-                <div>{settingStore.settingList.userName}</div>
+                <div>Sofi</div>
                 <div className="avatar"></div>
             </div>
             <Link to={RouterPathList.ROOT_PATH}

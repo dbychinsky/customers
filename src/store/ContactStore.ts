@@ -97,6 +97,11 @@ export class ContactStore {
      */
     public client: boolean = true;
 
+    /**
+     * Таймер проверки нотификаций
+     */
+    private timer:number = Number(process.env.REACT_APP_TIMER_NOTIFICATION);
+
     constructor() {
         makeAutoObservable(this);
         this.handleChange = this.handleChange.bind(this);
@@ -270,7 +275,7 @@ export class ContactStore {
 
     /**
      * Удаление проекта
-     * @param id
+     * @param name
      */
     public deleteRecordProductList(name: string) {
         runInAction(() => {
@@ -302,7 +307,7 @@ export class ContactStore {
 
     /**
      * Удаление проекта из архива
-     * @param id
+     * @param name
      */
     public deleteRecordPhoneList(name: string) {
         runInAction(() => {
@@ -505,11 +510,10 @@ export class ContactStore {
     /**
      * Нотификация по таймеру
      */
-    public checkNotifyOnTimer(timer: number) {
-        console.log(timer)
+    public checkNotifyOnTimer() {
         setInterval(() => {
             this.checkNotify();
-        }, timer)
+        }, this.timer)
     }
 
     /**
@@ -536,8 +540,6 @@ export class ContactStore {
                     runInAction(() => {
                         this.contactListNotificationActive.push(contact);
                     })
-
-
                 }
 
             }

@@ -1,7 +1,7 @@
 import React, {createContext} from 'react';
 import {Server} from "./service/Service";
 import {RootStore} from "./store/RootStore";
-import AppWrapperAuth from "./component/auth/AppWrapperAuth";
+import AppWrapperInAuth from "./AppWrapperInAuth";
 
 export const server = new Server();
 
@@ -15,7 +15,7 @@ export const StoreContext = createContext<RootStore>(rootStore);
 function App() {
     return (
         <div className="application">
-            <AppWrapperAuth/>
+            <AppWrapperInAuth/>
         </div>
     );
 }

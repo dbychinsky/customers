@@ -1,10 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react";
-import {StoreContext} from "../../App";
-import {RoutersProject} from "../../router/RouterList";
-import Navigation from "../navigation/Navigation";
+import {StoreContext} from "./App";
+import {RoutersProject} from "./router/RouterList";
+import Navigation from "./component/navigation/Navigation";
 
-const AppWrapperAuth = observer(() => {
+const AppWrapperInAuth = observer(() => {
     const authStore = useContext(StoreContext).authStore;
 
     const [isScrolling, setIsScrolling] = useState<boolean>(false)
@@ -42,4 +42,4 @@ const AppWrapperAuth = observer(() => {
     );
 });
 
-export default AppWrapperAuth;
+export default AppWrapperInAuth;

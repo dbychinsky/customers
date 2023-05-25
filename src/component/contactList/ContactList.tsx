@@ -16,7 +16,6 @@ import TextMessage from "../textMessage/TextMessage";
  */
 const ContactList = observer(() => {
     const contactStore = useContext(StoreContext).contactStore;
-    const settingStore = useContext(StoreContext).settingStore;
     const navigate = useNavigate();
 
     /**
@@ -29,11 +28,8 @@ const ContactList = observer(() => {
     }, []);
 
     useEffect(() => {
-        settingStore.get();
-        contactStore.checkNotifyOnTimer(settingStore.settingList.timerNotification);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        contactStore.checkNotifyOnTimer();
     }, []);
-
 
     /**
      * Добавить контакта

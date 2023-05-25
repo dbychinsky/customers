@@ -25,13 +25,6 @@ const Navigation = () => {
                         Нотификации
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to={RouterPathList.SETTING_PAGE}
-                             className="actionSettingPage"
-                             title="SETTING_PAGE">
-                        Настройки
-                    </NavLink>
-                </li>
             </ul>
         </div>
     );
