@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import "./InputField.scss";
+import "./InputFieldPassword.scss";
 
 /**
  * Компонент Input
@@ -8,7 +8,7 @@ import "./InputField.scss";
 /**
  * Интерфейс
  */
-interface IInputTextFieldProps {
+interface IInputTextFieldPasswordProps {
 
     /**
      * Значение в поле ввода
@@ -39,7 +39,7 @@ interface IInputTextFieldProps {
 
 }
 
-const InputTextField: FC<IInputTextFieldProps> = (
+const InputTextFieldPassword: FC<IInputTextFieldPasswordProps> = (
     {
         type,
         value,
@@ -49,7 +49,7 @@ const InputTextField: FC<IInputTextFieldProps> = (
     }) => {
     return (
         <input
-            className="inputTextField"
+            className="InputTextFieldPassword"
             type={type}
             value={value}
             onInput={changeHandler}
@@ -60,4 +60,4 @@ const InputTextField: FC<IInputTextFieldProps> = (
     )
 }
 
-export default InputTextField;
+export default InputTextFieldPassword;

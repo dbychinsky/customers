@@ -54,7 +54,8 @@ const CheckboxField: FC<ICheckboxField> = (
                    name={name}
                    className="checkbox"
                    onChange={changeHandler}
-                   id={id}/>
+                   id={id}
+            />
             <label htmlFor={id}>{text}</label>
         </div>
     );

@@ -40,7 +40,8 @@ const TextAreaField = ({value, type, name, changeHandler}: ITextAreaField) => {
             <textarea className="textAreaField"
                       value={value}
                       onChange={changeHandler}
-                      name={name}></textarea>
+                      name={name}
+            tabIndex={1}></textarea>
         </>
     );
 };

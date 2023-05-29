@@ -319,7 +319,7 @@
             align-items: center;
 
             .bell {
-              position: initial;
+                position: initial;
             }
 
             .organization {
@@ -328,6 +328,40 @@
 
             .contactFace {
                 display: none;
+            }
+        }
+    }
+}
+
+@media screen and ($MobileScreen) {
+    .contactListReminderWidget {
+        display: flex;
+        flex-direction: row;
+        order: 2;
+
+        position: absolute;
+        top: 62px;
+        right: 16px;
+        width: 84px;
+        margin-right: 5px;
+        overflow: hidden;
+
+        .scroll & {
+            position: absolute;
+            top: 62px;
+            right: 30px;
+        }
+
+        .contact {
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            min-height: initial;
+            background: none;
+
+            .bell {
+
             }
         }
     }

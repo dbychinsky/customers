@@ -7,6 +7,7 @@ import {useNavigate} from "react-router";
 import {RouterPathList} from "../../router/RouterPathList";
 import "./LoginPage.scss";
 import Form, {ActionListType, Field} from "../../component/form/Form";
+import InputTextFieldPassword from "../../component/inputFieldPassword/InputFieldPassword";
 
 /**
  * Страница аутентификации
@@ -47,11 +48,11 @@ const LoginPage = observer(() => {
         {
             name: "password",
             label: "Пароль",
-            field: <InputTextField
+            field: <InputTextFieldPassword
                 value={authStore.password}
                 changeHandler={authStore.handleChangePassword}
                 name="password"
-                type="text"/>
+                type="password"/>
         }
     ];
 

@@ -107,3 +107,41 @@
         }
     }
 }
+
+@media screen and ($MobileScreen) {
+    .navigation {
+        z-index: 3;
+        transition: left ease 500ms;
+        background-color: $color-white;
+        width: 120px;
+
+        border: none;
+
+        &.close {
+            left: -120px;
+        }
+
+        &.open {
+            left: 0;
+
+            .openNavi {
+                transform: rotate(90deg);
+            }
+        }
+
+        .openNavi {
+            display: block;
+            width: 50px;
+            height: 43px;
+
+            position: absolute;
+            right: -51px;
+            top: 0;
+
+            background: $color-white url("../../../public/img/icons/iconMenu.svg") center no-repeat;
+            background-size: 45px;
+            font-size: 0;
+            transition: transform ease 500ms;
+        }
+    }
+}

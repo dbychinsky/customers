@@ -44,3 +44,14 @@
         display: none;
     }
 }
+
+@media screen and ($MobileScreen) {
+    .authPlace {
+        .info {
+            .avatar {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}

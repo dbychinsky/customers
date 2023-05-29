@@ -32,3 +32,20 @@
 
     }
 }
+
+@media screen and ($MobileScreen) {
+    .contactList {
+        .headerList {
+            .button {
+                margin: 0;
+            }
+
+            .addContact {
+                font-size: 0;
+                min-width: initial;
+                padding: 16px;
+                background-position: left 7px center;
+            }
+        }
+    }
+}

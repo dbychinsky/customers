@@ -148,3 +148,40 @@
         }
     }
 }
+
+@media screen and ($MobileScreen) {
+    .search {
+        padding-top: 0;
+        .headerColumn {
+            .label {
+                display: none;
+            }
+
+            &.organization {
+                .inputTextField {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .actionBar {
+            display: none;
+        }
+
+        .organization,
+        .contactFace {
+            width: 100%;
+        }
+
+        .contacts,
+        .reminder,
+        .actionBar {
+            display: none;
+        }
+
+        .scroll & {
+            top: 45px;
+        }
+
+    }
+}

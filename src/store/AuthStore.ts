@@ -23,10 +23,10 @@ export type FieldError = {
 export class AuthStore {
     public login: string = '';
     public password: string = '';
-    // private loginApp: string = '1';
-    private loginApp: string = 'Sofi';
-    // private passwordApp: string = '1';
-    private passwordApp: string = 'sf1807';
+    private loginApp: string = '1';
+    // private loginApp: string = 'Sofi';
+    private passwordApp: string = '1';
+    // private passwordApp: string = 'sf1807';
     public errorList: FieldError[] = [];
     public isAuth: boolean = false;
 

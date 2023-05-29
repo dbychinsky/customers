@@ -35,23 +35,15 @@
                     font-size: calc($font-size-title / 12);
                     color: $color-black;
                 }
+
                 &:nth-child(2) {
                     margin: -7px 0 -14px;
+
                     span {
                         font-size: calc($font-size-title / 20);
                         color: $color-black;
                     }
                 }
-                //&:nth-child(1) {
-                //    font-size: calc($font-size-title / 12);
-                //    color: $color-black;
-                //}
-                //
-                //&:nth-child(3) {
-                //
-                //    font-size: calc($font-size-title / 12);
-                //    color: $color-black;
-                //}
             }
         }
     }
@@ -69,6 +61,57 @@
             margin: 10px 10px 10px 50px;
             width: 100%;
             max-width: 400px;
+        }
+    }
+}
+
+//ADAPTATION SECTION
+@media screen and ($LaptopScreen) {
+    .loginPage {
+        .titleLoginPage {
+            width: 50%;
+
+            h2 {
+                font-size: $font-size-the-biggest;
+            }
+        }
+
+        .contentLoginPage {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and ($MobileScreen) {
+    .loginPage {
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: $color-white;
+
+        .titleLoginPage {
+            width: 100%;
+            justify-content: center;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 75px;
+                height: 60px;
+                background: url("../../../public/img/logotype.png") left top no-repeat;
+                background-size: cover;
+            }
+
+            h2 {
+                display: none;
+            }
+        }
+
+        .contentLoginPage {
+            width: 100%;
+
+            .form {
+                margin: 20px 0 0 0;
+            }
         }
     }
 }

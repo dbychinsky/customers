@@ -217,3 +217,57 @@
         }
     }
 }
+
+@media screen and ($MobileScreen) {
+    .contact {
+        max-height: initial;
+
+        .organization {
+            width: 80%;
+            padding: 5px 5px 0;
+        }
+
+        .contactFace {
+            width: 80%;
+            padding: 5px 5px 0;
+        }
+
+        .contacts {
+            width: 80%;
+            padding: 5px 5px 0;
+
+            .phone {
+                padding-bottom: 5px;
+            }
+
+            .email {
+                padding: 0;
+            }
+        }
+
+        .products, .archiveProductList, .description, .reminder {
+            display: none;
+        }
+
+        .actionBar {
+            height: initial;
+            width: initial;
+            position: absolute;
+            right: 10px;
+            top: 39%;
+
+            .button {
+                padding: 10px;
+
+                &.eye, &.delete {
+                    display: none;
+                }
+
+                &:hover {
+                    padding: 10px;
+                }
+            }
+        }
+
+    }
+}
