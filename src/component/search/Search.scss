@@ -37,7 +37,7 @@
         }
 
         .inputTextField {
-            width: 100%;
+            box-sizing: border-box;
             padding: 6px 25px 10px 6px;
             margin-bottom: 10px;
             border-radius: $border-radius-main-small;

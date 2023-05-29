@@ -38,6 +38,10 @@
         outline: none;
     }
 
+    &:focus {
+        border: 1px solid $color-blue;
+    }
+
     &.mainAction {
         border: 1px solid $color-green;
         background: $color-green;
@@ -46,6 +50,10 @@
         &:hover {
             background: $color-green-light2;
             border: 1px solid $color-green-light2;
+        }
+
+        &:focus {
+            border: 1px solid $color-blue;
         }
     }
 

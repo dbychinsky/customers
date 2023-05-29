@@ -17,15 +17,17 @@
 
 //ADAPTATION SECTION
 @media screen and ($LaptopScreen) {
-    .contactListPage{
+    .contactListPage {
         margin-left: 80px;
     }
 }
+
 @media screen and ($MobileScreen) {
     .contactListPage {
         margin: 0;
         padding: 0 10px;
-        .contactList{
+
+        .contactList {
             width: 100%;
             order: 3;
         }

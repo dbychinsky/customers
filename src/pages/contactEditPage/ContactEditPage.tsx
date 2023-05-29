@@ -156,11 +156,11 @@ const ContactEditPage = observer(() => {
     const actionList: ActionListType[] = [
         {
             name: "submit",
-            action: <button className="button mainAction" onClick={save}>Сохранить</button>
+            action: <button className="button mainAction" tabIndex={1} onClick={save}>Сохранить</button>
         },
         {
             name: "cancel",
-            action: <button className="button" onClick={() => exit()}>выйти</button>
+            action: <button className="button" tabIndex={1} onClick={() => exit()}>выйти</button>
         }
     ];
 

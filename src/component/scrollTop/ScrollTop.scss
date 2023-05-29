@@ -1,0 +1,28 @@
+@import "src/parameters";
+@import "src/font";
+@import "src/mixins";
+
+.scrollTop {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 0;
+
+    background: $color-white url("./../../../public/img/icons/iconArrowUp.svg") center no-repeat;
+    background-size: 30%;
+    border: 1px solid $color-blue-light;
+    border-radius: $border-radius-main;
+    &:hover{
+        box-shadow: $box-shadow-main;
+    }
+}
+
+@media screen and ($MobileScreen) {
+    .scrollTop {
+        bottom: 20px;
+        right: 20px;
+    }
+}

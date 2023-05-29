@@ -59,7 +59,8 @@ export const Button: FC<IButton> = (
                 onClick={onClick}
                 type={type}
                 title={title}
-                autoFocus={autoFocus}>{text}
+                autoFocus={autoFocus}
+                tabIndex={1}>{text}
         </button>
     )
 };

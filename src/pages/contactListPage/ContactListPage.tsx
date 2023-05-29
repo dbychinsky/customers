@@ -8,6 +8,7 @@ import H1 from "../../component/header/H1";
 import {RouterPathList} from "../../router/RouterPathList";
 import {useNavigate} from "react-router";
 import {StoreContext} from "../../App";
+import ScrollTop from "../../component/scrollTop/ScrollTop";
 
 /**
  * Страница со списком контактов
@@ -29,6 +30,7 @@ const ContactListPage = observer(() => {
             <H1 text="Контакты"/>
             <ContactList/>
             <ContactListReminderWidget/>
+            <ScrollTop/>
         </div>
     );
 });
