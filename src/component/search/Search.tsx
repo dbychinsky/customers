@@ -41,7 +41,7 @@ const Search = observer(() => {
                                 changeHandler={contactStore.handleChangeSearchOrganization}
                                 name="organization"
                                 type="text"
-                                placeHolder="..."
+                                placeHolder="организация"
                 />
                 <Label text="Организация"
                        onClick={() => sortListName('organization')}/>
@@ -52,7 +52,7 @@ const Search = observer(() => {
                                 changeHandler={contactStore.handleChangeSearchContactFace}
                                 name="contactFace"
                                 type="text"
-                                placeHolder="..."/>
+                                placeHolder="ФИО"/>
                 <Label text="ФИО"
                        onClick={() => sortListName('contactFace')}/>
             </div>
@@ -62,7 +62,7 @@ const Search = observer(() => {
                                 changeHandler={contactStore.handleChangeSearchPhone}
                                 name="phone"
                                 type="text"
-                                placeHolder="..."/>
+                                placeHolder=""/>
                 <Label text="Контакты"/>
             </div>
 
@@ -71,7 +71,7 @@ const Search = observer(() => {
                                 changeHandler={contactStore.handleChangeSearchProduct}
                                 name="products"
                                 type="text"
-                                placeHolder="..."/>
+                                placeHolder=""/>
                 <Label text="Продукция"/>
             </div>
 

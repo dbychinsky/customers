@@ -4,7 +4,7 @@
 
 .dateField {
     .react-datepicker-wrapper {
-         .react-datepicker__input-container {
+        .react-datepicker__input-container {
             input {
                 @include interLight();
 
@@ -17,7 +17,7 @@
 
                 &:focus {
                     outline: 0;
-                    border: 1px solid $color-blue;
+                    border: 1px solid $color-grey;
                 }
 
                 .error & {
@@ -53,8 +53,8 @@
 
             .react-datepicker__current-month {
 
-                background: url("../../../public/img/icons/iconCalendar.svg") left 150px top 20px no-repeat;
-                background-size: 80px;
+                background: url("../../../public/img/icons/iconCalendar.svg") left 165px top 30px no-repeat;
+                background-size: 60px;
                 color: $color-white;
                 font-size: $font-size-the-biggest;
                 padding: 110px 30px 15px 30px;
@@ -157,5 +157,70 @@
 
     .react-datepicker-time__header {
         display: none;
+    }
+}
+
+//ADAPTATION SECTION
+@media screen and ($MobileScreen) {
+    .dateField .react-datepicker {
+        .react-datepicker__month {
+            width: 180px;
+            margin-top: 25px;
+        }
+
+        .react-datepicker__header {
+            height: 35px;
+
+            .react-datepicker__current-month {
+                padding: 10px 33px;
+                background: $color-blue-light;
+
+                font-size: $font-size-normal;
+            }
+
+            .react-datepicker__day-names {
+                font-size: $font-size-small;
+
+                .react-datepicker__day-name {
+                    margin: 0;
+                }
+            }
+        }
+
+        .react-datepicker__day {
+            font-size: $font-size-small;
+            margin: 0;
+        }
+
+        .react-datepicker__navigation {
+            top: 3px;
+        }
+    }
+    .dateField .react-datepicker .react-datepicker__day:hover, .dateField .react-datepicker .react-datepicker__month-text:hover, .dateField .react-datepicker .react-datepicker__quarter-text:hover, .dateField .react-datepicker .react-datepicker__year-text:hover {
+        padding: 0;
+        margin: 0;
+    }
+    .dateField .react-datepicker .react-datepicker__day--selected, .dateField .react-datepicker .react-datepicker__day--in-selecting-range, .dateField .react-datepicker .react-datepicker__day--in-range, .dateField .react-datepicker .react-datepicker__month-text--selected, .dateField .react-datepicker .react-datepicker__month-text--in-selecting-range, .dateField .react-datepicker .react-datepicker__month-text--in-range, .dateField .react-datepicker .react-datepicker__quarter-text--selected, .dateField .react-datepicker .react-datepicker__quarter-text--in-selecting-range, .dateField .react-datepicker .react-datepicker__quarter-text--in-range, .dateField .react-datepicker .react-datepicker__year-text--selected, .dateField .react-datepicker .react-datepicker__year-text--in-selecting-range, .dateField .react-datepicker .react-datepicker__year-text--in-range {
+        padding: 0;
+    }
+    .react-datepicker__time-container {
+
+    }
+    .dateField .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+        margin: 10px 0;
+        padding: 0;     font-size: $font-size-smallest;
+    }
+
+    .react-datepicker__time-container {
+        width: 46px !important; //script calc
+    }
+    .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+        width: 46px !important; //script calc
+    }
+    .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+        overflow-x: hidden;
+    }
+    .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {
+
     }
 }

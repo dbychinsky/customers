@@ -15,8 +15,12 @@
     background-size: 30%;
     border: 1px solid $color-blue-light;
     border-radius: $border-radius-main;
-    &:hover{
+    transition: background 300ms ease;
+
+    &:hover {
         box-shadow: $box-shadow-main;
+        background: $color-blue-light url("./../../../public/img/icons/iconArrowUpHover.svg") center no-repeat;
+        background-size: 30%;
     }
 }
 

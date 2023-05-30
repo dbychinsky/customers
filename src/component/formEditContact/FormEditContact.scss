@@ -34,7 +34,7 @@
             margin: 0 10px 12px 0;
             transition: color ease 200ms;
 
-            &:hover{
+            &:hover {
                 color: $color-red;
             }
 
@@ -78,7 +78,7 @@
 
                 transition: color ease 200ms;
 
-                &:hover{
+                &:hover {
                     color: $color-red;
                 }
             }
@@ -133,7 +133,8 @@
 
             > div {
                 width: 60%;
-                input{
+
+                input {
                     width: 100%;
                 }
             }
@@ -150,6 +151,42 @@
 
             .archiveProductList {
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and ($MobileScreen) {
+    .formEditContact {
+        .contactArea, .productsArea, .contactsArea, .descriptionArea, .reminderArea {
+            flex-direction: column;
+
+            > p {
+                width: 100%;
+                margin-bottom: 10px;
+
+                font-size: $font-size-normal;
+
+                span {
+                    display: none;
+                }
+            }
+
+            > div {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .actionBar {
+            margin: 0 0 10px;
+            text-align: center;
+
+            button {
+                margin: 0 0 10px 0;
             }
         }
     }

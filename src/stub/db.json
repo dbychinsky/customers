@@ -164,6 +164,38 @@
       "description": "220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n220012, МИНСК, Чорного 12\n",
       "reminder": false,
       "reminderDate": "2023-05-23T10:27:27.370Z"
+    },
+    {
+      "id": 10,
+      "products": [],
+      "productsArchive": [],
+      "contactFace": "",
+      "organization": "",
+      "phoneList": [
+        "+375 (34) 234 23 42",
+        "+375 (42) 342 34 23"
+      ],
+      "email": "",
+      "description": "",
+      "reminder": false,
+      "reminderDate": "2023-05-30T09:12:47.807Z"
+    },
+    {
+      "id": 11,
+      "products": [],
+      "productsArchive": [],
+      "contactFace": "",
+      "organization": "",
+      "phoneList": [
+        "123123",
+        "234234",
+        "+375 (22) 222 22 22",
+        "+375 (22) 222 22 22"
+      ],
+      "email": "",
+      "description": "",
+      "reminder": false,
+      "reminderDate": "2023-05-30T09:34:33.760Z"
     }
   ]
 }

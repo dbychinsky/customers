@@ -28,6 +28,8 @@
         display: flex;
         flex-direction: column;
 
+        @include interSemiBold();
+
         &.organization, &.contactFace {
             .label {
                 background: $color-white-light url("../../../public/img/icons/iconSortByName.svg") center right 10px no-repeat;
@@ -43,6 +45,11 @@
             border-radius: $border-radius-main-small;
             background: $color-white url("../../../public/img/icons/iconSearch.svg") center right 7px no-repeat;
             background-size: 18px;
+
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: $color-white;
+                opacity: 0; /* Firefox */
+            }
         }
 
         &.organization {
@@ -152,6 +159,7 @@
 @media screen and ($MobileScreen) {
     .search {
         padding-top: 0;
+
         .headerColumn {
             .label {
                 display: none;
@@ -162,6 +170,12 @@
                     margin-left: 0;
                 }
             }
+            .inputTextField {
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: $color-grey;
+                    opacity: 1; /* Firefox */
+                }
+            }
         }
 
         .actionBar {
@@ -170,7 +184,7 @@
 
         .organization,
         .contactFace {
-            width: 100%;
+            width: 50%;
         }
 
         .contacts,

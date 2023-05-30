@@ -32,7 +32,7 @@ export class ContactStore {
     /**
      * Телефон телефонов, принадлежащий контакту
      */
-    public phone: string = '';
+    public phone: any = '';
 
     /**
      * Список телефонов, принадлежащие контакту

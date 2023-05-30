@@ -134,9 +134,11 @@ const Contact = observer(() => {
 
                                 <div className="archiveProductList">
                                     {productsArchive.map((elem, index
-                                        ) => (<div key={index}>
-                                            <div>{elem}</div>
-                                        </div>)
+                                        ) => (
+                                            <div key={index}
+                                                 className="archiveProduct">
+                                                {elem}
+                                            </div>)
                                     )}
                                 </div>
                             </>
