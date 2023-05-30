@@ -104,8 +104,6 @@ const ContactEditPage = observer(() => {
         {
             name: "phoneList",
             label: "Номер телефона",
-            // field: <InputPhoneNumber value={contactStore.phone}
-            //                          handleChange={contactStore.handleChangePhone}/>
             field: <InputTextField
                 value={contactStore.phone}
                 changeHandler={contactStore.handleChangePhone}
