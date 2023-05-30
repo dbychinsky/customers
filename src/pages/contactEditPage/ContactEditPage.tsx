@@ -12,7 +12,6 @@ import "./ContactEditPage.scss";
 import Header from "../../component/header/Header";
 import FormEditContact from "../../component/formEditContact/FormEditContact";
 import H1 from "../../component/header/H1";
-import InputPhoneNumber from "../../component/inputPhoneNumber/inputPhoneNumber";
 
 /**
  * Страница редактирования/добавления контакта
@@ -104,6 +103,8 @@ const ContactEditPage = observer(() => {
         {
             name: "phoneList",
             label: "Номер телефона",
+            // field: <InputPhoneNumber value={contactStore.phone}
+            //                          handleChange={contactStore.handleChangePhone}/>
             field: <InputTextField
                 value={contactStore.phone}
                 changeHandler={contactStore.handleChangePhone}
