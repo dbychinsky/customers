@@ -8,7 +8,8 @@ import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import "../reactConfirmAlert/ReactConfirmAlert.scss";
 import {useNavigate} from "react-router";
-import FeedbackMessage, {FeedbackMessageList} from "../feedbackMessage/FeedbackMessage";
+import Preloader from "../preloader/Preloader";
+import {getIdForEmptyList} from "../../utility/Identificator";
 
 /**
  * контакт
@@ -82,7 +83,8 @@ const Contact = observer(() => {
                      reminder,
                      reminderDate
                  }) => (
-                    <div key={id} id={id.toString()} className="contact">
+                    <div key={id} id={id.toString()}
+                         className={`contact ${getIdForEmptyList(id.toString())}`} >
                         {id
                             ? <>
                                 <div className="organization">{organization}</div>
@@ -144,8 +146,10 @@ const Contact = observer(() => {
                                     )}
                                 </div>
                             </>
-                            : <FeedbackMessage message="Отсутствуют данные либо подключение к серверу"
-                                               typeMessage={FeedbackMessageList.error}/>}
+                            : <div className="getData">
+                                <p>Получение данных с сервера</p>
+                                <Preloader/>
+                            </div>}
                     </div>
                 ))}
         </>

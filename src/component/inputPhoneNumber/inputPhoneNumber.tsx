@@ -1,28 +1,30 @@
 import React, {useContext, useState} from 'react';
-import CheckboxField from "../checkboxField/CheckboxField";
 import InputTextField from "../inputField/InputField";
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
 import {Button} from "../button/Button";
-import Label from "../label/Label";
 import "./inputPhoneNumber.scss";
+import CheckboxNormal from "../checkboxNormal/CheckboxNormal";
 
-
+/**
+ * Кастомный компонент для телефона
+ */
 const InputPhoneNumber = observer(() => {
-    /**
-     * Рабочий или личный
-     */
-    const [typeNumber, setTypeNumber] = useState<boolean>(false);
+
+    const [isPersonalNumber, setIsPersonalNumber] = useState<boolean>(false);
+    const [isWorkNumber, setIsWorkNumber] = useState<boolean>(true);
     const [isViberNumber, setIsViberNumber] = useState<boolean>(false);
     const [isTelegramNumber, setIsTelegramNumber] = useState<boolean>(false);
 
     const contactStore = useContext(StoreContext).contactStore;
 
     const addPhone = () => {
-        if (typeNumber) {
-            contactStore.addToListAtrPhone('work')
-        } else {
+        if (isPersonalNumber) {
             contactStore.addToListAtrPhone('personal')
+        }
+
+        if (isWorkNumber) {
+            contactStore.addToListAtrPhone('work')
         }
 
         if (isViberNumber) {
@@ -44,32 +46,49 @@ const InputPhoneNumber = observer(() => {
                             type="text"
                             name="typeNumber"/>
             <div className="rowCheck">
-                <div className="rowType">
-                    <Label text="Персональный/Рабочий"/>
-                    <CheckboxField id="typeNumber"
-                                   value={typeNumber}
-                                   changeHandler={() => setTypeNumber(!typeNumber)}
-                                   name="typeNumber"/>
+
+                <div className="columnType">
+                    <p>Тип номера</p>
+                    <CheckboxNormal id="isWorkNumber"
+                                    value={isWorkNumber}
+                                    changeHandler={() => {
+                                        setIsWorkNumber(!isWorkNumber);
+                                        setIsPersonalNumber(!isPersonalNumber)
+                                    }}
+                                    name="isWorkNumber"
+                                    text="Рабочий"/>
+
+                    <CheckboxNormal id="isPersonalNumber"
+                                    value={isPersonalNumber}
+                                    changeHandler={() => {
+                                        setIsPersonalNumber(!isPersonalNumber);
+                                        setIsWorkNumber(!isWorkNumber);
+                                    }}
+                                    name="isPersonalNumber"
+                                    text="Личный"/>
+                </div>
+                <div className="columnMessenger">
+                    <p>Доступность в месенджерах</p>
+                    <div className="rowViber">
+                        <CheckboxNormal id="isViberNumber"
+                                        value={isViberNumber}
+                                        changeHandler={() => setIsViberNumber(!isViberNumber)}
+                                        name="isViberNumber"
+                                        text="Viber"/>
+                    </div>
+                    <div className="rowTelegram">
+                        <CheckboxNormal id="isTelegramNumber"
+                                        value={isTelegramNumber}
+                                        changeHandler={() => setIsTelegramNumber(!isTelegramNumber)}
+                                        name="isTelegramNumber"
+                                        text="Telegram"/>
+                    </div>
                 </div>
 
-                <div className="rowViber">
-                    <Label text="Viber"/>
-                    <CheckboxField id="isViberNumber"
-                                   value={isViberNumber}
-                                   changeHandler={() => setIsViberNumber(!isViberNumber)}
-                                   name="isViberNumber"/>
-                </div>
-                <div className="rowTelegram">
-                    <Label text="Telegram"/>
-                    <CheckboxField id="isTelegramNumber"
-                                   value={isTelegramNumber}
-                                   changeHandler={() => setIsTelegramNumber(!isTelegramNumber)}
-                                   name="isTelegramNumber"/>
-                </div>
             </div>
-            <div className="actionBar">
-                <Button onClick={addPhone} text="Добавить"/>
-            </div>
+               <div className="actionBar">
+                   <Button onClick={addPhone} text="Добавить"/>
+               </div>
         </div>
     );
 });

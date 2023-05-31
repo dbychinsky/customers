@@ -28,15 +28,15 @@
         .updateData {
             margin: 0 5px 0 0;
         }
-
-
     }
-}
 
+
+}
 @media screen and ($MobileScreen) {
     .contactList {
         .headerList {
             border: none;
+
             .button {
                 margin: 0;
             }
