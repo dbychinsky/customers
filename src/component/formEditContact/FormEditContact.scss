@@ -61,26 +61,127 @@
 
         .phone {
             margin-bottom: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
 
             .formRow {
-                margin-bottom: 10px;
-            }
+                width: 50%;
 
-            > .button {
-                margin-bottom: 10px;
+                .inputTextField {
+                    width: 90%;
+                }
             }
 
             .phoneFromList {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin: 0 10px 12px 0;
+                width: 50%;
 
-                transition: color ease 200ms;
-
-                &:hover {
-                    color: $color-red;
+                p {
+                    margin: 0 0 10px 0;
                 }
+
+                .phoneNumber {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 0 0 10px;
+
+                    transition: color ease 200ms;
+
+                    &:hover {
+                        color: $color-red;
+                    }
+
+                    .number {
+                        max-width: 70%;
+                        padding-left: 10px;
+                        flex-grow: 1;
+                        border-right: 1px dashed $color-grey;
+                    }
+
+                    .iconList {
+                        width: 100px;
+                        height: 25px;
+                    }
+
+                    &.work {
+                        .iconList {
+                            background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat;
+                            background-size: 24px;
+
+                        }
+
+                        &.viber {
+                            .iconList {
+                                background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat,
+                                url("../../../public/img/icons/iconViber.svg") center left 34px no-repeat;
+                                background-size: 24px;
+
+                            }
+
+                            &.telegram {
+                                .iconList {
+                                    background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat,
+                                    url("../../../public/img/icons/iconViber.svg") center left 34px no-repeat,
+                                    url("../../../public/img/icons/iconTelegram.svg") center left 64px no-repeat;
+                                    background-size: 24px;
+                                }
+                            }
+                        }
+
+                        &.telegram {
+                            .iconList {
+                                background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat,
+                                url("../../../public/img/icons/iconTelegram.svg") center right 42px no-repeat;
+                                background-size: 24px;
+                            }
+                        }
+
+
+                    }
+                    &.personal {
+                        .iconList {
+                            background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat;
+                            background-size: 24px;
+
+                        }
+
+                        &.viber {
+                            .iconList {
+                                background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat,
+                                url("../../../public/img/icons/iconViber.svg") center left 34px no-repeat;
+                                background-size: 24px;
+
+                            }
+
+                            &.telegram {
+                                .iconList {
+                                    background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat,
+                                    url("../../../public/img/icons/iconViber.svg") center left 34px no-repeat,
+                                    url("../../../public/img/icons/iconTelegram.svg") center left 64px no-repeat;
+                                    background-size: 24px;
+                                }
+                            }
+                        }
+
+                        &.telegram {
+                            .iconList {
+                                background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat,
+                                url("../../../public/img/icons/iconTelegram.svg") center right 42px no-repeat;
+                                background-size: 24px;
+                            }
+                        }
+
+
+                    }
+                }
+
+                .small {
+                    font-size: $font-size-small;
+                    text-align: left;
+                }
+
+
             }
         }
     }

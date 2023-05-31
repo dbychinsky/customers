@@ -17,7 +17,7 @@
 
 @mixin contactListTable {
     .organization {
-        width: 15%;
+        width: 20%;
         margin: 0;
     }
     .contactFace {
@@ -25,9 +25,8 @@
         margin: 0;
     }
     .contacts {
-        width: 15%;
+        width: 20%;
         margin: 0;
-        //flex-grow: 1;
     }
     .products {
         width: 15%;
@@ -48,13 +47,6 @@
         .inputTextField {
             display: none;
         }
-    }
-    .actionBar {
-        width: 10%;
-        background-color: $color-white-light;
-
-        margin: 0;
-        height: 34px;
     }
 }
 
@@ -98,3 +90,4 @@
         }
     }
 }
+

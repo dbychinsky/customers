@@ -37,6 +37,12 @@
             border-bottom: 1px $color-grey-light dashed;
             background-color: $color-blue-light2;
         }
+
+        .actionBar {
+            right: 0;
+            background-color: $color-white;
+            border-left: 1px solid $color-grey-light;
+        }
     }
 
     &.more {
@@ -65,8 +71,88 @@
         padding-bottom: $paddingBottom;
     }
 
-    .phone {
+    .contacts {
         padding-bottom: $paddingBottom;
+
+        .phone {
+            .number {
+                padding-bottom: 5px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .iconList {
+                    width: 64px;
+                    height: 17px;
+                }
+
+                &.work {
+                    .iconList {
+                        background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat;
+                        background-size: 16px;
+                    }
+
+                    &.viber {
+                        .iconList {
+                            background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat,
+                            url("../../../public/img/icons/iconViber.svg") center left 26px no-repeat;
+                            background-size: 16px;
+                        }
+
+                        &.telegram {
+                            .iconList {
+                                background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat,
+                                url("../../../public/img/icons/iconViber.svg") center left 26px no-repeat,
+                                url("../../../public/img/icons/iconTelegram.svg") center left 47px no-repeat;
+                                background-size: 16px;
+                            }
+                        }
+                    }
+
+                    &.telegram {
+                        .iconList {
+                            background: url("../../../public/img/icons/iconWorkPhone.svg") center left 5px no-repeat,
+                            url("../../../public/img/icons/iconTelegram.svg") center right 22px no-repeat;
+                            background-size: 16px;
+                        }
+                    }
+
+
+                }
+
+                &.personal {
+                    .iconList {
+                        background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat;
+                        background-size: 16px;
+                    }
+
+                    &.viber {
+                        .iconList {
+                            background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat,
+                            url("../../../public/img/icons/iconViber.svg") center left 26px no-repeat;
+                            background-size: 16px;
+                        }
+
+                        &.telegram {
+                            .iconList {
+                                background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat,
+                                url("../../../public/img/icons/iconViber.svg") center left 26px no-repeat,
+                                url("../../../public/img/icons/iconTelegram.svg") center left 47px no-repeat;
+                                background-size: 16px;
+                            }
+                        }
+                    }
+
+                    &.telegram {
+                        .iconList {
+                            background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat,
+                            url("../../../public/img/icons/iconTelegram.svg") center right 22px no-repeat;
+                            background-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .email {
@@ -121,10 +207,17 @@
     }
 
     .actionBar {
-        background: none;
         display: flex;
         flex-direction: row;
         padding: 0;
+
+        position: absolute;
+        right: -120px;
+        top: 0;
+        bottom: 0;
+        width: 120px;
+        transition: right 300ms ease;
+
     }
 
     .archiveProductList {

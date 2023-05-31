@@ -35,8 +35,12 @@ interface IInputTextFieldProps {
     /**
      * placeHolder
      */
-    placeHolder?: string
+    placeHolder?: string,
 
+    /**
+     * disabled
+     */
+    disabled?: boolean
 }
 
 const InputTextField: FC<IInputTextFieldProps> = (
@@ -45,7 +49,8 @@ const InputTextField: FC<IInputTextFieldProps> = (
         value,
         changeHandler,
         name,
-        placeHolder
+        placeHolder,
+        disabled
     }) => {
     return (
         <input
@@ -56,6 +61,7 @@ const InputTextField: FC<IInputTextFieldProps> = (
             name={name}
             placeholder={placeHolder}
             tabIndex={1}
+            disabled={disabled}
         />
     )
 }

@@ -5,6 +5,7 @@ import {observer} from "mobx-react";
 import "./FormEditContact.scss";
 import {StoreContext} from "../../App";
 import {Button} from "../button/Button";
+import TextMessage from "../textMessage/TextMessage";
 
 /**
  * Интерфейс формы
@@ -25,15 +26,15 @@ interface ICustomFormEditContact {
  * Кастомная форма редактирования
  */
 const FormEditContact = observer(({
-                                       fieldListProducts,
-                                       fieldListProductsArchive,
-                                       fieldListContact,
-                                       fieldListPhoneList,
-                                       fieldListEmail,
-                                       fieldListDescription,
-                                       fieldListReminder,
-                                       actionList
-                                   }: ICustomFormEditContact) => {
+                                      fieldListProducts,
+                                      fieldListProductsArchive,
+                                      fieldListContact,
+                                      fieldListPhoneList,
+                                      fieldListEmail,
+                                      fieldListDescription,
+                                      fieldListReminder,
+                                      actionList
+                                  }: ICustomFormEditContact) => {
 
     const contactStore = useContext(StoreContext).contactStore;
 
@@ -107,16 +108,21 @@ const FormEditContact = observer(({
                                      key={name}
                             />
                         )}
+                        <div className="phoneFromList">
+                            <p>Список телефонов для добавления</p>
+                            {contactStore.phoneList.length
+                                ? contactStore.phoneList.map((elem) => (
+                                    <div key={elem.number}
+                                         className={`phoneNumber ${elem.typeList.join(' ')}`}>
+                                        <Button onClick={() => contactStore.deleteRecordPhoneList(elem.number)}
+                                                classname="deleteRecordList imgBtn"/>
+                                        <div className="number">{elem.number}</div>
+                                        <div className="iconList"></div>
+                                    </div>
 
-                        <Button onClick={contactStore.addPhoneInList} text="Добавить"/>
-
-                        {contactStore.phoneList.map((phone) => (
-                            <div key={phone} className="phoneFromList">
-                                <Button onClick={() => contactStore.deleteRecordPhoneList(phone)}
-                                        classname="deleteRecordList imgBtn"/>
-                                {phone}
-                            </div>
-                        ))}
+                                ))
+                                : <TextMessage className="small" message="Нет добавленных номеров."/>}
+                        </div>
                     </div>
 
                     {fieldListEmail.map(({name, label, field}) =>

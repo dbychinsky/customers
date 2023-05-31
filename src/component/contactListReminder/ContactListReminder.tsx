@@ -43,11 +43,11 @@ const ContactListReminder = observer(() => {
                             <div className="organization">{organization}</div>
                             <div className="contactFace">{contactFace}</div>
                             <div className="phone">
-                                {phoneList.map((elem
-                                    ) => (<div key={elem}>
-                                        <div>{elem}</div>
-                                    </div>)
-                                )}
+                                {/*{phoneList.map((elem*/}
+                                {/*    ) => (<div key={elem}>*/}
+                                {/*        <div>{elem}</div>*/}
+                                {/*    </div>)*/}
+                                {/*)}*/}
                             </div>
                             <div className="products">
                                 {products.map((elem

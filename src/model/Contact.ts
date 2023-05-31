@@ -1,3 +1,17 @@
+export type PhoneListType = {
+
+    /**
+     * Номер телефона
+     */
+    number: string;
+
+    /**
+     * Аттрибуты
+     */
+    typeList: string[];
+
+}
+
 /**
  * Контакт
  */
@@ -28,10 +42,14 @@ export class Contact {
      */
     organization: string;
 
-    phoneList: string[];
+    /**
+     * Список телефонов
+     */
+    // phoneList: [{ number: string, typeList: string[] }];
+    phoneList: PhoneListType[];
 
     /**
-     * Номер телефона
+     * Email телефона
      */
     email: string;
 

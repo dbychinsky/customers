@@ -89,11 +89,13 @@ const Contact = observer(() => {
                                 <div className="contactFace">{contactFace}</div>
                                 <div className="contacts">
                                     <div className="phone">
-                                        {phoneList.map((elem, index
-                                            ) => (<div key={index}>
-                                                <div>{elem}</div>
-                                            </div>)
-                                        )}
+                                        {phoneList.map((elem, index) => (
+                                            <div className={`number ${elem.typeList.join(' ')}`}
+                                                 key={index}>
+                                                <div className="num">{elem.number}</div>
+                                                <div className="iconList"></div>
+                                            </div>
+                                        ))}
                                     </div>
                                     <div className="email">{email}</div>
                                 </div>

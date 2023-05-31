@@ -1,6 +1,6 @@
 import React from "react";
 import {makeAutoObservable, runInAction} from "mobx";
-import {Contact} from "../model/Contact";
+import {Contact, PhoneListType} from "../model/Contact";
 import {server} from "../App";
 import {Conversation} from "../utility/Conversation";
 import {PushNotification} from "../utility/PushNotification";
@@ -30,14 +30,19 @@ export class ContactStore {
 
 
     /**
-     * Телефон телефонов, принадлежащий контакту
+     * Телефон, принадлежащий контакту
      */
     public phone: any = '';
 
     /**
      * Список телефонов, принадлежащие контакту
      */
-    public phoneList: string[] = [];
+    public phoneList: PhoneListType[] = [];
+
+    /**
+     * Список атрибутов для телефона
+     */
+    public atrListPhone: string[] = [];
 
     /**
      * Проект для добавления в архив, принадлежащий контакту
@@ -247,19 +252,19 @@ export class ContactStore {
     /**
      * Поиск по телефону
      */
-    public searchPhoneField() {
-        if (this.searchPhone !== '') {
-            runInAction(() => {
-                this.contactList = this.contactList.filter((contact) => {
-                    return contact.phoneList.find((elem) => elem.toUpperCase().includes(this.searchPhone.toUpperCase()))
-                })
-            })
-        } else {
-            runInAction(() => {
-                this.contactList = this.contactListTemp;
-            })
-        }
-    }
+    // public searchPhoneField() {
+    //     if (this.searchPhone !== '') {
+    //         runInAction(() => {
+    //             this.contactList = this.contactList.filter((contact) => {
+    //                 return contact.phoneList.find((elem) => elem.toUpperCase().includes(this.searchPhone.toUpperCase()))
+    //             })
+    //         })
+    //     } else {
+    //         runInAction(() => {
+    //             this.contactList = this.contactListTemp;
+    //         })
+    //     }
+    // }
 
     /**
      * Очистка полей поиска
@@ -306,12 +311,12 @@ export class ContactStore {
     };
 
     /**
-     * Удаление проекта из архива
-     * @param name
+     * Удаление телефона
+     * @param number
      */
-    public deleteRecordPhoneList(name: string) {
+    public deleteRecordPhoneList(number: string) {
         runInAction(() => {
-            this.phoneList = this.phoneList.filter(phone => phone !== name);
+            this.phoneList.splice(0, this.phoneList.length, ...this.phoneList.filter(phone => phone.number !== number))
         });
     };
 
@@ -327,21 +332,27 @@ export class ContactStore {
         });
     }
 
+
     /**
      * Добавить телефон в список
      */
     public addPhoneInList() {
+
         runInAction(() => {
-            this.phoneList.push(this.phone)
+            this.phoneList.push({number: this.phone, typeList: this.atrListPhone});
         });
         runInAction(() => {
             this.phone = '';
         });
+
+        runInAction(() => {
+            this.atrListPhone = []
+        })
     }
 
     /**
      * Удаление телефона из списка
-     * @param id
+     * @param name
      */
     public deleteRecordProductListArchive(name: string) {
         runInAction(() => {
@@ -411,7 +422,9 @@ export class ContactStore {
         runInAction(() => {
             this.newContact.products = this.productList;
             this.newContact.productsArchive = this.productListsArchive;
-            this.newContact.phoneList = this.phoneList;
+            this.phoneList.forEach((elem) => {
+                this.newContact.phoneList.push({number: elem.number, typeList: elem.typeList});
+            })
         });
 
         server.addContact(this.newContact)
@@ -427,7 +440,7 @@ export class ContactStore {
     }
 
     /**
-     * Обновление данных
+     * Обновление данных+++++++++++++++++++++++++++++++++++++++++++++++++++
      */
     public update(id: string, data: any, date: Date) {
         runInAction(() => {
@@ -437,7 +450,10 @@ export class ContactStore {
         runInAction(() => {
             this.newContact.products = this.productList;
             this.newContact.productsArchive = this.productListsArchive;
-            this.newContact.phoneList = this.phoneList;
+            this.newContact.phoneList = [];
+            this.phoneList.forEach((elem) => {
+                this.newContact.phoneList.push({number: elem.number, typeList: elem.typeList});
+            })
         });
 
         server.updateContact(id, data)
@@ -467,7 +483,7 @@ export class ContactStore {
     }
 
     /**
-     * Устанавливаем данные в поля для редактирования
+     * Устанавливаем данные в поля для редактирования _____________________________
      */
     public setEditPlace(id?: number) {
         if (id !== undefined) {
@@ -477,7 +493,10 @@ export class ContactStore {
                     this.newContact = contactEdit;
                     this.productList = contactEdit.products;
                     this.productListsArchive = contactEdit.productsArchive;
-                    this.phoneList = contactEdit.phoneList
+
+                    contactEdit.phoneList.forEach((elem) => {
+                        this.phoneList.push({number: elem.number, typeList: elem.typeList})
+                    })
                 })
 
             }
@@ -488,7 +507,7 @@ export class ContactStore {
                 this.productListsArchive = [];
                 this.product = '';
                 this.productArchive = '';
-                this.phoneList = []
+                this.phoneList = [];
                 this.phone = '';
             })
         }
@@ -639,4 +658,22 @@ export class ContactStore {
             }
         }
     };
+
+    /**
+     * Добавляем атрибут в список
+     */
+    public addToListAtrPhone(atr: string) {
+        runInAction(() => {
+            this.atrListPhone.push(atr);
+        })
+    }
+
+    /**
+     * Очистка списка с телефонами
+     */
+    public clearPhoneList() {
+        runInAction(() => {
+            this.phoneList = [];
+        })
+    }
 }

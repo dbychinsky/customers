@@ -3,5 +3,7 @@
 @import "src/mixins";
 
 .inputPhoneNumber {
+    display: flex;
+    flex-direction: column;
 
 }
