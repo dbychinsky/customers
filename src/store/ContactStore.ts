@@ -252,19 +252,19 @@ export class ContactStore {
     /**
      * Поиск по телефону
      */
-    // public searchPhoneField() {
-    //     if (this.searchPhone !== '') {
-    //         runInAction(() => {
-    //             this.contactList = this.contactList.filter((contact) => {
-    //                 return contact.phoneList.find((elem) => elem.toUpperCase().includes(this.searchPhone.toUpperCase()))
-    //             })
-    //         })
-    //     } else {
-    //         runInAction(() => {
-    //             this.contactList = this.contactListTemp;
-    //         })
-    //     }
-    // }
+    public searchPhoneField() {
+        if (this.searchPhone !== '') {
+            runInAction(() => {
+                this.contactList = this.contactList.filter((contact) => {
+                    return contact.phoneList.find((elem) => elem.number.toUpperCase().includes(this.searchPhone.toUpperCase()))
+                })
+            })
+        } else {
+            runInAction(() => {
+                this.contactList = this.contactListTemp;
+            })
+        }
+    }
 
     /**
      * Очистка полей поиска
@@ -440,7 +440,7 @@ export class ContactStore {
     }
 
     /**
-     * Обновление данных+++++++++++++++++++++++++++++++++++++++++++++++++++
+     * Обновление данных
      */
     public update(id: string, data: any, date: Date) {
         runInAction(() => {
@@ -483,7 +483,7 @@ export class ContactStore {
     }
 
     /**
-     * Устанавливаем данные в поля для редактирования _____________________________
+     * Устанавливаем данные в поля для редактирования
      */
     public setEditPlace(id?: number) {
         if (id !== undefined) {

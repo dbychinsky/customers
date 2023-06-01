@@ -28,10 +28,10 @@ const Search = observer(() => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contactStore.searchProduct])
 
-    // useEffect(() => {
-    //     contactStore.searchPhoneField();
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [contactStore.searchPhone])
+    useEffect(() => {
+        contactStore.searchPhoneField();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [contactStore.searchPhone])
 
     return (
         <div className="search">
@@ -63,7 +63,7 @@ const Search = observer(() => {
                                 name="phone"
                                 type="text"
                                 placeHolder=""
-                                disabled={true}/>
+                                disabled={false}/>
                 <Label text="Контакты"/>
             </div>
 
