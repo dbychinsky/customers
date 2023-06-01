@@ -9,8 +9,8 @@
       "productsArchive": [
         "ВИЗИТКИ"
       ],
-      "contactFace": "Наталья",
-      "organization": "Морозпродукт СООО",
+      "contactFace": "ТЕСТОВЫЕ ДАННЫЕ",
+      "organization": "ТЕСТОВЫЕ ДАННЫЕ",
       "phoneList": [
         {
           "number": "375(17)300-00-99",
@@ -22,7 +22,7 @@
       "email": "nata@moroz.by",
       "description": "Изготавливают не много и по мере необходимости. ",
       "reminder": true,
-      "reminderDate": "2023-09-12T07:45:00.000Z"
+      "reminderDate": "2023-03-09T07:45:00.000Z"
     },
     {
       "id": 5,

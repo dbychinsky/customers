@@ -13,7 +13,7 @@ interface IFormRow {
     /**
      * Наименование
      */
-    name: string,
+    className: string,
 
     /**
      * Лейбл
@@ -28,7 +28,7 @@ interface IFormRow {
 
 const FormRow: FC<IFormRow> = observer((
     {
-        name,
+        className,
         label,
         field
     }) => {
@@ -37,8 +37,8 @@ const FormRow: FC<IFormRow> = observer((
     const message = authStore.errorList.find(elem => elem.field === field.props.name)?.message;
 
     return (
-        <div className={`formRow ${name} ${message ? 'error' : ''}`}>
-            <Label text={label} htmlFor={name}/>
+        <div className={`formRow ${className} ${message ? 'error' : ''}`}>
+            <Label text={label} htmlFor={className}/>
             {field}
             <FeedbackMessage message={message} typeMessage={FeedbackMessageList.error}/>
         </div>

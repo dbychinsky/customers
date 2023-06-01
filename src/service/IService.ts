@@ -32,4 +32,9 @@ export interface IService {
      * Обновление опций
      */
     updateSetting(setting: Setting): Promise<void>;
+
+    /**
+     * Получение курса валют на сегодня
+     */
+    getCurrencyList(date: string, cur_id: number): Promise<{}>;
 }

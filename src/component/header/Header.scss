@@ -4,12 +4,15 @@
 
 .header {
     width: 100%;
-    height: 60px;
-    margin-bottom: 10px;
+    height: 70px;
     box-sizing: border-box;
+    padding: 0 20px;
+
     display: flex;
     flex-direction: row;
     justify-content: stretch;
+    align-items: center;
+
     z-index: 2;
     position: sticky;
     top: 0;
@@ -17,15 +20,20 @@
 
     background-color: $color-white;
 
-    .title {
-        visibility: hidden;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
 
-        .header4 {
-            margin: 0 20px;
-        }
+    .logOut & {
+        display: none;
+    }
+
+    .logotype {
+        font-size: 0;
+        background: url("../../../public/img/logotype.png") left center no-repeat;
+        background-size: cover;
+
+        width: 100px;
+        height: 60px;
+        margin-right: 40px;
+        transition: width 100ms ease;
     }
 
     .logOut & {
@@ -34,15 +42,12 @@
 
     .scroll & {
         box-shadow: rgba(60, 72, 88, 0.15) 0px 0px 3px 0px;
-        border-radius: 0 0 $border-radius-main 0;
-        padding-right: 20px;
+        height: 60px;
 
-        height: 83px;
-
-        .title {
-            visibility: visible;
+        .logotype {
+            width: 0px;
+            margin: 0;
         }
-
 
     }
 
@@ -55,11 +60,7 @@
 
 @media screen and ($LaptopScreen) {
     .header {
-        height: 48px;
 
-        .scroll & {
-            height: 48px;
-        }
     }
 }
 

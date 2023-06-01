@@ -9,6 +9,7 @@ import {RouterPathList} from "../../router/RouterPathList";
 import {useNavigate} from "react-router";
 import {StoreContext} from "../../App";
 import ScrollTop from "../../component/scrollTop/ScrollTop";
+import CurrencyTile from "../../component/currencyTile/CurrencyTile";
 
 /**
  * Страница со списком контактов
@@ -26,10 +27,12 @@ const ContactListPage = observer(() => {
 
     return (
         <div className="contactListPage">
-            <Header/>
             <H1 text="Контакты"/>
             <ContactList/>
-            <ContactListReminderWidget/>
+            <div className="widget">
+                <ContactListReminderWidget/>
+                <CurrencyTile/>
+            </div>
             <ScrollTop/>
         </div>
     );

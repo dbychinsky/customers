@@ -54,7 +54,6 @@ interface IForm {
     actionList: ActionListType[]
 }
 
-
 const Form = observer(({
                            fieldList,
                            actionList
@@ -63,7 +62,7 @@ const Form = observer(({
     return (
         <form className="form" onSubmit={(event) => event.preventDefault()}>
             {fieldList.map(({name, label, field}) =>
-                <FormRow name={name}
+                <FormRow className={name}
                          label={label}
                          field={field}
                          key={name}

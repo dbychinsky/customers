@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <div className="footer">
-            <p>{`Copyright ${GetDate.dateSerializeYY(date.toLocaleString())}`}</p>
+            {/*<p>{`Copyright ${GetDate.dateSerializeYY(date.toLocaleString())}`}</p>*/}
         </div>
     );
 };

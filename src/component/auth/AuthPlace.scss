@@ -12,28 +12,15 @@
         flex-direction: row;
         align-items: center;
 
-        font-size: $font-size-small;
-
         .avatar {
             width: 40px;
             height: 40px;
-            margin-left: 10px;
+            margin-right: 10px;
 
             border-radius: 50%;
             background: url("./../../../public/img/avatar.jpg") no-repeat;
             background-size: 100%;
         }
-    }
-
-    a {
-        margin-left: 4px;
-        display: block;
-        width: 25px;
-        height: 31px;
-
-        font-size: 0;
-        background: url("./../../../public/img/icons/iconExit.svg") no-repeat;
-        background-size: 33px;
     }
 }
 

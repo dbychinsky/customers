@@ -3,27 +3,10 @@
 @import "src/mixins";
 
 .navigation {
-    border-right: 1px solid $color-grey-light;
-
-    width: $width-menu;
-
-    position: fixed;
-    top: 0;
-    bottom: 0;
-
-    .logOut & {
-        display: none;
-    }
-
-    .logotype {
-        font-size: 0;
-        background: url("../../../public/img/logotype.png") left center no-repeat;
-        background-size: cover;
-
-        width: 150px;
-        height: 100px;
-        margin: 37px 20px;
-    }
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 10px;
 
     .openNavi {
         font-size: 0;
@@ -32,120 +15,42 @@
     ul {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 0 40px 0 10px;
         display: flex;
-        flex-direction: column;
-
+        flex-direction: row;
 
         li {
             box-sizing: border-box;
             margin-bottom: 5px;
 
-            @mixin action($img, $imgHover, $bgSize) {
+            a {
                 box-sizing: border-box;
-                padding: 10px 20px 10px 40px;
-                display: block;
-                width: 90%;
+                padding: 0 20px 0 0;
 
-                text-decoration: none;
-                border-radius: 0 $border-radius-main $border-radius-main 0;
-                background: $img left 8px center no-repeat;
                 color: $color-black;
+                text-decoration: none;
                 transition: background 200ms ease;
 
                 &.active {
-                    background: $color-blue-light $imgHover left 8px center no-repeat;
-                    background-size: $bgSize;
-                    color: $color-white;
+                    color: $color-blue-light;
                 }
 
                 &:hover {
-                    background: $color-blue-light4 $imgHover left 8px center no-repeat;
-                    background-size: $bgSize;
-                    color: $color-white;
+                    color: $color-blue-light;
                 }
             }
-
-            .actionContactListPage {
-                @include action(url("./../../../public/img/icons/iconUser.svg"),
-                    url("./../../../public/img/icons/iconUserHover.svg"), 29px);
-
-                background-size: 29px;
-            }
-
-            .actionContactListReminderPage {
-                @include action(url("./../../../public/img/icons/iconNotification.svg"),
-                    url("./../../../public/img/icons/iconNotifiactionHover.svg"), 26px);
-                background-size: 26px;
-            }
         }
-
     }
 }
 
 //ADAPTATION SECTION
 @media screen and ($LaptopScreen) {
     .navigation {
-        width: 80px;
 
-        .logotype {
-            width: 69px;
-            height: 70px;
-            margin: 5px;
-        }
-
-        ul li {
-            .actionContactListPage, .actionContactListReminderPage {
-                font-size: 0;
-                padding: 20px 10px;
-                background-position: center;
-
-                &.active {
-                    background-position: center;
-                }
-
-                &:hover {
-                    background-position: center;
-                }
-            }
-        }
     }
 }
 
 @media screen and ($MobileScreen) {
     .navigation {
-        z-index: 3;
-        transition: left ease 500ms;
-        background-color: $color-white;
-        width: 120px;
-
-        border: none;
-
-        &.close {
-            left: -120px;
-        }
-
-        &.open {
-            left: 0;
-
-            .openNavi {
-                transform: rotate(90deg);
-            }
-        }
-
-        .openNavi {
-            display: block;
-            width: 50px;
-            height: 43px;
-
-            position: absolute;
-            right: -51px;
-            top: 0;
-
-            background: $color-white url("../../../public/img/icons/iconMenu.svg") center no-repeat;
-            background-size: 45px;
-            font-size: 0;
-            transition: transform ease 500ms;
-        }
     }
 }

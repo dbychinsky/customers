@@ -3,13 +3,6 @@
 @import "src/mixins";
 
 .contactListReminderWidget {
-    width: 12%;
-    margin-left: 1.7%;
-
-    .scroll & {
-        position: sticky;
-        top: 103px;
-    }
 
     .contact {
         @include tileParameters($color-red-light,

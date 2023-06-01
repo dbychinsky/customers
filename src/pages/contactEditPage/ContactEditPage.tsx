@@ -167,7 +167,6 @@ const ContactEditPage = observer(() => {
 
     return (
         <div className="contactEditPage">
-            <Header title="Редактирование/Добавление"/>
             <H1 text="Редактирование/Добавление"/>
             <FormEditContact fieldListProducts={fieldListProducts}
                              fieldListProductsArchive={fieldListProductsArchive}

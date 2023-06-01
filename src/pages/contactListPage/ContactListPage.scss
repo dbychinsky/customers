@@ -10,9 +10,20 @@
     align-items: flex-start;
 
     .contactList {
-        width: 86%;
+        width: 84%;
         max-width: $max-width-tile;
     }
+
+    .widget {
+        width: 14.5%;
+        margin-left: 1.5%;
+
+        .scroll & {
+            position: sticky;
+            top: 80px;
+        }
+    }
+
 }
 
 //ADAPTATION SECTION

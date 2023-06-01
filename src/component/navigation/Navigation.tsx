@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {RouterPathList} from "../../router/RouterPathList";
 import {NavLink} from "react-router-dom";
 import "./Navigation.scss";
+import CurrencyTile from "../currencyTile/CurrencyTile";
 
 const Navigation = () => {
     const [isViewNav, setIsViewNav] = useState<boolean>(false);
@@ -12,10 +13,6 @@ const Navigation = () => {
 
     return (
         <div className={`navigation ${isViewNav ? 'open' : 'close'}`}>
-            <div className="logotype">
-                <span>Contact</span>
-                <span>Care & Service</span>
-            </div>
 
             <div className="openNavi"
                  onClick={handleIsOpen}>open

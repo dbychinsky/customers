@@ -2,19 +2,11 @@
 @import "mixins";
 @import "font";
 
-html {
-
-}
-
 body {
     margin: 0;
     padding: 0;
 
     font-size: 16px;
-}
-
-#root {
-
 }
 
 .application {
@@ -23,6 +15,6 @@ body {
 
     .appWrapperAuth {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 }

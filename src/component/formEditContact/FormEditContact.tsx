@@ -45,7 +45,7 @@ const FormEditContact = observer(({
                 <p>Данные контакта: <span>название организации, контактное лицо</span></p>
                 <div>
                     {fieldListContact.map(({name, label, field}) =>
-                        <FormRow name={name}
+                        <FormRow className={name}
                                  label={label}
                                  field={field}
                                  key={name}
@@ -58,7 +58,7 @@ const FormEditContact = observer(({
                 <div>
                     <div className="actualProductList">
                         {fieldListProducts.map(({name, label, field}) =>
-                            <FormRow name={name}
+                            <FormRow className={name}
                                      label={label}
                                      field={field}
                                      key={name}
@@ -78,7 +78,7 @@ const FormEditContact = observer(({
                     </div>
                     <div className="archiveProductList">
                         {fieldListProductsArchive.map(({name, label, field}) =>
-                            <FormRow name={name}
+                            <FormRow className={name}
                                      label={label}
                                      field={field}
                                      key={name}
@@ -102,7 +102,7 @@ const FormEditContact = observer(({
                 <div>
                     <div className="phone">
                         {fieldListPhoneList.map(({name, label, field}) =>
-                            <FormRow name={name}
+                            <FormRow className={name}
                                      label={label}
                                      field={field}
                                      key={name}
@@ -126,7 +126,7 @@ const FormEditContact = observer(({
                     </div>
 
                     {fieldListEmail.map(({name, label, field}) =>
-                        <FormRow name={name}
+                        <FormRow className={name}
                                  label={label}
                                  field={field}
                                  key={name}
@@ -138,7 +138,7 @@ const FormEditContact = observer(({
                 <p>Дополнительная информация: <span></span></p>
                 <div>
                     {fieldListDescription.map(({name, label, field}) =>
-                        <FormRow name={name}
+                        <FormRow className={name}
                                  label={label}
                                  field={field}
                                  key={name}
@@ -150,7 +150,7 @@ const FormEditContact = observer(({
                 <p>Напоминание: <span>включение напоминания, дата/время</span></p>
                 <div>
                     {fieldListReminder.map(({name, label, field}) =>
-                        <FormRow name={name}
+                        <FormRow className={name}
                                  label={label}
                                  field={field}
                                  key={name}
