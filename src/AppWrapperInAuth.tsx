@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react";
 import {StoreContext} from "./App";
 import {RoutersProject} from "./router/RouterList";
-import Navigation from "./component/navigation/Navigation";
 import Header from "./component/header/Header";
 
 const AppWrapperInAuth = observer(() => {
