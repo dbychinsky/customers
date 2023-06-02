@@ -18,7 +18,8 @@
 
     .scroll & {
         position: sticky;
-        top: 60px;
+        //top: 60px;
+        top: 0px;
     }
 
     @include contactListTable();

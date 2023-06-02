@@ -17,10 +17,12 @@
     .widget {
         width: 14.5%;
         margin-left: 1.5%;
+        position: relative;
+        top: 30px;
 
         .scroll & {
             position: sticky;
-            top: 80px;
+            top: 30px;
         }
     }
 

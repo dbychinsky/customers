@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react";
 import {StoreContext} from "./App";
 import {RoutersProject} from "./router/RouterList";
-import Header from "./component/header/Header";
 
 const AppWrapperInAuth = observer(() => {
     const authStore = useContext(StoreContext).authStore;
@@ -31,7 +30,7 @@ const AppWrapperInAuth = observer(() => {
 
     return (
         <div className={`appWrapperAuth ${authStore.isAuth ? 'logIn' : 'logOut'} ${isScrolling ? 'scroll' : ''}`}>
-            <Header/>
+            {/*<Header/>*/}
             <RoutersProject/>
         </div>
     );
