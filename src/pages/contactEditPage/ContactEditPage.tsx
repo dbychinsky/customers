@@ -9,7 +9,6 @@ import TextAreaField from "../../component/textAreaField/TextAreaField";
 import {Conversation} from "../../utility/Conversation";
 import {ActionListType, Field} from "../../component/form/Form";
 import "./ContactEditPage.scss";
-import Header from "../../component/header/Header";
 import FormEditContact from "../../component/formEditContact/FormEditContact";
 import H1 from "../../component/header/H1";
 import InputPhoneNumber from "../../component/inputPhoneNumber/inputPhoneNumber";
