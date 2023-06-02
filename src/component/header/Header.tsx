@@ -2,8 +2,8 @@ import React from 'react';
 import "./Header.scss";
 import AuthPlace from "../auth/AuthPlace";
 import {observer} from "mobx-react";
-import H4 from "./H4";
 import Navigation from "../navigation/Navigation";
+import CurrencyRate from "../currencyRate/CurrencyRate";
 
 interface IHeader {
     title?: string;
@@ -16,10 +16,8 @@ const Header = observer(({title}: IHeader) => {
                 <span>Contact</span>
                 <span>Care & Service</span>
             </div>
-            {/*<div className="title">*/}
-            {/*    <H4 text={title ? title : ''}/>*/}
-            {/*</div>*/}
             <Navigation/>
+            <CurrencyRate/>
             <AuthPlace/>
         </div>
     );

@@ -5,9 +5,20 @@
 .currencyTile {
     @include tileParameters();
     padding: 10px;
+    position: relative;
 
     .smallText {
         @include interSemiBold();
+    }
+
+    .siteNBRB {
+        position: absolute;
+        top: 13px;
+        right: 9px;
+
+        color: $color-green;
+
+        font-size: $font-size-the-smallest;
     }
 
     .top {

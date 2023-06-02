@@ -40,12 +40,6 @@ export class CurrencyRateStore {
      */
     public currencyListCalculated: CalcResult[] = [];
 
-    public rateDynamicUSD: ResponseCurrencyPeriod[] = [];
-    public rateDynamicEUR: ResponseCurrencyPeriod[] = [];
-    public rateDynamicRUB: ResponseCurrencyPeriod[] = [];
-    public rateDynamicPLN: ResponseCurrencyPeriod[] = [];
-
-
     constructor() {
         makeAutoObservable(this);
         this.changeHandlerValue = this.changeHandlerValue.bind(this);
@@ -112,32 +106,6 @@ export class CurrencyRateStore {
             this.convertCurrency()
         });
     }
-
-    /**
-     * Получаем данные за период
-     */
-    // public getCurrencyPeriod() {
-    //     server.getCurrencyPeriod(GetDate.getDatePeriod(90), GetDate.convertDateToString(new Date()), CurrencyCode.USD)
-    //         .then((response =>
-    //             runInAction(() => {
-    //                 this.rateDynamicUSD = response
-    //             })));
-    //     server.getCurrencyPeriod(GetDate.getDatePeriod(90), GetDate.convertDateToString(new Date()), CurrencyCode.EUR)
-    //         .then((response =>
-    //             runInAction(() => {
-    //                 this.rateDynamicEUR = response
-    //             })));
-    //     server.getCurrencyPeriod(GetDate.getDatePeriod(90), GetDate.convertDateToString(new Date()), CurrencyCode.RUB)
-    //         .then((response =>
-    //             runInAction(() => {
-    //                 this.rateDynamicRUB = response
-    //             })));
-    //     server.getCurrencyPeriod(GetDate.getDatePeriod(90), GetDate.convertDateToString(new Date()), CurrencyCode.PLN)
-    //         .then((response =>
-    //             runInAction(() => {
-    //                 this.rateDynamicPLN = response
-    //             })));
-    // }
 
     /**
      * Конвертация валют

@@ -26,6 +26,11 @@ const CurrencyTile = observer(() => {
         <div className="currencyTile">
             <span className="smallText">
                     {GetDate.dateSerializeDDMMYY(GetDate.convertDateToString(actualDate))}
+                <a href="https://www.nbrb.by/statistics/rates/ratesdaily.asp"
+                   title="currency"
+                   target="_blank" rel="noreferrer"
+                   className="siteNBRB">Сайт НБРБ
+                </a>
                 </span>
             <div className="top">
                 <FormRow label={""}

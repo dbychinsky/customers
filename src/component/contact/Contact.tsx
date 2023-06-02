@@ -9,7 +9,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import "../reactConfirmAlert/ReactConfirmAlert.scss";
 import {useNavigate} from "react-router";
 import Preloader from "../preloader/Preloader";
-import {getIdForEmptyList} from "../../utility/getIdForEmptyList";
+import {getIdForEmptyList} from "../../utility/GetIdForEmptyList";
 
 /**
  * контакт
