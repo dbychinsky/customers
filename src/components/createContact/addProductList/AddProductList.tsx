@@ -12,6 +12,7 @@ import { observer } from 'mobx-react';
 import { InputFieldEnum } from 'components/inputField/types';
 import { InputField } from 'components/inputField/InputField';
 import { ProductTables } from 'components/products/productTables/ProductTables';
+import { Product } from 'model/Product';
 
 interface AddProductListProps {
     contactEditStore: ContactEditStore;
@@ -32,7 +33,7 @@ export const AddProductList = observer(({ contactEditStore }: AddProductListProp
             <div className={styles.active}>
                 <HeadingH2 title='Список продукции в работе' />
                 <div className={styles.contactFields}>
-                    <InputSelect
+                    <InputSelect<Product>
                         changeHandler={contactEditStore.handleChangeFieldsProduct}
                         valueList={productListStore.productList}
                         value={contactEditStore.productFields.productName}

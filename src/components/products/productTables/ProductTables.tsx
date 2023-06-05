@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from 'components/products/productTables/ProductTables.module.scss';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
-import { ProductType } from 'model/types';
+import { ProductListType } from 'model/types';
 import { ReactComponent as Delete } from 'common/assets/icon/delete.svg';
 import clsx from 'clsx';
 import { observer } from 'mobx-react';
 
 interface ProductTablesProps {
-    productList: ProductType[];
+    productList: ProductListType[];
     handleDelete: (id: string) => void;
     isView: boolean;
     isArchive: boolean;

@@ -36,7 +36,7 @@ export type HistoryType = {
     action: string;
 };
 
-export type ProductType = {
+export type ProductListType = {
     /**
      * @description Идентификатор.
      */

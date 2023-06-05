@@ -1,5 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { server } from 'App';
+import { Product } from 'model/Product';
 
 /**
  * @description Store для отображения видов продукции.
@@ -8,7 +9,7 @@ export class ProductListStore {
     /**
      * @description Список продукции.
      */
-    productList: [] = [];
+    productList: Product[] = [];
 
     /**
      * @description Флаг загрузки.

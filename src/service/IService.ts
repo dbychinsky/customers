@@ -1,4 +1,5 @@
 import { Contact } from 'model/Contact';
+import { Product } from 'model/Product';
 
 export interface IService {
     /**
@@ -24,5 +25,5 @@ export interface IService {
     /**
      * @description Получение списка продуктов.
      */
-    getProducts(): Promise<[]>;
+    getProducts(): Promise<Product[]>;
 }

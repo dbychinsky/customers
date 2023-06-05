@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import styles from 'components/inputSelect/InputSelect.module.scss';
 
-type InputSelectProps = {
+interface InputSelectProps<P> {
     /**
      * @description Метод, вызывающийся при изменении поля
      *
@@ -12,7 +12,7 @@ type InputSelectProps = {
     /**
      * @description Возможные значения
      */
-    valueList: [];
+    valueList: P[];
 
     /**
      * @description Значение в поле ввода
@@ -28,18 +28,24 @@ type InputSelectProps = {
      * @description Дефолтное значение.
      */
     optionDefaultValue?: string;
-};
+}
 
 /**
  * @description Компонент c выпадающими вариантами выбора.
  */
-export function InputSelect({ changeHandler, valueList, value, name, optionDefaultValue }: InputSelectProps) {
+export function InputSelect<P extends { id: number; name: string }>({
+    changeHandler,
+    valueList,
+    value,
+    name,
+    optionDefaultValue,
+}: InputSelectProps<P>) {
     return (
         <select onChange={changeHandler} defaultValue={value} name={name} className={styles.inputSelect}>
             <option value={optionDefaultValue}>{optionDefaultValue ? optionDefaultValue : 'Выберите значение'}</option>
-            {valueList.map((product) => (
-                <option key={product} value={product}>
-                    {product}
+            {valueList.map((item) => (
+                <option key={item.id} value={item.name}>
+                    {item.name}
                 </option>
             ))}
         </select>

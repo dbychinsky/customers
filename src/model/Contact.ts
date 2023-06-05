@@ -1,4 +1,4 @@
-import { EmailListType, HistoryType, PhoneListType, ProductType, ReminderType } from 'model/types';
+import { EmailListType, HistoryType, PhoneListType, ProductListType, ReminderType } from 'model/types';
 
 /**
  * @description Контакт.
@@ -22,12 +22,12 @@ export class Contact {
     /**
      * @description Продукция.
      */
-    productList: ProductType[];
+    productList: ProductListType[];
 
     /**
      * @description Продукция в архиве.
      */
-    productListArchive: ProductType[];
+    productListArchive: ProductListType[];
 
     /**
      * @description Список телефонов.

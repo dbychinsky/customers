@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Contact } from 'model/Contact';
 import { IService } from 'service/IService';
+import { Product } from 'model/Product';
 
 /**
  * @description  Список URL валют.
@@ -50,7 +51,7 @@ export class Server implements IService {
     /**
      * @description Получение списка продукции.
      */
-    async getProducts(): Promise<[]> {
+    async getProducts(): Promise<Product[]> {
         return await axios.get(`${this.MAIN_URL}/${backendServerUrl.PRODUCT}`).then((response) => response.data);
     }
 }

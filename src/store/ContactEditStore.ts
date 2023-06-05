@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { EmailListType, PhoneListType, PhoneTypeListEnum, ProductType } from 'model/types';
+import { EmailListType, PhoneListType, PhoneTypeListEnum, ProductListType } from 'model/types';
 import { Contact } from 'model/Contact';
 import React from 'react';
 import { server } from 'App';
@@ -32,22 +32,22 @@ export class ContactEditStore {
     /**
      * @description Список продукции (буфер).
      */
-    productList: ProductType[] = [];
+    productList: ProductListType[] = [];
 
     /**
      * @description Список продукции Архив (буфер).
      */
-    productListArchive: ProductType[] = [];
+    productListArchive: ProductListType[] = [];
 
     /**
      * @description Список продукции в полях формы.
      */
-    productFields: ProductType = { id: '', productName: '', productComment: '' };
+    productFields: ProductListType = { id: '', productName: '', productComment: '' };
 
     /**
      * @description Список продукции в полях формы Архив.
      */
-    productFieldsArchive: ProductType = { id: '', productName: '', productComment: '' };
+    productFieldsArchive: ProductListType = { id: '', productName: '', productComment: '' };
 
     /**
      * @description Продукция вводимая вручную.
