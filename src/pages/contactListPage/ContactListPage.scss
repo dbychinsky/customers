@@ -19,10 +19,11 @@
         margin-left: 1.5%;
         position: relative;
         top: 30px;
+        transition: top 150ms ease-in-out;
 
         .scroll & {
             position: sticky;
-            top: 30px;
+            top: 90px;
         }
     }
 
