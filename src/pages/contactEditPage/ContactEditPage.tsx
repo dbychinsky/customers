@@ -11,7 +11,7 @@ import {ActionListType, Field} from "../../component/form/Form";
 import "./ContactEditPage.scss";
 import FormEditContact from "../../component/formEditContact/FormEditContact";
 import H1 from "../../component/header/H1";
-import InputPhoneNumber from "../../component/inputPhoneNumber/inputPhoneNumber";
+import InputPhoneNumber from "../../component/deprecated/component/inputPhoneNumber/inputPhoneNumber";
 
 /**
  * Страница редактирования/добавления контакта

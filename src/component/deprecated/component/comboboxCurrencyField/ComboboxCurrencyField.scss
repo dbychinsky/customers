@@ -1,5 +1,5 @@
-@import "./src/parameters";
-@import "./src/font";
+@import "../../../../parameters";
+@import "../../../../font";
 
 .comboboxCurrencyField {
     position: relative;
@@ -9,22 +9,22 @@
         background-repeat: no-repeat;
         background-size: 51%;
         &.USD {
-            background-image: url("../../../public/img/icons/currency/USD.svg");
+            background-image: url("../../../../../public/img/icons/currency/USD.svg");
         }
 
         &.EUR {
-            background-image: url("../../../public/img/icons/currency/EUR.svg");
+            background-image: url("../../../../../public/img/icons/currency/EUR.svg");
         }
 
         &.BYN {
-            background-image: url("../../../public/img/icons/currency/BYN.svg");
+            background-image: url("../../../../../public/img/icons/currency/BYN.svg");
         }
 
         &.RUB {
-            background-image: url("../../../public/img/icons/currency/RUB.svg");
+            background-image: url("../../../../../public/img/icons/currency/RUB.svg");
         }
         &.PLN {
-            background-image: url("../../../public/img/icons/currency/PLN.svg");
+            background-image: url("../../../../../public/img/icons/currency/PLN.svg");
         }
     }
 

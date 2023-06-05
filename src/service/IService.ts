@@ -1,5 +1,5 @@
 import {Contact} from "../model/Contact";
-import {Setting} from "../model/Setting";
+import {Setting} from "../component/deprecated/model/Setting";
 
 export interface IService {
 

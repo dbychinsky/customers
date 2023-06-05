@@ -1,13 +1,13 @@
 import React, {useContext, useEffect} from 'react';
 import "./CurrencyTile.scss";
-import {GetDate} from "../../utility/GetDate";
-import FormRow from "../formRow/FormRow";
-import {CurrencyListFullName, CurrencyListShortName} from "../../model/Currency";
-import {StoreContext} from "../../App";
-import InputTextField from "../inputField/InputField";
-import {getClassName} from "../../utility/GetClassName";
+import {GetDate} from "../../../../utility/GetDate";
+import FormRow from "../../../formRow/FormRow";
+import {StoreContext} from "../../../../App";
+import InputTextField from "../../../inputField/InputField";
+import {getClassName} from "../../../../utility/GetClassName";
 import {observer} from "mobx-react";
 import RadioButtonCurrency from "../radioButtonCurrency/RadioButtonCurrency";
+import {CurrencyListFullName, CurrencyListShortName} from "../../model/Currency";
 
 const CurrencyTile = observer(() => {
     let actualDate = new Date();
@@ -35,8 +35,6 @@ const CurrencyTile = observer(() => {
                 <FormRow label={""}
                          className="currency"
                          field={
-                             // <ComboboxCurrencyField valueList={CurrencyCombobox}
-                             //                        actualStore={currencyRateStore}/>
                              <RadioButtonCurrency/>
                          }
                 />

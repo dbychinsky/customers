@@ -2,6 +2,9 @@ import React from 'react';
 import "./AuthPlace.scss";
 import {observer} from "mobx-react";
 
+/**
+ * Плашка с отображением пользователя
+ */
 const AuthPlace = observer(() => {
 
     return (

@@ -1,6 +1,6 @@
-@import "src/parameters";
-@import "src/font";
-@import "src/mixins";
+@import "../../../../parameters";
+@import "../../../../font";
+@import "../../../../mixins";
 
 .radioButtonCurrency {
     display: flex;
@@ -37,35 +37,35 @@
 
         &.USD {
             label:before {
-                background: url("../../../public/img/icons/currency/USD.svg") center no-repeat;
+                background: url("../../../../../public/img/icons/currency/USD.svg") center no-repeat;
                 background-size: $sizeIcon;
             }
         }
 
         &.EUR {
             label:before {
-                background: url("../../../public/img/icons/currency/EUR.svg") center no-repeat;
+                background: url("../../../../../public/img/icons/currency/EUR.svg") center no-repeat;
                 background-size: $sizeIcon;
             }
         }
 
         &.PLN {
             label:before {
-                background: url("../../../public/img/icons/currency/PLN.svg") center no-repeat;
+                background: url("../../../../../public/img/icons/currency/PLN.svg") center no-repeat;
                 background-size: $sizeIcon;
             }
         }
 
         &.RUB {
             label:before {
-                background: url("../../../public/img/icons/currency/RUB.svg") center no-repeat;
+                background: url("../../../../../public/img/icons/currency/RUB.svg") center no-repeat;
                 background-size: $sizeIcon;
             }
         }
 
         &.BYN {
             label:before {
-                background: url("../../../public/img/icons/currency/BYN.svg") center no-repeat;
+                background: url("../../../../../public/img/icons/currency/BYN.svg") center no-repeat;
                 background-size: $sizeIcon;
             }
         }

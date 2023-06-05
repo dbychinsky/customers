@@ -37,6 +37,16 @@ interface ICheckboxField {
 
 }
 
+/**
+ * Чекбокс
+ * @param id
+ * @param value
+ * @param changeHandler
+ * @param name
+ * @param text
+ * @param className
+ * @constructor
+ */
 const CheckboxField: FC<ICheckboxField> = (
     {
         id,

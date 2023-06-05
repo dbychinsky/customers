@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import "./RadioButtonCurrency.scss";
 import {observer} from "mobx-react";
-import {StoreContext} from "../../App";
+import {StoreContext} from "../../../../App";
+import Label from "../../../label/Label";
 import {CurrencyListShortName} from "../../model/Currency";
-import Label from "../label/Label";
 
 const RadioButtonCurrency = observer(() => {
 

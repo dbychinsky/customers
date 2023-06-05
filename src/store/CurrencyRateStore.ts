@@ -1,7 +1,7 @@
 import {makeAutoObservable, runInAction} from "mobx";
 import React, {ChangeEvent} from "react";
-import {CurrencyCode, CurrencyListShortName} from "../model/Currency";
-import {ResponseCurrencyPeriod} from "../model/ResponseCurrencyPeriod";
+import {CurrencyCode, CurrencyListShortName} from "../component/deprecated/model/Currency";
+import {ResponseCurrencyPeriod} from "../component/deprecated/model/ResponseCurrencyPeriod";
 import {server} from "../App";
 
 type CalcResult = {

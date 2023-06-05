@@ -1,6 +1,6 @@
-@import "src/parameters";
-@import "src/font";
-@import "src/mixins";
+@import "../../../../parameters";
+@import "../../../../font";
+@import "../../../../mixins";
 
 .currencyRate {
     display: flex;
@@ -20,22 +20,22 @@
         position: relative;
 
         &.usd {
-            background: url("../../../public/img/icons/currency/USD.svg") left center no-repeat;
+            background: url("../../../../../public/img/icons/currency/USD.svg") left center no-repeat;
             background-size: $size;
         }
 
         &.eur {
-            background: url("../../../public/img/icons/currency/EUR.svg") left center no-repeat;
+            background: url("../../../../../public/img/icons/currency/EUR.svg") left center no-repeat;
             background-size: $size;
         }
 
         &.pln {
-            background: url("../../../public/img/icons/currency/PLN.svg") left center no-repeat;
+            background: url("../../../../../public/img/icons/currency/PLN.svg") left center no-repeat;
             background-size: $size;
         }
 
         &.rub {
-            background: url("../../../public/img/icons/currency/RUB.svg") left center no-repeat;
+            background: url("../../../../../public/img/icons/currency/RUB.svg") left center no-repeat;
             background-size: $size;
         }
 

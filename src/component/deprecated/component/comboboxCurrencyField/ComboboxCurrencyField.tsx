@@ -1,6 +1,6 @@
 import React, {FC, useContext, useEffect, useRef, useState} from 'react';
 import './ComboboxCurrencyField.scss';
-import {StoreContext} from "../../App";
+import {StoreContext} from "../../../../App";
 import {values} from "mobx";
 
 /**

@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-import InputTextField from "../inputField/InputField";
-import {StoreContext} from "../../App";
+import InputTextField from "../../../inputField/InputField";
+import {StoreContext} from "../../../../App";
 import {observer} from "mobx-react";
-import {Button} from "../button/Button";
+import {Button} from "../../../button/Button";
 import "./inputPhoneNumber.scss";
-import CheckboxNormal from "../checkboxNormal/CheckboxNormal";
+import CheckboxNormal from "../../../checkboxNormal/CheckboxNormal";
 
 /**
  * Кастомный компонент для телефона

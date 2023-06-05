@@ -1,6 +1,6 @@
-@import "src/parameters";
-@import "src/mixins";
-@import "src/font";
+@import "../../../../parameters";
+@import "../../../../mixins";
+@import "../../../../font";
 
 .authPlace {
     display: flex;
@@ -18,7 +18,7 @@
             margin-right: 10px;
 
             border-radius: 50%;
-            background: url("./../../../public/img/avatar.jpg") no-repeat;
+            background: url("../../../../../public/img/avatar.jpg") no-repeat;
             background-size: 100%;
         }
     }

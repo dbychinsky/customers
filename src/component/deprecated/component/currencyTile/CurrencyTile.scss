@@ -1,6 +1,6 @@
-@import "src/parameters";
-@import "src/font";
-@import "src/mixins";
+@import "../../../../parameters";
+@import "../../../../font";
+@import "../../../../mixins";
 
 .currencyTile {
     @include tileParameters();
@@ -72,31 +72,31 @@
                 font-size: $font-size-smaller;
 
                 &.USD {
-                    background: url("../../../public/img/icons/currency/USD.svg") left center no-repeat;
+                    background: url("../../../../../public/img/icons/currency/USD.svg") left center no-repeat;
                     background-size: $sizeIcon;
                     padding-left: 26px;
                 }
 
                 &.EUR {
-                    background: url("../../../public/img/icons/currency/EUR.svg") left center no-repeat;
+                    background: url("../../../../../public/img/icons/currency/EUR.svg") left center no-repeat;
                     background-size: $sizeIcon;
                     padding-left: 26px;
                 }
 
                 &.PLN {
-                    background: url("../../../public/img/icons/currency/PLN.svg") left center no-repeat;
+                    background: url("../../../../../public/img/icons/currency/PLN.svg") left center no-repeat;
                     background-size: $sizeIcon;
                     padding-left: 26px;
                 }
 
                 &.RUB {
-                    background: url("../../../public/img/icons/currency/RUB.svg") left center no-repeat;
+                    background: url("../../../../../public/img/icons/currency/RUB.svg") left center no-repeat;
                     background-size: $sizeIcon;
                     padding-left: 26px;
                 }
 
                 &.BYN {
-                    background: url("../../../public/img/icons/currency/BYN.svg") left center no-repeat;
+                    background: url("../../../../../public/img/icons/currency/BYN.svg") left center no-repeat;
                     background-size: $sizeIcon;
                     padding-left: 26px;
                 }

@@ -1,8 +1,8 @@
 import {IService} from "./IService";
 import axios from "axios";
 import {Contact} from "../model/Contact";
-import {Setting} from "../model/Setting";
-import {ResponseCurrencyPeriod} from "../model/ResponseCurrencyPeriod";
+import {Setting} from "../component/deprecated/model/Setting";
+import {ResponseCurrencyPeriod} from "../component/deprecated/model/ResponseCurrencyPeriod";
 
 /**
  * Список URL валют
