@@ -31,9 +31,7 @@
 
 //ADAPTATION SECTION
 @media screen and ($LaptopScreen) {
-    .contactListPage {
-        margin-left: 80px;
-    }
+
 }
 
 @media screen and ($MobileScreen) {
@@ -44,6 +42,12 @@
         .contactList {
             width: 100%;
             order: 3;
+        }
+        .widget {
+            right: 27px;
+            margin: 0;
+            top: 12px;
+            position: absolute;
         }
     }
 }

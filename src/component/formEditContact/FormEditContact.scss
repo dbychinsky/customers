@@ -138,6 +138,7 @@
 
 
                     }
+
                     &.personal {
                         .iconList {
                             background: url("../../../public/img/icons/iconPersonalPhone.svg") center left 5px no-repeat;
@@ -227,38 +228,6 @@
 @media screen and ($LaptopScreen) {
     .formEditContact {
         .contactArea, .productsArea, .contactsArea, .descriptionArea, .reminderArea {
-            > p {
-                width: 40%;
-            }
-
-            > div {
-                width: 60%;
-
-                input {
-                    width: 100%;
-                }
-            }
-        }
-
-        .productsArea {
-            > div {
-                flex-direction: column;
-            }
-
-            .actualProductList {
-                width: 100%;
-            }
-
-            .archiveProductList {
-                width: 100%;
-            }
-        }
-    }
-}
-
-@media screen and ($MobileScreen) {
-    .formEditContact {
-        .contactArea, .productsArea, .contactsArea, .descriptionArea, .reminderArea {
             flex-direction: column;
 
             > p {
@@ -291,3 +260,32 @@
         }
     }
 }
+
+
+@media screen and ($MobileScreen) {
+    .formEditContact {
+        .productsArea > div {
+            flex-direction: column;
+        }
+
+        .contactsArea .phone {
+            flex-direction: column;
+
+            .formRow {
+                width: 100%
+            }
+        }
+
+        .contactsArea .phone .phoneFromList {
+            width: 100%;
+        }
+
+        .contactsArea .phone .phoneFromList .phoneNumber .number {
+            font-size: $font-size-smaller;
+        }
+         .contactsArea .phone .phoneFromList .phoneNumber .iconList {
+             width: 88px;
+         }
+    }
+}
+

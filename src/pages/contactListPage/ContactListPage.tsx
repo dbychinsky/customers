@@ -7,6 +7,7 @@ import {RouterPathList} from "../../router/RouterPathList";
 import {useNavigate} from "react-router";
 import {StoreContext} from "../../App";
 import ScrollTop from "../../component/scrollTop/ScrollTop";
+import H1 from "../../component/header/H1";
 
 /**
  * Страница со списком контактов
@@ -24,7 +25,7 @@ const ContactListPage = observer(() => {
 
     return (
         <div className="contactListPage">
-            {/*<H1 text="Контакты"/>*/}
+            <H1 text="Контакты"/>
             <ContactList/>
             <div className="widget">
                 <ContactListReminderWidget/>

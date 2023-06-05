@@ -319,15 +319,19 @@
         }
 
         .organization {
-            width: 24%;
+            width: 23%;
         }
 
         .contactFace {
-            width: 25%;
+            width: 20%;
         }
 
         .contacts {
-            width: 25%;
+            width: 31%;
+
+            .phone .number .num {
+                width: 62%;
+            }
         }
 
         .reminder {
