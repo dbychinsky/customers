@@ -1,6 +1,4 @@
 import React, {ReactNode} from 'react';
-import "./TextMessage.scss";
-
 interface ITextMessage {
     message?: string,
     child?: ReactNode,

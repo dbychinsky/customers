@@ -1,5 +1,4 @@
 import React from 'react';
-import "./ScrollTop.scss"
 
 const ScrollTop = () => {
 

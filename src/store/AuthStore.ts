@@ -1,34 +1,19 @@
-import {makeAutoObservable, runInAction} from "mobx";
 import React from "react";
-
-/**
- * Тип ошибки к полю
- */
-export type FieldError = {
-
-    /**
-     * Имя поля
-     */
-    field: string,
-
-    /**
-     * Текстовое сообщение
-     */
-    message: string
-}
+import {makeAutoObservable, runInAction} from "mobx";
+import {FieldError} from "components/inputField/types";
 
 /**
  * Store для работы с Auth
  */
 export class AuthStore {
-    public login: string = '';
-    public password: string = '';
-    // private loginApp: string = '1';
-    private loginApp: string = 'Sofi';
-    // private passwordApp: string = '1';
-    private passwordApp: string = 'sf1807';
-    public errorList: FieldError[] = [];
-    public isAuth: boolean = false;
+    login: string = '';
+    password: string = '';
+    loginApp: string = '1';
+    // private loginApp: string = 'Sofi';
+    passwordApp: string = '1';
+    // private passwordApp: string = 'sf1807';
+    errorList: FieldError[] = [];
+    isAuth: boolean = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -37,27 +22,29 @@ export class AuthStore {
     }
 
     /**
-     * Метод установки логина
+     * @description Метод установки логина
      * @param e
      */
     public handleChangeLogin(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
-            this.login = e.target.value
+            this.login = e.target.value;
+            this.errorList = this.errorList.filter((item) => item.field !== "login");
         })
     };
 
     /**
-     * Метод установки пароля
+     * @description Метод установки пароля
      * @param e
      */
     public handleChangePassword(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
-            this.password = e.target.value
+            this.password = e.target.value;
+            this.errorList = this.errorList.filter((item) => item.field !== "password");
         })
     };
 
     /**
-     * Очистка полей формы при разлогировании
+     * @description Очистка полей формы при разлогировании
      */
     public clearFields() {
         runInAction(() => {
@@ -67,29 +54,34 @@ export class AuthStore {
     }
 
     /**
-     * Метод аутентификации
+     * @description Метод аутентификации
      */
-    public auth() {
+    public authentication() {
+
         runInAction(() => {
             this.errorList = [];
         })
+
+
         if (this.login !== this.loginApp) {
             runInAction(() => {
                 this.errorList.push({field: 'login', message: 'Неверный логин'})
             })
-        } else {
-            if (this.password !== this.passwordApp) {
-                runInAction(() => {
-                    this.errorList.push({field: 'password', message: 'Неверный пароль'})
-                })
-            } else {
-                this.createUserToken();
-            }
+        }
+
+        if (this.password !== this.passwordApp) {
+            runInAction(() => {
+                this.errorList.push({field: 'password', message: 'Неверный пароль'})
+            })
+        }
+
+        if (this.errorList.length === 0) {
+            this.createUserToken();
         }
     }
 
     /**
-     * Создание токена пользователя приложением в sessionStorage
+     * @description Создание токена пользователя приложением в sessionStorage
      */
     private createUserToken() {
         sessionStorage.setItem('authentication', 'true');
@@ -99,7 +91,7 @@ export class AuthStore {
     }
 
     /**
-     * Получение токена LS
+     * @description Получение токена LS
      * @private
      */
     private loadUserToken() {
@@ -110,7 +102,7 @@ export class AuthStore {
     }
 
     /**
-     * Очищение токена из sessionStorage
+     * @description Очищение токена из sessionStorage
      */
     public clearSessionStorage() {
         sessionStorage.clear();
@@ -120,7 +112,7 @@ export class AuthStore {
     };
 
     /**
-     * Проверка наличия токена в LS
+     * @description Проверка наличия токена в LS
      */
     public checkAuth(): boolean {
         this.loadUserToken();

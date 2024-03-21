@@ -1,5 +1,4 @@
 import React, {useContext, useEffect, useState} from 'react';
-import InputTextField from "../../component/inputField/InputField";
 import InputCheckboxField from "../../component/checkboxField/CheckboxField";
 import DateField from "../../component/dateField/DateField";
 import {StoreContext} from "../../App";
@@ -10,8 +9,9 @@ import {Conversation} from "../../utility/Conversation";
 import {ActionListType, Field} from "../../component/form/Form";
 import "./ContactEditPage.scss";
 import FormEditContact from "../../component/formEditContact/FormEditContact";
-import H1 from "../../component/header/H1";
 import InputPhoneNumber from "../../component/inputPhoneNumber/inputPhoneNumber";
+import {InputFieldEnum} from "components/inputField/types";
+import {InputField} from "components/inputField/InputField";
 
 /**
  * Страница редактирования/добавления контакта
@@ -67,40 +67,40 @@ const ContactEditPage = observer(() => {
         {
             name: "products",
             label: "Продукция",
-            field: <InputTextField value={contactStore.product}
-                                   changeHandler={contactStore.handleChangeProducts}
-                                   name="products"
-                                   type="text"/>
+            field: <InputField value={contactStore.product}
+                               changeHandler={contactStore.handleChangeProducts}
+                               name="products"
+                               type={InputFieldEnum.text}/>
         }
     ];
     const fieldListProductsArchive: Field[] = [
         {
             name: "productsArchive",
             label: "Продукция в архиве",
-            field: <InputTextField value={contactStore.productArchive}
-                                   changeHandler={contactStore.handleChangeProductsArchive}
-                                   name="productsArchive"
-                                   type="text"/>
+            field: <InputField value={contactStore.productArchive}
+                               changeHandler={contactStore.handleChangeProductsArchive}
+                               name="productsArchive"
+                               type={InputFieldEnum.text}/>
         }
     ];
     const fieldListContact: Field[] = [
         {
             name: "organization",
             label: "Организация",
-            field: <InputTextField
+            field: <InputField
                 value={contactStore.newContact.organization}
                 changeHandler={contactStore.handleChange}
                 name="organization"
-                type="text"/>
+                type={InputFieldEnum.text}/>
         },
         {
             name: "contactFace",
             label: "ФИО",
-            field: <InputTextField
+            field: <InputField
                 value={contactStore.newContact.contactFace}
                 changeHandler={contactStore.handleChange}
                 name="contactFace"
-                type="text"/>
+                type={InputFieldEnum.text}/>
         }];
 
     const fieldListPhoneList: Field[] = [
@@ -115,11 +115,11 @@ const ContactEditPage = observer(() => {
         {
             name: "email",
             label: "Email",
-            field: <InputTextField
+            field: <InputField
                 value={contactStore.newContact.email}
                 changeHandler={contactStore.handleChange}
                 name="email"
-                type="text"/>
+                type={InputFieldEnum.text}/>
         }];
     const fieldListDescription: Field[] = [{
         name: "description",
@@ -166,7 +166,6 @@ const ContactEditPage = observer(() => {
 
     return (
         <div className="contactEditPage">
-            <H1 text="Редактирование/Добавление"/>
             <FormEditContact fieldListProducts={fieldListProducts}
                              fieldListProductsArchive={fieldListProductsArchive}
                              fieldListContact={fieldListContact}

@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-import InputTextField from "../inputField/InputField";
 import {StoreContext} from "../../App";
 import {observer} from "mobx-react";
-import {Button} from "../button/Button";
-import "./inputPhoneNumber.scss";
+import {Button} from "../../components/button/Button";
 import CheckboxNormal from "../checkboxNormal/CheckboxNormal";
+import {InputFieldEnum} from "components/inputField/types";
+import {InputField} from "components/inputField/InputField";
 
 /**
  * Кастомный компонент для телефона
@@ -41,10 +41,10 @@ const InputPhoneNumber = observer(() => {
     return (
         <div className="inputPhoneNumber">
 
-            <InputTextField value={contactStore.phone}
-                            changeHandler={contactStore.handleChangePhone}
-                            type="text"
-                            name="typeNumber"/>
+            <InputField value={contactStore.phone}
+                        changeHandler={contactStore.handleChangePhone}
+                        type={InputFieldEnum.number}
+                        name="typeNumber"/>
             <div className="rowCheck">
 
                 <div className="columnType">
@@ -86,9 +86,9 @@ const InputPhoneNumber = observer(() => {
                 </div>
 
             </div>
-               <div className="actionBar">
-                   <Button onClick={addPhone} text="Добавить"/>
-               </div>
+            <div className="actionBar">
+                <Button onClick={addPhone} text="Добавить"/>
+            </div>
         </div>
     );
 });

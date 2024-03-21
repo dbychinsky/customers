@@ -1,5 +1,4 @@
 import {Contact} from "../model/Contact";
-import {Setting} from "../component/deprecated/model/Setting";
 
 export interface IService {
 
@@ -22,19 +21,4 @@ export interface IService {
      * Удаление контакта
      */
     deleteContact(id: number): Promise<void>;
-
-    /**
-     * Получение списка опций
-     */
-    getSetting(): Promise<Setting>;
-
-    /**
-     * Обновление опций
-     */
-    updateSetting(setting: Setting): Promise<void>;
-
-    /**
-     * Получение курса валют на сегодня
-     */
-    getCurrencyList(date: string, cur_id: number): Promise<{}>;
 }

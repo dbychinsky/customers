@@ -1,9 +1,8 @@
 import React, {FC} from 'react';
-import "./DateField.scss";
 import ru from 'date-fns/locale/ru';
 import DatePicker, {registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "./DateField.scss";
+
 
 interface IDateField {
     startDate: Date,

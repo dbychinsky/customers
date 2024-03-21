@@ -2,9 +2,8 @@ import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {Conversation} from "../../utility/Conversation";
 import {observer} from "mobx-react";
-import "./Contact.scss";
-import {Button} from "../button/Button";
-import {confirmAlert} from 'react-confirm-alert'; // Import
+import {Button} from "../../components/button/Button";
+import {confirmAlert} from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import "../reactConfirmAlert/ReactConfirmAlert.scss";
 import {useNavigate} from "react-router";
@@ -30,7 +29,6 @@ const Contact = observer(() => {
                 return (
                     <div className='custom-ui'>
                         <div className="headerBack"></div>
-                        <h1 className="head">Удалить контакт?</h1>
                         <div className="body">
                             <div className="bodyContentOrganization">{organization}</div>
                             <div className="bodyContentContactFace">{contactFace}</div>
@@ -43,7 +41,7 @@ const Contact = observer(() => {
                                 onClose();
                             }} autoFocus={true}
                                     text="Удалить"
-                                    classname="deleteAction"/>
+                                    className="deleteAction"/>
                         </div>
                     </div>
                 );
@@ -125,15 +123,15 @@ const Contact = observer(() => {
 
                                     <Button onClick={() => moreViewInformation(id.toString())}
                                             text="Подробнее"
-                                            classname={'imgBtn eye'}
+                                            className={'imgBtn eye'}
                                             title="Подробнее"/>
                                     <Button onClick={() => update(id)}
                                             text="Редактировать"
-                                            classname={'imgBtn edit'}
+                                            className={'imgBtn edit'}
                                             title="Редактировать"/>
                                     <Button onClick={() => remove(id, organization, contactFace)}
                                             text="Удалить"
-                                            classname="imgBtn delete"/>
+                                            className="imgBtn delete"/>
                                 </div>
 
                                 <div className="archiveProductList">

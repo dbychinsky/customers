@@ -1,8 +1,6 @@
 import {IService} from "./IService";
 import axios from "axios";
 import {Contact} from "../model/Contact";
-import {Setting} from "../component/deprecated/model/Setting";
-import {ResponseCurrencyPeriod} from "../component/deprecated/model/ResponseCurrencyPeriod";
 
 /**
  * Список URL валют
@@ -48,39 +46,6 @@ export class Server implements IService {
      */
     async deleteContact(idContact: number): Promise<void> {
         await axios.delete(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${idContact}`);
-    };
 
-    /**
-     * Получение настроек приложения
-     */
-    async getSetting(): Promise<Setting> {
-        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.SETTING}`)
-            .then(response => response.data)
-    }
-
-    /**
-     * Сохранение настроек приложения
-     */
-    async updateSetting(setting: Setting): Promise<void> {
-        await axios.put(`${this.MAIN_URL}/${backendServerUrl.SETTING}`, setting)
-    }
-
-    /**
-     * Получение курса USD на сегодня
-     */
-    getCurrencyList(date: string, cur_id: number): Promise<ResponseCurrencyPeriod> {
-        return axios.get(`${backendServerUrl.RATES}/${cur_id}`)
-            .then(response => response.data)
-            .catch(err => {
-                if (err.response) {
-                    console.log("client received an error response (5xx, 4xx)")
-                } else if (err.request) {
-                    console.log("client never received a response, or request never left")
-
-                } else {
-                    console.log("anything else")
-                }
-            })
     };
 }
-

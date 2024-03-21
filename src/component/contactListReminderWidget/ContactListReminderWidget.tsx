@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {StoreContext} from "../../App";
 import {useNavigate} from "react-router";
-import "./ContactListReminderWidget.scss";
+
 import {observer} from "mobx-react";
 
 const ContactListReminderWidget = observer(() => {

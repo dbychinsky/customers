@@ -1,5 +1,4 @@
 import React from 'react';
-import "./TextAreaField.scss";
 
 /**
  * Интерфейс

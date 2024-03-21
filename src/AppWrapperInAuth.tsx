@@ -1,15 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {observer} from "mobx-react";
-import {StoreContext} from "./App";
-import {RoutersProject} from "./router/RouterList";
-import Header from "./component/header/Header";
+import {RoutersProject} from "router/RouterList";
 
 const AppWrapperInAuth = observer(() => {
-    const authStore = useContext(StoreContext).authStore;
-
     const [isScrolling, setIsScrolling] = useState<boolean>(false)
     /**
-     * Отслеживание положения скролла
+     * @description Отслеживание положения скролла
      */
     const handleScroll = () => {
         const scrollPositionLocal = window.scrollY; // => scroll position
@@ -26,14 +22,10 @@ const AppWrapperInAuth = observer(() => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <div className={`appWrapperAuth ${authStore.isAuth ? 'logIn' : 'logOut'} ${isScrolling ? 'scroll' : ''}`}>
-            <Header/>
-            <RoutersProject/>
-        </div>
+        <RoutersProject/>
     );
 });
 

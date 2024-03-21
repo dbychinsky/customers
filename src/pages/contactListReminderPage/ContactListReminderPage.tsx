@@ -1,7 +1,6 @@
 import {observer} from "mobx-react";
 import ContactListReminder from "../../component/contactListReminder/ContactListReminder";
 import "./ContactListReminderPage.scss";
-import H1 from "../../component/header/H1";
 import {useNavigate} from "react-router";
 import {useContext, useEffect} from "react";
 import {StoreContext} from "../../App";
@@ -13,14 +12,13 @@ const ContactListReminderPage = observer(() => {
 
     useEffect(() => {
         if (!authStore.checkAuth()) {
-            navigate(RouterPathList.ROOT_PATH);
+            navigate(RouterPathList.DASHBOARD_PAGE);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <div className="contactListReminderPage">
-            <H1 text="Нотификации"/>
             <ContactListReminder/>
         </div>
     );

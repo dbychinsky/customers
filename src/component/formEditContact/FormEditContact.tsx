@@ -1,11 +1,10 @@
 import React, {useContext} from 'react';
-import FormRow from "../formRow/FormRow";
 import {ActionListType, Field} from "../form/Form";
 import {observer} from "mobx-react";
-import "./FormEditContact.scss";
 import {StoreContext} from "../../App";
-import {Button} from "../button/Button";
+import {Button} from "../../components/button/Button";
 import TextMessage from "../textMessage/TextMessage";
+import {FormRow} from "components/formRow/FormRow";
 
 /**
  * Интерфейс формы
@@ -44,32 +43,32 @@ const FormEditContact = observer(({
             <div className="contactArea">
                 <p>Данные контакта: <span>название организации, контактное лицо</span></p>
                 <div>
-                    {fieldListContact.map(({name, label, field}) =>
-                        <FormRow className={name}
-                                 label={label}
-                                 field={field}
-                                 key={name}
-                        />
-                    )}
+                    {/*{fieldListContact.map(({name, label, field}) =>*/}
+                    {/*    <FormRow className={name}*/}
+                    {/*             label={label}*/}
+                    {/*             field={field}*/}
+                    {/*             key={name}*/}
+                    {/*    />*/}
+                    {/*)}*/}
                 </div>
             </div>
             <div className="productsArea">
                 <p>Продукция для печати: <span>журналы, книги, календари, бланки...</span></p>
                 <div>
                     <div className="actualProductList">
-                        {fieldListProducts.map(({name, label, field}) =>
-                            <FormRow className={name}
-                                     label={label}
-                                     field={field}
-                                     key={name}
-                            />
-                        )}
+                        {/*{fieldListProducts.map(({name, label, field}) =>*/}
+                        {/*    <FormRow className={name}*/}
+                        {/*             label={label}*/}
+                        {/*             field={field}*/}
+                        {/*             key={name}*/}
+                        {/*    />*/}
+                        {/*)}*/}
                         <div className="additionalProductList">
                             <Button onClick={contactStore.addProjectInList} text="Добавить"/>
                             {contactStore.productList.map((product) => (
                                 <div key={product} className="productFromList">
-                                    <Button onClick={() => contactStore.deleteRecordProductList(product)}
-                                            classname="deleteRecordList imgBtn"/>
+                                    <Button text='dsdsd' onClick={() => contactStore.deleteRecordProductList(product)}
+                                            className="deleteRecordList imgBtn"/>
                                     {product}
                                 </div>
 
@@ -77,19 +76,20 @@ const FormEditContact = observer(({
                         </div>
                     </div>
                     <div className="archiveProductList">
-                        {fieldListProductsArchive.map(({name, label, field}) =>
-                            <FormRow className={name}
-                                     label={label}
-                                     field={field}
-                                     key={name}
-                            />
-                        )}
+                        {/*{fieldListProductsArchive.map(({name, label, field}) =>*/}
+                        {/*    <FormRow className={name}*/}
+                        {/*             label={label}*/}
+                        {/*             field={field}*/}
+                        {/*             key={name}*/}
+                        {/*    />*/}
+                        {/*)}*/}
                         <div className="additionalProductList">
                             <Button onClick={contactStore.addProjectInListArchive} text="Добавить"/>
                             {contactStore.productListsArchive.map((product) => (
                                 <div key={product} className="productFromList">
-                                    <Button onClick={() => contactStore.deleteRecordProductListArchive(product)}
-                                            classname="deleteRecordList imgBtn"/>
+                                    <Button text='dsdsd'
+                                            onClick={() => contactStore.deleteRecordProductListArchive(product)}
+                                            className="deleteRecordList imgBtn"/>
                                     {product}
                                 </div>
                             ))}
@@ -101,21 +101,22 @@ const FormEditContact = observer(({
                 <p>Контактные данные: <span>телефоны, адрес электронной почты </span></p>
                 <div>
                     <div className="phone">
-                        {fieldListPhoneList.map(({name, label, field}) =>
-                            <FormRow className={name}
-                                     label={label}
-                                     field={field}
-                                     key={name}
-                            />
-                        )}
+                        {/*{fieldListPhoneList.map(({name, label, field}) =>*/}
+                        {/*    <FormRow className={name}*/}
+                        {/*             label={label}*/}
+                        {/*             field={field}*/}
+                        {/*             key={name}*/}
+                        {/*    />*/}
+                        {/*)}*/}
                         <div className="phoneFromList">
                             <p>Список телефонов для добавления</p>
                             {contactStore.phoneList.length
                                 ? contactStore.phoneList.map((elem) => (
                                     <div key={elem.number}
                                          className={`phoneNumber ${elem.typeList.join(' ')}`}>
-                                        <Button onClick={() => contactStore.deleteRecordPhoneList(elem.number)}
-                                                classname="deleteRecordList imgBtn"/>
+                                        <Button text='dsdsd'
+                                                onClick={() => contactStore.deleteRecordPhoneList(elem.number)}
+                                                className="deleteRecordList imgBtn"/>
                                         <div className="number">{elem.number}</div>
                                         <div className="iconList"></div>
                                     </div>
@@ -125,37 +126,37 @@ const FormEditContact = observer(({
                         </div>
                     </div>
 
-                    {fieldListEmail.map(({name, label, field}) =>
-                        <FormRow className={name}
-                                 label={label}
-                                 field={field}
-                                 key={name}
-                        />
-                    )}
+                    {/*{fieldListEmail.map(({name, label, field}) =>*/}
+                    {/*    <FormRow className={name}*/}
+                    {/*             label={label}*/}
+                    {/*             field={field}*/}
+                    {/*             key={name}*/}
+                    {/*    />*/}
+                    {/*)}*/}
                 </div>
             </div>
             <div className="descriptionArea">
                 <p>Дополнительная информация: <span></span></p>
                 <div>
-                    {fieldListDescription.map(({name, label, field}) =>
-                        <FormRow className={name}
-                                 label={label}
-                                 field={field}
-                                 key={name}
-                        />
-                    )}
+                    {/*{fieldListDescription.map(({name, label, field}) =>*/}
+                    {/*    <FormRow className={name}*/}
+                    {/*             label={label}*/}
+                    {/*             field={field}*/}
+                    {/*             key={name}*/}
+                    {/*    />*/}
+                    {/*)}*/}
                 </div>
             </div>
             <div className={`reminderArea ${contactStore.newContact.reminder ? "activated" : "deactivated"}`}>
                 <p>Напоминание: <span>включение напоминания, дата/время</span></p>
                 <div>
-                    {fieldListReminder.map(({name, label, field}) =>
-                        <FormRow className={name}
-                                 label={label}
-                                 field={field}
-                                 key={name}
-                        />
-                    )}
+                    {/*{fieldListReminder.map(({name, label, field}) =>*/}
+                    {/*    <FormRow className={name}*/}
+                    {/*             label={label}*/}
+                    {/*             field={field}*/}
+                    {/*             key={name}*/}
+                    {/*    />*/}
+                    {/*)}*/}
                 </div>
             </div>
 

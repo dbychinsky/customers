@@ -1,0 +1,11 @@
+@import "common/css-parameters";
+
+.loginForm {
+    width: 350px;
+
+    .actionBar {
+        display: flex;
+        flex-flow: column;
+        margin-bottom: $space18;
+    }
+}

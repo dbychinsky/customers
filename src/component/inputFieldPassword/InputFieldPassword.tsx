@@ -1,5 +1,4 @@
 import React, {FC} from "react";
-import "./InputFieldPassword.scss";
 
 /**
  * Компонент Input

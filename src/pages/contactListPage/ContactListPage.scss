@@ -1,9 +1,6 @@
-@import "../../parameters";
-@import "../../mixins";
-@import "../../font";
+@import "../../common/typography";
 
 .contactListPage {
-    @include pageParameters();
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

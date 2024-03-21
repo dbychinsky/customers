@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from 'react';
-import InputTextField from "../inputField/InputField";
 import {StoreContext} from "../../App";
-import "./Search.scss";
-import Label from "../label/Label";
 import {observer} from "mobx-react";
 import CheckboxField from "../checkboxField/CheckboxField";
+import {InputFieldEnum} from "components/inputField/types";
+import {InputField} from "components/inputField/InputField";
+import {Label} from "components/label/Label";
 
 const Search = observer(() => {
     const contactStore = useContext(StoreContext).contactStore;
@@ -37,42 +37,44 @@ const Search = observer(() => {
         <div className="search">
 
             <div className="headerColumn organization">
-                <InputTextField value={contactStore.searchOrganization}
-                                changeHandler={contactStore.handleChangeSearchOrganization}
-                                name="organization"
-                                type="text"
-                                placeHolder="организация"
+                <InputField value={contactStore.searchOrganization}
+                            changeHandler={contactStore.handleChangeSearchOrganization}
+                            name="organization"
+                            type={InputFieldEnum.text}
+                            placeHolder="организация"
                 />
                 <Label text="Организация"
-                       onClick={() => sortListName('organization')}/>
+                    // /*/       onClick={() => sortListName('organization')}
+                />
             </div>
 
             <div className="headerColumn contactFace">
-                <InputTextField value={contactStore.searchContactFace}
-                                changeHandler={contactStore.handleChangeSearchContactFace}
-                                name="contactFace"
-                                type="text"
-                                placeHolder="ФИО"/>
+                <InputField value={contactStore.searchContactFace}
+                            changeHandler={contactStore.handleChangeSearchContactFace}
+                            name="contactFace"
+                            type={InputFieldEnum.text}
+                            placeHolder="ФИО"/>
                 <Label text="ФИО"
-                       onClick={() => sortListName('contactFace')}/>
+                    // onClick={() => sortListName('contactFace')}
+                />
             </div>
 
             <div className="headerColumn contacts">
-                <InputTextField value={contactStore.searchPhone}
-                                changeHandler={contactStore.handleChangeSearchPhone}
-                                name="phone"
-                                type="text"
-                                placeHolder=""
-                                disabled={false}/>
+                <InputField value={contactStore.searchPhone}
+                            changeHandler={contactStore.handleChangeSearchPhone}
+                            name="phone"
+                            type={InputFieldEnum.text}
+                            placeHolder=""
+                            disabled={false}/>
                 <Label text="Контакты"/>
             </div>
 
             <div className="headerColumn products">
-                <InputTextField value={contactStore.searchProduct}
-                                changeHandler={contactStore.handleChangeSearchProduct}
-                                name="products"
-                                type="text"
-                                placeHolder=""/>
+                <InputField value={contactStore.searchProduct}
+                            changeHandler={contactStore.handleChangeSearchProduct}
+                            name="products"
+                            type={InputFieldEnum.text}
+                            placeHolder=""/>
                 <Label text="Продукция"/>
             </div>
 

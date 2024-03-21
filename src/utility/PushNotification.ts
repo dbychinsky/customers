@@ -1,5 +1,5 @@
 /**
- * Класс работы с нотифкацией
+ * @description Класс работы с нотифкацией
  */
 export class PushNotification {
 

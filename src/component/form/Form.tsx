@@ -1,8 +1,6 @@
 import React, {ReactElement} from 'react';
 import {observer} from "mobx-react";
-import FormRow from "../formRow/FormRow";
-import "./Form.scss";
-import {FieldError} from "../../store/AuthStore";
+import {FieldError} from "components/inputField/types";
 
 /**
  * Тип Field
@@ -59,15 +57,17 @@ const Form = observer(({
                            actionList
                        }: IForm) => {
 
+
     return (
-        <form className="form" onSubmit={(event) => event.preventDefault()}>
-            {fieldList.map(({name, label, field}) =>
-                <FormRow className={name}
-                         label={label}
-                         field={field}
-                         key={name}
-                />
-            )}
+        <form className="form" onSubmit={(event) => event.preventDefault()}
+              autoComplete='false'>
+            {/*{fieldList.map(({name, label, field}) =>*/}
+            {/*    <FormRow label={label}*/}
+            {/*             field={field}*/}
+            {/*             key={name}*/}
+
+            {/*    />*/}
+            {/*)}*/}
             {actionList.map(({name, action}) =>
                 <div className="actionBar" key={name}>
                     {action}

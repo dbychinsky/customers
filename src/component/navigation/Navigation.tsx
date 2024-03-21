@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {RouterPathList} from "../../router/RouterPathList";
 import {NavLink} from "react-router-dom";
-import "./Navigation.scss";
+
 
 const Navigation = () => {
     const [isViewNav, setIsViewNav] = useState<boolean>(false);
@@ -19,14 +19,14 @@ const Navigation = () => {
 
             <ul>
                 <li>
-                    <NavLink to={RouterPathList.CONTACT_LIST_PAGE}
+                    <NavLink to={RouterPathList.DASHBOARD_PAGE}
                              className="actionContactListPage"
                              title="CONTACT_LIST_PAGE">
                         Контакты
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={RouterPathList.CONTACT_LIST_REMINDER_PAGE}
+                    <NavLink to={RouterPathList.DASHBOARD_PAGE}
                              className="actionContactListReminderPage"
                              title="CONTACT_LIST_REMINDER_PAGE">
                         Нотификации
