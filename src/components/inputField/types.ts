@@ -2,9 +2,9 @@
  * @description Список типов поля.
  */
 export enum InputFieldEnum {
-    text = "text",
-    number = "number",
-    password = "password",
+    text = 'text',
+    number = 'number',
+    password = 'password',
 }
 
 /**

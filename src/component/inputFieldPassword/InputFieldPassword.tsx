@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC} from 'react';
 
 /**
  * Компонент Input
@@ -48,7 +48,7 @@ const InputTextFieldPassword: FC<IInputTextFieldPasswordProps> = (
     }) => {
     return (
         <input
-            className="InputTextFieldPassword"
+            className='InputTextFieldPassword'
             type={type}
             value={value}
             onInput={changeHandler}

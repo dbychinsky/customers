@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-import {StoreContext} from "../../App";
-import {observer} from "mobx-react";
-import {Button} from "../../components/button/Button";
-import CheckboxNormal from "../checkboxNormal/CheckboxNormal";
-import {InputFieldEnum} from "components/inputField/types";
-import {InputField} from "components/inputField/InputField";
+import {StoreContext} from '../../App';
+import {observer} from 'mobx-react';
+import {Button} from '../../components/button/Button';
+import CheckboxNormal from '../checkboxNormal/CheckboxNormal';
+import {InputFieldEnum} from 'components/inputField/types';
+import {InputField} from 'components/inputField/InputField';
 
 /**
  * Кастомный компонент для телефона
@@ -39,55 +39,55 @@ const InputPhoneNumber = observer(() => {
     }
 
     return (
-        <div className="inputPhoneNumber">
+        <div className='inputPhoneNumber'>
 
             <InputField value={contactStore.phone}
                         changeHandler={contactStore.handleChangePhone}
                         type={InputFieldEnum.number}
-                        name="typeNumber"/>
-            <div className="rowCheck">
+                        name='typeNumber'/>
+            <div className='rowCheck'>
 
-                <div className="columnType">
+                <div className='columnType'>
                     <p>Тип номера</p>
-                    <CheckboxNormal id="isWorkNumber"
+                    <CheckboxNormal id='isWorkNumber'
                                     value={isWorkNumber}
                                     changeHandler={() => {
                                         setIsWorkNumber(!isWorkNumber);
                                         setIsPersonalNumber(!isPersonalNumber)
                                     }}
-                                    name="isWorkNumber"
-                                    text="Рабочий"/>
+                                    name='isWorkNumber'
+                                    text='Рабочий'/>
 
-                    <CheckboxNormal id="isPersonalNumber"
+                    <CheckboxNormal id='isPersonalNumber'
                                     value={isPersonalNumber}
                                     changeHandler={() => {
                                         setIsPersonalNumber(!isPersonalNumber);
                                         setIsWorkNumber(!isWorkNumber);
                                     }}
-                                    name="isPersonalNumber"
-                                    text="Личный"/>
+                                    name='isPersonalNumber'
+                                    text='Личный'/>
                 </div>
-                <div className="columnMessenger">
+                <div className='columnMessenger'>
                     <p>Доступность в месенджерах</p>
-                    <div className="rowViber">
-                        <CheckboxNormal id="isViberNumber"
+                    <div className='rowViber'>
+                        <CheckboxNormal id='isViberNumber'
                                         value={isViberNumber}
                                         changeHandler={() => setIsViberNumber(!isViberNumber)}
-                                        name="isViberNumber"
-                                        text="Viber"/>
+                                        name='isViberNumber'
+                                        text='Viber'/>
                     </div>
-                    <div className="rowTelegram">
-                        <CheckboxNormal id="isTelegramNumber"
+                    <div className='rowTelegram'>
+                        <CheckboxNormal id='isTelegramNumber'
                                         value={isTelegramNumber}
                                         changeHandler={() => setIsTelegramNumber(!isTelegramNumber)}
-                                        name="isTelegramNumber"
-                                        text="Telegram"/>
+                                        name='isTelegramNumber'
+                                        text='Telegram'/>
                     </div>
                 </div>
 
             </div>
-            <div className="actionBar">
-                <Button onClick={addPhone} text="Добавить"/>
+            <div className='actionBar'>
+                <Button onClick={addPhone} text='Добавить'/>
             </div>
         </div>
     );

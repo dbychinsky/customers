@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import {StoreContext} from "../../App";
-import {useNavigate} from "react-router";
+import {StoreContext} from '../../App';
+import {useNavigate} from 'react-router';
 
-import {observer} from "mobx-react";
+import {observer} from 'mobx-react';
 
 const ContactListReminderWidget = observer(() => {
     const contactStore = useContext(StoreContext).contactStore;
@@ -16,17 +16,17 @@ const ContactListReminderWidget = observer(() => {
         navigate((id).toString());
     }
     return (
-        <div className="contactListReminderWidget">
+        <div className='contactListReminderWidget'>
             {contactStore.contactListNotificationActive.map(
                 ({
                      id,
                      contactFace,
                      organization
                  }) => (
-                    <div key={id} className="contact" onClick={() => update(id)}>
-                        <span className="bell"><div className="ring"></div></span>
-                        <div className="organization">{organization}</div>
-                        <div className="contactFace">{contactFace}</div>
+                    <div key={id} className='contact' onClick={() => update(id)}>
+                        <span className='bell'><div className='ring'></div></span>
+                        <div className='organization'>{organization}</div>
+                        <div className='contactFace'>{contactFace}</div>
                     </div>
 
 

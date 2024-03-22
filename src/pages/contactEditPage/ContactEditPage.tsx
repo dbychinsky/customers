@@ -1,17 +1,17 @@
 import React, {useContext, useEffect, useState} from 'react';
-import InputCheckboxField from "../../component/checkboxField/CheckboxField";
-import DateField from "../../component/dateField/DateField";
-import {StoreContext} from "../../App";
-import {useNavigate, useParams} from "react-router";
-import {observer} from "mobx-react";
-import TextAreaField from "../../component/textAreaField/TextAreaField";
-import {Conversation} from "../../utility/Conversation";
-import {ActionListType, Field} from "../../component/form/Form";
-import "./ContactEditPage.scss";
-import FormEditContact from "../../component/formEditContact/FormEditContact";
-import InputPhoneNumber from "../../component/inputPhoneNumber/inputPhoneNumber";
-import {InputFieldEnum} from "components/inputField/types";
-import {InputField} from "components/inputField/InputField";
+import InputCheckboxField from '../../component/checkboxField/CheckboxField';
+import DateField from '../../component/dateField/DateField';
+import {StoreContext} from '../../App';
+import {useNavigate, useParams} from 'react-router';
+import {observer} from 'mobx-react';
+import TextAreaField from '../../component/textAreaField/TextAreaField';
+import {Conversation} from '../../utility/Conversation';
+import {ActionListType, Field} from '../../component/form/Form';
+import './ContactEditPage.scss';
+import FormEditContact from '../../component/formEditContact/FormEditContact';
+import InputPhoneNumber from '../../component/inputPhoneNumber/inputPhoneNumber';
+import {InputFieldEnum} from 'components/inputField/types';
+import {InputField} from 'components/inputField/InputField';
 
 /**
  * Страница редактирования/добавления контакта
@@ -65,84 +65,84 @@ const ContactEditPage = observer(() => {
      */
     const fieldListProducts: Field[] = [
         {
-            name: "products",
-            label: "Продукция",
+            name: 'products',
+            label: 'Продукция',
             field: <InputField value={contactStore.product}
                                changeHandler={contactStore.handleChangeProducts}
-                               name="products"
+                               name='products'
                                type={InputFieldEnum.text}/>
         }
     ];
     const fieldListProductsArchive: Field[] = [
         {
-            name: "productsArchive",
-            label: "Продукция в архиве",
+            name: 'productsArchive',
+            label: 'Продукция в архиве',
             field: <InputField value={contactStore.productArchive}
                                changeHandler={contactStore.handleChangeProductsArchive}
-                               name="productsArchive"
+                               name='productsArchive'
                                type={InputFieldEnum.text}/>
         }
     ];
     const fieldListContact: Field[] = [
         {
-            name: "organization",
-            label: "Организация",
+            name: 'organization',
+            label: 'Организация',
             field: <InputField
                 value={contactStore.newContact.organization}
                 changeHandler={contactStore.handleChange}
-                name="organization"
+                name='organization'
                 type={InputFieldEnum.text}/>
         },
         {
-            name: "contactFace",
-            label: "ФИО",
+            name: 'contactFace',
+            label: 'ФИО',
             field: <InputField
                 value={contactStore.newContact.contactFace}
                 changeHandler={contactStore.handleChange}
-                name="contactFace"
+                name='contactFace'
                 type={InputFieldEnum.text}/>
         }];
 
     const fieldListPhoneList: Field[] = [
         {
-            name: "phoneList",
-            label: "Номер телефона",
+            name: 'phoneList',
+            label: 'Номер телефона',
             field: <InputPhoneNumber/>
         }
     ]
 
     const fieldListEmail: Field[] = [
         {
-            name: "email",
-            label: "Email",
+            name: 'email',
+            label: 'Email',
             field: <InputField
                 value={contactStore.newContact.email}
                 changeHandler={contactStore.handleChange}
-                name="email"
+                name='email'
                 type={InputFieldEnum.text}/>
         }];
     const fieldListDescription: Field[] = [{
-        name: "description",
-        label: "Описание",
+        name: 'description',
+        label: 'Описание',
         field: <TextAreaField
             value={contactStore.newContact.description}
             changeHandler={contactStore.handleChange}
-            name="description"
-            type="text"/>
+            name='description'
+            type='text'/>
     }];
     const fieldListReminder: Field[] = [
         {
-            name: "reminder",
-            label: "Напоминание",
+            name: 'reminder',
+            label: 'Напоминание',
             field: <InputCheckboxField
-                id="reminder"
+                id='reminder'
                 value={contactStore.newContact.reminder}
                 changeHandler={contactStore.handleChangeCheckbox}
-                name="reminder"/>
+                name='reminder'/>
         },
         {
-            name: "reminderDate",
-            label: "Дата напоминания",
+            name: 'reminderDate',
+            label: 'Дата напоминания',
             field: <DateField
                 startDate={startDate}
                 setStartDate={setStartDate}/>
@@ -155,17 +155,17 @@ const ContactEditPage = observer(() => {
      */
     const actionList: ActionListType[] = [
         {
-            name: "submit",
-            action: <button className="button mainAction" tabIndex={1} onClick={save}>Сохранить</button>
+            name: 'submit',
+            action: <button className='button mainAction' tabIndex={1} onClick={save}>Сохранить</button>
         },
         {
-            name: "cancel",
-            action: <button className="button" tabIndex={1} onClick={() => exit()}>выйти</button>
+            name: 'cancel',
+            action: <button className='button' tabIndex={1} onClick={() => exit()}>выйти</button>
         }
     ];
 
     return (
-        <div className="contactEditPage">
+        <div className='contactEditPage'>
             <FormEditContact fieldListProducts={fieldListProducts}
                              fieldListProductsArchive={fieldListProductsArchive}
                              fieldListContact={fieldListContact}

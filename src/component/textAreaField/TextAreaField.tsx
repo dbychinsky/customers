@@ -36,7 +36,7 @@ interface ITextAreaField {
 const TextAreaField = ({value, type, name, changeHandler}: ITextAreaField) => {
     return (
         <>
-            <textarea className="textAreaField"
+            <textarea className='textAreaField'
                       value={value}
                       onChange={changeHandler}
                       name={name}

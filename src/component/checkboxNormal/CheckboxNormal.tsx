@@ -49,10 +49,10 @@ const CheckboxNormal: FC<ICheckboxNormal> = (
 
     return (
         <div className={`checkboxWrapperNormal ${className ? className : ''}`}>
-            <input type="checkbox"
+            <input type='checkbox'
                    checked={value}
                    name={name}
-                   className="checkbox"
+                   className='checkbox'
                    onChange={changeHandler}
                    id={id}
             />

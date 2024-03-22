@@ -7,7 +7,7 @@ const ScrollTop = () => {
     }
 
     return (
-        <div className="scrollTop"
+        <div className='scrollTop'
              onClick={scrollUp}>up</div>
     );
 };

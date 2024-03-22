@@ -1,82 +1,69 @@
-export type PhoneListType = {
-
-    /**
-     * Номер телефона
-     */
-    number: string;
-
-    /**
-     * Аттрибуты
-     */
-    typeList: string[];
-
-}
+import {HistoryType, PhoneListType} from 'model/types';
 
 /**
- * Контакт
+ * @description Контакт.
  */
 export class Contact {
 
     /**
-     * id
+     * @description id.
      */
     id: number;
 
     /**
-     * Продукция
-     */
-    products: string[];
-
-    /**
-     * Продукция для архива
-     */
-    productsArchive: string[];
-
-    /**
-     * ФИО, контактное лицо
-     */
-    contactFace: string;
-
-    /**
-     * Организация
+     * @description Организация.
      */
     organization: string;
 
     /**
-     * Список телефонов
+     * @description ФИО, контактное лицо.
      */
-    // phoneList: [{ number: string, typeList: string[] }];
+    contactFace: string;
+
+    /**
+     * @description Продукция.
+     */
+    products: string[];
+
+    /**
+     * @description Список телефонов.
+     */
     phoneList: PhoneListType[];
 
     /**
-     * Email телефона
+     * @description Email.
      */
     email: string;
 
     /**
-     * Описание
+     * @description Комментарии.
      */
     description: string;
 
     /**
-     * Флаг напоминания
+     * @description История.
+     */
+    history: HistoryType[];
+
+    /**
+     * @description Флаг напоминания.
      */
     reminder: boolean;
 
     /**
-     * Дата и время напоминания
+     * @description Дата и время напоминания.
      */
     reminderDate: Date;
 
     constructor() {
         this.id = 0;
-        this.products = [];
-        this.productsArchive = [];
-        this.contactFace = '';
         this.organization = '';
+        this.contactFace = '';
+        this.products = [];
         this.phoneList = [];
         this.email = '';
         this.description = '';
+        this.history = [];
         this.reminder = false;
         this.reminderDate = new Date();
     }

@@ -5,13 +5,13 @@ export enum RouterPathList {
     /**
      * @description Начальная страница - DASHBOARD_PAGE
      */
-    LOGIN_PAGE = "/",
+    LOGIN_PAGE = '/',
     /**
      * @description Страница логирования
      */
-    DASHBOARD_PAGE = "dashboardPage/",
+    DASHBOARD_PAGE = 'dashboardPage/',
     /**
      * @description Страница со списком контактов
      */
-    CURRENCY_PAGE = "currencyPage/",
+    CURRENCY_PAGE = 'currencyPage/',
 }

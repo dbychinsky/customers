@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react';
-import {observer} from "mobx-react";
-import {FieldError} from "components/inputField/types";
+import {observer} from 'mobx-react';
+import {FieldError} from 'components/inputField/types';
 
 /**
  * Тип Field
@@ -59,7 +59,7 @@ const Form = observer(({
 
 
     return (
-        <form className="form" onSubmit={(event) => event.preventDefault()}
+        <form className='form' onSubmit={(event) => event.preventDefault()}
               autoComplete='false'>
             {/*{fieldList.map(({name, label, field}) =>*/}
             {/*    <FormRow label={label}*/}
@@ -69,7 +69,7 @@ const Form = observer(({
             {/*    />*/}
             {/*)}*/}
             {actionList.map(({name, action}) =>
-                <div className="actionBar" key={name}>
+                <div className='actionBar' key={name}>
                     {action}
                 </div>
             )}

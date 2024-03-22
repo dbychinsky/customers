@@ -1,6 +1,6 @@
-import {useCallback} from "react";
-import {useNavigate} from "react-router-dom";
-import {RouterPathList} from "router/RouterPathList";
+import {useCallback} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {RouterPathList} from 'router/RouterPathList';
 
 /**
  * Хук с готовыми функциями для использования навигации по роутам приложения.
@@ -25,7 +25,7 @@ export function useNavigateHelper(): UseNavigateHelperReturnType {
 }
 
 /**
- * Тип функций-хелперов хука "useNavigateHelper".
+ * Тип функций-хелперов хука 'useNavigateHelper'.
  *
  * @see useNavigateHelper
  * @see UseNavigateHelperReturnType
@@ -33,7 +33,7 @@ export function useNavigateHelper(): UseNavigateHelperReturnType {
 type NavigateHelperType = () => void;
 
 /**
- * Тип данных, возвращаемый хуком "useNavigateHelper".
+ * Тип данных, возвращаемый хуком 'useNavigateHelper'.
  *
  * @see useNavigateHelper
  * @see NavigateHelperType

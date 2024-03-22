@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from 'react';
-import {StoreContext} from "../../App";
-import {observer} from "mobx-react";
-import Contact from "../contact/Contact";
-import {Button} from "../../components/button/Button";
-import {useNavigate} from "react-router";
-import {RouterPathList} from "../../router/RouterPathList";
-import Search from "../search/Search";
-import TextMessage from "../textMessage/TextMessage";
+import {StoreContext} from '../../App';
+import {observer} from 'mobx-react';
+import Contact from '../contact/Contact';
+import {Button} from '../../components/button/Button';
+import {useNavigate} from 'react-router';
+import {RouterPathList} from '../../router/RouterPathList';
+import Search from '../search/Search';
+import TextMessage from '../textMessage/TextMessage';
 
 
 /**
@@ -52,23 +52,23 @@ const ContactList = observer(() => {
     }
 
     return (
-        <div className="contactList">
-            <div className="headerList">
+        <div className='contactList'>
+            <div className='headerList'>
                 <Button onClick={updateHandData}
-                        className="updateData imgBtn"
-                        text="Обновить данные"/>
+                        className='updateData imgBtn'
+                        text='Обновить данные'/>
                 <Button onClick={checkNotify}
-                        className="checkNotify imgBtn"
-                        text="Нотифицировать"/>
+                        className='checkNotify imgBtn'
+                        text='Нотифицировать'/>
                 <Button onClick={addContact}
-                        className="addContact mainAction"
-                        text="Добавить"/>
+                        className='addContact mainAction'
+                        text='Добавить'/>
             </div>
             <Search/>
             {contactStore.contactList.length
                 ? <Contact/>
-                : <TextMessage message="Нет данных для отображения. Проверьте фильтры."
-                               className="big"/>}
+                : <TextMessage message='Нет данных для отображения. Проверьте фильтры.'
+                               className='big'/>}
 
         </div>
     );

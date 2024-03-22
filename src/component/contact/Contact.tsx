@@ -1,14 +1,14 @@
 import React, {useContext} from 'react';
-import {StoreContext} from "../../App";
-import {Conversation} from "../../utility/Conversation";
-import {observer} from "mobx-react";
-import {Button} from "../../components/button/Button";
+import {StoreContext} from '../../App';
+import {Conversation} from '../../utility/Conversation';
+import {observer} from 'mobx-react';
+import {Button} from '../../components/button/Button';
 import {confirmAlert} from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import "../reactConfirmAlert/ReactConfirmAlert.scss";
-import {useNavigate} from "react-router";
-import Preloader from "../preloader/Preloader";
-import {getIdForEmptyList} from "../../utility/GetIdForEmptyList";
+import '../reactConfirmAlert/ReactConfirmAlert.scss';
+import {useNavigate} from 'react-router';
+import Preloader from '../preloader/Preloader';
+import {getIdForEmptyList} from '../../utility/GetIdForEmptyList';
 
 /**
  * контакт
@@ -28,20 +28,20 @@ const Contact = observer(() => {
             customUI: ({onClose}) => {
                 return (
                     <div className='custom-ui'>
-                        <div className="headerBack"></div>
-                        <div className="body">
-                            <div className="bodyContentOrganization">{organization}</div>
-                            <div className="bodyContentContactFace">{contactFace}</div>
+                        <div className='headerBack'></div>
+                        <div className='body'>
+                            <div className='bodyContentOrganization'>{organization}</div>
+                            <div className='bodyContentContactFace'>{contactFace}</div>
                         </div>
-                        <div className="foot">
+                        <div className='foot'>
 
-                            <Button onClick={onClose} text="Отмена"/>
+                            <Button onClick={onClose} text='Отмена'/>
                             <Button onClick={() => {
                                 contactStore.remove(id);
                                 onClose();
                             }} autoFocus={true}
-                                    text="Удалить"
-                                    className="deleteAction"/>
+                                    text='Удалить'
+                                    className='deleteAction'/>
                         </div>
                     </div>
                 );
@@ -85,22 +85,22 @@ const Contact = observer(() => {
                          className={`contact ${getIdForEmptyList(id.toString())}`} >
                         {id
                             ? <>
-                                <div className="organization">{organization}</div>
-                                <div className="contactFace">{contactFace}</div>
-                                <div className="contacts">
-                                    <div className="phone">
+                                <div className='organization'>{organization}</div>
+                                <div className='contactFace'>{contactFace}</div>
+                                <div className='contacts'>
+                                    <div className='phone'>
                                         {phoneList.map((elem, index) => (
                                             <div className={`number ${elem.typeList.join(' ')}`}
                                                  key={index}>
-                                                <div className="num">{elem.number}</div>
-                                                <div className="iconList"></div>
+                                                <div className='num'>{elem.number}</div>
+                                                <div className='iconList'></div>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="email">{email}</div>
+                                    <div className='email'>{email}</div>
                                 </div>
 
-                                <div className="products">
+                                <div className='products'>
                                     {products.map((elem, index
                                         ) => (<div key={index}>
                                             <div>{elem}</div>
@@ -108,43 +108,43 @@ const Contact = observer(() => {
                                     )}
                                 </div>
 
-                                <pre className="description">{description}</pre>
+                                <pre className='description'>{description}</pre>
 
 
                                 <div className={`reminder ${Conversation.checkboxBoolToString(reminder)}`}>
-                                    <div className="icon">
+                                    <div className='icon'>
                                         <span>{Conversation.checkboxBoolToString(reminder)}</span>
                                     </div>
-                                    <div className="reminderDate">
+                                    <div className='reminderDate'>
                                         {Conversation.dateToStrUTC(reminderDate)}</div>
                                 </div>
 
-                                <div className="actionBar">
+                                <div className='actionBar'>
 
                                     <Button onClick={() => moreViewInformation(id.toString())}
-                                            text="Подробнее"
+                                            text='Подробнее'
                                             className={'imgBtn eye'}
-                                            title="Подробнее"/>
+                                            title='Подробнее'/>
                                     <Button onClick={() => update(id)}
-                                            text="Редактировать"
+                                            text='Редактировать'
                                             className={'imgBtn edit'}
-                                            title="Редактировать"/>
+                                            title='Редактировать'/>
                                     <Button onClick={() => remove(id, organization, contactFace)}
-                                            text="Удалить"
-                                            className="imgBtn delete"/>
+                                            text='Удалить'
+                                            className='imgBtn delete'/>
                                 </div>
 
-                                <div className="archiveProductList">
+                                <div className='archiveProductList'>
                                     {productsArchive.map((elem, index
                                         ) => (
                                             <div key={index}
-                                                 className="archiveProduct">
+                                                 className='archiveProduct'>
                                                 {elem}
                                             </div>)
                                     )}
                                 </div>
                             </>
-                            : <div className="getData">
+                            : <div className='getData'>
                                 <p>Получение данных с сервера</p>
                                 <Preloader/>
                             </div>}

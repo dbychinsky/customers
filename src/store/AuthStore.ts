@@ -1,6 +1,6 @@
-import React from "react";
-import {makeAutoObservable, runInAction} from "mobx";
-import {FieldError} from "components/inputField/types";
+import React from 'react';
+import {makeAutoObservable, runInAction} from 'mobx';
+import {FieldError} from 'components/inputField/types';
 
 /**
  * Store для работы с Auth
@@ -28,7 +28,7 @@ export class AuthStore {
     public handleChangeLogin(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
             this.login = e.target.value;
-            this.errorList = this.errorList.filter((item) => item.field !== "login");
+            this.errorList = this.errorList.filter((item) => item.field !== 'login');
         })
     };
 
@@ -39,7 +39,7 @@ export class AuthStore {
     public handleChangePassword(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
             this.password = e.target.value;
-            this.errorList = this.errorList.filter((item) => item.field !== "password");
+            this.errorList = this.errorList.filter((item) => item.field !== 'password');
         })
     };
 

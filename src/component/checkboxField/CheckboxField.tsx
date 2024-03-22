@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import "./CheckBox.scss";
+import './CheckBox.scss';
 
 interface ICheckboxField {
 
@@ -59,10 +59,10 @@ const CheckboxField: FC<ICheckboxField> = (
 
     return (
         <div className={`checkboxWrapper ${className ? className : ''}`}>
-            <input type="checkbox"
+            <input type='checkbox'
                    checked={value}
                    name={name}
-                   className="checkbox"
+                   className='checkbox'
                    onChange={changeHandler}
                    id={id}
             />

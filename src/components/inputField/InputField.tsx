@@ -1,7 +1,7 @@
-import React, {FC} from "react";
-import {InputFieldEnum} from "components/inputField/types";
-import clsx from "clsx";
-import styles from "./InputField.module.scss";
+import React, {FC} from 'react';
+import {InputFieldEnum} from 'components/inputField/types';
+import clsx from 'clsx';
+import styles from './InputField.module.scss';
 
 
 interface IInputFieldProps {
@@ -85,7 +85,7 @@ export const InputField: FC<IInputFieldProps> = (
             placeholder={placeHolder}
             tabIndex={1}
             disabled={disabled}
-            autoComplete="new-password"
+            autoComplete='new-password'
         />
     )
 }

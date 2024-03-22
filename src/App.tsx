@@ -1,8 +1,8 @@
 import React, {createContext} from 'react';
-import AppWrapperInAuth from "./AppWrapperInAuth";
-import {Server} from "service/Service";
-import {RootStore} from "store/RootStore";
-import styles from "index.module.scss";
+import AppWrapperInAuth from './AppWrapperInAuth';
+import {Server} from 'service/Service';
+import {RootStore} from 'store/RootStore';
+import styles from 'index.module.scss';
 
 export const server = new Server();
 

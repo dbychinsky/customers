@@ -1,11 +1,11 @@
 import React, {useContext, useEffect} from 'react';
-import ContactList from "../../component/contactList/ContactList";
-import {observer} from "mobx-react";
-import ContactListReminderWidget from "../../component/contactListReminderWidget/ContactListReminderWidget";
-import {RouterPathList} from "../../router/RouterPathList";
-import {useNavigate} from "react-router";
-import {StoreContext} from "../../App";
-import ScrollTop from "../../component/scrollTop/ScrollTop";
+import ContactList from '../../component/contactList/ContactList';
+import {observer} from 'mobx-react';
+import ContactListReminderWidget from '../../component/contactListReminderWidget/ContactListReminderWidget';
+import {RouterPathList} from '../../router/RouterPathList';
+import {useNavigate} from 'react-router';
+import {StoreContext} from '../../App';
+import ScrollTop from '../../component/scrollTop/ScrollTop';
 
 
 /**
@@ -23,9 +23,9 @@ const ContactListPage = observer(() => {
     }, [])
 
     return (
-        <div className="contactListPage">
+        <div className='contactListPage'>
             <ContactList/>
-            <div className="widget">
+            <div className='widget'>
                 <ContactListReminderWidget/>
                 {/*<CurrencyTile/>*/}
             </div>

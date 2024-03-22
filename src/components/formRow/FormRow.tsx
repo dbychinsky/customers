@@ -1,11 +1,11 @@
 import React, {ChangeEvent, FC} from 'react';
-import {observer} from "mobx-react";
-import clsx from "clsx";
-import styles from "components/formRow/FormRow.module.scss";
-import {Label} from "components/label/Label";
-import {InputField} from "components/inputField/InputField";
-import {FeedbackMessageField} from "components/feedbackMessageField/FeedbackMessageField";
-import {FieldError, InputFieldEnum} from "components/inputField/types";
+import {observer} from 'mobx-react';
+import clsx from 'clsx';
+import styles from 'components/formRow/FormRow.module.scss';
+import {Label} from 'components/label/Label';
+import {InputField} from 'components/inputField/InputField';
+import {FeedbackMessageField} from 'components/feedbackMessageField/FeedbackMessageField';
+import {FieldError, InputFieldEnum} from 'components/inputField/types';
 
 interface IFormRow {
     /**
@@ -62,7 +62,6 @@ export const FormRow: FC<IFormRow> = observer((
 
     return (
         <div className={localClassName}>
-            {messages}
             <Label text={labelText}/>
             <InputField
                 value={inputValue}

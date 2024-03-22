@@ -1,4 +1,4 @@
-import {useNavigateHelper} from "router/hooks/useNavigateHelper";
+import {useNavigateHelper} from 'router/hooks/useNavigateHelper';
 
 interface IUseRedirectInLoginPage {
     isAuth: boolean

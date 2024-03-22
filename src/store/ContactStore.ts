@@ -1,9 +1,9 @@
-import React from "react";
-import {makeAutoObservable, runInAction} from "mobx";
-import {Contact, PhoneListType} from "../model/Contact";
-import {server} from "../App";
-import {Conversation} from "../utility/Conversation";
-import {PushNotification} from "../utility/PushNotification";
+import React from 'react';
+import {makeAutoObservable, runInAction} from 'mobx';
+import {Contact, PhoneListType} from '../model/Contact';
+import {server} from '../App';
+import {Conversation} from '../utility/Conversation';
+import {PushNotification} from '../utility/PushNotification';
 
 /**
  * Store для работы с LoanStore
@@ -13,77 +13,77 @@ import {PushNotification} from "../utility/PushNotification";
 export class ContactStore {
 
     /**
-     * Новый контакт
+     * @description Новый контакт.
      */
     public newContact: Contact = new Contact();
 
     /**
-     * Новый проект, принадлежащий контакту
+     * @description  Новый проект, принадлежащий контакту.
      */
     public product: string = '';
 
 
     /**
-     * Список проектов, принадлежащие контакту
+     * @description Список проектов, принадлежащие контакту.
      */
     public productList: string[] = [];
 
 
     /**
-     * Телефон, принадлежащий контакту
+     * @description Телефон, принадлежащий контакту.
      */
     public phone: any = '';
 
     /**
-     * Список телефонов, принадлежащие контакту
+     * @description Список телефонов, принадлежащие контакту.
      */
     public phoneList: PhoneListType[] = [];
 
     /**
-     * Список атрибутов для телефона
+     * @description Список атрибутов для телефона.
      */
     public atrListPhone: string[] = [];
 
     /**
-     * Проект для добавления в архив, принадлежащий контакту
+     * @description Проект для добавления в архив, принадлежащий контакту.
      */
     public productArchive: string = '';
 
     /**
-     * Список проектов в архиве, принадлежащие контакту
+     * @description Список проектов в архиве, принадлежащие контакту.
      */
     public productListsArchive: string[] = [];
 
     /**
-     * Список контактов
+     * @description Список контактов.
      */
     public contactList: Contact[] = [new Contact()];
 
     /**
-     * Список контактов для поиска. Сделан чтобы снизить
+     * @description Список контактов для поиска. Сделан чтобы снизить
      * количество запросов к серверу из-за ограниченного
-     * количества
+     * количества.
      */
     public contactListTemp: Contact[] = [new Contact()];
 
     /**
-     * Список активных уведомлений, содержит
-     * id контакта
+     * @description Список активных уведомлений, содержит
+     * id контакта.
      */
     public contactListNotificationActive: Contact[] = [];
 
     /**
-     * Поле, принимает данные для поиска по продуктам
+     * @description Поле, принимает данные для поиска по продуктам.
      */
     public searchOrganization: string = '';
 
     /**
-     * Поле, принимает данные для поиска по ФИО
+     * @description Поле, принимает данные для поиска по ФИО.
      */
     public searchContactFace: string = '';
 
     /**
-     * Поле, принимает данные для поиска по продуктам
+     * @description Поле, принимает данные для поиска по продуктам.
      */
     public searchProduct: string = '';
 
@@ -93,17 +93,17 @@ export class ContactStore {
     public searchPhone: string = '';
 
     /**
-     * Поле, заказчики
+     * @description Поле, заказчики.
      */
     public customer: boolean = true;
 
     /**
-     * Поле, клиенты
+     * @description Поле, клиенты.
      */
     public client: boolean = true;
 
     /**
-     * Таймер проверки нотификаций
+     * @description Таймер проверки нотификаций.
      */
     private timer: number = Number(process.env.REACT_APP_TIMER_NOTIFICATION);
 
@@ -401,12 +401,12 @@ export class ContactStore {
             })
             .catch(err => {
                 if (err.response) {
-                    console.log("client received an error response (5xx, 4xx)")
+                    console.log('client received an error response (5xx, 4xx)')
                 } else if (err.request) {
-                    console.log("client never received a response, or request never left")
+                    console.log('client never received a response, or request never left')
 
                 } else {
-                    console.log("anything else")
+                    console.log('anything else')
                 }
             })
     };
@@ -544,7 +544,7 @@ export class ContactStore {
 
     /**
      * Нотификация.
-     * Проверяем каждый элемент списка на наличие флага "reminder". Если флаг true
+     * Проверяем каждый элемент списка на наличие флага 'reminder'. Если флаг true
      * проверяем дату: если текущая дата больше даты из записи - проверяем есть ли
      * этот элемент в списке (notificationList) активных нотификаций - если нет показываем
      * нотификацию.

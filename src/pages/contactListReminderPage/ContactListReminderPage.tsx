@@ -1,10 +1,10 @@
-import {observer} from "mobx-react";
-import ContactListReminder from "../../component/contactListReminder/ContactListReminder";
-import "./ContactListReminderPage.scss";
-import {useNavigate} from "react-router";
-import {useContext, useEffect} from "react";
-import {StoreContext} from "../../App";
-import {RouterPathList} from "../../router/RouterPathList";
+import {observer} from 'mobx-react';
+import ContactListReminder from '../../component/contactListReminder/ContactListReminder';
+import './ContactListReminderPage.scss';
+import {useNavigate} from 'react-router';
+import {useContext, useEffect} from 'react';
+import {StoreContext} from '../../App';
+import {RouterPathList} from '../../router/RouterPathList';
 
 const ContactListReminderPage = observer(() => {
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const ContactListReminderPage = observer(() => {
     }, [])
 
     return (
-        <div className="contactListReminderPage">
+        <div className='contactListReminderPage'>
             <ContactListReminder/>
         </div>
     );

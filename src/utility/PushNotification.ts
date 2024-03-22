@@ -18,16 +18,16 @@ export class PushNotification {
     }
 
     static pushNotify(title: string, contactFace: string) {
-        if (!("Notification" in window)) {
+        if (!('Notification' in window)) {
             // checking if the user's browser supports web push Notification
-            alert("Web browser does not support desktop notification");
-        } else if (Notification.permission === "granted") {
-            console.log("Permission to show web push notifications granted.");
+            alert('Web browser does not support desktop notification');
+        } else if (Notification.permission === 'granted') {
+            console.log('Permission to show web push notifications granted.');
             // if notification permissions is granted,
             // then create a Notification object
             this.createNotification(title, contactFace);
-        } else if (Notification.permission !== "denied") {
-            alert("Going to ask for permission to show web push notification");
+        } else if (Notification.permission !== 'denied') {
+            alert('Going to ask for permission to show web push notification');
             // User should give explicit permission
             Notification.requestPermission().then((permission) => {
                 // If the user accepts, let's create a notification

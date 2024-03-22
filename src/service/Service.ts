@@ -1,6 +1,6 @@
-import {IService} from "./IService";
-import axios from "axios";
-import {Contact} from "../model/Contact";
+import {IService} from './IService';
+import axios from 'axios';
+import {Contact} from '../model/Contact';
 
 /**
  * Список URL валют

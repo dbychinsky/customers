@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import {ActionListType, Field} from "../form/Form";
-import {observer} from "mobx-react";
-import {StoreContext} from "../../App";
-import {Button} from "../../components/button/Button";
-import TextMessage from "../textMessage/TextMessage";
-import {FormRow} from "components/formRow/FormRow";
+import {ActionListType, Field} from '../form/Form';
+import {observer} from 'mobx-react';
+import {StoreContext} from '../../App';
+import {Button} from '../../components/button/Button';
+import TextMessage from '../textMessage/TextMessage';
+import {FormRow} from 'components/formRow/FormRow';
 
 /**
  * Интерфейс формы
@@ -39,8 +39,8 @@ const FormEditContact = observer(({
 
 
     return (
-        <form className="formEditContact" onSubmit={(event) => event.preventDefault()}>
-            <div className="contactArea">
+        <form className='formEditContact' onSubmit={(event) => event.preventDefault()}>
+            <div className='contactArea'>
                 <p>Данные контакта: <span>название организации, контактное лицо</span></p>
                 <div>
                     {/*{fieldListContact.map(({name, label, field}) =>*/}
@@ -52,10 +52,10 @@ const FormEditContact = observer(({
                     {/*)}*/}
                 </div>
             </div>
-            <div className="productsArea">
+            <div className='productsArea'>
                 <p>Продукция для печати: <span>журналы, книги, календари, бланки...</span></p>
                 <div>
-                    <div className="actualProductList">
+                    <div className='actualProductList'>
                         {/*{fieldListProducts.map(({name, label, field}) =>*/}
                         {/*    <FormRow className={name}*/}
                         {/*             label={label}*/}
@@ -63,19 +63,19 @@ const FormEditContact = observer(({
                         {/*             key={name}*/}
                         {/*    />*/}
                         {/*)}*/}
-                        <div className="additionalProductList">
-                            <Button onClick={contactStore.addProjectInList} text="Добавить"/>
+                        <div className='additionalProductList'>
+                            <Button onClick={contactStore.addProjectInList} text='Добавить'/>
                             {contactStore.productList.map((product) => (
-                                <div key={product} className="productFromList">
+                                <div key={product} className='productFromList'>
                                     <Button text='dsdsd' onClick={() => contactStore.deleteRecordProductList(product)}
-                                            className="deleteRecordList imgBtn"/>
+                                            className='deleteRecordList imgBtn'/>
                                     {product}
                                 </div>
 
                             ))}
                         </div>
                     </div>
-                    <div className="archiveProductList">
+                    <div className='archiveProductList'>
                         {/*{fieldListProductsArchive.map(({name, label, field}) =>*/}
                         {/*    <FormRow className={name}*/}
                         {/*             label={label}*/}
@@ -83,13 +83,13 @@ const FormEditContact = observer(({
                         {/*             key={name}*/}
                         {/*    />*/}
                         {/*)}*/}
-                        <div className="additionalProductList">
-                            <Button onClick={contactStore.addProjectInListArchive} text="Добавить"/>
+                        <div className='additionalProductList'>
+                            <Button onClick={contactStore.addProjectInListArchive} text='Добавить'/>
                             {contactStore.productListsArchive.map((product) => (
-                                <div key={product} className="productFromList">
+                                <div key={product} className='productFromList'>
                                     <Button text='dsdsd'
                                             onClick={() => contactStore.deleteRecordProductListArchive(product)}
-                                            className="deleteRecordList imgBtn"/>
+                                            className='deleteRecordList imgBtn'/>
                                     {product}
                                 </div>
                             ))}
@@ -97,10 +97,10 @@ const FormEditContact = observer(({
                     </div>
                 </div>
             </div>
-            <div className="contactsArea">
+            <div className='contactsArea'>
                 <p>Контактные данные: <span>телефоны, адрес электронной почты </span></p>
                 <div>
-                    <div className="phone">
+                    <div className='phone'>
                         {/*{fieldListPhoneList.map(({name, label, field}) =>*/}
                         {/*    <FormRow className={name}*/}
                         {/*             label={label}*/}
@@ -108,7 +108,7 @@ const FormEditContact = observer(({
                         {/*             key={name}*/}
                         {/*    />*/}
                         {/*)}*/}
-                        <div className="phoneFromList">
+                        <div className='phoneFromList'>
                             <p>Список телефонов для добавления</p>
                             {contactStore.phoneList.length
                                 ? contactStore.phoneList.map((elem) => (
@@ -116,13 +116,13 @@ const FormEditContact = observer(({
                                          className={`phoneNumber ${elem.typeList.join(' ')}`}>
                                         <Button text='dsdsd'
                                                 onClick={() => contactStore.deleteRecordPhoneList(elem.number)}
-                                                className="deleteRecordList imgBtn"/>
-                                        <div className="number">{elem.number}</div>
-                                        <div className="iconList"></div>
+                                                className='deleteRecordList imgBtn'/>
+                                        <div className='number'>{elem.number}</div>
+                                        <div className='iconList'></div>
                                     </div>
 
                                 ))
-                                : <TextMessage className="small" message="Нет добавленных номеров."/>}
+                                : <TextMessage className='small' message='Нет добавленных номеров.'/>}
                         </div>
                     </div>
 
@@ -135,7 +135,7 @@ const FormEditContact = observer(({
                     {/*)}*/}
                 </div>
             </div>
-            <div className="descriptionArea">
+            <div className='descriptionArea'>
                 <p>Дополнительная информация: <span></span></p>
                 <div>
                     {/*{fieldListDescription.map(({name, label, field}) =>*/}
@@ -147,7 +147,7 @@ const FormEditContact = observer(({
                     {/*)}*/}
                 </div>
             </div>
-            <div className={`reminderArea ${contactStore.newContact.reminder ? "activated" : "deactivated"}`}>
+            <div className={`reminderArea ${contactStore.newContact.reminder ? 'activated' : 'deactivated'}`}>
                 <p>Напоминание: <span>включение напоминания, дата/время</span></p>
                 <div>
                     {/*{fieldListReminder.map(({name, label, field}) =>*/}
@@ -160,7 +160,7 @@ const FormEditContact = observer(({
                 </div>
             </div>
 
-            <div className="actionBar">
+            <div className='actionBar'>
                 {actionList.map(({name, action}) =>
                     <span key={name}>{action}</span>
                 )}</div>
