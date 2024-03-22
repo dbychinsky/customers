@@ -1,4 +1,4 @@
-import {HistoryType, PhoneListType} from 'model/types';
+import {HistoryType, PhoneListType, ProductType} from "model/types";
 
 /**
  * @description Контакт.
@@ -23,7 +23,12 @@ export class Contact {
     /**
      * @description Продукция.
      */
-    products: string[];
+    productList: ProductType[];
+
+    /**
+     * @description Продукция в архиве.
+     */
+    productListArchive: ProductType[];
 
     /**
      * @description Список телефонов.
@@ -57,12 +62,13 @@ export class Contact {
 
     constructor() {
         this.id = 0;
-        this.organization = '';
-        this.contactFace = '';
-        this.products = [];
+        this.organization = "";
+        this.contactFace = "";
+        this.productList = [];
+        this.productListArchive = [];
         this.phoneList = [];
-        this.email = '';
-        this.description = '';
+        this.email = "";
+        this.description = "";
         this.history = [];
         this.reminder = false;
         this.reminderDate = new Date();

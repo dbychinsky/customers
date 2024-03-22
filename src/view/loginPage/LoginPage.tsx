@@ -1,7 +1,7 @@
-import React from 'react';
-import {observer} from 'mobx-react';
-import styles from 'view/loginPage/LoginPage.module.scss';
-import {LoginForm} from 'view/loginPage/form/LoginForm';
+import React from "react";
+import {observer} from "mobx-react";
+import styles from "view/loginPage/LoginPage.module.scss";
+import {LoginForm} from "view/loginPage/form/LoginForm";
 
 
 /**

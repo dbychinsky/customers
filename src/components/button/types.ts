@@ -1,7 +1,7 @@
-import styles from './Button.module.scss'
+import styles from "./Button.module.scss"
 
 /**
- * @description Константа, позволяющая по полученному пропсу 'variant' получить класс,
+ * @description Константа, позволяющая по полученному пропсу "variant" получить класс,
  * отвечающий за вариант отображения кнопки.
  * *
  * @see ButtonVariantType
@@ -16,7 +16,7 @@ export const ButtonTypeMapping = {
 export type ButtonType = keyof typeof ButtonTypeMapping;
 
 export enum ButtonFormType {
-    button = 'button',
-    submit = 'submit',
-    reset = 'reset',
+    button = "button",
+    submit = "submit",
+    reset = "reset",
 }

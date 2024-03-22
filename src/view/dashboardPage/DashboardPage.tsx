@@ -1,9 +1,9 @@
-import React, {useContext, useEffect} from 'react';
-import {observer} from 'mobx-react';
-import {StoreContext} from 'App';
-import {useRedirectInLoginPage} from 'router/hooks/useRedirectInLoginPage';
-import styles from './DashboardPage.module.scss';
-import {ContactList} from 'view/components/ContactList';
+import React, {useContext, useEffect} from "react";
+import {observer} from "mobx-react";
+import {StoreContext} from "App";
+import {useRedirectInLoginPage} from "router/hooks/useRedirectInLoginPage";
+import styles from "./DashboardPage.module.scss";
+import {ContactList} from "view/components/ContactList";
 
 /**
  * @description Страница дашборда.

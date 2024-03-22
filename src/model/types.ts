@@ -8,7 +8,12 @@ export type PhoneListType = {
     /**
      * @description Аттрибуты.
      */
-    typeList: string[];
+    typeList: PhoneTypeListEnum;
+}
+
+export enum PhoneTypeListEnum {
+    personal = "personal",
+    business = "business",
 }
 
 export type HistoryType = {
@@ -22,4 +27,17 @@ export type HistoryType = {
      * @description Событие.
      */
     action: string;
+}
+
+export type ProductType = {
+
+    /**
+     * @description Название продукта.
+     */
+    productName: string;
+
+    /**
+     * @description Комментарий.
+     */
+    productComment: string;
 }

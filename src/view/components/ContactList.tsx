@@ -1,16 +1,18 @@
-import React, {useContext, useEffect} from 'react';
-import styles from './ContactList.module.scss'
+import React, {useContext, useEffect} from "react";
+import styles from "./ContactList.module.scss"
 import {StoreContext} from "App";
+import {observer} from "mobx-react";
 
 /**
  * @description Список контактов.
  */
-export const ContactList = () => {
+export const ContactList = observer(() => {
     const contactStore = useContext(StoreContext).contactStore;
 
     useEffect(() => {
-        contactStore.get();
-    }, []);
+        debugger;
+        contactStore.getContactList();
+    }, [contactStore]);
 
     return (
         <div className={styles.contactList}>
@@ -20,4 +22,4 @@ export const ContactList = () => {
         </div>
 
     );
-};
+});

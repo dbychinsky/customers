@@ -1,6 +1,6 @@
-import {ContactStore} from './ContactStore';
-import {AuthStore} from './AuthStore';
-import {ModalStore} from './ModalStore';
+import {ContactStore} from "./ContactStore";
+import {AuthStore} from "./AuthStore";
+import {ModalStore} from "./ModalStore";
 
 /**
  * Объеденение всех Store в RootStore

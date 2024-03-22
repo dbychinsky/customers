@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ScrollTop = () => {
 
@@ -7,7 +7,7 @@ const ScrollTop = () => {
     }
 
     return (
-        <div className='scrollTop'
+        <div className="scrollTop"
              onClick={scrollUp}>up</div>
     );
 };

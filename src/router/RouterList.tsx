@@ -1,8 +1,8 @@
-import {Route, Routes} from 'react-router';
-import {RouterPathList} from './RouterPathList';
-import {DashboardPage} from 'view/dashboardPage/DashboardPage';
-import {LoginPage} from 'view/loginPage/LoginPage';
-import {CurrencyPage} from 'view/currencyPage/CurrencyPage';
+import {Route, Routes} from "react-router";
+import {RouterPathList} from "./RouterPathList";
+import {DashboardPage} from "view/dashboardPage/DashboardPage";
+import {LoginPage} from "view/loginPage/LoginPage";
+import {CurrencyPage} from "view/currencyPage/CurrencyPage";
 
 /**
  * @description Роутинг приложения

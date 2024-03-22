@@ -1,7 +1,7 @@
-import React, {FC, MouseEventHandler} from 'react';
-import {ButtonFormType, ButtonType, ButtonTypeMapping} from 'components/button/types';
-import clsx from 'clsx';
-import styles from './Button.module.scss';
+import React, {FC, MouseEventHandler} from "react";
+import {ButtonFormType, ButtonType, ButtonTypeMapping} from "components/button/types";
+import clsx from "clsx";
+import styles from "./Button.module.scss";
 
 interface IButtonProps {
 
@@ -55,7 +55,7 @@ export const Button: FC<IButtonProps> = (
         onClick,
         text,
         isDisabled,
-        variant = 'primary',
+        variant = "primary",
         className,
         title,
         autoFocus,
@@ -71,7 +71,7 @@ export const Button: FC<IButtonProps> = (
                 title={title}
                 autoFocus={autoFocus}
                 tabIndex={1}
-                type={type ? type : 'button'}>
+                type={type ? type : "button"}>
             {text}
         </button>
     )

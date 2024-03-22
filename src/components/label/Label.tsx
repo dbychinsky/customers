@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import clsx from 'clsx';
-import styles from './Label.module.scss';
+import React, {FC} from "react";
+import clsx from "clsx";
+import styles from "./Label.module.scss";
 
 interface ILabelProps {
 
