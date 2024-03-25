@@ -1,0 +1,11 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.footer {
+    @include pageLayout(false);
+    padding: $space20 $space4;
+
+    &.hidden {
+        display: none;
+    }
+}

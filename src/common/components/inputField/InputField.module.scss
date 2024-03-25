@@ -1,0 +1,20 @@
+@import "../../css-parameters";
+
+.inputField {
+    padding: $space12;
+    border-radius: $radius6;
+    border: 1px solid $color-grey;
+    color: $color-black;
+    font-size: $font-size-base;
+    outline: none;
+
+    &:focus {
+        border: 1px solid $color-blue;
+    }
+}
+
+
+.error {
+    border: 1px solid $color-red;
+    color: $color-red;
+}

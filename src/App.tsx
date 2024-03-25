@@ -1,8 +1,9 @@
-import React, {createContext} from "react";
-import AppWrapperInAuth from "./AppWrapperInAuth";
+import React from "react";
 import {Server} from "service/Service";
 import {RootStore} from "store/RootStore";
 import styles from "index.module.scss";
+import {RootStoreContext} from "store/RootStoreContext";
+import {RoutersProject} from "router/RouterList";
 
 export const server = new Server();
 
@@ -10,14 +11,13 @@ export const server = new Server();
  * @description Создаем экземпляр родительского Store и
  * контекст для него.
  */
-export const rootStore = new RootStore();
-export const StoreContext = createContext<RootStore>(rootStore);
-
 function App() {
     return (
-        <div className={styles.application}>
-            <AppWrapperInAuth/>
-        </div>
+        <RootStoreContext.Provider value={new RootStore()}>
+            <div className={styles.application}>
+                <RoutersProject/>
+            </div>
+        </RootStoreContext.Provider>
     );
 }
 

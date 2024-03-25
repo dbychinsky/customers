@@ -1,10 +1,6 @@
-import React from "react";
 import {makeAutoObservable, runInAction} from "mobx";
 import {Contact} from "model/Contact";
-import {PhoneListType, ProductType} from "model/types";
 import {server} from "App";
-import {Conversation} from "utility/Conversation";
-import {PushNotification} from "utility/PushNotification";
 
 /**
  * Store для работы с LoanStore
@@ -47,9 +43,11 @@ export class ContactStore {
 
             }
         }).finally(() => {
-            runInAction(() => {
-                this.isLoading = false;
-            })
+            setTimeout(() => {
+                runInAction(() => {
+                    this.isLoading = false;
+                })
+            }, 2000)
         })
         //     server.getContacts()
         //         .then(response => {

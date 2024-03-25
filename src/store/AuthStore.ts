@@ -1,6 +1,6 @@
 import React from "react";
 import {makeAutoObservable, runInAction} from "mobx";
-import {FieldError} from "components/inputField/types";
+import {FieldError} from "common/components/inputField/types";
 
 /**
  * Store для работы с Auth

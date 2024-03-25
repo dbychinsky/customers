@@ -1,0 +1,8 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.dashboardPage {
+    @include pageLayout(true);
+    display: flex;
+    padding: $space4 $space4;
+}

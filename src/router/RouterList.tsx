@@ -1,8 +1,10 @@
 import {Route, Routes} from "react-router";
 import {RouterPathList} from "./RouterPathList";
-import {DashboardPage} from "view/dashboardPage/DashboardPage";
-import {LoginPage} from "view/loginPage/LoginPage";
-import {CurrencyPage} from "view/currencyPage/CurrencyPage";
+import {DashboardPage} from "view/DashboardPage/DashboardPage";
+import {CurrencyPage} from "view/CurrencyPage/CurrencyPage";
+import Layout from "Layout";
+import React from "react";
+import {LoginPage} from "view/LoginPage/LoginPage";
 
 /**
  * @description Роутинг приложения
@@ -10,24 +12,11 @@ import {CurrencyPage} from "view/currencyPage/CurrencyPage";
 export const RoutersProject = () => {
     return (
         <Routes>
-
-            <Route path={RouterPathList.LOGIN_PAGE} element={<LoginPage/>}/>
-            <Route path={RouterPathList.DASHBOARD_PAGE} element={<DashboardPage/>}/>
-            <Route path={RouterPathList.CURRENCY_PAGE} element={<CurrencyPage/>}/>
-
-
-            {/*<Route path={RouterPathList.ROOT_PATH} element={<LoginPage/>}/>*/}
-
-            {/*<Route path={RouterPathList.CONTACT_LIST_PAGE}>*/}
-            {/*    <Route index element={<ContactListPage/>}/>*/}
-            {/*    <Route path={RouterPathList.CONTACT_EDIT_PAGE} element={<ContactEditPage/>}/>*/}
-            {/*    <Route path={RouterPathList.CONTACT_EDIT_ID_PAGE} element={<ContactEditPage/>}/>*/}
-            {/*</Route>*/}
-
-            {/*<Route path={RouterPathList.CONTACT_LIST_REMINDER_PAGE}>*/}
-            {/*    <Route index element={<ContactListReminderPage/>}/>*/}
-            {/*    <Route path={RouterPathList.CONTACT_EDIT_ID_PAGE} element={<ContactEditPage/>}/>*/}
-            {/*</Route>*/}
+            <Route path="/" element={<Layout/>}>
+                <Route index element={<DashboardPage/>}/>
+                <Route path={RouterPathList.LOGIN_PAGE} element={<LoginPage/>}/>
+                <Route path={RouterPathList.CURRENCY_PAGE} element={<CurrencyPage/>}/>
+            </Route>
         </Routes>
     );
 };
