@@ -1,0 +1,31 @@
+@import "common/typography";
+@import "common/css-parameters";
+
+.layout {
+    @include interRegular();
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .navbar {
+        width: $navbar-width;
+        position: fixed;
+        top: 0;
+
+        &.logged {
+            display: none;
+        }
+    }
+
+    .content {
+        box-sizing: border-box;
+        flex-grow: 1;
+        padding-left: $navbar-width;
+        background-color: $color-grey-background;
+
+        &.logged {
+            padding-left: 0;
+        }
+    }
+}

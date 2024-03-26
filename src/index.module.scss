@@ -1,5 +1,4 @@
 @import "common/css-parameters";
-@import "common/typography";
 
 body {
     margin: 0;
@@ -9,12 +8,4 @@ body {
     color: $color-black;
     height: 100vh;
     min-height: 100%;
-}
-
-.application {
-    @include interRegular();
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 }
