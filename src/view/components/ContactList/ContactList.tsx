@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ContactList.module.scss";
-import {observer} from "mobx-react";
-import {ContactStore} from "store/ContactStore";
-import {Searching} from "view/components/ContactList/searching/Searching";
+import { observer } from "mobx-react";
+import { ContactStore } from "store/ContactStore";
+import { Searching } from "view/components/ContactList/searching/Searching";
 
 interface IContactListProps {
     contactStore: ContactStore;
@@ -12,18 +12,18 @@ interface IContactListProps {
 /**
  * @description Список контактов.
  */
-export const ContactList = observer(({contactStore, handleClickOnContact}: IContactListProps) => {
+export const ContactList = observer(({ contactStore, handleClickOnContact }: IContactListProps) => {
     return (
         <div className={styles.contactList}>
             <div className={styles.tableHeader}>
                 <div className={styles.tableHeaderRow}>
                     <div className={styles.organization}>Организация</div>
                     <div className={styles.contactFace}>Контактное лицо</div>
-                    <div className={styles.phoneList}>Контактные телефоны</div>
+                    <div className={styles.phoneList}>Контакты</div>
                     <div className={styles.reminder}></div>
                 </div>
                 <div className={styles.tableHeaderRow}>
-                    <Searching/>
+                    <Searching />
                 </div>
             </div>
             {contactStore.contactList.map((contact) => (

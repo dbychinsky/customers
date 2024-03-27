@@ -1,20 +1,10 @@
 @import "common";
 @import "css-parameters";
 
-//@mixin pageLayout($flexGrow) {
-//    @if $flexGrow == true {
-//        flex-grow: 1;
-//    }
-//    max-width: 1920px;
-//    width: 100%;
-//    margin: 0 auto;
-//    box-sizing: border-box;
-//}
-
 @mixin blockStyle() {
     box-sizing: border-box;
     padding: $space20;
-    margin: $space20 $space20 0 0;
+    margin: $space6;
     border-radius: $radius10;
     background-color: $color-white;
 }

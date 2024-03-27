@@ -1,8 +1,9 @@
-import React from 'react';
-import styles from "./ContactDescription.module.scss"
-import {observer} from "mobx-react";
-import {PhoneList} from "view/components/ContactDescription/PhoneList/PhoneList";
-import {Contact} from "model/Contact";
+import React from "react";
+import styles from "./ContactDescription.module.scss";
+import { observer } from "mobx-react";
+import { PhoneList } from "view/components/ContactDescription/PhoneList/PhoneList";
+import { Contact } from "model/Contact";
+import { Products } from "view/components/ContactDescription/Products/Products";
 
 interface IContactDescriptionProps {
     activeContact: Contact | undefined;
@@ -11,11 +12,12 @@ interface IContactDescriptionProps {
 /**
  *@description Подробная информация о клиенте.
  */
-export const ContactDescription = observer(({activeContact}: IContactDescriptionProps) => {
+export const ContactDescription = observer(({ activeContact }: IContactDescriptionProps) => {
 
     return (
         <div className={styles.contactDescription}>
-            <PhoneList activeContact={activeContact}/>
+            <PhoneList activeContact={activeContact} />
+            <Products activeContact={activeContact} />
         </div>
     );
 });

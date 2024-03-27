@@ -6,6 +6,29 @@ body {
 
     font-size: $font-size-base;
     color: $color-black;
-    height: 100vh;
+    height: 100%;
     min-height: 100%;
+    background-color: $color-grey-background;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $color-grey-background;
+    border-radius: $radius10;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $color-grey-dark;
+    border-radius: $radius10;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $color-black;
 }

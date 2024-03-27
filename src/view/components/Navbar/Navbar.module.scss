@@ -1,6 +1,7 @@
 @import 'common/css-parameters';
 @import 'common/mixins';
 
+
 .navbar {
     height: 100%;
     background-color: $color-white;
@@ -13,7 +14,37 @@
 
         .logotype {
             width: 140px;
+            margin: 30px auto;
         }
     }
 
+    .linkList {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-items: center;
+        margin: 20px 0;
+
+        .link {
+            display: flex;
+            flex-flow: row nowrap;
+            font-size: $font-size-base;
+            color: $color-grey-dark;
+            text-decoration: none;
+            padding: $space10 $space20;
+        }
+
+        svg {
+            margin-right: 6px;
+            width: 20px;
+        }
+
+        :global(.active) {
+            color: $color-ultra !important;
+
+            svg {
+                fill: $color-ultra !important;
+            }
+        }
+
+    }
 }

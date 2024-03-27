@@ -2,7 +2,8 @@
 @import 'common/mixins';
 
 .contactList {
-    width: 49%;
+    @include blockStyle();
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
 

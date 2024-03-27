@@ -4,6 +4,9 @@ import { observer } from "mobx-react";
 import logotype from "../../../common/assets/BigLogotypeColor.jpg";
 import { NavLink } from "react-router-dom";
 import { RouterPathList } from "router/RouterPathList";
+import { ReactComponent as Dashboard } from "../../../common/assets/icon/dashboard.svg";
+import { ReactComponent as Calendar } from "../../../common/assets/icon/calendar.svg";
+import { ReactComponent as Currency } from "../../../common/assets/icon/currency.svg";
 
 /**
  * Navbar.
@@ -14,9 +17,21 @@ export const Navbar = observer(() => {
             <div className={styles.logotypeWrapper}>
                 <img src={logotype} alt="myManager" className={styles.logotype} />
             </div>
-            <NavLink to={RouterPathList.DASHBOARD_PAGE}>Кабинет</NavLink>
-            <NavLink to={RouterPathList.DASHBOARD_PAGE}>Контакты</NavLink>
-            <NavLink to={RouterPathList.CURRENCY_PAGE}>Валюты</NavLink>
+            <div className={styles.linkList}>
+
+                <NavLink to={RouterPathList.DASHBOARD_PAGE} className={styles.link}>
+                    <Dashboard className={styles.icon} />
+                    <div>Кабинет</div>
+                </NavLink>
+                <NavLink to={RouterPathList.CALENDAR_PAGE} className={styles.link}>
+                    <Calendar className={styles.icon} />
+                    <div>Календарь</div>
+                </NavLink>
+                <NavLink to={RouterPathList.CURRENCY_PAGE} className={styles.link}>
+                    <Currency className={styles.icon} />
+                    <div>Валюты</div>
+                </NavLink>
+            </div>
         </div>
     );
 });

@@ -1,0 +1,14 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.products {
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid $color-grey-background;
+    margin-bottom: $space20;
+    padding-bottom: $space10;
+
+    .productActive, .productArchive {
+        width: 50%;
+    }
+}

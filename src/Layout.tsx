@@ -19,7 +19,6 @@ export const Layout = observer(() => {
             <div className={classWrapperContent}>
                 <Outlet />
             </div>
-            {/*<Footer authStore={authStore}/>*/}
         </div>
     );
 });

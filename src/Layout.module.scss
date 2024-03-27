@@ -3,7 +3,8 @@
 
 .layout {
     @include interRegular();
-    height: 100vh;
+    height: 100%;
+    min-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -12,6 +13,7 @@
         width: $navbar-width;
         position: fixed;
         top: 0;
+        bottom: 0;
 
         &.logged {
             display: none;
@@ -22,7 +24,6 @@
         box-sizing: border-box;
         flex-grow: 1;
         padding-left: $navbar-width;
-        background-color: $color-grey-background;
 
         &.logged {
             padding-left: 0;
