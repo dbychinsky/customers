@@ -1,4 +1,4 @@
-import {HistoryType, PhoneListType, ProductType} from "model/types";
+import { EmailListType, HistoryType, PhoneListType, ProductType, ReminderType } from "model/types";
 
 /**
  * @description Контакт.
@@ -38,7 +38,12 @@ export class Contact {
     /**
      * @description Email.
      */
-    email: string;
+    emailList: EmailListType[];
+
+    /**
+     * @description Физический адрес.
+     */
+    address: string;
 
     /**
      * @description Комментарии.
@@ -53,12 +58,7 @@ export class Contact {
     /**
      * @description Флаг напоминания.
      */
-    reminder: boolean;
-
-    /**
-     * @description Дата и время напоминания.
-     */
-    reminderDate: Date;
+    reminder: ReminderType | null;
 
     constructor() {
         this.id = 0;
@@ -67,10 +67,10 @@ export class Contact {
         this.productList = [];
         this.productListArchive = [];
         this.phoneList = [];
-        this.email = "";
+        this.emailList = [];
+        this.address = "";
         this.description = "";
         this.history = [];
-        this.reminder = false;
-        this.reminderDate = new Date();
+        this.reminder = null;
     }
 }

@@ -5,7 +5,6 @@ import styles from "index.module.scss";
 import { RootStoreContext } from "store/RootStoreContext";
 import { RoutersProject } from "router/RouterList";
 
-
 export const server = new Server();
 
 /**

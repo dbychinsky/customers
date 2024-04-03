@@ -1,0 +1,22 @@
+@import "../../common/css-parameters";
+
+@mixin buttonResetStyles {
+    border: none;
+    background: none;
+    font-size: $font-size-base;
+    padding: 0;
+}
+
+.buttonImage {
+    @include buttonResetStyles();
+
+    &:focus-visible {
+        outline: 1px solid $color-grey;
+    }
+}
+
+
+[disabled] {
+    background: $color-grey;
+    cursor: default;
+}

@@ -1,0 +1,44 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.contactDetails {
+    @include blockStyle();
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-bottom: 46px;
+
+    .selectRecord {
+        font-size: $font-size-base;
+        text-align: center;
+        color: $color-black;
+        padding-top: 30px;
+    }
+
+    .actonButton {
+        position: absolute;
+        height: 36px;
+        line-height: 30px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid $color-grey-background;
+
+        .buttonShowDetails, .buttonEditDetails {
+            border: none;
+            color: $color-blue;
+            font-size: $font-size-14;
+            cursor: pointer;
+            width: 33%;
+        }
+
+        .buttonDelete {
+            border: none;
+            color: $color-red;
+            font-size: $font-size-14;
+            cursor: pointer;
+            width: 33%;
+        }
+    }
+}

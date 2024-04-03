@@ -1,10 +1,9 @@
 @import "common";
 @import "css-parameters";
 
-@mixin blockStyle() {
+@mixin blockStyle($padding: $space20) {
     box-sizing: border-box;
-    padding: $space20;
-    margin: $space6;
+    padding: $padding;
     border-radius: $radius10;
     background-color: $color-white;
 }

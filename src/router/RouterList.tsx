@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import { RouterPathList } from "./RouterPathList";
-import { DashboardPage } from "view/DashboardPage/DashboardPage";
-import { CurrencyPage } from "view/CurrencyPage/CurrencyPage";
-import { LoginPage } from "view/LoginPage/LoginPage";
+import { DashboardPage } from "pages/DashboardPage/DashboardPage";
+import { CurrencyPage } from "pages/CurrencyPage/CurrencyPage";
+import { LoginPage } from "pages/LoginPage/LoginPage";
 import { Layout } from "Layout";
-import { CalendarPage } from "view/CalendarPage/CalendarPage";
+import { CalendarPage } from "pages/CalendarPage/CalendarPage";
 
 /**
- * @description Роутинг приложения
+ * @description Роутинг приложения.
  */
 export const RoutersProject = () => {
     return (

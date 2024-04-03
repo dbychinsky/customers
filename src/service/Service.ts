@@ -1,6 +1,6 @@
-import {IService} from "./IService";
+import { IService } from "./IService";
 import axios from "axios";
-import {Contact} from "../model/Contact";
+import { Contact } from "../model/Contact";
 
 /**
  * Список URL валют
@@ -17,15 +17,14 @@ export class Server implements IService {
 
     // readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
 
-
     /**
      * Получение списка контактов
      */
     async getContacts(): Promise<Contact[]> {
         return await axios.get(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`)
             .then(response =>
-                response.data
-            )
+                response.data,
+            );
     }
 
     /**
@@ -34,14 +33,14 @@ export class Server implements IService {
      */
     async addContact(contact: Contact): Promise<void> {
         await axios.post(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`, contact)
-            .then((response) => response.data.id)
+            .then((response) => response.data.id);
     }
 
     /**
      * Обновление
      */
     async updateContact(id: string, data: any): Promise<void> {
-        await axios.put(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${id}`, data)
+        await axios.put(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${id}`, data);
     };
 
     /**

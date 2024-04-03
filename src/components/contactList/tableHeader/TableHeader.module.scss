@@ -1,0 +1,33 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+@import '../commomStyle.module';
+
+.tableHeader {
+    @include contactListTable();
+
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    padding: 0 $space20 $space20;
+    position: sticky;
+    top: 0;
+    transition: top .5s ease;
+    background: $color-white;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 15%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-color: white;
+        border-radius: $radius10;
+    }
+
+    &.scroll {
+        top: 20px;
+    }
+}

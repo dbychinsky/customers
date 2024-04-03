@@ -1,0 +1,63 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.commonModalContainer {
+    @include interRegular();
+    background-color: $color-white;
+    width: fit-content;
+    text-align: center;
+    box-sizing: border-box;
+
+    border-radius: $radius10;
+
+    .modalContent {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: auto;
+        max-height: 90vh;
+        padding: 61px $space14 $space14 $space14;
+
+        //@include scrollStyles;
+    }
+}
+
+.modalContentHeader {
+    @include interSemiBold();
+    font-size: $font-size-18;
+    background-color: $color-purple;
+    color: $color-white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: $space20 0;
+    border-radius: $radius10 $radius10 0 0;
+}
+
+.commonModalButtonContainer {
+    margin-top: 30px;
+    padding-bottom: 5px;
+}
+
+.commonModalCloseIconContainer {
+    width: 34px;
+    height: 34px;
+
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    display: flex;
+
+    svg {
+        fill: $color-white;
+        width: 28px;
+        height: 28px;
+    }
+
+    :hover {
+        cursor: pointer;
+    }
+}

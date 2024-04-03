@@ -1,0 +1,17 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.headingH2 {
+    @include interMedium();
+    font-size: $font-size-18;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: $space10;
+
+    svg {
+        display: block;
+        width: 15px;
+        margin-left: 6px;
+        fill: $color-grey-dark;
+    }
+}

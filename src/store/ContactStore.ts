@@ -1,6 +1,6 @@
-import {makeAutoObservable, runInAction} from "mobx";
-import {Contact} from "model/Contact";
-import {server} from "App";
+import { makeAutoObservable, runInAction } from "mobx";
+import { Contact } from "model/Contact";
+import { server } from "App";
 
 /**
  * Store для работы с LoanStore
@@ -30,49 +30,25 @@ export class ContactStore {
     getContactList() {
         runInAction(() => {
             this.isLoading = true;
-        })
+        });
         server.getContacts().then(contacts => {
             runInAction(() => {
                 this.contactList = contacts;
-            })
+            });
         }).catch(err => {
             if (err.response) {
-                console.log("client received an error response (5xx, 4xx)")
+                console.log("client received an error response (5xx, 4xx)");
             } else if (err.request) {
-                console.log("client never received a response, or request never left")
+                console.log("client never received a response, or request never left");
 
             }
         }).finally(() => {
             setTimeout(() => {
                 runInAction(() => {
                     this.isLoading = false;
-                })
-            }, 2000)
-        })
-        //     server.getContacts()
-        //         .then(response => {
-        //             this.setContactList(response);
-        //         })
-        //         .then(() =>
-        //             runInAction(() => {
-        //                 this.contactListTemp = this.contactList;
-        //             }))
-        //         .then(() => {
-        //             runInAction(() => {
-        //                 this.customer = true
-        //                 this.client = true
-        //             })
-        //         })
-        //         .catch(err => {
-        //             if (err.response) {
-        //                 console.log("client received an error response (5xx, 4xx)")
-        //             } else if (err.request) {
-        //                 console.log("client never received a response, or request never left")
-        //
-        //             } else {
-        //                 console.log("anything else")
-        //             }
-        //         })
+                });
+            }, 1000);
+        });
     }
 
     /**

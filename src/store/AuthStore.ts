@@ -1,6 +1,6 @@
 import React from "react";
-import {makeAutoObservable, runInAction} from "mobx";
-import {FieldError} from "common/components/inputField/types";
+import { makeAutoObservable, runInAction } from "mobx";
+import { FieldError } from "components/inputField/types";
 
 /**
  * Store для работы с Auth
@@ -29,7 +29,7 @@ export class AuthStore {
         runInAction(() => {
             this.login = e.target.value;
             this.errorList = this.errorList.filter((item) => item.field !== "login");
-        })
+        });
     };
 
     /**
@@ -40,7 +40,7 @@ export class AuthStore {
         runInAction(() => {
             this.password = e.target.value;
             this.errorList = this.errorList.filter((item) => item.field !== "password");
-        })
+        });
     };
 
     /**
@@ -50,7 +50,7 @@ export class AuthStore {
         runInAction(() => {
             this.login = "";
             this.password = "";
-        })
+        });
     }
 
     /**
@@ -60,19 +60,19 @@ export class AuthStore {
 
         runInAction(() => {
             this.errorList = [];
-        })
+        });
 
 
         if (this.login !== this.loginApp) {
             runInAction(() => {
-                this.errorList.push({field: "login", message: "Неверный логин"})
-            })
+                this.errorList.push({ field: "login", message: "Неверный логин" });
+            });
         }
 
         if (this.password !== this.passwordApp) {
             runInAction(() => {
-                this.errorList.push({field: "password", message: "Неверный пароль"})
-            })
+                this.errorList.push({ field: "password", message: "Неверный пароль" });
+            });
         }
 
         if (this.errorList.length === 0) {
@@ -117,8 +117,8 @@ export class AuthStore {
     public checkAuth(): boolean {
         this.loadUserToken();
         if (this.isAuth) {
-            return true
-        } else return false
+            return true;
+        } else return false;
     }
 
 

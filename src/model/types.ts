@@ -1,14 +1,19 @@
 export type PhoneListType = {
-
     /**
      * @description Номер телефона.
      */
     number: string;
-
     /**
      * @description Аттрибуты.
      */
     typeList: PhoneTypeListEnum;
+}
+
+export type EmailListType = {
+    /**
+     * @description Электронная почта.
+     */
+    email: string;
 }
 
 export enum PhoneTypeListEnum {
@@ -17,12 +22,14 @@ export enum PhoneTypeListEnum {
 }
 
 export type HistoryType = {
-
+    /**
+     * @description Идентификатор.
+     */
+    id: string;
     /**
      * @description Дата совершеннного события.
      */
     date: Date;
-
     /**
      * @description Событие.
      */
@@ -30,14 +37,27 @@ export type HistoryType = {
 }
 
 export type ProductType = {
-
     /**
      * @description Название продукта.
      */
     productName: string;
-
     /**
      * @description Комментарий.
      */
     productComment: string;
+}
+
+export type ReminderType = {
+    /**
+     * @description Флаг срабатывания.
+     */
+    bell: string;
+    /**
+     * @description Дата.
+     */
+    date: Date;
+    /**
+     * @description Комментарий.
+     */
+    comment: string;
 }
