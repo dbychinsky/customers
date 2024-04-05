@@ -3,15 +3,12 @@ import styles from "components/contactList/searchingPanel/SearchingPanel.module.
 import { InputField } from "components/inputField/InputField";
 import { InputFieldEnum } from "components/inputField/types";
 import { ButtonImage } from "components/buttonImage/ButtonImage";
-
-import { ReactComponent as PersonAdd } from "../../../common/assets/icon/person_add.svg";
+import { ReactComponent as PersonAdd } from "common/assets/icon/addContact.svg";
+import { useNavigateHelper } from "router/hooks/useNavigateHelper";
 
 export const SearchingPanel = () => {
     const [value, setValue] = useState<string>("");
-
-    function changeHandler() {
-        setValue(value);
-    }
+    const { navigateToCreateContactPage } = useNavigateHelper();
 
     return (
         <div className={styles.searchingPanel}>
@@ -19,22 +16,32 @@ export const SearchingPanel = () => {
                 <InputField value={value}
                             changeHandler={changeHandler}
                             name="Poisk"
-                            type={InputFieldEnum.text} />
+                            type={InputFieldEnum.text}
+                            mask={false}/>
             </div>
             <div className={styles.contacts}>
                 <InputField value={value}
                             changeHandler={changeHandler}
                             name="Poisk"
-                            type={InputFieldEnum.text} />
+                            type={InputFieldEnum.text}
+                            mask={false}/>
             </div>
             <div className={styles.products}></div>
             <div className={styles.reminder}>
-                <ButtonImage onClick={() => {
-                }}
+                <ButtonImage onClick={onHandleAddContact}
                              image={<PersonAdd />}
                              onlyImage={true}
                              className={styles.buttonAddContact} />
             </div>
         </div>
     );
+
+    function changeHandler() {
+        setValue(value);
+    }
+
+    function onHandleAddContact() {
+        navigateToCreateContactPage();
+    }
+
 };

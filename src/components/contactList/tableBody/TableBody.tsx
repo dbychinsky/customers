@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "components/contactList/tableBody/TableBody.module.scss";
-import { ContactStore } from "store/ContactStore";
-import { ReactComponent as IconBellActive } from "../../../common/assets/icon/bell-active.svg";
+import { ContactViewStore } from "store/ContactViewStore";
+import { ReactComponent as IconBellActive } from "common/assets/icon/bellActive.svg";
 import { ReactComponent as IconPerson } from "../../../common/assets/icon/iconPerson.svg";
 import { ReactComponent as IconPersonTie } from "../../../common/assets/icon/iconPersonTie.svg";
 import { ReactComponent as IconPrint } from "../../../common/assets/icon/iconPrint.svg";
 import { observer } from "mobx-react";
 
 interface ITableBodyProps {
-    contactStore: ContactStore;
+    contactStore: ContactViewStore;
     handleClickOnContact: (id: number) => void;
 }
 
@@ -19,7 +19,7 @@ export const TableBody = observer(({ contactStore, handleClickOnContact }: ITabl
         const moment = require("moment");
 
         if (contactStore.isLoading) {
-            return <div>loading</div>;
+            return <div style={{ height: 500, width: 500 }}>loading</div>;
         }
 
         return (

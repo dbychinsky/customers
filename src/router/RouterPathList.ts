@@ -11,6 +11,10 @@ export enum RouterPathList {
      */
     DASHBOARD_PAGE = "/",
     /**
+     * @description Страница создания контакта.
+     */
+    CREATE_CONTACT_PAGE = "createContactPage",
+    /**
      * @description Страница со списком контактов.
      */
     CURRENCY_PAGE = "currencyPage",

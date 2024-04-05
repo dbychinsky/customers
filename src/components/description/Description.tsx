@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Description.module.scss";
+import styles from "components/description/Description.module.scss";
 import { Contact } from "model/Contact";
 
 

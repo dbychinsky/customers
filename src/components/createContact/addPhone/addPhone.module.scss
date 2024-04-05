@@ -1,0 +1,92 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.addPhone {
+    @include blockStyle();
+    width: 317px;
+    height: 225px;
+    margin-bottom: $space20;
+
+    .contactFields {
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+
+        input {
+            margin-right: $space10;
+        }
+
+        .selectType {
+            width: 100%;
+            margin-top: $space10;
+            margin-bottom: $space10;
+        }
+
+        .iconMask {
+            position: absolute;
+            z-index: 2;
+            left: 190px;
+            top: 10px;
+            cursor: pointer;
+            background-color: $color-white;
+            border-radius: $radius6;
+            border: 1px solid $color-white;
+
+            svg {
+                fill: $color-red;
+            }
+
+            &.active {
+                svg {
+                    fill: $color-green;
+                }
+            }
+        }
+    }
+
+    .contactList {
+        max-height: 63px;
+        overflow: auto;
+
+        div {
+            display: flex;
+            flex-flow: row nowrap;
+
+            &:hover {
+                .number {
+                    color: $color-purple;
+                }
+            }
+
+            .typeList {
+                svg {
+                    height: 21px;
+                    width: 16px;
+                    display: block;
+                    margin-right: $space10;
+                    fill: $color-grey-dark;
+                }
+            }
+
+            .number {
+                margin-right: $space4;
+                width: 207px;
+            }
+
+            .iconActions {
+                display: flex;
+                flex-flow: row nowrap;
+
+                div {
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        margin: 1px $space 0;
+                        fill: $color-red;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

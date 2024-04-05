@@ -20,6 +20,7 @@ export function useContactDetailsModal(): UseDetailsModalReturnProps {
         [openModal],
     );
 
+
     const ModalShowDetails = (contactId: number | null) => (
         <Modal title="Детали" onCloseModal={onCloseDetailsModal}>
             <ContactDetails closeModal={onCloseDetailsModal} contactId={contactId} />

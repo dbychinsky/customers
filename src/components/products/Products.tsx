@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Products.module.scss";
+import styles from "components/products/Products.module.scss";
 import { Contact } from "model/Contact";
 import { HeadingH2 } from "components/headingH2/headingH2";
 import { NoRecords } from "components/noRecords/NoRecords";
@@ -22,7 +22,7 @@ export const Products = ({ activeContact, className, isHideComments }: IProducts
             {/*<div className={styles.productActive}>*/}
             {/*    {activeContact ?*/}
             {/*        <>*/}
-            {/*            <HeadingH2 title="Продукция" />*/}
+            {/*            <HeadingH1 title="Продукция" />*/}
             {/*            {activeContact.productList.length !== 0*/}
             {/*                ? activeContact.productList.map((product) => (*/}
             {/*                    <div key={product.productName} className={styles.productNameActive}>*/}

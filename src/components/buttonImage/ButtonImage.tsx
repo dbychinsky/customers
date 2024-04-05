@@ -2,6 +2,7 @@ import React, { FC, MouseEventHandler, ReactElement } from "react";
 import { ButtonFormEnum } from "components/button/types";
 import clsx from "clsx";
 import styles from "components/button/Button.module.scss";
+import { ButtonImageType, ButtonImageTypeMapping } from "components/buttonImage/types";
 
 interface IButtonImageProps {
 
@@ -49,6 +50,11 @@ interface IButtonImageProps {
      * @description Только иконка.
      */
     onlyImage: boolean;
+
+    /**
+     * @description Вариант кнопки, которая будет отображена.
+     */
+    variant?: ButtonImageType;
 }
 
 
@@ -61,14 +67,14 @@ export const ButtonImage: FC<IButtonImageProps> = (
         text,
         isDisabled,
         className,
+        variant = "noStyle",
         title,
         autoFocus,
         type,
         image,
         onlyImage,
     }) => {
-
-    const localClassNameImage = clsx(styles.button, styles.buttonImage, className);
+    const localClassNameImage = clsx(styles.button, styles.buttonImage, ButtonImageTypeMapping[variant], className);
 
     return (
         <button className={localClassNameImage}

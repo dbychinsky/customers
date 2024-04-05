@@ -11,7 +11,7 @@ import { ButtonFormEnum } from "components/button/types";
 
 export const LoginForm = observer(() => {
     const { authStore } = useStores();
-    const { navigateToDashboardPath } = useNavigateHelper();
+    const { navigateToDashboardPage } = useNavigateHelper();
 
     useEffect(() => {
         authStore.clearFields();
@@ -51,7 +51,7 @@ export const LoginForm = observer(() => {
     function handleClickAuthentication() {
         authStore.authentication();
         if (authStore.errorList.length === 0) {
-            navigateToDashboardPath();
+            navigateToDashboardPage();
         } else {
             console.log("Ошибка авторизации");
         }

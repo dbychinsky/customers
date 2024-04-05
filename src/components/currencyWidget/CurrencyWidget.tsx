@@ -22,19 +22,22 @@ export const CurrencyWidget = ({}: ICurrencyWidgetProps) => {
                             }}
                             name="Byn"
                             type={InputFieldEnum.text}
-                            className={styles.inputFieldByn} />
+                            className={styles.inputFieldByn}
+                            mask={false} />
                 <InputField value={value}
                             changeHandler={() => {
                             }}
                             name="Usd"
                             type={InputFieldEnum.text}
-                            className={styles.inputFieldUsd} />
+                            className={styles.inputFieldUsd}
+                            mask={false} />
                 <InputField value={value}
                             changeHandler={() => {
                             }}
                             name="Rub"
                             type={InputFieldEnum.text}
-                            className={styles.inputFieldRub} />
+                            className={styles.inputFieldRub}
+                            mask={false} />
             </div>
         </div>
     );

@@ -68,7 +68,8 @@ export const FormRow: FC<IFormRow> = observer((
                 changeHandler={inputChangeHandler}
                 name={inputName}
                 type={inputType}
-                isError={!!messages} />
+                isError={!!messages}
+                mask={false} />
             {messages ? <FeedbackMessageField message={messages} /> : null}
         </div>
     );

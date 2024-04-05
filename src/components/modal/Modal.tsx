@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IModalProps } from "components/modal/types";
 import styles from "./Modal.module.scss";
+import clsx from "clsx";
 
 /**
  * Контейнер модального окна, включающий в себя контейнер backdrop (тёмный фон) и
@@ -9,6 +10,9 @@ import styles from "./Modal.module.scss";
  * @see IModalProps
  */
 export function Modal({ children, closeModal, closeBackdropClick = true }: IModalProps): React.ReactElement {
+    const [isView, setIsView] = useState(false);
+    const classWrapperModal = clsx(styles.modalBackdrop, { [styles.show]: isView });
+
     useEffect(() => {
         const closeModalOnEscClick = (event: KeyboardEvent) => {
             if (event.key === "Escape" && closeModal) {
@@ -20,6 +24,12 @@ export function Modal({ children, closeModal, closeBackdropClick = true }: IModa
 
         return () => document.removeEventListener("keydown", closeModalOnEscClick);
     }, [closeModal]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsView(true);
+        }, 100);
+    }, []);
 
     const mouseDownElementRef = useRef<EventTarget | null>(null);
 
@@ -33,7 +43,7 @@ export function Modal({ children, closeModal, closeBackdropClick = true }: IModa
                     closeModal();
                 }
             }}
-            className={styles.modalBackdrop}
+            className={classWrapperModal}
         >
             <div
                 className={styles.modal}

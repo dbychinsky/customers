@@ -1,12 +1,13 @@
-import {useCallback} from "react";
-import {useNavigate} from "react-router-dom";
-import {RouterPathList} from "router/RouterPathList";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { RouterPathList } from "router/RouterPathList";
 
 /**
  * Хук с готовыми функциями для использования навигации по роутам приложения.
  *
  * @see UseNavigateHelperReturnType
  */
+
 /* eslint-disable react-hooks/exhaustive-deps */
 export function useNavigateHelper(): UseNavigateHelperReturnType {
     const navigate = useNavigate();
@@ -14,13 +15,15 @@ export function useNavigateHelper(): UseNavigateHelperReturnType {
     const navigateToLoginPage = useCallback(() => navigate(RouterPathList.LOGIN_PAGE), []);
     const navigateToDashboardPage = useCallback(() => navigate(RouterPathList.DASHBOARD_PAGE), []);
     const navigateToCurrencyPage = useCallback(() => navigate(RouterPathList.CURRENCY_PAGE), []);
+    const navigateToCreateContactPage = useCallback(() => navigate(RouterPathList.CREATE_CONTACT_PAGE), []);
     const navigateToPreviousPage = () => navigate(-1);
 
     return {
         navigateToPreviousPage,
         navigateToLoginPage: navigateToLoginPage,
-        navigateToDashboardPath: navigateToDashboardPage,
+        navigateToDashboardPage: navigateToDashboardPage,
         navigateToCurrencyPage: navigateToCurrencyPage,
+        navigateToCreateContactPage: navigateToCreateContactPage,
     };
 }
 
@@ -50,10 +53,13 @@ type UseNavigateHelperReturnType = {
     /**
      * Функция, перенаправляющая пользователя на главную страницу - Dashboard.
      */
-    navigateToDashboardPath: NavigateHelperType;
+    navigateToDashboardPage: NavigateHelperType;
     /**
      * Функция, перенаправляющая пользователя на главную страницу - Currency.
      */
     navigateToCurrencyPage: NavigateHelperType;
-
+    /**
+     * Функция, перенаправляющая пользователя на страницу создания контакта CreateContactPage.
+     */
+    navigateToCreateContactPage: NavigateHelperType
 };

@@ -15,8 +15,32 @@
     }
 }
 
+.noStyle {
+    padding: 1px;
+}
+
+.add {
+    box-sizing: border-box;
+    padding: $space8 $space10 $space6;
+    border-radius: $radius6;
+    background-color: $color-blue;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($color-blue, 15);
+    }
+
+    svg {
+        fill: $color-white;
+    }
+}
+
 
 [disabled] {
     background: $color-grey;
     cursor: default;
+
+    &:hover {
+        background-color: $color-grey;
+    }
 }

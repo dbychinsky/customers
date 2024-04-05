@@ -13,7 +13,7 @@ import { useContactDetailsModal } from "components/useDetailsModal/useContactDet
  * @description Страница дашборда.
  */
 export const DashboardPage = observer(() => {
-    const { contactStore, authStore } = useStores();
+    const { contactViewStore, authStore } = useStores();
     const { navigateToLoginPage } = useNavigateHelper();
     const [activeContactId, setActiveContactId] = useState<number | null>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
@@ -35,13 +35,13 @@ export const DashboardPage = observer(() => {
     }, [authStore.isAuth, navigateToLoginPage]);
 
     useEffect(() => {
-        contactStore.getContactList();
-    }, [contactStore]);
+        contactViewStore.getContactList();
+    }, [contactViewStore]);
 
     return (
         <div className={styles.dashboardPage}>
             <div className={styles.head}></div>
-            <ContactList contactStore={contactStore}
+            <ContactList contactStore={contactViewStore}
                          handleClickOnContact={handleClickOnContact}
                          isScrolling={isScrolling} />
             <div className={classWrapperSideBar}>

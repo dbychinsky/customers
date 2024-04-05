@@ -3,16 +3,21 @@ import { Contact } from "model/Contact";
 import { server } from "App";
 
 /**
- * Store для работы с LoanStore
- * Customer - заказчики
- * Client - потенциальные заказчики
+ * @description Store для отображения контактов.
+ * Customer - заказчики.
+ * Client - потенциальные заказчики.
  */
-export class ContactStore {
+export class ContactViewStore {
 
     /**
      * @description Список контактов.
      */
     contactList: Contact[] = [];
+
+    /**
+     * @description Контакт.
+     */
+    contact: Contact | null = null;
 
     /**
      * @description Флаг загрузки.
@@ -47,7 +52,7 @@ export class ContactStore {
                 runInAction(() => {
                     this.isLoading = false;
                 });
-            }, 1000);
+            }, 2000);
         });
     }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./ContactList.module.scss";
-import { ContactStore } from "store/ContactStore";
+import { ContactViewStore } from "store/ContactViewStore";
 import { TableHeader } from "components/contactList/tableHeader/TableHeader";
 import { TableBody } from "components/contactList/tableBody/TableBody";
 
 interface IContactListProps {
-    contactStore: ContactStore;
+    contactStore: ContactViewStore;
     handleClickOnContact: (id: number) => void;
     isScrolling: boolean;
 }

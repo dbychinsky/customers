@@ -1,0 +1,7 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.addNameContact {
+    @include blockStyle();
+    margin-bottom: $space20;
+}

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import clsx from "clsx";
 import styles from "components/inputField/InputField.module.scss";
 import { InputFieldEnum } from "components/inputField/types";
+import { useMask } from "@react-input/mask";
 
 
 interface IInputFieldProps {
@@ -47,6 +48,16 @@ interface IInputFieldProps {
      * @description Флаг ошибки.
      */
     isError?: boolean
+
+    /**
+     * @description Маска.
+     */
+    mask: boolean;
+
+    /**
+     * @description Количество символов.
+     */
+    maxLength?: number;
 }
 
 /**
@@ -62,8 +73,11 @@ export const InputField: FC<IInputFieldProps> = (
         disabled,
         className,
         isError,
+        mask,
+        maxLength
     }) => {
     const localClassName = clsx(styles.inputField, className, { [styles.error]: isError });
+    const inputRef = useMask({ mask: "+375 (__) ___-__-__", replacement: { _: /\d/ } });
 
     let typeField: InputFieldEnum = InputFieldEnum.text;
 
@@ -75,17 +89,35 @@ export const InputField: FC<IInputFieldProps> = (
         typeField = InputFieldEnum.password;
     }
 
+    const defaultInput = <input
+        className={localClassName}
+        type={typeField}
+        value={value}
+        onInput={changeHandler}
+        name={name}
+        placeholder={placeHolder}
+        tabIndex={1}
+        disabled={disabled}
+        autoComplete="new-password"
+        maxLength={maxLength}/>;
+
+    const maskInput = <input
+        className={localClassName}
+        type={typeField}
+        value={value}
+        onInput={changeHandler}
+        name={name}
+        placeholder={"+375 (__) ___-__-__"}
+        tabIndex={1}
+        disabled={disabled}
+        autoComplete="new-password"
+        maxLength={maxLength}
+        ref={inputRef} />;
+
     return (
-        <input
-            className={localClassName}
-            type={typeField}
-            value={value}
-            onInput={changeHandler}
-            name={name}
-            placeholder={placeHolder}
-            tabIndex={1}
-            disabled={disabled}
-            autoComplete="new-password"
-        />
+        mask
+            ? maskInput
+            : defaultInput
     );
+
 };

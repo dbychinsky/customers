@@ -3,8 +3,8 @@ import styles from "components/useDetailsModal/ContactDetails.module.scss";
 import { useStores } from "store/RootStoreContext";
 import { Contact } from "model/Contact";
 import { observer } from "mobx-react";
-import { Contacts } from "components/contactDetails/contacts/Contacts";
-import { Products } from "components/contactDetails/products/Products";
+import { Contacts } from "components/contacts/Contacts";
+import { Products } from "components/products/Products";
 import { History } from "components/history/History";
 import { Reminder } from "components/reminder/Reminder";
 
@@ -30,11 +30,11 @@ interface IContactDetailsProps {
  * @see IContactDetailsProps
  */
 export const ContactDetails = observer(({ contactId, closeModal }: IContactDetailsProps) => {
-    const { contactStore } = useStores();
+    const { contactViewStore } = useStores();
     const [activeContact, setActiveContact] = useState<Contact>(new Contact());
 
     useEffect(() => {
-        const targetContact = contactStore.contactList.find((contact) => contact.id === contactId);
+        const targetContact = contactViewStore.contactList.find((contact) => contact.id === contactId);
         if (targetContact) {
             setActiveContact(targetContact);
         }

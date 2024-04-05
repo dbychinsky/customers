@@ -36,11 +36,6 @@ interface IButtonProps {
     title?: string,
 
     /**
-     * @description Автофокус.
-     */
-    autoFocus?: boolean,
-
-    /**
      * @description Тип кнопки.
      */
     type?: ButtonFormEnum,
@@ -58,7 +53,6 @@ export const Button: FC<IButtonProps> = (
         variant = "primary",
         className,
         title,
-        autoFocus,
         type,
     }) => {
 
@@ -69,7 +63,6 @@ export const Button: FC<IButtonProps> = (
                 disabled={isDisabled}
                 onClick={onClick}
                 title={title}
-                autoFocus={autoFocus}
                 tabIndex={1}
                 type={type ? type : "button"}>
             {text}

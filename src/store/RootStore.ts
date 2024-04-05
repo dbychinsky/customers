@@ -1,18 +1,18 @@
-import {ContactStore} from "./ContactStore";
-import {AuthStore} from "./AuthStore";
-import {ModalStore} from "./ModalStore";
+import { ContactViewStore } from "store/ContactViewStore";
+import { AuthStore } from "./AuthStore";
+import { ContactEditStore } from "store/ContactEditStore";
 
 /**
  * Объеденение всех Store в RootStore
  */
 export class RootStore {
-    contactStore;
     authStore;
-    modalStore;
+    contactViewStore;
+    contactEditStore;
 
     constructor() {
-        this.contactStore = new ContactStore();
         this.authStore = new AuthStore();
-        this.modalStore = new ModalStore();
+        this.contactViewStore = new ContactViewStore();
+        this.contactEditStore = new ContactEditStore();
     }
 }
