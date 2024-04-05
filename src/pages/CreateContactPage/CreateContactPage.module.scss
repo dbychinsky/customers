@@ -4,4 +4,12 @@
 .createContactPage {
     padding: $space20;
 
+    .form {
+        display: flex;
+        flex-flow: row wrap;
+
+        > div {
+            margin: 0 $space20 $space20 0;
+        }
+    }
 }

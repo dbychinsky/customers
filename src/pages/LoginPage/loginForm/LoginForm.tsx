@@ -27,14 +27,18 @@ export const LoginForm = observer(() => {
                      inputName="login"
                      inputChangeHandler={authStore.handleChangeLogin}
                      inputType={InputFieldEnum.text}
-                     labelText="Логин"
-                     errorList={authStore.errorList} />
+                     labelText=""
+                     errorList={authStore.errorList}
+                     placeHolder="Логин"
+                     mask={false} />
             <FormRow inputValue={authStore.password}
                      inputName="password"
                      inputChangeHandler={authStore.handleChangePassword}
                      inputType={InputFieldEnum.password}
-                     labelText="Пароль"
-                     errorList={authStore.errorList} />
+                     labelText=""
+                     errorList={authStore.errorList}
+                     placeHolder="Пароль"
+                     mask={false} />
 
             <div className={styles.actionBar}>
                 <Button

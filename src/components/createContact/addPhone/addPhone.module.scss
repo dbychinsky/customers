@@ -3,8 +3,8 @@
 
 .addPhone {
     @include blockStyle();
-    width: 317px;
-    height: 225px;
+    width: 340px;
+    height: 233px;
     margin-bottom: $space20;
 
     .contactFields {
@@ -25,7 +25,7 @@
         .iconMask {
             position: absolute;
             z-index: 2;
-            left: 190px;
+            left: 212px;
             top: 10px;
             cursor: pointer;
             background-color: $color-white;

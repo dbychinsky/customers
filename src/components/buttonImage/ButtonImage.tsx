@@ -1,7 +1,7 @@
 import React, { FC, MouseEventHandler, ReactElement } from "react";
 import { ButtonFormEnum } from "components/button/types";
 import clsx from "clsx";
-import styles from "components/button/Button.module.scss";
+import styles from "./ButtonImage.module.scss";
 import { ButtonImageType, ButtonImageTypeMapping } from "components/buttonImage/types";
 
 interface IButtonImageProps {

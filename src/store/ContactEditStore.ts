@@ -3,6 +3,7 @@ import { PhoneListType, PhoneTypeListEnum } from "model/types";
 import { Contact } from "model/Contact";
 import React from "react";
 import { server } from "App";
+import { FieldError } from "components/inputField/types";
 
 /**
  * @description Store для редактирования контактов.
@@ -15,21 +16,6 @@ export class ContactEditStore {
     contact: Contact = new Contact();
 
     /**
-     * @description Организация.
-     */
-    // organization: string = "";
-
-    /**
-     * @description ФИО, контактное лицо.
-     */
-    // contactFace: string = "";
-
-    /**
-     * @description Комментарии.
-     */
-    // description: string = "";
-
-    /**
      * @description Список телефонов (буфер).
      */
     phoneList: PhoneListType[] = [];
@@ -38,6 +24,11 @@ export class ContactEditStore {
      * @description Тип телефона.
      */
     phoneType: PhoneTypeListEnum = PhoneTypeListEnum.business;
+
+    /**
+     * @description Список ошибок.
+     */
+    errorList: FieldError[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -103,14 +94,31 @@ export class ContactEditStore {
             this.contact = {
                 ...this.contact, [e.target.name]: e.target.value,
             };
+            this.errorList = this.errorList.filter((item) => item.field !== e.target.name);
         });
     };
+
+    /**
+     * @description Валидация.
+     */
+    validateFields() {
+        runInAction(() => {
+            this.errorList = [];
+        });
+        if (this.contact.contactFace.length === 0) {
+            runInAction(() => {
+                this.errorList.push({ field: "contactFace", message: "Поле не может быть пустым" });
+            });
+        }
+    }
 
     /**
      * @description Отправка данных на сервер.
      */
     pushContact() {
-        server.addContact(this.contact).then();
+        if (this.errorList.length === 0) {
+            server.addContact(this.contact).then();
+        }
     }
 
 }

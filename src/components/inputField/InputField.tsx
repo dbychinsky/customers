@@ -76,7 +76,7 @@ export const InputField: FC<IInputFieldProps> = (
         mask,
         maxLength
     }) => {
-    const localClassName = clsx(styles.inputField, className, { [styles.error]: isError });
+    const classWrapperName = clsx(styles.inputField, className, { [styles.error]: isError });
     const inputRef = useMask({ mask: "+375 (__) ___-__-__", replacement: { _: /\d/ } });
 
     let typeField: InputFieldEnum = InputFieldEnum.text;
@@ -90,7 +90,7 @@ export const InputField: FC<IInputFieldProps> = (
     }
 
     const defaultInput = <input
-        className={localClassName}
+        className={classWrapperName}
         type={typeField}
         value={value}
         onInput={changeHandler}
@@ -102,7 +102,7 @@ export const InputField: FC<IInputFieldProps> = (
         maxLength={maxLength}/>;
 
     const maskInput = <input
-        className={localClassName}
+        className={classWrapperName}
         type={typeField}
         value={value}
         onInput={changeHandler}

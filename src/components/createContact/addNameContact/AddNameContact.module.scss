@@ -2,6 +2,21 @@
 @import 'common/mixins';
 
 .addNameContact {
-    @include blockStyle();
+    @include blockStyle($space20 0 1px $space20);
+    width: 553px;
     margin-bottom: $space20;
+
+    .content {
+        display: flex;
+        flex-flow: row wrap;
+
+        .field {
+            margin-right: $space20;
+            max-width: 300px;
+        }
+
+        .fieldArea {
+            margin: 0 $space20 $space20 0;
+        }
+    }
 }

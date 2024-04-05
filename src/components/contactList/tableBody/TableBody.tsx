@@ -6,6 +6,7 @@ import { ReactComponent as IconPerson } from "../../../common/assets/icon/iconPe
 import { ReactComponent as IconPersonTie } from "../../../common/assets/icon/iconPersonTie.svg";
 import { ReactComponent as IconPrint } from "../../../common/assets/icon/iconPrint.svg";
 import { observer } from "mobx-react";
+import { NoRecords } from "components/noRecords/NoRecords";
 
 interface ITableBodyProps {
     contactStore: ContactViewStore;
@@ -71,7 +72,8 @@ export const TableBody = observer(({ contactStore, handleClickOnContact }: ITabl
                             </div>
                         </div>
                     )) :
-                    <div>Записей нет</div>}
+                    <NoRecords text="Записей нет" variantFontSize="large" variantAlign="center" />
+                }
             </div>
         );
     })

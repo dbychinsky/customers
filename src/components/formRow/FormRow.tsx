@@ -42,6 +42,21 @@ interface IFormRow {
      * @description  Список дополнительных классов.
      */
     className?: string,
+
+    /**
+     * @description placeHolder.
+     */
+    placeHolder?: string,
+
+    /**
+     * @description Маска.
+     */
+    mask: boolean;
+
+    /**
+     * @description Количество символов.
+     */
+    maxLength?: number;
 }
 
 /**
@@ -56,20 +71,27 @@ export const FormRow: FC<IFormRow> = observer((
         errorList,
         labelText,
         className,
+        placeHolder,
+        mask,
+        maxLength,
     }) => {
     const localClassName = clsx(styles.formRow, className);
     let messages: string | undefined = errorList.find(item => item.field === inputName)?.message;
 
     return (
         <div className={localClassName}>
-            <Label text={labelText} />
+            {labelText.length !== 0
+                ? <Label text={labelText} />
+                : null}
             <InputField
                 value={inputValue}
                 changeHandler={inputChangeHandler}
                 name={inputName}
                 type={inputType}
                 isError={!!messages}
-                mask={false} />
+                placeHolder={placeHolder}
+                mask={false}
+                maxLength={maxLength} />
             {messages ? <FeedbackMessageField message={messages} /> : null}
         </div>
     );

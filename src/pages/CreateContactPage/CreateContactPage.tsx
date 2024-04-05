@@ -7,11 +7,12 @@ import { useNavigateHelper } from "router/hooks/useNavigateHelper";
 import { AddEmail } from "components/createContact/addEmail/AddEmail";
 import { AddNameContact } from "components/createContact/addNameContact/AddNameContact";
 import { Button } from "components/button/Button";
+import { observer } from "mobx-react";
 
 /**
  * @description Страница создания контакта.
  */
-export const CreateContactPage = () => {
+export const CreateContactPage = observer(() => {
     const { authStore, contactViewStore, contactEditStore } = useStores();
     const { navigateToDashboardPage } = useNavigateHelper();
 
@@ -24,17 +25,24 @@ export const CreateContactPage = () => {
     return (
         <div className={styles.createContactPage}>
             <HeadingH1 title="Создание контакта" />
-            <form>
+            <form className={styles.form} onSubmit={(e: React.FormEvent) => {
+                e.preventDefault();
+                handleClickSendContact();
+            }}>
                 <AddNameContact contactEditStore={contactEditStore} />
                 <AddPhone contactEditStore={contactEditStore} />
                 <AddEmail contactViewStore={contactViewStore} />
-                <Button text="send" onClick={addContact} />
+                <Button text="send"
+                        onClick={handleClickSendContact} />
             </form>
         </div>
     );
 
-    function addContact() {
-        contactEditStore.pushContact();
-        navigateToDashboardPage();
+    function handleClickSendContact() {
+        contactEditStore.validateFields();
+        if (contactEditStore.errorList.length === 0) {
+            contactEditStore.pushContact();
+            navigateToDashboardPage();
+        }
     }
-};
+});

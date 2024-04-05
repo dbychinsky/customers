@@ -5,8 +5,8 @@
     color: $color;
     padding: 13px 40px;
     border-radius: $radius6;
-    cursor: pointer;
     outline: none;
+    cursor: pointer;
     &:hover {
         background-color: darken($background, 15);
     }
@@ -47,4 +47,8 @@
 [disabled] {
     background: $color-grey;
     cursor: default;
+
+    &:hover {
+        background: $color-grey;
+    }
 }
