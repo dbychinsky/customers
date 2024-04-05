@@ -5,21 +5,20 @@ import { InputFieldEnum } from "components/inputField/types";
 import { HeadingH2 } from "components/headingH2/headingH2";
 
 interface ICurrencyWidgetProps {
-
+    str?: string;
 }
 
 /**
  * @description Виджет курсов валют.
  */
-export const CurrencyWidget = ({}: ICurrencyWidgetProps) => {
+export const CurrencyWidget = ({ str }: ICurrencyWidgetProps) => {
     const [value, setValue] = useState<string>("");
     return (
         <div className={styles.currencyWidget}>
             <HeadingH2 title="Конвертация валют" />
             <div className={styles.currencyWidgetWrapper}>
                 <InputField value={value}
-                            changeHandler={() => {
-                            }}
+                            changeHandler={() => set}
                             name="Byn"
                             type={InputFieldEnum.text}
                             className={styles.inputFieldByn}
@@ -41,4 +40,8 @@ export const CurrencyWidget = ({}: ICurrencyWidgetProps) => {
             </div>
         </div>
     );
+
+    function set(str: string) {
+        setValue(str);
+    }
 };

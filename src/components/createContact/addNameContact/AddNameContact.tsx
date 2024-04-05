@@ -17,16 +17,11 @@ export const AddNameContact = observer(({ contactEditStore }: IAddNameContactPro
     return (
         <div className={styles.addNameContact}>
             <HeadingH2 title="Организация, контактное лицо" />
-            <InputField value={contactEditStore.contact.organization}
-                // changeHandler={(value) => addOrganization(value)}
+            <InputField value={contactEditStore.contact.organization}                // changeHandler={(value) => addOrganization(value)}
                         changeHandler={contactEditStore.handleChangeField}
                         name="organization"
                         type={InputFieldEnum.text}
                         mask={false} />
         </div>
     );
-
-    function addOrganization(event: React.ChangeEvent<HTMLInputElement>) {
-        // contactEditStore.setOrganization(event);
-    };
 });

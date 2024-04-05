@@ -38,7 +38,7 @@ export const ContactDetails = observer(({ contactId, closeModal }: IContactDetai
         if (targetContact) {
             setActiveContact(targetContact);
         }
-    }, []);
+    }, [contactId, contactViewStore.contactList]);
 
     return (
         <div className={styles.contactDetails}>
