@@ -7,18 +7,18 @@ import { CurrencyWidget } from "components/currencyWidget/CurrencyWidget";
 import { StatisticWidget } from "components/statisticWidget/StatisticWidget";
 import clsx from "clsx";
 import { ContactList } from "components/contactList/ContactList";
-import { useContactDetailsModal } from "components/useDetailsModal/useContactDetailsModal";
+import { useContactDetailsModal } from "components/contactDetails/useContactDetailsModal";
 
 /**
  * @description Страница дашборда.
  */
 export const DashboardPage = observer(() => {
-    const { authStore, contactViewStore, contactEditStore } = useStores();
+    const { authStore, contactListStore, contactEditStore } = useStores();
     const { navigateToLoginPage } = useNavigateHelper();
     const [activeContactId, setActiveContactId] = useState<number | null>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
     const classWrapperSideBar = clsx(styles.sideBarWrapper, { [styles.scroll]: isScrolling });
-    const { ModalShowDetails, showDetailsHandler } = useContactDetailsModal();
+    const { ModalShowDetails, showDetailsHandler, onCloseDetailsModal } = useContactDetailsModal(deleteContact);
 
     useEffect(() => {
         handleScroll();
@@ -35,13 +35,13 @@ export const DashboardPage = observer(() => {
     }, [authStore.isAuth, navigateToLoginPage]);
 
     useEffect(() => {
-        contactViewStore.getContactList();
-    }, [contactViewStore, contactEditStore.pushContact]);
+        contactListStore.getContactList();
+    }, [contactListStore, contactEditStore.pushContact]);
 
     return (
         <div className={styles.dashboardPage}>
             <div className={styles.head}></div>
-            <ContactList contactStore={contactViewStore}
+            <ContactList contactStore={contactListStore}
                          handleClickOnContact={handleClickOnContact}
                          isScrolling={isScrolling} />
             <div className={classWrapperSideBar}>
@@ -71,5 +71,15 @@ export const DashboardPage = observer(() => {
     function handleClickOnContact(id: number) {
         setActiveContactId(id);
         showDetailsHandler();
+    }
+
+    /**
+     * @description Удаление контакта.
+     */
+    function deleteContact() {
+        onCloseDetailsModal();
+        if (activeContactId) {
+            contactListStore.deleteContactFromList(activeContactId);
+        }
     }
 });

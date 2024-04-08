@@ -4,6 +4,7 @@ import { Contact } from "model/Contact";
 import React from "react";
 import { server } from "App";
 import { FieldError } from "components/inputField/types";
+import { ContactListStore } from "store/ContactListStore";
 
 /**
  * @description Store для редактирования контактов.
@@ -37,24 +38,6 @@ export class ContactEditStore {
         this.handleChangeField = this.handleChangeField.bind(this);
     }
 
-    // setOrganization(organization: string) {
-    //     runInAction(() => {
-    //         this.organization = organization;
-    //     });
-    // }
-    //
-    // setContactFace(contactFace: string) {
-    //     runInAction(() => {
-    //         this.contactFace = contactFace;
-    //     });
-    // }
-    //
-    // setDescription(description: string) {
-    //     runInAction(() => {
-    //         this.description = description;
-    //     });
-    // }
-
     /**
      * @description Заполнение списка номеров телефонов.
      */
@@ -69,7 +52,7 @@ export class ContactEditStore {
     }
 
     /**
-     * @description Установка тиа телефона.
+     * @description Установка типа телефона.
      */
     setPhoneType(type: PhoneTypeListEnum) {
         runInAction(() => {
@@ -120,5 +103,4 @@ export class ContactEditStore {
             server.addContact(this.contact).then();
         }
     }
-
 }

@@ -7,7 +7,7 @@ import { server } from "App";
  * Customer - заказчики.
  * Client - потенциальные заказчики.
  */
-export class ContactViewStore {
+export class ContactListStore {
 
     /**
      * @description Список контактов.
@@ -27,6 +27,7 @@ export class ContactViewStore {
     constructor() {
         makeAutoObservable(this);
         this.getContactList = this.getContactList.bind(this);
+        // this.deleteContactFromList = this.deleteContactFromList.bind(this);
     }
 
     /**
@@ -54,6 +55,15 @@ export class ContactViewStore {
                 });
             }, 2000);
         });
+    }
+
+
+    /**
+     * @description Удаление контакта.
+     */
+    deleteContactFromList(idContact: number) {
+        server.deleteContact(idContact)
+            .then(this.getContactList);
     }
 
     /**

@@ -8,20 +8,58 @@
     .header {
         display: flex;
         flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
         gap: $space10;
         box-sizing: border-box;
-        padding: $space20 0 $space10;
+        padding: $space10 0 $space10;
         margin-bottom: $space20;
-        align-items: baseline;
         border-bottom: 1px solid $color-grey-background;
 
-        div {
-            font-size: $font-size-18;
-            color: $color-grey-dark;
+        .iconPerson {
+            @include icons();
+            background-color: $color-ultra;
+        }
 
-            &:first-child {
+        .iconTie {
+            @include icons();
+            background-color: $color-purple;
+        }
+
+        .contactName {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            flex-grow: 1;
+
+            .organization {
+                @include interSemiBold();
                 color: $color-black;
                 font-size: $font-size-20;
+                margin-right: $space20;
+            }
+
+            .contactFace {
+                font-size: $font-size-18;
+                color: $color-grey-dark;
+            }
+        }
+
+        .actionBar {
+            .iconEditContact {
+                cursor: pointer;
+                margin-right: $space10;
+
+                svg {
+                    fill: $color-grey-dark;
+                }
+            }
+
+            .iconDeleteContact {
+                cursor: pointer;
+                svg {
+                    fill: $color-red;
+                }
             }
         }
     }

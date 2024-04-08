@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./AddEmail.module.scss";
-import { ContactViewStore } from "store/ContactViewStore";
+import { ContactListStore } from "store/ContactListStore";
 import { InputField } from "components/inputField/InputField";
 import { InputFieldEnum } from "components/inputField/types";
 import { Button } from "components/button/Button";
 import { PhoneListType, PhoneTypeListEnum } from "model/types";
 
 interface IAddEmailProps {
-    contactViewStore: ContactViewStore;
+    contactViewStore: ContactListStore;
 }
 
 

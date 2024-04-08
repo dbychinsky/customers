@@ -1,15 +1,15 @@
 import React from "react";
-import styles from "components/contactList/tableBody/TableBody.module.scss";
-import { ContactViewStore } from "store/ContactViewStore";
+import styles from "./TableBody.module.scss";
+import { ContactListStore } from "store/ContactListStore";
 import { ReactComponent as IconBellActive } from "common/assets/icon/bellActive.svg";
-import { ReactComponent as IconPerson } from "../../../common/assets/icon/iconPerson.svg";
-import { ReactComponent as IconPersonTie } from "../../../common/assets/icon/iconPersonTie.svg";
-import { ReactComponent as IconPrint } from "../../../common/assets/icon/iconPrint.svg";
+import { ReactComponent as IconPerson } from "common/assets/icon/iconPerson.svg";
+import { ReactComponent as IconPersonTie } from "common/assets/icon/iconPersonTie.svg";
+import { ReactComponent as IconPrint } from "common/assets/icon/iconPrint.svg";
 import { observer } from "mobx-react";
 import { NoRecords } from "components/noRecords/NoRecords";
 
 interface ITableBodyProps {
-    contactStore: ContactViewStore;
+    contactStore: ContactListStore;
     handleClickOnContact: (id: number) => void;
 }
 

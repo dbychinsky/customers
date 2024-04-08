@@ -13,7 +13,7 @@ import { observer } from "mobx-react";
  * @description Страница создания контакта.
  */
 export const CreateContactPage = observer(() => {
-    const { authStore, contactViewStore, contactEditStore } = useStores();
+    const { authStore, contactListStore, contactEditStore } = useStores();
     const { navigateToDashboardPage } = useNavigateHelper();
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export const CreateContactPage = observer(() => {
             }}>
                 <AddNameContact contactEditStore={contactEditStore} />
                 <AddPhone contactEditStore={contactEditStore} />
-                <AddEmail contactViewStore={contactViewStore} />
+                <AddEmail contactViewStore={contactListStore} />
                 <Button text="send"
                         onClick={handleClickSendContact} />
             </form>

@@ -1,6 +1,6 @@
 @import 'common/css-parameters';
 @import 'common/mixins';
-@import '../commomStyle.module';
+@import '../CommomStyle.module';
 
 .tableHeader {
     @include contactListTable();

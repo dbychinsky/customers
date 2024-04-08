@@ -1,4 +1,4 @@
-import { ContactViewStore } from "store/ContactViewStore";
+import { ContactListStore } from "store/ContactListStore";
 import { AuthStore } from "./AuthStore";
 import { ContactEditStore } from "store/ContactEditStore";
 
@@ -7,12 +7,12 @@ import { ContactEditStore } from "store/ContactEditStore";
  */
 export class RootStore {
     authStore;
-    contactViewStore;
+    contactListStore;
     contactEditStore;
 
     constructor() {
         this.authStore = new AuthStore();
-        this.contactViewStore = new ContactViewStore();
+        this.contactListStore = new ContactListStore();
         this.contactEditStore = new ContactEditStore();
     }
 }
