@@ -3,14 +3,14 @@ import styles from "components/description/Description.module.scss";
 import { Contact } from "model/Contact";
 
 
-interface IDescriptionProps {
+interface DescriptionProps {
     activeContact: Contact | undefined;
 }
 
 /**
  * @description Компонент вывода комментария.
  */
-export const Description = ({ activeContact }: IDescriptionProps) => {
+export function Description({ activeContact }: DescriptionProps) {
     return (
         <div className={styles.description}>
             {activeContact?.description}

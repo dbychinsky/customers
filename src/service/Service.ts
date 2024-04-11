@@ -1,12 +1,13 @@
 import { IService } from "./IService";
 import axios from "axios";
-import { Contact } from "../model/Contact";
+import { Contact } from "model/Contact";
 
 /**
- * Список URL валют
+ * @description  Список URL валют.
  */
 const enum backendServerUrl {
     CONTACT = `contactList`,
+    PRODUCT = `productList`,
     SETTING = `setting`,
     RATES = `https://www.nbrb.by/api/exrates/rates`
 }
@@ -14,10 +15,11 @@ const enum backendServerUrl {
 export class Server implements IService {
     readonly MAIN_URL_FAKE = ` http://localhost:3001`;
     readonly MAIN_URL = this.MAIN_URL_FAKE;
+
     // readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
 
     /**
-     * Получение списка контактов
+     * @description  Получение списка контактов.
      */
     async getContacts(): Promise<Contact[]> {
         return await axios.get(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`)
@@ -27,7 +29,7 @@ export class Server implements IService {
     }
 
     /**
-     * Добавление
+     * @description  Добавление.
      * @param contact
      */
     async addContact(contact: Contact): Promise<void> {
@@ -36,17 +38,27 @@ export class Server implements IService {
     }
 
     /**
-     * Обновление
+     * @description  Обновление.
      */
     async updateContact(id: string, data: any): Promise<void> {
         await axios.put(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${id}`, data);
     };
 
     /**
-     * Удаление
+     * @description  Удаление.
      */
     async deleteContact(idContact: number): Promise<void> {
         await axios.delete(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${idContact}`);
 
     };
+
+    /**
+     * @description Получение списка продукции.
+     */
+    async getProducts(): Promise<[]> {
+        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.PRODUCT}`)
+            .then(response =>
+                response.data,
+            );
+    }
 }

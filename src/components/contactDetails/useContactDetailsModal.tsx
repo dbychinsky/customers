@@ -21,20 +21,18 @@ export function useContactDetailsModal(deleteContact: () => void): UseDetailsMod
         [openModal],
     );
 
-
     const ModalShowDetails = (contactId: number | null) => (
         <Modal title="Детали контакта" onCloseModal={onCloseDetailsModal}>
             {isShowConfirm
                 ? <ModalConfirm deleteContact={deleteContact}
                                 setIsShowConfirm={setIsShowConfirm} />
-                : <ContactDetails closeModal={onCloseDetailsModal}
-                                  contactId={contactId}
+                : <ContactDetails contactId={contactId}
                                   setIsShowConfirm={setIsShowConfirm} />}
         </Modal>
     );
 
     return { ModalShowDetails, showDetailsHandler, onCloseDetailsModal };
-};
+}
 
 
 /**

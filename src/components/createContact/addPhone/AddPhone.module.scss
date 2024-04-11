@@ -4,8 +4,7 @@
 .addPhone {
     @include blockStyle();
     width: 340px;
-    height: 233px;
-    margin-bottom: $space20;
+    height: 270px;
 
     .contactFields {
         display: flex;
@@ -18,34 +17,38 @@
 
         .selectType {
             width: 100%;
-            margin-top: $space10;
-            margin-bottom: $space10;
+            margin-top: $space20;
+            margin-bottom: $space20;
         }
 
         .iconMask {
             position: absolute;
-            z-index: 2;
-            left: 212px;
-            top: 10px;
+            z-index: 1;
+            left: 206px;
+            top: 2px;
             cursor: pointer;
             background-color: $color-white;
             border-radius: $radius6;
-            border: 1px solid $color-white;
+            padding: 10px 4px 4px 8px;
 
             svg {
-                fill: $color-red;
+                path {
+                    stroke: $color-red;
+                }
             }
 
             &.active {
                 svg {
-                    fill: $color-green;
+                    path {
+                        stroke: $color-green;
+                    }
                 }
             }
         }
     }
 
     .contactList {
-        max-height: 63px;
+        max-height: 82px;
         overflow: auto;
 
         div {
@@ -70,7 +73,7 @@
 
             .number {
                 margin-right: $space4;
-                width: 207px;
+                width: 201px;
             }
 
             .iconActions {

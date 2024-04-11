@@ -7,7 +7,7 @@ import { observer } from "mobx-react";
 import { NoRecords } from "components/noRecords/NoRecords";
 import clsx from "clsx";
 
-interface IHistoryWidgetProps {
+interface HistoryWidgetProps {
     activeContact: Contact;
     className?: string;
     isBorderText: boolean;
@@ -16,7 +16,7 @@ interface IHistoryWidgetProps {
 /**
  * @description Компонент отображения Истории.
  */
-export const History = observer(({ activeContact, className, isBorderText }: IHistoryWidgetProps) => {
+export const History = observer(({ activeContact, className, isBorderText }: HistoryWidgetProps) => {
     const moment = require("moment");
     const classWrapperHistory = clsx(styles.history, className, { [styles.cut]: isBorderText });
 

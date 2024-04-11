@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import React, { useCallback, useRef, useState } from "react";
-import { IUseModal, UseModalReturnType } from "components/modal/types";
+import { UseModalProps, UseModalReturnType } from "components/modal/types";
 import { Modal } from "components/modal/Modal";
 import { CommonModalContainer } from "components/modal/components/CommonModalContainer";
 
@@ -46,7 +46,7 @@ export function useModal(): UseModalReturnType {
              onCloseModal,
              children,
              closeBackdropClick,
-         }: IUseModal) =>
+         }: UseModalProps) =>
             isOpen
                 ? ReactDOM.createPortal(
                     <Modal closeModal={closeModal} closeBackdropClick={closeBackdropClick}>

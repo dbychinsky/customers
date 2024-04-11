@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { ReactComponent as CrossIcon } from "../../../common/assets/icon/cancel_modal.svg";
-import { IUseModal } from "components/modal/types";
+import { UseModalProps } from "components/modal/types";
 import { Button } from "components/button/Button";
 import styles from "./CommonModalContainer.module.scss";
 
@@ -10,7 +10,7 @@ import styles from "./CommonModalContainer.module.scss";
  *
  * @see IUseModal
  */
-interface ICommonModalContainerProps extends IUseModal {
+interface CommonModalContainerProps extends UseModalProps {
     /**
      * @description Функция закрытия модального окна
      */
@@ -46,7 +46,7 @@ export function CommonModalContainer({
                                          cancelButtonTitle = "Отмена",
                                          withCancelButton = false,
                                          submitCallback = null,
-                                     }: ICommonModalContainerProps) {
+                                     }: CommonModalContainerProps) {
     const onCloseHandler = () => {
         if (cancelHandler) {
             cancelHandler();

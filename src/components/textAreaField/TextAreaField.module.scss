@@ -30,3 +30,8 @@
         color: $color-grey-dark;
     }
 }
+
+[disabled] {
+   opacity: .3;
+    cursor: default;
+}

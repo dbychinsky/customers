@@ -1,0 +1,65 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.addAddress {
+    @include blockStyle();
+    width: 340px;
+    height: 270px;
+
+    .contactFields {
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+
+        input {
+            margin-right: $space10;
+        }
+
+        .address {
+            margin-bottom: $space20;
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    .emailList {
+        margin-top: $space10;
+        max-height: 78px;
+        overflow: auto;
+
+        div {
+            display: flex;
+            flex-flow: row nowrap;
+
+            &:hover {
+                .number {
+                    color: $color-purple;
+                }
+            }
+
+            .email {
+                margin-right: $space4;
+                width: 227px;
+                word-break: break-word;
+            }
+
+            .iconActions {
+                display: flex;
+                flex-flow: row nowrap;
+
+                div {
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        margin: 1px $space 0;
+                        fill: $color-red;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

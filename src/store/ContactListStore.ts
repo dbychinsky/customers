@@ -27,7 +27,6 @@ export class ContactListStore {
     constructor() {
         makeAutoObservable(this);
         this.getContactList = this.getContactList.bind(this);
-        // this.deleteContactFromList = this.deleteContactFromList.bind(this);
     }
 
     /**
@@ -53,10 +52,9 @@ export class ContactListStore {
                 runInAction(() => {
                     this.isLoading = false;
                 });
-            }, 2000);
+            }, 500);
         });
     }
-
 
     /**
      * @description Удаление контакта.

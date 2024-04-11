@@ -1,9 +1,9 @@
-import React, { FC, MouseEventHandler } from "react";
+import React, { MouseEventHandler } from "react";
 import clsx from "clsx";
 import styles from "components/button/Button.module.scss";
 import { ButtonFormEnum, ButtonType, ButtonTypeMapping } from "components/button/types";
 
-interface IButtonProps {
+interface ButtonProps {
 
     /**
      * @description  Текст внутри кнопки
@@ -45,7 +45,7 @@ interface IButtonProps {
 /**
  * @description Компонент Button.
  */
-export const Button: FC<IButtonProps> = (
+export function Button(
     {
         onClick,
         text,
@@ -54,7 +54,7 @@ export const Button: FC<IButtonProps> = (
         className,
         title,
         type,
-    }) => {
+    }: ButtonProps) {
 
     const localClassName = clsx(styles.button, ButtonTypeMapping[variant], className);
 
@@ -68,4 +68,4 @@ export const Button: FC<IButtonProps> = (
             {text}
         </button>
     );
-};
+}

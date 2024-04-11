@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import styles from "./CreateContactPage.module.scss";
 import { HeadingH1 } from "components/headingH1/headingH1";
-import { AddPhone } from "components/createContact/addPhone/addPhone";
+import { AddPhone } from "components/createContact/addPhone/AddPhone";
 import { useStores } from "store/RootStoreContext";
 import { useNavigateHelper } from "router/hooks/useNavigateHelper";
-import { AddEmail } from "components/createContact/addEmail/AddEmail";
+import { AddAddress } from "components/createContact/addAddress/AddAddress";
 import { AddNameContact } from "components/createContact/addNameContact/AddNameContact";
 import { Button } from "components/button/Button";
 import { observer } from "mobx-react";
+import { Flip, toast } from "react-toastify";
+import { AddProductList } from "components/createContact/addProductList/AddProductList";
+import { AddReminder } from "components/createContact/addReminder/AddReminder";
+import { AddHistory } from "components/createContact/addHistory/AddHistory";
 
 /**
  * @description Страница создания контакта.
@@ -22,6 +26,10 @@ export const CreateContactPage = observer(() => {
         }
     }, [authStore.isAuth, navigateToDashboardPage]);
 
+    useEffect(() => {
+        contactEditStore.clearFieldsCreateContact();
+    }, [contactEditStore]);
+
     return (
         <div className={styles.createContactPage}>
             <HeadingH1 title="Создание контакта" />
@@ -31,7 +39,12 @@ export const CreateContactPage = observer(() => {
             }}>
                 <AddNameContact contactEditStore={contactEditStore} />
                 <AddPhone contactEditStore={contactEditStore} />
-                <AddEmail contactViewStore={contactListStore} />
+                <AddAddress contactEditStore={contactEditStore} />
+                <AddProductList contactEditStore={contactEditStore} />
+                <div className={styles.rightBlock}>
+                    <AddReminder contactEditStore={contactEditStore}/>
+                    <AddHistory />
+                </div>
                 <Button text="send"
                         onClick={handleClickSendContact} />
             </form>
@@ -41,8 +54,20 @@ export const CreateContactPage = observer(() => {
     function handleClickSendContact() {
         contactEditStore.validateFields();
         if (contactEditStore.errorList.length === 0) {
-            contactEditStore.pushContact();
-            navigateToDashboardPage();
+            contactEditStore.pushContact()
+                .then(() => toast.success("Запись добавлена", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Flip,
+                }))
+                .then(() => contactListStore.getContactList())
+                .then(() => navigateToDashboardPage());
         }
     }
 });

@@ -9,6 +9,8 @@ import styles from "components/buttonImage/ButtonImage.module.scss";
 export const ButtonImageTypeMapping = {
     noStyle: styles.noStyle,
     add: styles.add,
+    clear: styles.clear,
+    delete: styles.delete,
 };
 
 export type ButtonImageType = keyof typeof ButtonImageTypeMapping;

@@ -7,7 +7,7 @@ import { Label } from "components/label/Label";
 import { InputField } from "components/inputField/InputField";
 import { FeedbackMessageField } from "components/feedbackMessageField/FeedbackMessageField";
 
-interface IFormRow {
+interface FormRowProps {
     /**
      * @description Значение поля ввода.
      */
@@ -62,7 +62,7 @@ interface IFormRow {
 /**
  * @description Блок, объединящий поля ввода, подписи к ним, ошибки.
  */
-export const FormRow: FC<IFormRow> = observer((
+export const FormRow: FC<FormRowProps> = observer((
     {
         inputValue,
         inputName,

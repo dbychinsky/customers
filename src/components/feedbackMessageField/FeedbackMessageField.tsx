@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "components/feedbackMessageField/FeedbackMessageField.module.scss";
 
-interface IFeedbackMessageFieldProps {
-
+interface FeedbackMessageFieldProps {
     /**
      * @description Текст.
      */
     message: string | undefined,
 }
 
-export const FeedbackMessageField = ({ message }: IFeedbackMessageFieldProps) => {
+export function FeedbackMessageField({ message }: FeedbackMessageFieldProps) {
     return (
         <div className={styles.feedbackMessageField}>
             {message}

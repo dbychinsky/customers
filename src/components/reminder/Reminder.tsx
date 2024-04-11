@@ -5,7 +5,7 @@ import { HeadingH2 } from "components/headingH2/headingH2";
 import { NoRecords } from "components/noRecords/NoRecords";
 import clsx from "clsx";
 
-interface IReminderWidgetProps {
+interface ReminderWidgetProps {
     activeContact: Contact;
     className?: string;
     isBorderText: boolean;
@@ -14,7 +14,7 @@ interface IReminderWidgetProps {
 /**
  * @description Компонент отображения Напоминания.
  */
-export const Reminder = ({ activeContact, className, isBorderText }: IReminderWidgetProps) => {
+export const Reminder = ({ activeContact, className, isBorderText }: ReminderWidgetProps) => {
     const moment = require("moment");
     const classWrapperReminder = clsx(styles.reminder, className);
     const classWrapperReminderComment = clsx(styles.comment, { [styles.cut]: isBorderText });

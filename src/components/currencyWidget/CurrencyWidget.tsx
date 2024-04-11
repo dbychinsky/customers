@@ -4,14 +4,14 @@ import { InputField } from "components/inputField/InputField";
 import { InputFieldEnum } from "components/inputField/types";
 import { HeadingH2 } from "components/headingH2/headingH2";
 
-interface ICurrencyWidgetProps {
+interface CurrencyWidgetProps {
     str?: string;
 }
 
 /**
  * @description Виджет курсов валют.
  */
-export const CurrencyWidget = ({ str }: ICurrencyWidgetProps) => {
+export const CurrencyWidget = ({ str }: CurrencyWidgetProps) => {
     const [value, setValue] = useState<string>("");
     return (
         <div className={styles.currencyWidget}>

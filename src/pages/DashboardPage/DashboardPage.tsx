@@ -8,6 +8,7 @@ import { StatisticWidget } from "components/statisticWidget/StatisticWidget";
 import clsx from "clsx";
 import { ContactList } from "components/contactList/ContactList";
 import { useContactDetailsModal } from "components/contactDetails/useContactDetailsModal";
+import { ToastContainer } from "react-toastify";
 
 /**
  * @description Страница дашборда.
@@ -48,7 +49,9 @@ export const DashboardPage = observer(() => {
                 <CurrencyWidget />
                 <StatisticWidget />
             </div>
+
             {ModalShowDetails(activeContactId)}
+            <ToastContainer />
         </div>
     );
 

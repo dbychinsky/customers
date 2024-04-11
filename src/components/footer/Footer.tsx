@@ -4,14 +4,14 @@ import styles from "components/footer/Footer.module.scss";
 import {AuthStore} from "store/AuthStore";
 import {observer} from "mobx-react";
 
-interface IFooterProps {
+interface FooterProps {
     authStore: AuthStore;
 }
 
 /**
  * @description Футтер приложения.
  */
-export const Footer = observer(({authStore}: IFooterProps) => {
+export const Footer = observer(({authStore}: FooterProps) => {
     const classWrapper = clsx(styles.footer, {[styles.hidden]: !authStore.isAuth});
 
     return (

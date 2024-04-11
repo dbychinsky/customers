@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TextAreaField.module.scss";
 import clsx from "clsx";
 
-interface ITextAreaFieldProps {
+interface TextAreaFieldProps {
 
     /**
      * @description Значение в поле ввода.
@@ -28,12 +28,24 @@ interface ITextAreaFieldProps {
      * @description placeHolder.
      */
     placeHolder?: string,
+
+    /**
+     * @description isDisabled.
+     */
+    isDisabled?: boolean,
 }
 
 /**
  * @description Компонент Text Area.
  */
-export const TextAreaField = ({ value, changeHandler, name, className, placeHolder }: ITextAreaFieldProps) => {
+export function TextAreaField({
+                                  value,
+                                  changeHandler,
+                                  name,
+                                  className,
+                                  placeHolder,
+                                  isDisabled,
+                              }: TextAreaFieldProps) {
     const classWrapperTextArea = clsx(styles.textAreaField, className);
 
     return (
@@ -43,8 +55,8 @@ export const TextAreaField = ({ value, changeHandler, name, className, placeHold
                       onChange={changeHandler}
                       name={name}
                       tabIndex={1}
-                      placeholder={placeHolder}>
-
+                      placeholder={placeHolder}
+                      disabled={isDisabled}>
             </textarea>
         </>
     );

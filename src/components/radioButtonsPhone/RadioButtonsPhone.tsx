@@ -2,7 +2,7 @@ import React from "react";
 import { PhoneTypeListEnum } from "model/types";
 import styles from "components/radioButtonsPhone/RadioButtonsPhone.module.scss";
 
-interface IRadioButtonsProps {
+interface RadioButtonsProps {
     state: string;
     setState: (value: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -10,7 +10,7 @@ interface IRadioButtonsProps {
 /**
  * @description Компонент выбора.
  */
-export const RadioButtonsPhone = ({ state, setState }: IRadioButtonsProps) => {
+export function RadioButtonsPhone({ state, setState }: RadioButtonsProps) {
     return (
         <div className={styles.radioButtonsPhone}>
             <div className={styles.radioButtonsPhoneWrapper}>

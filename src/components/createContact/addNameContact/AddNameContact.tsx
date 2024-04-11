@@ -7,21 +7,21 @@ import { observer } from "mobx-react";
 import { TextAreaField } from "components/textAreaField/TextAreaField";
 import { FormRow } from "components/formRow/FormRow";
 
-interface IAddNameContactProps {
+interface AddNameContactProps {
     contactEditStore: ContactEditStore;
 }
 
 /**
  * @description Добавление Организации, контактного лица.
  */
-export const AddNameContact = observer(({ contactEditStore }: IAddNameContactProps) => {
+export const AddNameContact = observer(({ contactEditStore }: AddNameContactProps) => {
     return (
         <div className={styles.addNameContact}>
             <HeadingH2 title="Данные контакта" />
             <div className={styles.content}>
                 <FormRow inputValue={contactEditStore.contact.organization}
                          inputName="organization"
-                         inputChangeHandler={contactEditStore.handleChangeField}
+                         inputChangeHandler={contactEditStore.handleChangeFieldContact}
                          inputType={InputFieldEnum.text}
                          placeHolder="Организация"
                          errorList={contactEditStore.errorList}
@@ -30,7 +30,7 @@ export const AddNameContact = observer(({ contactEditStore }: IAddNameContactPro
                          mask={false} />
                 <FormRow inputValue={contactEditStore.contact.contactFace}
                          inputName="contactFace"
-                         inputChangeHandler={contactEditStore.handleChangeField}
+                         inputChangeHandler={contactEditStore.handleChangeFieldContact}
                          inputType={InputFieldEnum.text}
                          placeHolder="Контактное лицо"
                          errorList={contactEditStore.errorList}
@@ -38,7 +38,7 @@ export const AddNameContact = observer(({ contactEditStore }: IAddNameContactPro
                          className={styles.field}
                          mask={false} />
                 <TextAreaField value={contactEditStore.contact.description}
-                               changeHandler={contactEditStore.handleChangeField}
+                               changeHandler={contactEditStore.handleChangeFieldContact}
                                name="description"
                                placeHolder="Комментарий к контакту"
                                className={styles.fieldArea} />

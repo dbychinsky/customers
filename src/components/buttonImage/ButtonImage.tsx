@@ -1,10 +1,10 @@
-import React, { FC, MouseEventHandler, ReactElement } from "react";
+import React, { MouseEventHandler, ReactElement } from "react";
 import { ButtonFormEnum } from "components/button/types";
 import clsx from "clsx";
 import styles from "./ButtonImage.module.scss";
 import { ButtonImageType, ButtonImageTypeMapping } from "components/buttonImage/types";
 
-interface IButtonImageProps {
+interface ButtonImageProps {
 
     /**
      * @description  Текст внутри кнопки
@@ -61,7 +61,7 @@ interface IButtonImageProps {
 /**
  * @description Компонент Button.
  */
-export const ButtonImage: FC<IButtonImageProps> = (
+export function ButtonImage(
     {
         onClick,
         text,
@@ -73,7 +73,7 @@ export const ButtonImage: FC<IButtonImageProps> = (
         type,
         image,
         onlyImage,
-    }) => {
+    }: ButtonImageProps) {
     const localClassNameImage = clsx(styles.button, styles.buttonImage, ButtonImageTypeMapping[variant], className);
 
     return (
@@ -87,4 +87,4 @@ export const ButtonImage: FC<IButtonImageProps> = (
             {image}{!onlyImage ? text : null}
         </button>
     );
-};
+}

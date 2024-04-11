@@ -38,6 +38,10 @@ export type HistoryType = {
 
 export type ProductType = {
     /**
+     * @description Идентификатор.
+     */
+    id: string;
+    /**
      * @description Название продукта.
      */
     productName: string;

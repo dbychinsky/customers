@@ -4,7 +4,6 @@
 .addNameContact {
     @include blockStyle($space20 0 1px $space20);
     width: 553px;
-    margin-bottom: $space20;
 
     .content {
         display: flex;
@@ -17,6 +16,7 @@
 
         .fieldArea {
             margin: 0 $space20 $space20 0;
+            height: 126px;
         }
     }
 }

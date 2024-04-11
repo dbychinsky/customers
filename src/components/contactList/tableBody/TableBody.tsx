@@ -7,8 +7,9 @@ import { ReactComponent as IconPersonTie } from "common/assets/icon/iconPersonTi
 import { ReactComponent as IconPrint } from "common/assets/icon/iconPrint.svg";
 import { observer } from "mobx-react";
 import { NoRecords } from "components/noRecords/NoRecords";
+import { ContactListSkeleton } from "components/skeletons/ContactListSkeleton";
 
-interface ITableBodyProps {
+interface TableBodyProps {
     contactStore: ContactListStore;
     handleClickOnContact: (id: number) => void;
 }
@@ -16,15 +17,14 @@ interface ITableBodyProps {
 /**
  * @description Тело таблицы.
  */
-export const TableBody = observer(({ contactStore, handleClickOnContact }: ITableBodyProps) => {
+export const TableBody = observer(({ contactStore, handleClickOnContact }: TableBodyProps) => {
         const moment = require("moment");
 
         if (contactStore.isLoading) {
-            return <div style={{ height: 500, width: 500 }}>loading</div>;
+            return <ContactListSkeleton />;
         }
 
-        return (
-            <div className={styles.tableBody}>
+        return (<div className={styles.tableBody}>
                 {contactStore.contactList.length !== 0 ?
                     contactStore.contactList.map((contact) => (
                         <div className={styles.tableBodyRow}

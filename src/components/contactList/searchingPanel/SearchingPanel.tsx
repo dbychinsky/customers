@@ -6,7 +6,7 @@ import { ButtonImage } from "components/buttonImage/ButtonImage";
 import { ReactComponent as PersonAdd } from "common/assets/icon/addContact.svg";
 import { useNavigateHelper } from "router/hooks/useNavigateHelper";
 
-export const SearchingPanel = () => {
+export function SearchingPanel() {
     const [value, setValue] = useState<string>("");
     const { navigateToCreateContactPage } = useNavigateHelper();
 
@@ -17,14 +17,14 @@ export const SearchingPanel = () => {
                             changeHandler={changeHandler}
                             name="Poisk"
                             type={InputFieldEnum.text}
-                            mask={false}/>
+                            mask={false} />
             </div>
             <div className={styles.contacts}>
                 <InputField value={value}
                             changeHandler={changeHandler}
                             name="Poisk"
                             type={InputFieldEnum.text}
-                            mask={false}/>
+                            mask={false} />
             </div>
             <div className={styles.products}></div>
             <div className={styles.reminder}>

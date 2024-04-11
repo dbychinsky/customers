@@ -17,7 +17,7 @@ interface ModalConfirmProps {
 /**
  * @description Компонент модального окна подтверждения.
  */
-export const ModalConfirm = ({ deleteContact, setIsShowConfirm }: ModalConfirmProps) => {
+export function ModalConfirm({ deleteContact, setIsShowConfirm }: ModalConfirmProps) {
     return (
         <div className={styles.modalConfirm}>
             <HeadingH2 title="Удалить выбранный контакт?" />
@@ -25,10 +25,19 @@ export const ModalConfirm = ({ deleteContact, setIsShowConfirm }: ModalConfirmPr
                 Данные контакта будут удалены безвозвратно!
             </div>
             <div className={styles.actionBar}>
-                <Button text="Да" onClick={deleteContact}
+                <Button text="Да" onClick={deleteRecord}
                         className={styles.delete} />
-                <Button text="Нет" onClick={() => setIsShowConfirm(false)} />
+                <Button text="Нет" onClick={cancel} />
             </div>
         </div>
     );
+
+    function deleteRecord() {
+        deleteContact();
+        setIsShowConfirm(false);
+    }
+
+    function cancel() {
+        setIsShowConfirm(false);
+    }
 };

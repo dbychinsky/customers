@@ -4,14 +4,14 @@ import { SearchingPanel } from "components/contactList/searchingPanel/SearchingP
 import clsx from "clsx";
 import { HeadingH2 } from "components/headingH2/headingH2";
 
-interface ITableHeaderProps {
+interface TableHeaderProps {
     isScrolling: boolean;
 }
 
 /**
  * @description Заголовок таблицы.
  */
-export const TableHeader = ({ isScrolling }: ITableHeaderProps) => {
+export function TableHeader({ isScrolling }: TableHeaderProps) {
     const classWrapperTableHeader = clsx(styles.tableHeader, { [styles.scroll]: isScrolling });
 
     return (

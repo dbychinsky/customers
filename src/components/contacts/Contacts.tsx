@@ -12,7 +12,7 @@ import { Flip, toast, ToastContainer } from "react-toastify";
 import clsx from "clsx";
 import { getIconTypeContact } from "utils/getIconTypeContact";
 
-interface IPhoneListProps {
+interface PhoneListProps {
     activeContact: Contact;
     className?: string;
 }
@@ -20,14 +20,16 @@ interface IPhoneListProps {
 /**
  * @description Компонент отображения списка телефонов.
  */
-export const Contacts = ({ activeContact, className }: IPhoneListProps) => {
+export function Contacts({ activeContact, className }: PhoneListProps) {
     const classWrapperPhoneList = clsx(styles.phoneList, className);
 
     return (
         <div className={classWrapperPhoneList}>
             <div className={styles.contacts}>
                 <HeadingH2 title="Контакты" />
-                {activeContact?.phoneList.length && activeContact?.emailList.length && activeContact?.address.length
+                {activeContact?.phoneList.length
+                || activeContact?.emailList.length
+                || activeContact?.address.length
                     ? <>
                         {activeContact?.phoneList.map((phone) => (
                             <div key={phone.number}

@@ -3,7 +3,7 @@ import { ReactElement, ReactPortal } from "react";
 /**
  * Интерфейс компонента Modal.
  */
-export interface IModalProps {
+export interface ModalProps {
     /**
      * Компонент, который необходимо отрисовать в модальном окне.
      */
@@ -22,7 +22,7 @@ export interface IModalProps {
 /**
  * Интерфейс пропсов хука useModal.
  */
-export interface IUseModal {
+export interface UseModalProps {
     /**
      * Заголовок модального окна.
      */
@@ -83,7 +83,7 @@ export interface IUseModal {
  * Тип данных, который возвращает хук "useModal".
  */
 export type UseModalReturnType = [
-    (props: IUseModal) => ReactPortal | null,
+    (props: UseModalProps) => ReactPortal | null,
     (callback?: () => void) => void,
     () => void,
     boolean,

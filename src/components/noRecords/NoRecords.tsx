@@ -8,7 +8,7 @@ import {
 import clsx from "clsx";
 import styles from "./NoRecords.module.scss";
 
-interface INoRecordsProps {
+interface NoRecordsProps {
     text: string;
     variantFontSize: NoRecordFontType;
     variantAlign: NoRecordAlignType;
@@ -17,7 +17,7 @@ interface INoRecordsProps {
 /**
  * @description Компонент отображения отсутствия записей.
  */
-export const NoRecords = ({ text, variantFontSize, variantAlign }: INoRecordsProps) => {
+export function NoRecords({ text, variantFontSize, variantAlign }: NoRecordsProps) {
     const classNoRecordWrapper = clsx(styles.noRecords,
         NoRecordFontTypeMapping[variantFontSize],
         NoRecordAlignTypeMapping[variantAlign]);

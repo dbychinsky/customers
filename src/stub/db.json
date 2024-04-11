@@ -494,23 +494,87 @@
     },
     {
       "id": 8,
-      "organization": "asdasd",
-      "contactFace": "dqwdqwd",
-      "productList": [],
-      "productListArchive": [],
+      "organization": "1",
+      "contactFace": "1",
+      "productList": [
+        {
+          "id": "Wed Apr 10 2024 16:30:25 GMT+0300 (Moscow Standard Time)",
+          "productName": "Блокноты",
+          "productComment": "1"
+        },
+        {
+          "id": "Wed Apr 10 2024 16:30:27 GMT+0300 (Moscow Standard Time)",
+          "productName": "Блокноты",
+          "productComment": "2"
+        },
+        {
+          "id": "Wed Apr 10 2024 16:30:32 GMT+0300 (Moscow Standard Time)",
+          "productName": "3233232",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "Wed Apr 10 2024 16:30:36 GMT+0300 (Moscow Standard Time)",
+          "productName": "Флаеры",
+          "productComment": "1"
+        },
+        {
+          "id": "Wed Apr 10 2024 16:30:40 GMT+0300 (Moscow Standard Time)",
+          "productName": "Листовки",
+          "productComment": ""
+        }
+      ],
       "phoneList": [],
       "emailList": [],
       "address": "",
-      "description": "sdasdasdadwq",
+      "description": "1",
       "history": [],
       "reminder": null
     },
     {
       "id": 9,
-      "organization": "1",
-      "contactFace": "1",
-      "productList": [],
-      "productListArchive": [],
+      "organization": "",
+      "contactFace": "32",
+      "productList": [
+        {
+          "id": "Wed Apr 10 2024 16:31:12 GMT+0300 (Moscow Standard Time)",
+          "productName": "12",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "Wed Apr 10 2024 16:31:16 GMT+0300 (Moscow Standard Time)",
+          "productName": "Флаеры",
+          "productComment": "2222"
+        }
+      ],
+      "phoneList": [],
+      "emailList": [],
+      "address": "",
+      "description": "",
+      "history": [],
+      "reminder": null
+    },
+    {
+      "id": 10,
+      "organization": "",
+      "contactFace": "333",
+      "productList": [
+        {
+          "id": "Wed Apr 10 2024 16:33:58 GMT+0300 (Moscow Standard Time)",
+          "productName": "Блокноты",
+          "productComment": "1"
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "Wed Apr 10 2024 16:34:00 GMT+0300 (Moscow Standard Time)",
+          "productName": "Разное",
+          "productComment": "2"
+        }
+      ],
       "phoneList": [],
       "emailList": [],
       "address": "",
@@ -522,6 +586,7 @@
   "productList": [
     "Бланки",
     "Буклеты",
+    "Пакеты",
     "Брошюры",
     "Блокноты",
     "Визитки",
@@ -535,7 +600,6 @@
     "Наклейки",
     "Открытки",
     "Папки",
-    "Пакеты",
     "Ярлыки",
     "Разное",
     "Флаеры"

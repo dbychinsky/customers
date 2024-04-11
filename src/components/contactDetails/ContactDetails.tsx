@@ -18,15 +18,11 @@ import { ButtonImage } from "components/buttonImage/ButtonImage";
  *
  * @see ContactDetails
  */
-interface IContactDetailsProps {
+interface ContactDetailsProps {
     /**
      * Идентификатор контакат.
      */
     contactId: number | null;
-    /**
-     * Функция закрытия модального окна.
-     */
-    closeModal: () => void;
     /**
      * Функция показа окна подтверждения.
      */
@@ -38,7 +34,7 @@ interface IContactDetailsProps {
  *
  * @see IContactDetailsProps
  */
-export const ContactDetails = observer(({ contactId, setIsShowConfirm }: IContactDetailsProps) => {
+export const ContactDetails = observer(({ contactId, setIsShowConfirm }: ContactDetailsProps) => {
     const { contactListStore } = useStores();
     const [activeContact, setActiveContact] = useState<Contact>(new Contact());
 

@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React from "react";
 import clsx from "clsx";
 import styles from "components/inputField/InputField.module.scss";
 import { InputFieldEnum } from "components/inputField/types";
 import { useMask } from "@react-input/mask";
 
 
-interface IInputFieldProps {
+interface InputFieldProps {
 
     /**
      * @description Значение в поле ввода.
@@ -63,7 +63,7 @@ interface IInputFieldProps {
 /**
  * @description Компонент Input, поле ввода.
  */
-export const InputField: FC<IInputFieldProps> = (
+export function InputField(
     {
         type,
         value,
@@ -74,8 +74,8 @@ export const InputField: FC<IInputFieldProps> = (
         className,
         isError,
         mask,
-        maxLength
-    }) => {
+        maxLength,
+    }: InputFieldProps) {
     const classWrapperName = clsx(styles.inputField, className, { [styles.error]: isError });
     const inputRef = useMask({ mask: "+375 (__) ___-__-__", replacement: { _: /\d/ } });
 
@@ -99,7 +99,7 @@ export const InputField: FC<IInputFieldProps> = (
         tabIndex={1}
         disabled={disabled}
         autoComplete="new-password"
-        maxLength={maxLength}/>;
+        maxLength={maxLength} />;
 
     const maskInput = <input
         className={classWrapperName}
