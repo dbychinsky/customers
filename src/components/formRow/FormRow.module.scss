@@ -1,0 +1,8 @@
+@import "../../common/css-parameters";
+
+.formRow {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: $space26;
+    position: relative;
+}

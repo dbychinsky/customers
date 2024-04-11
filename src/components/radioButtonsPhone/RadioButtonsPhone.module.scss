@@ -1,0 +1,68 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.radioButtonsPhone {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 50px;
+
+    .radioButtonsPhoneWrapper {
+        .label {
+            box-sizing: border-box;
+            padding: 5px 5px 5px 30px;
+            display: inline-block;
+            vertical-align: center;
+            position: relative;
+
+            font-size: $font-size-14;
+            color: $color-grey-dark;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                position: absolute;
+                left: 0;
+                bottom: 4px;
+                background-color: $color-grey-background;
+                border: 1px solid $color-grey-background;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: "";
+                display: inline-block;
+                height: 8px;
+                width: 8px;
+                position: absolute;
+                left: 5px;
+                top: 10px;
+                background-color: $color-grey-background;
+                border-radius: 50%;
+            }
+        }
+
+        .radioInput {
+            display: none;
+
+            &:checked + label:after {
+                background: $color-purple;
+            }
+
+            &:checked + label:before {
+                background: $color-purple-light;
+                border: 1px solid $color-purple-light;
+            }
+
+            &:hover:after {
+                filter: brightness(120%);
+            }
+
+            &:disabled + label:after {
+                filter: grayscale(100%);
+            }
+        }
+    }
+}

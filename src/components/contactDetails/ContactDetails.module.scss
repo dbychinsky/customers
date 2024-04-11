@@ -1,0 +1,104 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.contactDetails {
+    display: block;
+    text-align: left;
+
+    .header {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: $space10;
+        box-sizing: border-box;
+        padding: $space10 0 $space10;
+        margin-bottom: $space20;
+        border-bottom: 1px solid $color-grey-background;
+
+        .iconPerson {
+            @include icons();
+            background-color: $color-ultra;
+        }
+
+        .iconTie {
+            @include icons();
+            background-color: $color-purple;
+        }
+
+        .contactName {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            flex-grow: 1;
+
+            .organization {
+                @include interSemiBold();
+                color: $color-black;
+                font-size: $font-size-20;
+                margin-right: $space20;
+            }
+
+            .contactFace {
+                font-size: $font-size-18;
+                color: $color-grey-dark;
+            }
+        }
+
+        .actionBar {
+            .iconEditContact {
+                cursor: pointer;
+                margin-right: $space10;
+
+                svg {
+                    fill: $color-grey-dark;
+                }
+            }
+
+            .iconDeleteContact {
+                cursor: pointer;
+                svg {
+                    fill: $color-red;
+                }
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .row {
+            display: flex;
+            flex-flow: row nowrap;
+            padding-bottom: $space10;
+            margin-bottom: $space20;
+            border-bottom: 1px solid $color-grey-background;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .contactsModal {
+                width: 60%;
+                border: none;
+                margin: 0;
+            }
+
+            .reminderModal {
+                width: 40%;
+            }
+
+            .productsModal {
+                width: 60%;
+                border: none;
+            }
+
+            .historyModal {
+                width: 40%;
+                border: none;
+            }
+        }
+    }
+
+}

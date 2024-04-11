@@ -1,0 +1,22 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.addNameContact {
+    @include blockStyle($space20 0 1px $space20);
+    width: 553px;
+
+    .content {
+        display: flex;
+        flex-flow: row wrap;
+
+        .field {
+            margin-right: $space20;
+            max-width: 300px;
+        }
+
+        .fieldArea {
+            margin: 0 $space20 $space20 0;
+            height: 126px;
+        }
+    }
+}

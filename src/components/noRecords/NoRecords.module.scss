@@ -1,0 +1,33 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.noRecords {
+    display: block;
+    box-sizing: border-box;
+    margin: $space10 auto;
+    padding: $space10 0;
+}
+
+.small {
+    font-size: $font-size-12;
+}
+
+.medium {
+    font-size: $font-size-base;
+}
+
+.large {
+    font-size: $font-size-20;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}

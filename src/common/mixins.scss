@@ -1,0 +1,26 @@
+@import "common";
+@import "css-parameters";
+
+@mixin blockStyle($padding: $space20) {
+    box-sizing: border-box;
+    padding: $padding;
+    border-radius: $radius10;
+    background-color: $color-white;
+}
+
+@mixin icons() {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    margin-right: $space20;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        fill: $color-white;
+        width: 26px;
+        height: 26px;
+    }
+}

@@ -1,0 +1,54 @@
+@import "../../common/css-parameters";
+
+@mixin buttonAllStyles($background, $color) {
+    background-color: $background;
+    color: $color;
+    padding: 13px 40px;
+    border-radius: $radius6;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        background-color: darken($background, 15);
+    }
+}
+
+@mixin buttonResetStyles {
+    border: none;
+    background: none;
+    font-size: $font-size-base;
+    padding: 0;
+}
+
+.button {
+    @include buttonResetStyles;
+
+    &:focus-visible {
+        outline: 1px dashed $color-grey;
+    }
+}
+
+
+.primary {
+    @include buttonAllStyles($color-blue, $color-white);
+}
+
+.secondary {
+    @include buttonAllStyles($color-white, $color-black);
+}
+
+.cancel {
+    @include buttonAllStyles($color-red, $color-white);
+
+}
+
+.custom {
+}
+
+[disabled] {
+    background: $color-grey;
+    cursor: default;
+
+    &:hover {
+        background: $color-grey;
+    }
+}
