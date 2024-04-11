@@ -1,31 +1,25 @@
 /**
- * Константы путей
+ * @description Константы путей.
  */
 export enum RouterPathList {
-
     /**
-     * Начальная страница - LoginPage
+     * @description Страница логирования.
      */
-    ROOT_PATH = "/",
-
+    LOGIN_PAGE = "loginPage",
     /**
-     * Страница со списком контактов
+     * @description Начальная страница - DASHBOARD_PAGE.
      */
-    CONTACT_LIST_PAGE = "contactListPage/",
-
+    DASHBOARD_PAGE = "/",
     /**
-     * Страница реадктирования/добавления контакта
+     * @description Страница создания контакта.
      */
-    CONTACT_EDIT_PAGE = "contactEditPage/",
-
+    CREATE_CONTACT_PAGE = "createContactPage",
     /**
-     * Страница редактирования/добавления
+     * @description Страница со списком контактов.
      */
-    CONTACT_EDIT_ID_PAGE = ":id/",
-
+    CURRENCY_PAGE = "currencyPage",
     /**
-     * Страница со списком нотификаций
+     * @description Страница с календарем.
      */
-    CONTACT_LIST_REMINDER_PAGE = "ContactListReminderPage/",
-
+    CALENDAR_PAGE = "calendarPage",
 }

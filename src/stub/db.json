@@ -1,1137 +1,547 @@
 {
   "contactList": [
     {
-      "id": 1,
-      "products": [
-        "Календари",
-        "Листовки"
-      ],
-      "productsArchive": [
-        "ВИЗИТКИ"
-      ],
-      "contactFace": "ТЕСТОВЫЕ ДАННЫЕ",
-      "organization": "ТЕСТОВЫЕ ДАННЫЕ",
-      "phoneList": [
+      "id": "1",
+      "organization": "Морозпродукт СООО",
+      "contactFace": "Наталья (маркетинг)",
+      "productList": [
         {
-          "number": "375(17)300-00-99",
-          "typeList": [
-            "work"
-          ]
+          "productName": "Визитки",
+          "productComment": "Не понравились, сказали туфта полная"
         },
         {
-          "number": "2131312313131",
-          "typeList": [
-            "personal",
-            "viber",
-            "telegram"
-          ]
+          "productName": "Журналы",
+          "productComment": ""
         }
       ],
-      "email": "nata@moroz.by",
-      "description": "Изготавливают не много и по мере необходимости. ",
-      "reminder": true,
-      "reminderDate": "2023-03-09T07:45:00.000Z"
-    },
-    {
-      "id": 5,
-      "products": [
-        "листовки",
-        "каталоги",
-        "календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Красный Мозырянин ОАО",
-      "phoneList": [
+      "productListArchive": [
         {
-          "number": "375(2355)4-33-25",
-          "typeList": [
-            "work"
-          ]
+          "productName": "Визитки Архив",
+          "productComment": "Не понравились"
         }
       ],
-      "email": "",
-      "description": "Набрать через месяц, возможно что-то потребуется",
-      "reminder": true,
-      "reminderDate": "2023-06-16T07:30:00.000Z"
-    },
-    {
-      "id": 6,
-      "products": [
-        "каталоги"
-      ],
-      "productsArchive": [],
-      "contactFace": "Анастасия",
-      "organization": "Элема ОАО",
       "phoneList": [
         {
-          "number": "(017)349-02-53",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "marketing@elema.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T07:47:33.547Z"
-    },
-    {
-      "id": 7,
-      "products": [
-        "буклеты",
-        "календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "Виктория",
-      "organization": "Кондитерская фабрика «Витьба» КПУП",
-      "phoneList": [
-        {
-          "number": "(021)267-15-49",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "marketing@vitba.by",
-      "description": "Наберите в сентябре",
-      "reminder": true,
-      "reminderDate": "2023-09-18T07:45:00.000Z"
-    },
-    {
-      "id": 8,
-      "products": [
-        "календари",
-        "буклеты",
-        "брошюры"
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Слуцкий сыродельный комбинат ОАО",
-      "phoneList": [
-        {
-          "number": "(1795)5-65-33",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "slsk.marketing@mail.ru",
-      "description": "Печатают мало, раз в год и бывает на выставку.\nНаберите осенью",
-      "reminder": true,
-      "reminderDate": "2023-09-21T08:00:00.000Z"
-    },
-    {
-      "id": 9,
-      "products": [
-        "календари",
-        "буклеты"
-      ],
-      "productsArchive": [],
-      "contactFace": "Юлия",
-      "organization": "Городейский сахарный комбинат ОАО",
-      "phoneList": [
-        {
-          "number": "375(1770)62-4-12",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "torg@gsr.by",
-      "description": "Рассчитали визитки. 50х90, 4+0, мел.300, т.500 + восстановление макета - 108,00 руб. Дорого - сделали дешевле.",
-      "reminder": true,
-      "reminderDate": "2023-09-20T08:15:00.000Z"
-    },
-    {
-      "id": 10,
-      "products": [
-        "буклеты",
-        "календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "Людмила Игнатьевна",
-      "organization": "ЖАБИНКОВСКИЙ САХАРНЫЙ ЗАВОД ОАО",
-      "phoneList": [
-        {
-          "number": "375(1641)6-99-58",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "market@sahar.by",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-13T08:15:00.000Z"
-    },
-    {
-      "id": 11,
-      "products": [],
-      "productsArchive": [
-        "Папки"
-      ],
-      "contactFace": "Марина Кошевская",
-      "organization": "ДВ интернешнл ООО",
-      "phoneList": [
-        {
-          "number": "+375-29-654-11-56",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "marina_koshevskaya@dv-belgroup.com",
-      "description": "29.05 - Расчет брошюры А4. У нас дороже, нашли дешевле в разы.((",
-      "reminder": false,
-      "reminderDate": "2023-05-31T08:15:00.000Z"
-    },
-    {
-      "id": 12,
-      "products": [
-        "Брошюры",
-        "Каталоги"
-      ],
-      "productsArchive": [
-        "Брошюры"
-      ],
-      "contactFace": "Логвинко Юрий Алексеевич",
-      "organization": "ФИЗ.ЛИЦО - Логвинко Юрий Алексеевич ",
-      "phoneList": [
-        {
-          "number": "+375-29-886-61-01",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:13:36.460Z"
-    },
-    {
-      "id": 13,
-      "products": [],
-      "productsArchive": [
-        "Папки",
-        "Блокноты",
-        "Календари",
-        "Брошюры"
-      ],
-      "contactFace": "Елена Леонова",
-      "organization": "Прагматика ООО",
-      "phoneList": [
-        {
-          "number": "+375-29-646-59-91",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "pragmatika1@yandex.ru",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:15:53.644Z"
-    },
-    {
-      "id": 14,
-      "products": [],
-      "productsArchive": [
-        "Папки",
-        "Некхенгеры",
-        "Кубарики (блоки для записи)"
-      ],
-      "contactFace": "Ольга (дизайнер)",
-      "organization": "ЭлектроТехИмпорт ООО",
-      "phoneList": [
-        {
-          "number": "(017) 238 38 00 (доб. 158)",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "design@etprom.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:19:45.793Z"
-    },
-    {
-      "id": 15,
-      "products": [
-        "Ярлыки"
-      ],
-      "productsArchive": [
-        "Ярлыки"
-      ],
-      "contactFace": "Елена",
-      "organization": "Свiтанак г.Орша ЗАО ОПТФ",
-      "phoneList": [
-        {
-          "number": "+375-29-599-57-34",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "sbit@artus-kids.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:46:31.478Z"
-    },
-    {
-      "id": 16,
-      "products": [
-        "Бланки"
-      ],
-      "productsArchive": [
-        "Бланки",
-        "Наклейки",
-        "Открытки",
-        "Блокноты",
-        "Папки"
-      ],
-      "contactFace": "Маргарита",
-      "organization": "ФинЭкспертиза-Бел ООО",
-      "phoneList": [
-        {
-          "number": "+375-29-161-30-57",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:51:26.702Z"
-    },
-    {
-      "id": 17,
-      "products": [
-        "Бланки",
-        "Буклеты",
-        "Календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "Юлия",
-      "organization": "Альфорт ООО",
-      "phoneList": [
-        {
-          "number": "+375-29-794-11-11",
-          "typeList": [
-            "personal",
-            "viber"
-          ]
-        }
-      ],
-      "email": "",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:53:21.958Z"
-    },
-    {
-      "id": 18,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Монплатин - Вест ООО",
-      "phoneList": [
-        {
-          "number": "+375(44) 573-01-01",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "monplatin9@mail.ru",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:54:55.538Z"
-    },
-    {
-      "id": 19,
-      "products": [
-        "Пакеты",
-        "Календари"
-      ],
-      "productsArchive": [
-        "Пакеты"
-      ],
-      "contactFace": "Юлия (отдел маркетинга)",
-      "organization": "Брестский мясокомбинат ОАО",
-      "phoneList": [
-        {
-          "number": "+375 (29) 755-73-74",
-          "typeList": [
-            "personal",
-            "viber"
-          ]
-        }
-      ],
-      "email": "dis@brestmk.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:56:03.970Z"
-    },
-    {
-      "id": 20,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Ирина Старовойтова (ведущий специалист отдела продаж этикетки)",
-      "organization": "Унифлекс ЗАО",
-      "phoneList": [
-        {
-          "number": "+375-29-344-45-53",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "istarovoytova@uniflex.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T08:59:40.394Z"
-    },
-    {
-      "id": 21,
-      "products": [
-        ""
-      ],
-      "productsArchive": [
-        "Календари"
-      ],
-      "contactFace": "Кретов Александр Иванович",
-      "organization": "Белсвязьстрой ОАО",
-      "phoneList": [
-        {
-          "number": "+375-29-700-14-34",
-          "typeList": [
-            "personal"
-          ]
+          "number": "+375(17)300-00-99",
+          "typeList": "business"
         },
         {
-          "number": "+375 (17) 245 25 32",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "kretov@bss.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:05:26.295Z"
-    },
-    {
-      "id": 22,
-      "products": [],
-      "productsArchive": [
-        "Брошюра",
-        "Буклет"
-      ],
-      "contactFace": "Лидия Слуцкая",
-      "organization": "Детский реабилитационно-оздоровительный центр «Надежда» СООО",
-      "phoneList": [
-        {
-          "number": "+375-29-253-05-77",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "lida02@list.ru",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:30:14.063Z"
-    },
-    {
-      "id": 23,
-      "products": [],
-      "productsArchive": [
-        "Папки",
-        "Блокноты",
-        "Открытки"
-      ],
-      "contactFace": "Наталья",
-      "organization": "ГОССТРОЙЭКСПЕРТИЗА ПО МИНСКОЙ ОБЛАСТИ - ДОЧЕРНЕЕ РЕСПУБЛИКАНСКОЕ УНИТАРНОЕ ПРЕДПРИЯТИЕ ",
-      "phoneList": [
-        {
-          "number": "+375-29-610-93-05",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "mail@minskobl.gse.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:33:13.083Z"
-    },
-    {
-      "id": 24,
-      "products": [],
-      "productsArchive": [
-        "Журнал"
-      ],
-      "contactFace": "Екатерина Соколова",
-      "organization": "Ковчег Спасения ИУ",
-      "phoneList": [
-        {
-          "number": "+375-29-320-30-94",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "ekaterina_sokolova14@mail.ru",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:35:03.764Z"
-    },
-    {
-      "id": 25,
-      "products": [],
-      "productsArchive": [
-        "Книги"
-      ],
-      "contactFace": "Нина Сергеевна",
-      "organization": "Ковчег Спасения ИУ",
-      "phoneList": [
-        {
-          "number": "+375-29-753-84-98",
-          "typeList": [
-            "personal"
-          ]
-        }
-      ],
-      "email": "nina_oskirko@mail.ru",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:36:23.960Z"
-    },
-    {
-      "id": 26,
-      "products": [],
-      "productsArchive": [
-        "Буклет",
-        "Листовка"
-      ],
-      "contactFace": "Антипов Евгений",
-      "organization": "Промагроснаб ЧУП",
-      "phoneList": [
-        {
-          "number": "+375-29-645-36-57",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "promagrosnab@yandex.by",
-      "description": "Рассчитали буклеты. Сделать счет и тишина (на письма не отвечает, телефон не берет)",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:40:17.444Z"
-    },
-    {
-      "id": 27,
-      "products": [],
-      "productsArchive": [
-        "Брошюры"
-      ],
-      "contactFace": "Юрий Михайлович",
-      "organization": "МНИПИ ОАО",
-      "phoneList": [
-        {
-          "number": "+375-29-617-38-31",
-          "typeList": [
-            "personal"
-          ]
+          "number": "внутренний 725",
+          "typeList": "business"
         },
         {
-          "number": "(017)-237-19-62",
-          "typeList": [
-            "work"
-          ]
+          "number": "+375-44-73-17-090",
+          "typeList": "personal"
         }
       ],
-      "email": "mfirman@mail.ru",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-26T09:46:13.088Z"
-    },
-    {
-      "id": 28,
-      "products": [
-        "Буклеты",
-        "Календари?"
-      ],
-      "productsArchive": [],
-      "contactFace": "Александра",
-      "organization": "Скидельский сахарный комбинат ОАО",
-      "phoneList": [
+      "emailList": [
         {
-          "number": "(152)41-23-41",
-          "typeList": [
-            "work"
-          ]
+          "email": "nata@moroz.by"
         }
       ],
-      "email": "ssfskid@gmail.com",
-      "description": "Осенью набрать",
-      "reminder": true,
-      "reminderDate": "2023-09-13T11:00:00.000Z"
-    },
-    {
-      "id": 29,
-      "products": [
-        "Каталог"
-      ],
-      "productsArchive": [],
-      "contactFace": "Татьяна Васильевна - нач.отдела. Виталий - документы",
-      "organization": "Оршанский льнокомбинат РУПТП ",
-      "phoneList": [
+      "address": "Республика Беларусь, г Махалы, ул Комсомольская 123 -21",
+      "description": "Изготавливают не много и по мере необходимости.",
+      "history": [
         {
-          "number": "+375 (216)50-69-39",
-          "typeList": [
-            "work"
-          ]
+          "id": "21",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
         },
         {
-          "number": "+375(29)5013013",
-          "typeList": [
-            "work"
-          ]
+          "id": "22",
+          "date": "2024-04-05T07:30:00.000Z",
+          "action": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        },
+        {
+          "id": "23",
+          "date": "2024-04-06T07:30:00.000Z",
+          "action": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
         }
       ],
-      "email": "Отдел рекламы и дизайна <linenreklama@mail.ru>",
+      "reminder": {
+        "bell": true,
+        "date": "2024-04-04T07:30:00.000Z",
+        "comment": ""
+      }
+    },
+    {
+      "id": "2",
+      "organization": "Морозпродукт СООО",
+      "contactFace": "Наталья (маркетинг)",
+      "productList": [],
+      "productListArchive": [
+        {
+          "productName": "Визитки Архив",
+          "productComment": "Не понравились"
+        }
+      ],
+      "phoneList": [],
+      "emailList": [],
+      "address": "",
       "description": "",
-      "reminder": true,
-      "reminderDate": "2023-06-01T11:00:00.000Z"
-    },
-    {
-      "id": 30,
-      "products": [
-        "Календари",
-        "Пакеты",
-        "Буклеты"
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Могилевский мясокомбинат ОАО",
-      "phoneList": [
+      "history": [
         {
-          "number": "000000",
-          "typeList": [
-            "work"
-          ]
+          "id": "24",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "запароли все"
+        },
+        {
+          "id": "25",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "запароли все"
         }
       ],
-      "email": "mkreklama2016@mail.ru",
-      "description": "май 2023 - Пока ничего не нужно. Вообще сильной потребности нет в продукции. Заказываем очень мало.",
-      "reminder": true,
-      "reminderDate": "2023-09-14T07:45:00.000Z"
+      "reminder": {
+        "bell": true,
+        "date": "2024-04-04T07:30:00.000Z",
+        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+      }
     },
     {
-      "id": 31,
-      "products": [
-        "Календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "Маркетологи отдела сбыта:  (Татьяна, Ирина, Екатерина)",
-      "organization": "Оршанский мясоконсервный комбинат ОАО",
-      "phoneList": [
+      "id": "3",
+      "organization": "Морозпродукт СООО",
+      "contactFace": "Наталья (маркетинг)",
+      "productList": [
         {
-          "number": "+375 (216) 50-70-22",
-          "typeList": [
-            "work"
-          ]
+          "productName": "Визитки",
+          "productComment": "Не понравились"
+        },
+        {
+          "productName": "Визитки",
+          "productComment": "Не понравились"
+        },
+        {
+          "productName": "Визитки",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Визитки",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
         }
       ],
-      "email": "omkkmarket@tut.by",
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17)300-00-99",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
       "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-14T08:45:00.000Z"
+      "history": [],
+      "reminder": {
+        "bell": false,
+        "date": "",
+        "comment": ""
+      }
     },
     {
-      "id": 32,
-      "products": [
-        "буклеты"
-      ],
-      "productsArchive": [],
-      "contactFace": "Мария",
-      "organization": "Жлобинский мясоперерабатывающий комбинат ОАО",
-      "phoneList": [
+      "id": "4",
+      "organization": "Морозпродукт СОООБ СОООБ ",
+      "contactFace": "Наталья (маркетинг), Владик Бухгалтер",
+      "productList": [
         {
-          "number": "+375(2334)2-11-78",
-          "typeList": [
-            "work"
-          ]
+          "productName": "Визитки",
+          "productComment": "Не понравились, больше заказывать не будут"
+        },
+        {
+          "productName": "Журнал Любовь - МОрковь",
+          "productComment": "не оппали в цвте, остались довольны"
+        },
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
         }
       ],
-      "email": "marketing_gmk@mail.ru",
-      "description": "Почти ничего не заказывают, может быть только немного календарей (цифра)",
-      "reminder": true,
-      "reminderDate": "2023-09-15T07:15:00.000Z"
+      "productListArchive": [
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(17)300-00-99",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(17)300-00-22",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17)200-00-99",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nata@moroz.by"
+        },
+        {
+          "email": "nata2@moroz.by"
+        }
+      ],
+      "address": "Республика Беларусь, г Махалы, ул Комсомольская 123 -21",
+      "description": "Easy to set up for real, you can make it work in less than 10sec!\nSuper easy to customize\nRTL support\nSwipe to close 👌\nBeautiful by default\nCan choose swipe direction\nSuper easy to use an animation of your choice\nCan display a react component inside the toast!\nHas onOpen and onClose hooks. Both can access the props passed to the react component rendered inside the toast",
+      "history": [
+        {
+          "id": "2",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "36",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "37",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "38",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольныостались довольныостались довольныостались довольны"
+        },
+        {
+          "id": "39",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "запароли все"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "date": "2024-04-04T07:30:00.000Z",
+        "comment": "остались довольныостались довольныостались довольныостались довольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольны"
+      }
     },
     {
-      "id": 33,
-      "products": [
-        "Календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Слонимский мясокомбинат ОАО",
-      "phoneList": [
+      "id": "5",
+      "organization": "Морозпродукт СОООБ",
+      "contactFace": "Наталья (маркетинг), Владик Бухгалтер",
+      "productList": [
         {
-          "number": "+375 (1562)2-71-18",
-          "typeList": [
-            "work"
-          ]
+          "productName": "Визитки",
+          "productComment": "Не понравились, больше заказывать не будут"
+        },
+        {
+          "productName": "Журнал Любовь - МОрковь",
+          "productComment": "не оппали в цвте, остались довольны"
+        },
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
         }
       ],
-      "email": "slmarket@mail.ru",
+      "productListArchive": [
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(17)300-00-99",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(17)300-00-22",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17)200-00-99",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nata@moroz.by"
+        },
+        {
+          "email": "nata2@moroz.by"
+        }
+      ],
+      "address": "Республика Беларусь, г Махалы, ул Комсомольская 123 -21",
+      "description": "Easy to set up for real, you can make it work in less than 10sec!\nSuper easy to customize\nRTL support\nSwipe to close 👌\nBeautiful by default\nCan choose swipe direction\nSuper easy to use an animation of your choice\nCan display a react component inside the toast!\nHas onOpen and onClose hooks. Both can access the props passed to the react component rendered inside the toast",
+      "history": [
+        {
+          "id": "41",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "42",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "43",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "44",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольныостались довольныостались довольныостались довольны"
+        },
+        {
+          "id": "45",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "запароли все"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "date": "2024-04-04T07:30:00.000Z",
+        "comment": "остались довольныостались довольныостались довольныостались довольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольны"
+      }
+    },
+    {
+      "id": "6",
+      "organization": "Морозпродукт",
+      "contactFace": "Наталья (маркетинг), Владик Бухгалтер",
+      "productList": [
+        {
+          "productName": "Визитки",
+          "productComment": "Не понравились, больше заказывать не будут"
+        },
+        {
+          "productName": "Журнал Любовь - МОрковь",
+          "productComment": "не оппали в цвте, остались довольны"
+        },
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        }
+      ],
+      "productListArchive": [
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(17)300-00-99",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(17)300-00-22",
+          "typeList": "business"
+        },
+        {
+          "number": "375(17)200-00-99",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nata@moroz.by"
+        },
+        {
+          "email": "nata2@moroz.by"
+        }
+      ],
+      "address": "Республика Беларусь, г Махалы, ул Комсомольская 123 -21",
+      "description": "Easy to set up for real, you can make it work in less than 10sec!\nSuper easy to customize\nRTL support\nSwipe to close 👌\nBeautiful by default\nCan choose swipe direction\nSuper easy to use an animation of your choice\nCan display a react component inside the toast!\nHas onOpen and onClose hooks. Both can access the props passed to the react component rendered inside the toast",
+      "history": [
+        {
+          "id": "46",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "47",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "48",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "49",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольныостались довольныостались довольныостались довольны"
+        },
+        {
+          "id": "95",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "запароли все"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "date": "2024-04-04T07:30:00.000Z",
+        "comment": "остались довольныостались довольныостались довольныостались довольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольны"
+      }
+    },
+    {
+      "id": "7",
+      "organization": "СОООБ Морозпродукт СОООБ ",
+      "contactFace": "Наталья (маркетинг), Владик Бухгалтер",
+      "productList": [
+        {
+          "productName": "Визитки",
+          "productComment": "Не понравились, больше заказывать не будут"
+        },
+        {
+          "productName": "Журнал Любовь - МОрковь",
+          "productComment": "не оппали в цвте, остались довольны"
+        },
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        }
+      ],
+      "productListArchive": [
+        {
+          "productName": "Журналы",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type "
+        },
+        {
+          "productName": "Календари 20010",
+          "productComment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a"
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(17)300-00-99",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(17)300-00-22",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17)200-00-99",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nata@moroz.by"
+        },
+        {
+          "email": "nata2@moroz.by"
+        }
+      ],
+      "address": "Республика Беларусь, г Махалы, ул Комсомольская 123 -21",
+      "description": "Easy to set up for real, you can make it work in less than 10sec!\nSuper easy to customize\nRTL support\nSwipe to close 👌\nBeautiful by default\nCan choose swipe direction\nSuper easy to use an animation of your choice\nCan display a react component inside the toast!\nHas onOpen and onClose hooks. Both can access the props passed to the react component rendered inside the toast",
+      "history": [
+        {
+          "id": "55",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "56",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "58",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольны"
+        },
+        {
+          "id": "57",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "печатали календари, норм получилось, остались довольныостались довольныостались довольныостались довольны"
+        },
+        {
+          "id": "59",
+          "date": "2024-04-04T07:30:00.000Z",
+          "action": "запароли все"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "date": "2024-04-04T07:30:00.000Z",
+        "comment": "остались довольныостались довольныостались довольныостались довольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольныдовольныостались довольныостались довольныостались довольны"
+      }
+    },
+    {
+      "id": "9",
+      "organization": "",
+      "contactFace": "32",
+      "productList": [
+        {
+          "id": "Wed Apr 10 2024 16:31:12 GMT+0300 (Moscow Standard Time)",
+          "productName": "12",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "Wed Apr 10 2024 16:31:16 GMT+0300 (Moscow Standard Time)",
+          "productName": "Флаеры",
+          "productComment": "2222"
+        }
+      ],
+      "phoneList": [],
+      "emailList": [],
+      "address": "",
       "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-14T11:30:00.000Z"
+      "history": [],
+      "reminder": null
     },
     {
-      "id": 34,
-      "products": [
-        "Разная"
-      ],
-      "productsArchive": [],
-      "contactFace": "Юлия (отдел маркетинга)",
-      "organization": "Волковысский мясокомбинат ОАО",
-      "phoneList": [
+      "id": "10",
+      "organization": "",
+      "contactFace": "333",
+      "productList": [
         {
-          "number": "+375(1512)5-00-36",
-          "typeList": [
-            "work"
-          ]
+          "id": "Wed Apr 10 2024 16:33:58 GMT+0300 (Moscow Standard Time)",
+          "productName": "Блокноты",
+          "productComment": "1"
         }
       ],
-      "email": "reklama@volmk.by",
+      "productListArchive": [
+        {
+          "id": "Wed Apr 10 2024 16:34:00 GMT+0300 (Moscow Standard Time)",
+          "productName": "Разное",
+          "productComment": "2"
+        }
+      ],
+      "phoneList": [],
+      "emailList": [],
+      "address": "",
       "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-14T12:00:00.000Z"
-    },
-    {
-      "id": 35,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Максим",
-      "organization": "Бабушкина крынка ОАО",
-      "phoneList": [
-        {
-          "number": "+375 222 79 20 36",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "omr@babushkina.by",
-      "description": "Заказывают полиграфию, но не часто и нет конкретной периодичности. Есть потребность, то рассылают по типография запросы...",
-      "reminder": true,
-      "reminderDate": "2023-09-15T08:45:00.000Z"
-    },
-    {
-      "id": 36,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Вадим Викторович (начальник отдела маркетинга)",
-      "organization": "Рогачевский МКК ОАО",
-      "phoneList": [
-        {
-          "number": "+375(2339)4-14-85",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "marketing@rmkk.by",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-18T08:00:00.000Z"
-    },
-    {
-      "id": 37,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Наталья (маркетолог)",
-      "organization": "Милкавита ОАО",
-      "phoneList": [
-        {
-          "number": "+375 232 23 72 16",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "market@milkavita.by",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-18T11:15:00.000Z"
-    },
-    {
-      "id": 38,
-      "products": [
-        "Буклеты"
-      ],
-      "productsArchive": [],
-      "contactFace": "Корпик Татьяна Александровна",
-      "organization": "Юнифуд ЗАО (сеть Алми, Spar)",
-      "phoneList": [
-        {
-          "number": "+375(44)565-02-60",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "korpik.t@almi.by",
-      "description": "Считали буклеты, но не прошли по стоимости. Предложили дешевле.",
-      "reminder": false,
-      "reminderDate": "2023-09-19T14:07:47.000Z"
-    },
-    {
-      "id": 39,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Ксения Бадулина",
-      "organization": "Витебская бройлерная птицефабрика ОАО (GANNA)",
-      "phoneList": [
-        {
-          "number": "+375 212 35-04-43",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "info@ganna.by, badulina.marketing@ganna.by",
-      "description": "Заказывают через https://icetrade.by/",
-      "reminder": true,
-      "reminderDate": "2023-09-20T07:30:00.000Z"
-    },
-    {
-      "id": 40,
-      "products": [
-        "этикетка"
-      ],
-      "productsArchive": [],
-      "contactFace": "Светлана Александровна",
-      "organization": "Мозырский спиртоводочный завод ОАО",
-      "phoneList": [
-        {
-          "number": "+375 236 35-90-15",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "",
-      "description": "Заказывают все либо через https://icetrade.by/ или через Кристал.бу",
-      "reminder": false,
-      "reminderDate": "2023-05-29T06:28:26.364Z"
-    },
-    {
-      "id": 41,
-      "products": [
-        "ярлыки",
-        "буклеты",
-        "флаеры",
-        "каталоги"
-      ],
-      "productsArchive": [],
-      "contactFace": "Марина (нач.отдела маркетинга)",
-      "organization": "Формэль ООО (markformelle)",
-      "phoneList": [
-        {
-          "number": "+375(44)596-45-86",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "marketing@markformelle.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-29T06:34:01.740Z"
-    },
-    {
-      "id": 42,
-      "products": [
-        "разная"
-      ],
-      "productsArchive": [],
-      "contactFace": "Кирилл Александрович (нач.отдела маркетинга)",
-      "organization": "АЭС-комплект УП",
-      "phoneList": [
-        {
-          "number": "+375-33-300-01-00",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "nka@aes.by",
-      "description": "Заказывают не много продукции и нет постоянности. Могут раз в год, а могут и раз в 5 лет",
-      "reminder": true,
-      "reminderDate": "2023-09-19T08:45:00.000Z"
-    },
-    {
-      "id": 43,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Александр",
-      "organization": "Лидское пиво ОАО",
-      "phoneList": [
-        {
-          "number": "+375(154)53-53-70",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "pivo@lidskoe.by",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-22T07:45:00.000Z"
-    },
-    {
-      "id": 44,
-      "products": [
-        "Календари",
-        "визитки",
-        "буклеты"
-      ],
-      "productsArchive": [
-        "календари"
-      ],
-      "contactFace": "Берновская Алеся Викторовна - вед.спец. (и Ольга Владимировна - начальник)",
-      "organization": "Промтрансинвест ЗАСО",
-      "phoneList": [
-        {
-          "number": "+375 (17) 311 48 70 (доб.: 211)",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "bernovskaya@promtransinvest.by",
-      "description": "Считали визитки. Не прошли по стоимости.",
-      "reminder": false,
-      "reminderDate": "2023-05-29T08:52:20.641Z"
-    },
-    {
-      "id": 45,
-      "products": [
-        "Календари",
-        "Буклеты"
-      ],
-      "productsArchive": [
-        "Листовки",
-        "Буклеты",
-        "Брошюры"
-      ],
-      "contactFace": "Андрей",
-      "organization": "Купала СБА ЗАСО ",
-      "phoneList": [
-        {
-          "number": "+375-29-333-96-71",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "i@tut.by",
-      "description": "",
-      "reminder": false,
-      "reminderDate": "2023-05-29T08:56:04.356Z"
-    },
-    {
-      "id": 46,
-      "products": [
-        "Календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Красный пищевик ОАО",
-      "phoneList": [
-        {
-          "number": "+375(225)43-67-93",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "market@zefir.by",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-22T08:30:00.000Z"
-    },
-    {
-      "id": 47,
-      "products": [
-        "Разная"
-      ],
-      "productsArchive": [],
-      "contactFace": "Вероника",
-      "organization": "Белвест СООО (BELWEST)",
-      "phoneList": [
-        {
-          "number": "375 (212) 49-11-19",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "reklama@belwest.com",
-      "description": "Набрать осенью",
-      "reminder": true,
-      "reminderDate": "2023-09-25T08:15:00.000Z"
-    },
-    {
-      "id": 48,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Брестский чулочный комбинат ОАО",
-      "phoneList": [
-        {
-          "number": "375 (162) 51 71 98",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "marketing@bchk.by",
-      "description": "сбрасывайте о себе информацию, если не потеряетесь на почте,  то будем вас иметь ввиду и отправим запрос.",
-      "reminder": true,
-      "reminderDate": "2023-09-26T08:15:00.000Z"
-    },
-    {
-      "id": 49,
-      "products": [
-        ""
-      ],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "МИНСКИЙ ЗАВОД АВТОМАТИЧЕСКИХ ЛИНИЙ ИМЕНИ П.М. МАШЕРОВА",
-      "phoneList": [
-        {
-          "number": "+375(17) 369 18 46",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "market@mzal.by  и  market@belstanki.by",
-      "description": "Заказывают раз в год. Наберите осенью (конец сентября - начало октября)",
-      "reminder": true,
-      "reminderDate": "2023-09-28T11:30:00.000Z"
-    },
-    {
-      "id": 50,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "Ольга",
-      "organization": "СТАНКОСТРОТЕЛЬНЫЙ ЗАВОД им. С.М.КИРОВА ОАО",
-      "phoneList": [
-        {
-          "number": "+375 (17) 369-18-01",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "market@szkminsk.by",
-      "description": "Работают с Транстэк. Попробуйте набрать осенью, тк сейчас есть все и ничего не нужно",
-      "reminder": true,
-      "reminderDate": "2023-09-29T12:30:00.000Z"
-    },
-    {
-      "id": 51,
-      "products": [],
-      "productsArchive": [],
-      "contactFace": "",
-      "organization": "Славянка ОАО",
-      "phoneList": [
-        {
-          "number": "375(225)590190(отд.снабжения)",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "snab-slavianka@mail.ru",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-10-02T08:00:00.000Z"
-    },
-    {
-      "id": 52,
-      "products": [
-        "Листовки"
-      ],
-      "productsArchive": [],
-      "contactFace": "Светлана",
-      "organization": "БЕЛКОСМЕКС ПКООО",
-      "phoneList": [
-        {
-          "number": "+375 (17) 351-52-12",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "info@belkosmex.by",
-      "description": "",
-      "reminder": true,
-      "reminderDate": "2023-09-25T12:15:00.000Z"
-    },
-    {
-      "id": 53,
-      "products": [
-        "Блокноты",
-        "Календари",
-        "Каталоги"
-      ],
-      "productsArchive": [],
-      "contactFace": "Олег Курьянович",
-      "organization": "Минский завод холодильников (ATLANT)",
-      "phoneList": [
-        {
-          "number": "(017)203-71-72",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "oleg.kuryanovich@atlant.by",
-      "description": "Заказываю не много: блокноты, календари, каталоги. Все по мере потребности. По календарям осенью набирайте.",
-      "reminder": true,
-      "reminderDate": "2023-09-18T11:45:00.000Z"
-    },
-    {
-      "id": 54,
-      "products": [
-        "Календари"
-      ],
-      "productsArchive": [],
-      "contactFace": "Дмитрий Сергеевич",
-      "organization": "Брестгазоаппарат СП ОАО (GEFEST)",
-      "phoneList": [
-        {
-          "number": "(0162)27-64-86",
-          "typeList": [
-            "work"
-          ]
-        }
-      ],
-      "email": "mark.rds@gefest.org",
-      "description": "Заказывают календари. Наберите конец августа-начало сентября.",
-      "reminder": true,
-      "reminderDate": "2023-09-04T08:15:00.000Z"
+      "history": [],
+      "reminder": null
     }
-  ]
+  ],
+  "productList": []
 }

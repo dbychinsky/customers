@@ -1,40 +1,29 @@
-import {Contact} from "../model/Contact";
-import {Setting} from "../component/deprecated/model/Setting";
+import { Contact } from "model/Contact";
 
 export interface IService {
 
     /**
-     * Получение списка контактов
+     * @description Получение списка контактов.
      */
     getContacts(): Promise<Contact[]>;
 
     /**
-     * Сохранение контакта
+     * @description Сохранение контакта.
      */
     addContact(contact: Contact): Promise<void>;
 
     /**
-     * Обновление контакта
+     * @description Обновление контакта.
      */
-    updateContact(id: string, data: any): Promise<void>
+    updateContact(id: string, data: any): Promise<void>;
 
     /**
-     * Удаление контакта
+     * @description Удаление контакта.
      */
     deleteContact(id: number): Promise<void>;
 
     /**
-     * Получение списка опций
+     * @description Получение списка продуктов.
      */
-    getSetting(): Promise<Setting>;
-
-    /**
-     * Обновление опций
-     */
-    updateSetting(setting: Setting): Promise<void>;
-
-    /**
-     * Получение курса валют на сегодня
-     */
-    getCurrencyList(date: string, cur_id: number): Promise<{}>;
+    getProducts(): Promise<[]>;
 }

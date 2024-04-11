@@ -1,83 +1,76 @@
-export type PhoneListType = {
-
-    /**
-     * Номер телефона
-     */
-    number: string;
-
-    /**
-     * Аттрибуты
-     */
-    typeList: string[];
-
-}
+import { EmailListType, HistoryType, PhoneListType, ProductType, ReminderType } from "model/types";
 
 /**
- * Контакт
+ * @description Контакт.
  */
 export class Contact {
 
     /**
-     * id
+     * @description id.
      */
     id: number;
 
     /**
-     * Продукция
-     */
-    products: string[];
-
-    /**
-     * Продукция для архива
-     */
-    productsArchive: string[];
-
-    /**
-     * ФИО, контактное лицо
-     */
-    contactFace: string;
-
-    /**
-     * Организация
+     * @description Организация.
      */
     organization: string;
 
     /**
-     * Список телефонов
+     * @description ФИО, контактное лицо.
      */
-    // phoneList: [{ number: string, typeList: string[] }];
+    contactFace: string;
+
+    /**
+     * @description Продукция.
+     */
+    productList: ProductType[];
+
+    /**
+     * @description Продукция в архиве.
+     */
+    productListArchive: ProductType[];
+
+    /**
+     * @description Список телефонов.
+     */
     phoneList: PhoneListType[];
 
     /**
-     * Email телефона
+     * @description Email.
      */
-    email: string;
+    emailList: EmailListType[];
 
     /**
-     * Описание
+     * @description Физический адрес.
+     */
+    address: string;
+
+    /**
+     * @description Комментарии.
      */
     description: string;
 
     /**
-     * Флаг напоминания
+     * @description История.
      */
-    reminder: boolean;
+    history: HistoryType[];
 
     /**
-     * Дата и время напоминания
+     * @description Флаг напоминания.
      */
-    reminderDate: Date;
+    reminder: ReminderType | null;
 
     constructor() {
         this.id = 0;
-        this.products = [];
-        this.productsArchive = [];
-        this.contactFace = '';
-        this.organization = '';
+        this.organization = "";
+        this.contactFace = "";
+        this.productList = [];
+        this.productListArchive = [];
         this.phoneList = [];
-        this.email = '';
-        this.description = '';
-        this.reminder = false;
-        this.reminderDate = new Date();
+        this.emailList = [];
+        this.address = "";
+        this.description = "";
+        this.history = [];
+        this.reminder = null;
     }
 }
