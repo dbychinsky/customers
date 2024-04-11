@@ -1,0 +1,95 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.addPhone {
+    @include blockStyle();
+    width: 340px;
+    height: 270px;
+
+    .contactFields {
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+
+        input {
+            margin-right: $space10;
+        }
+
+        .selectType {
+            width: 100%;
+            margin-top: $space20;
+            margin-bottom: $space20;
+        }
+
+        .iconMask {
+            position: absolute;
+            z-index: 1;
+            left: 206px;
+            top: 2px;
+            cursor: pointer;
+            background-color: $color-white;
+            border-radius: $radius6;
+            padding: 10px 4px 4px 8px;
+
+            svg {
+                path {
+                    stroke: $color-red;
+                }
+            }
+
+            &.active {
+                svg {
+                    path {
+                        stroke: $color-green;
+                    }
+                }
+            }
+        }
+    }
+
+    .contactList {
+        max-height: 82px;
+        overflow: auto;
+
+        div {
+            display: flex;
+            flex-flow: row nowrap;
+
+            &:hover {
+                .number {
+                    color: $color-purple;
+                }
+            }
+
+            .typeList {
+                svg {
+                    height: 21px;
+                    width: 16px;
+                    display: block;
+                    margin-right: $space10;
+                    fill: $color-grey-dark;
+                }
+            }
+
+            .number {
+                margin-right: $space4;
+                width: 201px;
+            }
+
+            .iconActions {
+                display: flex;
+                flex-flow: row nowrap;
+
+                div {
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        margin: 1px $space 0;
+                        fill: $color-red;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

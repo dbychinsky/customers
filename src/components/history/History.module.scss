@@ -1,0 +1,53 @@
+@import '../../common/css-parameters';
+@import '../../common/mixins';
+
+.history {
+    border-bottom: 1px solid $color-grey-background;
+    margin-bottom: $space16;
+    padding-bottom: $space8;
+
+    .dotted {
+        font-size: $font-size-14;
+        color: $color-grey-dark;
+        padding: 0 0 5px;
+        line-height: 10px;
+    }
+
+    .historyRow {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        margin-bottom: $space4;
+        padding-bottom: $space4;
+        border-bottom: 1px dashed $color-grey;
+
+        &:last-child {
+            border: none;
+        }
+
+        .date {
+            font-size: $font-size-14;
+            display: inline-block;
+            box-sizing: border-box;
+            padding-right: 10px;
+            width: 20%;
+        }
+
+        .comments {
+            display: inline-block;
+            width: 80%;
+            font-size: $font-size-14;
+            color: $color-grey-dark;
+        }
+    }
+
+    &.cut {
+        .historyRow {
+            .comments {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

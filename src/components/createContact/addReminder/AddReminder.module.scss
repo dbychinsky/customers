@@ -1,0 +1,24 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.addReminder {
+    @include blockStyle();
+    border: 1px solid $color-white;
+
+    .header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    .fieldArea {
+        width: 100%;
+        max-width: 581px;
+    }
+
+    &.active {
+        border: 1px solid $color-green;
+    }
+
+
+}

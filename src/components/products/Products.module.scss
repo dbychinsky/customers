@@ -1,0 +1,59 @@
+@import '../../common/css-parameters';
+@import '../../common/mixins';
+
+.products {
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid $color-grey-background;
+    margin-bottom: $space16;
+    padding-bottom: $space8;
+
+    .productActive, .productArchive {
+        width: 50%;
+        box-sizing: border-box;
+        padding-right: $space10;
+
+        .productNameActive {
+            display: inline-block;
+            padding: $space6;
+            font-size: $font-size-14;
+            color: $color-purple;
+            background-color: $color-purple-light;
+            margin: 0 $space6 $space6 0;
+            border-radius: $radius6;
+        }
+
+        .productNameArchive {
+            display: inline-block;
+            padding: $space6;
+            font-size: $font-size-14;
+            margin: 0 $space6 $space6 0;
+            border-radius: $radius6;
+            color: $color-grey-dark;
+            background-color: $color-grey-background;
+        }
+    }
+
+    .productActive {
+        .productRow {
+            box-sizing: border-box;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed $color-grey;
+
+            .productName {
+                box-sizing: border-box;
+                font-size: $font-size-14;
+                width: 30%;
+                background-color: $color-green-light;
+                color: $color-green;
+            }
+
+            .productComment {
+                width: 70%;
+                color: $color-grey-dark;
+                font-size: $font-size-14;
+            }
+        }
+    }
+}

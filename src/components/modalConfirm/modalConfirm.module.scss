@@ -1,0 +1,23 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.modalConfirm {
+    display: block;
+    padding: 30px 100px 10px;
+
+    .description {
+        font-size: $font-size-14;
+        color: $color-grey-dark;
+        margin-bottom: $space20;
+    }
+
+    .actionBar {
+        .delete {
+            background-color: $color-red;
+        }
+
+        button {
+            margin: $space20;
+        }
+    }
+}

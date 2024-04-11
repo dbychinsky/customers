@@ -1,0 +1,9 @@
+@import "../../common/css-parameters";
+
+.feedbackMessageField {
+    color: $color-red;
+    font-size: $font-size-14;
+    position: absolute;
+    bottom: -18px;
+    left: 12px;
+}
