@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import styles from "components/createContact/addPhone/AddPhone.module.scss";
-import { InputField } from "components/inputField/InputField";
-import { InputFieldEnum } from "components/inputField/types";
-import { PhoneTypeListEnum } from "model/types";
-import { getIconTypeContact } from "utils/getIconTypeContact";
-import { ButtonImage } from "components/buttonImage/ButtonImage";
-import { ReactComponent as Add } from "common/assets/icon/add.svg";
-import { ReactComponent as Mask } from "common/assets/icon/mask.svg";
-import { ReactComponent as Delete } from "common/assets/icon/delete.svg";
-import { RadioButtonsPhone } from "components/radioButtonsPhone/RadioButtonsPhone";
-import clsx from "clsx";
-import { HeadingH2 } from "components/headingH2/headingH2";
-import { ContactEditStore } from "store/ContactEditStore";
-import { observer } from "mobx-react";
+import React, { useState } from 'react';
+import styles from 'components/createContact/addPhone/AddPhone.module.scss';
+import { InputField } from 'components/inputField/InputField';
+import { InputFieldEnum } from 'components/inputField/types';
+import { PhoneTypeListEnum } from 'model/types';
+import { getIconTypeContact } from 'utils/getIconTypeContact';
+import { ButtonImage } from 'components/buttonImage/ButtonImage';
+import { ReactComponent as Add } from 'common/assets/icon/add.svg';
+import { ReactComponent as Mask } from 'common/assets/icon/mask.svg';
+import { ReactComponent as Delete } from 'common/assets/icon/delete.svg';
+import { RadioButtonsPhone } from 'components/radioButtonsPhone/RadioButtonsPhone';
+import clsx from 'clsx';
+import { HeadingH2 } from 'components/headingH2/headingH2';
+import { ContactEditStore } from 'store/ContactEditStore';
+import { observer } from 'mobx-react';
 
 interface AddPhoneProps {
     contactEditStore: ContactEditStore;
@@ -22,35 +22,39 @@ interface AddPhoneProps {
  * @description Добавление телефонов.
  */
 export const AddPhone = observer(({ contactEditStore }: AddPhoneProps) => {
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [isMask, setIsMask] = useState(true);
 
     const classWrapperIconMask = clsx(styles.iconMask, { [styles.active]: isMask });
 
     return (
         <div className={styles.addPhone}>
-            <HeadingH2 title="Номера телефонов" />
+            <HeadingH2 title='Номера телефонов' />
             <div className={styles.contactFields}>
-                <InputField value={phoneNumber}
-                            changeHandler={handlerPhoneNumber}
-                            name="phoneNumber"
-                            type={InputFieldEnum.text}
-                            mask={isMask}
-                            maxLength={20} />
-                <ButtonImage onClick={checkStateMask}
-                             image={<Mask />}
-                             onlyImage={true}
-                             className={classWrapperIconMask} />
-                <ButtonImage onClick={onClickAddPhoneNumber}
-                             image={<Add />}
-                             onlyImage={true}
-                             className={styles.iconAdd}
-                             variant="add"
-                             isDisabled={phoneNumber.length === 0} />
+                <InputField
+                    value={phoneNumber}
+                    changeHandler={handlerPhoneNumber}
+                    name='phoneNumber'
+                    type={InputFieldEnum.text}
+                    mask={isMask}
+                    maxLength={20}
+                />
+                <ButtonImage
+                    onClick={checkStateMask}
+                    image={<Mask />}
+                    onlyImage={true}
+                    className={classWrapperIconMask}
+                />
+                <ButtonImage
+                    onClick={onClickAddPhoneNumber}
+                    image={<Add />}
+                    onlyImage={true}
+                    className={styles.iconAdd}
+                    variant='add'
+                    isDisabled={phoneNumber.length === 0}
+                />
                 <div className={styles.selectType}>
-                    <RadioButtonsPhone
-                        state={contactEditStore.phoneType}
-                        setState={handleOptionChange} />
+                    <RadioButtonsPhone state={contactEditStore.phoneType} setState={handleOptionChange} />
                 </div>
             </div>
             <div className={styles.contactList}>
@@ -59,7 +63,9 @@ export const AddPhone = observer(({ contactEditStore }: AddPhoneProps) => {
                         <div className={styles.typeList}>{getIconTypeContact(phone.typeList)}</div>
                         <div className={styles.number}>{phone.number}</div>
                         <div className={styles.iconActions}>
-                            <div role="presentation" onClick={() => handleDelete(phone.number)}><Delete /></div>
+                            <div role='presentation' onClick={() => handleDelete(phone.number)}>
+                                <Delete />
+                            </div>
                         </div>
                     </div>
                 ))}
@@ -73,7 +79,7 @@ export const AddPhone = observer(({ contactEditStore }: AddPhoneProps) => {
 
     function onClickAddPhoneNumber(): void {
         contactEditStore.setPhoneList(phoneNumber);
-        setPhoneNumber("");
+        setPhoneNumber('');
     }
 
     function handleOptionChange(changeEvent: React.ChangeEvent<HTMLInputElement>) {
@@ -85,7 +91,7 @@ export const AddPhone = observer(({ contactEditStore }: AddPhoneProps) => {
     }
 
     function checkStateMask() {
-        setPhoneNumber("");
+        setPhoneNumber('');
         setIsMask(!isMask);
     }
 

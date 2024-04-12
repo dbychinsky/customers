@@ -1,4 +1,4 @@
-import { ReactElement, ReactPortal } from "react";
+import { ReactElement, ReactPortal } from 'react';
 
 /**
  * Интерфейс компонента Modal.

@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-
-import { ReactComponent as CrossIcon } from "../../../common/assets/icon/cancel_modal.svg";
-import { UseModalProps } from "components/modal/types";
-import { Button } from "components/button/Button";
-import styles from "./CommonModalContainer.module.scss";
+import React, { useEffect } from 'react';
+import { ReactComponent as CrossIcon } from 'common/assets/icon/cancel_modal.svg';
+import { UseModalProps } from 'components/modal/types';
+import { Button } from 'components/button/Button';
+import styles from 'components/modal/components/CommonModalContainer.module.scss';
 
 /**
  * @description Интерфейс пропсов компонента "CommonModalContainer".
@@ -32,21 +31,19 @@ interface CommonModalContainerProps extends UseModalProps {
  * @see ICommonModalContainerProps
  */
 export function CommonModalContainer({
-                                         title,
-                                         closeModal,
-                                         submitHandler,
-                                         cancelHandler,
-                                         children,
-                                         onCloseModal,
-                                         isActiveSubmitButton = false,
-                                         isActiveCancelButton = false,
-                                         submittingTitle = "",
-                                         isSubmitting = false,
-                                         submitButtonTitle = "Ок",
-                                         cancelButtonTitle = "Отмена",
-                                         withCancelButton = false,
-                                         submitCallback = null,
-                                     }: CommonModalContainerProps) {
+    title,
+    closeModal,
+    submitHandler,
+    cancelHandler,
+    children,
+    onCloseModal,
+    submittingTitle = '',
+    isSubmitting = false,
+    submitButtonTitle = 'Ок',
+    cancelButtonTitle = 'Отмена',
+    withCancelButton = false,
+    submitCallback = null,
+}: CommonModalContainerProps) {
     const onCloseHandler = () => {
         if (cancelHandler) {
             cancelHandler();
@@ -67,9 +64,9 @@ export function CommonModalContainer({
     return (
         <div className={styles.commonModalContainer}>
             <div className={styles.modalContent}>
-                <div className={styles.modalContentHeader}>{title ? (
-                    isSubmitting && submittingTitle ? submittingTitle : title
-                ) : null}</div>
+                <div className={styles.modalContentHeader}>
+                    {title ? (isSubmitting && submittingTitle ? submittingTitle : title) : null}
+                </div>
 
                 {/*{isSubmitting ? <Spinner alignment="center" /> : null}*/}
 
@@ -78,19 +75,19 @@ export function CommonModalContainer({
                 {submitHandler ? (
                     <div className={styles.commonModalButtonContainer}>
                         {withCancelButton ? (
-                            <Button text={cancelButtonTitle}
-                                    onClick={onCloseHandler}
-                                    isDisabled={isSubmitting} />
+                            <Button text={cancelButtonTitle} onClick={onCloseHandler} isDisabled={isSubmitting} />
                         ) : null}
-                        <Button text={submitButtonTitle}
-                                onClick={() => {
-                                    submitHandler();
+                        <Button
+                            text={submitButtonTitle}
+                            onClick={() => {
+                                submitHandler();
 
-                                    if (submitCallback) {
-                                        submitCallback();
-                                    }
-                                }}
-                                isDisabled={isSubmitting} />
+                                if (submitCallback) {
+                                    submitCallback();
+                                }
+                            }}
+                            isDisabled={isSubmitting}
+                        />
                     </div>
                 ) : null}
             </div>

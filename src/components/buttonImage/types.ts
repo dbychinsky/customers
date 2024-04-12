@@ -1,4 +1,4 @@
-import styles from "components/buttonImage/ButtonImage.module.scss";
+import styles from 'components/buttonImage/ButtonImage.module.scss';
 
 /**
  * @description Константа, позволяющая по полученному пропсу "variant" получить класс,

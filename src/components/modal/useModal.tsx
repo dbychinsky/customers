@@ -1,8 +1,8 @@
-import ReactDOM from "react-dom";
-import React, { useCallback, useRef, useState } from "react";
-import { UseModalProps, UseModalReturnType } from "components/modal/types";
-import { Modal } from "components/modal/Modal";
-import { CommonModalContainer } from "components/modal/components/CommonModalContainer";
+import ReactDOM from 'react-dom';
+import React, { useCallback, useRef, useState } from 'react';
+import { UseModalProps, UseModalReturnType } from 'components/modal/types';
+import { Modal } from 'components/modal/Modal';
+import { CommonModalContainer } from 'components/modal/components/CommonModalContainer';
 
 /**
  * Хук useModal, который позволяет манипулировать компонентом модального
@@ -33,43 +33,43 @@ export function useModal(): UseModalReturnType {
 
     const ModalComponent = useCallback(
         ({
-             title,
-             cancelButtonTitle,
-             submitButtonTitle,
-             withCancelButton,
-             cancelHandler,
-             submitHandler,
-             isSubmitting,
-             submittingTitle,
-             isActiveSubmitButton,
-             isActiveCancelButton,
-             onCloseModal,
-             children,
-             closeBackdropClick,
-         }: UseModalProps) =>
+            title,
+            cancelButtonTitle,
+            submitButtonTitle,
+            withCancelButton,
+            cancelHandler,
+            submitHandler,
+            isSubmitting,
+            submittingTitle,
+            isActiveSubmitButton,
+            isActiveCancelButton,
+            onCloseModal,
+            children,
+            closeBackdropClick,
+        }: UseModalProps) =>
             isOpen
                 ? ReactDOM.createPortal(
-                    <Modal closeModal={closeModal} closeBackdropClick={closeBackdropClick}>
-                        <CommonModalContainer
-                            title={title}
-                            submittingTitle={submittingTitle}
-                            isSubmitting={isSubmitting}
-                            closeModal={closeModal}
-                            onCloseModal={onCloseModal}
-                            submitHandler={submitHandler}
-                            cancelHandler={cancelHandler}
-                            cancelButtonTitle={cancelButtonTitle}
-                            submitButtonTitle={submitButtonTitle}
-                            withCancelButton={withCancelButton}
-                            isActiveSubmitButton={isActiveSubmitButton}
-                            isActiveCancelButton={isActiveCancelButton}
-                            submitCallback={callbackRef.current}
-                        >
-                            {children}
-                        </CommonModalContainer>
-                    </Modal>,
-                    document.body,
-                )
+                      <Modal closeModal={closeModal} closeBackdropClick={closeBackdropClick}>
+                          <CommonModalContainer
+                              title={title}
+                              submittingTitle={submittingTitle}
+                              isSubmitting={isSubmitting}
+                              closeModal={closeModal}
+                              onCloseModal={onCloseModal}
+                              submitHandler={submitHandler}
+                              cancelHandler={cancelHandler}
+                              cancelButtonTitle={cancelButtonTitle}
+                              submitButtonTitle={submitButtonTitle}
+                              withCancelButton={withCancelButton}
+                              isActiveSubmitButton={isActiveSubmitButton}
+                              isActiveCancelButton={isActiveCancelButton}
+                              submitCallback={callbackRef.current}
+                          >
+                              {children}
+                          </CommonModalContainer>
+                      </Modal>,
+                      document.body,
+                  )
                 : null,
         [isOpen, closeModal],
     );

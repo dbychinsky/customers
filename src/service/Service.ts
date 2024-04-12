@@ -1,6 +1,6 @@
-import { IService } from "./IService";
-import axios from "axios";
-import { Contact } from "model/Contact";
+import axios from 'axios';
+import { Contact } from 'model/Contact';
+import { IService } from 'service/IService';
 
 /**
  * @description  Список URL валют.
@@ -9,7 +9,7 @@ const enum backendServerUrl {
     CONTACT = `contactList`,
     PRODUCT = `productList`,
     SETTING = `setting`,
-    RATES = `https://www.nbrb.by/api/exrates/rates`
+    RATES = `https://www.nbrb.by/api/exrates/rates`,
 }
 
 export class Server implements IService {
@@ -22,10 +22,7 @@ export class Server implements IService {
      * @description  Получение списка контактов.
      */
     async getContacts(): Promise<Contact[]> {
-        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`)
-            .then(response =>
-                response.data,
-            );
+        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`).then((response) => response.data);
     }
 
     /**
@@ -33,32 +30,27 @@ export class Server implements IService {
      * @param contact
      */
     async addContact(contact: Contact): Promise<void> {
-        await axios.post(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`, contact)
-            .then((response) => response.data.id);
+        await axios.post(`${this.MAIN_URL}/${backendServerUrl.CONTACT}`, contact).then((response) => response.data.id);
     }
 
     /**
      * @description  Обновление.
      */
-    async updateContact(id: string, data: any): Promise<void> {
+    async updateContact(id: string, data: never): Promise<void> {
         await axios.put(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${id}`, data);
-    };
+    }
 
     /**
      * @description  Удаление.
      */
     async deleteContact(idContact: number): Promise<void> {
         await axios.delete(`${this.MAIN_URL}/${backendServerUrl.CONTACT}/${idContact}`);
-
-    };
+    }
 
     /**
      * @description Получение списка продукции.
      */
     async getProducts(): Promise<[]> {
-        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.PRODUCT}`)
-            .then(response =>
-                response.data,
-            );
+        return await axios.get(`${this.MAIN_URL}/${backendServerUrl.PRODUCT}`).then((response) => response.data);
     }
 }

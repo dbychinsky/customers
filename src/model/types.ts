@@ -7,18 +7,18 @@ export type PhoneListType = {
      * @description Аттрибуты.
      */
     typeList: PhoneTypeListEnum;
-}
+};
 
 export type EmailListType = {
     /**
      * @description Электронная почта.
      */
     email: string;
-}
+};
 
 export enum PhoneTypeListEnum {
-    personal = "personal",
-    business = "business",
+    personal = 'personal',
+    business = 'business',
 }
 
 export type HistoryType = {
@@ -34,7 +34,7 @@ export type HistoryType = {
      * @description Событие.
      */
     action: string;
-}
+};
 
 export type ProductType = {
     /**
@@ -49,7 +49,7 @@ export type ProductType = {
      * @description Комментарий.
      */
     productComment: string;
-}
+};
 
 export type ReminderType = {
     /**
@@ -64,4 +64,4 @@ export type ReminderType = {
      * @description Комментарий.
      */
     comment: string;
-}
+};

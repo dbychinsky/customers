@@ -1,6 +1,6 @@
-import { makeAutoObservable, runInAction } from "mobx";
-import { Contact } from "model/Contact";
-import { server } from "App";
+import { makeAutoObservable, runInAction } from 'mobx';
+import { Contact } from 'model/Contact';
+import { server } from 'App';
 
 /**
  * @description Store для отображения контактов.
@@ -8,7 +8,6 @@ import { server } from "App";
  * Client - потенциальные заказчики.
  */
 export class ContactListStore {
-
     /**
      * @description Список контактов.
      */
@@ -36,32 +35,34 @@ export class ContactListStore {
         runInAction(() => {
             this.isLoading = true;
         });
-        server.getContacts().then(contacts => {
-            runInAction(() => {
-                this.contactList = contacts;
-            });
-        }).catch(err => {
-            if (err.response) {
-                console.log("client received an error response (5xx, 4xx)");
-            } else if (err.request) {
-                console.log("client never received a response, or request never left");
-
-            }
-        }).finally(() => {
-            setTimeout(() => {
+        server
+            .getContacts()
+            .then((contacts) => {
                 runInAction(() => {
-                    this.isLoading = false;
+                    this.contactList = contacts;
                 });
-            }, 500);
-        });
+            })
+            .catch((err) => {
+                if (err.response) {
+                    console.log('client received an error response (5xx, 4xx)');
+                } else if (err.request) {
+                    console.log('client never received a response, or request never left');
+                }
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    runInAction(() => {
+                        this.isLoading = false;
+                    });
+                }, 500);
+            });
     }
 
     /**
      * @description Удаление контакта.
      */
     deleteContactFromList(idContact: number) {
-        server.deleteContact(idContact)
-            .then(this.getContactList);
+        server.deleteContact(idContact).then(this.getContactList);
     }
 
     /**
@@ -269,7 +270,6 @@ export class ContactListStore {
     //         this.productArchive = "";
     //     });
     // }
-
 
     /**
      * Добавить телефон в список

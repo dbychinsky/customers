@@ -1,6 +1,5 @@
-import React from "react";
-import clsx from "clsx";
-
+import React from 'react';
+import clsx from 'clsx';
 
 export interface DatepickerProps {
     /**
@@ -49,23 +48,8 @@ export interface DatepickerProps {
 /**
  * @description Компонент "DatepickerField".
  */
-export function DatepickerField({
-                                    id,
-                                    value,
-                                    onChange,
-                                    className = "",
-                                    errorState = false,
-                                    textError = "",
-                                    withTextError = false,
-                                    onBlur,
-                                    disabled,
-                                    placeholder,
-                                }: DatepickerProps) {
-    const classWrapperDatepicker = clsx("reactWrapper", className);
+export function DatepickerField({ className = '' }: DatepickerProps) {
+    const classWrapperDatepicker = clsx('reactWrapper', className);
 
-    return (
-        <div className={classWrapperDatepicker}>
-
-        </div>
-    );
+    return <div className={classWrapperDatepicker}>asdasda</div>;
 }

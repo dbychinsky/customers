@@ -1,6 +1,6 @@
-import React, { ReactElement } from "react";
-import styles from "./headingH2.module.scss";
-import clsx from "clsx";
+import React, { ReactElement } from 'react';
+import styles from 'components/headingH2/headingH2.module.scss';
+import clsx from 'clsx';
 
 interface HeadingH2Props {
     title: string;
@@ -20,4 +20,4 @@ export function HeadingH2({ title, icon, className }: HeadingH2Props) {
             {icon ? icon : null}
         </div>
     );
-};
+}

@@ -1,15 +1,14 @@
-import { makeAutoObservable, runInAction } from "mobx";
-import { EmailListType, PhoneListType, PhoneTypeListEnum, ProductType } from "model/types";
-import { Contact } from "model/Contact";
-import React from "react";
-import { server } from "App";
-import { FieldError } from "components/inputField/types";
+import { makeAutoObservable, runInAction } from 'mobx';
+import { EmailListType, PhoneListType, PhoneTypeListEnum, ProductType } from 'model/types';
+import { Contact } from 'model/Contact';
+import React from 'react';
+import { server } from 'App';
+import { FieldError } from 'components/inputField/types';
 
 /**
  * @description Store для редактирования контактов.
  */
 export class ContactEditStore {
-
     /**
      * @description Контакт.
      */
@@ -43,22 +42,22 @@ export class ContactEditStore {
     /**
      * @description Список продукции в полях формы.
      */
-    productFields: ProductType = { id: "", productName: "", productComment: "" };
+    productFields: ProductType = { id: '', productName: '', productComment: '' };
 
     /**
      * @description Список продукции в полях формы Архив.
      */
-    productFieldsArchive: ProductType = { id: "", productName: "", productComment: "" };
+    productFieldsArchive: ProductType = { id: '', productName: '', productComment: '' };
 
     /**
      * @description Продукция вводимая вручную.
      */
-    productNameField: string = "";
+    productNameField = '';
 
     /**
      * @description Продукция вводимая вручную Архив.
      */
-    productNameFieldArchive: string = "";
+    productNameFieldArchive = '';
 
     /**
      * @description Список ошибок.
@@ -83,9 +82,11 @@ export class ContactEditStore {
     setPhoneList(phoneNumber: string) {
         runInAction(() => {
             this.phoneList.push({
-                number: phoneNumber, typeList: this.phoneType === PhoneTypeListEnum.business
-                    ? PhoneTypeListEnum.business
-                    : PhoneTypeListEnum.personal,
+                number: phoneNumber,
+                typeList:
+                    this.phoneType === PhoneTypeListEnum.business
+                        ? PhoneTypeListEnum.business
+                        : PhoneTypeListEnum.personal,
             });
         });
     }
@@ -132,7 +133,8 @@ export class ContactEditStore {
     handleChangeFieldsProduct(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
         runInAction(() => {
             this.productFields = {
-                ...this.productFields, [e.target.name]: e.target.value,
+                ...this.productFields,
+                [e.target.name]: e.target.value,
             };
         });
     }
@@ -143,7 +145,8 @@ export class ContactEditStore {
     handleChangeFieldsProductArchive(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
         runInAction(() => {
             this.productFieldsArchive = {
-                ...this.productFieldsArchive, [e.target.name]: e.target.value,
+                ...this.productFieldsArchive,
+                [e.target.name]: e.target.value,
             };
         });
     }
@@ -155,15 +158,13 @@ export class ContactEditStore {
         runInAction(() => {
             this.productList.push({
                 id: new Date().toString(),
-                productName: this.productNameField
-                    ? this.productNameField
-                    : this.productFields.productName,
+                productName: this.productNameField ? this.productNameField : this.productFields.productName,
                 productComment: this.productFields.productComment,
             });
         });
         runInAction(() => {
-            this.productFields.productComment = "";
-            this.productNameField = "";
+            this.productFields.productComment = '';
+            this.productNameField = '';
         });
     }
 
@@ -181,8 +182,8 @@ export class ContactEditStore {
             });
         });
         runInAction(() => {
-            this.productFieldsArchive.productComment = "";
-            this.productNameFieldArchive = "";
+            this.productFieldsArchive.productComment = '';
+            this.productNameFieldArchive = '';
         });
     }
 
@@ -227,8 +228,8 @@ export class ContactEditStore {
      */
     clearFieldsProduct() {
         runInAction(() => {
-            this.productFields.productComment = "";
-            this.productNameField = "";
+            this.productFields.productComment = '';
+            this.productNameField = '';
         });
     }
 
@@ -237,8 +238,8 @@ export class ContactEditStore {
      */
     clearFieldsProductArchive() {
         runInAction(() => {
-            this.productFieldsArchive.productComment = "";
-            this.productNameFieldArchive = "";
+            this.productFieldsArchive.productComment = '';
+            this.productNameFieldArchive = '';
         });
     }
 
@@ -248,11 +249,12 @@ export class ContactEditStore {
     handleChangeFieldContact(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
         runInAction(() => {
             this.contact = {
-                ...this.contact, [e.target.name]: e.target.value,
+                ...this.contact,
+                [e.target.name]: e.target.value,
             };
             this.errorList = this.errorList.filter((item) => item.field !== e.target.name);
         });
-    };
+    }
 
     /**
      * @description Валидация.
@@ -263,7 +265,7 @@ export class ContactEditStore {
         });
         if (this.contact.contactFace.length === 0) {
             runInAction(() => {
-                this.errorList.push({ field: "contactFace", message: "Поле не может быть пустым" });
+                this.errorList.push({ field: 'contactFace', message: 'Поле не может быть пустым' });
             });
         }
     }
@@ -275,22 +277,26 @@ export class ContactEditStore {
         if (this.errorList.length === 0) {
             runInAction(() => {
                 this.contact = {
-                    ...this.contact, phoneList: this.phoneList,
+                    ...this.contact,
+                    phoneList: this.phoneList,
                 };
             });
             runInAction(() => {
                 this.contact = {
-                    ...this.contact, emailList: this.emailList,
+                    ...this.contact,
+                    emailList: this.emailList,
                 };
             });
             runInAction(() => {
                 this.contact = {
-                    ...this.contact, productList: this.productList,
+                    ...this.contact,
+                    productList: this.productList,
                 };
             });
             runInAction(() => {
                 this.contact = {
-                    ...this.contact, productListArchive: this.productListArchive,
+                    ...this.contact,
+                    productListArchive: this.productListArchive,
                 };
             });
 
@@ -302,18 +308,21 @@ export class ContactEditStore {
      * @description Валидация на доступность кнопки добавдения продукции.
      */
     isDisableButtonAddProducts(): boolean {
-        return (this.productFields.productName.length === 0
-                || this.productFields.productName === "Выберите значение")
-            && this.productNameField.length === 0;
+        return (
+            (this.productFields.productName.length === 0 || this.productFields.productName === 'Выберите значение') &&
+            this.productNameField.length === 0
+        );
     }
 
     /**
      * @description Валидация на доступность кнопки добавдения продукции.
      */
     isDisableButtonAddProductsArchive(): boolean {
-        return (this.productFieldsArchive.productName.length === 0
-                || this.productFieldsArchive.productName === "Выберите значение")
-            && this.productNameFieldArchive.length === 0;
+        return (
+            (this.productFieldsArchive.productName.length === 0 ||
+                this.productFieldsArchive.productName === 'Выберите значение') &&
+            this.productNameFieldArchive.length === 0
+        );
     }
 
     /**

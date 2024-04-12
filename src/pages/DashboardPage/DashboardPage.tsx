@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { observer } from "mobx-react";
-import styles from "./DashboardPage.module.scss";
-import { useStores } from "store/RootStoreContext";
-import { useNavigateHelper } from "router/hooks/useNavigateHelper";
-import { CurrencyWidget } from "components/currencyWidget/CurrencyWidget";
-import { StatisticWidget } from "components/statisticWidget/StatisticWidget";
-import clsx from "clsx";
-import { ContactList } from "components/contactList/ContactList";
-import { useContactDetailsModal } from "components/contactDetails/useContactDetailsModal";
-import { ToastContainer } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import { observer } from 'mobx-react';
+import styles from 'pages/DashboardPage/DashboardPage.module.scss';
+import { useStores } from 'store/RootStoreContext';
+import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
+import { CurrencyWidget } from 'components/currencyWidget/CurrencyWidget';
+import { StatisticWidget } from 'components/statisticWidget/StatisticWidget';
+import clsx from 'clsx';
+import { ContactList } from 'components/contactList/ContactList';
+import { useContactDetailsModal } from 'components/contactDetails/useContactDetailsModal';
+import { ToastContainer } from 'react-toastify';
 
 /**
  * @description Страница дашборда.
@@ -23,9 +23,9 @@ export const DashboardPage = observer(() => {
 
     useEffect(() => {
         handleScroll();
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -41,10 +41,12 @@ export const DashboardPage = observer(() => {
 
     return (
         <div className={styles.dashboardPage}>
-            <div className={styles.head}></div>
-            <ContactList contactStore={contactListStore}
-                         handleClickOnContact={handleClickOnContact}
-                         isScrolling={isScrolling} />
+            <div className={styles.head} />
+            <ContactList
+                contactStore={contactListStore}
+                handleClickOnContact={handleClickOnContact}
+                isScrolling={isScrolling}
+            />
             <div className={classWrapperSideBar}>
                 <CurrencyWidget />
                 <StatisticWidget />

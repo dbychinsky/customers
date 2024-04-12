@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from "react";
-import { useModal } from "components/modal/useModal";
-import { ContactDetails } from "components/contactDetails/ContactDetails";
-import { ModalConfirm } from "components/modalConfirm/ModalConfirm";
+import React, { useCallback, useState } from 'react';
+import { useModal } from 'components/modal/useModal';
+import { ContactDetails } from 'components/contactDetails/ContactDetails';
+import { ModalConfirm } from 'components/modalConfirm/ModalConfirm';
 
 /**
  * @description Модальное окно деталей контакта
@@ -14,26 +14,22 @@ export function useContactDetailsModal(deleteContact: () => void): UseDetailsMod
         closeModal();
     }, [closeModal]);
 
-    const showDetailsHandler = useCallback(
-        () => {
-            openModal();
-        },
-        [openModal],
-    );
+    const showDetailsHandler = useCallback(() => {
+        openModal();
+    }, [openModal]);
 
     const ModalShowDetails = (contactId: number | null) => (
-        <Modal title="Детали контакта" onCloseModal={onCloseDetailsModal}>
-            {isShowConfirm
-                ? <ModalConfirm deleteContact={deleteContact}
-                                setIsShowConfirm={setIsShowConfirm} />
-                : <ContactDetails contactId={contactId}
-                                  setIsShowConfirm={setIsShowConfirm} />}
+        <Modal title='Детали контакта' onCloseModal={onCloseDetailsModal}>
+            {isShowConfirm ? (
+                <ModalConfirm deleteContact={deleteContact} setIsShowConfirm={setIsShowConfirm} />
+            ) : (
+                <ContactDetails contactId={contactId} setIsShowConfirm={setIsShowConfirm} />
+            )}
         </Modal>
     );
 
     return { ModalShowDetails, showDetailsHandler, onCloseDetailsModal };
 }
-
 
 /**
  * Тип возвращаемого объекта хука "useContactDetailsModal".

@@ -1,4 +1,4 @@
-import styles from "./NoRecords.module.scss";
+import styles from 'components/noRecords/NoRecords.module.scss';
 
 export const NoRecordFontTypeMapping = {
     small: styles.small,
@@ -15,4 +15,3 @@ export const NoRecordAlignTypeMapping = {
 };
 
 export type NoRecordAlignType = keyof typeof NoRecordAlignTypeMapping;
-

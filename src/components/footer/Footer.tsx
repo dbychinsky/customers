@@ -1,8 +1,8 @@
 import React from 'react';
-import clsx from "clsx";
-import styles from "components/footer/Footer.module.scss";
-import {AuthStore} from "store/AuthStore";
-import {observer} from "mobx-react";
+import clsx from 'clsx';
+import styles from 'components/footer/Footer.module.scss';
+import { AuthStore } from 'store/AuthStore';
+import { observer } from 'mobx-react';
 
 interface FooterProps {
     authStore: AuthStore;
@@ -11,12 +11,8 @@ interface FooterProps {
 /**
  * @description Футтер приложения.
  */
-export const Footer = observer(({authStore}: FooterProps) => {
-    const classWrapper = clsx(styles.footer, {[styles.hidden]: !authStore.isAuth});
+export const Footer = observer(({ authStore }: FooterProps) => {
+    const classWrapper = clsx(styles.footer, { [styles.hidden]: !authStore.isAuth });
 
-    return (
-        <div className={classWrapper}>
-            footer
-        </div>
-    );
+    return <div className={classWrapper}>footer</div>;
 });

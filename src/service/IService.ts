@@ -1,7 +1,6 @@
-import { Contact } from "model/Contact";
+import { Contact } from 'model/Contact';
 
 export interface IService {
-
     /**
      * @description Получение списка контактов.
      */
@@ -15,7 +14,7 @@ export interface IService {
     /**
      * @description Обновление контакта.
      */
-    updateContact(id: string, data: any): Promise<void>;
+    updateContact(id: string, data: never): Promise<void>;
 
     /**
      * @description Удаление контакта.

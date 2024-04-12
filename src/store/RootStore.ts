@@ -1,7 +1,7 @@
-import { ContactListStore } from "store/ContactListStore";
-import { AuthStore } from "./AuthStore";
-import { ContactEditStore } from "store/ContactEditStore";
-import { ProductListStore } from "store/ProductListStore";
+import { ContactListStore } from 'store/ContactListStore';
+import { AuthStore } from 'store/AuthStore';
+import { ContactEditStore } from 'store/ContactEditStore';
+import { ProductListStore } from 'store/ProductListStore';
 
 /**
  * Объеденение всех Store в RootStore

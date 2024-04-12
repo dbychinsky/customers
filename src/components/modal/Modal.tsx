@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./Modal.module.scss";
-import clsx from "clsx";
-import { ModalProps } from "components/modal/types";
+import React, { useEffect, useRef, useState } from 'react';
+import styles from 'components/modal/Modal.module.scss';
+import clsx from 'clsx';
+import { ModalProps } from 'components/modal/types';
 
 /**
  * Контейнер модального окна, включающий в себя контейнер backdrop (тёмный фон) и
@@ -15,14 +15,14 @@ export function Modal({ children, closeModal, closeBackdropClick = true }: Modal
 
     useEffect(() => {
         const closeModalOnEscClick = (event: KeyboardEvent) => {
-            if (event.key === "Escape" && closeModal) {
+            if (event.key === 'Escape' && closeModal) {
                 closeModal();
             }
         };
 
-        document.addEventListener("keydown", closeModalOnEscClick);
+        document.addEventListener('keydown', closeModalOnEscClick);
 
-        return () => document.removeEventListener("keydown", closeModalOnEscClick);
+        return () => document.removeEventListener('keydown', closeModalOnEscClick);
     }, [closeModal]);
 
     useEffect(() => {

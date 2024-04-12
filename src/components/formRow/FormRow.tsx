@@ -1,22 +1,22 @@
-import React, { ChangeEvent, FC } from "react";
-import { observer } from "mobx-react";
-import clsx from "clsx";
-import styles from "components/formRow/FormRow.module.scss";
-import { FieldError, InputFieldEnum } from "components/inputField/types";
-import { Label } from "components/label/Label";
-import { InputField } from "components/inputField/InputField";
-import { FeedbackMessageField } from "components/feedbackMessageField/FeedbackMessageField";
+import React, { ChangeEvent, FC } from 'react';
+import { observer } from 'mobx-react';
+import clsx from 'clsx';
+import styles from 'components/formRow/FormRow.module.scss';
+import { FieldError, InputFieldEnum } from 'components/inputField/types';
+import { Label } from 'components/label/Label';
+import { InputField } from 'components/inputField/InputField';
+import { FeedbackMessageField } from 'components/feedbackMessageField/FeedbackMessageField';
 
 interface FormRowProps {
     /**
      * @description Значение поля ввода.
      */
-    inputValue: string,
+    inputValue: string;
 
     /**
      * @description Имя поля ввода.
      */
-    inputName: string,
+    inputName: string;
 
     /**
      * @description Обработчик ввода поля.
@@ -41,12 +41,12 @@ interface FormRowProps {
     /**
      * @description  Список дополнительных классов.
      */
-    className?: string,
+    className?: string;
 
     /**
      * @description placeHolder.
      */
-    placeHolder?: string,
+    placeHolder?: string;
 
     /**
      * @description Маска.
@@ -62,8 +62,8 @@ interface FormRowProps {
 /**
  * @description Блок, объединящий поля ввода, подписи к ним, ошибки.
  */
-export const FormRow: FC<FormRowProps> = observer((
-    {
+export const FormRow: FC<FormRowProps> = observer(
+    ({
         inputValue,
         inputName,
         inputChangeHandler,
@@ -72,27 +72,26 @@ export const FormRow: FC<FormRowProps> = observer((
         labelText,
         className,
         placeHolder,
-        mask,
         maxLength,
     }) => {
-    const localClassName = clsx(styles.formRow, className);
-    let messages: string | undefined = errorList.find(item => item.field === inputName)?.message;
+        const localClassName = clsx(styles.formRow, className);
+        const messages: string | undefined = errorList.find((item) => item.field === inputName)?.message;
 
-    return (
-        <div className={localClassName}>
-            {labelText.length !== 0
-                ? <Label text={labelText} />
-                : null}
-            <InputField
-                value={inputValue}
-                changeHandler={inputChangeHandler}
-                name={inputName}
-                type={inputType}
-                isError={!!messages}
-                placeHolder={placeHolder}
-                mask={false}
-                maxLength={maxLength} />
-            {messages ? <FeedbackMessageField message={messages} /> : null}
-        </div>
-    );
-});
+        return (
+            <div className={localClassName}>
+                {labelText.length !== 0 ? <Label text={labelText} /> : null}
+                <InputField
+                    value={inputValue}
+                    changeHandler={inputChangeHandler}
+                    name={inputName}
+                    type={inputType}
+                    isError={!!messages}
+                    placeHolder={placeHolder}
+                    mask={false}
+                    maxLength={maxLength}
+                />
+                {messages ? <FeedbackMessageField message={messages} /> : null}
+            </div>
+        );
+    },
+);

@@ -1,0 +1,230 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "react-app",
+        "react-app/jest",
+        "airbnb",
+        "airbnb-typescript",
+        "plugin:import/recommended",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsdoc/recommended",
+        "./jsdoc.eslintrc.json",
+        "plugin:react-hooks/recommended",
+        "eslint-config-prettier",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json",
+        "alwaysTryTypes": true
+    },
+    "plugins": [
+        "prettier",
+        "react",
+        "import",
+        "react-hooks",
+        "jsx-a11y",
+        "jest",
+        "@typescript-eslint",
+        "jsdoc"
+    ],
+    "rules": {
+        "max-classes-per-file": "off",
+        "import/no-unresolved": [
+            2,
+            {
+                "ignore": ["types\\/@.*$", "remotes\\/@.*$"]
+            }
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "linebreak-style": ["error", "unix"],
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-throw-literal": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "no-restricted-globals": "off",
+        "class-methods-use-this": "off",
+        "camelcase": "error",
+        "prettier/prettier": "error",
+        "spaced-comment": "error",
+        "no-duplicate-imports": "error",
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "caseInsensitive": true,
+                    "order": "asc"
+                },
+                "groups": [
+                    "external",
+                    "builtin",
+                    "parent",
+                    ["sibling", "index"]
+                ],
+                "newlines-between": "never",
+                "pathGroups": [
+                    {
+                        "group": "external",
+                        "pattern": "react",
+                        "position": "before"
+                    },
+                    {
+                        "group": "external",
+                        "pattern": "@rdbo/**",
+                        "position": "after"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["builtin"]
+            }
+        ],
+        "@typescript-eslint/member-ordering": [
+            "error",
+            {
+                "default": [
+                    // Index signature
+                    "signature",
+                    "call-signature",
+                    // Fields
+                    "public-static-field",
+                    "protected-static-field",
+                    "private-static-field",
+                    "public-decorated-field",
+                    "protected-decorated-field",
+                    "private-decorated-field",
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "public-abstract-field",
+                    "protected-abstract-field",
+                    "public-field",
+                    "protected-field",
+                    "private-field",
+                    "static-field",
+                    "instance-field",
+                    "abstract-field",
+                    "decorated-field",
+                    "field",
+                    // Static initialization
+                    "static-initialization",
+                    // Constructors
+                    "public-constructor",
+                    "protected-constructor",
+                    "private-constructor",
+                    "constructor",
+                    // Getters
+                    "public-static-get",
+                    "protected-static-get",
+                    "private-static-get",
+                    "public-decorated-get",
+                    "protected-decorated-get",
+                    "private-decorated-get",
+                    "public-instance-get",
+                    "protected-instance-get",
+                    "private-instance-get",
+                    "public-abstract-get",
+                    "protected-abstract-get",
+                    "public-get",
+                    "protected-get",
+                    "private-get",
+                    "static-get",
+                    "instance-get",
+                    "abstract-get",
+                    "decorated-get",
+                    "get",
+                    // Setters
+                    "public-static-set",
+                    "protected-static-set",
+                    "private-static-set",
+                    "public-decorated-set",
+                    "protected-decorated-set",
+                    "private-decorated-set",
+                    "public-instance-set",
+                    "protected-instance-set",
+                    "private-instance-set",
+                    "public-abstract-set",
+                    "protected-abstract-set",
+                    "public-set",
+                    "protected-set",
+                    "private-set",
+                    "static-set",
+                    "instance-set",
+                    "abstract-set",
+                    "decorated-set",
+                    "set",
+                    // Methods
+                    "public-static-method",
+                    "protected-static-method",
+                    "private-static-method",
+                    "public-decorated-method",
+                    "protected-decorated-method",
+                    "private-decorated-method",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method",
+                    "public-abstract-method",
+                    "protected-abstract-method",
+                    "public-method",
+                    "protected-method",
+                    "private-method",
+                    "static-method",
+                    "instance-method",
+                    "abstract-method",
+                    "decorated-method",
+                    "method"
+                ]
+            }
+        ],
+        "no-param-reassign": [
+            2,
+            {
+                "props": false
+            }
+        ],
+        "no-console": 2,
+        "semi": [2, "always"],
+        "quotes": [2, "single"],
+        "react/default-props-match-prop-types": "off",
+        "react/require-default-props": "off",
+        "react/destructuring-assignment": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/no-unused-prop-types": "off",
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
+            }
+        ],
+        "react/prop-types": "off",
+        "import/prefer-default-export": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".ts", ".tsx"],
+                "moduleDirectory": ["node_modules", "src/"]
+            },
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": "./tsconfig.json"
+            }
+        }
+    }
+}

@@ -1,13 +1,13 @@
-import {createContext, useContext} from "react";
-import {RootStore} from "store/RootStore";
+import { createContext, useContext } from 'react';
+import { RootStore } from 'store/RootStore';
 
-export const RootStoreContext = createContext<RootStore | null>(null)
+export const RootStoreContext = createContext<RootStore | null>(null);
 
 export const useStores = () => {
     const context = useContext(RootStoreContext);
     if (context === null) {
-        throw new Error('Ошибка создания контекста')
+        throw new Error('Ошибка создания контекста');
     }
 
     return context;
-}
+};

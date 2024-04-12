@@ -1,6 +1,6 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { RouterPathList } from "router/RouterPathList";
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { RouterPathList } from 'router/RouterPathList';
 
 /**
  * Хук с готовыми функциями для использования навигации по роутам приложения.
@@ -61,5 +61,5 @@ type UseNavigateHelperReturnType = {
     /**
      * Функция, перенаправляющая пользователя на страницу создания контакта CreateContactPage.
      */
-    navigateToCreateContactPage: NavigateHelperType
+    navigateToCreateContactPage: NavigateHelperType;
 };
