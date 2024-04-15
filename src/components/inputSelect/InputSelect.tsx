@@ -17,7 +17,7 @@ interface InputSelectProps<P> {
     /**
      * @description Значение в поле ввода
      */
-    value: string;
+    value?: string;
 
     /**
      * @description Имя поля
@@ -36,12 +36,11 @@ interface InputSelectProps<P> {
 export function InputSelect<P extends { id: number; name: string }>({
     changeHandler,
     valueList,
-    value,
     name,
     optionDefaultValue,
 }: InputSelectProps<P>) {
     return (
-        <select onChange={changeHandler} defaultValue={value} name={name} className={styles.inputSelect}>
+        <select onChange={changeHandler} defaultValue={optionDefaultValue} name={name} className={styles.inputSelect}>
             <option value={optionDefaultValue}>{optionDefaultValue ? optionDefaultValue : 'Выберите значение'}</option>
             {valueList.map((item) => (
                 <option key={item.id} value={item.name}>

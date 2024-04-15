@@ -493,131 +493,109 @@
       }
     },
     {
-      "id": "9",
-      "organization": "",
-      "contactFace": "32",
-      "productList": [
-        {
-          "id": "Wed Apr 10 2024 16:31:12 GMT+0300 (Moscow Standard Time)",
-          "productName": "12",
-          "productComment": ""
-        }
-      ],
-      "productListArchive": [
-        {
-          "id": "Wed Apr 10 2024 16:31:16 GMT+0300 (Moscow Standard Time)",
-          "productName": "Флаеры",
-          "productComment": "2222"
-        }
-      ],
+      "id": 0,
+      "organization": "2",
+      "contactFace": "2",
+      "productList": [],
+      "productListArchive": [],
       "phoneList": [],
       "emailList": [],
       "address": "",
       "description": "",
-      "history": [],
-      "reminder": null
-    },
-    {
-      "id": "10",
-      "organization": "",
-      "contactFace": "333",
-      "productList": [
+      "history": [
         {
-          "id": "Wed Apr 10 2024 16:33:58 GMT+0300 (Moscow Standard Time)",
-          "productName": "Блокноты",
-          "productComment": "1"
+          "id": "Mon Apr 15 2024 15:03:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-01T12:03:47.000Z",
+          "historyComment": "3333"
+        },
+        {
+          "id": "Mon Apr 15 2024 15:04:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-20T12:03:56.000Z",
+          "historyComment": "44444"
         }
       ],
-      "productListArchive": [
-        {
-          "id": "Wed Apr 10 2024 16:34:00 GMT+0300 (Moscow Standard Time)",
-          "productName": "Разное",
-          "productComment": "2"
-        }
-      ],
-      "phoneList": [],
-      "emailList": [],
-      "address": "",
-      "description": "",
-      "history": [],
-      "reminder": null
+      "reminder": {
+        "bell": false,
+        "date": "2024-04-15T12:03:47.063Z",
+        "productComment": ""
+      }
     }
   ],
   "productList": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Бланки"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Буклеты"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Брошюры"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Блокноты"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Визитки"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Журнал"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Флаеры"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Каталоги"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Календари"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Книга"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Кубарики (блоки для записи)"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Листовки"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Некхенгеры"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Наклейки"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Открытки"
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Папки"
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Пакеты"
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Разное"
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Ярлыки"
     }
   ]

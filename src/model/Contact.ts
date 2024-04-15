@@ -57,7 +57,7 @@ export class Contact {
     /**
      * @description Флаг напоминания.
      */
-    reminder: ReminderType | null;
+    reminder: ReminderType;
 
     constructor() {
         this.id = 0;
@@ -70,6 +70,6 @@ export class Contact {
         this.address = '';
         this.description = '';
         this.history = [];
-        this.reminder = null;
+        this.reminder = { bell: false, date: new Date(), productComment: '' };
     }
 }

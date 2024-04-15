@@ -33,7 +33,7 @@ export type HistoryType = {
     /**
      * @description Событие.
      */
-    action: string;
+    historyComment: string;
 };
 
 export type ProductListType = {
@@ -55,7 +55,7 @@ export type ReminderType = {
     /**
      * @description Флаг срабатывания.
      */
-    bell: string;
+    bell: boolean;
     /**
      * @description Дата.
      */
@@ -63,5 +63,5 @@ export type ReminderType = {
     /**
      * @description Комментарий.
      */
-    comment: string;
+    productComment: string;
 };

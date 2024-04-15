@@ -32,14 +32,14 @@ export const History = observer(({ activeContact, className, isBorderText }: His
                     activeContact?.history.slice(-2).map((item) => (
                         <div key={item.id} className={styles.historyRow}>
                             <div className={styles.date}>{moment(item.date).format('L')}</div>
-                            <div className={styles.comments}>{item.action}</div>
+                            <div className={styles.comments}>{item.historyComment}</div>
                         </div>
                     ))
                 ) : (
                     activeContact?.history.map((item) => (
                         <div key={item.id} className={styles.historyRow}>
                             <div className={styles.date}>{moment(item.date).format('L')}</div>
-                            <div className={styles.comments}>{item.action}</div>
+                            <div className={styles.comments}>{item.historyComment}</div>
                         </div>
                     ))
                 )

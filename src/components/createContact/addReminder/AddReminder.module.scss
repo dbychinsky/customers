@@ -11,6 +11,16 @@
         justify-content: space-between;
     }
 
+    .body {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: $space20;
+
+        > div {
+            width: 70%;
+        }
+    }
+
     .fieldArea {
         width: 100%;
         max-width: 581px;

@@ -1,9 +1,12 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { EmailListType, PhoneListType, PhoneTypeListEnum, ProductListType } from 'model/types';
+import { EmailListType, HistoryType, PhoneListType, PhoneTypeListEnum, ProductListType } from 'model/types';
 import { Contact } from 'model/Contact';
 import React from 'react';
 import { server } from 'App';
 import { FieldError } from 'components/inputField/types';
+import { Moment } from 'moment';
+
+const initialStateProduct = { id: '', productName: '', productComment: '' };
 
 /**
  * @description Store для редактирования контактов.
@@ -42,12 +45,12 @@ export class ContactEditStore {
     /**
      * @description Список продукции в полях формы.
      */
-    productFields: ProductListType = { id: '', productName: '', productComment: '' };
+    productFields: ProductListType = initialStateProduct;
 
     /**
      * @description Список продукции в полях формы Архив.
      */
-    productFieldsArchive: ProductListType = { id: '', productName: '', productComment: '' };
+    productFieldsArchive: ProductListType = initialStateProduct;
 
     /**
      * @description Продукция вводимая вручную.
@@ -58,6 +61,11 @@ export class ContactEditStore {
      * @description Продукция вводимая вручную Архив.
      */
     productNameFieldArchive = '';
+
+    /**
+     * @description История (буфер).
+     */
+    historyList: HistoryType[] = [];
 
     /**
      * @description Список ошибок.
@@ -73,7 +81,9 @@ export class ContactEditStore {
         this.handleChangeFieldsProductArchive = this.handleChangeFieldsProductArchive.bind(this);
         this.handleChangeFieldProduct = this.handleChangeFieldProduct.bind(this);
         this.handleChangeFieldProductArchive = this.handleChangeFieldProductArchive.bind(this);
-        this.clearFieldsCreateContact = this.clearFieldsCreateContact.bind(this);
+        this.handleChangeFieldsReminderComment = this.handleChangeFieldsReminderComment.bind(this);
+        this.handleChangeFieldsReminderBell = this.handleChangeFieldsReminderBell.bind(this);
+        this.handleChangeFieldsReminderDate = this.handleChangeFieldsReminderDate.bind(this);
     }
 
     /**
@@ -224,26 +234,6 @@ export class ContactEditStore {
     }
 
     /**
-     * @description Очистка списка продукции(буфер).
-     */
-    clearFieldsProduct() {
-        runInAction(() => {
-            this.productFields.productComment = '';
-            this.productNameField = '';
-        });
-    }
-
-    /**
-     * @description Очистка списка продукции Архив(буфер).
-     */
-    clearFieldsProductArchive() {
-        runInAction(() => {
-            this.productFieldsArchive.productComment = '';
-            this.productNameFieldArchive = '';
-        });
-    }
-
-    /**
      * @description Заполнение полей (кроме номера/типа телефона).
      */
     handleChangeFieldContact(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
@@ -268,6 +258,116 @@ export class ContactEditStore {
                 this.errorList.push({ field: 'contactFace', message: 'Поле не может быть пустым' });
             });
         }
+    }
+
+    /**
+     * @description Валидация на доступность кнопки добавдения продукции.
+     */
+    isDisableButtonAddProducts(): boolean {
+        return (
+            (this.productFields.productName.length === 0 || this.productFields.productName === 'Выберите значение') &&
+            this.productNameField.length === 0
+        );
+    }
+
+    /**
+     * @description Валидация на доступность кнопки добавдения продукции.
+     */
+    isDisableButtonAddProductsArchive(): boolean {
+        return (
+            (this.productFieldsArchive.productName.length === 0 ||
+                this.productFieldsArchive.productName === 'Выберите значение') &&
+            this.productNameFieldArchive.length === 0
+        );
+    }
+
+    /**
+     * @description Очистка полей формы создания нового контакта.
+     */
+    clearFieldsCreateContact() {
+        runInAction(() => {
+            this.contact = new Contact();
+            this.phoneList = [];
+            this.emailList = [];
+            this.productList = [];
+            this.productListArchive = [];
+            this.historyList = [];
+            this.productNameField = '';
+            this.productNameFieldArchive = '';
+            this.productFields = initialStateProduct;
+            this.productFieldsArchive = initialStateProduct;
+            this.errorList = [];
+        });
+    }
+
+    /**
+     * @description Заполнение Напоминания (Флаг).
+     */
+    handleChangeFieldsReminderBell(checked: boolean) {
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                reminder: {
+                    bell: checked,
+                    productComment: this.contact.reminder.productComment,
+                    date: this.contact.reminder.date,
+                },
+            };
+        });
+    }
+
+    /**
+     * @description Заполнение Напоминания (Комментарий).
+     */
+    handleChangeFieldsReminderComment(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                reminder: {
+                    bell: this.contact.reminder.bell,
+                    productComment: e.target.value,
+                    date: this.contact.reminder.date,
+                },
+            };
+        });
+    }
+
+    /**
+     * @description Заполнение Напоминания (Дата).
+     */
+    handleChangeFieldsReminderDate(date: Moment | null) {
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                reminder: {
+                    bell: this.contact.reminder.bell,
+                    productComment: this.contact.reminder.productComment,
+                    date: date ? date.toDate() : new Date(),
+                },
+            };
+        });
+    }
+
+    /**
+     * @description Заполнение списка Истории (буфер).
+     */
+    setHistoryList(fieldDate: Date, fieldComment: string) {
+        runInAction(() => {
+            this.historyList.push({
+                id: new Date().toString(),
+                date: fieldDate,
+                historyComment: fieldComment,
+            });
+        });
+    }
+
+    /**
+     * @description Удаление списка истории (буфер).
+     */
+    deleteFromHistoryList(id: string) {
+        runInAction(() => {
+            this.historyList = this.historyList.filter((history) => history.id !== id);
+        });
     }
 
     /**
@@ -299,38 +399,14 @@ export class ContactEditStore {
                     productListArchive: this.productListArchive,
                 };
             });
+            runInAction(() => {
+                this.contact = {
+                    ...this.contact,
+                    history: this.historyList,
+                };
+            });
 
             server.addContact(this.contact).then();
         }
-    }
-
-    /**
-     * @description Валидация на доступность кнопки добавдения продукции.
-     */
-    isDisableButtonAddProducts(): boolean {
-        return (
-            (this.productFields.productName.length === 0 || this.productFields.productName === 'Выберите значение') &&
-            this.productNameField.length === 0
-        );
-    }
-
-    /**
-     * @description Валидация на доступность кнопки добавдения продукции.
-     */
-    isDisableButtonAddProductsArchive(): boolean {
-        return (
-            (this.productFieldsArchive.productName.length === 0 ||
-                this.productFieldsArchive.productName === 'Выберите значение') &&
-            this.productNameFieldArchive.length === 0
-        );
-    }
-
-    /**
-     * @description Очистка полей формы создания нового контакта.
-     */
-    clearFieldsCreateContact() {
-        this.contact = new Contact();
-        this.productList = [];
-        this.productListArchive = [];
     }
 }

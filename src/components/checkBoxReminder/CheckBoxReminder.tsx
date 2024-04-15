@@ -11,12 +11,12 @@ interface CheckboxProps {
     /**
      * @description  Значение в поле ввода.
      */
-    value: boolean;
+    valueCheckbox: boolean;
 
     /**
      * @description Метод, вызываемый при изменении значения в поле ввода.
      */
-    changeHandler: () => void;
+    changeHandlerCheckbox: (value: boolean) => void;
 
     /**
      * @description Имя поля.
@@ -38,23 +38,23 @@ interface CheckboxProps {
  * Компонент checkbox.
  * @param id
  * @param value
- * @param changeHandler
+ * @param changeHandlerCheckbox
  * @param name
  * @param text
  * @param className
  * @constructor
  */
-export function CheckBoxReminder({ changeHandler, text, id, className, name, value }: CheckboxProps) {
+export function CheckBoxReminder({ valueCheckbox, changeHandlerCheckbox, text, id, className, name }: CheckboxProps) {
     const classWrapperCheckbox = clsx(styles.checkBoxReminder, className);
 
     return (
         <div className={classWrapperCheckbox}>
             <input
+                checked={valueCheckbox}
+                onChange={() => changeHandlerCheckbox(!valueCheckbox)}
                 type='checkbox'
-                checked={value}
                 name={name}
                 className={styles.checkBoxField}
-                onChange={changeHandler}
                 id={id}
             />
             <label htmlFor={id}>{text}</label>

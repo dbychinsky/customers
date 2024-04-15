@@ -1,0 +1,41 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.datePicker {
+
+    .datePickerWrapper {
+        @include interRegular();
+        border-radius: $radius6;
+        border: 1px solid $color-grey;
+
+        fieldset {
+            display: none;
+        }
+
+        input {
+            padding: $space12;
+            box-sizing: border-box;
+            color: $color-black;
+            font-size: $font-size-base;
+            outline: none;
+            height: 46px;
+
+            &::placeholder {
+                color: $color-grey-dark;
+                opacity: 1; /* Firefox */
+            }
+
+            &::-ms-input-placeholder { /* Edge 12 -18 */
+                color: $color-grey-dark;
+            }
+
+            &:disabled {
+                background: none;
+            }
+        }
+
+        svg {
+            fill: $color-grey-dark;
+        }
+    }
+}

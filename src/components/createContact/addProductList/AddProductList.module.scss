@@ -23,25 +23,15 @@
             flex-grow: 2;
             width: auto;
             max-width: 600px;
-            max-height: 104px;
-            height: 104px;
+            max-height: 89px;
+            height: 89px;
         }
 
-        .actions {
-            flex-grow: 1;
+        .content {
             display: flex;
-            flex-flow: column;
-            max-width: 46px;
-
-            button {
-                max-width: 46px;
-                max-height: 44px;
-                margin-bottom: $space20;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
+            width: 100%;
+            flex-flow: row nowrap;
+            gap: $space20;
         }
 
         margin-bottom: $space20;

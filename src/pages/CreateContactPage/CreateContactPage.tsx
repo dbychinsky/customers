@@ -32,7 +32,10 @@ export const CreateContactPage = observer(() => {
 
     return (
         <div className={styles.createContactPage}>
-            <HeadingH1 title='Создание контакта' />
+            <div className={styles.header}>
+                <HeadingH1 title='Создание контакта' className={styles.heading} />
+                <Button text='Сохранить' onClick={handleClickSendContact} />
+            </div>
             <form
                 className={styles.form}
                 onSubmit={(e: React.FormEvent) => {
@@ -46,9 +49,11 @@ export const CreateContactPage = observer(() => {
                 <AddProductList contactEditStore={contactEditStore} />
                 <div className={styles.rightBlock}>
                     <AddReminder contactEditStore={contactEditStore} />
-                    <AddHistory />
+                    <AddHistory contactEditStore={contactEditStore} />
                 </div>
-                <Button text='send' onClick={handleClickSendContact} />
+                <div className={styles.send}>
+                    <Button text='Сохранить' onClick={handleClickSendContact} />
+                </div>
             </form>
         </div>
     );

@@ -6,12 +6,12 @@ interface TextAreaFieldProps {
     /**
      * @description Значение в поле ввода.
      */
-    value: string | number;
+    value: string;
 
     /**
      * @description Метод, вызываемый при изменении значения в поле ввода.
      */
-    changeHandler: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    changeHandler: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 
     /**
      * @description Имя поля.
@@ -37,7 +37,14 @@ interface TextAreaFieldProps {
 /**
  * @description Компонент Text Area.
  */
-export function TextAreaField({ value, changeHandler, name, className, placeHolder, isDisabled }: TextAreaFieldProps) {
+export const TextAreaField = ({
+    value,
+    changeHandler,
+    name,
+    className,
+    placeHolder,
+    isDisabled,
+}: TextAreaFieldProps) => {
     const classWrapperTextArea = clsx(styles.textAreaField, className);
 
     return (
@@ -45,7 +52,7 @@ export function TextAreaField({ value, changeHandler, name, className, placeHold
             <textarea
                 className={classWrapperTextArea}
                 value={value}
-                onChange={changeHandler}
+                onChange={(value) => changeHandler(value)}
                 name={name}
                 tabIndex={1}
                 placeholder={placeHolder}
@@ -53,4 +60,4 @@ export function TextAreaField({ value, changeHandler, name, className, placeHold
             />
         </>
     );
-}
+};

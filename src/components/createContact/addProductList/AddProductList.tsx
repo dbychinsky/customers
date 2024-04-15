@@ -6,7 +6,6 @@ import { useStores } from 'store/RootStoreContext';
 import { InputSelect } from 'components/inputSelect/InputSelect';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
 import { ReactComponent as Add } from 'common/assets/icon/add.svg';
-import { ReactComponent as Clear } from 'common/assets/icon/clear.svg';
 import { TextAreaField } from 'components/textAreaField/TextAreaField';
 import { observer } from 'mobx-react';
 import { InputFieldEnum } from 'components/inputField/types';
@@ -38,6 +37,7 @@ export const AddProductList = observer(({ contactEditStore }: AddProductListProp
                         valueList={productListStore.productList}
                         value={contactEditStore.productFields.productName}
                         name='productName'
+                        optionDefaultValue='Выберите значение'
                     />
                     <InputField
                         value={contactEditStore.productNameField}
@@ -48,20 +48,13 @@ export const AddProductList = observer(({ contactEditStore }: AddProductListProp
                         maxLength={20}
                         className={styles.productNameField}
                     />
-                    <TextAreaField
-                        value={contactEditStore.productFields.productComment}
-                        changeHandler={contactEditStore.handleChangeFieldsProduct}
-                        name='productComment'
-                        placeHolder='Комментарий к продукции'
-                        className={styles.fieldArea}
-                    />
-                    <div className={styles.actions}>
-                        <ButtonImage
-                            onClick={onClickClearFields}
-                            image={<Clear />}
-                            onlyImage={true}
-                            className={styles.iconClear}
-                            variant='clear'
+                    <div className={styles.content}>
+                        <TextAreaField
+                            value={contactEditStore.productFields.productComment}
+                            changeHandler={contactEditStore.handleChangeFieldsProduct}
+                            name='productComment'
+                            placeHolder='Комментарий к продукции'
+                            className={styles.fieldArea}
                         />
                         <ButtonImage
                             onClick={onClickAddProduct}
@@ -102,20 +95,13 @@ export const AddProductList = observer(({ contactEditStore }: AddProductListProp
                         maxLength={20}
                         className={styles.productNameField}
                     />
-                    <TextAreaField
-                        value={contactEditStore.productFieldsArchive.productComment}
-                        changeHandler={contactEditStore.handleChangeFieldsProductArchive}
-                        name='productComment'
-                        placeHolder='Комментарий к продукции'
-                        className={styles.fieldArea}
-                    />
-                    <div className={styles.actions}>
-                        <ButtonImage
-                            onClick={onClickClearFieldsArchive}
-                            image={<Clear />}
-                            onlyImage={true}
-                            className={styles.iconClear}
-                            variant='clear'
+                    <div className={styles.content}>
+                        <TextAreaField
+                            value={contactEditStore.productFieldsArchive.productComment}
+                            changeHandler={contactEditStore.handleChangeFieldsProductArchive}
+                            name='productComment'
+                            placeHolder='Комментарий к продукции'
+                            className={styles.fieldArea}
                         />
                         <ButtonImage
                             onClick={onClickAddProductArchive}
@@ -147,14 +133,6 @@ export const AddProductList = observer(({ contactEditStore }: AddProductListProp
 
     function onClickAddProductArchive(): void {
         contactEditStore.setProductListArchive();
-    }
-
-    function onClickClearFields(): void {
-        contactEditStore.clearFieldsProduct();
-    }
-
-    function onClickClearFieldsArchive(): void {
-        contactEditStore.clearFieldsProductArchive();
     }
 
     function handleDelete(id: string) {

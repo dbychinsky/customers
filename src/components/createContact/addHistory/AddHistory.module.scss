@@ -3,4 +3,62 @@
 
 .addHistory {
     @include blockStyle();
+
+    .header {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: $space20;
+        align-items: flex-start;
+
+        .headerContent {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: $space20;
+            width: 100%;
+        }
+    }
+
+    .historyList {
+        margin-top: $space20;
+
+        .row {
+            box-sizing: border-box;
+            padding: 10px 0;
+            display: flex;
+            flex-flow: row nowrap;
+            gap: $space10;
+            width: 100%;
+            justify-content: space-between;
+
+            font-size: $font-size-14;
+
+            &:hover {
+                color: $color-purple;
+            }
+
+            .historyDate {
+                @include interSemiBold();
+                min-width: 120px;
+            }
+
+            .historyComment {
+                flex-grow: 10;
+            }
+
+            .iconActions {
+                display: flex;
+                flex-flow: row nowrap;
+
+                div {
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        margin: 1px $space 0;
+                        fill: $color-red;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
 }
