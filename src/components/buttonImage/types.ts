@@ -11,6 +11,8 @@ export const ButtonImageTypeMapping = {
     add: styles.add,
     clear: styles.clear,
     delete: styles.delete,
+    deleteContact: styles.deleteContact,
+    editContact: styles.editContact,
 };
 
 export type ButtonImageType = keyof typeof ButtonImageTypeMapping;

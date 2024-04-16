@@ -16,7 +16,7 @@
         position: relative;
         overflow: auto;
         max-height: 90vh;
-        padding: 61px $space14 $space14 $space14;
+        padding: 40px $space14 $space14 $space14;
 
         //@include scrollStyles;
     }
@@ -25,7 +25,6 @@
 .modalContentHeader {
     @include interSemiBold();
     font-size: $font-size-18;
-    background-color: $color-purple;
     color: $color-white;
     position: absolute;
     top: 0;
@@ -46,13 +45,13 @@
     height: 34px;
 
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 3px;
 
     display: flex;
 
     svg {
-        fill: $color-white;
+        fill: $color-grey-dark;
         width: 28px;
         height: 28px;
     }

@@ -5,6 +5,10 @@
     display: block;
     padding: 30px 100px 10px;
 
+    > div {
+        justify-content: center;
+    }
+
     .description {
         font-size: $font-size-14;
         color: $color-grey-dark;

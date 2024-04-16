@@ -24,4 +24,33 @@
             background-color: darken($color-blue, 15);
         }
     }
+
+    .contacts {
+        position: relative;
+
+        .iconMask {
+            position: absolute;
+            z-index: 1;
+            left: 176px;
+            top: 2px;
+            cursor: pointer;
+            background-color: $color-white;
+            border-radius: $radius6;
+            padding: 10px 4px 4px 8px;
+
+            svg {
+                path {
+                    stroke: $color-red;
+                }
+            }
+
+            &.active {
+                svg {
+                    path {
+                        stroke: $color-green;
+                    }
+                }
+            }
+        }
+    }
 }

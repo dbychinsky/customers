@@ -5,100 +5,89 @@
     display: block;
     text-align: left;
 
-    .header {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: $space10;
-        box-sizing: border-box;
-        padding: $space10 0 $space10;
-        margin-bottom: $space20;
-        border-bottom: 1px solid $color-grey-background;
-
-        .iconPerson {
-            @include icons();
-            background-color: $color-ultra;
-        }
-
-        .iconTie {
-            @include icons();
-            background-color: $color-purple;
-        }
-
-        .contactName {
+    .contactDetailsWrapper {
+        .header {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row nowrap;
+            justify-content: space-between;
             align-items: center;
-            flex-grow: 1;
+            border-bottom: 1px solid $color-grey-background;
+            padding-bottom: $space20;
+            margin-bottom: $space20;
+
+            .iconPerson {
+                @include icons();
+                background-color: $color-ultra;
+            }
+
+            .iconTie {
+                @include icons();
+                background-color: $color-purple;
+            }
 
             .organization {
                 @include interSemiBold();
-                color: $color-black;
                 font-size: $font-size-20;
-                margin-right: $space20;
             }
 
             .contactFace {
                 font-size: $font-size-18;
                 color: $color-grey-dark;
             }
-        }
 
-        .actionBar {
-            .iconEditContact {
-                cursor: pointer;
-                margin-right: $space10;
-
-                svg {
-                    fill: $color-grey-dark;
-                }
-            }
-
-            .iconDeleteContact {
-                cursor: pointer;
-                svg {
-                    fill: $color-red;
-                }
+            .contactName {
+                flex-grow: 2;
             }
         }
-    }
 
-    .content {
-        display: flex;
-        flex-flow: column nowrap;
-
-        .row {
+        .content {
             display: flex;
             flex-flow: row nowrap;
-            padding-bottom: $space10;
-            margin-bottom: $space20;
-            border-bottom: 1px solid $color-grey-background;
+            gap: 10px;
 
-            &:last-child {
-                border-bottom: none;
+            .columnFirst {
+                width: 65%;
             }
 
-            .contactsModal {
-                width: 60%;
-                border: none;
-                margin: 0;
+            .columnSecond {
+                width: 35%;
             }
 
-            .reminderModal {
-                width: 40%;
-            }
+            .row {
+                display: flex;
+                flex-flow: row nowrap;
+                gap: $space10;
+                width: 100%;
+                min-height: 130px;
+                margin-bottom: $space20;
+                padding-bottom: $space10;
+                border-bottom: 1px solid $color-grey-background;
 
-            .productsModal {
-                width: 60%;
-                border: none;
-            }
+                &:last-child {
+                    border-bottom: none;
+                }
 
-            .historyModal {
-                width: 40%;
-                border: none;
+                .contactsModal {
+                    width: 70%;
+                    border-bottom: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+
+                .reminderModal {
+                    width: 30%;
+                    box-sizing: border-box;
+                    padding-right: $space10;
+                }
             }
         }
+
     }
 
+    .actionBar {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: right;
+        gap: $space14;
+    }
 }

@@ -53,16 +53,18 @@ export function Contacts({ activeContact, className }: PhoneListProps) {
                                 <div>{email.email}</div>
                             </div>
                         ))}
-                        <div
-                            className={styles.address}
-                            onClick={() => copyClipboard(activeContact.address, 'Адрес скопирован')}
-                            role='presentation'
-                        >
-                            <div className={styles.icon}>
-                                <IconAddress />
+                        {activeContact.address ? (
+                            <div
+                                className={styles.address}
+                                onClick={() => copyClipboard(activeContact.address, 'Адрес скопирован')}
+                                role='presentation'
+                            >
+                                <div className={styles.icon}>
+                                    <IconAddress />
+                                </div>
+                                <div>activeContact.address</div>
                             </div>
-                            <div>{activeContact.address}</div>
-                        </div>
+                        ) : null}
                     </>
                 ) : (
                     <NoRecords text='Контакты отсутствуют' variantFontSize='small' variantAlign='left' />

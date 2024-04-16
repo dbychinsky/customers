@@ -4,9 +4,11 @@
 .products {
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: 1px solid $color-grey-background;
+    gap: $space10;
     margin-bottom: $space16;
     padding-bottom: $space8;
+    width: 100%;
+    border-right: 1px dashed $color-grey-background;
 
     .productActive, .productArchive {
         width: 50%;
@@ -40,6 +42,7 @@
             padding-bottom: 6px;
             margin-bottom: 8px;
             border-bottom: 1px dashed $color-grey;
+
 
             .productName {
                 box-sizing: border-box;

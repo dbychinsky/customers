@@ -44,7 +44,7 @@ export const AddHistory = observer(({ contactEditStore }: AddHistoryProps) => {
             <div className={styles.historyList}>
                 {contactEditStore.historyList.map((history) => (
                     <div key={history.id} className={styles.row}>
-                        <div className={styles.historyDate}>{moment(history.date).format('ll')}</div>
+                        <div className={styles.historyDate}>{moment(history.date).format('lll')}</div>
                         <div className={styles.historyComment}>{history.historyComment}</div>
                         <div className={styles.iconActions}>
                             <div role='presentation' onClick={() => handleDelete(history.id)}>

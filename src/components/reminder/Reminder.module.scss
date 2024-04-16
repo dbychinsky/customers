@@ -3,30 +3,27 @@
 
 .reminder {
 
+    border-right: 1px dashed $color-grey-background;
+
     .reminderWrapper {
-        display: block;
+        display: flex;
+        flex-flow: column nowrap;
 
         .date {
-            box-sizing: border-box;
-            padding-right: 10px;
-            width: 20%;
-            display: inline-block;
-            font-size: $font-size-14;
+            font-size: $font-size-base;
             color: $color-green;
         }
 
         .comment {
-            width: 80%;
-            float: right;
             font-size: $font-size-14;
             color: $color-grey-dark;
 
-            &.cut {
-                -webkit-line-clamp: 2; /* Число отображаемых строк */
-                display: -webkit-box; /* Включаем флексбоксы */
-                -webkit-box-orient: vertical; /* Вертикальная ориентация */
-                overflow: hidden; /* Обрезаем всё за пределами блока */
-            }
+            //&.cut {
+            //    -webkit-line-clamp: 2; /* Число отображаемых строк */
+            //    display: -webkit-box; /* Включаем флексбоксы */
+            //    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+            //    overflow: hidden; /* Обрезаем всё за пределами блока */
+            //}
         }
     }
 }

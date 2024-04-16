@@ -19,7 +19,7 @@ export function useContactDetailsModal(deleteContact: () => void): UseDetailsMod
     }, [openModal]);
 
     const ModalShowDetails = (contactId: number | null) => (
-        <Modal title='Детали контакта' onCloseModal={onCloseDetailsModal}>
+        <Modal title='' onCloseModal={onCloseDetailsModal}>
             {isShowConfirm ? (
                 <ModalConfirm deleteContact={deleteContact} setIsShowConfirm={setIsShowConfirm} />
             ) : (

@@ -52,12 +52,20 @@ export const TableBody = observer(({ contactStore, handleClickOnContact }: Table
                             </div>
                         </div>
                         <div className={styles.contacts}>
-                            <div className={styles.phone}>
-                                {contact.phoneList.length ? contact.phoneList[0].number : null}
-                            </div>
-                            <div className={styles.email}>
-                                {contact.emailList.length ? contact.emailList[0].email : null}
-                            </div>
+                            {contact.phoneList.length
+                                ? contact.phoneList.map((phone) => (
+                                      <div key={phone.number} className={styles.phone}>
+                                          {phone.number}
+                                      </div>
+                                  ))
+                                : null}
+                            {contact.emailList.length
+                                ? contact.emailList.map((email) => (
+                                      <div key={email.email} className={styles.email}>
+                                          {email.email}
+                                      </div>
+                                  ))
+                                : null}
                         </div>
                         <div className={styles.products}>
                             {contact.productList.length !== 0 ? (

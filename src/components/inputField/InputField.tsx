@@ -74,7 +74,7 @@ export function InputField({
     maxLength,
 }: InputFieldProps) {
     const classWrapperName = clsx(styles.inputField, className, { [styles.error]: isError });
-    const inputRef = useMask({ mask: '+375 (__) ___-__-__', replacement: { _: /\d/ } });
+    const inputRef = useMask({ mask: '+375(__) ___ __ __', replacement: { _: /\d/ } });
 
     let typeField: InputFieldEnum = InputFieldEnum.text;
 
@@ -108,7 +108,7 @@ export function InputField({
             value={value}
             onInput={changeHandler}
             name={name}
-            placeholder='+375 (__) ___-__-__'
+            placeholder='+375(__) ___ __ __'
             tabIndex={1}
             disabled={disabled}
             autoComplete='new-password'

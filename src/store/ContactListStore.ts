@@ -1,3 +1,4 @@
+import React from 'react';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { Contact } from 'model/Contact';
 import { server } from 'App';
@@ -14,6 +15,11 @@ export class ContactListStore {
     contactList: Contact[] = [];
 
     /**
+     * @description Список контактов используемый при поиске.
+     */
+    contactListSearching: Contact[] = [];
+
+    /**
      * @description Контакт.
      */
     contact: Contact | null = null;
@@ -23,9 +29,24 @@ export class ContactListStore {
      */
     isLoading = false;
 
+    /**
+     * @description ПОИСК.
+     */
+    /**
+     * Поле, принимает данные для поиска по организации и контактному лицу.
+     */
+    searchOrgFace = '';
+
+    /**
+     * Поле, принимает данные для поиска по телефону и email.
+     */
+    searchPhoneEmail = '';
+
     constructor() {
         makeAutoObservable(this);
         this.getContactList = this.getContactList.bind(this);
+        this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
+        this.handleChangeSearchPhone = this.handleChangeSearchPhone.bind(this);
     }
 
     /**
@@ -40,6 +61,7 @@ export class ContactListStore {
             .then((contacts) => {
                 runInAction(() => {
                     this.contactList = contacts;
+                    this.contactListSearching = contacts;
                 });
             })
             .catch((err) => {
@@ -63,6 +85,66 @@ export class ContactListStore {
      */
     deleteContactFromList(idContact: number) {
         server.deleteContact(idContact).then(this.getContactList);
+    }
+
+    /**
+     * @description Поиск по организации и контактному лицу.
+     */
+    public handleChangeSearchOrganization(e: React.ChangeEvent<HTMLInputElement>) {
+        const searchingValue = e.target.value;
+
+        runInAction(() => {
+            this.searchOrgFace = searchingValue;
+            this.searchPhoneEmail = '';
+        });
+
+        if (searchingValue !== '') {
+            runInAction(() => {
+                this.contactList = this.contactListSearching.filter(
+                    (contact) =>
+                        contact.organization.toUpperCase().includes(searchingValue.toUpperCase()) ||
+                        contact.contactFace.toUpperCase().includes(searchingValue.toUpperCase()),
+                );
+            });
+        } else {
+            runInAction(() => {
+                this.contactList = this.contactListSearching;
+            });
+        }
+    }
+
+    /**
+     * @description Поиск по номеру телефона.
+     */
+    handleChangeSearchPhone(e: React.ChangeEvent<HTMLInputElement>) {
+        const searchingValue = e.target.value;
+
+        runInAction(() => {
+            this.searchPhoneEmail = searchingValue;
+            this.searchOrgFace = '';
+        });
+
+        if (searchingValue !== '') {
+            runInAction(() => {
+                this.contactList = [];
+            });
+
+            this.contactListSearching.forEach((contact) => {
+                contact.phoneList.forEach((phone) => {
+                    if (phone.number.toUpperCase().includes(searchingValue.toUpperCase())) {
+                        if (
+                            this.contactList.find((contactFromList) => contactFromList.id === contact.id) === undefined
+                        ) {
+                            runInAction(() => {
+                                this.contactList.push(contact);
+                            });
+                        }
+                    }
+                });
+            });
+        } else {
+            this.contactList = this.contactListSearching;
+        }
     }
 
     /**

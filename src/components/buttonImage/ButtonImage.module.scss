@@ -57,6 +57,30 @@
     }
 }
 
+.deleteContact {
+    background-color: $color-red;
+
+    &:hover {
+        background-color: darken($color-red, 15);
+    }
+
+    svg {
+        fill: $color-white;
+    }
+}
+
+.editContact {
+    background-color: $color-blue;
+
+    &:hover {
+        background-color: darken($color-blue, 15);
+    }
+
+    svg {
+        fill: $color-white;
+    }
+}
+
 
 [disabled] {
     background: $color-grey;

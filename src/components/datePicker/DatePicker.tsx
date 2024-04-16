@@ -10,6 +10,13 @@ interface DatePickerProps {
     isDisabled?: boolean;
 }
 
+/**
+ * @description Компонент Даты.
+ * @param date
+ * @param handleChange
+ * @param isDisabled
+ * @constructor
+ */
 export function DatePicker({ date, handleChange, isDisabled }: DatePickerProps) {
     return (
         <div className={styles.datePicker}>

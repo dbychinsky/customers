@@ -4,33 +4,47 @@ import { InputField } from 'components/inputField/InputField';
 import { InputFieldEnum } from 'components/inputField/types';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
 import { ReactComponent as PersonAdd } from 'common/assets/icon/addContact.svg';
+import { ReactComponent as Mask } from 'common/assets/icon/mask.svg';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
+import { useStores } from 'store/RootStoreContext';
+import { observer } from 'mobx-react';
+import clsx from 'clsx';
 
-export function SearchingPanel() {
-    const [value, setValue] = useState<string>('');
+export const SearchingPanel = observer(() => {
+    const { contactListStore } = useStores();
     const { navigateToCreateContactPage } = useNavigateHelper();
+    const [isMask, setIsMask] = useState(true);
+    const classWrapperIconMask = clsx(styles.iconMask, { [styles.active]: isMask });
 
     return (
         <div className={styles.searchingPanel}>
             <div className={styles.name}>
                 <InputField
-                    value={value}
-                    changeHandler={changeHandler}
-                    name='Poisk'
+                    value={contactListStore.searchOrgFace}
+                    changeHandler={contactListStore.handleChangeSearchOrganization}
+                    name='searchingOrg'
                     type={InputFieldEnum.text}
                     mask={false}
+                    placeHolder='Организация/Контактное лицо'
                 />
             </div>
             <div className={styles.contacts}>
                 <InputField
-                    value={value}
-                    changeHandler={changeHandler}
+                    value={contactListStore.searchPhoneEmail}
+                    changeHandler={contactListStore.handleChangeSearchPhone}
                     name='Poisk'
                     type={InputFieldEnum.text}
-                    mask={false}
+                    mask={isMask}
+                    placeHolder='Телефон'
+                />
+                <ButtonImage
+                    onClick={checkStateMask}
+                    image={<Mask />}
+                    onlyImage={true}
+                    className={classWrapperIconMask}
                 />
             </div>
-            <div className={styles.products}>sdsds</div>
+            <div className={styles.products} />
             <div className={styles.reminder}>
                 <ButtonImage
                     onClick={onHandleAddContact}
@@ -42,11 +56,11 @@ export function SearchingPanel() {
         </div>
     );
 
-    function changeHandler() {
-        setValue(value);
-    }
-
     function onHandleAddContact() {
         navigateToCreateContactPage();
     }
-}
+
+    function checkStateMask() {
+        setIsMask(!isMask);
+    }
+});
