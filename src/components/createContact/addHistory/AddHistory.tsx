@@ -3,7 +3,7 @@ import styles from 'components/createContact/addHistory/AddHistory.module.scss';
 import { HeadingH2 } from 'components/headingH2/headingH2';
 import { DatePicker } from 'components/datePicker/DatePicker';
 import { TextAreaField } from 'components/textAreaField/TextAreaField';
-import { ContactEditStore } from 'store/ContactEditStore';
+import { ContactEditStore } from 'store/contactEditStore/ContactEditStore';
 import { observer } from 'mobx-react';
 import moment, { Moment } from 'moment';
 import { ReactComponent as Add } from 'common/assets/icon/add.svg';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { PhoneTypeListEnum } from 'model/types';
 import styles from 'components/radioButtonsPhone/RadioButtonsPhone.module.scss';
+import { PhoneTypeListEnum } from 'store/contactEditStore/types';
 
 interface RadioButtonsProps {
     state: string;

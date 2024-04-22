@@ -1,7 +1,7 @@
 /**
  * @description Класс работы с нотифкацией
  */
-export class pushNotification {
+export class PushNotification {
     static createNotification(title: string, contactFace: string) {
         const notification = new Notification(title, {
             icon: '',

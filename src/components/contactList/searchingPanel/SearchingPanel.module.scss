@@ -25,13 +25,13 @@
         }
     }
 
-    .contacts {
+    .phoneListHeader {
         position: relative;
 
         .iconMask {
             position: absolute;
             z-index: 1;
-            left: 176px;
+            right: 12px;
             top: 2px;
             cursor: pointer;
             background-color: $color-white;

@@ -3,7 +3,7 @@
 
 @mixin contactListTable() {
     .name {
-        width: 40%;
+        width: 36%;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -34,6 +34,7 @@
             .contactFace {
                 box-sizing: border-box;
                 padding-right: $space10;
+                padding-top: $space4;
                 font-size: $font-size-14;
                 color: $color-grey-dark;
             }
@@ -43,28 +44,44 @@
             width: 100%;
         }
     }
-
-    .contacts {
-        width: 30%;
+    .phoneList {
+        width: 19%;
         box-sizing: border-box;
         padding-right: $space10;
 
         .phone {
             font-size: $font-size-12;
+            padding-bottom: $space4;
         }
+    }
+    .phoneListHeader {
+        width: 36%;
+
+        .phone {
+            font-size: $font-size-12;
+            padding-bottom: $space4;
+            position: relative;
+        }
+    }
+    .emailList {
+        width: 17%;
+        box-sizing: border-box;
+        padding-right: $space10;
 
         .email {
             font-size: $font-size-12;
             color: $color-grey-dark;
-        }
-
-        input {
-            width: 100%;
+            padding-bottom: $space4;
         }
     }
 
+
+    input {
+        width: 100%;
+    }
+
     .products {
-        width: 10%;
+        width: 8%;
         display: flex;
         flex-flow: row nowrap;
 

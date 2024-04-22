@@ -1,10 +1,16 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { EmailListType, HistoryType, PhoneListType, PhoneTypeListEnum, ProductListType } from 'model/types';
 import { Contact } from 'model/Contact';
 import React from 'react';
 import { server } from 'App';
 import { FieldError } from 'components/inputField/types';
 import { Moment } from 'moment';
+import {
+    EmailListType,
+    HistoryType,
+    PhoneListType,
+    PhoneTypeListEnum,
+    ProductListType,
+} from 'store/contactEditStore/types';
 
 const initialStateProduct = { id: '', productName: '', productComment: '' };
 
@@ -72,6 +78,11 @@ export class ContactEditStore {
      */
     errorList: FieldError[] = [];
 
+    /**
+     * @description Флаг загрузки.
+     */
+    isLoading = false;
+
     constructor() {
         makeAutoObservable(this);
         this.setPhoneList = this.setPhoneList.bind(this);
@@ -86,6 +97,9 @@ export class ContactEditStore {
         this.handleChangeFieldsReminderDate = this.handleChangeFieldsReminderDate.bind(this);
     }
 
+    /**
+     * @description СОЗДАНИЕ контакта.
+     */
     /**
      * @description Заполнение списка номеров телефонов.
      */
@@ -375,38 +389,114 @@ export class ContactEditStore {
      */
     async pushContact() {
         if (this.errorList.length === 0) {
-            runInAction(() => {
-                this.contact = {
-                    ...this.contact,
-                    phoneList: this.phoneList,
-                };
-            });
-            runInAction(() => {
-                this.contact = {
-                    ...this.contact,
-                    emailList: this.emailList,
-                };
-            });
-            runInAction(() => {
-                this.contact = {
-                    ...this.contact,
-                    productList: this.productList,
-                };
-            });
-            runInAction(() => {
-                this.contact = {
-                    ...this.contact,
-                    productListArchive: this.productListArchive,
-                };
-            });
-            runInAction(() => {
-                this.contact = {
-                    ...this.contact,
-                    history: this.historyList,
-                };
-            });
-
+            this.updateData();
             server.addContact(this.contact).then();
         }
+    }
+
+    /**
+     * @description РЕДАКТИРОВАНИЕ контакта.
+     */
+    /**
+     * @description Получение контакта по id.
+     */
+    getContactById(idContact: string) {
+        runInAction(() => {
+            this.isLoading = true;
+        });
+        server
+            .getContactById(idContact)
+            .then((contact) => {
+                runInAction(() => {
+                    this.contact = contact;
+                });
+                runInAction(() => {
+                    if (contact.phoneList.length) {
+                        contact.phoneList.map((elem) => {
+                            this.phoneList.push(elem);
+                        });
+                    }
+                    if (contact.emailList.length) {
+                        contact.emailList.map((elem) => {
+                            this.emailList.push(elem);
+                        });
+                    }
+                    if (contact.productList.length) {
+                        contact.productList.map((elem) => {
+                            this.productList.push(elem);
+                        });
+                    }
+                    if (contact.productListArchive.length) {
+                        contact.productListArchive.map((elem) => {
+                            this.productListArchive.push(elem);
+                        });
+                    }
+                    if (contact.historyList.length) {
+                        contact.historyList.map((elem) => {
+                            this.historyList.push(elem);
+                        });
+                    }
+                });
+            })
+            .catch((err) => {
+                if (err.response) {
+                    console.log('client received an error response (5xx, 4xx)');
+                } else if (err.request) {
+                    console.log('client never received a response, or request never left');
+                }
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    runInAction(() => {
+                        this.isLoading = false;
+                    });
+                }, 500);
+            });
+    }
+
+    /**
+     * @description Отправка редактированных данных на сервер.
+     */
+    async pushEditContact(idContact: string | undefined) {
+        if (this.errorList.length === 0 && idContact) {
+            this.updateData();
+            server.updateContact(idContact, this.contact).then();
+        }
+    }
+
+    /**
+     * @description Обновление данных перед отправкой на сервер.
+     */
+    updateData() {
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                phoneList: this.phoneList,
+            };
+        });
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                emailList: this.emailList,
+            };
+        });
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                productList: this.productList,
+            };
+        });
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                productListArchive: this.productListArchive,
+            };
+        });
+        runInAction(() => {
+            this.contact = {
+                ...this.contact,
+                historyList: this.historyList,
+            };
+        });
     }
 }

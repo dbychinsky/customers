@@ -1,3 +1,23 @@
+export enum PhoneTypeListEnum {
+    personal = 'personal',
+    business = 'business',
+}
+
+export type ReminderType = {
+    /**
+     * @description Флаг срабатывания.
+     */
+    bell: boolean;
+    /**
+     * @description Дата.
+     */
+    date: Date;
+    /**
+     * @description Комментарий.
+     */
+    productComment: string;
+};
+
 export type PhoneListType = {
     /**
      * @description Номер телефона.
@@ -15,11 +35,6 @@ export type EmailListType = {
      */
     email: string;
 };
-
-export enum PhoneTypeListEnum {
-    personal = 'personal',
-    business = 'business',
-}
 
 export type HistoryType = {
     /**
@@ -45,21 +60,6 @@ export type ProductListType = {
      * @description Название продукта.
      */
     productName: string;
-    /**
-     * @description Комментарий.
-     */
-    productComment: string;
-};
-
-export type ReminderType = {
-    /**
-     * @description Флаг срабатывания.
-     */
-    bell: boolean;
-    /**
-     * @description Дата.
-     */
-    date: Date;
     /**
      * @description Комментарий.
      */

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'components/createContact/addNameContact/AddNameContact.module.scss';
 import { HeadingH2 } from 'components/headingH2/headingH2';
-import { ContactEditStore } from 'store/ContactEditStore';
+import { ContactEditStore } from 'store/contactEditStore/ContactEditStore';
 import { InputFieldEnum } from 'components/inputField/types';
 import { observer } from 'mobx-react';
 import { TextAreaField } from 'components/textAreaField/TextAreaField';

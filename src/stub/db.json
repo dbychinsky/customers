@@ -44,7 +44,7 @@
       ],
       "address": "",
       "description": "Изготавливают не много и по мере необходимости.",
-      "history": [
+      "historyList": [
         {
           "id": "Tue Apr 16 2024 11:26:41 GMT+0300 (Москва, стандартное время)",
           "date": "2023-10-13T08:25:25.000Z",
@@ -72,9 +72,9 @@
         }
       ],
       "reminder": {
-        "bell": true,
+        "bell": false,
         "productComment": "Перезвонить",
-        "date": "2024-05-02T04:30:27.000Z"
+        "date": "2024-04-16T09:26:19.337Z"
       }
     },
     {
@@ -112,7 +112,7 @@
       ],
       "address": "",
       "description": "",
-      "history": [
+      "historyList": [
         {
           "id": "Tue Apr 16 2024 11:31:27 GMT+0300 (Москва, стандартное время)",
           "date": "2023-10-05T08:30:29.619Z",
@@ -139,13 +139,7 @@
       "id": 3,
       "organization": "Элема ОАО",
       "contactFace": "Анастасия",
-      "productList": [
-        {
-          "id": "Tue Apr 16 2024 11:33:27 GMT+0300 (Москва, стандартное время)",
-          "productName": "Каталоги",
-          "productComment": ""
-        }
-      ],
+      "productList": [],
       "productListArchive": [],
       "phoneList": [
         {
@@ -160,7 +154,7 @@
       ],
       "address": "",
       "description": "",
-      "history": [],
+      "historyList": [],
       "reminder": {
         "bell": false,
         "date": "2024-04-16T08:32:19.129Z",
@@ -169,7 +163,7 @@
     },
     {
       "id": 4,
-      "organization": "Кондитерская фабрика «Витьба» КПУП\"",
+      "organization": "",
       "contactFace": "Виктория - спец по печатной продукции  (Елена-доп.прод)",
       "productList": [
         {
@@ -201,7 +195,7 @@
       ],
       "address": "",
       "description": "Наберите в сентябре.",
-      "history": [
+      "historyList": [
         {
           "id": "Tue Apr 16 2024 11:37:10 GMT+0300 (Москва, стандартное время)",
           "date": "2023-10-09T08:33:45.503Z",
@@ -224,9 +218,75 @@
         }
       ],
       "reminder": {
-        "bell": true,
-        "productComment": "Перезвонить",
-        "date": "2024-04-18T04:45:45.533Z"
+        "bell": false,
+        "productComment": "comment 2",
+        "date": "2024-04-16T09:26:19.337Z"
+      }
+    },
+    {
+      "id": 5,
+      "organization": "Organisation",
+      "contactFace": "ContactFace",
+      "productList": [
+        {
+          "id": "Tue Apr 16 2024 12:27:41 GMT+0300 (Москва, стандартное время)",
+          "productName": "Бланки",
+          "productComment": "1,kfyrb"
+        },
+        {
+          "id": "Tue Apr 16 2024 12:27:47 GMT+0300 (Москва, стандартное время)",
+          "productName": "Буклеты",
+          "productComment": "2,erktns"
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "Tue Apr 16 2024 12:27:56 GMT+0300 (Москва, стандартное время)",
+          "productName": "Брошюры",
+          "productComment": "1 ,hjiehs"
+        },
+        {
+          "id": "Tue Apr 16 2024 12:28:00 GMT+0300 (Москва, стандартное время)",
+          "productName": "Блокноты",
+          "productComment": "2 ,kjryjns"
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 704 09 08",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(28) 603 08 07",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "email_one"
+        },
+        {
+          "email": "email_two"
+        }
+      ],
+      "address": "Physical address",
+      "description": "Comment to contact",
+      "historyList": [
+        {
+          "id": "Tue Apr 16 2024 12:28:21 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-16T09:26:19.317Z",
+          "historyComment": "1 history"
+        },
+        {
+          "id": "Tue Apr 16 2024 12:28:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T15:28:21.000Z",
+          "historyComment": "2 history"
+        }
+      ],
+      "reminder": {
+        "bell": false,
+        "productComment": "comment",
+        "date": "2024-04-16T09:26:19.337Z"
       }
     }
   ],

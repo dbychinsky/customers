@@ -7,7 +7,7 @@ import { HeadingH2 } from 'components/headingH2/headingH2';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
 import { ReactComponent as Add } from 'common/assets/icon/add.svg';
 import { ReactComponent as Delete } from 'common/assets/icon/delete.svg';
-import { ContactEditStore } from 'store/ContactEditStore';
+import { ContactEditStore } from 'store/contactEditStore/ContactEditStore';
 
 interface AddEmailProps {
     contactEditStore: ContactEditStore;

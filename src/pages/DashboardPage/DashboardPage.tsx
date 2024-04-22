@@ -4,22 +4,29 @@ import styles from 'pages/DashboardPage/DashboardPage.module.scss';
 import { useStores } from 'store/RootStoreContext';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 import { CurrencyWidget } from 'components/currencyWidget/CurrencyWidget';
-import { StatisticWidget } from 'components/statisticWidget/StatisticWidget';
+import { ReminderStatisticWidget } from 'components/reminderStatisticWidget/ReminderStatisticWidget';
 import clsx from 'clsx';
 import { ContactList } from 'components/contactList/ContactList';
 import { useContactDetailsModal } from 'components/contactDetails/useContactDetailsModal';
 import { ToastContainer } from 'react-toastify';
+import { ScrollTop } from 'components/scrollTop/ScrollTop';
 
 /**
  * @description Страница дашборда.
  */
 export const DashboardPage = observer(() => {
-    const { authStore, contactListStore, contactEditStore } = useStores();
+    const { authStore, contactListStore, contactEditStore, currencyStore } = useStores();
     const { navigateToLoginPage } = useNavigateHelper();
     const [activeContactId, setActiveContactId] = useState<number | null>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
     const classWrapperSideBar = clsx(styles.sideBarWrapper, { [styles.scroll]: isScrolling });
     const { ModalShowDetails, showDetailsHandler, onCloseDetailsModal } = useContactDetailsModal(deleteContact);
+
+    useEffect(() => {
+        if (!authStore.isAuth) {
+            navigateToLoginPage();
+        }
+    }, [authStore.isAuth, navigateToLoginPage]);
 
     useEffect(() => {
         handleScroll();
@@ -30,10 +37,8 @@ export const DashboardPage = observer(() => {
     }, []);
 
     useEffect(() => {
-        if (!authStore.isAuth) {
-            navigateToLoginPage();
-        }
-    }, [authStore.isAuth, navigateToLoginPage]);
+        contactListStore.checkNotifyOnTimer();
+    }, [contactListStore]);
 
     useEffect(() => {
         contactListStore.getContactList();
@@ -48,12 +53,16 @@ export const DashboardPage = observer(() => {
                 isScrolling={isScrolling}
             />
             <div className={classWrapperSideBar}>
-                <CurrencyWidget />
-                <StatisticWidget />
+                <div className={styles.top}>
+                    <ReminderStatisticWidget contactStore={contactListStore} />
+                    <CurrencyWidget currencyStore={currencyStore} />
+                </div>
+                <div className={styles.bottom}>{/*<PmWidget />*/}</div>
             </div>
 
             {ModalShowDetails(activeContactId)}
             <ToastContainer />
+            <ScrollTop />
         </div>
     );
 

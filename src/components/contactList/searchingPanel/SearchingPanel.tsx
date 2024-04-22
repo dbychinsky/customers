@@ -28,7 +28,7 @@ export const SearchingPanel = observer(() => {
                     placeHolder='Организация/Контактное лицо'
                 />
             </div>
-            <div className={styles.contacts}>
+            <div className={styles.phoneListHeader}>
                 <InputField
                     value={contactListStore.searchPhoneEmail}
                     changeHandler={contactListStore.handleChangeSearchPhone}

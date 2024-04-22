@@ -19,6 +19,7 @@ export const RoutersProject = () => (
             <Route path={RouterPathList.CALENDAR_PAGE} element={<CalendarPage />} />
             <Route path={RouterPathList.CURRENCY_PAGE} element={<CurrencyPage />} />
             <Route path={RouterPathList.CREATE_CONTACT_PAGE} element={<CreateContactPage />} />
+            <Route path={`${RouterPathList.EDIT_CONTACT_PAGE}/:idContact`} element={<CreateContactPage />} />
         </Route>
     </Routes>
 );

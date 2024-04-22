@@ -12,6 +12,7 @@ import { Contacts } from 'components/contacts/Contacts';
 import { Reminder } from 'components/reminder/Reminder';
 import { Products } from 'components/products/Products';
 import { History } from 'components/history/History';
+import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 
 /**
  * Интерфейс компонента "contactDetails".
@@ -37,6 +38,7 @@ interface ContactDetailsProps {
 export const ContactDetails = observer(({ contactId, setIsShowConfirm }: ContactDetailsProps) => {
     const { contactListStore } = useStores();
     const [activeContact, setActiveContact] = useState<Contact>(new Contact());
+    const { navigateToEditContactPage } = useNavigateHelper();
 
     useEffect(() => {
         const targetContact = contactListStore.contactList.find((contact) => contact.id === contactId);
@@ -88,9 +90,7 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
             </div>
             <div className={styles.actionBar}>
                 <ButtonImage
-                    onClick={() => {
-                        console.log('2');
-                    }}
+                    onClick={() => navigateToEditContactPage(activeContact.id.toString())}
                     image={<IconEditContact />}
                     onlyImage={true}
                     className={styles.iconEditContact}

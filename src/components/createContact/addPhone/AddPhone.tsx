@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from 'components/createContact/addPhone/AddPhone.module.scss';
 import { InputField } from 'components/inputField/InputField';
 import { InputFieldEnum } from 'components/inputField/types';
-import { PhoneTypeListEnum } from 'model/types';
 import { getIconTypeContact } from 'utils/getIconTypeContact';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
 import { ReactComponent as Add } from 'common/assets/icon/add.svg';
@@ -11,8 +10,9 @@ import { ReactComponent as Delete } from 'common/assets/icon/delete.svg';
 import { RadioButtonsPhone } from 'components/radioButtonsPhone/RadioButtonsPhone';
 import clsx from 'clsx';
 import { HeadingH2 } from 'components/headingH2/headingH2';
-import { ContactEditStore } from 'store/ContactEditStore';
+import { ContactEditStore } from 'store/contactEditStore/ContactEditStore';
 import { observer } from 'mobx-react';
+import { PhoneTypeListEnum } from 'store/contactEditStore/types';
 
 interface AddPhoneProps {
     contactEditStore: ContactEditStore;

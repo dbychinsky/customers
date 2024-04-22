@@ -8,7 +8,7 @@
     height: 100%;
     flex-direction: row;
     gap: 20px;
-    padding: $space20 $space20 0 $space20;
+    padding: $space20 0 0 $space20;
 
     .head {
         width: 100%;
@@ -23,7 +23,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         z-index: 2;
-        flex-basis: 40%;
+        width: 35%;
         position: sticky;
         transition: top .5s ease;
         top: 0;
@@ -31,6 +31,16 @@
 
         &.scroll {
             top: 20px;
+        }
+
+        .top {
+            width: 100%;
+            display: flex;
+            gap: $space20;
+        }
+
+        .bottom {
+            width: 100%;
         }
     }
 }

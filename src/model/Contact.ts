@@ -1,4 +1,4 @@
-import { EmailListType, HistoryType, PhoneListType, ProductListType, ReminderType } from 'model/types';
+import { EmailListType, HistoryType, PhoneListType, ProductListType, ReminderType } from 'store/contactEditStore/types';
 
 /**
  * @description Контакт.
@@ -52,7 +52,7 @@ export class Contact {
     /**
      * @description История.
      */
-    history: HistoryType[];
+    historyList: HistoryType[];
 
     /**
      * @description Флаг напоминания.
@@ -69,7 +69,7 @@ export class Contact {
         this.emailList = [];
         this.address = '';
         this.description = '';
-        this.history = [];
+        this.historyList = [];
         this.reminder = { bell: false, date: new Date(), productComment: '' };
     }
 }

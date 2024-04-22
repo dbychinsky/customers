@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'components/createContact/addReminder/AddReminder.module.scss';
-import { ContactEditStore } from 'store/ContactEditStore';
+import { ContactEditStore } from 'store/contactEditStore/ContactEditStore';
 import { TextAreaField } from 'components/textAreaField/TextAreaField';
 import { HeadingH2 } from 'components/headingH2/headingH2';
 import clsx from 'clsx';

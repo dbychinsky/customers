@@ -24,19 +24,19 @@ export const History = observer(({ activeContact, className, isBorderText }: His
     return (
         <div className={classWrapperHistory}>
             <HeadingH2 title='История' />
-            {activeContact && isBorderText && activeContact?.history.length > 2 ? (
+            {activeContact && isBorderText && activeContact?.historyList.length > 2 ? (
                 <div className={styles.dotted}>...</div>
             ) : null}
-            {activeContact?.history.length !== 0 ? (
+            {activeContact?.historyList.length !== 0 ? (
                 isBorderText ? (
-                    activeContact?.history.slice(-2).map((item) => (
+                    activeContact?.historyList.slice(-2).map((item) => (
                         <div key={item.id} className={styles.historyRow}>
                             <div className={styles.date}>{moment(item.date).format('L')}</div>
                             <div className={styles.comments}>{item.historyComment}</div>
                         </div>
                     ))
                 ) : (
-                    activeContact?.history.map((item) => (
+                    activeContact?.historyList.map((item) => (
                         <div key={item.id} className={styles.historyRow}>
                             <div className={styles.date}>{moment(item.date).format('L')}</div>
                             <div className={styles.comments}>{item.historyComment}</div>

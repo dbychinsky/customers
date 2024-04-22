@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { RouterPathList } from 'router/RouterPathList';
 
 /**
- * Хук с готовыми функциями для использования навигации по роутам приложения.
+ * @description  Хук с готовыми функциями для использования навигации по роутам приложения.
  *
  * @see UseNavigateHelperReturnType
  */
@@ -16,19 +16,25 @@ export function useNavigateHelper(): UseNavigateHelperReturnType {
     const navigateToDashboardPage = useCallback(() => navigate(RouterPathList.DASHBOARD_PAGE), []);
     const navigateToCurrencyPage = useCallback(() => navigate(RouterPathList.CURRENCY_PAGE), []);
     const navigateToCreateContactPage = useCallback(() => navigate(RouterPathList.CREATE_CONTACT_PAGE), []);
+
+    const navigateToEditContactPage = useCallback(
+        (idContact: string) => navigate(`${RouterPathList.EDIT_CONTACT_PAGE}/${idContact}`),
+        [],
+    );
     const navigateToPreviousPage = () => navigate(-1);
 
     return {
         navigateToPreviousPage,
-        navigateToLoginPage: navigateToLoginPage,
-        navigateToDashboardPage: navigateToDashboardPage,
-        navigateToCurrencyPage: navigateToCurrencyPage,
-        navigateToCreateContactPage: navigateToCreateContactPage,
+        navigateToLoginPage,
+        navigateToDashboardPage,
+        navigateToCurrencyPage,
+        navigateToCreateContactPage,
+        navigateToEditContactPage,
     };
 }
 
 /**
- * Тип функций-хелперов хука "useNavigateHelper".
+ * @description  Тип функций-хелперов хука "useNavigateHelper".
  *
  * @see useNavigateHelper
  * @see UseNavigateHelperReturnType
@@ -36,30 +42,34 @@ export function useNavigateHelper(): UseNavigateHelperReturnType {
 type NavigateHelperType = () => void;
 
 /**
- * Тип данных, возвращаемый хуком "useNavigateHelper".
+ * @description  Тип данных, возвращаемый хуком "useNavigateHelper".
  *
  * @see useNavigateHelper
  * @see NavigateHelperType
  */
 type UseNavigateHelperReturnType = {
     /**
-     * Функция, перенаправляющая пользователя предыдущую страницу.
+     * @description  Функция, перенаправляющая пользователя предыдущую страницу.
      */
     navigateToPreviousPage: NavigateHelperType;
     /**
-     * Функция, перенаправляющая пользователя на страницу логирования.
+     * @description  Функция, перенаправляющая пользователя на страницу логирования.
      */
     navigateToLoginPage: NavigateHelperType;
     /**
-     * Функция, перенаправляющая пользователя на главную страницу - Dashboard.
+     * @description  Функция, перенаправляющая пользователя на главную страницу - Dashboard.
      */
     navigateToDashboardPage: NavigateHelperType;
     /**
-     * Функция, перенаправляющая пользователя на главную страницу - Currency.
+     * @description  Функция, перенаправляющая пользователя на главную страницу - Currency.
      */
     navigateToCurrencyPage: NavigateHelperType;
     /**
-     * Функция, перенаправляющая пользователя на страницу создания контакта CreateContactPage.
+     * @description  Функция, перенаправляющая пользователя на страницу создания контакта CreateContactPage.
      */
     navigateToCreateContactPage: NavigateHelperType;
+    /**
+     * @description Функция, перенаправляющая пользователя на страницу редактирования контакта.
+     */
+    navigateToEditContactPage: (idContact: string) => void;
 };

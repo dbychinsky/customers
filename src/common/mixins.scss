@@ -4,7 +4,7 @@
 @mixin blockStyle($padding: $space20) {
     box-sizing: border-box;
     padding: $padding;
-    border-radius: $radius10;
+    border-radius: $radius6;
     background-color: $color-white;
 }
 
@@ -23,4 +23,11 @@
         width: 26px;
         height: 26px;
     }
+}
+
+@mixin truncateText($lineClamp) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lineClamp;
+    -webkit-box-orient: vertical;
 }

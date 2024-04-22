@@ -12,6 +12,7 @@ import { Flip, toast } from 'react-toastify';
 import { AddProductList } from 'components/createContact/addProductList/AddProductList';
 import { AddReminder } from 'components/createContact/addReminder/AddReminder';
 import { AddHistory } from 'components/createContact/addHistory/AddHistory';
+import { useParams } from 'react-router-dom';
 
 /**
  * @description Страница создания контакта.
@@ -19,6 +20,7 @@ import { AddHistory } from 'components/createContact/addHistory/AddHistory';
 export const CreateContactPage = observer(() => {
     const { authStore, contactListStore, contactEditStore } = useStores();
     const { navigateToDashboardPage } = useNavigateHelper();
+    const { idContact } = useParams();
 
     useEffect(() => {
         if (!authStore.isAuth) {
@@ -30,11 +32,26 @@ export const CreateContactPage = observer(() => {
         contactEditStore.clearFieldsCreateContact();
     }, [contactEditStore]);
 
+    useEffect(() => {
+        if (idContact) {
+            contactEditStore.getContactById(idContact);
+        }
+    }, [contactEditStore, idContact]);
+
     return (
         <div className={styles.createContactPage}>
             <div className={styles.header}>
-                <HeadingH1 title='Создание контакта' className={styles.heading} />
-                <Button text='Сохранить' onClick={handleClickSendContact} />
+                <HeadingH1
+                    title={!idContact ? 'Создание контакта' : 'Редактирование контакта'}
+                    className={styles.heading}
+                />
+                <div>
+                    <Button text='Отменить' onClick={navigateToDashboardPage} variant='cancel' />
+                    <Button
+                        text={!idContact ? 'Создать' : 'Сохранить'}
+                        onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                    />
+                </div>
             </div>
             <form
                 className={styles.form}
@@ -52,7 +69,10 @@ export const CreateContactPage = observer(() => {
                     <AddHistory contactEditStore={contactEditStore} />
                 </div>
                 <div className={styles.send}>
-                    <Button text='Сохранить' onClick={handleClickSendContact} />
+                    <Button
+                        text={!idContact ? 'Создать' : 'Сохранить'}
+                        onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                    />
                 </div>
             </form>
         </div>
@@ -65,6 +85,29 @@ export const CreateContactPage = observer(() => {
                 .pushContact()
                 .then(() =>
                     toast.success('Запись добавлена', {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                        transition: Flip,
+                    }),
+                )
+                .then(() => contactListStore.getContactList())
+                .then(() => navigateToDashboardPage());
+        }
+    }
+
+    function handleClickSendEditContact() {
+        contactEditStore.validateFields();
+        if (contactEditStore.errorList.length === 0) {
+            contactEditStore
+                .pushEditContact(idContact)
+                .then(() =>
+                    toast.success('Изменения сохранены', {
                         position: 'top-right',
                         autoClose: 2000,
                         hideProgressBar: false,

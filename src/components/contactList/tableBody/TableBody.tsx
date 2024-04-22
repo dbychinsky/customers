@@ -51,7 +51,7 @@ export const TableBody = observer(({ contactStore, handleClickOnContact }: Table
                                 <div className={styles.contactFace}>{contact.contactFace}</div>
                             </div>
                         </div>
-                        <div className={styles.contacts}>
+                        <div className={styles.phoneList}>
                             {contact.phoneList.length
                                 ? contact.phoneList.map((phone) => (
                                       <div key={phone.number} className={styles.phone}>
@@ -59,6 +59,8 @@ export const TableBody = observer(({ contactStore, handleClickOnContact }: Table
                                       </div>
                                   ))
                                 : null}
+                        </div>
+                        <div className={styles.emailList}>
                             {contact.emailList.length
                                 ? contact.emailList.map((email) => (
                                       <div key={email.email} className={styles.email}>

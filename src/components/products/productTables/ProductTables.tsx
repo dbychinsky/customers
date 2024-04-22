@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from 'components/products/productTables/ProductTables.module.scss';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
-import { ProductListType } from 'model/types';
 import { ReactComponent as Delete } from 'common/assets/icon/delete.svg';
 import clsx from 'clsx';
 import { observer } from 'mobx-react';
+import { ProductListType } from 'store/contactEditStore/types';
 
 interface ProductTablesProps {
     productList: ProductListType[];

@@ -1,0 +1,50 @@
+@import '../../common/css-parameters';
+@import '../../common/mixins';
+
+.reminderStatisticWidget {
+    width: 56%;
+
+    .statistic {
+        @include blockStyle();
+        display: flex;
+        flex-flow: column nowrap;
+        margin-bottom: $space20;
+
+        .statisticContent {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .statisticRecordsList {
+            flex-flow: column nowrap;
+            border-left: 1px dashed $color-grey-background;
+            padding-left: $space8;
+            width: 100%;
+
+            .recordBig {
+                padding-bottom: $space4;
+                font-size: $font-size-12;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: end;
+            }
+
+            .recordSmall {
+                padding-bottom: $space4;
+                font-size: $font-size-12;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: end;
+            }
+        }
+    }
+
+    .chart {
+        width: 60px;
+        height: 60px;
+
+
+    }
+}

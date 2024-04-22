@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from 'components/createContact/addProductList/AddProductList.module.scss';
-import { ContactEditStore } from 'store/ContactEditStore';
+import { ContactEditStore } from 'store/contactEditStore/ContactEditStore';
 import { HeadingH2 } from 'components/headingH2/headingH2';
 import { useStores } from 'store/RootStoreContext';
 import { InputSelect } from 'components/inputSelect/InputSelect';
