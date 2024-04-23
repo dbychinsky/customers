@@ -13,32 +13,41 @@ import { Reminder } from 'components/reminder/Reminder';
 import { Products } from 'components/products/Products';
 import { History } from 'components/history/History';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
+import clsx from 'clsx';
 
 /**
- * Интерфейс компонента "contactDetails".
+ * @description Интерфейс компонента "contactDetails".
  *
  * @see ContactDetails
  */
 interface ContactDetailsProps {
     /**
-     * Идентификатор контакат.
+     * @description  Идентификатор контакат.
      */
     contactId: number | null;
     /**
-     * Функция показа окна подтверждения.
+     * @description  Функция показа окна подтверждения.
      */
     setIsShowConfirm: (value: boolean) => void;
 }
 
 /**
- * Компонент, отображающий детали контакта.
+ * @description Компонент, отображающий детали контакта.
  *
  * @see IContactDetailsProps
  */
 export const ContactDetails = observer(({ contactId, setIsShowConfirm }: ContactDetailsProps) => {
-    const { contactListStore } = useStores();
-    const [activeContact, setActiveContact] = useState<Contact>(new Contact());
+    const { contactListStore, contactEditStore } = useStores();
     const { navigateToEditContactPage } = useNavigateHelper();
+    const [isHasReminder, setIsHasReminder] = useState(false);
+    const [activeContact, setActiveContact] = useState<Contact>(new Contact());
+    const classWrapperContactDetails = clsx(styles.contactDetails, { [styles.isHasReminder]: isHasReminder });
+
+    useEffect(() => {
+        if (contactListStore.contactList.find((contact) => contact.id === activeContact.id)) {
+            setIsHasReminder(true);
+        }
+    }, [activeContact.id, contactListStore.contactList]);
 
     useEffect(() => {
         const targetContact = contactListStore.contactList.find((contact) => contact.id === contactId);
@@ -48,7 +57,7 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
     }, [contactId, contactListStore.contactList]);
 
     return (
-        <div className={styles.contactDetails}>
+        <div className={classWrapperContactDetails}>
             <div className={styles.contactDetailsWrapper}>
                 <div className={styles.header}>
                     {activeContact.organization.length ? (
@@ -90,6 +99,14 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
             </div>
             <div className={styles.actionBar}>
                 <ButtonImage
+                    onClick={offNotification}
+                    image={<IconEditContact />}
+                    onlyImage={true}
+                    className={styles.iconEditContact}
+                    variant='editContact'
+                    isDisabled={!isHasReminder}
+                />
+                <ButtonImage
                     onClick={() => navigateToEditContactPage(activeContact.id.toString())}
                     image={<IconEditContact />}
                     onlyImage={true}
@@ -106,4 +123,9 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
             </div>
         </div>
     );
+
+    function offNotification() {
+        contactEditStore.offNotificationFromModal(activeContact);
+        contactListStore.deleteRecordListNotification(activeContact.id);
+    }
 });

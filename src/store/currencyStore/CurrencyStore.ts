@@ -41,9 +41,14 @@ export class CurrencyStore {
     amountCurrencyConstYesterday: AmountCurrencyYesterdayConstType[] = [];
 
     /**
-     * @description
+     * @description Выбор количества знаков дробной части.
      */
     radio: fractionEnum = fractionEnum.twoFraction;
+
+    /**
+     * @description Актуальная дата курсов валюты.
+     */
+    currentDate = '';
 
     constructor() {
         makeAutoObservable(this);
@@ -71,6 +76,9 @@ export class CurrencyStore {
                             currencyUsd.Cur_OfficialRate,
                         ),
                     });
+                });
+                runInAction(() => {
+                    this.currentDate = currencyUsd.Date;
                 });
             })
             .catch((err) => {
@@ -314,7 +322,6 @@ export class CurrencyStore {
         this.getCurrencyValueEurYesterday();
         this.getCurrencyValueRubYesterday();
         this.getCurrencyValuePlnYesterday();
-        console.log(this.amountCurrencyConstYesterday);
     }
 
     /**

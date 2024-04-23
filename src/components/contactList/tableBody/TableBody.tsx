@@ -10,25 +10,25 @@ import { NoRecords } from 'components/noRecords/NoRecords';
 import { ContactListSkeleton } from 'components/skeletons/ContactListSkeleton';
 
 interface TableBodyProps {
-    contactStore: ContactListStore;
+    contactListStore: ContactListStore;
     handleClickOnContact: (id: number) => void;
 }
 
 /**
  * @description Тело таблицы.
  */
-export const TableBody = observer(({ contactStore, handleClickOnContact }: TableBodyProps) => {
+export const TableBody = observer(({ contactListStore, handleClickOnContact }: TableBodyProps) => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const moment = require('moment');
 
-    if (contactStore.isLoading) {
+    if (contactListStore.isLoading) {
         return <ContactListSkeleton />;
     }
 
     return (
         <div className={styles.tableBody}>
-            {contactStore.contactList.length !== 0 ? (
-                contactStore.contactList.map((contact) => (
+            {contactListStore.contactList.length !== 0 ? (
+                contactListStore.contactList.map((contact) => (
                     <div
                         className={styles.tableBodyRow}
                         id={contact.id.toString()}

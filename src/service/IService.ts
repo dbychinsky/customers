@@ -11,7 +11,7 @@ export interface IService {
     /**
      * @description Получение контакта по id (Нет отдельного метода).
      */
-    getContactById(id: string): Promise<Contact>;
+    getContactById(id: number): Promise<Contact>;
 
     /**
      * @description Сохранение контакта.
@@ -21,7 +21,7 @@ export interface IService {
     /**
      * @description Обновление контакта.
      */
-    updateContact(id: string, data: never): Promise<void>;
+    updateContact(id: number, data: never): Promise<void>;
 
     /**
      * @description Удаление контакта.

@@ -5,7 +5,7 @@ import { TableHeader } from 'components/contactList/tableHeader/TableHeader';
 import { TableBody } from 'components/contactList/tableBody/TableBody';
 
 interface ContactListProps {
-    contactStore: ContactListStore;
+    contactListStore: ContactListStore;
     handleClickOnContact: (id: number) => void;
     isScrolling: boolean;
 }
@@ -13,11 +13,11 @@ interface ContactListProps {
 /**
  * @description Список контактов.
  */
-export function ContactList({ contactStore, handleClickOnContact, isScrolling }: ContactListProps) {
+export function ContactList({ contactListStore, handleClickOnContact, isScrolling }: ContactListProps) {
     return (
         <div className={styles.contactList}>
             <TableHeader isScrolling={isScrolling} />
-            <TableBody contactStore={contactStore} handleClickOnContact={handleClickOnContact} />
+            <TableBody contactListStore={contactListStore} handleClickOnContact={handleClickOnContact} />
         </div>
     );
 }

@@ -12,9 +12,9 @@ import { CurrencyStore } from 'store/currencyStore/CurrencyStore';
 import { InputField } from 'components/inputField/InputField';
 import { InputFieldEnum } from 'components/inputField/types';
 import { observer } from 'mobx-react';
-import moment from 'moment';
 import { VolatilityValueEnum } from 'utils/getVolatilityValue';
 import { CurrencyListShortNameEnum, fractionEnum } from 'store/currencyStore/types';
+import moment from 'moment';
 
 interface CurrencyRateBlockProps {
     currencyStore: CurrencyStore;
@@ -33,7 +33,7 @@ export const CurrencyRateBlock = observer(({ currencyStore }: CurrencyRateBlockP
         <div className={styles.currencyRateBlock}>
             <div className={styles.rowDate}>
                 <div className={styles.dateNow}>Курсы на дату (НацБанк):</div>
-                <div className={styles.dateNowDate}>{moment(new Date()).format('LL')}</div>
+                <div className={styles.dateNowDate}>{moment(currencyStore.currentDate).format('LL')}</div>
             </div>
             <div className={styles.row}>
                 <div className={styles.icon}>

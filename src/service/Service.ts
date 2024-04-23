@@ -30,10 +30,10 @@ export class Server implements IService {
     /**
      * @description Получение контакта по id (Нет отдельного метода).
      */
-    async getContactById(id: string): Promise<Contact> {
+    async getContactById(id: number): Promise<Contact> {
         return await axios
             .get(`${this.MAIN_URL}/${serverUrl.CONTACT}`)
-            .then((response) => response.data.find((item: Contact) => item.id.toString() === id));
+            .then((response) => response.data.find((item: Contact) => item.id === id));
     }
 
     /**
@@ -47,7 +47,7 @@ export class Server implements IService {
     /**
      * @description  Обновление.
      */
-    async updateContact(id: string, data: Contact): Promise<void> {
+    async updateContact(id: number, data: Contact): Promise<void> {
         await axios.put(`${this.MAIN_URL}/${serverUrl.CONTACT}/${id}`, data);
     }
 

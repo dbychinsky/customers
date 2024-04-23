@@ -62,7 +62,7 @@ export function Contacts({ activeContact, className }: PhoneListProps) {
                                 <div className={styles.icon}>
                                     <IconAddress />
                                 </div>
-                                <div>activeContact.address</div>
+                                <div>{activeContact.address}</div>
                             </div>
                         ) : null}
                     </>

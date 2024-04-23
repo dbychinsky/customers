@@ -8,7 +8,7 @@
         @include blockStyle();
         display: flex;
         flex-flow: column nowrap;
-        margin-bottom: $space20;
+        margin-bottom: $space10;
 
         .statisticContent {
             display: flex;
@@ -37,6 +37,11 @@
                 flex-flow: row nowrap;
                 justify-content: space-between;
                 align-items: end;
+
+                .active {
+                    @include interSemiBold();
+                    color: $color-orange;
+                }
             }
         }
     }

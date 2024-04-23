@@ -7,15 +7,17 @@ import clsx from 'clsx';
 import { observer } from 'mobx-react';
 import { CheckBoxReminder } from 'components/checkBoxReminder/CheckBoxReminder';
 import { DatePicker } from 'components/datePicker/DatePicker';
+import { ContactListStore } from 'store/ContactListStore';
 
 interface AddReminderProps {
     contactEditStore: ContactEditStore;
+    contactListStore: ContactListStore;
 }
 
 /**
  * @description Добавление напоминания.
  */
-export const AddReminder = observer(({ contactEditStore }: AddReminderProps) => {
+export const AddReminder = observer(({ contactEditStore, contactListStore }: AddReminderProps) => {
     const classWrapperAddReminder = clsx(styles.addReminder, {
         [styles.active]: contactEditStore.contact.reminder.bell,
     });
@@ -28,7 +30,7 @@ export const AddReminder = observer(({ contactEditStore }: AddReminderProps) => 
                     id='addReminderCheckbox'
                     name='bell'
                     valueCheckbox={contactEditStore.contact.reminder.bell}
-                    changeHandlerCheckbox={contactEditStore.handleChangeFieldsReminderBell}
+                    changeHandlerCheckbox={(value) => changeNotification(value)}
                 />
             </div>
             <div className={styles.body}>
@@ -48,4 +50,11 @@ export const AddReminder = observer(({ contactEditStore }: AddReminderProps) => 
             </div>
         </div>
     );
+
+    function changeNotification(value: boolean) {
+        contactEditStore.handleChangeFieldsReminderBell(value);
+        if (!value) {
+            contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
+        }
+    }
 });

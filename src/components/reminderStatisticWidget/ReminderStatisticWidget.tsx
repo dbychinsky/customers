@@ -4,18 +4,21 @@ import { ContactListStore } from 'store/ContactListStore';
 import { HeadingH1 } from 'components/headingH1/headingH1';
 import { PieChart } from '@mui/x-charts';
 import { ReminderWidget } from 'components/reminderWidget/ReminderWidget';
+import { observer } from 'mobx-react';
 
 interface StatisticWidgetProps {
-    contactStore: ContactListStore;
+    contactListStore: ContactListStore;
+    handleClickOnContact: (id: number) => void;
 }
 
 /**
  * @description Виджет статистики и напоминаний.
  */
-export const ReminderStatisticWidget = ({ contactStore }: StatisticWidgetProps) => {
-    const allRecords = contactStore.contactList.length;
-    const recordReminder: number = contactStore.contactList.filter((item) => item.reminder.bell).length;
-    const recordWithOutReminder: number = contactStore.contactList.filter((item) => !item.reminder.bell).length;
+export const ReminderStatisticWidget = observer(({ contactListStore, handleClickOnContact }: StatisticWidgetProps) => {
+    const allRecords = contactListStore.contactList.length;
+    const recordReminder: number = contactListStore.contactList.filter((item) => item.reminder.bell).length;
+    const recordWithOutReminder: number = contactListStore.contactList.filter((item) => !item.reminder.bell).length;
+
     return (
         <div className={styles.reminderStatisticWidget}>
             <div className={styles.statistic}>
@@ -60,11 +63,15 @@ export const ReminderStatisticWidget = ({ contactStore }: StatisticWidgetProps) 
                             <div>Без напоминания:</div>
                             <div>{recordWithOutReminder}</div>
                         </div>
+                        <div className={styles.recordSmall}>
+                            <div className={styles.active}>Активные:</div>
+                            <div className={styles.active}>{contactListStore.contactListNotificationActive.length}</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <ReminderWidget />
+            <ReminderWidget handleClickOnContact={handleClickOnContact} />
         </div>
     );
-};
+});

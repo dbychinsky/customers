@@ -8,6 +8,7 @@
     max-height: 260px;
     overflow-y: auto;
     border-radius: 6px;
+    padding-top: 10px;
 
     .contact {
         box-sizing: border-box;
@@ -19,13 +20,21 @@
         flex-flow: row nowrap;
         justify-content: space-between;
 
+
+        &:hover {
+            cursor: pointer;
+            transition: transform .2s ease;
+            transform: translate(0, -2px);
+            box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .5);
+        }
+
         .content {
             color: white;
 
             .organization {
                 @include interSemiBold();
                 @include truncateText(2);
-                font-size: $font-size-20;
+                font-size: $font-size-18;
                 margin-bottom: $space6;
             }
 

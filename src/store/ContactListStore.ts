@@ -52,13 +52,14 @@ export class ContactListStore {
     /**
      * @description Список активных уведомлений.
      */
-    public contactListNotificationActive: Contact[] = [];
+    contactListNotificationActive: Contact[] = [];
 
     constructor() {
         makeAutoObservable(this);
         this.getContactList = this.getContactList.bind(this);
         this.handleChangeSearchOrganization = this.handleChangeSearchOrganization.bind(this);
         this.handleChangeSearchPhone = this.handleChangeSearchPhone.bind(this);
+        this.deleteRecordListNotification = this.deleteRecordListNotification.bind(this);
     }
 
     /**
@@ -166,7 +167,7 @@ export class ContactListStore {
      * этот элемент в списке (notificationList) активных нотификаций - если нет показываем
      * нотификацию.
      */
-    private checkNotify() {
+    checkNotify() {
         const timeNow = new Date();
         this.contactList.forEach((contact: Contact) => {
             const elemDate = dateToDateUTC(contact.reminder.date);
@@ -196,10 +197,10 @@ export class ContactListStore {
     /**
      * @description Удаление записи из списка активных нотификаций.
      */
-    public deleteRecordListNotification(id = '') {
+    deleteRecordListNotification(id: number) {
         runInAction(() => {
             this.contactListNotificationActive = this.contactListNotificationActive.filter(
-                (contact: Contact) => contact.id !== Number(id),
+                (contact: Contact) => contact.id !== id,
             );
         });
     }

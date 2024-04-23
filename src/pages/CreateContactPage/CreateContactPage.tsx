@@ -34,7 +34,7 @@ export const CreateContactPage = observer(() => {
 
     useEffect(() => {
         if (idContact) {
-            contactEditStore.getContactById(idContact);
+            contactEditStore.getContactById(Number(idContact));
         }
     }, [contactEditStore, idContact]);
 
@@ -65,7 +65,7 @@ export const CreateContactPage = observer(() => {
                 <AddAddress contactEditStore={contactEditStore} />
                 <AddProductList contactEditStore={contactEditStore} />
                 <div className={styles.rightBlock}>
-                    <AddReminder contactEditStore={contactEditStore} />
+                    <AddReminder contactEditStore={contactEditStore} contactListStore={contactListStore} />
                     <AddHistory contactEditStore={contactEditStore} />
                 </div>
                 <div className={styles.send}>
@@ -105,7 +105,7 @@ export const CreateContactPage = observer(() => {
         contactEditStore.validateFields();
         if (contactEditStore.errorList.length === 0) {
             contactEditStore
-                .pushEditContact(idContact)
+                .pushEditContact(Number(idContact))
                 .then(() =>
                     toast.success('Изменения сохранены', {
                         position: 'top-right',
@@ -120,7 +120,16 @@ export const CreateContactPage = observer(() => {
                     }),
                 )
                 .then(() => contactListStore.getContactList())
-                .then(() => navigateToDashboardPage());
+                .then(() => navigateToDashboardPage())
+                .then(() => deleteNotificationById());
+        }
+    }
+
+    function deleteNotificationById() {
+        const datePrev = contactListStore.contact?.reminder.date;
+        const dateNew = contactEditStore.contact.reminder.date;
+        if (datePrev !== dateNew) {
+            contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
         }
     }
 });

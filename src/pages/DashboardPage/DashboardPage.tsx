@@ -37,8 +37,10 @@ export const DashboardPage = observer(() => {
     }, []);
 
     useEffect(() => {
-        contactListStore.checkNotifyOnTimer();
-    }, [contactListStore]);
+        if (authStore.isAuth) {
+            contactListStore.checkNotifyOnTimer();
+        }
+    }, [authStore.isAuth, contactListStore, contactEditStore]);
 
     useEffect(() => {
         contactListStore.getContactList();
@@ -48,13 +50,16 @@ export const DashboardPage = observer(() => {
         <div className={styles.dashboardPage}>
             <div className={styles.head} />
             <ContactList
-                contactStore={contactListStore}
+                contactListStore={contactListStore}
                 handleClickOnContact={handleClickOnContact}
                 isScrolling={isScrolling}
             />
             <div className={classWrapperSideBar}>
                 <div className={styles.top}>
-                    <ReminderStatisticWidget contactStore={contactListStore} />
+                    <ReminderStatisticWidget
+                        contactListStore={contactListStore}
+                        handleClickOnContact={handleClickOnContact}
+                    />
                     <CurrencyWidget currencyStore={currencyStore} />
                 </div>
                 <div className={styles.bottom}>{/*<PmWidget />*/}</div>
