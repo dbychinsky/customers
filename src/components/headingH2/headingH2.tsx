@@ -1,8 +1,8 @@
-import React, { ReactElement } from "react";
-import styles from "./headingH2.module.scss";
-import clsx from "clsx";
+import React, { ReactElement } from 'react';
+import styles from 'components/headingH2/headingH2.module.scss';
+import clsx from 'clsx';
 
-interface IHeadingH2Props {
+interface HeadingH2Props {
     title: string;
     icon?: ReactElement;
     className?: string;
@@ -11,7 +11,7 @@ interface IHeadingH2Props {
 /**
  * @description заголовок виджетов.
  */
-export const HeadingH2 = ({ title, icon, className }: IHeadingH2Props) => {
+export function HeadingH2({ title, icon, className }: HeadingH2Props) {
     const classWrapperHeading = clsx(styles.headingH2, className);
 
     return (
@@ -20,4 +20,4 @@ export const HeadingH2 = ({ title, icon, className }: IHeadingH2Props) => {
             {icon ? icon : null}
         </div>
     );
-};
+}

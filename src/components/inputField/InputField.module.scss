@@ -1,6 +1,8 @@
-@import "../../common/css-parameters";
+@import "common/typography";
+@import "common/css-parameters";
 
 .inputField {
+    @include interRegular();
     box-sizing: border-box;
     padding: $space12;
     border-radius: $radius6;
@@ -11,6 +13,15 @@
 
     &:focus {
         border: 1px solid $color-blue;
+    }
+
+    &::placeholder {
+        color: $color-grey-dark;
+        opacity: 1; /* Firefox */
+    }
+
+    &::-ms-input-placeholder { /* Edge 12 -18 */
+        color: $color-grey-dark;
     }
 }
 

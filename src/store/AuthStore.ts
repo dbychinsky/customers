@@ -1,19 +1,19 @@
-import React from "react";
-import { makeAutoObservable, runInAction } from "mobx";
-import { FieldError } from "components/inputField/types";
+import React from 'react';
+import { makeAutoObservable, runInAction } from 'mobx';
+import { FieldError } from 'components/inputField/types';
 
 /**
  * Store для работы с Auth
  */
 export class AuthStore {
-    login: string = "";
-    password: string = "";
-    loginApp: string = "1";
+    login = '';
+    password = '';
+    loginApp = '1';
     // private loginApp: string = "Sofi";
-    passwordApp: string = "1";
+    passwordApp = '1';
     // private passwordApp: string = "sf1807";
     errorList: FieldError[] = [];
-    isAuth: boolean = false;
+    isAuth = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -28,9 +28,9 @@ export class AuthStore {
     public handleChangeLogin(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
             this.login = e.target.value;
-            this.errorList = this.errorList.filter((item) => item.field !== "login");
+            this.errorList = this.errorList.filter((item) => item.field !== 'login');
         });
-    };
+    }
 
     /**
      * @description Метод установки пароля
@@ -39,17 +39,17 @@ export class AuthStore {
     public handleChangePassword(e: React.ChangeEvent<HTMLInputElement>) {
         runInAction(() => {
             this.password = e.target.value;
-            this.errorList = this.errorList.filter((item) => item.field !== "password");
+            this.errorList = this.errorList.filter((item) => item.field !== 'password');
         });
-    };
+    }
 
     /**
      * @description Очистка полей формы при разлогировании
      */
     public clearFields() {
         runInAction(() => {
-            this.login = "";
-            this.password = "";
+            this.login = '';
+            this.password = '';
         });
     }
 
@@ -57,21 +57,19 @@ export class AuthStore {
      * @description Метод аутентификации
      */
     public authentication() {
-
         runInAction(() => {
             this.errorList = [];
         });
 
-
         if (this.login !== this.loginApp) {
             runInAction(() => {
-                this.errorList.push({ field: "login", message: "Неверный логин" });
+                this.errorList.push({ field: 'login', message: 'Неверный логин' });
             });
         }
 
         if (this.password !== this.passwordApp) {
             runInAction(() => {
-                this.errorList.push({ field: "password", message: "Неверный пароль" });
+                this.errorList.push({ field: 'password', message: 'Неверный пароль' });
             });
         }
 
@@ -84,7 +82,7 @@ export class AuthStore {
      * @description Создание токена пользователя приложением в sessionStorage
      */
     private createUserToken() {
-        sessionStorage.setItem("authentication", "true");
+        sessionStorage.setItem('authentication', 'true');
         runInAction(() => {
             this.isAuth = true;
         });
@@ -95,7 +93,7 @@ export class AuthStore {
      * @private
      */
     private loadUserToken() {
-        const result = sessionStorage.getItem("authentication");
+        const result = sessionStorage.getItem('authentication');
         if (result) {
             this.isAuth = true;
         }
@@ -109,17 +107,13 @@ export class AuthStore {
         runInAction(() => {
             this.isAuth = false;
         });
-    };
+    }
 
     /**
      * @description Проверка наличия токена в LS
      */
     public checkAuth(): boolean {
         this.loadUserToken();
-        if (this.isAuth) {
-            return true;
-        } else return false;
+        return this.isAuth;
     }
-
-
 }

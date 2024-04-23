@@ -9,6 +9,9 @@ body {
     height: 100%;
     min-height: 100%;
     background-color: $color-grey-background;
+
+    @include interRegular();
+
 }
 
 /* width */
@@ -19,13 +22,13 @@ body {
 /* Track */
 ::-webkit-scrollbar-track {
     background: $color-grey-background;
-    border-radius: $radius10;
+    border-radius: $radius6;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: $color-grey-dark;
-    border-radius: $radius10;
+    border-radius: $radius6;
 }
 
 /* Handle on hover */

@@ -1,15 +1,15 @@
-import {useNavigateHelper} from "router/hooks/useNavigateHelper";
+import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 
-interface IUseRedirectInLoginPage {
-    isAuth: boolean
+interface UseRedirectInLoginPage {
+    isAuth: boolean;
 }
 
 /**
  * @description Редирект на неавторизованную страницу.
  * @param isAuth - Флаг авторизации.
  */
-export function useRedirectInLoginPage({isAuth}: IUseRedirectInLoginPage) {
-    const {navigateToLoginPage} = useNavigateHelper();
+export function useRedirectInLoginPage({ isAuth }: UseRedirectInLoginPage) {
+    const { navigateToLoginPage } = useNavigateHelper();
     const redirectToLoginPage = () => {
         if (!isAuth) {
             navigateToLoginPage();
@@ -17,6 +17,6 @@ export function useRedirectInLoginPage({isAuth}: IUseRedirectInLoginPage) {
     };
 
     return {
-        redirectToLoginPage
-    }
-};
+        redirectToLoginPage,
+    };
+}

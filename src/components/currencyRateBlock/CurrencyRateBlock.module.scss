@@ -1,0 +1,147 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.currencyRateBlock {
+    margin-top: $space10;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .rowDate {
+        margin-bottom: $space10;
+
+        .dateNow {
+            font-size: $font-size-12;
+            width: 100%;
+        }
+
+        .dateNowDate {
+            @include interSemiBold();
+            font-size: $font-size-12;
+            width: 100%;
+            color: $color-grey-dark;
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: $space6;
+        align-items: center;
+
+        .icon {
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 24px;
+            }
+        }
+
+        .amount {
+            color: $color-grey-dark;
+            font-size: $font-size-14;
+        }
+    }
+
+    .inputField {
+        border: 1px solid $color-white;
+        width: 100%;
+        padding: $space8 $space4;
+        font-size: $font-size-14;
+
+        &:hover {
+            border: 1px solid $color-blue;
+        }
+    }
+
+    .iconRate {
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .iconTrendingUp {
+        svg {
+            fill: $color-green;
+        }
+    }
+
+    .iconTrendingDown {
+        svg {
+            fill: $color-red;
+        }
+    }
+
+    .iconTrendingLine {
+        svg {
+            fill: $color-grey-dark;
+        }
+    }
+
+    .radioButtonsPhoneWrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 10px auto 0;
+
+        .label {
+            position: relative;
+            vertical-align: center;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 4px 10px 4px 24px;
+
+            cursor: pointer;
+            color: $color-grey-dark;
+            font-size: $font-size-12;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                position: absolute;
+                left: 0;
+                bottom: 4px;
+                background-color: $color-grey-background;
+                border: 1px solid $color-grey-background;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: "";
+                display: inline-block;
+                height: 8px;
+                width: 8px;
+                position: absolute;
+                left: 5px;
+                top: 6px;
+                background-color: $color-grey-background;
+                border-radius: 50%;
+            }
+        }
+
+        .radioInput {
+            display: none;
+
+            &:checked + label:after {
+                background: $color-purple;
+            }
+
+            &:checked + label:before {
+                background: $color-purple-light;
+                border: 1px solid $color-purple-light;
+            }
+
+            &:hover:after {
+                filter: brightness(120%);
+            }
+
+            &:disabled + label:after {
+                filter: grayscale(100%);
+            }
+        }
+    }
+
+}

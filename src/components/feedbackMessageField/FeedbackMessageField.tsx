@@ -1,18 +1,13 @@
-import React from "react";
-import styles from "components/feedbackMessageField/FeedbackMessageField.module.scss";
+import React from 'react';
+import styles from 'components/feedbackMessageField/FeedbackMessageField.module.scss';
 
-interface IFeedbackMessageFieldProps {
-
-    /**
-     * @description Текст.
-     */
-    message: string | undefined,
+interface FeedbackMessageFieldProps {
+    message: string | undefined;
 }
 
-export const FeedbackMessageField = ({ message }: IFeedbackMessageFieldProps) => {
-    return (
-        <div className={styles.feedbackMessageField}>
-            {message}
-        </div>
-    );
-};
+/**
+ * @description Компонент отображения дополнительного текста.
+ */
+export function FeedbackMessageField({ message }: FeedbackMessageFieldProps) {
+    return <div className={styles.feedbackMessageField}>{message}</div>;
+}

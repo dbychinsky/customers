@@ -1,15 +1,14 @@
-import React, { FC, MouseEventHandler, ReactElement } from "react";
-import { ButtonFormEnum } from "components/button/types";
-import clsx from "clsx";
-import styles from "components/button/Button.module.scss";
-import { ButtonImageType, ButtonImageTypeMapping } from "components/buttonImage/types";
+import React, { MouseEventHandler, ReactElement } from 'react';
+import { ButtonFormEnum } from 'components/button/types';
+import clsx from 'clsx';
+import styles from 'components/buttonImage/ButtonImage.module.scss';
+import { ButtonImageType, ButtonImageTypeMapping } from 'components/buttonImage/types';
 
-interface IButtonImageProps {
-
+interface ButtonImageProps {
     /**
      * @description  Текст внутри кнопки
      */
-    text?: string,
+    text?: string;
 
     /**
      * @description  Метод вызываемый при клике на кнопку
@@ -19,32 +18,32 @@ interface IButtonImageProps {
     /**
      * @description  Атрибут для определения доступности кнопки для нажатия.
      */
-    isDisabled?: boolean,
+    isDisabled?: boolean;
 
     /**
      * @description  Список дополнительных классов.
      */
-    className?: string,
+    className?: string;
 
     /**
      * @description Title.
      */
-    title?: string,
+    title?: string;
 
     /**
      * @description Автофокус.
      */
-    autoFocus?: boolean,
+    autoFocus?: boolean;
 
     /**
      * @description Тип кнопки.
      */
-    type?: ButtonFormEnum,
+    type?: ButtonFormEnum;
 
     /**
      * @description Иконка.
      */
-    image: ReactElement,
+    image: ReactElement;
 
     /**
      * @description Только иконка.
@@ -57,34 +56,35 @@ interface IButtonImageProps {
     variant?: ButtonImageType;
 }
 
-
 /**
  * @description Компонент Button.
  */
-export const ButtonImage: FC<IButtonImageProps> = (
-    {
-        onClick,
-        text,
-        isDisabled,
-        className,
-        variant = "noStyle",
-        title,
-        autoFocus,
-        type,
-        image,
-        onlyImage,
-    }) => {
+export function ButtonImage({
+    onClick,
+    text,
+    isDisabled,
+    className,
+    variant = 'noStyle',
+    title,
+    autoFocus,
+    type,
+    image,
+    onlyImage,
+}: ButtonImageProps) {
     const localClassNameImage = clsx(styles.button, styles.buttonImage, ButtonImageTypeMapping[variant], className);
 
     return (
-        <button className={localClassNameImage}
-                disabled={isDisabled}
-                onClick={onClick}
-                title={title}
-                autoFocus={autoFocus}
-                tabIndex={1}
-                type={type ? type : "button"}>
-            {image}{!onlyImage ? text : null}
+        <button
+            className={localClassNameImage}
+            disabled={isDisabled}
+            onClick={onClick}
+            title={title}
+            autoFocus={autoFocus}
+            tabIndex={1}
+            type={type ? type : 'button'}
+        >
+            {image}
+            {!onlyImage ? text : null}
         </button>
     );
-};
+}

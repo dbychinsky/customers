@@ -1,0 +1,144 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+@mixin contactListTable() {
+    .name {
+        width: 36%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        box-sizing: border-box;
+        padding-right: $space10;
+
+        .iconPerson {
+            @include icons();
+            background-color: $color-ultra;
+        }
+
+        .iconTie {
+            @include icons();
+            background-color: $color-purple;
+        }
+
+        .information {
+            display: flex;
+            flex-flow: column nowrap;
+
+            .organization {
+                @include interMedium();
+                font-size: $font-size-14;
+                box-sizing: border-box;
+                padding-right: $space10;
+            }
+
+            .contactFace {
+                box-sizing: border-box;
+                padding-right: $space10;
+                padding-top: $space4;
+                font-size: $font-size-14;
+                color: $color-grey-dark;
+            }
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+    .phoneList {
+        width: 19%;
+        box-sizing: border-box;
+        padding-right: $space10;
+
+        .phone {
+            font-size: $font-size-12;
+            padding-bottom: $space4;
+        }
+    }
+    .phoneListHeader {
+        width: 36%;
+
+        .phone {
+            font-size: $font-size-12;
+            padding-bottom: $space4;
+            position: relative;
+        }
+    }
+    .emailList {
+        width: 17%;
+        box-sizing: border-box;
+        padding-right: $space10;
+
+        .email {
+            font-size: $font-size-12;
+            color: $color-grey-dark;
+            padding-bottom: $space4;
+        }
+    }
+
+
+    input {
+        width: 100%;
+    }
+
+    .products {
+        width: 8%;
+        display: flex;
+        flex-flow: row nowrap;
+
+        .iconArchive {
+            background-color: $color-grey-background;
+            height: 27px;
+            width: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $radius6;
+
+            svg {
+                fill: $color-grey-dark;
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        .iconActive {
+            background-color: $color-purple-light;
+            height: 27px;
+            width: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $radius6;
+            margin: 0 $space6 0 0;
+
+            svg {
+                fill: $color-purple;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    .reminder {
+        width: 20%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+
+        .reminderWrapper {
+            border-radius: $radius4;
+            background-color: $color-green-light;
+            color: $color-green;
+            font-size: $font-size-12;
+            padding: $space6;
+
+            svg {
+                fill: $color-green;
+                width: 20px;
+                padding: 3px 5px;
+                display: none;
+            }
+        }
+    }
+}

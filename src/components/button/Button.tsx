@@ -1,14 +1,13 @@
-import React, { FC, MouseEventHandler } from "react";
-import clsx from "clsx";
-import styles from "components/button/Button.module.scss";
-import { ButtonFormEnum, ButtonType, ButtonTypeMapping } from "components/button/types";
+import React, { MouseEventHandler } from 'react';
+import clsx from 'clsx';
+import styles from 'components/button/Button.module.scss';
+import { ButtonFormEnum, ButtonType, ButtonTypeMapping } from 'components/button/types';
 
-interface IButtonProps {
-
+interface ButtonProps {
     /**
      * @description  Текст внутри кнопки
      */
-    text: string,
+    text: string;
 
     /**
      * @description  Метод вызываемый при клике на кнопку
@@ -18,7 +17,7 @@ interface IButtonProps {
     /**
      * @description  Атрибут для определения доступности кнопки для нажатия.
      */
-    isDisabled?: boolean,
+    isDisabled?: boolean;
 
     /**
      * @description Вариант кнопки, которая будет отображена.
@@ -28,44 +27,35 @@ interface IButtonProps {
     /**
      * @description  Список дополнительных классов.
      */
-    className?: string,
+    className?: string;
 
     /**
      * @description Title.
      */
-    title?: string,
+    title?: string;
 
     /**
      * @description Тип кнопки.
      */
-    type?: ButtonFormEnum,
+    type?: ButtonFormEnum;
 }
-
 
 /**
  * @description Компонент Button.
  */
-export const Button: FC<IButtonProps> = (
-    {
-        onClick,
-        text,
-        isDisabled,
-        variant = "primary",
-        className,
-        title,
-        type,
-    }) => {
-
+export function Button({ onClick, text, isDisabled, variant = 'primary', className, title, type }: ButtonProps) {
     const localClassName = clsx(styles.button, ButtonTypeMapping[variant], className);
 
     return (
-        <button className={localClassName}
-                disabled={isDisabled}
-                onClick={onClick}
-                title={title}
-                tabIndex={1}
-                type={type ? type : "button"}>
+        <button
+            className={localClassName}
+            disabled={isDisabled}
+            onClick={onClick}
+            title={title}
+            tabIndex={1}
+            type={type ? type : 'button'}
+        >
             {text}
         </button>
     );
-};
+}

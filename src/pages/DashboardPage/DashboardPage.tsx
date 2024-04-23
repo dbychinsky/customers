@@ -1,32 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { observer } from "mobx-react";
-import styles from "./DashboardPage.module.scss";
-import { useStores } from "store/RootStoreContext";
-import { useNavigateHelper } from "router/hooks/useNavigateHelper";
-import { CurrencyWidget } from "components/currencyWidget/CurrencyWidget";
-import { StatisticWidget } from "components/statisticWidget/StatisticWidget";
-import clsx from "clsx";
-import { ContactList } from "components/contactList/ContactList";
-import { useContactDetailsModal } from "components/useDetailsModal/useContactDetailsModal";
+import React, { useEffect, useState } from 'react';
+import { observer } from 'mobx-react';
+import styles from 'pages/DashboardPage/DashboardPage.module.scss';
+import { useStores } from 'store/RootStoreContext';
+import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
+import { CurrencyWidget } from 'components/currencyWidget/CurrencyWidget';
+import { ReminderStatisticWidget } from 'components/reminderStatisticWidget/ReminderStatisticWidget';
+import clsx from 'clsx';
+import { ContactList } from 'components/contactList/ContactList';
+import { useContactDetailsModal } from 'components/contactDetails/useContactDetailsModal';
+import { ToastContainer } from 'react-toastify';
+import { ScrollTop } from 'components/scrollTop/ScrollTop';
 
 /**
  * @description Страница дашборда.
  */
 export const DashboardPage = observer(() => {
-    const { contactViewStore, authStore } = useStores();
+    const { authStore, contactListStore, contactEditStore, currencyStore } = useStores();
     const { navigateToLoginPage } = useNavigateHelper();
     const [activeContactId, setActiveContactId] = useState<number | null>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
     const classWrapperSideBar = clsx(styles.sideBarWrapper, { [styles.scroll]: isScrolling });
-    const { ModalShowDetails, showDetailsHandler } = useContactDetailsModal();
-
-    useEffect(() => {
-        handleScroll();
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    const { ModalShowDetails, showDetailsHandler, onCloseDetailsModal } = useContactDetailsModal(deleteContact);
 
     useEffect(() => {
         if (!authStore.isAuth) {
@@ -35,20 +29,45 @@ export const DashboardPage = observer(() => {
     }, [authStore.isAuth, navigateToLoginPage]);
 
     useEffect(() => {
-        contactViewStore.getContactList();
-    }, [contactViewStore]);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (authStore.isAuth) {
+            contactListStore.checkNotifyOnTimer();
+        }
+    }, [authStore.isAuth, contactListStore, contactEditStore]);
+
+    useEffect(() => {
+        contactListStore.getContactList();
+    }, [contactListStore, contactEditStore.pushContact]);
 
     return (
         <div className={styles.dashboardPage}>
-            <div className={styles.head}></div>
-            <ContactList contactStore={contactViewStore}
-                         handleClickOnContact={handleClickOnContact}
-                         isScrolling={isScrolling} />
+            <div className={styles.head} />
+            <ContactList
+                contactListStore={contactListStore}
+                handleClickOnContact={handleClickOnContact}
+                isScrolling={isScrolling}
+            />
             <div className={classWrapperSideBar}>
-                <CurrencyWidget />
-                <StatisticWidget />
+                <div className={styles.top}>
+                    <ReminderStatisticWidget
+                        contactListStore={contactListStore}
+                        handleClickOnContact={handleClickOnContact}
+                    />
+                    <CurrencyWidget currencyStore={currencyStore} />
+                </div>
+                <div className={styles.bottom}>{/*<PmWidget />*/}</div>
             </div>
+
             {ModalShowDetails(activeContactId)}
+            <ToastContainer />
+            <ScrollTop />
         </div>
     );
 
@@ -71,5 +90,15 @@ export const DashboardPage = observer(() => {
     function handleClickOnContact(id: number) {
         setActiveContactId(id);
         showDetailsHandler();
+    }
+
+    /**
+     * @description Удаление контакта.
+     */
+    function deleteContact() {
+        onCloseDetailsModal();
+        if (activeContactId) {
+            contactListStore.deleteContactFromList(activeContactId);
+        }
     }
 });

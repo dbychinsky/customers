@@ -3,10 +3,9 @@
 
 .contactList {
     @include blockStyle($space20 0 $space20 0);
-    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     position: relative;
     z-index: 2;
-    flex-basis: 60%
+    width: 65%
 }

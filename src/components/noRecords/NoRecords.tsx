@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
     NoRecordAlignType,
     NoRecordAlignTypeMapping,
     NoRecordFontType,
     NoRecordFontTypeMapping,
-} from "components/noRecords/types";
-import clsx from "clsx";
-import styles from "./NoRecords.module.scss";
+} from 'components/noRecords/types';
+import clsx from 'clsx';
+import styles from 'components/noRecords/NoRecords.module.scss';
 
-interface INoRecordsProps {
+interface NoRecordsProps {
     text: string;
     variantFontSize: NoRecordFontType;
     variantAlign: NoRecordAlignType;
@@ -17,14 +17,12 @@ interface INoRecordsProps {
 /**
  * @description Компонент отображения отсутствия записей.
  */
-export const NoRecords = ({ text, variantFontSize, variantAlign }: INoRecordsProps) => {
-    const classNoRecordWrapper = clsx(styles.noRecords,
+export function NoRecords({ text, variantFontSize, variantAlign }: NoRecordsProps) {
+    const classNoRecordWrapper = clsx(
+        styles.noRecords,
         NoRecordFontTypeMapping[variantFontSize],
-        NoRecordAlignTypeMapping[variantAlign]);
-
-    return (
-        <div className={classNoRecordWrapper}>
-            {text}
-        </div>
+        NoRecordAlignTypeMapping[variantAlign],
     );
-};
+
+    return <div className={classNoRecordWrapper}>{text}</div>;
+}

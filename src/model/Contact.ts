@@ -1,10 +1,9 @@
-import { EmailListType, HistoryType, PhoneListType, ProductType, ReminderType } from "model/types";
+import { EmailListType, HistoryType, PhoneListType, ProductListType, ReminderType } from 'store/contactEditStore/types';
 
 /**
  * @description Контакт.
  */
 export class Contact {
-
     /**
      * @description id.
      */
@@ -23,12 +22,12 @@ export class Contact {
     /**
      * @description Продукция.
      */
-    productList: ProductType[];
+    productList: ProductListType[];
 
     /**
      * @description Продукция в архиве.
      */
-    productListArchive: ProductType[];
+    productListArchive: ProductListType[];
 
     /**
      * @description Список телефонов.
@@ -53,24 +52,24 @@ export class Contact {
     /**
      * @description История.
      */
-    history: HistoryType[];
+    historyList: HistoryType[];
 
     /**
      * @description Флаг напоминания.
      */
-    reminder: ReminderType | null;
+    reminder: ReminderType;
 
     constructor() {
         this.id = 0;
-        this.organization = "";
-        this.contactFace = "";
+        this.organization = '';
+        this.contactFace = '';
         this.productList = [];
         this.productListArchive = [];
         this.phoneList = [];
         this.emailList = [];
-        this.address = "";
-        this.description = "";
-        this.history = [];
-        this.reminder = null;
+        this.address = '';
+        this.description = '';
+        this.historyList = [];
+        this.reminder = { bell: false, date: new Date(), productComment: '' };
     }
 }

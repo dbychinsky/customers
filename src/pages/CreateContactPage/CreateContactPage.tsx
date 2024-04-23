@@ -1,19 +1,26 @@
-import React, { useEffect } from "react";
-import styles from "./CreateContactPage.module.scss";
-import { HeadingH1 } from "components/headingH1/headingH1";
-import { AddPhone } from "components/createContact/addPhone/addPhone";
-import { useStores } from "store/RootStoreContext";
-import { useNavigateHelper } from "router/hooks/useNavigateHelper";
-import { AddEmail } from "components/createContact/addEmail/AddEmail";
-import { AddNameContact } from "components/createContact/addNameContact/AddNameContact";
-import { Button } from "components/button/Button";
+import React, { useEffect } from 'react';
+import styles from 'pages/CreateContactPage/CreateContactPage.module.scss';
+import { HeadingH1 } from 'components/headingH1/headingH1';
+import { AddPhone } from 'components/createContact/addPhone/AddPhone';
+import { useStores } from 'store/RootStoreContext';
+import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
+import { AddAddress } from 'components/createContact/addAddress/AddAddress';
+import { AddNameContact } from 'components/createContact/addNameContact/AddNameContact';
+import { Button } from 'components/button/Button';
+import { observer } from 'mobx-react';
+import { Flip, toast } from 'react-toastify';
+import { AddProductList } from 'components/createContact/addProductList/AddProductList';
+import { AddReminder } from 'components/createContact/addReminder/AddReminder';
+import { AddHistory } from 'components/createContact/addHistory/AddHistory';
+import { useParams } from 'react-router-dom';
 
 /**
  * @description Страница создания контакта.
  */
-export const CreateContactPage = () => {
-    const { authStore, contactViewStore, contactEditStore } = useStores();
+export const CreateContactPage = observer(() => {
+    const { authStore, contactListStore, contactEditStore } = useStores();
     const { navigateToDashboardPage } = useNavigateHelper();
+    const { idContact } = useParams();
 
     useEffect(() => {
         if (!authStore.isAuth) {
@@ -21,20 +28,108 @@ export const CreateContactPage = () => {
         }
     }, [authStore.isAuth, navigateToDashboardPage]);
 
+    useEffect(() => {
+        contactEditStore.clearFieldsCreateContact();
+    }, [contactEditStore]);
+
+    useEffect(() => {
+        if (idContact) {
+            contactEditStore.getContactById(Number(idContact));
+        }
+    }, [contactEditStore, idContact]);
+
     return (
         <div className={styles.createContactPage}>
-            <HeadingH1 title="Создание контакта" />
-            <form>
+            <div className={styles.header}>
+                <HeadingH1
+                    title={!idContact ? 'Создание контакта' : 'Редактирование контакта'}
+                    className={styles.heading}
+                />
+                <div>
+                    <Button text='Отменить' onClick={navigateToDashboardPage} variant='cancel' />
+                    <Button
+                        text={!idContact ? 'Создать' : 'Сохранить'}
+                        onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                    />
+                </div>
+            </div>
+            <form
+                className={styles.form}
+                onSubmit={(e: React.FormEvent) => {
+                    e.preventDefault();
+                    handleClickSendContact();
+                }}
+            >
                 <AddNameContact contactEditStore={contactEditStore} />
                 <AddPhone contactEditStore={contactEditStore} />
-                <AddEmail contactViewStore={contactViewStore} />
-                <Button text="send" onClick={addContact} />
+                <AddAddress contactEditStore={contactEditStore} />
+                <AddProductList contactEditStore={contactEditStore} />
+                <div className={styles.rightBlock}>
+                    <AddReminder contactEditStore={contactEditStore} contactListStore={contactListStore} />
+                    <AddHistory contactEditStore={contactEditStore} />
+                </div>
+                <div className={styles.send}>
+                    <Button
+                        text={!idContact ? 'Создать' : 'Сохранить'}
+                        onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                    />
+                </div>
             </form>
         </div>
     );
 
-    function addContact() {
-        contactEditStore.pushContact();
-        navigateToDashboardPage();
+    function handleClickSendContact() {
+        contactEditStore.validateFields();
+        if (contactEditStore.errorList.length === 0) {
+            contactEditStore
+                .pushContact()
+                .then(() =>
+                    toast.success('Запись добавлена', {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                        transition: Flip,
+                    }),
+                )
+                .then(() => contactListStore.getContactList())
+                .then(() => navigateToDashboardPage());
+        }
     }
-};
+
+    function handleClickSendEditContact() {
+        contactEditStore.validateFields();
+        if (contactEditStore.errorList.length === 0) {
+            contactEditStore
+                .pushEditContact(Number(idContact))
+                .then(() =>
+                    toast.success('Изменения сохранены', {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                        transition: Flip,
+                    }),
+                )
+                .then(() => contactListStore.getContactList())
+                .then(() => navigateToDashboardPage())
+                .then(() => deleteNotificationById());
+        }
+    }
+
+    function deleteNotificationById() {
+        const datePrev = contactListStore.contact?.reminder.date;
+        const dateNew = contactEditStore.contact.reminder.date;
+        if (datePrev !== dateNew) {
+            contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
+        }
+    }
+});

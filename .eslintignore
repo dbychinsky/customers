@@ -1,0 +1,16 @@
+node_modules
+yarn.lock
+package-lock.json
+*.js
+*.jsx
+.pnpm-lock.yaml
+.package.json
+build
+.stylelintrc
+.prettierrc
+.babelrc
+deploy
+@mf-typescript-remotes
+@mf-typescript-exposes
+src/global.d.ts
+src/reportWebVitals.ts

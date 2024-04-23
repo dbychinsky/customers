@@ -2,7 +2,6 @@
 @import '../../common/mixins';
 
 .history {
-    border-bottom: 1px solid $color-grey-background;
     margin-bottom: $space16;
     padding-bottom: $space8;
 
@@ -19,7 +18,7 @@
         width: 100%;
         margin-bottom: $space4;
         padding-bottom: $space4;
-        border-bottom: 1px dashed $color-grey;
+        border-bottom: 1px dashed $color-grey-background;
 
         &:last-child {
             border: none;

@@ -3,6 +3,7 @@
 
 .currencyWidget {
     @include blockStyle();
+    width: 44%;
 
     .currencyWidgetWrapper {
         display: flex;

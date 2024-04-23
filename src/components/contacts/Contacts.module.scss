@@ -12,6 +12,8 @@
         width: 50%;
         box-sizing: border-box;
         padding-right: $space10;
+        margin-right: $space10;
+        border-right: 1px dashed $color-grey-background;
     }
 
     .number, .email, .address {
@@ -27,27 +29,18 @@
 
         &:hover {
             cursor: pointer;
-            color: $color-purple;
+            color: $color-blue;
 
             &::before {
-                content: 'скопировать';
-                background: $color-purple;
-                color: $color-white;
-                position: absolute;
-                padding: 6px 6px 7px 6px;
-                border-radius: $radius4;
-                left: -82px;
-                top: -2px;
-            }
-
-            &::after {
-                position: absolute;
-                top: 3px;
-                left: 14px;
                 content: '';
+                background: url('../../common/assets/icon/contactCopy.svg') center no-repeat;
+                background-size: 20px;
+                position: absolute;
+                right: -7px;
+                top: -3px;
                 display: block;
-                border: 10px solid transparent;
-                border-left: 10px solid $color-purple;
+                height: 24px;
+                width: 21px;
             }
         }
     }

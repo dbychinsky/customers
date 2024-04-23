@@ -1,11 +1,11 @@
-import React from "react";
-import styles from "./ContactList.module.scss";
-import { ContactViewStore } from "store/ContactViewStore";
-import { TableHeader } from "components/contactList/tableHeader/TableHeader";
-import { TableBody } from "components/contactList/tableBody/TableBody";
+import React from 'react';
+import styles from 'components/contactList/ContactList.module.scss';
+import { ContactListStore } from 'store/ContactListStore';
+import { TableHeader } from 'components/contactList/tableHeader/TableHeader';
+import { TableBody } from 'components/contactList/tableBody/TableBody';
 
-interface IContactListProps {
-    contactStore: ContactViewStore;
+interface ContactListProps {
+    contactListStore: ContactListStore;
     handleClickOnContact: (id: number) => void;
     isScrolling: boolean;
 }
@@ -13,12 +13,11 @@ interface IContactListProps {
 /**
  * @description Список контактов.
  */
-export const ContactList = ({ contactStore, handleClickOnContact, isScrolling }: IContactListProps) => {
+export function ContactList({ contactListStore, handleClickOnContact, isScrolling }: ContactListProps) {
     return (
         <div className={styles.contactList}>
             <TableHeader isScrolling={isScrolling} />
-            <TableBody contactStore={contactStore}
-                       handleClickOnContact={handleClickOnContact} />
+            <TableBody contactListStore={contactListStore} handleClickOnContact={handleClickOnContact} />
         </div>
     );
-};
+}

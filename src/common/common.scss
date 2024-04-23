@@ -9,6 +9,7 @@ $space14: ($space * 7);
 $space16: ($space * 8);
 $space18: ($space * 9);
 $space20: ($space * 10);
+$space22: ($space * 11);
 $space26: ($space * 13);
 
 // @description Закругления
@@ -16,7 +17,7 @@ $radius: 1px;
 $radius2: ($radius * 2);
 $radius4: ($radius * 4);
 $radius6: ($radius * 6);
-$radius10: ($radius * 10);
+//$radius10: ($radius * 10);
 
 // @description Ширина navbar
 $navbar-width: 220px;

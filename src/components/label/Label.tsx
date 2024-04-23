@@ -1,41 +1,33 @@
-import React, { FC } from "react";
-import clsx from "clsx";
-import styles from "components/label/Label.module.scss";
+import React from 'react';
+import clsx from 'clsx';
+import styles from 'components/label/Label.module.scss';
 
-interface ILabelProps {
-
+interface LabelProps {
     /**
      * @description Текст.
      */
-    text: string,
+    text: string;
 
     /**
      * @description Привязка к полю.
      */
-    htmlFor?: string,
+    htmlFor?: string;
 
     /**
      * @description Дополнительный класс.
      */
-    className?: string,
+    className?: string;
 
     /**
      * @description Флаг ошибки.
      */
-    isError?: boolean
+    isError?: boolean;
 }
 
 /**
  * @description Компонент Label.
  */
-export const Label: FC<ILabelProps> = (
-    {
-        text,
-        htmlFor,
-        className,
-        isError,
-    }) => {
-
+export function Label({ text, htmlFor, className, isError }: LabelProps) {
     const localClassName = clsx(styles.label, className, { [styles.error]: isError });
 
     return (
@@ -43,5 +35,4 @@ export const Label: FC<ILabelProps> = (
             {text}
         </label>
     );
-};
-
+}

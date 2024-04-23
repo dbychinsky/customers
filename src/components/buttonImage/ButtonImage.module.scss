@@ -4,7 +4,9 @@
     border: none;
     background: none;
     font-size: $font-size-base;
-    padding: 0;
+    padding: $space8 $space10 $space6;
+    border-radius: $radius6;
+    cursor: pointer;
 }
 
 .buttonImage {
@@ -20,11 +22,55 @@
 }
 
 .add {
-    box-sizing: border-box;
-    padding: $space8 $space10 $space6;
-    border-radius: $radius6;
     background-color: $color-blue;
-    cursor: pointer;
+
+    &:hover {
+        background-color: darken($color-blue, 15);
+    }
+
+    svg {
+        fill: $color-white;
+    }
+}
+
+.clear {
+    border: 1px solid $color-grey;
+
+    &:hover {
+        background-color: $color-grey-background;
+    }
+
+    svg {
+        fill: $color-grey-dark;
+    }
+}
+
+.delete {
+    &:hover {
+        svg {
+            fill: $color-red-dark;
+        }
+    }
+
+    svg {
+        fill: $color-red;
+    }
+}
+
+.deleteContact {
+    background-color: $color-red;
+
+    &:hover {
+        background-color: darken($color-red, 15);
+    }
+
+    svg {
+        fill: $color-white;
+    }
+}
+
+.editContact {
+    background-color: $color-blue;
 
     &:hover {
         background-color: darken($color-blue, 15);

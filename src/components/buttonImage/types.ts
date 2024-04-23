@@ -1,4 +1,4 @@
-import styles from "components/buttonImage/ButtonImage.module.scss";
+import styles from 'components/buttonImage/ButtonImage.module.scss';
 
 /**
  * @description Константа, позволяющая по полученному пропсу "variant" получить класс,
@@ -9,6 +9,10 @@ import styles from "components/buttonImage/ButtonImage.module.scss";
 export const ButtonImageTypeMapping = {
     noStyle: styles.noStyle,
     add: styles.add,
+    clear: styles.clear,
+    delete: styles.delete,
+    deleteContact: styles.deleteContact,
+    editContact: styles.editContact,
 };
 
 export type ButtonImageType = keyof typeof ButtonImageTypeMapping;

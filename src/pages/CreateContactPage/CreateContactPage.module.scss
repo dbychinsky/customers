@@ -2,6 +2,41 @@
 @import 'common/mixins';
 
 .createContactPage {
+    box-sizing: border-box;
     padding: $space20;
+    max-width: 1313px;
 
+    .header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: $space20;
+
+        .heading {
+            margin: 0;
+        }
+
+        button {
+            margin-left: $space20;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-flow: row wrap;
+        gap: $space20;
+
+        .rightBlock {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: $space20;
+            width: 49%;
+        }
+
+        .send {
+            width: 100%;
+            text-align: right;
+        }
+    }
 }
