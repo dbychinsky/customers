@@ -10,6 +10,7 @@ import { ContactList } from 'components/contactList/ContactList';
 import { useContactDetailsModal } from 'components/contactDetails/useContactDetailsModal';
 import { ToastContainer } from 'react-toastify';
 import { ScrollTop } from 'components/scrollTop/ScrollTop';
+import { CalendarWidget } from 'components/calendarWidget/CalendarWidget';
 
 /**
  * @description Страница дашборда.
@@ -62,7 +63,9 @@ export const DashboardPage = observer(() => {
                     />
                     <CurrencyWidget currencyStore={currencyStore} />
                 </div>
-                <div className={styles.bottom}>{/*<PmWidget />*/}</div>
+                <div className={styles.bottom}>
+                    <CalendarWidget contactListStore={contactListStore} />
+                </div>
             </div>
 
             {ModalShowDetails(activeContactId)}

@@ -78,9 +78,14 @@
         align-items: center;
 
         .content {
-            .organization, .contactFace, .date, .noRecords {
+            .organization, .contactFace, .date {
                 color: darken($color-white, 10);
             }
+
+        }
+
+        .noRecords {
+            color: darken($color-white, 10);
         }
 
         .date {

@@ -130,9 +130,9 @@
         }
       ],
       "reminder": {
-        "bell": true,
+        "bell": false,
         "productComment": "Набрать",
-        "date": "2024-04-26T09:45:37.000Z"
+        "date": "2024-04-21T04:45:45.000Z"
       }
     },
     {
@@ -162,9 +162,9 @@
       "description": "",
       "historyList": [],
       "reminder": {
-        "bell": true,
+        "bell": false,
         "productComment": "",
-        "date": "2024-04-25T08:33:19.000Z"
+        "date": "2024-04-21T04:45:45.000Z"
       }
     },
     {
@@ -226,7 +226,7 @@
       "reminder": {
         "bell": true,
         "productComment": "Перезвонить",
-        "date": "2024-04-27T04:45:45.000Z"
+        "date": "2024-04-28T04:45:45.000Z"
       }
     },
     {
@@ -290,9 +290,9 @@
         }
       ],
       "reminder": {
-        "bell": false,
+        "bell": true,
         "productComment": "comment",
-        "date": "2024-04-16T09:26:19.337Z"
+        "date": "2024-04-26T04:45:45.000Z"
       }
     }
   ],

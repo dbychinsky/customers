@@ -54,6 +54,10 @@ export class ContactListStore {
      */
     contactListNotificationActive: Contact[] = [];
     /**
+     * @description Список контактов с нотификациями.
+     */
+    activeReminderList: Contact[] = [];
+    /**
      * @description Ближайшая нотификация.
      */
     nearContactListNotification?: Contact;
@@ -108,15 +112,14 @@ export class ContactListStore {
     }
 
     getNearNotification() {
-        const activeReminderList: Contact[] = [];
         this.contactList.forEach((contact: Contact) => {
             if (contact.reminder.bell) {
-                activeReminderList.push(contact);
+                this.activeReminderList.push(contact);
             }
         });
 
         runInAction(() => {
-            this.nearContactListNotification = activeReminderList.sort(
+            this.nearContactListNotification = this.activeReminderList.sort(
                 (a: Contact, b: Contact) => +new Date(a.reminder.date) - +new Date(b.reminder.date),
             )[0];
         });
