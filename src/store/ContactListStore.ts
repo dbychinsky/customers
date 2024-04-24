@@ -53,6 +53,10 @@ export class ContactListStore {
      * @description Список активных уведомлений.
      */
     contactListNotificationActive: Contact[] = [];
+    /**
+     * @description Ближайшая нотификация.
+     */
+    nearContactListNotification?: Contact;
 
     constructor() {
         makeAutoObservable(this);
@@ -77,6 +81,9 @@ export class ContactListStore {
                     this.contactListSearching = contacts;
                 });
             })
+            .then(() => {
+                this.getNearNotification();
+            })
             .catch((err) => {
                 if (err.response) {
                     console.log('client received an error response (5xx, 4xx)');
@@ -98,6 +105,21 @@ export class ContactListStore {
      */
     deleteContactFromList(idContact: number) {
         server.deleteContact(idContact).then(this.getContactList);
+    }
+
+    getNearNotification() {
+        const activeReminderList: Contact[] = [];
+        this.contactList.forEach((contact: Contact) => {
+            if (contact.reminder.bell) {
+                activeReminderList.push(contact);
+            }
+        });
+
+        runInAction(() => {
+            this.nearContactListNotification = activeReminderList.sort(
+                (a: Contact, b: Contact) => +new Date(a.reminder.date) - +new Date(b.reminder.date),
+            )[0];
+        });
     }
 
     /**

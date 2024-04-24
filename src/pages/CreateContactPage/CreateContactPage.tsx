@@ -65,7 +65,7 @@ export const CreateContactPage = observer(() => {
                 <AddAddress contactEditStore={contactEditStore} />
                 <AddProductList contactEditStore={contactEditStore} />
                 <div className={styles.rightBlock}>
-                    <AddReminder contactEditStore={contactEditStore} contactListStore={contactListStore} />
+                    <AddReminder contactEditStore={contactEditStore} />
                     <AddHistory contactEditStore={contactEditStore} />
                 </div>
                 <div className={styles.send}>
@@ -120,8 +120,8 @@ export const CreateContactPage = observer(() => {
                     }),
                 )
                 .then(() => contactListStore.getContactList())
-                .then(() => navigateToDashboardPage())
-                .then(() => deleteNotificationById());
+                .then(() => deleteNotificationById())
+                .then(() => navigateToDashboardPage());
         }
     }
 
@@ -131,5 +131,6 @@ export const CreateContactPage = observer(() => {
         if (datePrev !== dateNew) {
             contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
         }
+        contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
     }
 });

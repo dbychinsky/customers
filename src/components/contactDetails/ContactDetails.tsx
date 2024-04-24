@@ -37,7 +37,7 @@ interface ContactDetailsProps {
  * @see IContactDetailsProps
  */
 export const ContactDetails = observer(({ contactId, setIsShowConfirm }: ContactDetailsProps) => {
-    const { contactListStore, contactEditStore } = useStores();
+    const { contactListStore } = useStores();
     const { navigateToEditContactPage } = useNavigateHelper();
     const [isHasReminder, setIsHasReminder] = useState(false);
     const [activeContact, setActiveContact] = useState<Contact>(new Contact());
@@ -99,14 +99,6 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
             </div>
             <div className={styles.actionBar}>
                 <ButtonImage
-                    onClick={offNotification}
-                    image={<IconEditContact />}
-                    onlyImage={true}
-                    className={styles.iconEditContact}
-                    variant='editContact'
-                    isDisabled={!isHasReminder}
-                />
-                <ButtonImage
                     onClick={() => navigateToEditContactPage(activeContact.id.toString())}
                     image={<IconEditContact />}
                     onlyImage={true}
@@ -123,9 +115,4 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
             </div>
         </div>
     );
-
-    function offNotification() {
-        contactEditStore.offNotificationFromModal(activeContact);
-        contactListStore.deleteRecordListNotification(activeContact.id);
-    }
 });

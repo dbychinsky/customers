@@ -95,7 +95,6 @@ export class ContactEditStore {
         this.handleChangeFieldsReminderComment = this.handleChangeFieldsReminderComment.bind(this);
         this.handleChangeFieldsReminderBell = this.handleChangeFieldsReminderBell.bind(this);
         this.handleChangeFieldsReminderDate = this.handleChangeFieldsReminderDate.bind(this);
-        this.offNotificationFromModal = this.offNotificationFromModal.bind(this);
     }
 
     /**
@@ -499,18 +498,5 @@ export class ContactEditStore {
                 historyList: this.historyList,
             };
         });
-    }
-
-    /**
-     * @description Отключение напоминания из модального окна.
-     */
-    offNotificationFromModal(contact: Contact) {
-        runInAction(() => {
-            this.contact = {
-                ...contact,
-                reminder: { bell: false, date: contact.reminder.date, productComment: contact.reminder.productComment },
-            };
-        });
-        server.updateContact(contact.id, this.contact).then();
     }
 }
