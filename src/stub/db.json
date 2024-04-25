@@ -72,9 +72,9 @@
         }
       ],
       "reminder": {
-        "bell": false,
+        "bell": true,
         "productComment": "Перезвонить",
-        "date": "2024-04-18T04:30:27.000Z"
+        "date": "2024-05-18T04:30:27.000Z"
       }
     },
     {

@@ -115,6 +115,9 @@ export class ContactListStore {
         server.deleteContact(idContact).then(this.getContactList);
     }
 
+    /**
+     * @description Получение ближайшей нотификации.
+     */
     getNearNotification() {
         this.contactList.forEach((contact: Contact) => {
             if (contact.reminder.bell) {
@@ -127,11 +130,21 @@ export class ContactListStore {
                 (a: Contact, b: Contact) => +new Date(a.reminder.date) - +new Date(b.reminder.date),
             )[0];
         });
+    }
 
+    /**
+     * @description Получение даты для календаря с напоминаниями.
+     */
+    getDateForCalendarReminder(date: Date) {
+        runInAction(() => {
+            this.reminderListDateWithNotification = [];
+        });
         this.reminderListWithNotification.forEach((contact) => {
-            runInAction(() => {
-                this.reminderListDateWithNotification.push(new Date(contact.reminder.date).getDate());
-            });
+            if (new Date(contact.reminder.date).getMonth() === date.getMonth()) {
+                runInAction(() => {
+                    this.reminderListDateWithNotification.push(new Date(contact.reminder.date).getDate());
+                });
+            }
         });
     }
 
