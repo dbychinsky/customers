@@ -50,13 +50,17 @@ export class ContactListStore {
     timer = Number(process.env.REACT_APP_TIMER_NOTIFICATION);
 
     /**
-     * @description Список активных уведомлений.
+     * @description Список контактов с активированными уведомлениями.
      */
-    contactListNotificationActive: Contact[] = [];
+    contactListNotificationActivated: Contact[] = [];
     /**
      * @description Список контактов с нотификациями.
      */
-    activeReminderList: Contact[] = [];
+    reminderListWithNotification: Contact[] = [];
+    /**
+     * @description Список дней с нотификациями для календаря.
+     */
+    reminderListDateWithNotification: number[] = [];
     /**
      * @description Ближайшая нотификация.
      */
@@ -114,14 +118,20 @@ export class ContactListStore {
     getNearNotification() {
         this.contactList.forEach((contact: Contact) => {
             if (contact.reminder.bell) {
-                this.activeReminderList.push(contact);
+                this.reminderListWithNotification.push(contact);
             }
         });
 
         runInAction(() => {
-            this.nearContactListNotification = this.activeReminderList.sort(
+            this.nearContactListNotification = this.reminderListWithNotification.sort(
                 (a: Contact, b: Contact) => +new Date(a.reminder.date) - +new Date(b.reminder.date),
             )[0];
+        });
+
+        this.reminderListWithNotification.forEach((contact) => {
+            runInAction(() => {
+                this.reminderListDateWithNotification.push(new Date(contact.reminder.date).getDate());
+            });
         });
     }
 
@@ -200,7 +210,7 @@ export class ContactListStore {
                 if (!this.isHasIdContact(contact.id)) {
                     PushNotification.pushNotify(contact.organization, contact.contactFace);
                     runInAction(() => {
-                        this.contactListNotificationActive.push(contact);
+                        this.contactListNotificationActivated.push(contact);
                     });
                 }
             }
@@ -214,7 +224,9 @@ export class ContactListStore {
      */
     private isHasIdContact(contactId: number): boolean {
         let result = true;
-        const id: Contact | undefined = this.contactListNotificationActive.find((contact) => contact.id === contactId);
+        const id: Contact | undefined = this.contactListNotificationActivated.find(
+            (contact) => contact.id === contactId,
+        );
         if (id === undefined) result = false;
         return result;
     }
@@ -224,7 +236,7 @@ export class ContactListStore {
      */
     deleteRecordListNotification(id: number) {
         runInAction(() => {
-            this.contactListNotificationActive = this.contactListNotificationActive.filter(
+            this.contactListNotificationActivated = this.contactListNotificationActivated.filter(
                 (contact: Contact) => contact.id !== id,
             );
         });

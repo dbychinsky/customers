@@ -65,7 +65,9 @@ export const ReminderStatisticWidget = observer(({ contactListStore, handleClick
                         </div>
                         <div className={styles.recordSmall}>
                             <div className={styles.active}>Активные:</div>
-                            <div className={styles.active}>{contactListStore.contactListNotificationActive.length}</div>
+                            <div className={styles.active}>
+                                {contactListStore.contactListNotificationActivated.length}
+                            </div>
                         </div>
                     </div>
                 </div>

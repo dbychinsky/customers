@@ -12,13 +12,13 @@ interface ReminderWidgetProps {
 export const ReminderWidget = observer(({ handleClickOnContact }: ReminderWidgetProps) => {
     const { contactListStore, contactEditStore } = useStores();
 
-    if (contactListStore.contactListNotificationActive.length === 0) {
+    if (contactListStore.contactListNotificationActivated.length === 0) {
         return <ReminderWidgetSkeleton contactListStore={contactListStore} contactEditStore={contactEditStore} />;
     }
 
     return (
         <div className={styles.reminderWidget}>
-            {contactListStore.contactListNotificationActive.map(({ id, contactFace, organization, description }) => (
+            {contactListStore.contactListNotificationActivated.map(({ id, contactFace, organization, description }) => (
                 <div key={id} className={styles.contact} onClick={() => handleClickOnContact(id)}>
                     <div className={styles.content}>
                         {organization ? (

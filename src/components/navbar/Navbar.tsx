@@ -25,7 +25,7 @@ export const Navbar = observer(() => {
                     <Dashboard className={styles.icon} />
                     <div className={styles.row}>
                         <div>Кабинет</div>
-                        {contactListStore.contactListNotificationActive.length ? getBadge() : null}
+                        {contactListStore.contactListNotificationActivated.length ? getBadge() : null}
                     </div>
                 </NavLink>
                 <NavLink to={RouterPathList.CALENDAR_PAGE} className={styles.link}>
@@ -43,7 +43,7 @@ export const Navbar = observer(() => {
     function getBadge(): ReactElement {
         return (
             <div className={styles.badgeNotifications}>
-                <div className={styles.badge}>{contactListStore.contactListNotificationActive.length}</div>
+                <div className={styles.badge}>{contactListStore.contactListNotificationActivated.length}</div>
             </div>
         );
     }
