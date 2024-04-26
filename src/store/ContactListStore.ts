@@ -140,7 +140,12 @@ export class ContactListStore {
             this.reminderListDateWithNotification = [];
         });
         this.reminderListWithNotification.forEach((contact) => {
-            if (new Date(contact.reminder.date).getMonth() === date.getMonth()) {
+            const contactMonth = new Date(contact.reminder.date).getMonth();
+            const propsMonth = date.getMonth();
+            const contactYear = new Date(contact.reminder.date).getFullYear();
+            const propsYear = date.getFullYear();
+
+            if (contactMonth === propsMonth && contactYear === propsYear) {
                 runInAction(() => {
                     this.reminderListDateWithNotification.push(new Date(contact.reminder.date).getDate());
                 });

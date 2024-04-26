@@ -22,10 +22,10 @@
 }
 
 .add {
-    background-color: $color-blue;
+    background-color: $color-purple-dark;
 
     &:hover {
-        background-color: darken($color-blue, 15);
+        background-color: darken($color-purple-dark, 15);
     }
 
     svg {
@@ -70,10 +70,10 @@
 }
 
 .editContact {
-    background-color: $color-blue;
+    background-color: $color-purple-dark;
 
     &:hover {
-        background-color: darken($color-blue, 15);
+        background-color: darken($color-purple-dark, 15);
     }
 
     svg {

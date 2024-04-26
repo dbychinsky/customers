@@ -15,9 +15,11 @@ interface StatisticWidgetProps {
  * @description Виджет статистики и напоминаний.
  */
 export const ReminderStatisticWidget = observer(({ contactListStore, handleClickOnContact }: StatisticWidgetProps) => {
-    const allRecords = contactListStore.contactList.length;
-    const recordReminder: number = contactListStore.contactList.filter((item) => item.reminder.bell).length;
-    const recordWithOutReminder: number = contactListStore.contactList.filter((item) => !item.reminder.bell).length;
+    const allRecords = contactListStore.contactListSearching.length;
+    const recordReminder: number = contactListStore.contactListSearching.filter((item) => item.reminder.bell).length;
+    const recordWithOutReminder: number = contactListStore.contactListSearching.filter(
+        (item) => !item.reminder.bell,
+    ).length;
 
     return (
         <div className={styles.reminderStatisticWidget}>

@@ -6,13 +6,15 @@ import { useStores } from 'store/RootStoreContext';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 import { AddAddress } from 'components/createContact/addAddress/AddAddress';
 import { AddNameContact } from 'components/createContact/addNameContact/AddNameContact';
-import { Button } from 'components/button/Button';
 import { observer } from 'mobx-react';
 import { Flip, toast } from 'react-toastify';
 import { AddProductList } from 'components/createContact/addProductList/AddProductList';
 import { AddReminder } from 'components/createContact/addReminder/AddReminder';
 import { AddHistory } from 'components/createContact/addHistory/AddHistory';
 import { useParams } from 'react-router-dom';
+import { ButtonImage } from 'components/buttonImage/ButtonImage';
+import { ReactComponent as Check } from 'common/assets/icon/check.svg';
+import { ReactComponent as Cancel } from 'common/assets/icon/cancel_modal.svg';
 
 /**
  * @description Страница создания контакта.
@@ -46,10 +48,17 @@ export const CreateContactPage = observer(() => {
                     className={styles.heading}
                 />
                 <div>
-                    <Button text='Отменить' onClick={navigateToDashboardPage} variant='cancel' />
-                    <Button
-                        text={!idContact ? 'Создать' : 'Сохранить'}
+                    <ButtonImage
+                        onClick={navigateToDashboardPage}
+                        image={<Cancel />}
+                        onlyImage={true}
+                        variant='deleteContact'
+                    />
+                    <ButtonImage
                         onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                        image={<Check />}
+                        onlyImage={true}
+                        variant='add'
                     />
                 </div>
             </div>
@@ -69,9 +78,11 @@ export const CreateContactPage = observer(() => {
                     <AddHistory contactEditStore={contactEditStore} />
                 </div>
                 <div className={styles.send}>
-                    <Button
-                        text={!idContact ? 'Создать' : 'Сохранить'}
+                    <ButtonImage
                         onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                        image={<Check />}
+                        onlyImage={true}
+                        variant='add'
                     />
                 </div>
             </form>
