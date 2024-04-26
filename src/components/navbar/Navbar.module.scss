@@ -6,7 +6,7 @@
     background-color: $color-white;
 
     .logotypeWrapper {
-        background-color: $color-purple;
+        background-color: $color-main;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,7 +57,7 @@
             height: 24px;
             width: 24px;
             border-radius: 50%;
-            background-color: $color-orange;
+            background-color: $color-reminder;
 
             position: relative;
             top: -11px;

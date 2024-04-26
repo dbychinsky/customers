@@ -33,7 +33,7 @@
             font-size: $font-size-14;
 
             &:hover {
-                color: $color-purple;
+                color: $color-main;
             }
 
             .historyDate {
@@ -54,7 +54,7 @@
                         width: 18px;
                         height: 18px;
                         margin: 1px $space 0;
-                        fill: $color-red;
+                        fill: $color-negative;
                         cursor: pointer;
                     }
                 }

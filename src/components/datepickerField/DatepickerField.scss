@@ -4,8 +4,8 @@
 // Компонент использует css без модулей.
 
 .reactWrapper {
-    $button-previous: $color-purple-dark url("src/common/assets/icon/datepicker/datepickerArrowLeft.svg");
-    $button-next: $color-purple-dark url("src/common/assets/icon/datepicker/datepickerArrowRight.svg");
+    $button-previous: $color-main-dark url("src/common/assets/icon/datepicker/datepickerArrowLeft.svg");
+    $button-next: $color-main-dark url("src/common/assets/icon/datepicker/datepickerArrowRight.svg");
     $icon-calendar: url("src/common/assets/icon/datepicker/calendar.svg");
     $icon-calendar-error: url("src/common/assets/icon/datepicker/calendarDisabled.svg");
     $icon-calendar_disabled: url("src/common/assets/icon/datepicker/calendarDisabled.svg");
@@ -25,7 +25,7 @@
             outline: none;
 
             &:focus {
-                border: 1px solid $color-purple-dark;
+                border: 1px solid $color-main-dark;
             }
 
             &::placeholder {

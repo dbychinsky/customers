@@ -96,22 +96,22 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
                         <History activeContact={activeContact} className={styles.historyModal} isBorderText={false} />
                     </div>
                 </div>
-            </div>
-            <div className={styles.actionBar}>
-                <ButtonImage
-                    onClick={() => navigateToEditContactPage(activeContact.id.toString())}
-                    image={<IconEditContact />}
-                    onlyImage={true}
-                    className={styles.iconEditContact}
-                    variant='editContact'
-                />
-                <ButtonImage
-                    onClick={() => setIsShowConfirm(true)}
-                    image={<IconDeleteContact />}
-                    onlyImage={true}
-                    className={styles.iconDeleteContact}
-                    variant='deleteContact'
-                />
+                <div className={styles.actionBar}>
+                    <ButtonImage
+                        onClick={() => navigateToEditContactPage(activeContact.id.toString())}
+                        image={<IconEditContact />}
+                        onlyImage={true}
+                        className={styles.iconEditContact}
+                        variant='editContact'
+                    />
+                    <ButtonImage
+                        onClick={() => setIsShowConfirm(true)}
+                        image={<IconDeleteContact />}
+                        onlyImage={true}
+                        className={styles.iconDeleteContact}
+                        variant='deleteContact'
+                    />
+                </div>
             </div>
         </div>
     );

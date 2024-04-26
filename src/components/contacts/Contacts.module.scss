@@ -9,11 +9,11 @@
     padding-bottom: $space8;
 
     .contacts, .comment {
+        @include blockStyle();
         width: 50%;
         box-sizing: border-box;
         padding-right: $space10;
-        margin-right: $space10;
-        border-right: 1px dashed $color-grey-background;
+        margin-right: $space20;
     }
 
     .number, .email, .address {
@@ -29,7 +29,7 @@
 
         &:hover {
             cursor: pointer;
-            color: $color-purple-dark;
+            color: $color-main-dark;
 
             &::before {
                 content: '';

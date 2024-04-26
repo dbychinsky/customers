@@ -33,14 +33,14 @@
 
             svg {
                 path {
-                    stroke: $color-red;
+                    stroke: $color-negative;
                 }
             }
 
             &.active {
                 svg {
                     path {
-                        stroke: $color-green;
+                        stroke: $color-accept;
                     }
                 }
             }
@@ -57,7 +57,7 @@
 
             &:hover {
                 .number {
-                    color: $color-purple;
+                    color: $color-main;
                 }
             }
 
@@ -85,7 +85,7 @@
                         width: 18px;
                         height: 18px;
                         margin: 1px $space 0;
-                        fill: $color-red;
+                        fill: $color-negative;
                         cursor: pointer;
                     }
                 }

@@ -13,7 +13,7 @@
     .titleLoginPage {
         width: 40%;
         box-sizing: border-box;
-        background: $color-purple;
+        background: $color-main;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -71,7 +71,7 @@
         }
 
         &::after {
-            background-color: $color-purple;
+            background-color: $color-main;
             -webkit-clip-path: polygon(0 100%, 100% 0, 0 0);
             clip-path: polygon(0 100%, 100% 0, 0 0);
             content: "";

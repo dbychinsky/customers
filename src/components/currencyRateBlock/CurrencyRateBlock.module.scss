@@ -50,7 +50,7 @@
         font-size: $font-size-14;
 
         &:hover {
-            border: 1px solid $color-purple-dark;
+            border: 1px solid $color-main-dark;
         }
     }
 
@@ -63,13 +63,13 @@
 
     .iconTrendingUp {
         svg {
-            fill: $color-green;
+            fill: $color-accept;
         }
     }
 
     .iconTrendingDown {
         svg {
-            fill: $color-red;
+            fill: $color-negative;
         }
     }
 
@@ -126,12 +126,12 @@
             display: none;
 
             &:checked + label:after {
-                background: $color-purple;
+                background: $color-main;
             }
 
             &:checked + label:before {
-                background: $color-purple-light;
-                border: 1px solid $color-purple-light;
+                background: $color-main-light;
+                border: 1px solid $color-main-light;
             }
 
             &:hover:after {

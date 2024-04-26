@@ -2,8 +2,14 @@
 @import 'common/mixins';
 
 .contactDetails {
+    box-sizing: border-box;
     display: block;
     text-align: left;
+    margin: -40px -20px -20px -20px;
+    padding: 40px 20px 20px 20px;
+    position: relative;
+    background: $color-grey-background url('../../../src/common/assets/icon/info.svg') top right no-repeat;
+    background-size: 900px;
 
     .contactDetailsWrapper {
         .header {
@@ -11,8 +17,6 @@
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid $color-grey-background;
-            padding-bottom: $space20;
             margin-bottom: $space20;
 
             .iconPerson {
@@ -22,7 +26,7 @@
 
             .iconTie {
                 @include icons();
-                background-color: $color-purple;
+                background-color: $color-main;
             }
 
             .organization {
@@ -40,10 +44,17 @@
             }
         }
 
+        .actionBar {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: right;
+            gap: $space14;
+        }
+
         .content {
             display: flex;
             flex-flow: row nowrap;
-            gap: 10px;
+            gap: $space20;
 
             .columnFirst {
                 width: 65%;
@@ -56,11 +67,9 @@
             .row {
                 display: flex;
                 flex-flow: row nowrap;
-                gap: $space10;
                 width: 100%;
                 min-height: 130px;
                 margin-bottom: $space20;
-                padding-bottom: $space10;
                 border-bottom: 1px solid $color-grey-background;
 
                 &:last-child {
@@ -82,12 +91,5 @@
             }
         }
 
-    }
-
-    .actionBar {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: right;
-        gap: $space14;
     }
 }

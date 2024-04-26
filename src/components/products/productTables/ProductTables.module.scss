@@ -9,7 +9,7 @@
     border-collapse: collapse;
 
     thead {
-        background-color: $color-green-light;
+        background-color: $color-accept-light;
         border-bottom: 1px solid $color-grey-background;
 
         .headRow {
@@ -17,7 +17,7 @@
                 @include interSemiBold();
                 font-size: $font-size-12;
                 padding: $space10;
-                color: $color-green;
+                color: $color-accept;
             }
         }
     }
@@ -43,7 +43,7 @@
             }
 
             td {
-                padding: $space4 $space10;
+                padding: $space8 $space10;
                 font-size: $font-size-14;
             }
         }

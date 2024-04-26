@@ -2,6 +2,7 @@
 @import '../../common/mixins';
 
 .history {
+    @include blockStyle();
     margin-bottom: $space16;
     padding-bottom: $space8;
 

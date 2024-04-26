@@ -17,7 +17,7 @@
 
         .iconTie {
             @include icons();
-            background-color: $color-purple;
+            background-color: $color-main;
         }
 
         .information {
@@ -102,7 +102,7 @@
         }
 
         .iconActive {
-            background-color: $color-purple-light;
+            background-color: $color-main-light;
             height: 27px;
             width: 27px;
             display: flex;
@@ -112,7 +112,7 @@
             margin: 0 $space6 0 0;
 
             svg {
-                fill: $color-purple;
+                fill: $color-main;
                 height: 20px;
                 width: 20px;
             }
@@ -128,15 +128,13 @@
 
         .reminderWrapper {
             border-radius: $radius4;
-            background-color: $color-orange-light;
-            //background-color: $color-green-light;
-            //color: $color-green;
-            color: $color-orange;
+            background-color: $color-reminder-light;
+            color: $color-reminder;
             font-size: $font-size-12;
             padding: $space6;
 
             svg {
-                fill: $color-green;
+                fill: $color-accept;
                 width: 20px;
                 padding: 3px 5px;
                 display: none;

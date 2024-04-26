@@ -49,16 +49,16 @@ export const CreateContactPage = observer(() => {
                 />
                 <div>
                     <ButtonImage
-                        onClick={navigateToDashboardPage}
-                        image={<Cancel />}
-                        onlyImage={true}
-                        variant='deleteContact'
-                    />
-                    <ButtonImage
                         onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
                         image={<Check />}
                         onlyImage={true}
                         variant='add'
+                    />
+                    <ButtonImage
+                        onClick={navigateToDashboardPage}
+                        image={<Cancel />}
+                        onlyImage={true}
+                        variant='deleteContact'
                     />
                 </div>
             </div>
