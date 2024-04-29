@@ -26,7 +26,7 @@ export const Reminder = ({ activeContact, className, isBorderText }: ReminderWid
             {activeContact?.reminder?.bell ? (
                 <div className={styles.reminderWrapper}>
                     <div className={styles.date}>{moment(activeContact.reminder.date).format('lll')}</div>
-                    <div className={classWrapperReminderComment}>{activeContact.reminder.productComment}</div>
+                    <div className={classWrapperReminderComment}>{activeContact.reminder.comment}</div>
                 </div>
             ) : (
                 <NoRecords text='Напоминания отсутствуют' variantFontSize='small' variantAlign='left' />

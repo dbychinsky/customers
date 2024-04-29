@@ -70,6 +70,6 @@ export class Contact {
         this.address = '';
         this.description = '';
         this.historyList = [];
-        this.reminder = { bell: false, date: new Date(), productComment: '' };
+        this.reminder = { bell: false, date: new Date(), comment: '' };
     }
 }

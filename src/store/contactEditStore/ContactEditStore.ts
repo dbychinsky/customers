@@ -10,7 +10,10 @@ import {
     PhoneListType,
     PhoneTypeListEnum,
     ProductListType,
+    ReminderType,
 } from 'store/contactEditStore/types';
+import axios from 'axios';
+import { OldContact, PhoneListTypeOld } from 'model/OldContact';
 
 const initialStateProduct = { id: '', productName: '', productComment: '' };
 
@@ -82,6 +85,11 @@ export class ContactEditStore {
      * @description Флаг загрузки.
      */
     isLoading = false;
+
+    /**
+     * @description Временный.
+     */
+    sourceContactList: OldContact[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -323,7 +331,7 @@ export class ContactEditStore {
                 ...this.contact,
                 reminder: {
                     bell: checked,
-                    productComment: this.contact.reminder.productComment,
+                    comment: this.contact.reminder.comment,
                     date: this.contact.reminder.date,
                 },
             };
@@ -339,7 +347,7 @@ export class ContactEditStore {
                 ...this.contact,
                 reminder: {
                     bell: this.contact.reminder.bell,
-                    productComment: e.target.value,
+                    comment: e.target.value,
                     date: this.contact.reminder.date,
                 },
             };
@@ -355,7 +363,7 @@ export class ContactEditStore {
                 ...this.contact,
                 reminder: {
                     bell: this.contact.reminder.bell,
-                    productComment: this.contact.reminder.productComment,
+                    comment: this.contact.reminder.comment,
                     date: date ? date.toDate() : new Date(),
                 },
             };
@@ -497,6 +505,82 @@ export class ContactEditStore {
                 ...this.contact,
                 historyList: this.historyList,
             };
+        });
+    }
+
+    /**
+     * @description Обновление данных перед отправкой на сервер.
+     */
+    async convertContactList() {
+        this.getSourceContactList()
+            .then((response) => {
+                runInAction(() => {
+                    this.sourceContactList = response;
+                });
+            })
+            .then(() => this.conversationData());
+    }
+
+    async getSourceContactList(): Promise<OldContact[]> {
+        return await axios.get(`http://localhost:3001/sourceContactList`).then((response) => response.data);
+    }
+
+    conversationData() {
+        this.sourceContactList.forEach((item) => {
+            runInAction(() => {
+                this.contact.id = item.id;
+                this.contact.contactFace = item.contactFace;
+                this.contact.organization = item.organization;
+                this.contact.description = item.description;
+                this.contact.address = '';
+                this.contact.emailList = getItemFromItemListEmail(item.email);
+                this.contact.phoneList = getItemFromItemListPhone(item.phoneList);
+                this.contact.productList = getItemFromItemListProduct(item.products);
+                this.contact.productListArchive = getItemFromItemListProduct(item.productsArchive);
+                this.contact.historyList = [];
+                this.contact.reminder = getItemFromItemListReminder(item.reminderDate, item.reminder);
+            });
+
+            function getTypePhone(type: string): PhoneTypeListEnum {
+                if (type == 'work') {
+                    return PhoneTypeListEnum.business;
+                } else {
+                    return PhoneTypeListEnum.personal;
+                }
+            }
+
+            function getItemFromItemListProduct(list: []): ProductListType[] {
+                const newArray: ProductListType[] = [];
+
+                for (let i = 0; i < list.length; i++) {
+                    newArray.push({ id: new Date().toString(), productName: list[i], productComment: '' });
+                }
+
+                return newArray;
+            }
+
+            function getItemFromItemListPhone(list: PhoneListTypeOld[]): PhoneListType[] {
+                const newArray: PhoneListType[] = [];
+                list.forEach((itemList: PhoneListTypeOld) => {
+                    newArray.push({ number: itemList.number, typeList: getTypePhone(itemList.typeList) });
+                });
+
+                return newArray;
+            }
+
+            function getItemFromItemListEmail(list: string): EmailListType[] {
+                const newArray: EmailListType[] = [];
+                newArray.push({ email: list });
+
+                return newArray;
+            }
+
+            function getItemFromItemListReminder(reminderDate: Date, reminder: boolean): ReminderType {
+                return { date: reminderDate, bell: reminder, comment: 'Позвонить' };
+            }
+
+            console.log(this.contact);
+            server.addContact(this.contact).then();
         });
     }
 }

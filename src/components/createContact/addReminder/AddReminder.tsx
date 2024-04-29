@@ -38,7 +38,7 @@ export const AddReminder = observer(({ contactEditStore }: AddReminderProps) => 
                     handleChange={contactEditStore.handleChangeFieldsReminderDate}
                 />
                 <TextAreaField
-                    value={contactEditStore.contact.reminder.productComment}
+                    value={contactEditStore.contact.reminder.comment}
                     changeHandler={contactEditStore.handleChangeFieldsReminderComment}
                     name='productComment'
                     placeHolder='Комментарий к напоминанию'

@@ -47,6 +47,7 @@ export const TableBody = observer(({ contactListStore, handleClickOnContact }: T
                                 </div>
                             )}
                             <div className={styles.information}>
+                                <div>{contact.id}</div>
                                 <div className={styles.organization}>{contact.organization}</div>
                                 <div className={styles.contactFace}>{contact.contactFace}</div>
                             </div>
