@@ -14,6 +14,7 @@
         box-sizing: border-box;
         padding-right: $space10;
         margin-right: $space20;
+        min-width: 300px;
     }
 
     .number, .email, .address {

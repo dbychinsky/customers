@@ -8,7 +8,7 @@ import { observer } from 'mobx-react';
 
 interface StatisticWidgetProps {
     contactListStore: ContactListStore;
-    handleClickOnContact: (id: number) => void;
+    handleClickOnContact: (id: string) => void;
 }
 
 /**

@@ -39,7 +39,7 @@ export const AddAddress = observer(({ contactEditStore }: AddEmailProps) => {
                     name='email'
                     type={InputFieldEnum.text}
                     mask={false}
-                    maxLength={50}
+                    maxLength={80}
                     placeHolder='@Email'
                 />
                 <ButtonImage

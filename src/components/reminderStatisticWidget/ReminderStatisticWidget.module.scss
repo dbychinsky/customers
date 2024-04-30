@@ -3,7 +3,7 @@
 
 .reminderStatisticWidget {
     width: 56%;
-
+    min-width: 0;
     .statistic {
         @include blockStyle();
         display: flex;
@@ -49,7 +49,5 @@
     .chart {
         width: 60px;
         height: 60px;
-
-
     }
 }

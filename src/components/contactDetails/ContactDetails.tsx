@@ -24,7 +24,7 @@ interface ContactDetailsProps {
     /**
      * @description  Идентификатор контакат.
      */
-    contactId: number | null;
+    contactId: string | null;
     /**
      * @description  Функция показа окна подтверждения.
      */
@@ -60,7 +60,7 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
         <div className={classWrapperContactDetails}>
             <div className={styles.contactDetailsWrapper}>
                 <div className={styles.header}>
-                    {activeContact.organization.length ? (
+                    {activeContact.organization.length !== 0 ? (
                         <div className={styles.iconTie}>
                             <IconPersonTie />
                         </div>

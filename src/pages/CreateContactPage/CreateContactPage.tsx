@@ -36,7 +36,7 @@ export const CreateContactPage = observer(() => {
 
     useEffect(() => {
         if (idContact) {
-            contactEditStore.getContactById(Number(idContact));
+            contactEditStore.getContactById(idContact);
         }
     }, [contactEditStore, idContact]);
 
@@ -90,50 +90,44 @@ export const CreateContactPage = observer(() => {
     );
 
     function handleClickSendContact() {
-        contactEditStore.validateFields();
-        if (contactEditStore.errorList.length === 0) {
-            contactEditStore
-                .pushContact()
-                .then(() =>
-                    toast.success('Запись добавлена', {
-                        position: 'top-right',
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                        transition: Flip,
-                    }),
-                )
-                .then(() => contactListStore.getContactList())
-                .then(() => navigateToDashboardPage());
-        }
+        contactEditStore
+            .pushContact()
+            .then(() =>
+                toast.success('Запись добавлена', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                    transition: Flip,
+                }),
+            )
+            .then(() => contactListStore.getContactList())
+            .then(() => navigateToDashboardPage());
     }
 
     function handleClickSendEditContact() {
-        contactEditStore.validateFields();
-        if (contactEditStore.errorList.length === 0) {
-            contactEditStore
-                .pushEditContact(Number(idContact))
-                .then(() =>
-                    toast.success('Изменения сохранены', {
-                        position: 'top-right',
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                        transition: Flip,
-                    }),
-                )
-                .then(() => contactListStore.getContactList())
-                .then(() => deleteNotificationById())
-                .then(() => navigateToDashboardPage());
-        }
+        contactEditStore
+            .pushEditContact(idContact)
+            .then(() =>
+                toast.success('Изменения сохранены', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                    transition: Flip,
+                }),
+            )
+            .then(() => contactListStore.getContactList())
+            .then(() => deleteNotificationById())
+            .then(() => navigateToDashboardPage());
     }
 
     function deleteNotificationById() {

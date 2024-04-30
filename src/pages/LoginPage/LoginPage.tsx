@@ -8,17 +8,17 @@ import { LoginForm } from 'pages/LoginPage/loginForm/LoginForm';
  */
 export const LoginPage = observer(() => (
     <div className={styles.loginPage}>
-        {/*<div className={styles.titleLoginPage}>*/}
-        {/*    <div className={styles.content}>*/}
-        {/*        <div className={styles.logotype} />*/}
-        {/*        <div className={styles.imgGirl} />*/}
-        {/*        <div className={styles.imgBox}>*/}
-        {/*            <div className={styles.imgPeople} />*/}
-        {/*            <div className={styles.imgSchedule} />*/}
-        {/*            <div className={styles.imgGraph} />*/}
-        {/*        </div>*/}
-        {/*    </div>*/}
-        {/*</div>*/}
+        <div className={styles.titleLoginPage}>
+            <div className={styles.content}>
+                <div className={styles.logotype} />
+                <div className={styles.imgGirl} />
+                <div className={styles.imgBox}>
+                    <div className={styles.imgPeople} />
+                    <div className={styles.imgSchedule} />
+                    <div className={styles.imgGraph} />
+                </div>
+            </div>
+        </div>
         <div className={styles.contentLoginPage}>
             <div className={styles.title}>Войти</div>
             <LoginForm />

@@ -29,6 +29,7 @@
         transition: top .5s ease;
         top: 0;
         gap: $space20;
+        min-width: 0;
 
         &.scroll {
             top: 20px;
@@ -39,6 +40,7 @@
             display: flex;
             gap: $space20;
             align-items: flex-start;
+            min-width: 0;
         }
 
         .bottom {

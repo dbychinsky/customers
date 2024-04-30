@@ -15,9 +15,9 @@ const enum serverUrl {
 }
 
 export class Server implements IService {
-    readonly MAIN_URL_FAKE = `http://localhost:3001`;
-    readonly MAIN_URL = this.MAIN_URL_FAKE;
-    // readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
+    // readonly MAIN_URL_FAKE = `http://localhost:3001`;
+    // readonly MAIN_URL = this.MAIN_URL_FAKE;
+    readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
 
     /**
      * @description  Получение списка контактов.
@@ -29,7 +29,7 @@ export class Server implements IService {
     /**
      * @description Получение контакта по id (Нет отдельного метода).
      */
-    async getContactById(id: number): Promise<Contact> {
+    async getContactById(id: string): Promise<Contact> {
         return await axios
             .get(`${this.MAIN_URL}/${serverUrl.CONTACT}`)
             .then((response) => response.data.find((item: Contact) => item.id === id));
@@ -46,14 +46,14 @@ export class Server implements IService {
     /**
      * @description  Обновление.
      */
-    async updateContact(id: number, data: Contact): Promise<void> {
+    async updateContact(id: string, data: Contact): Promise<void> {
         await axios.put(`${this.MAIN_URL}/${serverUrl.CONTACT}/${id}`, data);
     }
 
     /**
      * @description  Удаление.
      */
-    async deleteContact(idContact: number): Promise<void> {
+    async deleteContact(idContact: string): Promise<void> {
         await axios.delete(`${this.MAIN_URL}/${serverUrl.CONTACT}/${idContact}`);
     }
 

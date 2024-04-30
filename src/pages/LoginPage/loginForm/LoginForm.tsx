@@ -9,7 +9,7 @@ import { Button } from 'components/button/Button';
 import { ButtonFormEnum } from 'components/button/types';
 
 export const LoginForm = observer(() => {
-    const { authStore, contactEditStore, contactListStore } = useStores();
+    const { authStore } = useStores();
     const { navigateToDashboardPage } = useNavigateHelper();
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export const LoginForm = observer(() => {
                 placeHolder='Пароль'
                 mask={false}
             />
-            <Button text='go' onClick={convertData} />
+            {/*<Button text='go' onClick={convertData} />*/}
             <div className={styles.actionBar}>
                 <Button
                     onClick={handleClickAuthentication}
@@ -67,9 +67,9 @@ export const LoginForm = observer(() => {
         }
     }
 
-    function convertData() {
-        contactEditStore.convertContactList().then(() => {
-            contactListStore.getContactList();
-        });
-    }
+    // function convertData() {
+    //     contactEditStore.convertContactList().then(() => {
+    //         contactListStore.getContactList();
+    //     });
+    // }
 });

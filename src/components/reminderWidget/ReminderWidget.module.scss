@@ -5,10 +5,12 @@
     display: flex;
     flex-flow: column nowrap;
     gap: $space10;
-    max-height: 260px;
+    max-height: 220px;
     overflow-y: auto;
     border-radius: 6px;
     padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
 
     .contact {
         box-sizing: border-box;
@@ -21,6 +23,7 @@
         justify-content: space-between;
 
         animation: pulse 2s infinite;
+        min-width: 0;
 
         &:hover {
             cursor: pointer;
@@ -31,12 +34,14 @@
 
         .content {
             color: white;
+            min-width: 0;
 
             .organization {
                 @include interSemiBold();
                 @include truncateText(2);
                 font-size: $font-size-18;
                 margin-bottom: $space6;
+                word-wrap: break-word;
             }
 
             .contactFace {
@@ -77,10 +82,14 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        min-width: 0;
 
         .content {
+            min-width: 0;
+
             .organization, .contactFace, .date {
                 color: darken($color-white, 10);
+                word-wrap: break-word;
             }
 
         }

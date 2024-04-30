@@ -72,6 +72,8 @@
             font-size: $font-size-12;
             color: $color-grey-dark;
             padding-bottom: $space4;
+            word-break: break-word;
+            display: block;
         }
     }
 
@@ -139,6 +141,10 @@
                 padding: 3px 5px;
                 display: none;
             }
+        }
+
+        button {
+            margin-left: $space10;
         }
     }
 }

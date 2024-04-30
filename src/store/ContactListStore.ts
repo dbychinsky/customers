@@ -85,8 +85,8 @@ export class ContactListStore {
             .getContacts()
             .then((contacts) => {
                 runInAction(() => {
-                    this.contactList = contacts;
-                    this.contactListSearching = contacts;
+                    this.contactList = contacts.sort((a, b) => +a.id - +b.id);
+                    this.contactListSearching = contacts.sort((a, b) => +a.id - +b.id);
                 });
             })
             .then(() => {
@@ -111,7 +111,7 @@ export class ContactListStore {
     /**
      * @description Удаление контакта.
      */
-    deleteContactFromList(idContact: number) {
+    deleteContactFromList(idContact: string) {
         server.deleteContact(idContact).then(this.getContactList);
     }
 
@@ -240,7 +240,7 @@ export class ContactListStore {
      * @param contactId
      * @private
      */
-    private isHasIdContact(contactId: number): boolean {
+    private isHasIdContact(contactId: string): boolean {
         let result = true;
         const id: Contact | undefined = this.contactListNotificationActivated.find(
             (contact) => contact.id === contactId,
@@ -252,7 +252,7 @@ export class ContactListStore {
     /**
      * @description Удаление записи из списка активных нотификаций.
      */
-    deleteRecordListNotification(id: number) {
+    deleteRecordListNotification(id: string) {
         runInAction(() => {
             this.contactListNotificationActivated = this.contactListNotificationActivated.filter(
                 (contact: Contact) => contact.id !== id,

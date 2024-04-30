@@ -2,7 +2,6 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import { Contact } from 'model/Contact';
 import React from 'react';
 import { server } from 'App';
-import { FieldError } from 'components/inputField/types';
 import { Moment } from 'moment';
 import {
     EmailListType,
@@ -21,6 +20,8 @@ const initialStateProduct = { id: '', productName: '', productComment: '' };
  * @description Store для редактирования контактов.
  */
 export class ContactEditStore {
+    readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
+
     /**
      * @description Контакт.
      */
@@ -75,11 +76,6 @@ export class ContactEditStore {
      * @description История (буфер).
      */
     historyList: HistoryType[] = [];
-
-    /**
-     * @description Список ошибок.
-     */
-    errorList: FieldError[] = [];
 
     /**
      * @description Флаг загрузки.
@@ -264,22 +260,7 @@ export class ContactEditStore {
                 ...this.contact,
                 [e.target.name]: e.target.value,
             };
-            this.errorList = this.errorList.filter((item) => item.field !== e.target.name);
         });
-    }
-
-    /**
-     * @description Валидация.
-     */
-    validateFields() {
-        runInAction(() => {
-            this.errorList = [];
-        });
-        if (this.contact.contactFace.length === 0) {
-            runInAction(() => {
-                this.errorList.push({ field: 'contactFace', message: 'Поле не может быть пустым' });
-            });
-        }
     }
 
     /**
@@ -318,7 +299,6 @@ export class ContactEditStore {
             this.productNameFieldArchive = '';
             this.productFields = initialStateProduct;
             this.productFieldsArchive = initialStateProduct;
-            this.errorList = [];
         });
     }
 
@@ -396,10 +376,8 @@ export class ContactEditStore {
      * @description Отправка данных на сервер.
      */
     async pushContact() {
-        if (this.errorList.length === 0) {
-            this.updateData();
-            server.addContact(this.contact).then();
-        }
+        this.updateData();
+        server.addContact(this.contact).then();
     }
 
     /**
@@ -408,7 +386,7 @@ export class ContactEditStore {
     /**
      * @description Получение контакта по id.
      */
-    getContactById(idContact: number) {
+    getContactById(idContact: string) {
         runInAction(() => {
             this.isLoading = true;
         });
@@ -465,8 +443,8 @@ export class ContactEditStore {
     /**
      * @description Отправка редактированных данных на сервер.
      */
-    async pushEditContact(idContact: number | undefined) {
-        if (this.errorList.length === 0 && idContact) {
+    async pushEditContact(idContact: string | undefined) {
+        if (idContact) {
             this.updateData();
             server.updateContact(idContact, this.contact).then();
         }
@@ -522,13 +500,13 @@ export class ContactEditStore {
     }
 
     async getSourceContactList(): Promise<OldContact[]> {
-        return await axios.get(`http://localhost:3001/sourceContactList`).then((response) => response.data);
+        return await axios.get(`${this.MAIN_URL}/sourceContactList`).then((response) => response.data);
     }
 
     conversationData() {
         this.sourceContactList.forEach((item) => {
             runInAction(() => {
-                this.contact.id = item.id;
+                this.contact.id = item.id.toString();
                 this.contact.contactFace = item.contactFace;
                 this.contact.organization = item.organization;
                 this.contact.description = item.description;
@@ -540,6 +518,10 @@ export class ContactEditStore {
                 this.contact.historyList = [];
                 this.contact.reminder = getItemFromItemListReminder(item.reminderDate, item.reminder);
             });
+
+            function createUniqueID() {
+                return 'id_' + Math.random().toString(36).substr(2, 9);
+            }
 
             function getTypePhone(type: string): PhoneTypeListEnum {
                 if (type == 'work') {
@@ -553,7 +535,7 @@ export class ContactEditStore {
                 const newArray: ProductListType[] = [];
 
                 for (let i = 0; i < list.length; i++) {
-                    newArray.push({ id: new Date().toString(), productName: list[i], productComment: '' });
+                    newArray.push({ id: createUniqueID(), productName: list[i], productComment: '' });
                 }
 
                 return newArray;

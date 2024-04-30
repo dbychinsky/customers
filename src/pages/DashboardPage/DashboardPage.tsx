@@ -18,7 +18,7 @@ import { CalendarWidget } from 'components/calendarWidget/CalendarWidget';
 export const DashboardPage = observer(() => {
     const { authStore, contactListStore, contactEditStore, currencyStore } = useStores();
     const { navigateToLoginPage } = useNavigateHelper();
-    const [activeContactId, setActiveContactId] = useState<number | null>(null);
+    const [activeContactId, setActiveContactId] = useState<string | null>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
     const classWrapperSideBar = clsx(styles.sideBarWrapper, { [styles.scroll]: isScrolling });
     const { ModalShowDetails, showDetailsHandler, onCloseDetailsModal } = useContactDetailsModal(deleteContact);
@@ -90,7 +90,7 @@ export const DashboardPage = observer(() => {
      * @description Установка выбранного контакта в состояние.
      * @param id
      */
-    function handleClickOnContact(id: number) {
+    function handleClickOnContact(id: string) {
         setActiveContactId(id);
         showDetailsHandler();
     }

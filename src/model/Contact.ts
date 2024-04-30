@@ -7,7 +7,7 @@ export class Contact {
     /**
      * @description id.
      */
-    id: number;
+    id: string;
 
     /**
      * @description Организация.
@@ -60,7 +60,7 @@ export class Contact {
     reminder: ReminderType;
 
     constructor() {
-        this.id = 0;
+        this.id = '';
         this.organization = '';
         this.contactFace = '';
         this.productList = [];

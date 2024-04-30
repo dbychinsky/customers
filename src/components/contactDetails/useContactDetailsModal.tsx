@@ -18,7 +18,7 @@ export function useContactDetailsModal(deleteContact: () => void): UseDetailsMod
         openModal();
     }, [openModal]);
 
-    const ModalShowDetails = (contactId: number | null) => (
+    const ModalShowDetails = (contactId: string | null) => (
         <Modal title='' onCloseModal={onCloseDetailsModal}>
             {isShowConfirm ? (
                 <ModalConfirm deleteContact={deleteContact} setIsShowConfirm={setIsShowConfirm} />
@@ -40,7 +40,7 @@ type UseDetailsModalReturnProps = {
     /**
      * Функция-компонент модального окна.
      */
-    ModalShowDetails: (contactId: number | null) => React.ReactElement;
+    ModalShowDetails: (contactId: string | null) => React.ReactElement;
     /**
      * Функция-callback, вызываемая при клике на иконку просмотра деталей.
      */

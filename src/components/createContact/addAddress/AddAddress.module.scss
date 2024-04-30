@@ -35,7 +35,7 @@
             flex-flow: row nowrap;
 
             &:hover {
-                .number {
+                .email {
                     color: $color-main;
                 }
             }
@@ -44,6 +44,7 @@
                 margin-right: $space4;
                 width: 227px;
                 word-break: break-word;
+                display: block;
             }
 
             .iconActions {
