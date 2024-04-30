@@ -45,7 +45,7 @@
     }
 
     .checkBoxField:checked + label:before {
-        background: $color-green;
+        background: $color-accept;
         background-size: 26px;
     }
 
@@ -68,7 +68,7 @@
         width: auto;
 
         .checkBoxField + label:before {
-            background: $color-red;
+            background: $color-negative;
             width: 30px;
             height: 20px;
             border-radius: $radius4;
@@ -77,7 +77,7 @@
         }
 
         .checkBoxField:checked + label:before {
-            background: $color-green;
+            background: $color-accept;
             background-size: 26px;
         }
 

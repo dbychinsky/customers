@@ -4,13 +4,12 @@
 .products {
     display: flex;
     flex-flow: row nowrap;
-    gap: $space10;
-    margin-bottom: $space16;
-    padding-bottom: $space8;
+    gap: $space20;
     width: 100%;
     border-right: 1px dashed $color-grey-background;
 
     .productActive, .productArchive {
+        @include blockStyle();
         width: 50%;
         box-sizing: border-box;
         padding-right: $space10;
@@ -19,8 +18,8 @@
             display: inline-block;
             padding: $space6;
             font-size: $font-size-14;
-            color: $color-purple;
-            background-color: $color-purple-light;
+            color: $color-main;
+            background-color: $color-main-light;
             margin: 0 $space6 $space6 0;
             border-radius: $radius6;
         }
@@ -48,8 +47,8 @@
                 box-sizing: border-box;
                 font-size: $font-size-14;
                 width: 30%;
-                background-color: $color-green-light;
-                color: $color-green;
+                background-color: $color-accept-light;
+                color: $color-accept;
             }
 
             .productComment {

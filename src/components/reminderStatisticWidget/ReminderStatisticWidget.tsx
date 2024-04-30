@@ -8,16 +8,18 @@ import { observer } from 'mobx-react';
 
 interface StatisticWidgetProps {
     contactListStore: ContactListStore;
-    handleClickOnContact: (id: number) => void;
+    handleClickOnContact: (id: string) => void;
 }
 
 /**
  * @description Виджет статистики и напоминаний.
  */
 export const ReminderStatisticWidget = observer(({ contactListStore, handleClickOnContact }: StatisticWidgetProps) => {
-    const allRecords = contactListStore.contactList.length;
-    const recordReminder: number = contactListStore.contactList.filter((item) => item.reminder.bell).length;
-    const recordWithOutReminder: number = contactListStore.contactList.filter((item) => !item.reminder.bell).length;
+    const allRecords = contactListStore.contactListSearching.length;
+    const recordReminder: number = contactListStore.contactListSearching.filter((item) => item.reminder.bell).length;
+    const recordWithOutReminder: number = contactListStore.contactListSearching.filter(
+        (item) => !item.reminder.bell,
+    ).length;
 
     return (
         <div className={styles.reminderStatisticWidget}>
@@ -65,7 +67,9 @@ export const ReminderStatisticWidget = observer(({ contactListStore, handleClick
                         </div>
                         <div className={styles.recordSmall}>
                             <div className={styles.active}>Активные:</div>
-                            <div className={styles.active}>{contactListStore.contactListNotificationActive.length}</div>
+                            <div className={styles.active}>
+                                {contactListStore.contactListNotificationActivated.length}
+                            </div>
                         </div>
                     </div>
                 </div>

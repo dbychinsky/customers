@@ -37,7 +37,7 @@ export const AddPhone = observer(({ contactEditStore }: AddPhoneProps) => {
                     name='phoneNumber'
                     type={InputFieldEnum.text}
                     mask={isMask}
-                    maxLength={20}
+                    maxLength={50}
                 />
                 <ButtonImage
                     onClick={checkStateMask}

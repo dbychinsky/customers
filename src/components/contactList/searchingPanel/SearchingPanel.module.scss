@@ -14,14 +14,14 @@
         border-radius: $radius6;
         cursor: pointer;
         outline: none;
-        background-color: $color-blue;
+        background-color: $color-main-dark;
 
         svg {
             fill: $color-white
         }
 
         &:hover {
-            background-color: darken($color-blue, 15);
+            background-color: darken($color-main-dark, 15);
         }
     }
 
@@ -40,14 +40,14 @@
 
             svg {
                 path {
-                    stroke: $color-red;
+                    stroke: $color-negative;
                 }
             }
 
             &.active {
                 svg {
                     path {
-                        stroke: $color-green;
+                        stroke: $color-accept;
                     }
                 }
             }

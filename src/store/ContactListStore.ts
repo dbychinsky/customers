@@ -50,9 +50,21 @@ export class ContactListStore {
     timer = Number(process.env.REACT_APP_TIMER_NOTIFICATION);
 
     /**
-     * @description Список активных уведомлений.
+     * @description Список контактов с активированными уведомлениями.
      */
-    contactListNotificationActive: Contact[] = [];
+    contactListNotificationActivated: Contact[] = [];
+    /**
+     * @description Список контактов с нотификациями.
+     */
+    reminderListWithNotification: Contact[] = [];
+    /**
+     * @description Список дней с нотификациями для календаря.
+     */
+    reminderListDateWithNotification: number[] = [];
+    /**
+     * @description Ближайшая нотификация.
+     */
+    nearContactListNotification?: Contact;
 
     constructor() {
         makeAutoObservable(this);
@@ -73,9 +85,12 @@ export class ContactListStore {
             .getContacts()
             .then((contacts) => {
                 runInAction(() => {
-                    this.contactList = contacts;
-                    this.contactListSearching = contacts;
+                    this.contactList = contacts.sort((a, b) => +a.id - +b.id);
+                    this.contactListSearching = contacts.sort((a, b) => +a.id - +b.id);
                 });
+            })
+            .then(() => {
+                this.getNearNotification();
             })
             .catch((err) => {
                 if (err.response) {
@@ -96,8 +111,46 @@ export class ContactListStore {
     /**
      * @description Удаление контакта.
      */
-    deleteContactFromList(idContact: number) {
+    deleteContactFromList(idContact: string) {
         server.deleteContact(idContact).then(this.getContactList);
+    }
+
+    /**
+     * @description Получение ближайшей нотификации.
+     */
+    getNearNotification() {
+        this.contactList.forEach((contact: Contact) => {
+            if (contact.reminder.bell) {
+                this.reminderListWithNotification.push(contact);
+            }
+        });
+
+        runInAction(() => {
+            this.nearContactListNotification = this.reminderListWithNotification.sort(
+                (a: Contact, b: Contact) => +new Date(a.reminder.date) - +new Date(b.reminder.date),
+            )[0];
+        });
+    }
+
+    /**
+     * @description Получение даты для календаря с напоминаниями.
+     */
+    getDateForCalendarReminder(date: Date) {
+        runInAction(() => {
+            this.reminderListDateWithNotification = [];
+        });
+        this.reminderListWithNotification.forEach((contact) => {
+            const contactMonth = new Date(contact.reminder.date).getMonth();
+            const propsMonth = date.getMonth();
+            const contactYear = new Date(contact.reminder.date).getFullYear();
+            const propsYear = date.getFullYear();
+
+            if (contactMonth === propsMonth && contactYear === propsYear) {
+                runInAction(() => {
+                    this.reminderListDateWithNotification.push(new Date(contact.reminder.date).getDate());
+                });
+            }
+        });
     }
 
     /**
@@ -175,7 +228,7 @@ export class ContactListStore {
                 if (!this.isHasIdContact(contact.id)) {
                     PushNotification.pushNotify(contact.organization, contact.contactFace);
                     runInAction(() => {
-                        this.contactListNotificationActive.push(contact);
+                        this.contactListNotificationActivated.push(contact);
                     });
                 }
             }
@@ -187,9 +240,11 @@ export class ContactListStore {
      * @param contactId
      * @private
      */
-    private isHasIdContact(contactId: number): boolean {
+    private isHasIdContact(contactId: string): boolean {
         let result = true;
-        const id: Contact | undefined = this.contactListNotificationActive.find((contact) => contact.id === contactId);
+        const id: Contact | undefined = this.contactListNotificationActivated.find(
+            (contact) => contact.id === contactId,
+        );
         if (id === undefined) result = false;
         return result;
     }
@@ -197,9 +252,9 @@ export class ContactListStore {
     /**
      * @description Удаление записи из списка активных нотификаций.
      */
-    deleteRecordListNotification(id: number) {
+    deleteRecordListNotification(id: string) {
         runInAction(() => {
-            this.contactListNotificationActive = this.contactListNotificationActive.filter(
+            this.contactListNotificationActivated = this.contactListNotificationActivated.filter(
                 (contact: Contact) => contact.id !== id,
             );
         });

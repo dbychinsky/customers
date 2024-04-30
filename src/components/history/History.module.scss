@@ -2,6 +2,7 @@
 @import '../../common/mixins';
 
 .history {
+    @include blockStyle();
     margin-bottom: $space16;
     padding-bottom: $space8;
 
@@ -30,6 +31,7 @@
             box-sizing: border-box;
             padding-right: 10px;
             width: 20%;
+            vertical-align: top;
         }
 
         .comments {
@@ -37,6 +39,7 @@
             width: 80%;
             font-size: $font-size-14;
             color: $color-grey-dark;
+            vertical-align: top;
         }
     }
 

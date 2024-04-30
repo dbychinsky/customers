@@ -5,21 +5,25 @@
     display: flex;
     flex-flow: column nowrap;
     gap: $space10;
-    max-height: 260px;
+    max-height: 220px;
     overflow-y: auto;
     border-radius: 6px;
-    padding-top: 10px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
 
     .contact {
         box-sizing: border-box;
         padding: 15px;
-        background: $color-orange;
+        background: $color-reminder;
         border-radius: $radius6;
 
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
 
+        animation: pulse 2s infinite;
+        min-width: 0;
 
         &:hover {
             cursor: pointer;
@@ -30,12 +34,14 @@
 
         .content {
             color: white;
+            min-width: 0;
 
             .organization {
                 @include interSemiBold();
                 @include truncateText(2);
                 font-size: $font-size-18;
                 margin-bottom: $space6;
+                word-wrap: break-word;
             }
 
             .contactFace {
@@ -49,7 +55,7 @@
                 @include truncateText(2);
                 box-sizing: border-box;
                 font-size: $font-size-14;
-                color: darken($color-orange, 20);
+                color: darken($color-reminder, 20);
             }
         }
 
@@ -58,7 +64,7 @@
             align-items: center;
 
             svg {
-                fill: darken($color-orange, 10);
+                fill: darken($color-reminder, 10);
                 width: 33px;
                 height: 33px;
             }
@@ -76,11 +82,20 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        min-width: 0;
 
         .content {
-            .organization, .contactFace, .date, .noRecords {
+            min-width: 0;
+
+            .organization, .contactFace, .date {
                 color: darken($color-white, 10);
+                word-wrap: break-word;
             }
+
+        }
+
+        .noRecords {
+            color: darken($color-white, 10);
         }
 
         .date {
@@ -97,5 +112,23 @@
                 height: 33px;
             }
         }
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.98);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.98);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }

@@ -24,7 +24,7 @@ interface ContactDetailsProps {
     /**
      * @description  Идентификатор контакат.
      */
-    contactId: number | null;
+    contactId: string | null;
     /**
      * @description  Функция показа окна подтверждения.
      */
@@ -37,7 +37,7 @@ interface ContactDetailsProps {
  * @see IContactDetailsProps
  */
 export const ContactDetails = observer(({ contactId, setIsShowConfirm }: ContactDetailsProps) => {
-    const { contactListStore, contactEditStore } = useStores();
+    const { contactListStore } = useStores();
     const { navigateToEditContactPage } = useNavigateHelper();
     const [isHasReminder, setIsHasReminder] = useState(false);
     const [activeContact, setActiveContact] = useState<Contact>(new Contact());
@@ -60,7 +60,7 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
         <div className={classWrapperContactDetails}>
             <div className={styles.contactDetailsWrapper}>
                 <div className={styles.header}>
-                    {activeContact.organization.length ? (
+                    {activeContact.organization.length !== 0 ? (
                         <div className={styles.iconTie}>
                             <IconPersonTie />
                         </div>
@@ -96,36 +96,23 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
                         <History activeContact={activeContact} className={styles.historyModal} isBorderText={false} />
                     </div>
                 </div>
-            </div>
-            <div className={styles.actionBar}>
-                <ButtonImage
-                    onClick={offNotification}
-                    image={<IconEditContact />}
-                    onlyImage={true}
-                    className={styles.iconEditContact}
-                    variant='editContact'
-                    isDisabled={!isHasReminder}
-                />
-                <ButtonImage
-                    onClick={() => navigateToEditContactPage(activeContact.id.toString())}
-                    image={<IconEditContact />}
-                    onlyImage={true}
-                    className={styles.iconEditContact}
-                    variant='editContact'
-                />
-                <ButtonImage
-                    onClick={() => setIsShowConfirm(true)}
-                    image={<IconDeleteContact />}
-                    onlyImage={true}
-                    className={styles.iconDeleteContact}
-                    variant='deleteContact'
-                />
+                <div className={styles.actionBar}>
+                    <ButtonImage
+                        onClick={() => navigateToEditContactPage(activeContact.id.toString())}
+                        image={<IconEditContact />}
+                        onlyImage={true}
+                        className={styles.iconEditContact}
+                        variant='editContact'
+                    />
+                    <ButtonImage
+                        onClick={() => setIsShowConfirm(true)}
+                        image={<IconDeleteContact />}
+                        onlyImage={true}
+                        className={styles.iconDeleteContact}
+                        variant='deleteContact'
+                    />
+                </div>
             </div>
         </div>
     );
-
-    function offNotification() {
-        contactEditStore.offNotificationFromModal(activeContact);
-        contactListStore.deleteRecordListNotification(activeContact.id);
-    }
 });

@@ -9,11 +9,12 @@
     flex-direction: row;
     gap: 20px;
     padding: $space20 0 0 $space20;
+    max-width: 1900px;
 
     .head {
         width: 100%;
         height: 184px;
-        background-color: $color-purple-dark;
+        background-color: $color-main-dark;
         position: fixed;
         margin: -20px 0 0 -20px;
     }
@@ -28,6 +29,7 @@
         transition: top .5s ease;
         top: 0;
         gap: $space20;
+        min-width: 0;
 
         &.scroll {
             top: 20px;
@@ -38,6 +40,7 @@
             display: flex;
             gap: $space20;
             align-items: flex-start;
+            min-width: 0;
         }
 
         .bottom {

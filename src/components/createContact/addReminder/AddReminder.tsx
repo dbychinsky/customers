@@ -7,17 +7,15 @@ import clsx from 'clsx';
 import { observer } from 'mobx-react';
 import { CheckBoxReminder } from 'components/checkBoxReminder/CheckBoxReminder';
 import { DatePicker } from 'components/datePicker/DatePicker';
-import { ContactListStore } from 'store/ContactListStore';
 
 interface AddReminderProps {
     contactEditStore: ContactEditStore;
-    contactListStore: ContactListStore;
 }
 
 /**
  * @description Добавление напоминания.
  */
-export const AddReminder = observer(({ contactEditStore, contactListStore }: AddReminderProps) => {
+export const AddReminder = observer(({ contactEditStore }: AddReminderProps) => {
     const classWrapperAddReminder = clsx(styles.addReminder, {
         [styles.active]: contactEditStore.contact.reminder.bell,
     });
@@ -30,7 +28,7 @@ export const AddReminder = observer(({ contactEditStore, contactListStore }: Add
                     id='addReminderCheckbox'
                     name='bell'
                     valueCheckbox={contactEditStore.contact.reminder.bell}
-                    changeHandlerCheckbox={(value) => changeNotification(value)}
+                    changeHandlerCheckbox={contactEditStore.handleChangeFieldsReminderBell}
                 />
             </div>
             <div className={styles.body}>
@@ -40,7 +38,7 @@ export const AddReminder = observer(({ contactEditStore, contactListStore }: Add
                     handleChange={contactEditStore.handleChangeFieldsReminderDate}
                 />
                 <TextAreaField
-                    value={contactEditStore.contact.reminder.productComment}
+                    value={contactEditStore.contact.reminder.comment}
                     changeHandler={contactEditStore.handleChangeFieldsReminderComment}
                     name='productComment'
                     placeHolder='Комментарий к напоминанию'
@@ -50,11 +48,4 @@ export const AddReminder = observer(({ contactEditStore, contactListStore }: Add
             </div>
         </div>
     );
-
-    function changeNotification(value: boolean) {
-        contactEditStore.handleChangeFieldsReminderBell(value);
-        if (!value) {
-            contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
-        }
-    }
 });

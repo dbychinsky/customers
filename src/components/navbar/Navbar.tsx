@@ -5,8 +5,6 @@ import logotype from 'common/assets/BigLogotypeColor.jpg';
 import { NavLink } from 'react-router-dom';
 import { RouterPathList } from 'router/RouterPathList';
 import { ReactComponent as Dashboard } from 'common/assets/icon/dashboard.svg';
-import { ReactComponent as Calendar } from 'common/assets/icon/calendar.svg';
-import { ReactComponent as Currency } from 'common/assets/icon/currency.svg';
 import { useStores } from 'store/RootStoreContext';
 
 /**
@@ -25,17 +23,17 @@ export const Navbar = observer(() => {
                     <Dashboard className={styles.icon} />
                     <div className={styles.row}>
                         <div>Кабинет</div>
-                        {contactListStore.contactListNotificationActive.length ? getBadge() : null}
+                        {contactListStore.contactListNotificationActivated.length ? getBadge() : null}
                     </div>
                 </NavLink>
-                <NavLink to={RouterPathList.CALENDAR_PAGE} className={styles.link}>
-                    <Calendar className={styles.icon} />
-                    <div>Календарь</div>
-                </NavLink>
-                <NavLink to={RouterPathList.CURRENCY_PAGE} className={styles.link}>
-                    <Currency className={styles.icon} />
-                    <div>Валюты</div>
-                </NavLink>
+                {/*<NavLink to={RouterPathList.CALENDAR_PAGE} className={styles.link}>*/}
+                {/*    <Calendar className={styles.icon} />*/}
+                {/*    <div>Календарь</div>*/}
+                {/*</NavLink>*/}
+                {/*<NavLink to={RouterPathList.CURRENCY_PAGE} className={styles.link}>*/}
+                {/*    <Currency className={styles.icon} />*/}
+                {/*    <div>Валюты</div>*/}
+                {/*</NavLink>*/}
             </div>
         </div>
     );
@@ -43,7 +41,7 @@ export const Navbar = observer(() => {
     function getBadge(): ReactElement {
         return (
             <div className={styles.badgeNotifications}>
-                <div className={styles.badge}>{contactListStore.contactListNotificationActive.length}</div>
+                <div className={styles.badge}>{contactListStore.contactListNotificationActivated.length}</div>
             </div>
         );
     }

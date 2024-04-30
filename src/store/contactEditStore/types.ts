@@ -15,7 +15,7 @@ export type ReminderType = {
     /**
      * @description Комментарий.
      */
-    productComment: string;
+    comment: string;
 };
 
 export type PhoneListType = {

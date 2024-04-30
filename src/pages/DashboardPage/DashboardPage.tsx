@@ -10,6 +10,7 @@ import { ContactList } from 'components/contactList/ContactList';
 import { useContactDetailsModal } from 'components/contactDetails/useContactDetailsModal';
 import { ToastContainer } from 'react-toastify';
 import { ScrollTop } from 'components/scrollTop/ScrollTop';
+import { CalendarWidget } from 'components/calendarWidget/CalendarWidget';
 
 /**
  * @description Страница дашборда.
@@ -17,7 +18,7 @@ import { ScrollTop } from 'components/scrollTop/ScrollTop';
 export const DashboardPage = observer(() => {
     const { authStore, contactListStore, contactEditStore, currencyStore } = useStores();
     const { navigateToLoginPage } = useNavigateHelper();
-    const [activeContactId, setActiveContactId] = useState<number | null>(null);
+    const [activeContactId, setActiveContactId] = useState<string | null>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
     const classWrapperSideBar = clsx(styles.sideBarWrapper, { [styles.scroll]: isScrolling });
     const { ModalShowDetails, showDetailsHandler, onCloseDetailsModal } = useContactDetailsModal(deleteContact);
@@ -62,7 +63,9 @@ export const DashboardPage = observer(() => {
                     />
                     <CurrencyWidget currencyStore={currencyStore} />
                 </div>
-                <div className={styles.bottom}>{/*<PmWidget />*/}</div>
+                <div className={styles.bottom}>
+                    <CalendarWidget contactListStore={contactListStore} />
+                </div>
             </div>
 
             {ModalShowDetails(activeContactId)}
@@ -87,7 +90,7 @@ export const DashboardPage = observer(() => {
      * @description Установка выбранного контакта в состояние.
      * @param id
      */
-    function handleClickOnContact(id: number) {
+    function handleClickOnContact(id: string) {
         setActiveContactId(id);
         showDetailsHandler();
     }

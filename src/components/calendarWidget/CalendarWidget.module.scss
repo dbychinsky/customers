@@ -1,0 +1,14 @@
+@import '../../common/css-parameters';
+@import '../../common/mixins';
+
+.calendarWidget {
+    @include blockStyle();
+}
+
+.iconAlert {
+    width: 8px;
+    height: 8px;
+    background: $color-reminder;
+    border-radius: 50%;
+    margin: 6px 6px 0 0;
+}

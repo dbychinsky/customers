@@ -45,7 +45,7 @@ export const LoginForm = observer(() => {
                 placeHolder='Пароль'
                 mask={false}
             />
-
+            {/*<Button text='go' onClick={convertData} />*/}
             <div className={styles.actionBar}>
                 <Button
                     onClick={handleClickAuthentication}
@@ -66,4 +66,10 @@ export const LoginForm = observer(() => {
             console.log('Ошибка авторизации');
         }
     }
+
+    // function convertData() {
+    //     contactEditStore.convertContactList().then(() => {
+    //         contactListStore.getContactList();
+    //     });
+    // }
 });

@@ -4,7 +4,7 @@ import styles from 'pages/LoginPage/LoginPage.module.scss';
 import { LoginForm } from 'pages/LoginPage/loginForm/LoginForm';
 
 /**
- * @description Страница аутентификации
+ * @description Страница аутентификации.
  */
 export const LoginPage = observer(() => (
     <div className={styles.loginPage}>

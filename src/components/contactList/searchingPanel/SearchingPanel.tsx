@@ -4,6 +4,7 @@ import { InputField } from 'components/inputField/InputField';
 import { InputFieldEnum } from 'components/inputField/types';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
 import { ReactComponent as PersonAdd } from 'common/assets/icon/addContact.svg';
+import { ReactComponent as Restart } from 'common/assets/icon/restart.svg';
 import { ReactComponent as Mask } from 'common/assets/icon/mask.svg';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 import { useStores } from 'store/RootStoreContext';
@@ -47,6 +48,12 @@ export const SearchingPanel = observer(() => {
             <div className={styles.products} />
             <div className={styles.reminder}>
                 <ButtonImage
+                    onClick={getContactList}
+                    image={<Restart />}
+                    onlyImage={true}
+                    className={styles.buttonAddContact}
+                />
+                <ButtonImage
                     onClick={onHandleAddContact}
                     image={<PersonAdd />}
                     onlyImage={true}
@@ -55,6 +62,10 @@ export const SearchingPanel = observer(() => {
             </div>
         </div>
     );
+
+    function getContactList() {
+        contactListStore.getContactList();
+    }
 
     function onHandleAddContact() {
         navigateToCreateContactPage();

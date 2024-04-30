@@ -22,10 +22,10 @@
 }
 
 .add {
-    background-color: $color-blue;
+    background-color: $color-main-dark;
 
     &:hover {
-        background-color: darken($color-blue, 15);
+        background-color: darken($color-main-dark, 15);
     }
 
     svg {
@@ -48,20 +48,20 @@
 .delete {
     &:hover {
         svg {
-            fill: $color-red-dark;
+            fill: $color-negative-dark;
         }
     }
 
     svg {
-        fill: $color-red;
+        fill: $color-negative;
     }
 }
 
 .deleteContact {
-    background-color: $color-red;
+    background-color: $color-negative;
 
     &:hover {
-        background-color: darken($color-red, 15);
+        background-color: darken($color-negative, 15);
     }
 
     svg {
@@ -70,10 +70,10 @@
 }
 
 .editContact {
-    background-color: $color-blue;
+    background-color: $color-main-dark;
 
     &:hover {
-        background-color: darken($color-blue, 15);
+        background-color: darken($color-main-dark, 15);
     }
 
     svg {

@@ -1,12 +1,15 @@
 @import "../../common/css-parameters";
 
-@mixin buttonAllStyles($background, $color) {
+@mixin buttonAllStyles($background, $color, $border) {
+    box-sizing: border-box;
     background-color: $background;
     color: $color;
     padding: 13px 40px;
     border-radius: $radius6;
     outline: none;
     cursor: pointer;
+    border: 1px solid $border;
+
     &:hover {
         background-color: darken($background, 15);
     }
@@ -29,23 +32,24 @@
 
 
 .primary {
-    @include buttonAllStyles($color-blue, $color-white);
+    @include buttonAllStyles($color-main-dark, $color-white, $color-main-dark);
 }
 
 .secondary {
-    @include buttonAllStyles($color-white, $color-black);
+    @include buttonAllStyles($color-white, $color-black, $color-white);
 }
 
 .cancel {
-    @include buttonAllStyles($color-red, $color-white);
-
+    @include buttonAllStyles(transparent, $color-negative, $color-negative);
 }
 
 .custom {
 }
 
 [disabled] {
+    box-sizing: border-box;
     background: $color-grey;
+    border: 1px solid $color-grey;
     cursor: default;
 
     &:hover {

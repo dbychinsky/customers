@@ -6,19 +6,19 @@ import { ReactComponent as IconBell } from 'common/assets/icon/bellActive.svg';
 import { ReminderWidgetSkeleton } from 'components/reminderWidget/ReminderWidgetSkeleton';
 
 interface ReminderWidgetProps {
-    handleClickOnContact: (id: number) => void;
+    handleClickOnContact: (id: string) => void;
 }
 
 export const ReminderWidget = observer(({ handleClickOnContact }: ReminderWidgetProps) => {
     const { contactListStore, contactEditStore } = useStores();
 
-    if (contactListStore.contactListNotificationActive.length === 0) {
+    if (contactListStore.contactListNotificationActivated.length === 0) {
         return <ReminderWidgetSkeleton contactListStore={contactListStore} contactEditStore={contactEditStore} />;
     }
 
     return (
         <div className={styles.reminderWidget}>
-            {contactListStore.contactListNotificationActive.map(({ id, contactFace, organization, description }) => (
+            {contactListStore.contactListNotificationActivated.map(({ id, contactFace, organization, reminder }) => (
                 <div key={id} className={styles.contact} onClick={() => handleClickOnContact(id)}>
                     <div className={styles.content}>
                         {organization ? (
@@ -26,7 +26,9 @@ export const ReminderWidget = observer(({ handleClickOnContact }: ReminderWidget
                         ) : (
                             <div className={styles.contactFace}>{contactFace}</div>
                         )}
-                        {description.length !== 0 ? <div className={styles.description}>{description}</div> : null}
+                        {reminder.comment.length !== 0 ? (
+                            <div className={styles.description}>{reminder.comment}</div>
+                        ) : null}
                     </div>
                     <div className={styles.iconBell}>
                         <IconBell />

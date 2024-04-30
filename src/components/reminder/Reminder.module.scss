@@ -2,8 +2,7 @@
 @import '../../common/mixins';
 
 .reminder {
-
-    border-right: 1px dashed $color-grey-background;
+    @include blockStyle();
 
     .reminderWrapper {
         display: flex;
@@ -11,7 +10,8 @@
 
         .date {
             font-size: $font-size-base;
-            color: $color-green;
+            color: $color-reminder;
+            margin-bottom: $space4;
         }
 
         .comment {

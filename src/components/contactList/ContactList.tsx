@@ -6,7 +6,7 @@ import { TableBody } from 'components/contactList/tableBody/TableBody';
 
 interface ContactListProps {
     contactListStore: ContactListStore;
-    handleClickOnContact: (id: number) => void;
+    handleClickOnContact: (id: string) => void;
     isScrolling: boolean;
 }
 

@@ -2,7 +2,6 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import { Contact } from 'model/Contact';
 import React from 'react';
 import { server } from 'App';
-import { FieldError } from 'components/inputField/types';
 import { Moment } from 'moment';
 import {
     EmailListType,
@@ -10,7 +9,10 @@ import {
     PhoneListType,
     PhoneTypeListEnum,
     ProductListType,
+    ReminderType,
 } from 'store/contactEditStore/types';
+import axios from 'axios';
+import { OldContact, PhoneListTypeOld } from 'model/OldContact';
 
 const initialStateProduct = { id: '', productName: '', productComment: '' };
 
@@ -18,6 +20,8 @@ const initialStateProduct = { id: '', productName: '', productComment: '' };
  * @description Store для редактирования контактов.
  */
 export class ContactEditStore {
+    readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
+
     /**
      * @description Контакт.
      */
@@ -74,14 +78,14 @@ export class ContactEditStore {
     historyList: HistoryType[] = [];
 
     /**
-     * @description Список ошибок.
-     */
-    errorList: FieldError[] = [];
-
-    /**
      * @description Флаг загрузки.
      */
     isLoading = false;
+
+    /**
+     * @description Временный.
+     */
+    sourceContactList: OldContact[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -95,7 +99,6 @@ export class ContactEditStore {
         this.handleChangeFieldsReminderComment = this.handleChangeFieldsReminderComment.bind(this);
         this.handleChangeFieldsReminderBell = this.handleChangeFieldsReminderBell.bind(this);
         this.handleChangeFieldsReminderDate = this.handleChangeFieldsReminderDate.bind(this);
-        this.offNotificationFromModal = this.offNotificationFromModal.bind(this);
     }
 
     /**
@@ -257,22 +260,7 @@ export class ContactEditStore {
                 ...this.contact,
                 [e.target.name]: e.target.value,
             };
-            this.errorList = this.errorList.filter((item) => item.field !== e.target.name);
         });
-    }
-
-    /**
-     * @description Валидация.
-     */
-    validateFields() {
-        runInAction(() => {
-            this.errorList = [];
-        });
-        if (this.contact.contactFace.length === 0) {
-            runInAction(() => {
-                this.errorList.push({ field: 'contactFace', message: 'Поле не может быть пустым' });
-            });
-        }
     }
 
     /**
@@ -311,7 +299,6 @@ export class ContactEditStore {
             this.productNameFieldArchive = '';
             this.productFields = initialStateProduct;
             this.productFieldsArchive = initialStateProduct;
-            this.errorList = [];
         });
     }
 
@@ -324,7 +311,7 @@ export class ContactEditStore {
                 ...this.contact,
                 reminder: {
                     bell: checked,
-                    productComment: this.contact.reminder.productComment,
+                    comment: this.contact.reminder.comment,
                     date: this.contact.reminder.date,
                 },
             };
@@ -340,7 +327,7 @@ export class ContactEditStore {
                 ...this.contact,
                 reminder: {
                     bell: this.contact.reminder.bell,
-                    productComment: e.target.value,
+                    comment: e.target.value,
                     date: this.contact.reminder.date,
                 },
             };
@@ -356,7 +343,7 @@ export class ContactEditStore {
                 ...this.contact,
                 reminder: {
                     bell: this.contact.reminder.bell,
-                    productComment: this.contact.reminder.productComment,
+                    comment: this.contact.reminder.comment,
                     date: date ? date.toDate() : new Date(),
                 },
             };
@@ -389,10 +376,8 @@ export class ContactEditStore {
      * @description Отправка данных на сервер.
      */
     async pushContact() {
-        if (this.errorList.length === 0) {
-            this.updateData();
-            server.addContact(this.contact).then();
-        }
+        this.updateData();
+        server.addContact(this.contact).then();
     }
 
     /**
@@ -401,7 +386,7 @@ export class ContactEditStore {
     /**
      * @description Получение контакта по id.
      */
-    getContactById(idContact: number) {
+    getContactById(idContact: string) {
         runInAction(() => {
             this.isLoading = true;
         });
@@ -458,8 +443,8 @@ export class ContactEditStore {
     /**
      * @description Отправка редактированных данных на сервер.
      */
-    async pushEditContact(idContact: number | undefined) {
-        if (this.errorList.length === 0 && idContact) {
+    async pushEditContact(idContact: string | undefined) {
+        if (idContact) {
             this.updateData();
             server.updateContact(idContact, this.contact).then();
         }
@@ -502,15 +487,82 @@ export class ContactEditStore {
     }
 
     /**
-     * @description Отключение напоминания из модального окна.
+     * @description Обновление данных перед отправкой на сервер.
      */
-    offNotificationFromModal(contact: Contact) {
-        runInAction(() => {
-            this.contact = {
-                ...contact,
-                reminder: { bell: false, date: contact.reminder.date, productComment: contact.reminder.productComment },
-            };
+    async convertContactList() {
+        this.getSourceContactList()
+            .then((response) => {
+                runInAction(() => {
+                    this.sourceContactList = response;
+                });
+            })
+            .then(() => this.conversationData());
+    }
+
+    async getSourceContactList(): Promise<OldContact[]> {
+        return await axios.get(`${this.MAIN_URL}/sourceContactList`).then((response) => response.data);
+    }
+
+    conversationData() {
+        this.sourceContactList.forEach((item) => {
+            runInAction(() => {
+                this.contact.id = item.id.toString();
+                this.contact.contactFace = item.contactFace;
+                this.contact.organization = item.organization;
+                this.contact.description = item.description;
+                this.contact.address = '';
+                this.contact.emailList = getItemFromItemListEmail(item.email);
+                this.contact.phoneList = getItemFromItemListPhone(item.phoneList);
+                this.contact.productList = getItemFromItemListProduct(item.products);
+                this.contact.productListArchive = getItemFromItemListProduct(item.productsArchive);
+                this.contact.historyList = [];
+                this.contact.reminder = getItemFromItemListReminder(item.reminderDate, item.reminder);
+            });
+
+            function createUniqueID() {
+                return 'id_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            function getTypePhone(type: string): PhoneTypeListEnum {
+                if (type == 'work') {
+                    return PhoneTypeListEnum.business;
+                } else {
+                    return PhoneTypeListEnum.personal;
+                }
+            }
+
+            function getItemFromItemListProduct(list: []): ProductListType[] {
+                const newArray: ProductListType[] = [];
+
+                for (let i = 0; i < list.length; i++) {
+                    newArray.push({ id: createUniqueID(), productName: list[i], productComment: '' });
+                }
+
+                return newArray;
+            }
+
+            function getItemFromItemListPhone(list: PhoneListTypeOld[]): PhoneListType[] {
+                const newArray: PhoneListType[] = [];
+                list.forEach((itemList: PhoneListTypeOld) => {
+                    newArray.push({ number: itemList.number, typeList: getTypePhone(itemList.typeList) });
+                });
+
+                return newArray;
+            }
+
+            function getItemFromItemListEmail(list: string): EmailListType[] {
+                const newArray: EmailListType[] = [];
+                newArray.push({ email: list });
+
+                return newArray;
+            }
+
+            function getItemFromItemListReminder(reminderDate: Date, reminder: boolean): ReminderType {
+                return { date: reminderDate, bell: reminder, comment: 'Позвонить' };
+            }
+
+            console.log(this.contact);
+            server.addContact(this.contact).then();
         });
-        server.updateContact(contact.id, this.contact).then();
     }
 }

@@ -31,7 +31,7 @@ interface FormRowProps {
     /**
      * @description Список ошибок.
      */
-    errorList: FieldError[];
+    errorList?: FieldError[];
 
     /**
      * @description Текст для label.
@@ -75,7 +75,7 @@ export const FormRow: FC<FormRowProps> = observer(
         maxLength,
     }) => {
         const localClassName = clsx(styles.formRow, className);
-        const messages: string | undefined = errorList.find((item) => item.field === inputName)?.message;
+        const messages: string | undefined = errorList?.find((item) => item.field === inputName)?.message;
 
         return (
             <div className={localClassName}>

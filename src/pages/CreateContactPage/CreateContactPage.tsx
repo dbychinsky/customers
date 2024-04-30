@@ -6,13 +6,15 @@ import { useStores } from 'store/RootStoreContext';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 import { AddAddress } from 'components/createContact/addAddress/AddAddress';
 import { AddNameContact } from 'components/createContact/addNameContact/AddNameContact';
-import { Button } from 'components/button/Button';
 import { observer } from 'mobx-react';
 import { Flip, toast } from 'react-toastify';
 import { AddProductList } from 'components/createContact/addProductList/AddProductList';
 import { AddReminder } from 'components/createContact/addReminder/AddReminder';
 import { AddHistory } from 'components/createContact/addHistory/AddHistory';
 import { useParams } from 'react-router-dom';
+import { ButtonImage } from 'components/buttonImage/ButtonImage';
+import { ReactComponent as Check } from 'common/assets/icon/check.svg';
+import { ReactComponent as Cancel } from 'common/assets/icon/cancel_modal.svg';
 
 /**
  * @description Страница создания контакта.
@@ -34,7 +36,7 @@ export const CreateContactPage = observer(() => {
 
     useEffect(() => {
         if (idContact) {
-            contactEditStore.getContactById(Number(idContact));
+            contactEditStore.getContactById(idContact);
         }
     }, [contactEditStore, idContact]);
 
@@ -46,10 +48,17 @@ export const CreateContactPage = observer(() => {
                     className={styles.heading}
                 />
                 <div>
-                    <Button text='Отменить' onClick={navigateToDashboardPage} variant='cancel' />
-                    <Button
-                        text={!idContact ? 'Создать' : 'Сохранить'}
+                    <ButtonImage
                         onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                        image={<Check />}
+                        onlyImage={true}
+                        variant='add'
+                    />
+                    <ButtonImage
+                        onClick={navigateToDashboardPage}
+                        image={<Cancel />}
+                        onlyImage={true}
+                        variant='deleteContact'
                     />
                 </div>
             </div>
@@ -65,13 +74,15 @@ export const CreateContactPage = observer(() => {
                 <AddAddress contactEditStore={contactEditStore} />
                 <AddProductList contactEditStore={contactEditStore} />
                 <div className={styles.rightBlock}>
-                    <AddReminder contactEditStore={contactEditStore} contactListStore={contactListStore} />
+                    <AddReminder contactEditStore={contactEditStore} />
                     <AddHistory contactEditStore={contactEditStore} />
                 </div>
                 <div className={styles.send}>
-                    <Button
-                        text={!idContact ? 'Создать' : 'Сохранить'}
+                    <ButtonImage
                         onClick={!idContact ? handleClickSendContact : handleClickSendEditContact}
+                        image={<Check />}
+                        onlyImage={true}
+                        variant='add'
                     />
                 </div>
             </form>
@@ -79,50 +90,44 @@ export const CreateContactPage = observer(() => {
     );
 
     function handleClickSendContact() {
-        contactEditStore.validateFields();
-        if (contactEditStore.errorList.length === 0) {
-            contactEditStore
-                .pushContact()
-                .then(() =>
-                    toast.success('Запись добавлена', {
-                        position: 'top-right',
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                        transition: Flip,
-                    }),
-                )
-                .then(() => contactListStore.getContactList())
-                .then(() => navigateToDashboardPage());
-        }
+        contactEditStore
+            .pushContact()
+            .then(() =>
+                toast.success('Запись добавлена', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                    transition: Flip,
+                }),
+            )
+            .then(() => contactListStore.getContactList())
+            .then(() => navigateToDashboardPage());
     }
 
     function handleClickSendEditContact() {
-        contactEditStore.validateFields();
-        if (contactEditStore.errorList.length === 0) {
-            contactEditStore
-                .pushEditContact(Number(idContact))
-                .then(() =>
-                    toast.success('Изменения сохранены', {
-                        position: 'top-right',
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                        transition: Flip,
-                    }),
-                )
-                .then(() => contactListStore.getContactList())
-                .then(() => navigateToDashboardPage())
-                .then(() => deleteNotificationById());
-        }
+        contactEditStore
+            .pushEditContact(idContact)
+            .then(() =>
+                toast.success('Изменения сохранены', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                    transition: Flip,
+                }),
+            )
+            .then(() => contactListStore.getContactList())
+            .then(() => deleteNotificationById())
+            .then(() => navigateToDashboardPage());
     }
 
     function deleteNotificationById() {
@@ -131,5 +136,6 @@ export const CreateContactPage = observer(() => {
         if (datePrev !== dateNew) {
             contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
         }
+        contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
     }
 });

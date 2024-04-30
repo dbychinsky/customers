@@ -11,7 +11,7 @@ import { ContactListSkeleton } from 'components/skeletons/ContactListSkeleton';
 
 interface TableBodyProps {
     contactListStore: ContactListStore;
-    handleClickOnContact: (id: number) => void;
+    handleClickOnContact: (id: string) => void;
 }
 
 /**
@@ -37,7 +37,7 @@ export const TableBody = observer(({ contactListStore, handleClickOnContact }: T
                         role='presentation'
                     >
                         <div className={styles.name}>
-                            {contact.organization.length ? (
+                            {contact.organization.length !== 0 ? (
                                 <div className={styles.iconTie}>
                                     <IconPersonTie />
                                 </div>
