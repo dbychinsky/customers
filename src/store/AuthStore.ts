@@ -8,10 +8,10 @@ import { FieldError } from 'components/inputField/types';
 export class AuthStore {
     login = '';
     password = '';
-    loginApp = '1';
-    // private loginApp: string = "Sofi";
-    passwordApp = '1';
-    // private passwordApp: string = "sf1807";
+    // loginApp = '1';
+    private loginApp = 'Sofi';
+    // passwordApp = '1';
+    private passwordApp = 'sf1807';
     errorList: FieldError[] = [];
     isAuth = false;
 
