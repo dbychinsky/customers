@@ -1,5 +1,5288 @@
 {
-  "contactList": [],
+  "contactList": [
+    {
+      "id": "6",
+      "organization": "Элема ОАО",
+      "contactFace": "Анастасия",
+      "productList": [
+        {
+          "id": "id_jr3zw0h4h",
+          "productName": "каталоги",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 349 02 53",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@elema.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "bell": false,
+        "comment": "Позвонить",
+        "date": "2023-05-26T03:47:33.547Z"
+      }
+    },
+    {
+      "id": "7",
+      "organization": "Кондитерская фабрика «Витьба» КПУП",
+      "contactFace": "Виктория - спец по печатной продукции  (Елена-доп.прод)",
+      "productList": [
+        {
+          "id": "id_0ysj0lzfy",
+          "productName": "буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_y0ol90e65",
+          "productName": "календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(021)267-15-49",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 847 45 45",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@vitba.by"
+        }
+      ],
+      "address": "",
+      "description": "Наберите в сентябре.\n\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:07:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-09T08:07:40.000Z",
+          "historyComment": "уже Виктория занимается печатной. Попросили выслать информ.письмо(отправила)."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:08:05 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T07:07:53.000Z",
+          "historyComment": "ничего не требуется"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:08:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-28T12:08:05.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:08:34 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-17T10:08:18.000Z",
+          "historyComment": "забрали брошюры 140х200 и 185х260"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T07:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "12",
+      "organization": "",
+      "contactFace": "Логвинко Юрий Алексеевич",
+      "productList": [
+        {
+          "id": "id_qc08cbox4",
+          "productName": "Брошюры",
+          "productComment": ""
+        },
+        {
+          "id": "id_olgmzktd4",
+          "productName": "Каталоги",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_fr36epc14",
+          "productName": "Брошюры",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 886 61 01",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "ФИЗ.ЛИЦО",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T08:13:36.460Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "5",
+      "organization": "Красный Мозырянин ОАО",
+      "contactFace": "Артем Олегович (маркетинг)",
+      "productList": [
+        {
+          "id": "id_n8tqcraac",
+          "productName": "листовки",
+          "productComment": ""
+        },
+        {
+          "id": "id_zak4084h0",
+          "productName": "каталоги",
+          "productComment": ""
+        },
+        {
+          "id": "id_9vdu3fixk",
+          "productName": "календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "375(2355)4-33-59",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@korovka.by"
+        }
+      ],
+      "address": "",
+      "description": "Набрать через месяц, возможно что-то потребуется...\n\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:06:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-05T09:06:15.000Z",
+          "historyComment": "отправили информац.письмо + кп на листовки."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:07:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-28T08:06:49.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-07T07:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "9",
+      "organization": "Городейский сахарный комбинат ОАО",
+      "contactFace": "Юлия Кийко  (специалист по маркетингу)",
+      "productList": [
+        {
+          "id": "id_1k7m11xg5",
+          "productName": "календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_1pxoai8hm",
+          "productName": "буклеты",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "375(1770)62-4-12",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "torg@gsr.by"
+        }
+      ],
+      "address": "",
+      "description": "Рассчитали визитки. 50х90, 4+0, мел.300, т.500 + восстановление макета - 108,00 руб. Дорого - сделали дешевле.\n\n ",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:10:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-28T05:09:40.000Z",
+          "historyComment": "расчет буклета."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:10:22 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-04T09:10:09.000Z",
+          "historyComment": "дорого по буклету... "
+        },
+        {
+          "id": "Tue Apr 30 2024 15:10:36 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-28T12:10:22.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:10:50 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-01T12:10:36.000Z",
+          "historyComment": "запрос на брошюру"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:11:08 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-06T07:10:50.000Z",
+          "historyComment": "ответили по брошюре (дорого)"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-05-22T08:10:00.000Z"
+      }
+    },
+    {
+      "id": "1",
+      "organization": "Морозпродукт СООО",
+      "contactFace": "Наталья (маркетинг)",
+      "productList": [
+        {
+          "id": "id_wuhfhueim",
+          "productName": "Календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_pl1ttw6es",
+          "productName": "Листовки",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_nfqg3uhqh",
+          "productName": "ВИЗИТКИ",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "внутренний 725",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17) 300 00 99",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(44) 731 70 90",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nata@moroz.by"
+        }
+      ],
+      "address": "",
+      "description": "Изготавливают не много и по мере необходимости. \n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:04:07 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-13T12:03:50.000Z",
+          "historyComment": "не ответили"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:04:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T14:04:07.000Z",
+          "historyComment": "планируют что-то печатать, попросили прислать"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:04:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T14:05:23.000Z",
+          "historyComment": "пустое письмо на почту nata@moroz.by. "
+        },
+        {
+          "id": "Tue Apr 30 2024 15:05:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T12:04:43.000Z",
+          "historyComment": "После обеда отправила кп..."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:05:17 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-28T08:05:00.000Z",
+          "historyComment": "отправила поздравление с новым годом!!!!"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:05:36 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-07T06:05:17.000Z",
+          "historyComment": "поздравление с 8марта"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-26T07:30:00.000Z"
+      }
+    },
+    {
+      "id": "8",
+      "organization": "Слуцкий сыродельный комбинат ОАО",
+      "contactFace": "",
+      "productList": [
+        {
+          "id": "id_nfxz2vxvc",
+          "productName": "календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_l6yhdzpfj",
+          "productName": "буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_srft4lzrl",
+          "productName": "брошюры",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(1795)5-65-33",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "slsk.marketing@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "Печатают мало, раз в год и бывает на выставку.\nНаберите осенью\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:09:10 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-22T09:08:56.000Z",
+          "historyComment": "набирала, попросили сбросить кп на общий ящик. (позвоню позже спрошу получили ли кп и есть ли необходимость в продукции)"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:09:24 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-28T12:09:10.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-25T08:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "13",
+      "organization": "Прагматика ООО",
+      "contactFace": "Елена Леонова",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_6fh0qnno2",
+          "productName": "Папки",
+          "productComment": ""
+        },
+        {
+          "id": "id_y7wx26xrs",
+          "productName": "Блокноты",
+          "productComment": ""
+        },
+        {
+          "id": "id_4hz03z0mu",
+          "productName": "Календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_rj1o2smjs",
+          "productName": "Брошюры",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 646 59 91",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "pragmatika1@yandex.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T08:15:53.644Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "10",
+      "organization": "ЖАБИНКОВСКИЙ САХАРНЫЙ ЗАВОД ОАО",
+      "contactFace": "Людмила Игнатьевна",
+      "productList": [
+        {
+          "id": "id_xlprnpjh0",
+          "productName": "буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_u79843r5f",
+          "productName": "календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "375(1641)6-99-58",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@sahar.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:11:36 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-13T12:11:23.000Z",
+          "historyComment": "ничего не требуется и ничего не планируют."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:11:50 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-28T10:11:36.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:12:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-29T07:11:50.000Z",
+          "historyComment": "ничего не нужно"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-10T08:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "19",
+      "organization": "Брестский мясокомбинат ОАО",
+      "contactFace": "Юлия (отдел маркетинга)",
+      "productList": [
+        {
+          "id": "id_lh8ku7rzj",
+          "productName": "Пакеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_edzzkwrxn",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_vfz69otof",
+          "productName": "Пакеты",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 755 73 74",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "dis@brestmk.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:27:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:26:46.000Z",
+          "historyComment": "отправили поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-01-18T08:56:03.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "18",
+      "organization": "Монплатин - Вест ООО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(44) 573 01 01",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "monplatin9@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:26:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T12:25:49.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-01-17T08:54:55.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "23",
+      "organization": "ГОССТРОЙЭКСПЕРТИЗА ПО МИНСКОЙ ОБЛАСТИ - ДОЧЕРНЕЕ РЕСПУБЛИКАНСКОЕ УНИТАРНОЕ ПРЕДПРИЯТИЕ ",
+      "contactFace": "Наталья",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_0sbcka1yt",
+          "productName": "Папки",
+          "productComment": ""
+        },
+        {
+          "id": "id_1ar5kk334",
+          "productName": "Блокноты",
+          "productComment": ""
+        },
+        {
+          "id": "id_hk7vtiyn6",
+          "productName": "Открытки",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 610 93 05",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mail@minskobl.gse.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T09:33:13.083Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "22",
+      "organization": "Детский реабилитационно-оздоровительный центр «Надежда» СООО",
+      "contactFace": "Лидия Слуцкая",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_y5ycvs5g6",
+          "productName": "Брошюра",
+          "productComment": ""
+        },
+        {
+          "id": "id_5vcqijcae",
+          "productName": "Буклет",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 253 05 77",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "lida02@list.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T09:30:14.063Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "26",
+      "organization": "Промагроснаб ЧУП",
+      "contactFace": "Антипов Евгений",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_z6mz7zdtj",
+          "productName": "Буклет",
+          "productComment": ""
+        },
+        {
+          "id": "id_ul91cjy40",
+          "productName": "Листовка",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 645 36 57",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "promagrosnab@yandex.by"
+        }
+      ],
+      "address": "",
+      "description": "Рассчитали буклеты. Сделать счет и тишина (на письма не отвечает, телефон не берет)",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:44:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T12:44:37.000Z",
+          "historyComment": "отправили поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2023-12-29T09:40:17.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "17",
+      "organization": "Альфорт ООО",
+      "contactFace": "Юлия",
+      "productList": [
+        {
+          "id": "id_2t3s0gxds",
+          "productName": "Бланки",
+          "productComment": ""
+        },
+        {
+          "id": "id_qq94hxzvz",
+          "productName": "Буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_z2fesjxan",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(29) 794 11 11",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:23:34 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-20T05:21:41.000Z",
+          "historyComment": " не отвечают в вайбере."
+        }
+      ],
+      "reminder": {
+        "date": "2023-11-03T08:53:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "20",
+      "organization": "Унифлекс ЗАО",
+      "contactFace": "Ирина Старовойтова (ведущий специалист отдела продаж этикетки)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(29) 344 45 53",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "istarovoytova@uniflex.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T08:59:40.394Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "21",
+      "organization": "Белсвязьстрой ОАО",
+      "contactFace": "Кретов Александр Иванович",
+      "productList": [
+        {
+          "id": "id_wx6s37a64",
+          "productName": "",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_0ybqm5nbu",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 700 14 34",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(17) 245 25 32",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "kretov@bss.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:41:59 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T05:41:44.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2023-12-28T09:05:26.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "16",
+      "organization": "ФинЭкспертиза-Бел ООО",
+      "contactFace": "Маргарита",
+      "productList": [
+        {
+          "id": "id_dpwuyyjnd",
+          "productName": "Бланки",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_t5vuj5odd",
+          "productName": "Бланки",
+          "productComment": ""
+        },
+        {
+          "id": "id_2v4evsg9o",
+          "productName": "Наклейки",
+          "productComment": ""
+        },
+        {
+          "id": "id_5yu3mcauj",
+          "productName": "Открытки",
+          "productComment": ""
+        },
+        {
+          "id": "id_5m2n72xi3",
+          "productName": "Блокноты",
+          "productComment": ""
+        },
+        {
+          "id": "id_2tj5tz0hm",
+          "productName": "Папки",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 161 30 57",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-12-28T08:51:26.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "31",
+      "organization": "Оршанский мясоконсервный комбинат ОАО",
+      "contactFace": "Маркетологи отдела сбыта:  (Ирина, Кристина)",
+      "productList": [
+        {
+          "id": "id_lrr1sw0fw",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (216) 50-70-22",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "omkkmarket@tut.by"
+        }
+      ],
+      "address": "",
+      "description": "уже ничего не нужно, (не хотят прямым текстом говорить, чтобы не звонили)...",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:09:05 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-27T05:08:45.000Z",
+          "historyComment": "отправила информационное письмо, планируют календари. "
+        },
+        {
+          "id": "Tue Apr 30 2024 20:09:21 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-10T12:15:05.000Z",
+          "historyComment": "сейчас идет ребрендинг, набирайте в конце октября."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:09:37 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-25T07:10:21.000Z",
+          "historyComment": "вроде как планируют печатать календари, но еще не садились обсуждать...наберите в конце след.неделе или после праздников."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:10:04 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-10T10:05:37.000Z",
+          "historyComment": "уже ничего не нужно, (не хотят прямым текстом говорить, чтобы не звонили)..."
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-29T07:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "30",
+      "organization": "Могилевский мясокомбинат ОАО",
+      "contactFace": "",
+      "productList": [
+        {
+          "id": "id_fmz19rtbk",
+          "productName": "Календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_tb7s3i7bl",
+          "productName": "Пакеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_wpr0tbd99",
+          "productName": "Буклеты",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375-222-74-75-88",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mkreklama2016@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "Вообще сильной потребности нет в продукции. Заказываем очень мало.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:49:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-05-12T06:05:12.000Z",
+          "historyComment": "Пока ничего не нужно. "
+        },
+        {
+          "id": "Tue Apr 30 2024 15:49:57 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-25T10:15:41.000Z",
+          "historyComment": "отправили кп информационное"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:50:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:15:57.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-18T07:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "14",
+      "organization": "ЭлектроТехИмпорт ООО",
+      "contactFace": "Ольга (дизайнер)",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_1un8s4gci",
+          "productName": "Папки",
+          "productComment": ""
+        },
+        {
+          "id": "id_ot37yb6ch",
+          "productName": "Некхенгеры",
+          "productComment": ""
+        },
+        {
+          "id": "id_kq5jb61i7",
+          "productName": "Кубарики (блоки для записи)",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "(017) 238 38 00 (доб. 158)",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "design@etprom.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T08:19:45.793Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "33",
+      "organization": "Слонимский мясокомбинат ОАО",
+      "contactFace": "Александр и девочки)",
+      "productList": [
+        {
+          "id": "id_4hzbgku4c",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (1562)2-71-18",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "slmarket@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "Вопросами печатной продукции занимается Надежда Федоровна (нач.отдела)",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:12:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T10:10:11.000Z",
+          "historyComment": "отправила письмо напоминание"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:12:38 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:12:23.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:12:55 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-17T08:05:38.000Z",
+          "historyComment": "вопросами печатной продукции занимается Надежда Федоровна (нач.отдела)"
+        }
+      ],
+      "reminder": {
+        "date": "2024-08-13T11:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "28",
+      "organization": "Скидельский сахарный комбинат ОАО",
+      "contactFace": "Александра",
+      "productList": [
+        {
+          "id": "id_775r62yu6",
+          "productName": "Буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_bsrwjqv7d",
+          "productName": "Календари?",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(152)41-23-41",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "ssfskid@gmail.com"
+        }
+      ],
+      "address": "",
+      "description": "Набирала 13 сентября, набрать через две недели.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:46:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T08:05:19.000Z",
+          "historyComment": "написала"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:47:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T09:10:41.000Z",
+          "historyComment": "набирала - планируют календари, но макет еще в разработке, наберите в четверг 26.10"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:47:15 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-31T12:47:00.000Z",
+          "historyComment": "после звонка прислали на расчет календари - квартальный и домик."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:47:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:47:15.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 15:47:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-23T07:10:27.000Z",
+          "historyComment": "в ближайшие месяца 2 ничего точно не планируют..."
+        },
+        {
+          "id": "Tue Apr 30 2024 15:47:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-29T14:00:41.000Z",
+          "historyComment": "пока ничего не нужно и на лето нет потребности, ближе к сезону календарей"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-30T07:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "29",
+      "organization": "Оршанский льнокомбинат РУПТП ",
+      "contactFace": "Татьяна Валерьевна - нач.отдела.,  Виталий - документы",
+      "productList": [
+        {
+          "id": "id_yirchs7lc",
+          "productName": "Каталог",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (216)50-69-39",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 501 30 13",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "linenreklama@mail.ru - Отдел рекламы и дизайна"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-11-01T08:45:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "34",
+      "organization": "Волковысский мясокомбинат ОАО",
+      "contactFace": "Виталий Владимирович (нач.отдела)            Юлия (отдел маркетинга)-ушла в др отдел",
+      "productList": [
+        {
+          "id": "id_7ymjc0uqx",
+          "productName": "Разная",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(1512)5-00-36",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@volmk.by"
+        }
+      ],
+      "address": "",
+      "description": "Звонить в следующем году. в 2024 году будет 60 лет компании и периодически набирать (др летом).\nв 2023 году закупка календарей уже прошла. (звонила 14.09.23)\n27.03 - Юлия уходит в другой отдел, набирайте в июне и уточняйте у Виталия Владимировича\nв отделе снабжения +375-1512-5-00-28 Евгений Павлович ",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:14:11 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-27T07:10:53.000Z",
+          "historyComment": "Юлия уходит в другой отдел, набирайте в июне и уточняйте у Виталия Владимировича"
+        }
+      ],
+      "reminder": {
+        "date": "2024-06-05T07:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "37",
+      "organization": "Милкавита ОАО",
+      "contactFace": "Наталья Зинукова(маркетолог)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 232 23 72 16",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@milkavita.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:18:30 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-04T13:00:05.000Z",
+          "historyComment": "попросили напомнить о себе на почту. планирую календарь но еще не собирались и не обсуждали тех.задание..."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:18:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-09T05:20:30.000Z",
+          "historyComment": "был запрос, на наклейки и буклеты."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:19:20 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-20T11:15:53.000Z",
+          "historyComment": "планируют печатать, хотя не очень заинтересованы, но должны на следующей недели отправить тех задание., попросили на почту им написать как напоминание"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:20:19 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T11:05:20.000Z",
+          "historyComment": "отправила письмо напоминание..."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:20:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-31T10:25:19.000Z",
+          "historyComment": "ничего не прислали на просчет"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:21:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-10T11:25:31.000Z",
+          "historyComment": "прислали на просчет календари, пакеты, блокноты "
+        },
+        {
+          "id": "Tue Apr 30 2024 20:23:16 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:05:45.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:23:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-29T10:05:16.000Z",
+          "historyComment": "пока ничего не нужно из печатной продукции"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-08T11:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "25",
+      "organization": "Ковчег Спасения ИУ",
+      "contactFace": "Нина Сергеевна",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_8e01ooa3u",
+          "productName": "Книги",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 753 84 98",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nina_oskirko@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T09:36:23.960Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "32",
+      "organization": "Жлобинский мясоперерабатывающий комбинат ОАО",
+      "contactFace": "Анастасия (Мария в отпуске)",
+      "productList": [
+        {
+          "id": "id_ykbndafyl",
+          "productName": "буклеты",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(2334)2-11-78",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing_gmk@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "Почти ничего не заказывают, может быть только немного календарей (цифра).",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:11:05 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T13:10:46.000Z",
+          "historyComment": "было отправлено кп с расчетом календарей. Дорого "
+        },
+        {
+          "id": "Tue Apr 30 2024 20:11:33 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T13:15:05.000Z",
+          "historyComment": "ответили"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:11:54 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:05:33.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-10-22T07:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "36",
+      "organization": "Рогачевский МКК ОАО",
+      "contactFace": "Вадим Викторович (начальник отдела маркетинга)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(2339)4-14-85",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@rmkk.by"
+        }
+      ],
+      "address": "",
+      "description": "Вадим Викторович - не приятный по телефону, общается грубо и резко(возможно так пытался быстрее отослать)\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:16:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T13:05:26.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-18T08:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "38",
+      "organization": "Юнифуд ЗАО (сеть Алми, Spar)",
+      "contactFace": "Корпик Татьяна Александровна",
+      "productList": [
+        {
+          "id": "id_h3018kado",
+          "productName": "Буклеты",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(44) 565 02 60",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "korpik.t@almi.by"
+        }
+      ],
+      "address": "",
+      "description": "Считали буклеты, но не прошли по стоимости. Предложили дешевле.",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:24:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T06:23:56.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:24:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-29T08:05:45.000Z",
+          "historyComment": "пока ничего не нужно из печатной продукции... "
+        },
+        {
+          "id": "Thu May 02 2024 11:24:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T08:22:39.849Z",
+          "historyComment": "Татьяна в отпуске, заменяет Елена. Ничего не планируют печатать, если будет запрос, то уточнит у начальника готовы ли рассматривать нового подрядчика."
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-08-22T08:00:00.000Z"
+      }
+    },
+    {
+      "id": "27",
+      "organization": "МНИПИ ОАО",
+      "contactFace": "Юрий Михайлович",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_c4wp4swbn",
+          "productName": "Брошюры",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 617 38 31",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(17) 237 19 62",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mfirman@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:45:38 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T06:45:20.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-01-17T09:46:13.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "24",
+      "organization": "Ковчег Спасения ИУ",
+      "contactFace": "Екатерина Соколова",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_g31v80hus",
+          "productName": "Журнал",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 320 30 94",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "ekaterina_sokolova14@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T09:35:03.764Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "15",
+      "organization": "Свiтанак г.Орша ЗАО ОПТФ (ARTUS-kids)",
+      "contactFace": "Елена",
+      "productList": [
+        {
+          "id": "id_n53797acc",
+          "productName": "Ярлыки",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_rfdpvh2e9",
+          "productName": "Ярлыки",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 599 57 34",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "sbit@artus-kids.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-26T08:46:31.478Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "45",
+      "organization": "Купала СБА ЗАСО ",
+      "contactFace": "Андрей",
+      "productList": [
+        {
+          "id": "id_oozdukim7",
+          "productName": "Календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_itzv3ouxn",
+          "productName": "Буклеты",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_enqrgw96y",
+          "productName": "Листовки",
+          "productComment": ""
+        },
+        {
+          "id": "id_ukld7k53u",
+          "productName": "Буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_0kq7u9jz6",
+          "productName": "Брошюры",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 333 96 71",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "i@tut.by"
+        }
+      ],
+      "address": "",
+      "description": "Ничего не требуется",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:52:15 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:50:54.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-02-23T08:00:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "35",
+      "organization": "Бабушкина крынка ОАО",
+      "contactFace": "Максим",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 222 79 20 36",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "omr@babushkina.by"
+        }
+      ],
+      "address": "",
+      "description": "Заказывают полиграфию, но не часто и нет конкретной периодичности. Есть потребность, то рассылают по типография запросы...\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:14:59 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-10T07:05:44.000Z",
+          "historyComment": "напомнили о себе еще раз"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:15:12 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T13:10:59.000Z",
+          "historyComment": " ничего не требуется"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:15:26 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:05:12.000Z",
+          "historyComment": "с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:15:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-09T12:15:26.000Z",
+          "historyComment": "ничего пока не планируют"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:16:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-29T13:15:43.000Z",
+          "historyComment": "Максим в отпуске, письмо напоминание можете отправить на почту..."
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-26T08:40:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "42",
+      "organization": "АЭС-комплект УП",
+      "contactFace": "Кирилл Александрович (нач.отдела маркетинга)",
+      "productList": [
+        {
+          "id": "id_s5ryihjaw",
+          "productName": "разная",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(33) 300 01 00",
+          "typeList": "business"
+        },
+        {
+          "number": "375(25)707-89-33 Александра",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "nka@aes.by"
+        }
+      ],
+      "address": "",
+      "description": "Заказывают не много продукции и нет постоянности. Могут раз в год, а могут и раз в 5 лет\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:36:57 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-22T07:10:41.000Z",
+          "historyComment": " расчет брошюры сбросили..."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:37:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T12:10:57.000Z",
+          "historyComment": "уточнила нет ли в ближайшее время запроса по полиграфии? ответ- пока нет."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:37:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:37:09.000Z",
+          "historyComment": "поздравила с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:38:12 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-30T09:10:18.000Z",
+          "historyComment": "ничего не нужно"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:38:25 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-29T11:05:12.000Z",
+          "historyComment": "напомнили о себе...позвонить в понедельник коллеге Александра 8(025)7078933 и договорится о встрече... (в среду 03.04 должны приехать)"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:38:34 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T07:05:25.000Z",
+          "historyComment": "Александра приезжала и показывала каталог."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:39:22 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-05T08:05:34.000Z",
+          "historyComment": "отправила им коммерческое предложение с расчетом стоимости брошюры... Ждем\n"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T07:50:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "39",
+      "organization": "Витебская бройлерная птицефабрика ОАО (GANNA)",
+      "contactFace": "Ксения Бадулина",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 212 35-04-43",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@ganna.by"
+        },
+        {
+          "email": "badulina.marketing@ganna.by"
+        }
+      ],
+      "address": "",
+      "description": "Заказывают через https://icetrade.by/.",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:25:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-20T07:35:37.000Z",
+          "historyComment": "вышлите о себе напонимание. "
+        },
+        {
+          "id": "Tue Apr 30 2024 20:26:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-22T05:25:56.000Z",
+          "historyComment": "отправила кп на брошюры. "
+        },
+        {
+          "id": "Tue Apr 30 2024 20:26:25 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-28T06:10:09.000Z",
+          "historyComment": "сказали у нас дороже рублей на 100-150 чем у другой компании."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:28:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:25:25.000Z",
+          "historyComment": "поздравили с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:28:19 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-26T05:20:00.000Z",
+          "historyComment": "сотрудничают с типографиями на месте... с минскими и другими не удобно, т.к. возникают вопросы с цветопередачей и согласовывать на удаление не удобно"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:28:33 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-30T14:10:19.687Z",
+          "historyComment": " ничего не нужно пока, не планируют ничего"
+        }
+      ],
+      "reminder": {
+        "date": "2024-06-26T07:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "43",
+      "organization": "Лидское пиво ОАО",
+      "contactFace": "Александр",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(154)53-53-70",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "pivo@lidskoe.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:48:51 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-22T06:10:36.000Z",
+          "historyComment": "отправила по электронке письмо уточнение."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:49:04 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T08:15:51.000Z",
+          "historyComment": "не отправила поздравление с НГ\n"
+        }
+      ],
+      "reminder": {
+        "date": "2024-01-31T07:45:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "11",
+      "organization": "ДВ интернешнл ООО",
+      "contactFace": "Марина Кошевская",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_hzpgttlva",
+          "productName": "Папки",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(29) 654 11 56",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marina_koshevskaya@dv-belgroup.com"
+        }
+      ],
+      "address": "",
+      "description": "Брошюра А4 - 10 шт была у нас дорогая\nВ сентябре печатали брошюры",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 15:12:33 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-28T07:12:13.000Z",
+          "historyComment": " отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-01-31T08:15:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "49",
+      "organization": "МИНСКИЙ ЗАВОД АВТОМАТИЧЕСКИХ ЛИНИЙ ИМЕНИ П.М. МАШЕРОВА",
+      "contactFace": "",
+      "productList": [
+        {
+          "id": "id_4ymfqyah7",
+          "productName": "",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 369 18 46",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@belstanki.by"
+        },
+        {
+          "email": "market@mzal.by"
+        }
+      ],
+      "address": "",
+      "description": "Заказывают раз в год. Наберите осенью (конец сентября - начало октября)",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:07:24 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T12:20:14.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-30T11:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "50",
+      "organization": "СТАНКОСТРОТЕЛЬНЫЙ ЗАВОД им. С.М.КИРОВА ОАО",
+      "contactFace": "Ольга",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 369 18 01",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@szkminsk.by"
+        }
+      ],
+      "address": "",
+      "description": "Работают с Транстэк. ",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:08:52 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-03T10:10:38.000Z",
+          "historyComment": "ничего не нужно"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:09:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T13:10:52.000Z",
+          "historyComment": "поздравила с нг"
+        },
+        {
+          "id": "Thu May 02 2024 10:58:15 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T07:57:57.549Z",
+          "historyComment": "Попробуйте набрать осенью, тк сейчас есть все и ничего не нужно."
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-11T07:45:00.000Z"
+      }
+    },
+    {
+      "id": "51",
+      "organization": "Славянка ОАО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (225) 70-79-72",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "snab-slavianka@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:11:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-20T10:05:01.000Z",
+          "historyComment": "отправили наше информационное письмо"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:11:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T08:10:18.000Z",
+          "historyComment": "отправили поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-23T08:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "41",
+      "organization": "Формэль ООО (markformelle)",
+      "contactFace": "Марина (нач.отдела маркетинга)",
+      "productList": [
+        {
+          "id": "id_bho0pw6el",
+          "productName": "ярлыки",
+          "productComment": ""
+        },
+        {
+          "id": "id_grxrurfbj",
+          "productName": "буклеты",
+          "productComment": ""
+        },
+        {
+          "id": "id_h13kgj9sr",
+          "productName": "флаеры",
+          "productComment": ""
+        },
+        {
+          "id": "id_jy9vfah1g",
+          "productName": "каталоги",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(44) 596 45 86",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@markformelle.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-29T06:34:01.740Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "58",
+      "organization": "АМКОДОР  ОАО ",
+      "contactFace": "Татьяна ",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 308 33 46",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@amkodor.by"
+        }
+      ],
+      "address": "",
+      "description": "НАБИРАТЬ с МОБИЛЫ\nНабрать 19 июня и напомнить о себе. \n\n\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:43:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T08:05:38.000Z",
+          "historyComment": "набрать после нового года, где ближе к концу января."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:43:22 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-24T10:05:06.000Z",
+          "historyComment": " плохо слышат по городскому телефону... набирать по мобиле?"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-27T07:40:00.000Z"
+      }
+    },
+    {
+      "id": "48",
+      "organization": "Брестский чулочный комбинат ОАО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "375 (162) 51 71 98",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@bchk.by"
+        }
+      ],
+      "address": "",
+      "description": "сбрасывайте о себе информацию, если не потеряетесь на почте,  то будем вас иметь ввиду и отправим запрос.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:02:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T11:10:28.000Z",
+          "historyComment": "отправила информацию о себе."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:02:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T14:15:45.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "bell": false,
+        "comment": "Позвонить",
+        "date": "2024-05-03T01:15:00.000Z"
+      }
+    },
+    {
+      "id": "47",
+      "organization": "Белвест СООО (BELWEST)",
+      "contactFace": "Вероника Кондратьева",
+      "productList": [
+        {
+          "id": "id_m37ae0iqi",
+          "productName": "Разная",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "375 (212) 49-11-19",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(33) 370 87 89",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@belwest.com"
+        },
+        {
+          "email": "veronika.kondratieva@belwest.com"
+        }
+      ],
+      "address": "",
+      "description": "Набрать осенью.\n\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:57:58 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-26T06:05:03.000Z",
+          "historyComment": "отправила информац.письмо с расчетом сертификатов."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:58:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-03T07:15:58.000Z",
+          "historyComment": "позвонила уточнить прошли ли по цене, но оказывается решение еще не принято, ждем))"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:59:07 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-02T10:10:41.000Z",
+          "historyComment": "наши цены на конверты и бланки в этот раз получились дороже раза в полтора..."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:59:21 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T12:10:07.000Z",
+          "historyComment": "поздравить с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:00:37 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-16T07:05:21.000Z",
+          "historyComment": " уточнила по имейл есть ли необходимость в печатной продукции"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:00:49 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-24T12:05:37.000Z",
+          "historyComment": "ответа нет, трубку не снимают"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:01:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-21T13:10:49.000Z",
+          "historyComment": " есть ли потребность в печатной продукции? (пока нет, может чуть позже)"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-22T08:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "72",
+      "organization": "Белгазстрой ОАО",
+      "contactFace": "Елена Довнар",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 270 72 58",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "dovnar@belgazstroy.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:10:55 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-28T11:10:30.000Z",
+          "historyComment": "отправила информационное письмо о типографии ..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:11:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:20:55.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:11:20 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-24T07:10:09.000Z",
+          "historyComment": "не снимают телефон"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:11:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-04T09:05:20.000Z",
+          "historyComment": "не снимаю телефон (017)270-72-58"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:11:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-18T12:00:31.000Z",
+          "historyComment": "не снимают, попробовать позже набрать по этому телефону + 375 (17) 270-59-82?"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:11:54 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-23T11:05:45.000Z",
+          "historyComment": "Пока ничего не требуется, ухожу в отпуск, наберите в конце мая"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-27T08:20:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "55",
+      "organization": "Белнефтестрах  ЗАСО",
+      "contactFace": "Радобольская Ольга Владимировна",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 336 51 35",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29)3217717 (Татьяна Бартанович)",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": " O.Radobolskaya@bns.by"
+        },
+        {
+          "email": "T.Barnatovich@bns.by"
+        }
+      ],
+      "address": "",
+      "description": "\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:28:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-25T08:05:24.000Z",
+          "historyComment": "по 26.09 календари считали."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:29:57 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T10:00:40.000Z",
+          "historyComment": " не прошли , нужен был вд-лак. Календари напечатали у Альтиоры."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:31:54 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T06:05:41.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:32:08 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-24T08:05:54.000Z",
+          "historyComment": "в отпуске пока, набирайте после 30 января"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:33:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-09T10:05:08.000Z",
+          "historyComment": "на первый квартал точно ничего не нужно и не планируют, но вроде как помнят нас)) "
+        },
+        {
+          "id": "Tue Apr 30 2024 21:33:14 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-07T10:05:00.000Z",
+          "historyComment": "поздрав с 8м"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:33:24 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-01T11:05:14.000Z",
+          "historyComment": "уточнить не появилась ли потребность на второй квартал в печатной продукции (на больничном, набирайте позже)"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:33:36 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-08T06:05:24.000Z",
+          "historyComment": "уточнила про потребность печатки. Планируют, возможно уже на следующей неделе будут рассылать запрос"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:33:50 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-10T10:05:36.000Z",
+          "historyComment": "запрос на брошюры (Правила страхования - 3 вида)"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:34:05 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-19T10:10:50.000Z",
+          "historyComment": "уточнить кто выиграл? (Барнатович Татьяна, ведущий специалист отдела перспективного развития, ЗАСО «Белнефтестрах», +375293217717)"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:34:16 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-22T08:10:05.000Z",
+          "historyComment": "прислали на просчет правила еще раз + еще добавили 4 позицию на 36стр."
+        },
+        {
+          "id": "Thu May 02 2024 11:02:14 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-22T08:00:29.000Z",
+          "historyComment": "Барнатович Татьяна Анатольевна <T.Barnatovich@bns.by> - прислала запрос. Ждем ответ"
+        },
+        {
+          "id": "Thu May 02 2024 11:14:37 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T08:02:14.156Z",
+          "historyComment": "по бланкам подрядчика выбрали, у нас чуть дороже. По правила еще документы у руководителя на рассмотрении "
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-07-05T07:15:00.000Z"
+      }
+    },
+    {
+      "id": "56",
+      "organization": "Автомобильные конструкции  ООО",
+      "contactFace": "Екатерина",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 323 22 41",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@autoconstr.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:39:03 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-25T06:10:47.000Z",
+          "historyComment": "сбросьте предложения какие есть..."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:39:29 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-26T07:05:03.000Z",
+          "historyComment": "отправила кп с расчетами..."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:39:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-01T08:05:29.000Z",
+          "historyComment": "получили, видели, пока правда еще не планируем заказывать"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:39:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T12:15:45.000Z",
+          "historyComment": "с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:40:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-29T11:05:56.000Z",
+          "historyComment": "пока ничего не нужно и в ближайшее время пока не планируют"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:40:20 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-30T09:40:09.000Z",
+          "historyComment": "пока ничего не требуется и на лето точно не будут ничего заказывать"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-25T08:35:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "71",
+      "organization": "Шацкий Мастер  ООО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 133 32 80",
+          "typeList": "business"
+        },
+        {
+          "number": "(017)378 25 60 - попробовать сюда набрать",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@shmaster.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-10-04T08:15:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "63",
+      "organization": "Газпром трансгаз Беларусь  ОАО",
+      "contactFace": "Акиншева Ольга Николаевна",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 500 35 10",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "o.akinsheva@btg.by"
+        }
+      ],
+      "address": "",
+      "description": "Заказывают на два года вперед. Сейчас ничего не требуется, на 23 и 24 пока все заказано.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:00:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T10:05:36.000Z",
+          "historyComment": " отправила письмо напоминание."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:00:14 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T09:05:01.000Z",
+          "historyComment": " поздравили с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:00:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-24T06:05:14.000Z",
+          "historyComment": " в данный момент нет необходимости в печатной продукции"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:00:42 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-02T09:05:27.000Z",
+          "historyComment": "идут разговоры, что надо что-то заказывать на 2025 год, но бюджет урезают и пока решают что будут заказывать и будут ли вообще (отправила инфор.письмо)"
+        },
+        {
+          "id": "Thu May 02 2024 11:29:25 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T08:28:31.020Z",
+          "historyComment": "ничего не планируют и вообще все очень грустно по бюджету. Попробуйте уже осенью напомнить о себе"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-17T08:05:00.000Z"
+      }
+    },
+    {
+      "id": "66",
+      "organization": "Белшина  ОАО",
+      "contactFace": "Елена Пашкевич",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(0225)410-895",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "pashkevichen@belshina.by"
+        }
+      ],
+      "address": "",
+      "description": "Работает Виноградова",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:04:52 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-06T13:05:31.000Z",
+          "historyComment": "написала письмо напоминание."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:05:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-09T09:05:52.000Z",
+          "historyComment": "отправила кп с расчетом календарей. "
+        },
+        {
+          "id": "Tue Apr 30 2024 22:05:20 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-27T12:15:06.000Z",
+          "historyComment": "уточнила за сколько календари печатают, сказали около 37000 бел.руб. Больше пока ничего не планируют в ближайшее время."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:05:32 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T08:05:20.000Z",
+          "historyComment": "поздравила с нг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T07:35:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "65",
+      "organization": "Юмитком  ООО",
+      "contactFace": "Мария",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 362 86 43",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "brend.umitkom@mail.ru - только Мария в нем"
+        },
+        {
+          "email": "market.umitkom@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:03:50 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-25T10:15:13.000Z",
+          "historyComment": "еще раз напомнила о себе информац.письмом и звонком. Календари не планирует, дает главная компания, бывает сами что-то заказывают"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:04:04 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T13:15:50.000Z",
+          "historyComment": "поздравили с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:04:15 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-18T08:15:04.000Z",
+          "historyComment": "попросили напомнить еще раз о себе. И просчитать Буклет А4 в А5, 4+4, меловка 300, т500 и 1000, с ламинацией и без.\n"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T08:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "62",
+      "organization": "Витконпродукт ООО",
+      "contactFace": "Лидия Жогаль (специалист по рекламе и дизайну)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(0212)49-56-47",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama_vkp@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "Печатаются, но не часто, когда есть потребность.... Осенью начнут думать про календари, набирайте-пишите...\n",
+      "historyList": [],
+      "reminder": {
+        "date": "2024-09-05T08:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "61",
+      "organization": "Гомельдрев ОАО",
+      "contactFace": "Диана (отдел маркетинга)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(0232)25-73-44",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "gomeldrev@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:53:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T10:05:05.000Z",
+          "historyComment": "письмо напоминание."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:57:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-01T08:10:18.000Z",
+          "historyComment": "поинтересовалась, может появилась потребность в печатной продукции..."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:57:11 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-01T10:05:02.000Z",
+          "historyComment": "ничего не требуется, не планируем пока ничего, попробуйте набрать осенью."
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-17T08:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "54",
+      "organization": "Брестгазоаппарат СП ОАО (GEFEST)",
+      "contactFace": "Дмитрий Сергеевич",
+      "productList": [
+        {
+          "id": "id_ofj76npeo",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(0162)27-64-86",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mark.rds@gefest.org"
+        }
+      ],
+      "address": "",
+      "description": "Заказывают календари. Наберите конец августа-начало сентября.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:26:29 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-22T10:05:15.000Z",
+          "historyComment": " отправила кп как напоминание, тк на тел.звонок не ответили."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:26:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-22T13:20:29.000Z",
+          "historyComment": "сбросили тендер, не проходим по цене. - тендер до 04.10 "
+        },
+        {
+          "id": "Tue Apr 30 2024 21:27:05 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-19T13:05:48.000Z",
+          "historyComment": "не отправляли тендер, цены были выше чем стоимость в запросе, плюс нужно было вырезать особенный красный курсор"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:27:16 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:05:05.000Z",
+          "historyComment": "поздравить с нг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-09T08:20:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "70",
+      "organization": "ЭЛЕКТРОЦЕНТРМОНТАЖ  ОАО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 516 38 00",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-12-01T08:14:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "68",
+      "organization": "Клеевые технологии  ЧП",
+      "contactFace": "Диана Владимировна",
+      "productList": [
+        {
+          "id": "id_2hbgrokzk",
+          "productName": "",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 511 65 81",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@kleitech.by"
+        },
+        {
+          "email": "diana@kleitech.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:08:04 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-04T10:05:30.000Z",
+          "historyComment": "нет в офисе, редко бывает..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:08:15 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-25T10:10:04.000Z",
+          "historyComment": "отправила письмо на личную почту..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:08:25 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T14:00:15.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:08:39 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-16T07:10:25.000Z",
+          "historyComment": "отправила на почту письмо с уточнением, требуется ли полиграфическая продукция...."
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-23T08:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "75",
+      "organization": "Минский Агросервис  ОАО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 506 15 44",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "Пока ничего не нужно. Наберите в октябре-ноябре на этот номер (17) 506 15 44 (отдел маркетинга)",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-10-23T08:15:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "52",
+      "organization": "БЕЛКОСМЕКС ПКООО",
+      "contactFace": "Светлана",
+      "productList": [
+        {
+          "id": "id_48xg2dnis",
+          "productName": "Листовки",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 351 52 12",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@belkosmex.by"
+        }
+      ],
+      "address": "",
+      "description": "не возможно дозвонится, никогда не бывает на месте\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:13:19 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:10:08.000Z",
+          "historyComment": "поздравить с нг"
+        }
+      ],
+      "reminder": {
+        "date": "2023-12-28T09:30:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "64",
+      "organization": "Белинтертранс (БТЛЦ)",
+      "contactFace": "Наталья",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 225 82 13",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "natali@belint.by"
+        }
+      ],
+      "address": "",
+      "description": "Набрать осенью.\n\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:01:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-19T06:10:08.000Z",
+          "historyComment": "Присылали расчет каталогов срочный и визитки, ответ что быстро не успеем напечатать...\nБыло уточнение про календари с лазерной вырубкой в начале октября"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:02:07 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-20T09:05:53.000Z",
+          "historyComment": "расчет пакетов и блоков для записи..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:02:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-01T11:05:07.000Z",
+          "historyComment": "хотела уточнить по блокам и пакетам, с какими ценами прошли. Кажется пакеты и блоки выиграли. Попросили прислать договор на пакеты"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:02:34 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T11:05:23.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:02:54 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-11T12:10:34.000Z",
+          "historyComment": "сможем ли взяться за макет с открытками"
+        }
+      ],
+      "reminder": {
+        "date": "2024-01-10T08:30:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "53",
+      "organization": "Минский завод холодильников (ATLANT)",
+      "contactFace": "Ольга  или Татьяна - календари.  (Анна Полянская (вместо Олег Курьянович?) ",
+      "productList": [
+        {
+          "id": "id_p8cs2ur0n",
+          "productName": "Блокноты",
+          "productComment": ""
+        },
+        {
+          "id": "id_ngzu5vb0p",
+          "productName": "Календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_osvbgnyzw",
+          "productName": "Каталоги",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 203 71 72",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17) 369 73 92 Ольга",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "oleg.kuryanovich@atlant.by"
+        }
+      ],
+      "address": "",
+      "description": "Заказываю не много: блокноты, календари, каталоги. Все по мере потребности. По календарям осенью набирайте.\nничего не нужно. ",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:15:12 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-20T11:10:10.000Z",
+          "historyComment": "звонок, и опять сбросила информацию о типографии"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:15:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T10:15:12.000Z",
+          "historyComment": "письмо напоминание..."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:15:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-01T11:25:27.000Z",
+          "historyComment": "поинтересуется по блокнотам и брошюрам, планируют они их печатать или нет...(не было четкого ответа)"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:20:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T11:25:56.000Z",
+          "historyComment": "поздравить с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:21:29 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-23T10:25:18.000Z",
+          "historyComment": "отправить поздравление?"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:21:55 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-19T15:00:29.000Z",
+          "historyComment": "Олег Курьянович уволился и теперь кто ведет печатную продукцию не ясно, возможно Анна Полянская. Набрать Ольгу 017-369-73-92 уточнить...\nОльга сказала,  набирать теперь осенью..."
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-10T08:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "59",
+      "organization": "Завод автомобильных прицепов и кузовов \"МАЗ-Купава\"  ООО",
+      "contactFace": " Екатерина    (Дарина уже не работает)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 396 40 57",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "astraukh_k@kupava.by Остроух Екатерина"
+        },
+        {
+          "email": "simonova_d@kupava.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:45:08 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T08:05:24.000Z",
+          "historyComment": "звонок уточнение, есть ли потребность в печатной продукции. Выслали тех.задание."
+        },
+        {
+          "id": "Tue Apr 30 2024 21:45:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-26T08:20:08.000Z",
+          "historyComment": "пересчет календарей с магнитным курсором + планки металлические"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:45:42 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T12:25:27.000Z",
+          "historyComment": "поздравить с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:45:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-20T11:45:42.000Z",
+          "historyComment": "Дарина уже не работает, вместо нее Екатерина(уточнить)"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-15T08:05:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "40",
+      "organization": "Мозырский спиртоводочный завод ОАО",
+      "contactFace": "Светлана Александровна",
+      "productList": [
+        {
+          "id": "id_eripdaoyc",
+          "productName": "этикетка",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 236 35-90-15",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "Заказывают все либо через https://icetrade.by/ или через Кристал.бу",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-05-29T06:28:26.364Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "57",
+      "organization": "БЕЛРОБОТ  ЗАО",
+      "contactFace": "Алексей",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 500 51 93",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "alexey.belrobot@gmail.com"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-06-01T09:08:42.460Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "60",
+      "organization": "БЕЛАРУСКАЛИЙ  ОАО",
+      "contactFace": "Татьяна Александровна (отдел рекламы)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(0174)29-87-93",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mulyarevich@kali.by Tatiana Mulyarevich"
+        },
+        {
+          "email": "belaruskali.office@kali.by (общ.) (с пометкой \"для бюро протоколов и рекламы\")"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 21:47:35 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T08:10:20.000Z",
+          "historyComment": "уточнила планируют ли что-то печатать. Сказали, что потребность будет. Пришлите о себе еще раз информацию"
+        },
+        {
+          "id": "Tue Apr 30 2024 21:47:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T09:05:35.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-03T08:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "78",
+      "organization": "Парфюмерно-косметическая фабрика \"Модум - наша косметика\" (Modum) СОАО ",
+      "contactFace": "Наталья",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(33) 630 06 10",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17) 374 84 20",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@modum.by"
+        }
+      ],
+      "address": "",
+      "description": "внесли мой мобильный в черный список (либо заблокировали) тк не дозвонится...",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-10-13T08:15:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "81",
+      "organization": "КлинКосмик  ООО (Selfielab)",
+      "contactFace": "Дарья и Сергей",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(212)28-70-13",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 814 11 26 Сергей",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@selfielab.by"
+        },
+        {
+          "email": "andreev@vicah.by Сергей"
+        }
+      ],
+      "address": "",
+      "description": "Больше работают с витебской типографией, т.к. близко-удобно. С типографиями подальше, если что-то ограниченное или специфическое или же не могут сделать в Витебске.\n\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:21:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-19T06:20:47.000Z",
+          "historyComment": "уточнение есть ли необходимость в печатной продукции, пока ничего не требуется"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:21:58 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:05:48.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:22:08 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-04T09:05:58.000Z",
+          "historyComment": "предложение печатных услуг, общалась с Сергеем (andreev@vicah.by)"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-09T11:00:19.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "79",
+      "organization": "Стилмарк СП - Маркель (MARKELL)",
+      "contactFace": "Анна (временные обязанности маркетинга - отдел марктинга в отпуске)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 224 44 04",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@markell.by"
+        }
+      ],
+      "address": "",
+      "description": "Отдел маркетинга в отпуске. Анна временно ведет работу отдела маркетинга.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:19:16 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-30T07:10:52.000Z",
+          "historyComment": "не отвечают на данный номер 017-244-44-04"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:19:24 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T11:15:16.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2023-12-28T07:35:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "44",
+      "organization": "Промтрансинвест ЗАСО",
+      "contactFace": "Берновская Алеся Викторовна - вед.спец. (и Ольга Владимировна - начальник)",
+      "productList": [
+        {
+          "id": "id_81andagcr",
+          "productName": "Календари",
+          "productComment": ""
+        },
+        {
+          "id": "id_9q6uf958b",
+          "productName": "визитки",
+          "productComment": ""
+        },
+        {
+          "id": "id_8uh7dp2zl",
+          "productName": "буклеты",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [
+        {
+          "id": "id_fexrl3hmt",
+          "productName": "календари",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375 (17) 311 48 70 (доб.: 211)",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "bernovskaya@promtransinvest.by"
+        }
+      ],
+      "address": "",
+      "description": "Считали визитки. Не прошли по стоимости.\nВ конце марта др компании и возможно что-то будут печатать, уточнить в начале марта",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:50:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:10:57.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-06T08:35:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "82",
+      "organization": "Рубикон ООО",
+      "contactFace": "Ольга или Виктор",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(0212)36-37-17",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@rubikon.by"
+        }
+      ],
+      "address": "",
+      "description": "Есть постоянные поставщики, пока ничего не требуется.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:23:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T08:15:50.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-18T12:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "73",
+      "organization": "Малоритский консервноовощесушильный комбинат  ОАО (Топтышка)",
+      "contactFace": "Юлия Герасимук  (маркетолог)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (1651)20-709",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@toptyshka.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:13:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-25T07:10:02.000Z",
+          "historyComment": "набрать еще через недели две, пока не приступали к тз"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:13:29 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-13T09:05:18.000Z",
+          "historyComment": "на больничном, сказали набрать после 20октября. (выслала еще раз письмо на почту)"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:13:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-23T10:15:29.000Z",
+          "historyComment": "просчет календаря квартального на 3 пружины. шапка + ниж подложка А4, сетка наша, планки, картон 290, т.200шт "
+        },
+        {
+          "id": "Tue Apr 30 2024 22:14:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-27T10:10:43.000Z",
+          "historyComment": "не понравилась сетка, просили выслать другую, т.к. серо-белая не нравится... отказались рассматривать предложение.."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:14:10 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:10:00.000Z",
+          "historyComment": "поздравила с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:14:21 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-29T08:10:10.000Z",
+          "historyComment": "в ближайший месяц точно не будет заказа, и скорее всего еще месяц-другой, если только что-то экстренное..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:14:33 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-08T13:10:21.000Z",
+          "historyComment": "поздр с 8марта"
+        }
+      ],
+      "reminder": {
+        "date": "2024-10-02T08:05:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "69",
+      "organization": "Schüco International KG Представительство в Республике Беларусь",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17)336 11 36",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "office@schueco.by "
+        }
+      ],
+      "address": "",
+      "description": "Канцелярию заказывают мало. Печатную продукцию передают из германии.",
+      "historyList": [],
+      "reminder": {
+        "date": "2024-01-16T08:45:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "67",
+      "organization": "Вентгарант  ООО",
+      "contactFace": "Наталья",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 336 33 20",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@ventgarant.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:06:33 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-03T11:05:03.000Z",
+          "historyComment": "еще ничего не нужно"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:06:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T12:10:33.000Z",
+          "historyComment": "поздравила с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:06:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-01T11:05:43.000Z",
+          "historyComment": "в выставке не планируют участвовать и пока ничего не требуется из полиграфии"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:07:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-29T12:05:53.000Z",
+          "historyComment": "нет потребности в печатной продукции"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-26T07:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "88",
+      "organization": "АйКонд   ООО",
+      "contactFace": "Оксана",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 353 50 09",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "od@kantardo.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:31:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-12T09:05:19.000Z",
+          "historyComment": "набрала узнать есть ли потребность в какой продукции - ответ: пока ничего не планируют. календари тоже"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:31:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T13:10:31.000Z",
+          "historyComment": "поздравить с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:31:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-17T12:10:43.000Z",
+          "historyComment": "не снимают телефон"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:32:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-24T08:05:53.000Z",
+          "historyComment": "не снимают телефон"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-08T08:05:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "46",
+      "organization": "Красный пищевик ОАО",
+      "contactFace": " Алина (и Николай)",
+      "productList": [
+        {
+          "id": "id_i88cpedpa",
+          "productName": "Календари",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(225)43-67-93",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@zefir.by (Николай?)"
+        },
+        {
+          "email": "mtride@zefir.by (Алина)"
+        }
+      ],
+      "address": "",
+      "description": "\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 20:54:10 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-22T09:10:39.000Z",
+          "historyComment": " календари уже не актуально, планируют брошюры и листовки, вышлите кп на общую почту с пометкой для Алины и Николая."
+        },
+        {
+          "id": "Tue Apr 30 2024 20:54:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-25T08:05:10.000Z",
+          "historyComment": "пока еще листовки и брошюры на стадии рассмотрения, попробуйте в конце ноября набрать...\nпоздравила с нг 29.12"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:54:40 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-29T11:10:27.000Z",
+          "historyComment": "перезвонить в пн 01.04 и спросить Алину"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:55:49 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-02T06:10:40.000Z",
+          "historyComment": "Алина попросила напомнить о себе и сбросить информацию о типографии"
+        },
+        {
+          "id": "Tue Apr 30 2024 20:56:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-24T11:55:49.000Z",
+          "historyComment": "пока нет потребности в печатной продукции."
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-23T07:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "84",
+      "organization": "Белдекоркосметикс ООО",
+      "contactFace": "Галина Леонидовна (директор)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": " (017)388-29-92 , добав.1000",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@li-lo.by"
+        }
+      ],
+      "address": "",
+      "description": " ",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:26:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-20T11:25:49.000Z",
+          "historyComment": "отправила письмо напоминание..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:26:22 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-31T08:15:09.000Z",
+          "historyComment": "ничего пока не нужно, потребности нет и через пару недель не звоните. уточнила когда можно, ответила после НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-02-28T07:45:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "74",
+      "organization": "Канпол бэби  ООО",
+      "contactFace": "Наталья Шкурская (маркетолог)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 345 80 65",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17) 345 80 66",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "shkurskaya@kanpol.by"
+        },
+        {
+          "email": "office@kanpol.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:15:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-16T10:15:52.000Z",
+          "historyComment": "уточнила в письме, есть ли потребность в печатной продукции..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:15:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T08:25:41.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:16:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-29T10:20:53.000Z",
+          "historyComment": "ничего пока не нужно..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:16:12 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-25T12:15:02.000Z",
+          "historyComment": "не могу пока дозвонится, пишет номер не существует"
+        },
+        {
+          "id": "Thu May 02 2024 10:59:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T07:59:23.840Z",
+          "historyComment": "отвечает оператор, что номер не существует"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-19T11:15:00.000Z"
+      }
+    },
+    {
+      "id": "77",
+      "organization": "Лидский литейно–механический завод  ОАО",
+      "contactFace": "Жанна (вед.спец.маркетинга)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (154) 52-77-42",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "llmz_market@tut.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:17:38 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-26T07:05:25.000Z",
+          "historyComment": "набирала, пока ничего не нужно.\nнабрать еще позже"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:17:52 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T13:05:38.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-03-26T08:15:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "80",
+      "organization": "Матбеа Косметикс  ООО (BIO world, MATBEA cosmetics)",
+      "contactFace": "Мария Хроменкова (отдел маркетинга)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 361 41 44",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 276 64 33",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "m.khramiankova@matbea.by"
+        },
+        {
+          "email": "info@matbea.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-08-21T09:15:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "85",
+      "organization": "Пугач Светлана Васильевна ИП",
+      "contactFace": "Светлана",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(29) 652 01 78",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(29) 564 06 47 (доп)",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "vartsvetlana@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-07-19T08:03:17.714Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "87",
+      "organization": "МЗБН - Минский завод безалкогольных напитков ЗАО",
+      "contactFace": "Елена Кирдун (маркетинг)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 377 95 06",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@mzbn.com"
+        },
+        {
+          "email": "a.kirdun@mzbn.com"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:29:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-20T07:05:13.000Z",
+          "historyComment": " отправила на личную Елене напоминание. Будет потребность будут писать..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:29:59 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-31T11:10:43.000Z",
+          "historyComment": "на данный момент ничего не нужно, календари будут делать, но по ним уже есть Исполнитель"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:30:09 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T09:05:59.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:30:21 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-16T09:30:09.000Z",
+          "historyComment": "попросили сбросить напоминание о себе"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:30:37 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-18T11:30:21.000Z",
+          "historyComment": "прислали на просчет листовки А5 и флаер. ответила по стоимости (видимо дорого, т.к. не заказали и ничего не ответили)"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:30:47 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-17T13:35:37.000Z",
+          "historyComment": "Елена на больничном и возможно будет только к концу следующей недели..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:31:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-30T06:30:47.485Z",
+          "historyComment": "напомнила о нас. попросили опять написать на почту, а то забывают периодически)))"
+        }
+      ],
+      "reminder": {
+        "date": "2024-06-19T08:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "90",
+      "organization": "Крион  ОАО",
+      "contactFace": "Диана (маркетинг)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 279 01 81",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@krion.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:33:25 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T04:10:05.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:33:38 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T11:05:25.000Z",
+          "historyComment": "пока нет потребности в печатной продукции. Наберите осенью"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-18T07:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "89",
+      "organization": "Могилевлифтмаш  ОАО",
+      "contactFace": "Кристина (бюро рекламы)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (222) 740-890",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@liftmach.by    "
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:32:42 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T08:15:30.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:32:52 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-29T09:05:42.000Z",
+          "historyComment": "повторное предложение услуг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-20T08:35:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "95",
+      "organization": "Терра моторс ООО",
+      "contactFace": "Ольга",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 257 45 87",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "contact@trm.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:43:10 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-04T11:05:16.000Z",
+          "historyComment": "наполнили о себе кп."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:43:26 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-24T10:10:10.000Z",
+          "historyComment": "напомнила о себе, попросили рассчитать блокноты...Сбросила расчет по блокнотам\nрасчеты получены, пока не планируют печать чего-либо"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:43:36 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T09:05:26.000Z",
+          "historyComment": "с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:43:47 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-25T11:05:36.000Z",
+          "historyComment": "пока ничего не требуется"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:43:58 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-29T13:05:47.000Z",
+          "historyComment": "ничего из печатной продукции не нужно в данный момент"
+        }
+      ],
+      "reminder": {
+        "date": "2024-07-25T08:20:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "91",
+      "organization": "Моготекс  ОАО",
+      "contactFace": "Ирина",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (222) 73-85-93 (отдел рекламы)",
+          "typeList": "business"
+        },
+        {
+          "number": "+375 (222) 73-86-68",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@mogotex.com"
+        }
+      ],
+      "address": "",
+      "description": "\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:34:08 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-19T10:10:52.000Z",
+          "historyComment": "письмо напоминание о сотрудничестве."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:34:21 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-10T10:10:08.000Z",
+          "historyComment": "запрос на календари, но у нас дорого (календари были с пластиковыми деталями, не наш формат)"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:34:30 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:10:21.000Z",
+          "historyComment": "поздравить с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:34:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-17T11:15:30.000Z",
+          "historyComment": "на больничном"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:34:51 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-29T12:10:41.000Z",
+          "historyComment": "пока ничего не требуется. Набирать осень по календарям, тк листовки если и печатают то у себя, т.к. маленьким количеством."
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-25T08:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "83",
+      "organization": "БААЗ ОАО",
+      "contactFace": "Ромейко Оксана Анатольевна ",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+ 375 (163) 42-40-50",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@baaz.by (для Оксаны)"
+        },
+        {
+          "email": "marketing.baaz@yandex.by"
+        }
+      ],
+      "address": "",
+      "description": "На этой или на следующей неделе будет совещание по др компании - 80лет. Если руководство решит, что что-то нужно из печатной продукции, будут рассылать...\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:23:35 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-14T13:15:15.000Z",
+          "historyComment": "отправила письмо как напоминание (после звонка)"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:23:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-13T10:10:35.000Z",
+          "historyComment": "уточнить про кп на календари и нет ли потребности в продукции. Сказали на больничном до вторника."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:24:07 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-01T13:05:53.000Z",
+          "historyComment": "календари напечатали (не признались у кого). Прислали на просчет открытки и  брошюры."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:24:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T12:10:07.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:24:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-02T09:10:18.000Z",
+          "historyComment": "напечатали каталог, но не особо понравился. Наберите на следующей неделе, по промо-материалам(что-то планируют)"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:24:41 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-15T07:05:31.000Z",
+          "historyComment": " набирала уточнить планируют ли что-то, пока еще не обсуждали, но какие-то промо-материалы планируют."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:24:58 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-29T11:05:41.000Z",
+          "historyComment": "на этой или на следующей неделе будет совещание по др компании - 80лет. Если руководство решит, что что-то нужно из печатной продукции, будут рассылать...\n"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-20T07:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "94",
+      "organization": "Белмедпрепараты  РУП",
+      "contactFace": "Алина (дизайнер)  и Сосинович Екатерина (маркетолог) и Капчевская Марина Леонидовна <om7@belmedpreparaty.com>(маркетолог)",
+      "productList": [
+        {
+          "id": "id_zxvvt7cy8",
+          "productName": "",
+          "productComment": ""
+        },
+        {
+          "id": "id_ftqis0ccc",
+          "productName": "",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 373 97 47",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "om5@belmedpreparaty.com"
+        },
+        {
+          "email": "om6@belmedpreparaty.com (маркетолог)"
+        },
+        {
+          "email": "om7@belmedpreparaty.com (маркетинг)"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:38:52 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-28T09:10:42.000Z",
+          "historyComment": "отправлено информационное письмо"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:39:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T10:15:52.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:39:16 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-23T13:15:02.000Z",
+          "historyComment": "запрос на открытки...просчитали и отправили кп"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:39:30 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-13T11:05:16.000Z",
+          "historyComment": "обратного ответа не последовала (дорого)"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:39:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-04T10:00:30.000Z",
+          "historyComment": "расчет пакетов (дорого, будет делать типография \"вся полиграфия\")"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:39:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-11T07:00:43.000Z",
+          "historyComment": "расчет брошюры А4 - блок ступенькой"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:40:02 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-22T10:00:53.000Z",
+          "historyComment": "уточнить кто выиграл по брошюрам?"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:40:17 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-24T11:45:02.000Z",
+          "historyComment": "уточнила кто выиграл по брошюре, компанию не назвали, но на 500 рублей наша цена больше, чем та с которой выиграли 4110-500=3610 выиграла сумма"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-30T08:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "97",
+      "organization": "МЕДПЛАСТ   ОАО ",
+      "contactFace": "Виталий Витальевич ",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(232)23-53-47",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "sbyt@medplast.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:46:14 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-18T07:10:01.000Z",
+          "historyComment": "отправила письмо с предложением услуг."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:46:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:10:14.000Z",
+          "historyComment": "поздравить с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:46:35 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-04T07:10:23.000Z",
+          "historyComment": "пока печатная продукция не нужна (в данный момент шнурки для шприцов) набирайте позже."
+        }
+      ],
+      "reminder": {
+        "date": "2024-06-05T08:45:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "98",
+      "organization": "Михаэлла ЗАО (кондитерская фабрика)",
+      "contactFace": "Наталья (офис-менеджер)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 271 08 35",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@mihaella.com"
+        }
+      ],
+      "address": "",
+      "description": "Наталья - офис-менеджер занимается печатно-рекламной продукцией.\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:47:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-11-01T09:05:56.000Z",
+          "historyComment": "Отправила о нас информацию"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:47:29 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T09:05:18.000Z",
+          "historyComment": "отправить поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:47:43 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-23T09:05:29.000Z",
+          "historyComment": "на сегодняшний день ничего из полиграфии не планируют, набирайте через месяц-полтора"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:47:53 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T09:05:43.000Z",
+          "historyComment": "пока нет потребности в печатной продукции."
+        },
+        {
+          "id": "Thu May 02 2024 10:56:44 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T07:55:05.935Z",
+          "historyComment": "пока ничего не требуется, может в конце лета"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-03T07:45:00.000Z"
+      }
+    },
+    {
+      "id": "99",
+      "organization": "ОАО \"Лидахлебопродукт\"",
+      "contactFace": "Жилевич Татьяна (Ведущий специалист отдела маркетинга)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 154 652556",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 885 41 83",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@muka.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:48:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T06:05:12.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-15T07:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "86",
+      "organization": "ДВ интернешнл ООО",
+      "contactFace": "Виталий (директор)",
+      "productList": [],
+      "productListArchive": [
+        {
+          "id": "id_f8roii4tz",
+          "productName": "Папка",
+          "productComment": ""
+        }
+      ],
+      "phoneList": [
+        {
+          "number": "+375(44) 794 04 92",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-08-23T12:10:13.985Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "92",
+      "organization": "Лидапищеконцентраты  ОАО",
+      "contactFace": "Александр",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(0154)52-72-06",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@lidkon.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:35:25 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-27T09:40:05.000Z",
+          "historyComment": "отправила информацию о себе. позвонить через 3 недели примерно."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:35:38 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-27T12:40:25.000Z",
+          "historyComment": "пока нет потребности, возможно ближе к НГ."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:35:47 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T09:40:38.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:35:59 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-28T12:45:47.000Z",
+          "historyComment": "пока ничего не требуется, недавно заказали каталог и пока не планируют"
+        }
+      ],
+      "reminder": {
+        "date": "2024-06-03T08:15:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "102",
+      "organization": "Экзон  ОАО",
+      "contactFace": "Мария",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375-1644-2-00-05",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@ekzon.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:50:46 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-23T11:55:33.000Z",
+          "historyComment": "предложение услуг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:50:59 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-02T10:20:46.000Z",
+          "historyComment": "поинтересовалась есть ли потребность в печатной продукции - пока нет, можете не звонить, сами если что наберем (нет значит нет))"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-18T10:24:33.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "76",
+      "organization": "Тираспальский агротехсервис ОАО",
+      "contactFace": "",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (212) 26 30 10",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mark.tiragro2@yandex.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2023-10-31T08:00:00.000Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "93",
+      "organization": "МИНСК КРИСТАЛЛ  ОАО",
+      "contactFace": "Катерина Неглюй (Ведущий маркетолог)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 395 99 25",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@kristal.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:36:37 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-09-28T10:10:14.000Z",
+          "historyComment": "отправлено информац.письмо, т.к. пока нет потребности. К новому году уже есть поставщик по продукции..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:36:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-29T07:10:37.000Z",
+          "historyComment": "отправила поздравление с НГ"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:37:03 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-19T09:10:48.000Z",
+          "historyComment": "уточнение, есть ли потребность в печатной продукции? Ответ - пока нет."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:37:15 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-07T09:05:03.000Z",
+          "historyComment": "поздравили с 8марта"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:37:26 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-01T06:05:15.000Z",
+          "historyComment": "потребности в полиграфии нет, набирайте осенью, будет планировать к нг что-то..."
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-09T07:14:30.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "101",
+      "organization": "НПП Инжиниринг Авто  ООО",
+      "contactFace": "Диана    (Анастасия временно была)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (17) 320-47-77 (271)",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "sales@lubava.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:49:45 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-19T07:10:32.000Z",
+          "historyComment": "предложение услуг, отправили информационное письмо о типографии"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:49:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-27T11:05:45.000Z",
+          "historyComment": "напомнила о печатной продукции, пока нет потребности. Наше письмо подшили в папку, будет потребность отправят..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:50:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-02T12:10:56.000Z",
+          "historyComment": "Диана на больничном"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:50:17 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-09T11:55:06.000Z",
+          "historyComment": "Диана, попросила прислать ей для ознакомления информацию о типографии"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-23T07:35:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "96",
+      "organization": "Онега  П ОДО ",
+      "contactFace": "Анастасия - дизайнер",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 500 53 10",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "designer@onega.by"
+        }
+      ],
+      "address": "",
+      "description": "\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:44:49 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-13T06:05:28.000Z",
+          "historyComment": "звонок с предложением услуг. Сбросить на почту наше письмо, будут иметь ввиду."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:45:01 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-10-10T12:10:49.000Z",
+          "historyComment": "отправила расчет по печатной продукции. Решают"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:45:10 GMT+0300 (Москва, стандартное время)",
+          "date": "2023-12-28T11:50:01.000Z",
+          "historyComment": "поздравила с нг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:45:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-16T08:45:10.000Z",
+          "historyComment": "письмо с уточнением не планируют ли печатную продукцию в скором времени?"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:45:35 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-27T09:50:23.000Z",
+          "historyComment": "уточнение, есть ли потребность в печатной продукции? - Помнят про типографию ,пока ничего не нужно..."
+        },
+        {
+          "id": "Tue Apr 30 2024 22:45:46 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-07T08:50:35.000Z",
+          "historyComment": " отправить с 8 марта"
+        },
+        {
+          "id": "Thu May 02 2024 11:20:16 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-05-02T08:16:33.238Z",
+          "historyComment": "Пока ничего не планируют из печатной продукции, помнят про такую типографию"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-09-19T07:10:00.000Z"
+      }
+    },
+    {
+      "id": "115",
+      "organization": "Синлаб-ЕМЛ  (ИУП по Оказанию услуг)   SYNLAB",
+      "contactFace": "Анастасия (маркетолог)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 378 58 55",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "Marketing.Belarus@synlab.com"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:04:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-25T09:15:29.000Z",
+          "historyComment": "предложение услуг (отправлено информационное письмо о типографии)"
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-05-07T08:25:00.000Z"
+      }
+    },
+    {
+      "id": "110",
+      "organization": "ЭЛЕКТРОЦЕНТРМОНТАЖ   ОАО",
+      "contactFace": "Светлана Ивановна (секретарь)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 516 38 00",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "mail@ecm.by"
+        }
+      ],
+      "address": "",
+      "description": "Печатаются 1-2 раза в год, ближе к новому году и может на выставку",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:00:18 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-14T09:10:52.000Z",
+          "historyComment": "предложение услуг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-25T11:26:29.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "103",
+      "organization": "БЕЛОРУССКАЯ ЦЕМЕНТНАЯ КОМПАНИЯ рптуп укх",
+      "contactFace": "Людмила (Валюшка)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 311 31 66",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@bck.by (она и отдел закупки)"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:51:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-13T12:10:23.000Z",
+          "historyComment": "предложение услуг"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:51:58 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-01T13:10:48.000Z",
+          "historyComment": "еще раз попросили продублировать информацию о типографии...и набрать 08.04"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:52:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-08T12:10:58.000Z",
+          "historyComment": "на больничный ушла"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:52:13 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-17T12:10:06.000Z",
+          "historyComment": "еще на больничном"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:52:24 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-25T08:05:13.000Z",
+          "historyComment": " пока ничего не может сказать, только с больничного и вроде еще нет потребности. "
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T07:20:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "113",
+      "organization": "Фабрика окон лтд   ООО",
+      "contactFace": "Дмитрий",
+      "productList": [
+        {
+          "id": "Tue Apr 30 2024 23:03:34 GMT+0300 (Москва, стандартное время)",
+          "productName": "Блоки для записи",
+          "productComment": ""
+        }
+      ],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 272 72 70",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "fabrika.okon@mail.ru "
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:02:20 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-21T14:10:08.000Z",
+          "historyComment": "предложение услуг"
+        },
+        {
+          "id": "Tue Apr 30 2024 23:02:30 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-28T11:05:20.000Z",
+          "historyComment": "запустили блоки для записи"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-03T08:00:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "112",
+      "organization": "БЕЛАЗ ОАО — управляющая компания холдинга «БЕЛАЗ–ХОЛДИНГ»",
+      "contactFace": "Надежда Ивановна",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 752 78 13",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "office@belaz.minsk.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:01:52 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-21T11:10:18.000Z",
+          "historyComment": "предложение услуг. попросили отправить на общий ящик, канцелярия сама распределит по отделам..."
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-05-17T08:10:00.000Z"
+      }
+    },
+    {
+      "id": "105",
+      "organization": "АЛНИКОР    Холдинговая компания ",
+      "contactFace": "Максим Юхневич (инженер по материально-техническому снабжению)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(44) 545 32 20",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "maksim.yukhnevich@alnikor.by  Максим Юхневич"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [],
+      "reminder": {
+        "date": "2024-01-30T10:22:35.102Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "119",
+      "organization": "Речицкий метизный завод  ОАО",
+      "contactFace": "Марцуль Сергей Александрович (нач.бюро рекламы)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (2340) 6-12-83",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "smartsul@rmz.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:07:51 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-15T11:15:42.000Z",
+          "historyComment": "предложение услуг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-09-18T08:45:02.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "109",
+      "organization": "Экзон  ОАО",
+      "contactFace": "Алёна Васильевна",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 1644 2 00 05",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@ekzon.by"
+        }
+      ],
+      "address": "",
+      "description": "Печатают мало, больше к концу года",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:59:32 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-14T09:05:20.000Z",
+          "historyComment": "предложение услуг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-03T08:30:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "118",
+      "organization": "Мозырьсоль  ОАО",
+      "contactFace": "Владислав Николаевич ВЭД",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "(236)21-49-13",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "Заказывают мало очень и просят всего 3 предложения (рассылают по 3 основным типографиям) на этот год уже все есть, может на следующий это где-то осень",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:07:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T06:05:06.000Z",
+          "historyComment": "заказывают мало очень и просят всего 3 предложения (рассылают по 3 основным типографиям) на этот год уже все есть, может на следующий это где-то осень"
+        }
+      ],
+      "reminder": {
+        "date": "2024-10-08T06:16:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "111",
+      "organization": "Лидский молочно-консервный комбинат  ОАО (MiLida)",
+      "contactFace": "Диана",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375-154-54-85-23",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "milida_sbyt@mail.lida.by"
+        }
+      ],
+      "address": "",
+      "description": "Требуется доставка*\n",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:01:00 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-21T13:10:34.000Z",
+          "historyComment": "предложение услуг. Сбросили инф.письмо."
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T08:29:49.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "114",
+      "organization": "АМКОДОР - управляющая компания холдинга» ОАО",
+      "contactFace": "Алёна Грошевик (спец по рекламе)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 308 33 46",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "reklama@amkodor.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:04:03 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-21T09:05:45.000Z",
+          "historyComment": "письмо информационное "
+        },
+        {
+          "id": "Tue Apr 30 2024 23:04:13 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-24T12:05:03.000Z",
+          "historyComment": "запрос на листовки"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-23T07:38:43.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "100",
+      "organization": "ТЕНКинвест  ООО",
+      "contactFace": "Никита",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(29) 756 50 24",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "Расчет брошюры для ЖК \"ГрандАвеню\"",
+      "historyList": [],
+      "reminder": {
+        "date": "2024-01-17T09:53:04.533Z",
+        "bell": false,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "104",
+      "organization": "Агрокомбинат \"Колос    СЗАО\"",
+      "contactFace": "Екатерина",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 231 13 43",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing@kolosbel.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:53:13 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-01-25T11:05:48.000Z",
+          "historyComment": "предложение услуг. отправили на почту инф.письмо"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:53:23 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-07T12:10:13.000Z",
+          "historyComment": "поздравление с 8марта"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:53:34 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-21T11:10:23.000Z",
+          "historyComment": " пока ничего не требуется (упор на типографию, с которой уже активно работают)"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-30T07:25:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "108",
+      "organization": "БЕЛРОСАГРОСЕРВИС   СООО",
+      "contactFace": "Татьяна Семенюк (спец.по маркетингу)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 258 89 66",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(17) 248 91 29",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(44) 515 33 67",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "t.semenyuk@agro.by Татьяна Семенюк"
+        },
+        {
+          "email": "marketing@agro.by отдел маркетинга"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:58:31 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-02-08T11:05:57.000Z",
+          "historyComment": "отправила информацию о типографии для ознакомления"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:58:39 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-01T13:05:31.000Z",
+          "historyComment": "не отвечают"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:58:48 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T11:05:39.000Z",
+          "historyComment": " попросили еще раз сбросить о себе информацию..."
+        }
+      ],
+      "reminder": {
+        "bell": true,
+        "comment": "Позвонить",
+        "date": "2024-05-07T08:05:00.000Z"
+      }
+    },
+    {
+      "id": "116",
+      "organization": "ПККМ (SI:LA)",
+      "contactFace": "Карина (закупка коробок, календарей)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(29) 700 36 40",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:05:36 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-25T12:20:09.000Z",
+          "historyComment": "отправила письмо предложение"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-29T13:12:06.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "106",
+      "organization": "Сморгонский комбинат хлебопродуктов  УПП",
+      "contactFace": "Дарья    (вместо Натальи Нарейко - ведущий маркетолог)",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 1592 3 98 12",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 656 40 65",
+          "typeList": "personal"
+        },
+        {
+          "number": "+375(33) 991 56 16",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market@skhp.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 22:55:56 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-03-07T09:10:54.000Z",
+          "historyComment": "поздравить с 8 марта"
+        },
+        {
+          "id": "Tue Apr 30 2024 22:56:06 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-03T08:55:56.000Z",
+          "historyComment": "вместо Натальи теперь Дарья, пока потребности нет в печатной продукции. Записали нас, как будет потребность будут писать..."
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-03T08:20:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "122",
+      "organization": "Камволь ОАО",
+      "contactFace": "Яна",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 282 28 39",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "marketing_kamvol@mail.ru"
+        }
+      ],
+      "address": "",
+      "description": "26/04 - предложение услуг. Яна сказала что уже работают давно и постоянный поставщиц, дает хорошие условия, отсрочки(постоплата), снижают цену, если есть предложение дешевле...",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:09:37 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-26T07:05:23.000Z",
+          "historyComment": "предложение услуг"
+        }
+      ],
+      "reminder": {
+        "date": "2024-06-27T07:46:05.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "107",
+      "organization": "Белпродукт   ООО",
+      "contactFace": "Леонид",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375 (232) 29-29-11 - многоканальный",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [],
+      "address": "",
+      "description": "Заказывают очень мало, 5-8 тыс листовок и календари. Про нас знают...",
+      "historyList": [],
+      "reminder": {
+        "date": "2024-09-24T08:35:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "117",
+      "organization": "Белгейтс ООО (Liv-delano)",
+      "contactFace": "Елена Латышева ",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 227 15 43",
+          "typeList": "business"
+        },
+        {
+          "number": "+375(29) 758 29 74",
+          "typeList": "personal"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "elena_belgates@mail.ru Елена Латышева"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:05:58 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-04T12:15:48.000Z",
+          "historyComment": " предложение услуг печатных"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-16T10:35:07.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "121",
+      "organization": "МИТРА ООО",
+      "contactFace": "Ольга",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(17) 338 42 22",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "info@mitra.by (для Ольги (для участия в тендере)"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:09:03 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-25T10:10:51.000Z",
+          "historyComment": "предложение услуг печати. Сбросила информ.предложение для Ольги."
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-28T08:14:57.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    },
+    {
+      "id": "120",
+      "organization": "РУЧАЙКА  ОАО",
+      "contactFace": "Наталья",
+      "productList": [],
+      "productListArchive": [],
+      "phoneList": [
+        {
+          "number": "+375(1642)3-83-51",
+          "typeList": "business"
+        }
+      ],
+      "emailList": [
+        {
+          "email": "market1@ruchaika.by"
+        }
+      ],
+      "address": "",
+      "description": "",
+      "historyList": [
+        {
+          "id": "Tue Apr 30 2024 23:08:27 GMT+0300 (Москва, стандартное время)",
+          "date": "2024-04-18T10:10:17.000Z",
+          "historyComment": "предложение о сотрудничестве + расчет буклета А4 в А5 и А4 в 100х210 по 200шт"
+        }
+      ],
+      "reminder": {
+        "date": "2024-05-23T08:17:00.000Z",
+        "bell": true,
+        "comment": "Позвонить"
+      }
+    }
+  ],
   "productList": [
     {
       "id": "1",
@@ -781,7 +6064,7 @@
       "email": "slmarket@mail.ru",
       "description": "18.10 - отправила письмо напоминание\n28-29.12- отправила поздравление с НГ\n17.04 - вопросами печатной продукции занимается Надежда Федоровна (нач.отдела)",
       "reminder": true,
-      "reminderDate": "2024-04-24T11:00:00.000Z"
+      "reminderDate": "2024-08-13T11:00:00.000Z"
     },
     {
       "id": 34,
@@ -897,9 +6180,9 @@
         }
       ],
       "email": "info@ganna.by, badulina.marketing@ganna.by",
-      "description": "Заказывают через https://icetrade.by/.\nзвонок 20.09. - вышлите о себе напонимание. \n22.09 отправила кп на брошюры. \n28.09 - сказали у нас дороже рублей на 100-150 чем у другой компании.\n29/12 - поздравили с нг\n26.01 - сотрудничают с типографиями на месте... с минскими и другими не удобно, т.к. возникают вопросы с цветопередачей и согласовывать на удаление не удобно",
+      "description": "Заказывают через https://icetrade.by/.\nзвонок 20.09. - вышлите о себе напонимание. \n22.09 отправила кп на брошюры. \n28.09 - сказали у нас дороже рублей на 100-150 чем у другой компании.\n29/12 - поздравили с нг\n26.01 - сотрудничают с типографиями на месте... с минскими и другими не удобно, т.к. возникают вопросы с цветопередачей и согласовывать на удаление не удобно\n30.04 - ничего не нужно пока, не планируют ничего",
       "reminder": true,
-      "reminderDate": "2024-04-30T07:45:00.000Z"
+      "reminderDate": "2024-06-26T07:45:00.000Z"
     },
     {
       "id": 40,
@@ -972,7 +6255,7 @@
       "email": "nka@aes.by",
       "description": "Заказывают не много продукции и нет постоянности. Могут раз в год, а могут и раз в 5 лет\n22.09.2023 - расчет брошюры сбросили...\n18.10 - уточнила нет ли в ближайшее время запроса по полиграфии? ответ- пока нет.\n29.12 - поздравила с нг\n30.01 - ничего не нужно\n29.03 - напомнили о себе...позвонить в понедельник коллеге Александра 8(025)7078933 и договорится о встрече... (в среду 03.04 должны приехать)\n03.04 - Александра приезжала и показывала каталог.\n05.04 - отправила им коммерческое предложение с расчетом стоимости брошюры... Ждем\n",
       "reminder": true,
-      "reminderDate": "2024-04-30T07:50:00.000Z"
+      "reminderDate": "2024-05-16T07:50:00.000Z"
     },
     {
       "id": 43,
@@ -1275,9 +6558,9 @@
         }
       ],
       "email": "info@autoconstr.by",
-      "description": "25.10 - сбросьте предложения какие есть...\n26.10 - отправила кп с расчетами...\n01.11 - получили, видели, пока правда еще не планируем заказывать\n28.12 - с нг\n29.01 - пока ничего не нужно и в ближайшее время пока не планируют",
+      "description": "25.10 - сбросьте предложения какие есть...\n26.10 - отправила кп с расчетами...\n01.11 - получили, видели, пока правда еще не планируем заказывать\n28.12 - с нг\n29.01 - пока ничего не нужно и в ближайшее время пока не планируют\n30.04 - пока ничего не требуется и на лето точно не будут ничего заказывать",
       "reminder": true,
-      "reminderDate": "2024-04-30T08:35:00.000Z"
+      "reminderDate": "2024-09-25T08:35:00.000Z"
     },
     {
       "id": 57,
@@ -1484,9 +6767,9 @@
         }
       ],
       "email": "info@ventgarant.by",
-      "description": "Набрать в сентябре. Сейчас не актуально.\n03.10 - еще ничего не нужно\n28-29.12 поздравила с НГ\n01.03 - в выставке не планируют участвовать и пока ничего не требуется из полиграфии",
+      "description": "Набрать в сентябре. Сейчас не актуально.\n03.10 - еще ничего не нужно\n28-29.12 поздравила с НГ\n01.03 - в выставке не планируют участвовать и пока ничего не требуется из полиграфии\n29.04 - нет потребности в печатной продукции",
       "reminder": true,
-      "reminderDate": "2024-04-26T07:15:00.000Z"
+      "reminderDate": "2024-09-26T07:15:00.000Z"
     },
     {
       "id": 68,
@@ -1909,9 +7192,9 @@
         }
       ],
       "email": "info@mzbn.com    a.kirdun@mzbn.com",
-      "description": "20/09/ - отправила на личную Елене напоминание. Будет потребность будут писать...\n31.10 - на данный момент ничего не нужно, календари будут делать, но по ним уже есть Исполнитель\n28-29.12- отправила поздравление с НГ\n16.01. - попросили сбросить напоминание о себе\n18.01. - прислали на просчет листовки А5 и флаер. ответила по стоимости (видимо дорого, т.к. не заказали и ничего не ответили)\n17.04 - Елена на больничном и возможно будет только к концу следующей недели...",
+      "description": "20/09/ - отправила на личную Елене напоминание. Будет потребность будут писать...\n31.10 - на данный момент ничего не нужно, календари будут делать, но по ним уже есть Исполнитель\n28-29.12- отправила поздравление с НГ\n16.01. - попросили сбросить напоминание о себе\n18.01. - прислали на просчет листовки А5 и флаер. ответила по стоимости (видимо дорого, т.к. не заказали и ничего не ответили)\n17.04 - Елена на больничном и возможно будет только к концу следующей недели...\n30.04 - напомнила о нас. попросили опять написать на почту, а то забывают периодически)))",
       "reminder": true,
-      "reminderDate": "2024-04-30T08:15:00.000Z"
+      "reminderDate": "2024-06-19T08:15:00.000Z"
     },
     {
       "id": 88,
@@ -2070,9 +7353,9 @@
         }
       ],
       "email": "contact@trm.by",
-      "description": "04/10 - наполнили о себе кп.\n24.10 - напомнила о себе, попросили рассчитать блокноты...Сбросила расчет по блокнотам\nрасчеты получены, пока не планируют печать чего-либо\n29.12 - с НГ\n25.01 - пока ничего не требуется",
+      "description": "04/10 - наполнили о себе кп.\n24.10 - напомнила о себе, попросили рассчитать блокноты...Сбросила расчет по блокнотам\nрасчеты получены, пока не планируют печать чего-либо\n29.12 - с НГ\n25.01 - пока ничего не требуется\n29.04 - ничего из печатной продукции не нужно в данный момент",
       "reminder": true,
-      "reminderDate": "2024-04-29T08:25:00.000Z"
+      "reminderDate": "2024-07-25T08:20:00.000Z"
     },
     {
       "id": 96,
@@ -2091,7 +7374,7 @@
       "email": "designer@onega.by",
       "description": "13.10 - звонок с предложением услуг. Сбросить на почту наше письмо, будут иметь ввиду.\n17/10 - отправила расчет по печатной продукции. Решают\n28.12 - поздравила с нг\n16.01 - письмо с уточнением не планируют ли печатную продукцию в скором времени?\n27/02 - уточнение, есть ли потребность в печатной продукции? - Помнят про типографию ,пока ничего не нужно...\n07.03 - отправить с 8 марта\n",
       "reminder": true,
-      "reminderDate": "2024-04-30T07:05:00.000Z"
+      "reminderDate": "2024-05-02T07:05:00.000Z"
     },
     {
       "id": 97,
@@ -2406,9 +7689,9 @@
         }
       ],
       "email": "milida_sbyt@mail.lida.by",
-      "description": "21.02 - предложение услуг. Сбросили инф.письмо. Требуется доставка*",
+      "description": "21.02 - предложение услуг. Сбросили инф.письмо. Требуется доставка*\n",
       "reminder": true,
-      "reminderDate": "2024-04-29T08:29:49.000Z"
+      "reminderDate": "2024-05-16T08:29:49.000Z"
     },
     {
       "id": 112,
@@ -2425,9 +7708,9 @@
         }
       ],
       "email": "office@belaz.minsk.by",
-      "description": "21.02 - предложение услуг. попросили отправить на общий ящик, канцелярия сама распределит по отделам...",
+      "description": "21.02 - предложение услуг. попросили отправить на общий ящик, канцелярия сама распределит по отделам...\n",
       "reminder": true,
-      "reminderDate": "2024-04-26T08:10:00.000Z"
+      "reminderDate": "2024-05-02T08:10:00.000Z"
     },
     {
       "id": 113,
@@ -2486,7 +7769,7 @@
       "email": "Marketing.Belarus@synlab.com",
       "description": "25.03.2024 - предложение услуг (отправлено информационное письмо о типографии)",
       "reminder": true,
-      "reminderDate": "2024-04-30T08:53:41.000Z"
+      "reminderDate": "2024-05-02T08:25:00.000Z"
     },
     {
       "id": 116,

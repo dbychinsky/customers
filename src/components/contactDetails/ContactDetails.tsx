@@ -14,6 +14,7 @@ import { Products } from 'components/products/Products';
 import { History } from 'components/history/History';
 import { useNavigateHelper } from 'router/hooks/useNavigateHelper';
 import clsx from 'clsx';
+import { HistoryType } from 'store/contactEditStore/types';
 
 /**
  * @description Интерфейс компонента "contactDetails".
@@ -93,7 +94,7 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
                         </div>
                     </div>
                     <div className={styles.columnSecond}>
-                        <History activeContact={activeContact} className={styles.historyModal} isBorderText={false} />
+                        <History historyListSorted={getHistorySorted()} className={styles.historyModal} />
                     </div>
                 </div>
                 <div className={styles.actionBar}>
@@ -115,4 +116,8 @@ export const ContactDetails = observer(({ contactId, setIsShowConfirm }: Contact
             </div>
         </div>
     );
+
+    function getHistorySorted(): HistoryType[] {
+        return activeContact?.historyList.slice().sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
+    }
 });
