@@ -13,14 +13,17 @@
     box-sizing: border-box;
 
     .contact {
+        position: relative;
         box-sizing: border-box;
         padding: 15px;
-        background: $color-reminder;
+        background: $color-white;
         border-radius: $radius6;
+        border: 1px solid $color-reminder;
 
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        height: 84px;
 
         animation: pulse 2s infinite;
         min-width: 0;
@@ -33,13 +36,16 @@
         }
 
         .content {
-            color: white;
+            position: relative;
             min-width: 0;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
 
             .organization {
                 @include interSemiBold();
                 @include truncateText(2);
-                font-size: $font-size-18;
+                font-size: $font-size-14;
                 margin-bottom: $space6;
                 word-wrap: break-word;
             }
@@ -47,26 +53,28 @@
             .contactFace {
                 @include interSemiBold();
                 @include truncateText(2);
-                font-size: $font-size-18;
+                font-size: $font-size-12;
                 margin-bottom: $space6;
             }
 
             .description {
-                @include truncateText(2);
+                @include truncateText(1);
                 box-sizing: border-box;
-                font-size: $font-size-14;
-                color: darken($color-reminder, 20);
+                font-size: $font-size-12;
+                color: $color-reminder;
             }
         }
 
         .iconBell {
-            display: flex;
-            align-items: center;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            opacity: 0.2;
 
             svg {
-                fill: darken($color-reminder, 10);
-                width: 33px;
-                height: 33px;
+                fill: $color-reminder;
+                width: 80px;
+                height: 80px;
             }
         }
     }
@@ -77,6 +85,8 @@
         background: $color-grey-background;
         border: 1px solid darken($color-white, 10);
         border-radius: $radius6;
+        height: 84px;
+        position: relative;
 
         display: flex;
         flex-flow: row nowrap;
@@ -86,10 +96,12 @@
 
         .content {
             min-width: 0;
+            position: relative;
 
             .organization, .contactFace, .date {
                 color: darken($color-white, 10);
                 word-wrap: break-word;
+                font-size: $font-size-14;
             }
 
         }
@@ -103,13 +115,15 @@
         }
 
         .iconBell {
-            display: flex;
-            align-items: center;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            opacity: 0.5;
 
             svg {
                 fill: darken($color-white, 10);
-                width: 33px;
-                height: 33px;
+                width: 80px;
+                height: 80px;
             }
         }
     }
@@ -119,16 +133,16 @@
 @keyframes pulse {
     0% {
         transform: scale(0.98);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0 0 rgba(254, 176, 25, 0.3);
     }
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 5px rgba(254, 176, 25, 0);
     }
 
     100% {
         transform: scale(0.98);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(254, 176, 25, 0);
     }
 }

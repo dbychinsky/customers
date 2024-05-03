@@ -1,6 +1,6 @@
 # Contacts
 
-version 2.1
+version 2.2
 
 npm run server
 
