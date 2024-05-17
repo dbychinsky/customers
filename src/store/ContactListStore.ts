@@ -4,6 +4,7 @@ import { Contact } from 'model/Contact';
 import { server } from 'App';
 import { PushNotification } from 'utils/pushNotification';
 import { dateToDateUTC } from 'utils/dateToDateUTC';
+import { SortEnum } from 'components/contactList/searchingPanel/SearchingPanel';
 
 /**
  * @description Store для отображения контактов.
@@ -19,7 +20,11 @@ export class ContactListStore {
     /**
      * @description Список контактов используемый при поиске.
      */
-    contactListSearching: Contact[] = [];
+    contactListSrcBuffer: Contact[] = [];
+
+    /**
+     * @description Список контактов используемый при поиске.
+     */
 
     /**
      * @description Контакт.
@@ -85,8 +90,8 @@ export class ContactListStore {
             .getContacts()
             .then((contacts) => {
                 runInAction(() => {
-                    this.contactList = contacts.sort((a, b) => +a.id - +b.id);
-                    this.contactListSearching = contacts.sort((a, b) => +a.id - +b.id);
+                    this.contactList = contacts.sort((a, b) => (Number(a.id) > Number(b.id) ? 1 : -1));
+                    this.contactListSrcBuffer = contacts.sort((a, b) => (Number(a.id) > Number(b.id) ? 1 : -1));
                 });
             })
             .then(() => {
@@ -166,7 +171,7 @@ export class ContactListStore {
 
         if (searchingValue !== '') {
             runInAction(() => {
-                this.contactList = this.contactListSearching.filter(
+                this.contactList = this.contactListSrcBuffer.filter(
                     (contact) =>
                         contact.organization.toUpperCase().includes(searchingValue.toUpperCase()) ||
                         contact.contactFace.toUpperCase().includes(searchingValue.toUpperCase()),
@@ -174,7 +179,7 @@ export class ContactListStore {
             });
         } else {
             runInAction(() => {
-                this.contactList = this.contactListSearching;
+                this.contactList = this.contactListSrcBuffer;
             });
         }
     }
@@ -195,7 +200,7 @@ export class ContactListStore {
                 this.contactList = [];
             });
 
-            this.contactListSearching.forEach((contact) => {
+            this.contactListSrcBuffer.forEach((contact) => {
                 contact.phoneList.forEach((phone) => {
                     if (phone.number.toUpperCase().includes(searchingValue.toUpperCase())) {
                         if (
@@ -209,7 +214,34 @@ export class ContactListStore {
                 });
             });
         } else {
-            this.contactList = this.contactListSearching;
+            this.contactList = this.contactListSrcBuffer;
+        }
+    }
+
+    /**
+     * @description Сортировка по организации.
+     */
+    handleChangeSortingOrganization(sortState: SortEnum) {
+        if (sortState === SortEnum.NO_SORTED) {
+            runInAction(() => {
+                this.contactList = this.contactList.sort((a, b) =>
+                    a.organization.toLowerCase() > b.organization.toLowerCase() ? 1 : -1,
+                );
+            });
+        }
+
+        if (sortState === SortEnum.SORTED_AZ) {
+            runInAction(() => {
+                this.contactList = this.contactList.sort((a, b) =>
+                    b.organization.toLowerCase() > a.organization.toLowerCase() ? 1 : -1,
+                );
+            });
+        }
+
+        if (sortState === SortEnum.SORTED_ZA) {
+            runInAction(() => {
+                this.contactList = this.contactList.sort((a, b) => (Number(a.id) > Number(b.id) ? 1 : -1));
+            });
         }
     }
 

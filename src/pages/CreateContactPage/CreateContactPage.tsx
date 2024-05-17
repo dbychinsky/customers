@@ -14,7 +14,7 @@ import { AddHistory } from 'components/createContact/addHistory/AddHistory';
 import { useParams } from 'react-router-dom';
 import { ButtonImage } from 'components/buttonImage/ButtonImage';
 import { ReactComponent as Check } from 'common/assets/icon/check.svg';
-import { ReactComponent as Cancel } from 'common/assets/icon/cancel_modal.svg';
+import { ReactComponent as Cancel } from 'common/assets/icon/cancelModal.svg';
 
 /**
  * @description Страница создания контакта.
@@ -91,7 +91,7 @@ export const CreateContactPage = observer(() => {
 
     function handleClickSendContact() {
         contactEditStore
-            .pushContact()
+            .pushContact(getMaxIdContact())
             .then(() =>
                 toast.success('Запись добавлена', {
                     position: 'top-right',
@@ -137,5 +137,11 @@ export const CreateContactPage = observer(() => {
             contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
         }
         contactListStore.deleteRecordListNotification(contactEditStore.contact.id);
+    }
+
+    function getMaxIdContact(): string {
+        const id: number =
+            Number(contactListStore.contactList.sort((a, b) => (Number(b.id) > Number(a.id) ? 1 : -1))[0].id) + 1;
+        return id.toString();
     }
 });
