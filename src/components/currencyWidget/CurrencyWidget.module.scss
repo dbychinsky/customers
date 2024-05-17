@@ -5,13 +5,25 @@
     @include blockStyle();
     width: 44%;
 
+    .currencyHeader {
+        display: flex;
+        flex-flow: row nowrap;
+
+        svg {
+            fill: $color-main;
+
+            &:hover {
+                fill: $color-main-dark;
+            }
+        }
+    }
+
     .currencyWidgetWrapper {
         display: flex;
         flex-flow: column;
 
         .inputFieldByn, .inputFieldUsd, .inputFieldRub {
             padding: 4px;
-            margin-bottom: $space10;
         }
 
         .inputFieldRub {

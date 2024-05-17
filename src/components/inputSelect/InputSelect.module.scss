@@ -15,7 +15,7 @@
     -moz-appearance: none; /* Firefox */
     -webkit-appearance: none; /* Safari and Chrome */
     appearance: none;
-    background:  url("../../common/assets/icon/arrow-down.svg") top $space10 right $space6 no-repeat;
+    background:  url("../../common/assets/icon/arrowDown.svg") top $space10 right $space6 no-repeat;
 
     &:focus {
         border: 1px solid $color-main-dark;
