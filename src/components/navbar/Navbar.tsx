@@ -5,6 +5,7 @@ import logotype from 'common/assets/BigLogotypeColor.jpg';
 import { NavLink } from 'react-router-dom';
 import { RouterPathList } from 'router/RouterPathList';
 import { ReactComponent as Dashboard } from 'common/assets/icon/dashboard.svg';
+import { ReactComponent as Calendar } from 'common/assets/icon/calendar.svg';
 import { useStores } from 'store/RootStoreContext';
 
 /**
@@ -26,10 +27,10 @@ export const Navbar = observer(() => {
                         {contactListStore.contactListNotificationActivated.length ? getBadge() : null}
                     </div>
                 </NavLink>
-                {/*<NavLink to={RouterPathList.CALENDAR_PAGE} className={styles.link}>*/}
-                {/*    <Calendar className={styles.icon} />*/}
-                {/*    <div>Календарь</div>*/}
-                {/*</NavLink>*/}
+                <NavLink to={RouterPathList.CALENDAR_PAGE} className={styles.link}>
+                    <Calendar className={styles.icon} />
+                    <div>Календарь</div>
+                </NavLink>
                 {/*<NavLink to={RouterPathList.CURRENCY_PAGE} className={styles.link}>*/}
                 {/*    <Currency className={styles.icon} />*/}
                 {/*    <div>Валюты</div>*/}

@@ -15,9 +15,9 @@ const enum serverUrl {
 }
 
 export class Server implements IService {
-    // readonly MAIN_URL_FAKE = `http://localhost:3001`;
-    // readonly MAIN_URL = this.MAIN_URL_FAKE;
-    readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
+    readonly MAIN_URL_FAKE = `http://localhost:3001`;
+    readonly MAIN_URL = this.MAIN_URL_FAKE;
+    // readonly MAIN_URL = process.env.REACT_APP_MAIN_URL;
 
     /**
      * @description  Получение списка контактов.

@@ -1,0 +1,11 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.calendarPage {
+    padding: $space20;
+
+    .calendar {
+        background: $color-white;
+        border-radius: $radius6;
+    }
+}
