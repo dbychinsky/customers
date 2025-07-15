@@ -13,6 +13,7 @@ export const ButtonImageTypeMapping = {
     delete: styles.delete,
     deleteContact: styles.deleteContact,
     editContact: styles.editContact,
+    sort: styles.sort,
 };
 
 export type ButtonImageType = keyof typeof ButtonImageTypeMapping;

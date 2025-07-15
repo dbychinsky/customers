@@ -1,0 +1,42 @@
+@import 'common/css-parameters';
+@import 'common/mixins';
+
+.scrollToElement {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 3;
+
+    .scrollTop, .scrollDown {
+
+        background: $color-main;
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $radius6;
+        box-shadow: rgba(82, 63, 105, 0.05) 0 5px 5px 0;
+
+        svg {
+            fill: $color-white;
+        }
+
+        &:hover {
+            position: relative;
+            bottom: 4px;
+        }
+    }
+
+    .scrollDown {
+        margin-top: 10px;
+        transform: rotate(180deg);
+
+        &:hover {
+            position: relative;
+            top: 4px;
+        }
+    }
+}
+

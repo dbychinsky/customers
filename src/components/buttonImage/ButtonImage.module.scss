@@ -81,6 +81,15 @@
     }
 }
 
+.sort {
+    background: none;
+
+    svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
 
 [disabled] {
     background: $color-grey;

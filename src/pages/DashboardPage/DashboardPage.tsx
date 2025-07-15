@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import { ContactList } from 'components/contactList/ContactList';
 import { useContactDetailsModal } from 'components/contactDetails/useContactDetailsModal';
 import { ToastContainer } from 'react-toastify';
-import { ScrollTop } from 'components/scrollTop/ScrollTop';
+import { ScrollToElement } from 'components/scrollTop/ScrollToElement';
 import { CalendarWidget } from 'components/calendarWidget/CalendarWidget';
 
 /**
@@ -70,7 +70,7 @@ export const DashboardPage = observer(() => {
 
             {ModalShowDetails(activeContactId)}
             <ToastContainer />
-            <ScrollTop />
+            <ScrollToElement />
         </div>
     );
 

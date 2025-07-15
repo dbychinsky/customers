@@ -375,8 +375,8 @@ export class ContactEditStore {
     /**
      * @description Отправка данных на сервер.
      */
-    async pushContact() {
-        this.updateData();
+    async pushContact(id: string) {
+        this.updateData(id);
         server.addContact(this.contact).then();
     }
 
@@ -445,7 +445,7 @@ export class ContactEditStore {
      */
     async pushEditContact(idContact: string | undefined) {
         if (idContact) {
-            this.updateData();
+            this.updateData(idContact);
             server.updateContact(idContact, this.contact).then();
         }
     }
@@ -453,7 +453,15 @@ export class ContactEditStore {
     /**
      * @description Обновление данных перед отправкой на сервер.
      */
-    updateData() {
+    updateData(idContact: string | undefined) {
+        if (idContact) {
+            runInAction(() => {
+                this.contact = {
+                    ...this.contact,
+                    id: idContact,
+                };
+            });
+        }
         runInAction(() => {
             this.contact = {
                 ...this.contact,
@@ -560,8 +568,6 @@ export class ContactEditStore {
             function getItemFromItemListReminder(reminderDate: Date, reminder: boolean): ReminderType {
                 return { date: reminderDate, bell: reminder, comment: 'Позвонить' };
             }
-
-            console.log(this.contact);
             server.addContact(this.contact).then();
         });
     }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ReactComponent as CrossIcon } from 'common/assets/icon/cancel_modal.svg';
+import { ReactComponent as CrossIcon } from 'common/assets/icon/cancelModal.svg';
 import { UseModalProps } from 'components/modal/types';
 import { Button } from 'components/button/Button';
 import styles from 'components/modal/components/CommonModalContainer.module.scss';

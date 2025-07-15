@@ -67,14 +67,15 @@
 
         .iconBell {
             position: absolute;
-            top: 1px;
+            top: 50%;
             right: 1px;
             opacity: 0.2;
 
             svg {
                 fill: $color-reminder;
-                width: 80px;
-                height: 80px;
+                width: 66px;
+                height: 66px;
+                margin-top: -33px;
             }
         }
     }
@@ -116,14 +117,15 @@
 
         .iconBell {
             position: absolute;
-            top: 1px;
+            top: 50%;
             right: 1px;
             opacity: 0.5;
 
             svg {
                 fill: darken($color-white, 10);
-                width: 80px;
-                height: 80px;
+                width: 66px;
+                height: 66px;
+                margin-top: -33px;
             }
         }
     }
