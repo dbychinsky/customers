@@ -11,7 +11,7 @@ export class AuthStore {
     // loginApp = '1';
     private loginApp = 'Sofi';
     // passwordApp = '1';
-    private passwordApp = 'sf1807';
+    private passwordApp = 'man26cust';
     errorList: FieldError[] = [];
     isAuth = false;
 
